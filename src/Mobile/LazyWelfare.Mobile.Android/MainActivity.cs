@@ -5,6 +5,7 @@ using Android.Webkit;
 using LazyWelfare.Mobile.Android.Views;
 using LazyWelfare.Mobile.Android.Models;
 using System.Collections.Generic;
+using LazyWelfare.Service;
 
 namespace LazyWelfare.Mobile.Android
 {
@@ -15,6 +16,8 @@ namespace LazyWelfare.Mobile.Android
         {
             base.OnCreate(savedInstanceState);
 
+            BootStartup.Register();
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
@@ -23,8 +26,7 @@ namespace LazyWelfare.Mobile.Android
 
             SetStartPage(webView);
         }
-
-
+    
         void SetStartPage(WebView webView)
         {
             // Use subclassed WebViewClient to intercept hybrid native calls
@@ -46,7 +48,6 @@ namespace LazyWelfare.Mobile.Android
 
     public class ViewClient : WebViewClient
     {
-
 
         public override bool ShouldOverrideUrlLoading(WebView webView, string url)
         {

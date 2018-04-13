@@ -107,9 +107,9 @@
     <AndroidAsset Include="Assets\style.css" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LazyWelfare.Mobile.Core\LazyWelfare.Mobile.Core.csproj">
-      <Project>{ba5ff363-b8fd-4960-9e00-e39d3525ae36}</Project>
-      <Name>LazyWelfare.Mobile.Core</Name>
+    <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Service.csproj">
+      <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
+      <Name>LazyWelfare.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
