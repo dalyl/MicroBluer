@@ -5,6 +5,12 @@
    (BundleResource on iOS or AndroidAsset on Android), to be accessible 
    from a path starting at the root of your hybrid application.  */
 
+
+@font-face {
+    font-family: ComicSansMS;
+    src: url(ComicSansMSRegular.ttf);
+}
+
 input {
  	width:100%;
 }

@@ -17,14 +17,14 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.752")]
-public partial class DollList : DollListBase
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.753")]
+public partial class HomeView : HomeViewBase
 {
 
 #line hidden
 
-#line 1 "DollList.cshtml"
-public List<LazyWelfare.Mobile.Android.Models.Doll> Model { get; set; }
+#line 1 "HomeView.cshtml"
+public LazyWelfare.Mobile.Android.Models.HomeModel Model { get; set; }
 
 #line default
 #line hidden
@@ -79,44 +79,32 @@ WriteLiteral(">\r\n        <form>\r\n\r\n            <div");
 
 WriteLiteral(" data-role=\"content\"");
 
-WriteLiteral(">\r\n                <ul>\r\n");
+WriteLiteral(">\r\n\r\n                <ul>\r\n                    <li>");
 
 
-#line 37 "DollList.cshtml"
-                    
-
-#line default
-#line hidden
-
-#line 37 "DollList.cshtml"
-                     foreach (var one in Model){
+#line 38 "HomeView.cshtml"
+                   Write(Model.Header);
 
 
 #line default
 #line hidden
-WriteLiteral("                    <li>\r\n                        <h1");
+WriteLiteral(@"</li>
+                </ul>
 
-WriteLiteral(" id=\"label\"");
+                <ul>
+                    <li>服务主机</li>
+                </ul>
 
-WriteLiteral(">");
+                <ul>
+                    <li>音量调节</li>
+                </ul>
 
+                <ul>
+                    <li>关机</li>
+                    <li>睡眠</li>
+                </ul>
 
-#line 39 "DollList.cshtml"
-                                  Write(one.Name);
-
-
-#line default
-#line hidden
-WriteLiteral("</h1>\r\n                    </li>\r\n");
-
-
-#line 41 "DollList.cshtml"
-                    }
-
-
-#line default
-#line hidden
-WriteLiteral("                </ul>\r\n\r\n                <input");
+                <input");
 
 WriteLiteral(" type=\"text\"");
 
@@ -142,7 +130,7 @@ WriteLiteral(" />\r\n\r\n            </div>\r\n\r\n        </form>\r\n    </div>
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class DollListBase
+public abstract class HomeViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

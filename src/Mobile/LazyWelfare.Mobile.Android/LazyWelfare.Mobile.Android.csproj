@@ -58,13 +58,19 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Doll.cs" />
+    <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\DollList.cs">
+    <Compile Include="Views\DollListView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DollList.cshtml</DependentUpon>
+      <DependentUpon>DollListView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\RazorView.cs">
       <DependentUpon>RazorView.cshtml</DependentUpon>
@@ -78,9 +84,14 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
-    <None Include="Views\DollList.cshtml">
+    <None Include="Views\DollListView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>DollList.cs</LastGenOutput>
+      <LastGenOutput>DollListView.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </None>
+    <None Include="Views\HomeView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>HomeView.cs</LastGenOutput>
       <SubType>None</SubType>
     </None>
     <None Include="Views\RazorView.cshtml">

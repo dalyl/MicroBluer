@@ -16,17 +16,26 @@ namespace LazyWelfare.Mobile.Android
         {
             base.OnCreate(savedInstanceState);
 
-            BootStartup.Register();
-
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
             var webView = FindViewById<WebView>(Resource.Id.webView);
             webView.Settings.JavaScriptEnabled = true;
 
-            SetStartPage(webView);
+            TurnHomePage(webView);
         }
-    
+
+        void TurnHomePage(WebView webView)
+        {
+            webView.SetWebViewClient(new HybridWebViewClient());
+            var model = new HomeModel {
+                 Header="Hello,你好",
+            };
+            var template = new HomeView() { Model = model };
+            var page = template.GenerateString();
+            webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
+        }
+
         void SetStartPage(WebView webView)
         {
             // Use subclassed WebViewClient to intercept hybrid native calls
@@ -35,7 +44,7 @@ namespace LazyWelfare.Mobile.Android
             var model = new Doll { Name = "ssssss" };
             // Render the view from the type generated from RazorView.cshtml
             var models = new List<Doll>() { model };
-            var template = new DollList() { Model = models };
+            var template = new DollListView() { Model = models };
             var page = template.GenerateString();
 
             // Load the rendered HTML into the view with a base URL 

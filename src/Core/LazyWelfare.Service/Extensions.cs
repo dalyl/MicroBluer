@@ -20,9 +20,7 @@ namespace LazyWelfare.Service
         /// <returns></returns>
         public static IPAddress IpFromString(this string ipAddr)
         {
-            byte[] b = IPAddress.Parse(ipAddr).GetAddressBytes();
-            Array.Reverse(b);
-            return new IPAddress(b);
+            return IPAddress.Parse(ipAddr);
         }
 
         /// <summary>

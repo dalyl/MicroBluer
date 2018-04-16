@@ -8,7 +8,7 @@ namespace LazyWelfare.Server.Windows
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            LanService.RecvThread(7788);
+            LanService.RecvThread("127.0.0.1".IpToUint(),7788);
         }
     }
 }

@@ -9,7 +9,14 @@ namespace LazyWelfare.Service
     {
         public static void Register()
         {
-            var message = new LanService.SignalMessage<string>("127.0.0.1".IpFromString(),7788,"Hi ,你好" );
+           
+
+
+            var ip = LanService.GetLocalIP().IpFromString();
+
+
+            //   var message = new LanService.SignalMessage<string>(("10.0.2.2").IpFromString(), 7788,"Hi,11111" );
+            var message = new LanService.BroadcastMessage<string>(7788, "Hi,2222");
             LanService.UdpSend(message);
         }
     }
