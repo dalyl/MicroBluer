@@ -1,13 +1,13 @@
-# Hangfire.JobDomains
+# LazyWelfare
 
 ![MIT License](https://img.shields.io/badge/license-MIT-orange.svg)
 
-LazyWelfare ÀÁÈË¸£Àû£¬ÀÁÈË¾ÍÊÇÎÒ£¬Ò»¸öÓÃÊÖ»úÒ£¿ØµÄµçÄÔµÄ½â¾ö·½°¸...
+LazyWelfare æ‡’äººç¦åˆ©ï¼Œæ‡’äººå°±æ˜¯æˆ‘ï¼Œä¸€ä¸ªç”¨æ‰‹æœºé¥æ§çš„ç”µè„‘çš„è§£å†³æ–¹æ¡ˆ...
 
 ![LazyWelfare]
 
 ## Features
-´ıÍêÉÆ 
+å¾…å®Œå–„ 
 
 ## Setup
 
