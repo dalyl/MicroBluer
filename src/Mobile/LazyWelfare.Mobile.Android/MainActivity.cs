@@ -9,7 +9,7 @@ using LazyWelfare.Service;
 
 namespace LazyWelfare.Mobile.Android
 {
-    [Activity(Label = "懒人触手", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Icon = "@drawable/blue_face", Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

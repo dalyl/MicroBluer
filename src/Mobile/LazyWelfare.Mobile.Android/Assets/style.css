@@ -11,6 +11,23 @@
     src: url(ComicSansMSRegular.ttf);
 }
 
-input {
- 	width:100%;
+body {
+    background-image: url("images/33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg");
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+}
+
+.line-section {
+    margin: 10px 0px;
+}
+
+.item-success {
+    color: #3c763d;
+    background-color: #dff0d8;
 }
