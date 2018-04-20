@@ -65,29 +65,17 @@ WriteLiteral(" />\r\n    <script");
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
+        $(function(){
 
-        // This javascript method calls C# by setting the browser
-        // to a URL with a custom scheme that is registered in C#.
-        // All values are sent to C# as part of the querystring
-        function InvokeCSharpWithFormValues(elm) {
-            var qs = """";
-            var elms = elm.form.elements;
+            $("".ServiceScan"").click(function () {
 
-            for (var i = 0; i < elms.length; i++) {
-                qs += ""&"" + elms[i].name + ""="" + elms[i].value;
-            }
+              //  location.href = ""hybrid:"" + elm.name + ""?"" + qs;
+                location.href = ""scan:test"";
 
-            if (elms.length > 0)
-                qs = qs.substring(1);
+            });
 
-            location.href = ""hybrid:"" + elm.name + ""?"" + qs;
-        }
-
-        // This javascript method is called from C#
-        function SetLabelText(text) {
-            var elm = document.getElementById('label');
-            elm.innerHTML = text;
-        }
+        })
+       
     </script>
 </head>
 <body>
@@ -137,7 +125,7 @@ WriteLiteral(" href=\"#\"");
 WriteLiteral(">");
 
 
-#line 47 "HomeView.cshtml"
+#line 35 "HomeView.cshtml"
                                         Write(Model.Header);
 
 
@@ -347,9 +335,9 @@ WriteLiteral(" class=\"list-group-item item-success\"");
 
 WriteLiteral(">服务主机</li>\r\n            <li");
 
-WriteLiteral(" class=\"list-group-item item-success\"");
+WriteLiteral(" class=\"list-group-item item-success ServiceScan\"");
 
-WriteLiteral(">Vestibulum at eros</li>\r\n        </ul>\r\n    </div>\r\n\r\n\r\n    <div");
+WriteLiteral(">扫一扫</li>\r\n        </ul>\r\n    </div>\r\n\r\n\r\n    <div");
 
 WriteLiteral(" class=\"line-section\"");
 

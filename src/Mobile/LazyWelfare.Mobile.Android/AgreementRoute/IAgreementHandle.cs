@@ -8,14 +8,14 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Webkit;
 using Android.Widget;
 
-namespace LazyWelfare.Mobile.Android.Models
+namespace LazyWelfare.Mobile.Android
 {
-    public  class HomeModel
+    public interface IAgreementHandle
     {
-
-        public string Header { get; set; }
-
+        void Init(WebView webView, string url);
+        bool Result { get; }
     }
 }

@@ -15,7 +15,7 @@ namespace LazyWelfare.Mobile.Android
 {
     [Activity(MainLauncher = true, NoHistory = true, Theme = "@style/Theme.Splash",
       ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class SplashScreen : Activity
+    public class SplashScreenActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {

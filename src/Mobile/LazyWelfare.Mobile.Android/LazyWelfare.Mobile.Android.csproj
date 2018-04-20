@@ -48,21 +48,36 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastAndroidCamera, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\FastAndroidCamera.2.0.0\lib\MonoAndroid403\FastAndroidCamera.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="zxing.monoandroid, Version=0.14.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ZXing.Net.Mobile.1.4.6\lib\MonoAndroid\zxing.monoandroid.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ZXing.Net.Mobile.1.4.6\lib\MonoAndroid\ZXing.Net.Mobile.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="Activity\MainActivity.cs" />
+    <Compile Include="AgreementRoute\Agreement.cs" />
+    <Compile Include="AgreementRoute\AgreementRouteClient.cs" />
+    <Compile Include="AgreementRoute\HybridAgreement.cs" />
+    <Compile Include="AgreementRoute\IAgreementHandle.cs" />
+    <Compile Include="AgreementRoute\ScanAgreement.cs" />
     <Compile Include="Models\Doll.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SplashScreen.cs" />
+    <Compile Include="Activity\ScanActivity.cs" />
+    <Compile Include="Activity\SplashScreenActivity.cs" />
     <Compile Include="Views\DollListView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,9 +101,13 @@
     <AndroidAsset Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <AndroidAsset Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <AndroidAsset Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\Scan.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <None Include="Views\DollListView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>DollListView.cs</LastGenOutput>

@@ -7,29 +7,17 @@
     <link rel="stylesheet" href="bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript">
+        $(function(){
 
-        // This javascript method calls C# by setting the browser
-        // to a URL with a custom scheme that is registered in C#.
-        // All values are sent to C# as part of the querystring
-        function InvokeCSharpWithFormValues(elm) {
-            var qs = "";
-            var elms = elm.form.elements;
+            $(".ServiceScan").click(function () {
 
-            for (var i = 0; i < elms.length; i++) {
-                qs += "&" + elms[i].name + "=" + elms[i].value;
-            }
+              //  location.href = "hybrid:" + elm.name + "?" + qs;
+                location.href = "scan:test";
 
-            if (elms.length > 0)
-                qs = qs.substring(1);
+            });
 
-            location.href = "hybrid:" + elm.name + "?" + qs;
-        }
-
-        // This javascript method is called from C#
-        function SetLabelText(text) {
-            var elm = document.getElementById('label');
-            elm.innerHTML = text;
-        }
+        })
+       
     </script>
 </head>
 <body>
@@ -128,7 +116,7 @@
                 <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Cras justo odio
             </li>
             <li class="list-group-item item-success">服务主机</li>
-            <li class="list-group-item item-success">Vestibulum at eros</li>
+            <li class="list-group-item item-success ServiceScan">扫一扫</li>
         </ul>
     </div>
 

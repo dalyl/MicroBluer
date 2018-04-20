@@ -26,6 +26,9 @@ namespace LazyWelfare.Mobile.Android
 		
 		public static void UpdateIdValues()
 		{
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::LazyWelfare.Mobile.Android.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::LazyWelfare.Mobile.Android.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::LazyWelfare.Mobile.Android.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -66,6 +69,9 @@ namespace LazyWelfare.Mobile.Android
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f060001
+			public const int contentFrame = 2131099649;
+			
 			// aapt resource value: 0x7f060000
 			public const int webView = 2131099648;
 			
@@ -84,6 +90,15 @@ namespace LazyWelfare.Mobile.Android
 			
 			// aapt resource value: 0x7f030000
 			public const int Main = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Scan = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int zxingscanneractivitylayout = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int zxingscannerfragmentlayout = 2130903043;
 			
 			static Layout()
 			{
