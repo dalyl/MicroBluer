@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace LazyWelfare.AndroidMobile
 {
-    public interface IAgreementHandle
+    public interface IAgreementHandler
     {
         void Init(WebView webView, string url);
         bool Result { get; }

@@ -14,7 +14,7 @@ using Android.Widget;
 namespace LazyWelfare.AndroidMobile
 {
 
-    public class HybridAgreement : IAgreementHandle
+    public class HybridAgreement : IAgreementHandler
     {
 
         public bool Result { get; private set; } = false;

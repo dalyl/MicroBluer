@@ -20,18 +20,19 @@ namespace LazyWelfare.AndroidMobile
         {
             var index = url.IndexOf(":");
             var tag = url.Substring(0,index);
+            var content = url.Substring(index + 1);
             var scheme = Agreement.none;
             if (Enum.TryParse(tag, out scheme) == false) return false;
             switch (scheme)
             {
-                case Agreement.scan: return ThrowHandle<ScanAgreement>(webView, url);
-                case Agreement.hybrid: return ThrowHandle<HybridAgreement>(webView, url);
+                case Agreement.scan: return ThrowHandle<ScanAgreement>(webView, content);
+                case Agreement.hybrid: return ThrowHandle<HybridAgreement>(webView, content);
                 default: return false;
             }
         }
         
 
-        bool ThrowHandle<T>(WebView webView, string url) where T : IAgreementHandle, new()
+        bool ThrowHandle<T>(WebView webView, string url) where T : IAgreementHandler, new()
         {
             var handler = new T();
             handler.Init(webView, url);

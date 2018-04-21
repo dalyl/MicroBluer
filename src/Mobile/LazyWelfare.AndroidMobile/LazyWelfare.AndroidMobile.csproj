@@ -67,10 +67,12 @@
   <ItemGroup>
     <Compile Include="Activity\MainActivity.cs" />
     <Compile Include="AgreementRoute\Agreement.cs" />
+    <Compile Include="AgreementRoute\AgreementHandler.cs" />
     <Compile Include="AgreementRoute\AgreementRouteClient.cs" />
     <Compile Include="AgreementRoute\HybridAgreement.cs" />
-    <Compile Include="AgreementRoute\IAgreementHandle.cs" />
+    <Compile Include="AgreementRoute\IAgreementHandler.cs" />
     <Compile Include="AgreementRoute\ScanAgreement.cs" />
+    <Compile Include="Logic\ServiceStore.cs" />
     <Compile Include="Models\Doll.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Model1.cs" />
@@ -78,26 +80,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activity\ScanActivity.cs" />
     <Compile Include="Activity\SplashScreenActivity.cs" />
-    <Compile Include="Views\DollListView.cs" />
     <Compile Include="Views\HomeView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeView.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\_Layout.cs" />
     <Compile Include="Views\RazorView.cs">
       <DependentUpon>RazorView.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\ServiceHost.cs">
+    <Compile Include="Views\ServiceHostView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceHost.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\_Layout.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Layout.cshtml</DependentUpon>
+      <DependentUpon>ServiceHostView.cshtml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -114,11 +111,6 @@
     <AndroidResource Include="Resources\layout\Scan.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <None Include="Views\DollListView.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>DollListView.cs</LastGenOutput>
-      <SubType>None</SubType>
-    </None>
     <None Include="Views\HomeView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>HomeView.cs</LastGenOutput>
@@ -128,17 +120,12 @@
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>RazorView.cs</LastGenOutput>
     </None>
-    <None Include="Views\ServiceHost.cshtml">
+    <None Include="Views\ServiceHostView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>ServiceHost.cs</LastGenOutput>
+      <LastGenOutput>ServiceHostView.cs</LastGenOutput>
       <SubType>None</SubType>
     </None>
     <None Include="Views\web.config" />
-    <None Include="Views\_Layout.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>_Layout.cs</LastGenOutput>
-      <SubType>None</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

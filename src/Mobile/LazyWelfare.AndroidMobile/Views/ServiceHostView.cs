@@ -18,12 +18,12 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.753")]
-public partial class ServiceHost : ServiceHostBase
+public partial class ServiceHostView : ServiceHostViewBase
 {
 
 #line hidden
 
-#line 1 "ServiceHost.cshtml"
+#line 1 "ServiceHostView.cshtml"
 public LazyWelfare.AndroidMobile.Models.HomeModel Model { get; set; }
 
 #line default
@@ -32,284 +32,36 @@ public LazyWelfare.AndroidMobile.Models.HomeModel Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("<html>\r\n<head>\r\n    <meta");
 
-WriteLiteral(" charset=\"utf-8\"");
-
-WriteLiteral(" />\r\n    <meta");
-
-WriteLiteral(" name=\"viewport\"");
-
-WriteLiteral(" content=\"width=device-width, initial-scale=1.0\"");
-
-WriteLiteral(" />\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" href=\"bootstrap/bootstrap.css\"");
-
-WriteLiteral(" />\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" href=\"bootstrap/bootstrap-theme.css\"");
-
-WriteLiteral(" />\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" href=\"style.css\"");
-
-WriteLiteral(" />\r\n</head>\r\n<body>\r\n\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"navbar-header navbar-default\"");
-
-WriteLiteral(">\r\n            <button");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"navbar-toggle collapsed\"");
-
-WriteLiteral(" data-toggle=\"collapse\"");
-
-WriteLiteral(" data-target=\"#bs-example-navbar-collapse-1\"");
-
-WriteLiteral("\r\n                    aria-expanded=\"false\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"sr-only\"");
-
-WriteLiteral(">Toggle navigation</span>\r\n                <span");
-
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n                <span");
-
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n                <span");
-
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n            </button>\r\n            <a");
-
-WriteLiteral(" class=\"navbar-brand\"");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">");
-
-
-#line 21 "ServiceHost.cshtml"
-                                        Write(Model.Header);
+#line 3 "ServiceHostView.cshtml"
+  
+    WriteLiteral(_Layout.BeginHtml);
+    WriteLiteral(_Layout.RenderHeader());
+    WriteLiteral(_Layout.BeginBody);
+    WriteLiteral(_Layout.RenderMenuContainer(Model));
 
 
 #line default
 #line hidden
-WriteLiteral("</a>\r\n        </div>\r\n        <div");
-
-WriteLiteral(" class=\"navbar-collapse collapse\"");
-
-WriteLiteral(" id=\"bs-example-navbar-collapse-1\"");
-
-WriteLiteral(" aria-expanded=\"false\"");
-
-WriteLiteral(" style=\"height: 1px;\"");
-
-WriteLiteral(">\r\n            <ul");
-
-WriteLiteral(" class=\"nav navbar-nav\"");
-
-WriteLiteral(">\r\n                <li");
-
-WriteLiteral(" class=\"active\"");
-
-WriteLiteral(">\r\n                    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">\r\n                        Link\r\n                        <span");
-
-WriteLiteral(" class=\"sr-only\"");
-
-WriteLiteral(">(current)</span>\r\n                    </a>\r\n                </li>\r\n             " +
-"   <li>\r\n                    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Link</a>\r\n                </li>\r\n                <li");
-
-WriteLiteral(" class=\"dropdown\"");
-
-WriteLiteral(">\r\n                    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"dropdown-toggle\"");
-
-WriteLiteral(" data-toggle=\"dropdown\"");
-
-WriteLiteral(" role=\"button\"");
-
-WriteLiteral(" aria-haspopup=\"true\"");
-
-WriteLiteral(" aria-expanded=\"false\"");
-
-WriteLiteral(">\r\n                        Dropdown\r\n                        <span");
-
-WriteLiteral(" class=\"caret\"");
-
-WriteLiteral("></span>\r\n                    </a>\r\n                    <ul");
-
-WriteLiteral(" class=\"dropdown-menu\"");
-
-WriteLiteral(">\r\n                        <li>\r\n                            <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Action</a>\r\n                        </li>\r\n                        <li>\r\n       " +
-"                     <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Another action</a>\r\n                        </li>\r\n                        <li>\r" +
-"\n                            <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Something else here</a>\r\n                        </li>\r\n                        " +
-"<li");
-
-WriteLiteral(" role=\"separator\"");
-
-WriteLiteral(" class=\"divider\"");
-
-WriteLiteral("></li>\r\n                        <li>\r\n                            <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Separated link</a>\r\n                        </li>\r\n                        <li");
-
-WriteLiteral(" role=\"separator\"");
-
-WriteLiteral(" class=\"divider\"");
-
-WriteLiteral("></li>\r\n                        <li>\r\n                            <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">One more separated link</a>\r\n                        </li>\r\n                    " +
-"</ul>\r\n                </li>\r\n            </ul>\r\n            <form");
-
-WriteLiteral(" class=\"navbar-form navbar-left\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                    <input");
-
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" class=\"form-control\"");
-
-WriteLiteral(" placeholder=\"Search\"");
-
-WriteLiteral(">\r\n                </div>\r\n                <button");
-
-WriteLiteral(" type=\"submit\"");
-
-WriteLiteral(" class=\"btn btn-default\"");
-
-WriteLiteral(">Submit</button>\r\n            </form>\r\n            <ul");
-
-WriteLiteral(" class=\"nav navbar-nav navbar-right\"");
-
-WriteLiteral(">\r\n                <li>\r\n                    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Link</a>\r\n                </li>\r\n                <li");
-
-WriteLiteral(" class=\"dropdown\"");
-
-WriteLiteral(">\r\n                    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"dropdown-toggle\"");
-
-WriteLiteral(" data-toggle=\"dropdown\"");
-
-WriteLiteral(" role=\"button\"");
-
-WriteLiteral(" aria-haspopup=\"true\"");
-
-WriteLiteral(" aria-expanded=\"false\"");
-
-WriteLiteral(">\r\n                        Dropdown\r\n                        <span");
-
-WriteLiteral(" class=\"caret\"");
-
-WriteLiteral("></span>\r\n                    </a>\r\n                    <ul");
-
-WriteLiteral(" class=\"dropdown-menu\"");
-
-WriteLiteral(">\r\n                        <li>\r\n                            <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Action</a>\r\n                        </li>\r\n                        <li>\r\n       " +
-"                     <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Another action</a>\r\n                        </li>\r\n                        <li>\r" +
-"\n                            <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Something else here</a>\r\n                        </li>\r\n                        " +
-"<li");
-
-WriteLiteral(" role=\"separator\"");
-
-WriteLiteral(" class=\"divider\"");
-
-WriteLiteral("></li>\r\n                        <li>\r\n                            <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Separated link</a>\r\n                        </li>\r\n                    </ul>\r\n  " +
-"              </li>\r\n            </ul>\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <div" +
-"");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n\r\n    <div");
+WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" class=\"line-section\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(">\r\n            <span");
 
 WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>服务设置\r\n            </div>\r\n            <a");
+WriteLiteral("></span>服务设置\r\n        </div>\r\n        <a");
 
 WriteLiteral(" href=\"javascript:void(0);\"");
 
@@ -317,7 +69,7 @@ WriteLiteral(" class=\"list-group-item item-success HybridLink\"");
 
 WriteLiteral(" data-hybrid=\"servicehost\"");
 
-WriteLiteral(">服务主机</a>\r\n            <a");
+WriteLiteral(">服务主机</a>\r\n        <a");
 
 WriteLiteral(" href=\"javascript:void(0);\"");
 
@@ -325,88 +77,101 @@ WriteLiteral(" class=\"list-group-item item-success ServiceScan\"");
 
 WriteLiteral(" data-hybrid=\"servicehost\"");
 
-WriteLiteral(">扫一扫</a>\r\n        </div>\r\n    </div>\r\n    <div");
+WriteLiteral(">扫一扫</a>\r\n    </div>\r\n</div>\r\n<div");
 
 WriteLiteral(" class=\"line-section\"");
 
-WriteLiteral(">\r\n        <ul");
+WriteLiteral(">\r\n    <ul");
 
 WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(">\r\n            <li");
+WriteLiteral(">\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(">\r\n            <span");
 
 WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>音量调节\r\n            </li>\r\n            <li");
+WriteLiteral("></span>音量调节\r\n        </li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">放大</li>\r\n            <li");
+WriteLiteral(">放大</li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">缩小</li>\r\n        </ul>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral(">缩小</li>\r\n    </ul>\r\n</div>\r\n\r\n<div");
 
 WriteLiteral(" class=\"line-section\"");
 
-WriteLiteral(">\r\n        <ul");
+WriteLiteral(">\r\n    <ul");
 
 WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(">\r\n            <li");
+WriteLiteral(">\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(">\r\n            <span");
 
 WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span> 操作命令\r\n            </li>\r\n            <li");
+WriteLiteral("></span> 操作命令\r\n        </li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item item-success\"");
 
-WriteLiteral(">关机</li>\r\n            <li");
+WriteLiteral(">关机</li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item item-success\"");
 
-WriteLiteral(">睡眠</li>\r\n        </ul>\r\n    </div>\r\n\r\n\r\n    <script");
+WriteLiteral(">睡眠</li>\r\n    </ul>\r\n</div>\r\n\r\n\r\n");
 
-WriteLiteral(" src=\"jquery.min.js\"");
 
-WriteLiteral("></script>\r\n    <script");
+#line 40 "ServiceHostView.cshtml"
+  
+    WriteLiteral(_Layout.RenderScript());
 
-WriteLiteral(" src=\"bootstrap/bootstrap.min.js\"");
 
-WriteLiteral("></script>\r\n    <script");
+#line default
+#line hidden
+WriteLiteral("\r\n\r\n<script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
-        $(function () {
+    $(function () {
 
-            $("".ServiceScan"").click(function () {
-                var url = $(this).data(""hybrid"");
-                location.href = ""scan:"" + url;
-            });
+        $("".ServiceScan"").click(function () {
+            var url = $(this).data(""hybrid"");
+            location.href = ""scan:"" + url;
+        });
 
-            $("".HybridLink"").click(function () {
-                var url = $(this).data(""hybrid"");
-                location.href = ""hybrid:"" + url;
-            });
+        $("".HybridLink"").click(function () {
+            var url = $(this).data(""hybrid"");
+            location.href = ""hybrid:"" + url;
+        });
 
-        })
+    })
 
-    </script>
-</body>
-</html>	");
+</script>
+
+");
+
+
+#line 61 "ServiceHostView.cshtml"
+  
+    WriteLiteral(_Layout.EndBody);
+    WriteLiteral(_Layout.EndHtml);
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n");
 
 }
 }
@@ -414,7 +179,7 @@ WriteLiteral(@">
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class ServiceHostBase
+public abstract class ServiceHostViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

@@ -23,12 +23,22 @@ public partial class HomeView : HomeViewBase
 
 #line hidden
 
+#line 1 "HomeView.cshtml"
+public LazyWelfare.AndroidMobile.Models.HomeModel Model { get; set; }
+
+#line default
+#line hidden
+
+
 public override void Execute()
 {
 
-#line 1 "HomeView.cshtml"
+#line 3 "HomeView.cshtml"
   
-    Layout = "~/Views/_Layout.cshtml"; ;
+    WriteLiteral(_Layout.BeginHtml);
+    WriteLiteral(_Layout.RenderHeader());
+    WriteLiteral(_Layout.BeginBody);
+    WriteLiteral(_Layout.RenderMenuContainer(Model));
 
 
 #line default
@@ -119,33 +129,49 @@ WriteLiteral(">关机</li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item item-success\"");
 
-WriteLiteral(">睡眠</li>\r\n    </ul>\r\n</div>\r\n\r\n");
+WriteLiteral(">睡眠</li>\r\n    </ul>\r\n</div>\r\n\r\n\r\n");
 
-DefineSection("FootScript", () => {
 
-WriteLiteral("\r\n    <script");
+#line 40 "HomeView.cshtml"
+  
+    WriteLiteral(_Layout.RenderScript());
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n\r\n<script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
-        $(function () {
+    $(function () {
 
-            $("".ServiceScan"").click(function () {
-                var url = $(this).data(""hybrid"");
-                location.href = ""scan:"" + url;
-            });
+        $("".ServiceScan"").click(function () {
+            var url = $(this).data(""hybrid"");
+            location.href = ""scan:"" + url;
+        });
 
-            $("".HybridLink"").click(function () {
-                var url = $(this).data(""hybrid"");
-                location.href = ""hybrid:"" + url;
-            });
+        $("".HybridLink"").click(function () {
+            var url = $(this).data(""hybrid"");
+            location.href = ""hybrid:"" + url;
+        });
 
-        })
+    })
 
-    </script>
+</script>
+
 ");
 
-});
+
+#line 61 "HomeView.cshtml"
+  
+    WriteLiteral(_Layout.EndBody);
+    WriteLiteral(_Layout.EndHtml);
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n");
 
 }
 }

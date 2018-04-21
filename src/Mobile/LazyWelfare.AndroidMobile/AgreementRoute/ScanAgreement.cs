@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,33 +10,16 @@ using Android.Runtime;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
+using LazyWelfare.AndroidMobile.Models;
+using LazyWelfare.AndroidMobile.Views;
 using ZXing;
 using ZXing.Mobile;
 
 namespace LazyWelfare.AndroidMobile
 {
-    public class ScanAgreement : IAgreementHandle
+    public class ScanAgreement : AgreementHandler,IAgreementHandler
     {
-        public bool Result { get; private set; } = false;
-
-        public Context Activity { get; private set; }
-
-        public WebView WebBrower { get; private set; }
-
-        public string RequestContent { get;private set; }
-
-        public void Init(WebView webView, string url)
-        {
-            WebBrower = webView;
-            Activity = WebBrower.Context;
-            RequestContent = url;
-            InitScan();
-          //  webView.Context.StartActivity(typeof(ScanActivity));
-            Result = true;
-        }
-
-
-        private async void InitScan()
+        protected async override Task Invoke()
         {
             try
             {
@@ -74,6 +57,7 @@ namespace LazyWelfare.AndroidMobile
             {
                 ScanFail();
             }
+            WebBrower.LoadUrl("javascript:void(0);return false;");
         }
 
 
@@ -85,15 +69,16 @@ namespace LazyWelfare.AndroidMobile
             if (result == null) return false;
             if (string.IsNullOrEmpty(result.Text)) return false;
             string url = result.Text;
-            //若扫描结果包含https:// 或者 http:// 则跳转网页
-            if (url.Contains("https://") || url.Contains("http://"))
+            if (base.RequestContent == "servicehost")
             {
-                Android.Net.Uri uri = Android.Net.Uri.Parse(result.Text);
-                Intent intent = new Intent(Intent.ActionView, uri);
-                Activity.StartActivity(intent);
+                var model = new HomeModel
+                {
+                    Header = "Hello,ss",
+                };
+                var template = new ServiceHostView() { Model = model };
+                var page = template.GenerateString();
+                WebBrower.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
             }
-            var _barcodeFormat = "扫描结果" + result.Text;
-            Toast.MakeText(WebBrower.Context, _barcodeFormat, ToastLength.Short).Show();
             return true;
         }
 
@@ -107,6 +92,25 @@ namespace LazyWelfare.AndroidMobile
         {
             Toast.MakeText(Activity, "扫描失败", ToastLength.Short).Show();
           //  Activity.StartActivity(typeof(MainActivity));
+        }
+
+
+        void Bind(string url)
+        {
+            var _barcodeFormat = "扫描结果" + url;
+            Toast.MakeText(WebBrower.Context, _barcodeFormat, ToastLength.Short).Show();
+        }
+
+
+        void Other(string url)
+        {
+            //若扫描结果包含https:// 或者 http:// 则跳转网页
+            if (url.Contains("https://") || url.Contains("http://"))
+            {
+                Android.Net.Uri uri = Android.Net.Uri.Parse(url);
+                Intent intent = new Intent(Intent.ActionView, uri);
+                Activity.StartActivity(intent);
+            }
         }
     }
 }
