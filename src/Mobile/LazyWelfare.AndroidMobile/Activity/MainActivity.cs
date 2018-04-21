@@ -2,16 +2,16 @@
 using Android.Widget;
 using Android.OS;
 using Android.Webkit;
-using LazyWelfare.Mobile.Android.Models;
+using LazyWelfare.AndroidMobile.Models;
 using System.Collections.Generic;
 using LazyWelfare.Service;
 using Android.Content;
 using System;
-using LazyWelfare.Mobile.Android.Views;
+using LazyWelfare.AndroidMobile.Views;
 
-namespace LazyWelfare.Mobile.Android
+namespace LazyWelfare.AndroidMobile
 {
-
+    //LazyWelfare.AndroidMobile
     [Activity(Label = "@string/app_name", Icon = "@drawable/blue_face", Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity : Activity
     {

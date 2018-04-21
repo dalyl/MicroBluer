@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace LazyWelfare.Mobile.Android
+namespace LazyWelfare.AndroidMobile
 {
     [Activity(MainLauncher = true, NoHistory = true, Theme = "@style/Theme.Splash",
       ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

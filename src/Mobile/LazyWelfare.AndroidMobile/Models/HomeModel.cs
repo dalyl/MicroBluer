@@ -10,10 +10,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace LazyWelfare.Mobile.Android.Models
+namespace LazyWelfare.AndroidMobile.Models
 {
-    public class Doll
+    public  class HomeModel
     {
-        public string Name { get; set; }
+
+        public string Header { get; set; }
+
     }
 }

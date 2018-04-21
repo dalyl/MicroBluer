@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LazyWelfare.Mobile.Android.Views
+namespace LazyWelfare.AndroidMobile.Views
 {
 using System;
 using System.Collections.Generic;
@@ -18,13 +18,13 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.753")]
-public partial class HomeView : HomeViewBase
+public partial class ServiceHost : ServiceHostBase
 {
 
 #line hidden
 
-#line 1 "HomeView.cshtml"
-public LazyWelfare.Mobile.Android.Models.HomeModel Model { get; set; }
+#line 1 "ServiceHost.cshtml"
+public LazyWelfare.AndroidMobile.Models.HomeModel Model { get; set; }
 
 #line default
 #line hidden
@@ -60,31 +60,11 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" href=\"style.css\"");
 
-WriteLiteral(" />\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(@">
-        $(function(){
-
-            $("".ServiceScan"").click(function () {
-
-              //  location.href = ""hybrid:"" + elm.name + ""?"" + qs;
-                location.href = ""scan:test"";
-
-            });
-
-        })
-       
-    </script>
-</head>
-<body>
-
-    <div");
+WriteLiteral(" />\r\n</head>\r\n<body>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n\r\n        <div");
+WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"navbar-header navbar-default\"");
 
@@ -125,13 +105,13 @@ WriteLiteral(" href=\"#\"");
 WriteLiteral(">");
 
 
-#line 35 "HomeView.cshtml"
+#line 21 "ServiceHost.cshtml"
                                         Write(Model.Header);
 
 
 #line default
 #line hidden
-WriteLiteral("</a>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</a>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"navbar-collapse collapse\"");
 
@@ -315,11 +295,11 @@ WriteLiteral("></div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"line-section\"");
 
-WriteLiteral(">\r\n        <ul");
+WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(">\r\n            <li");
+WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"list-group-item\"");
 
@@ -329,15 +309,23 @@ WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span> Cras justo odio\r\n            </li>\r\n            <li");
+WriteLiteral("></span>服务设置\r\n            </div>\r\n            <a");
 
-WriteLiteral(" class=\"list-group-item item-success\"");
+WriteLiteral(" href=\"javascript:void(0);\"");
 
-WriteLiteral(">服务主机</li>\r\n            <li");
+WriteLiteral(" class=\"list-group-item item-success HybridLink\"");
+
+WriteLiteral(" data-hybrid=\"servicehost\"");
+
+WriteLiteral(">服务主机</a>\r\n            <a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
 
 WriteLiteral(" class=\"list-group-item item-success ServiceScan\"");
 
-WriteLiteral(">扫一扫</li>\r\n        </ul>\r\n    </div>\r\n\r\n\r\n    <div");
+WriteLiteral(" data-hybrid=\"servicehost\"");
+
+WriteLiteral(">扫一扫</a>\r\n        </div>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"line-section\"");
 
@@ -359,11 +347,11 @@ WriteLiteral("></span>音量调节\r\n            </li>\r\n            <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">Porta ac consectetur ac</li>\r\n            <li");
+WriteLiteral(">放大</li>\r\n            <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">Vestibulum at eros</li>\r\n        </ul>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral(">缩小</li>\r\n        </ul>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"line-section\"");
 
@@ -381,7 +369,7 @@ WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span> Cras justo odio\r\n            </li>\r\n            <li");
+WriteLiteral("></span> 操作命令\r\n            </li>\r\n            <li");
 
 WriteLiteral(" class=\"list-group-item item-success\"");
 
@@ -397,7 +385,28 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"bootstrap/bootstrap.min.js\"");
 
-WriteLiteral("></script>\r\n</body>\r\n</html>\t");
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(@">
+        $(function () {
+
+            $("".ServiceScan"").click(function () {
+                var url = $(this).data(""hybrid"");
+                location.href = ""scan:"" + url;
+            });
+
+            $("".HybridLink"").click(function () {
+                var url = $(this).data(""hybrid"");
+                location.href = ""hybrid:"" + url;
+            });
+
+        })
+
+    </script>
+</body>
+</html>	");
 
 }
 }
@@ -405,7 +414,7 @@ WriteLiteral("></script>\r\n</body>\r\n</html>\t");
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class HomeViewBase
+public abstract class ServiceHostBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

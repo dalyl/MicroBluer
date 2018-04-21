@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LazyWelfare.Mobile.Android.Views
+namespace LazyWelfare.AndroidMobile.Views
 {
 using System;
 using System.Collections.Generic;
@@ -18,13 +18,13 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.753")]
-public partial class DollListView : DollListViewBase
+public partial class _Layout : _LayoutBase
 {
 
 #line hidden
 
-#line 1 "DollListView.cshtml"
-public List<LazyWelfare.Mobile.Android.Models.Doll> Model { get; set; }
+#line 1 "_Layout.cshtml"
+public LazyWelfare.AndroidMobile.Models.HomeModel Model { get; set; }
 
 #line default
 #line hidden
@@ -32,109 +32,296 @@ public List<LazyWelfare.Mobile.Android.Models.Doll> Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("<html>\r\n<head>\r\n    <link");
+WriteLiteral("<html>\r\n<head>\r\n    <meta");
+
+WriteLiteral(" charset=\"utf-8\"");
+
+WriteLiteral(" />\r\n    <meta");
+
+WriteLiteral(" name=\"viewport\"");
+
+WriteLiteral(" content=\"width=device-width, initial-scale=1.0\"");
+
+WriteLiteral(" />\r\n    <link");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" href=\"bootstrap/bootstrap.css\"");
+
+WriteLiteral(" />\r\n    <link");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" href=\"bootstrap/bootstrap-theme.css\"");
+
+WriteLiteral(" />\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" href=\"style.css\"");
 
-WriteLiteral(" />\r\n    <script");
+WriteLiteral(" />\r\n</head>\r\n<body>\r\n\r\n    <div");
 
-WriteLiteral(" type=\"text/javascript\"");
+WriteLiteral(" class=\"container\"");
 
-WriteLiteral(@">
+WriteLiteral(">\r\n        <div");
 
-        // This javascript method calls C# by setting the browser
-        // to a URL with a custom scheme that is registered in C#.
-        // All values are sent to C# as part of the querystring
-        function InvokeCSharpWithFormValues(elm) {
-            var qs = """";
-            var elms = elm.form.elements;
+WriteLiteral(" class=\"navbar-header navbar-default\"");
 
-            for (var i = 0; i < elms.length; i++) {
-                qs += ""&"" + elms[i].name + ""="" + elms[i].value;
-            }
+WriteLiteral(">\r\n            <button");
 
-            if (elms.length > 0)
-                qs = qs.substring(1);
+WriteLiteral(" type=\"button\"");
 
-            location.href = ""hybrid:"" + elm.name + ""?"" + qs;
-        }
+WriteLiteral(" class=\"navbar-toggle collapsed\"");
 
-        // This javascript method is called from C#
-        function SetLabelText(text) {
-            var elm = document.getElementById('label');
-            elm.innerHTML = text;
-        }
-    </script>
-</head>
-<body>
-    <div");
+WriteLiteral(" data-toggle=\"collapse\"");
 
-WriteLiteral(" data-role=\"page\"");
+WriteLiteral(" data-target=\"#bs-example-navbar-collapse-1\"");
 
-WriteLiteral(" data-theme=\"b\"");
+WriteLiteral("\r\n                    aria-expanded=\"false\"");
 
-WriteLiteral(">\r\n        <form>\r\n\r\n            <div");
+WriteLiteral(">\r\n                <span");
 
-WriteLiteral(" data-role=\"content\"");
+WriteLiteral(" class=\"sr-only\"");
 
-WriteLiteral(">\r\n                <ul>\r\n");
+WriteLiteral(">Toggle navigation</span>\r\n                <span");
 
+WriteLiteral(" class=\"icon-bar\"");
 
-#line 37 "DollListView.cshtml"
-                    
+WriteLiteral("></span>\r\n                <span");
 
-#line default
-#line hidden
+WriteLiteral(" class=\"icon-bar\"");
 
-#line 37 "DollListView.cshtml"
-                     foreach (var one in Model){
+WriteLiteral("></span>\r\n                <span");
 
+WriteLiteral(" class=\"icon-bar\"");
 
-#line default
-#line hidden
-WriteLiteral("                    <li>\r\n                        <h1");
+WriteLiteral("></span>\r\n            </button>\r\n            <a");
 
-WriteLiteral(" id=\"label\"");
+WriteLiteral(" class=\"navbar-brand\"");
+
+WriteLiteral(" href=\"#\"");
 
 WriteLiteral(">");
 
 
-#line 39 "DollListView.cshtml"
-                                  Write(one.Name);
+#line 21 "_Layout.cshtml"
+                                        Write(Model.Header);
 
 
 #line default
 #line hidden
-WriteLiteral("</h1>\r\n                    </li>\r\n");
+WriteLiteral("</a>\r\n        </div>\r\n        <div");
 
+WriteLiteral(" class=\"navbar-collapse collapse\"");
 
-#line 41 "DollListView.cshtml"
-                    }
+WriteLiteral(" id=\"bs-example-navbar-collapse-1\"");
 
+WriteLiteral(" aria-expanded=\"false\"");
 
-#line default
-#line hidden
-WriteLiteral("                </ul>\r\n\r\n                <input");
+WriteLiteral(" style=\"height: 1px;\"");
+
+WriteLiteral(">\r\n            <ul");
+
+WriteLiteral(" class=\"nav navbar-nav\"");
+
+WriteLiteral(">\r\n                <li");
+
+WriteLiteral(" class=\"active\"");
+
+WriteLiteral(">\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">\r\n                        Link\r\n                        <span");
+
+WriteLiteral(" class=\"sr-only\"");
+
+WriteLiteral(">(current)</span>\r\n                    </a>\r\n                </li>\r\n             " +
+"   <li>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Link</a>\r\n                </li>\r\n                <li");
+
+WriteLiteral(" class=\"dropdown\"");
+
+WriteLiteral(">\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"dropdown-toggle\"");
+
+WriteLiteral(" data-toggle=\"dropdown\"");
+
+WriteLiteral(" role=\"button\"");
+
+WriteLiteral(" aria-haspopup=\"true\"");
+
+WriteLiteral(" aria-expanded=\"false\"");
+
+WriteLiteral(">\r\n                        Dropdown\r\n                        <span");
+
+WriteLiteral(" class=\"caret\"");
+
+WriteLiteral("></span>\r\n                    </a>\r\n                    <ul");
+
+WriteLiteral(" class=\"dropdown-menu\"");
+
+WriteLiteral(">\r\n                        <li>\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Action</a>\r\n                        </li>\r\n                        <li>\r\n       " +
+"                     <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Another action</a>\r\n                        </li>\r\n                        <li>\r" +
+"\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Something else here</a>\r\n                        </li>\r\n                        " +
+"<li");
+
+WriteLiteral(" role=\"separator\"");
+
+WriteLiteral(" class=\"divider\"");
+
+WriteLiteral("></li>\r\n                        <li>\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Separated link</a>\r\n                        </li>\r\n                        <li");
+
+WriteLiteral(" role=\"separator\"");
+
+WriteLiteral(" class=\"divider\"");
+
+WriteLiteral("></li>\r\n                        <li>\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">One more separated link</a>\r\n                        </li>\r\n                    " +
+"</ul>\r\n                </li>\r\n            </ul>\r\n            <form");
+
+WriteLiteral(" class=\"navbar-form navbar-left\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                    <input");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" id=\"textbox\"");
+WriteLiteral(" class=\"form-control\"");
 
-WriteLiteral(" name=\"textbox\"");
+WriteLiteral(" placeholder=\"Search\"");
 
-WriteLiteral(" />\r\n\r\n                <input");
+WriteLiteral(">\r\n                </div>\r\n                <button");
 
-WriteLiteral(" type=\"button\"");
+WriteLiteral(" type=\"submit\"");
 
-WriteLiteral(" name=\"UpdateLabel\"");
+WriteLiteral(" class=\"btn btn-default\"");
 
-WriteLiteral(" value=\"Click\"");
+WriteLiteral(">Submit</button>\r\n            </form>\r\n            <ul");
 
-WriteLiteral(" onclick=\"InvokeCSharpWithFormValues(this)\"");
+WriteLiteral(" class=\"nav navbar-nav navbar-right\"");
 
-WriteLiteral(" />\r\n\r\n            </div>\r\n\r\n        </form>\r\n    </div>\r\n</body>\r\n</html>\t");
+WriteLiteral(">\r\n                <li>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Link</a>\r\n                </li>\r\n                <li");
+
+WriteLiteral(" class=\"dropdown\"");
+
+WriteLiteral(">\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"dropdown-toggle\"");
+
+WriteLiteral(" data-toggle=\"dropdown\"");
+
+WriteLiteral(" role=\"button\"");
+
+WriteLiteral(" aria-haspopup=\"true\"");
+
+WriteLiteral(" aria-expanded=\"false\"");
+
+WriteLiteral(">\r\n                        Dropdown\r\n                        <span");
+
+WriteLiteral(" class=\"caret\"");
+
+WriteLiteral("></span>\r\n                    </a>\r\n                    <ul");
+
+WriteLiteral(" class=\"dropdown-menu\"");
+
+WriteLiteral(">\r\n                        <li>\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Action</a>\r\n                        </li>\r\n                        <li>\r\n       " +
+"                     <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Another action</a>\r\n                        </li>\r\n                        <li>\r" +
+"\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Something else here</a>\r\n                        </li>\r\n                        " +
+"<li");
+
+WriteLiteral(" role=\"separator\"");
+
+WriteLiteral(" class=\"divider\"");
+
+WriteLiteral("></li>\r\n                        <li>\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Separated link</a>\r\n                        </li>\r\n                    </ul>\r\n  " +
+"              </li>\r\n            </ul>\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <div" +
+"");
+
+WriteLiteral(" class=\"clearfix\"");
+
+WriteLiteral("></div>\r\n\r\n");
+
+WriteLiteral("    ");
+
+
+#line 98 "_Layout.cshtml"
+Write(RenderBody());
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n\r\n    <script");
+
+WriteLiteral(" src=\"jquery.min.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"bootstrap/bootstrap.min.js\"");
+
+WriteLiteral("></script>\r\n");
+
+WriteLiteral("    ");
+
+
+#line 102 "_Layout.cshtml"
+Write(RenderSection("FootScript"));
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n    \r\n</body>\r\n</html>\t");
 
 }
 }
@@ -142,7 +329,7 @@ WriteLiteral(" />\r\n\r\n            </div>\r\n\r\n        </form>\r\n    </div>
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class DollListViewBase
+public abstract class _LayoutBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

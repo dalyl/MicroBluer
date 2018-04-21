@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LazyWelfare.Mobile.Android</RootNamespace>
-    <AssemblyName>LazyWelfare.Mobile.Android</AssemblyName>
+    <RootNamespace>LazyWelfare.AndroidMobile</RootNamespace>
+    <AssemblyName>LazyWelfare.AndroidMobile</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -30,9 +30,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -78,11 +78,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activity\ScanActivity.cs" />
     <Compile Include="Activity\SplashScreenActivity.cs" />
-    <Compile Include="Views\DollListView.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DollListView.cshtml</DependentUpon>
-    </Compile>
+    <Compile Include="Views\DollListView.cs" />
     <Compile Include="Views\HomeView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +88,16 @@
       <DependentUpon>RazorView.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\ServiceHost.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceHost.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_Layout.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -122,7 +128,17 @@
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>RazorView.cs</LastGenOutput>
     </None>
+    <None Include="Views\ServiceHost.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>ServiceHost.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </None>
     <None Include="Views\web.config" />
+    <None Include="Views\_Layout.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>_Layout.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

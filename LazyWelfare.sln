@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{47C29C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{4376E57E-0485-4FD2-B39E-ECDB354354B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.Mobile.Android", "src\Mobile\LazyWelfare.Mobile.Android\LazyWelfare.Mobile.Android.csproj", "{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{490D8C9A-BE18-42D9-9BF0-AF47FE92FA6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.Service", "src\Core\LazyWelfare.Service\LazyWelfare.Service.csproj", "{194258BA-BD69-417B-8773-015471508CB4}"
@@ -19,18 +17,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LazyWelfare.Server", "src\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LazyWelfare.Server.Windows", "src\Server\LazyWelfare.Server.Windows\LazyWelfare.Server.Windows.csproj", "{EF8D90C7-589C-4D46-A91B-23D097714ADC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.AndroidMobile", "src\Mobile\LazyWelfare.AndroidMobile\LazyWelfare.AndroidMobile.csproj", "{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{194258BA-BD69-417B-8773-015471508CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{194258BA-BD69-417B-8773-015471508CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{194258BA-BD69-417B-8773-015471508CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,6 +37,12 @@ Global
 		{EF8D90C7-589C-4D46-A91B-23D097714ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF8D90C7-589C-4D46-A91B-23D097714ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF8D90C7-589C-4D46-A91B-23D097714ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,11 +50,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{47C29C30-D80E-445E-B15C-D913DC673F86} = {67A04D0B-9D81-4F37-8FB7-07E5FFDFB43A}
 		{4376E57E-0485-4FD2-B39E-ECDB354354B1} = {67A04D0B-9D81-4F37-8FB7-07E5FFDFB43A}
-		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
 		{490D8C9A-BE18-42D9-9BF0-AF47FE92FA6D} = {67A04D0B-9D81-4F37-8FB7-07E5FFDFB43A}
 		{194258BA-BD69-417B-8773-015471508CB4} = {490D8C9A-BE18-42D9-9BF0-AF47FE92FA6D}
 		{4997BBAE-F7D9-430B-B03B-9B040479E84D} = {47C29C30-D80E-445E-B15C-D913DC673F86}
 		{EF8D90C7-589C-4D46-A91B-23D097714ADC} = {47C29C30-D80E-445E-B15C-D913DC673F86}
+		{9554FDFE-B123-4F90-B1C8-AF3B6F57C02C} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BAB00A0-1B85-476C-951E-30CB476CE191}

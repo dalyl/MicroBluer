@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Webkit;
 using Android.Widget;
 
-namespace LazyWelfare.Mobile.Android
+namespace LazyWelfare.AndroidMobile
 {
 
     public class HybridAgreement : IAgreementHandle

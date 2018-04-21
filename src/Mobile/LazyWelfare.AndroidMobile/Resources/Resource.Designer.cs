@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("LazyWelfare.Mobile.Android.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("LazyWelfare.AndroidMobile.Resource", IsApplication=true)]
 
-namespace LazyWelfare.Mobile.Android
+namespace LazyWelfare.AndroidMobile
 {
 	
 	
@@ -26,9 +26,9 @@ namespace LazyWelfare.Mobile.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::ZXing.Mobile.Resource.Id.contentFrame = global::LazyWelfare.Mobile.Android.Resource.Id.contentFrame;
-			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::LazyWelfare.Mobile.Android.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::LazyWelfare.Mobile.Android.Resource.Layout.zxingscannerfragmentlayout;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::LazyWelfare.AndroidMobile.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::LazyWelfare.AndroidMobile.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::LazyWelfare.AndroidMobile.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute

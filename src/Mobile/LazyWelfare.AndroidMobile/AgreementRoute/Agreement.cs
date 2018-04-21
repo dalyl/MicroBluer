@@ -10,12 +10,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace LazyWelfare.Mobile.Android.Models
+namespace LazyWelfare.AndroidMobile
 {
-    public  class HomeModel
+    public enum Agreement
     {
-
-        public string Header { get; set; }
-
+        none,
+        hybrid,
+        scan,
     }
 }

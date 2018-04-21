@@ -8,14 +8,12 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Android.Webkit;
 using Android.Widget;
 
-namespace LazyWelfare.Mobile.Android
+namespace LazyWelfare.AndroidMobile.Models
 {
-    public interface IAgreementHandle
+    public class Doll
     {
-        void Init(WebView webView, string url);
-        bool Result { get; }
+        public string Name { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LazyWelfare.Mobile.Android.Models
+namespace LazyWelfare.AndroidMobile.Models
 {
     public class Model1
     {

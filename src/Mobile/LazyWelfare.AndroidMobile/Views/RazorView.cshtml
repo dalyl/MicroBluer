@@ -1,4 +1,4 @@
-﻿@model  List<LazyWelfare.Mobile.Android.Models.Doll>
+﻿@model  LazyWelfare.AndroidMobile.Models.Model1
 <html>
 <head>
     <link rel="stylesheet" href="style.css" />
@@ -33,13 +33,8 @@
         <form>
 
             <div data-role="content">
-                <ul>
-                    @foreach (var one in Model){
-                    <li>
-                        <h1 id="label">@one.Name</h1>
-                    </li>
-                    }
-                </ul>
+
+                <h1 id="label">@Model.Text</h1>
 
                 <input type="text" id="textbox" name="textbox" />
 

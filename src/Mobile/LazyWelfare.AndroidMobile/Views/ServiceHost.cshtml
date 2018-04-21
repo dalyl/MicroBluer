@@ -1,4 +1,4 @@
-﻿@model  LazyWelfare.Mobile.Android.Models.HomeModel
+﻿@model  LazyWelfare.AndroidMobile.Models.HomeModel
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,24 +6,10 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.css" />
     <link rel="stylesheet" href="bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript">
-        $(function(){
-
-            $(".ServiceScan").click(function () {
-
-              //  location.href = "hybrid:" + elm.name + "?" + qs;
-                location.href = "scan:test";
-
-            });
-
-        })
-       
-    </script>
 </head>
 <body>
 
     <div class="container">
-
         <div class="navbar-header navbar-default">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                     aria-expanded="false">
@@ -34,7 +20,6 @@
             </button>
             <a class="navbar-brand" href="#">@Model.Header</a>
         </div>
-
         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav">
                 <li class="active">
@@ -111,30 +96,28 @@
     <div class="clearfix"></div>
 
     <div class="line-section">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Cras justo odio
-            </li>
-            <li class="list-group-item item-success">服务主机</li>
-            <li class="list-group-item item-success ServiceScan">扫一扫</li>
-        </ul>
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>服务设置
+            </div>
+            <a href="javascript:void(0);" class="list-group-item item-success HybridLink" data-hybrid="servicehost">服务主机</a>
+            <a href="javascript:void(0);" class="list-group-item item-success ServiceScan" data-hybrid="servicehost">扫一扫</a>
+        </div>
     </div>
-
-
     <div class="line-section">
         <ul class="list-group">
             <li class="list-group-item">
                 <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>音量调节
             </li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">放大</li>
+            <li class="list-group-item">缩小</li>
         </ul>
     </div>
 
     <div class="line-section">
         <ul class="list-group">
             <li class="list-group-item">
-                <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Cras justo odio
+                <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 操作命令
             </li>
             <li class="list-group-item item-success">关机</li>
             <li class="list-group-item item-success">睡眠</li>
@@ -144,5 +127,21 @@
 
     <script src="jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $(".ServiceScan").click(function () {
+                var url = $(this).data("hybrid");
+                location.href = "scan:" + url;
+            });
+
+            $(".HybridLink").click(function () {
+                var url = $(this).data("hybrid");
+                location.href = "hybrid:" + url;
+            });
+
+        })
+
+    </script>
 </body>
 </html>	

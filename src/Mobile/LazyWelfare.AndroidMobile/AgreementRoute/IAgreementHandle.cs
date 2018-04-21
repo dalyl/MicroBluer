@@ -8,14 +8,14 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Webkit;
 using Android.Widget;
 
-namespace LazyWelfare.Mobile.Android
+namespace LazyWelfare.AndroidMobile
 {
-    public enum Agreement
+    public interface IAgreementHandle
     {
-        none,
-        hybrid,
-        scan,
+        void Init(WebView webView, string url);
+        bool Result { get; }
     }
 }
