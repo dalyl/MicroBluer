@@ -28,7 +28,7 @@
 
         <DockPanel   Grid.Row="2" Grid.Column="1"   DockPanel.Dock="Top"  Height="50" >
             <Button  DockPanel.Dock="Right"  Content="选择"  Click="Button_SelectServiceFile_Click"  Width="80" FontSize="14"  ></Button>
-            <ctrl:TitleTextBox  Title="服务程序名称" x:Name="ServiceName" Height="Auto"  />
+            <ctrl:TitleTextBox  Title="服务程序名称" x:Name="ServiceName" Height="Auto"  IsEnabled="False" />
         </DockPanel>
 
         <DockPanel   Grid.Row="3" Grid.Column="1"   DockPanel.Dock="Top"  Height="50" >

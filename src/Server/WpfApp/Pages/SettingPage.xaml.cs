@@ -32,7 +32,10 @@ namespace WpfApp.Pages
             ofd.Filter = "dll file|*.dll";
             if (ofd.ShowDialog() == true && string.IsNullOrEmpty(ofd.FileName) == false)
             {
-                ServicePath.Text = ofd.FileName;
+                var file= ofd.FileName;
+                var index = file.LastIndexOf("\\");
+                ServicePath.Text = file.Substring(0, index);
+                ServiceName.Text = file.Substring(index+1);
             }
         }
 

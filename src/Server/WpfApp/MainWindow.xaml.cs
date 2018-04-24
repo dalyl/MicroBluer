@@ -23,8 +23,9 @@ namespace WpfApp
         public MainWindow()
         {
             InitializeComponent();
+            this.Title = "小蓝人服务";
         }
 
-       
+
     }
 }
