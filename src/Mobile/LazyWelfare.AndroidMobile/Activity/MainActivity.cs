@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Webkit;
 using LazyWelfare.AndroidMobile.Models;
 using System.Collections.Generic;
-using LazyWelfare.Service;
+using LazyWelfare.Common;
 using Android.Content;
 using System;
 using LazyWelfare.AndroidMobile.Views;

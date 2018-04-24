@@ -144,9 +144,9 @@
     <AndroidAsset Include="Assets\style.css" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Service.csproj">
+    <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Common.csproj">
       <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
-      <Name>LazyWelfare.Service</Name>
+      <Name>LazyWelfare.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LazyWelfare.Service
+namespace LazyWelfare.Common
 {
     public static class Extensions
     {

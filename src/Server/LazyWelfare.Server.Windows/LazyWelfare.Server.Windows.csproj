@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Service.csproj" />
+    <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Common.csproj" />
   </ItemGroup>
 
 </Project>

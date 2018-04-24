@@ -1,4 +1,4 @@
-﻿using LazyWelfare.Service;
+﻿using LazyWelfare.Common;
 using System;
 
 namespace LazyWelfare.Server.Windows
