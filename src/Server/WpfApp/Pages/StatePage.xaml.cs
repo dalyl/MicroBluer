@@ -33,17 +33,12 @@ namespace WpfApp.Pages
 
         private void Button_ServiceStart_Click(object sender, RoutedEventArgs e)
         {
-            var port = FreePort.FindNextAvailableTCPPort(6000);
-            var path = @"E:\Project\Github\LazyWelfare\src\Server\CoreWeb\CoreWeb\bin\Release\PublishOutput\";
-            var line = $@"dotnet  {path}CoreWeb.dll --urls=""http://*:{port}""";
-            ServiceProcess.Instance.ExecuteTool("cmd.exe", line);
-
+            ServiceProcess.Instance.Start();
         }
       
         private void Button_ServiceStop_Click(object sender, RoutedEventArgs e)
         {
-
-
+            ServiceProcess.Instance.Stop();
         }
     }
 }
