@@ -73,7 +73,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CommandTask.cs" />
     <Compile Include="Ctrls\PlaceholderTextBox.cs" />
     <Compile Include="Ctrls\TitleTextBox.cs" />
     <Compile Include="ServiceProcess.cs" />
