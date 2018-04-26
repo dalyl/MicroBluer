@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:LazyWelfare.ServerHost"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/LazyWelfare.ServerHost;component/Resources/Styles/TitleTextBoxStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

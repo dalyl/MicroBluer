@@ -8,6 +8,14 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using ZXing.Common;
+using ZXing;
+using ZXing.QrCode;
+using System.Drawing;
+using System.Windows.Media.Imaging;
+using System.Runtime.InteropServices;
+using System.Windows;
 
 namespace LazyWelfare.ServerHost.Service
 {
@@ -25,8 +33,6 @@ namespace LazyWelfare.ServerHost.Service
 
         public IPAddress IPValue { get; private set; }
 
-        public Process Process { get; private set; }
-
         public readonly static ServiceProcess Instance = new ServiceProcess();
 
         void GetSetting(string fileName)
@@ -40,7 +46,12 @@ namespace LazyWelfare.ServerHost.Service
 
         void SetSetting()
         {
+
         }
+
+        #region Process
+
+        public Process Process { get; private set; }
 
         ProcessStartInfo SetProcessInfo(string args)
         {
@@ -95,6 +106,50 @@ namespace LazyWelfare.ServerHost.Service
                 logger.Info(e.Data);
             }
         }
+
+        #endregion
+
+        #region QRCode
+
+
+        [DllImport("gdi32")]
+        static extern int DeleteObject(IntPtr o);
+
+
+        public ImageSource CreateQRCode( int width, int height)
+        {
+            return CreateQRCode("http://baidu.com", width, height);
+        }
+
+        ImageSource CreateQRCode(string content, int width, int height)
+        {
+            EncodingOptions options;
+            //包含一些编码、大小等的设置
+            //BarcodeWriter :一个智能类来编码一些内容的条形码图像
+            BarcodeWriter write = null;
+            options = new QrCodeEncodingOptions
+            {
+                DisableECI = true,
+                CharacterSet = "UTF-8",
+                Width = width,
+                Height = height,
+                Margin = 0
+            };
+            write = new BarcodeWriter();
+            //设置条形码格式
+            write.Format = BarcodeFormat.QR_CODE;
+            //获取或设置选项容器的编码和渲染过程。
+            write.Options = options;
+            //对指定的内容进行编码，并返回该条码的呈现实例。渲染属性渲染实例使用，必须设置方法调用之前。
+            Bitmap bitmap = write.Write(content);
+            IntPtr ip = bitmap.GetHbitmap();//从GDI+ Bitmap创建GDI位图对象
+                                            //Imaging.CreateBitmapSourceFromHBitmap方法，基于所提供的非托管位图和调色板信息的指针，返回一个托管的BitmapSource
+            BitmapSource bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(ip, IntPtr.Zero, Int32Rect.Empty,
+            System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+            DeleteObject(ip);
+            return bitmapSource;
+        }
+        #endregion
 
 
     }

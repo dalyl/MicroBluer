@@ -24,9 +24,11 @@ namespace LazyWelfare.ServerHost.Pages
     {
         private static readonly ILog logger = LogManager.GetLogger<StatePage>();
 
+    
         public StatePage()
         {
             InitializeComponent();
+            QrCode.Source = ServiceProcess.Instance.CreateQRCode(250, 250);
         }
 
         private void Button_ServiceStart_Click(object sender, RoutedEventArgs e)
@@ -38,5 +40,7 @@ namespace LazyWelfare.ServerHost.Pages
         {
             ServiceProcess.Instance.Stop();
         }
+
+     
     }
 }
