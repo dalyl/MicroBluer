@@ -7,7 +7,7 @@ using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp
+namespace LazyWelfare.ServerHost.Service
 {
     public abstract class SettingCache<T> where T : class
     {

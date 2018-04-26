@@ -1,11 +1,9 @@
 ﻿using Common.Logging;
-using LazyWelfare.Common;
+using LazyWelfare.ServerHost.Service;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp.Pages
+namespace LazyWelfare.ServerHost.Pages
 {
     /// <summary>
     /// StatePage.xaml 的交互逻辑
@@ -35,7 +33,7 @@ namespace WpfApp.Pages
         {
             ServiceProcess.Instance.Start();
         }
-      
+
         private void Button_ServiceStop_Click(object sender, RoutedEventArgs e)
         {
             ServiceProcess.Instance.Stop();

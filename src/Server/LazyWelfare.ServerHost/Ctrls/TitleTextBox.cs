@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace WpfApp.Ctrls
+namespace LazyWelfare.ServerHost.Ctrls
 {
-    
 
     [TemplatePart(Name = TitleTextBlockKey, Type = typeof(TextBlock))]
     public class TitleTextBox : TextBox

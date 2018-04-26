@@ -1,11 +1,15 @@
 ﻿using Common.Logging;
 using LazyWelfare.Common;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp
+namespace LazyWelfare.ServerHost.Service
 {
     public class ServiceProcess
     {
@@ -14,14 +18,14 @@ namespace WpfApp
         private ServiceProcess()
         {
             IP = LanService.GetLocalIP();
-            IPValue= IP.IpFromString();
+            IPValue = IP.IpFromString();
         }
 
         public string IP { get; private set; }
 
         public IPAddress IPValue { get; private set; }
 
-        public Process Process {get; private set; }
+        public Process Process { get; private set; }
 
         public readonly static ServiceProcess Instance = new ServiceProcess();
 
@@ -30,7 +34,7 @@ namespace WpfApp
             if (File.Exists(fileName) == false) return;
             var file = new FileInfo(fileName);
             var path = file.Directory.FullName;
-            var setting = new ServiceSettings("setting","CoreWeb.dll", @"E:\Project\Github\LazyWelfare\src\Server\LazyWelfare.ServerWeb\bin\Release\PublishOutput", 6000);
+            var setting = new ServiceSettings("setting", "CoreWeb.dll", @"E:\Project\Github\LazyWelfare\src\Server\LazyWelfare.ServerWeb\bin\Release\PublishOutput", 6000);
             var value = setting.GetValue();
         }
 

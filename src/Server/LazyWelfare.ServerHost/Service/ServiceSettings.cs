@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp
+namespace LazyWelfare.ServerHost.Service
 {
     public class ServiceSettings : SettingCache<ServiceStruct>
     {
@@ -14,7 +14,7 @@ namespace WpfApp
 
         ServiceStruct defaultValue { get; set; }
 
-        public ServiceSettings(string settingPath, string file,string path, int port )
+        public ServiceSettings(string settingPath, string file, string path, int port)
         {
             BasePath = settingPath;
             defaultValue = new ServiceStruct

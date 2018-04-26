@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace WpfApp.Ctrls
+namespace LazyWelfare.ServerHost.Ctrls
 {
     /// <summary>
     /// 带点位符的文本输入控件

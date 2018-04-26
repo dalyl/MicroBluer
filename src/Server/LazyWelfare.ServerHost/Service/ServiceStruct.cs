@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp
+namespace LazyWelfare.ServerHost.Service
 {
     public class ServiceStruct
     {

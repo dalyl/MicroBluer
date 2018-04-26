@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp.Pages
+namespace LazyWelfare.ServerHost.Pages
 {
     /// <summary>
     /// SettingPage.xaml 的交互逻辑
@@ -32,10 +32,10 @@ namespace WpfApp.Pages
             ofd.Filter = "dll file|*.dll";
             if (ofd.ShowDialog() == true && string.IsNullOrEmpty(ofd.FileName) == false)
             {
-                var file= ofd.FileName;
+                var file = ofd.FileName;
                 var index = file.LastIndexOf("\\");
                 ServicePath.Text = file.Substring(0, index);
-                ServiceName.Text = file.Substring(index+1);
+                ServiceName.Text = file.Substring(index + 1);
             }
         }
 
