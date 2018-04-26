@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LazyWelfare.ServerHost"
+        xmlns:ctrl="clr-namespace:LazyWelfare.ServerHost.Ctrls"
         xmlns:page="clr-namespace:LazyWelfare.ServerHost.Pages"
         xmlns:form="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         mc:Ignorable="d"
@@ -23,19 +24,19 @@
         </TabItem>
     </TabControl>
 
-        <local:NotificationAreaIcon Text="水水水水" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
+        <ctrl:NotificationAreaIcon Text="水水水水" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
             <!--<local:NotificationAreaIcon.MenuItems>
                 <form:MenuItem Text="我在线上" Click="MenuItem_OnlineClick" />
                 <form:MenuItem Text="我在线上" Click="MenuItem_OnlineClick" />
             </local:NotificationAreaIcon.MenuItems>-->
 
-            <local:NotificationAreaIcon.MenuStripItems>
-                <form:ToolStripItem  Text="我在线上" Click="MenuItem_OnlineClick" />
+            <ctrl:NotificationAreaIcon.MenuStripItems>
+                <form:ToolStripMenuItem  Text="关于" Click="MenuItem_AboutUsClick" />
                 <form:ToolStripSeparator ></form:ToolStripSeparator>
-                <form:ToolStripItem  Text="我在线上" Click="MenuItem_OnlineClick" />
-            </local:NotificationAreaIcon.MenuStripItems>
+                <form:ToolStripMenuItem  Text="退出" Click="MenuItem_ExitClick" />
+            </ctrl:NotificationAreaIcon.MenuStripItems>
 
-        </local:NotificationAreaIcon>
+        </ctrl:NotificationAreaIcon>
         
     </Grid>
 </Window>

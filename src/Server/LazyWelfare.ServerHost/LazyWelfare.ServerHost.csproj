@@ -82,7 +82,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="NotificationAreaIcon.cs" />
+    <Compile Include="Ctrls\NotificationAreaIcon.cs" />
     <Compile Include="Service\ServiceProcess.cs" />
     <Compile Include="Service\ServiceSettings.cs" />
     <Compile Include="Service\ServiceStruct.cs" />

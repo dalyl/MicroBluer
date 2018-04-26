@@ -10,7 +10,7 @@ using System.Windows.Threading;
 using Drawing = System.Drawing;
 using Forms = System.Windows.Forms;
 
-namespace LazyWelfare.ServerHost
+namespace LazyWelfare.ServerHost.Ctrls
 {
     /// <summary>
     /// Represents a thin wrapper for <see cref="Forms.NotifyIcon"/>
