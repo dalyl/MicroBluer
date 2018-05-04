@@ -12,6 +12,7 @@ using Android.Webkit;
 using Android.Widget;
 using LazyWelfare.AndroidMobile.Models;
 using LazyWelfare.AndroidMobile.Views;
+using LazyWelfare.AndroidMobile.Views.Partials;
 using ZXing;
 using ZXing.Mobile;
 

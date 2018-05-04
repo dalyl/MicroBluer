@@ -5,12 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\ComicSansMSRegular.ttf" />
+    <Content Remove="wwwroot\images\33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\ComicSansMSRegular.ttf" />
+    <None Include="wwwroot\images\33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg" />
   </ItemGroup>
 
 </Project>

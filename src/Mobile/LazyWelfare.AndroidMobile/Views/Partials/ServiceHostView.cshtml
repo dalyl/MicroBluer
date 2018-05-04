@@ -1,0 +1,50 @@
+﻿@model  LazyWelfare.AndroidMobile.Models.HomeModel
+
+<div class="line-section">
+    <div class="list-group">
+        <div class="list-group-item">
+            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>服务设置
+        </div>
+        <a href="javascript:void(0);" class="list-group-item item-success HybridLink" data-hybrid="servicehost">服务主机</a>
+        <a href="javascript:void(0);" class="list-group-item item-success ServiceScan" data-hybrid="servicehost">扫一扫</a>
+    </div>
+</div>
+<div class="line-section">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>音量调节
+        </li>
+        <li class="list-group-item">放大</li>
+        <li class="list-group-item">缩小</li>
+    </ul>
+</div>
+
+<div class="line-section">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 操作命令
+        </li>
+        <li class="list-group-item item-success">关机</li>
+        <li class="list-group-item item-success">睡眠</li>
+    </ul>
+</div>
+
+
+
+<script type="text/javascript">
+    $(function () {
+
+        $(".ServiceScan").click(function () {
+            var url = $(this).data("hybrid");
+            location.href = "scan:" + url;
+        });
+
+        $(".HybridLink").click(function () {
+            var url = $(this).data("hybrid");
+            location.href = "hybrid:" + url;
+        });
+
+    })
+
+</script>
+

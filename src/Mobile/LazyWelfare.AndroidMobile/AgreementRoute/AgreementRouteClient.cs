@@ -15,6 +15,14 @@ namespace LazyWelfare.AndroidMobile
 {
     public class AgreementRouteClient : WebViewClient
     {
+        string _Fun;
+
+        public AgreementRouteClient() { }
+
+        public AgreementRouteClient(String Fun)
+        {
+            _Fun = Fun;
+        }
 
         public override bool ShouldOverrideUrlLoading(WebView webView, string url)
         {
@@ -37,6 +45,12 @@ namespace LazyWelfare.AndroidMobile
             var handler = new T();
             handler.Init(webView, url);
             return new T().Result;
+        }
+
+        public override void OnPageFinished(WebView view, string url)
+        {
+            base.OnPageFinished(view, url);
+            if (string.IsNullOrEmpty(_Fun) == false) view.EvaluateJavascript(_Fun, null);
         }
 
     }

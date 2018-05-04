@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LazyWelfare.AndroidMobile.Views
+namespace LazyWelfare.AndroidMobile.Views.Partials
 {
 using System;
 using System.Collections.Generic;
@@ -32,18 +32,7 @@ public LazyWelfare.AndroidMobile.Models.HomeModel Model { get; set; }
 
 public override void Execute()
 {
-
-#line 3 "ServiceHostView.cshtml"
-  
-    WriteLiteral(_Layout.BeginHtml);
-    WriteLiteral(_Layout.RenderHeader());
-    WriteLiteral(_Layout.BeginBody);
-    WriteLiteral(_Layout.RenderMenuContainer(Model));
-
-
-#line default
-#line hidden
-WriteLiteral("\r\n\r\n<div");
+WriteLiteral("<div");
 
 WriteLiteral(" class=\"line-section\"");
 
@@ -129,17 +118,7 @@ WriteLiteral(">关机</li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item item-success\"");
 
-WriteLiteral(">睡眠</li>\r\n    </ul>\r\n</div>\r\n\r\n\r\n");
-
-
-#line 40 "ServiceHostView.cshtml"
-  
-    WriteLiteral(_Layout.RenderScript());
-
-
-#line default
-#line hidden
-WriteLiteral("\r\n\r\n<script");
+WriteLiteral(">睡眠</li>\r\n    </ul>\r\n</div>\r\n\r\n\r\n\r\n<script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
@@ -161,17 +140,6 @@ WriteLiteral(@">
 </script>
 
 ");
-
-
-#line 61 "ServiceHostView.cshtml"
-  
-    WriteLiteral(_Layout.EndBody);
-    WriteLiteral(_Layout.EndHtml);
-
-
-#line default
-#line hidden
-WriteLiteral("\r\n");
 
 }
 }

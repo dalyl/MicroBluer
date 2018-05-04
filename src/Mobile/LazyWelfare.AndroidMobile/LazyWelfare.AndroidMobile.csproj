@@ -51,10 +51,12 @@
     <Reference Include="FastAndroidCamera, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\FastAndroidCamera.2.0.0\lib\MonoAndroid403\FastAndroidCamera.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Android.Export" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -68,41 +70,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activity\MainActivity.cs" />
+    <Compile Include="ViewController\MainActivity.cs" />
     <Compile Include="AgreementRoute\Agreement.cs" />
     <Compile Include="AgreementRoute\AgreementHandler.cs" />
     <Compile Include="AgreementRoute\AgreementRouteClient.cs" />
     <Compile Include="AgreementRoute\HybridAgreement.cs" />
     <Compile Include="AgreementRoute\IAgreementHandler.cs" />
     <Compile Include="AgreementRoute\ScanAgreement.cs" />
+    <Compile Include="ViewController\AndroidScript.cs" />
     <Compile Include="Logic\ServiceStore.cs" />
     <Compile Include="Models\Doll.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Activity\ScanActivity.cs" />
-    <Compile Include="Activity\SplashScreenActivity.cs" />
-    <Compile Include="Views\HomeView.cs">
+    <Compile Include="ViewController\SplashScreenActivity.cs" />
+    <Compile Include="ViewController\Template.cs" />
+    <Compile Include="Views\Partials\HomeView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeView.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\_Layout.cs" />
+    <Compile Include="Views\LayoutView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LayoutView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialClass.cs" />
     <Compile Include="Views\RazorView.cs">
       <DependentUpon>RazorView.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\ServiceHostView.cs">
+    <Compile Include="Views\Partials\ServiceHostView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ServiceHostView.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\WebViews.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <AndroidAsset Include="Assets\ComicSansMSRegular.ttf" />
+    <AndroidAsset Include="Assets\css\ComicSansMSRegular.ttf" />
     <AndroidAsset Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <AndroidAsset Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <AndroidAsset Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
@@ -111,19 +120,21 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\Scan.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <None Include="Views\HomeView.cshtml">
+    <None Include="Views\Partials\HomeView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>HomeView.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </None>
+    <None Include="Views\LayoutView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>LayoutView.cs</LastGenOutput>
       <SubType>None</SubType>
     </None>
     <None Include="Views\RazorView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>RazorView.cs</LastGenOutput>
     </None>
-    <None Include="Views\ServiceHostView.cshtml">
+    <None Include="Views\Partials\ServiceHostView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>ServiceHostView.cs</LastGenOutput>
       <SubType>None</SubType>
@@ -144,7 +155,7 @@
     <Folder Include="Resources\mipmap-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\style.css" />
+    <AndroidAsset Include="Assets\css\style.css" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Common.csproj">
@@ -181,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\site.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,12 +1,4 @@
-﻿@model  LazyWelfare.AndroidMobile.Models.HomeModel
-
-@{
-    WriteLiteral(_Layout.BeginHtml);
-    WriteLiteral(_Layout.RenderHeader());
-    WriteLiteral(_Layout.BeginBody);
-    WriteLiteral(_Layout.RenderMenuContainer(Model));
-}
-
+﻿
 <div class="line-section">
     <div class="list-group">
         <div class="list-group-item">
@@ -35,30 +27,3 @@
         <li class="list-group-item item-success">睡眠</li>
     </ul>
 </div>
-
-
-@{
-    WriteLiteral(_Layout.RenderScript());
-}
-
-<script type="text/javascript">
-    $(function () {
-
-        $(".ServiceScan").click(function () {
-            var url = $(this).data("hybrid");
-            location.href = "scan:" + url;
-        });
-
-        $(".HybridLink").click(function () {
-            var url = $(this).data("hybrid");
-            location.href = "hybrid:" + url;
-        });
-
-    })
-
-</script>
-
-@{
-    WriteLiteral(_Layout.EndBody);
-    WriteLiteral(_Layout.EndHtml);
-}
