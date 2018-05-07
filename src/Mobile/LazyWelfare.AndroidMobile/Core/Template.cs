@@ -19,7 +19,7 @@ namespace LazyWelfare.AndroidMobile
     {
         public static string Layout()
         {
-            var model = new HomeModel
+            var model = new AppModel
             {
                 Header = "Hello,你好",
             };

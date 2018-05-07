@@ -18,13 +18,13 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.753")]
-public partial class ServiceHostView : ServiceHostViewBase
+public partial class HostsView : HostsViewBase
 {
 
 #line hidden
 
-#line 1 "ServiceHostView.cshtml"
-public LazyWelfare.AndroidMobile.Models.HomeModel Model { get; set; }
+#line 1 "HostsView.cshtml"
+public List<LazyWelfare.AndroidMobile.Models.HostModel> Model { get; set; }
 
 #line default
 #line hidden
@@ -147,7 +147,7 @@ WriteLiteral(@">
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class ServiceHostViewBase
+public abstract class HostsViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

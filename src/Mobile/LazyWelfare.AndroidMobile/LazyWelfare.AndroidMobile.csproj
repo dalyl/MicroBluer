@@ -70,24 +70,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewCore\MainActivity.cs" />
+    <Compile Include="Core\SharedStoreService.cs" />
+    <Compile Include="Core\StoreService.cs" />
+    <Compile Include="Core\MainActivity.cs" />
     <Compile Include="AgreementRoute\Agreement.cs" />
     <Compile Include="AgreementRoute\AgreementHandler.cs" />
     <Compile Include="AgreementRoute\AgreementRouteClient.cs" />
     <Compile Include="AgreementRoute\HybridAgreement.cs" />
     <Compile Include="AgreementRoute\IAgreementHandler.cs" />
     <Compile Include="AgreementRoute\ScanAgreement.cs" />
-    <Compile Include="ViewCore\AndroidScript.cs" />
-    <Compile Include="Logic\ServiceStore.cs" />
-    <Compile Include="Models\Doll.cs" />
-    <Compile Include="Models\HomeModel.cs" />
-    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Core\AndroidScript.cs" />
+    <Compile Include="Core\SharedPreferences.cs" />
+    <Compile Include="Logic\HostStoreService.cs" />
+    <Compile Include="Models\AppModel.cs" />
+    <Compile Include="Models\HostModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewCore\Scan.cs" />
-    <Compile Include="ViewCore\SplashScreenActivity.cs" />
-    <Compile Include="ViewCore\TaskResult.cs" />
-    <Compile Include="ViewCore\Template.cs" />
+    <Compile Include="Core\Scan.cs" />
+    <Compile Include="Core\SplashScreenActivity.cs" />
+    <Compile Include="Core\TaskResult.cs" />
+    <Compile Include="Core\Template.cs" />
     <Compile Include="Views\Partials\HomeView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,15 +101,10 @@
       <DependentUpon>LayoutView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\PartialClass.cs" />
-    <Compile Include="Views\RazorView.cs">
-      <DependentUpon>RazorView.cshtml</DependentUpon>
+    <Compile Include="Views\Partials\HostsView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Views\Partials\ServiceHostView.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceHostView.cshtml</DependentUpon>
+      <DependentUpon>HostsView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\WebViews.cs" />
   </ItemGroup>
@@ -132,13 +129,9 @@
       <LastGenOutput>LayoutView.cs</LastGenOutput>
       <SubType>None</SubType>
     </None>
-    <None Include="Views\RazorView.cshtml">
+    <None Include="Views\Partials\HostsView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>RazorView.cs</LastGenOutput>
-    </None>
-    <None Include="Views\Partials\ServiceHostView.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>ServiceHostView.cs</LastGenOutput>
+      <LastGenOutput>HostsView.cs</LastGenOutput>
       <SubType>None</SubType>
     </None>
     <None Include="Views\web.config" />

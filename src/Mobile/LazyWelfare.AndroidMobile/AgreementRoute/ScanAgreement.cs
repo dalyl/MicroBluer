@@ -72,13 +72,13 @@ namespace LazyWelfare.AndroidMobile
             string url = result.Text;
             if (base.RequestContent == "servicehost")
             {
-                var model = new HomeModel
-                {
-                    Header = "Hello,ss",
-                };
-                var template = new ServiceHostView() { Model = model };
-                var page = template.GenerateString();
-                WebBrower.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
+                //var model = new AppModel
+                //{
+                //    Header = "Hello,ss",
+                //};
+                //var template = new HostsView() { Model = model };
+                //var page = template.GenerateString();
+                //WebBrower.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
             }
             return true;
         }

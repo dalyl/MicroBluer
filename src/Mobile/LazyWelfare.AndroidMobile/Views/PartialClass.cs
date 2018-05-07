@@ -27,7 +27,7 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
         T Model { get; set; }
     }
 
-    public partial class ServiceHostView : IsView<HomeModel> { }
+    public partial class HostsView : IsView<List<HostModel>> { }
 
     public partial class HomeView : IsView { }
 

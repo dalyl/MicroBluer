@@ -40,7 +40,6 @@ namespace LazyWelfare.AndroidMobile
             if (invoke.Result)
             {
 
-
             }
             else
             {

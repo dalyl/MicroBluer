@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace LazyWelfare.AndroidMobile.Models
 {
-    public  class HomeModel
+    public  class AppModel
     {
 
         public string Header { get; set; }

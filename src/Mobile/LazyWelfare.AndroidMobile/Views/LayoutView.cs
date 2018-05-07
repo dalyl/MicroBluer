@@ -24,7 +24,7 @@ public partial class LayoutView : LayoutViewBase
 #line hidden
 
 #line 1 "LayoutView.cshtml"
-public LazyWelfare.AndroidMobile.Models.HomeModel Model { get; set; }
+public LazyWelfare.AndroidMobile.Models.AppModel Model { get; set; }
 
 #line default
 #line hidden
