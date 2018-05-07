@@ -70,22 +70,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewController\MainActivity.cs" />
+    <Compile Include="ViewCore\MainActivity.cs" />
     <Compile Include="AgreementRoute\Agreement.cs" />
     <Compile Include="AgreementRoute\AgreementHandler.cs" />
     <Compile Include="AgreementRoute\AgreementRouteClient.cs" />
     <Compile Include="AgreementRoute\HybridAgreement.cs" />
     <Compile Include="AgreementRoute\IAgreementHandler.cs" />
     <Compile Include="AgreementRoute\ScanAgreement.cs" />
-    <Compile Include="ViewController\AndroidScript.cs" />
+    <Compile Include="ViewCore\AndroidScript.cs" />
     <Compile Include="Logic\ServiceStore.cs" />
     <Compile Include="Models\Doll.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewController\SplashScreenActivity.cs" />
-    <Compile Include="ViewController\Template.cs" />
+    <Compile Include="ViewCore\Scan.cs" />
+    <Compile Include="ViewCore\SplashScreenActivity.cs" />
+    <Compile Include="ViewCore\TaskResult.cs" />
+    <Compile Include="ViewCore\Template.cs" />
     <Compile Include="Views\Partials\HomeView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,7 +196,7 @@
     <AndroidAsset Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\site.min.js" />
+    <AndroidAsset Include="Assets\site.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

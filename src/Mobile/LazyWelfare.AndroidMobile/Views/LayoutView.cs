@@ -58,7 +58,7 @@ WriteLiteral(" />\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(" href=\"style.css\"");
+WriteLiteral(" href=\"css/style.css\"");
 
 WriteLiteral(" />\r\n</head>\r\n\r\n<body>\r\n    <div");
 

@@ -12,7 +12,11 @@ using Android.Views;
 using Android.Webkit;
 using Android.Widget;
 using Java.Interop;
+using LazyWelfare.AndroidMobile.Models;
 using LazyWelfare.AndroidMobile.Views;
+using LazyWelfare.AndroidMobile.Views.Partials;
+using ZXing;
+using ZXing.Mobile;
 
 namespace LazyWelfare.AndroidMobile
 {
@@ -25,12 +29,23 @@ namespace LazyWelfare.AndroidMobile
             _activity = activity;
         }
 
-       
+
         [Export("ScanHost")]
         [JavascriptInterface]
         public void ScanHost()
         {
-           
+            var scan = new Scan(_activity);
+            var invoke = scan.Invoke();
+            Task.WaitAll(invoke);
+            if (invoke.Result)
+            {
+
+
+            }
+            else
+            {
+                ShowToast(scan.Result);
+            }
         }
 
         /// <summary>  
@@ -61,9 +76,10 @@ namespace LazyWelfare.AndroidMobile
 
         string SwitchHost(string host)
         {
-            
+
             return "";
         }
     }
+
 
 }

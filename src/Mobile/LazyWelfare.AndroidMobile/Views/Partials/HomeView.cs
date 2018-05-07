@@ -111,7 +111,27 @@ WriteLiteral(">关机</li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item item-success\"");
 
-WriteLiteral(">睡眠</li>\r\n    </ul>\r\n</div>\r\n\r\n\r\n ");
+WriteLiteral(@">睡眠</li>
+    </ul>
+</div>
+
+<script>
+    $(function () {
+        $("".ServiceScan"").click(function () {
+            javascript: AndroidScript.ScanHost();
+            //var url = $(this).data(""hybrid"");
+            //location.href = ""scan:"" + url;
+        });
+
+        $("".HybridLink"").click(function () {
+            var url = $(this).data(""hybrid"");
+            location.href = ""hybrid:"" + url;
+        });
+    })
+</script>
+
+
+ ");
 
 }
 }
