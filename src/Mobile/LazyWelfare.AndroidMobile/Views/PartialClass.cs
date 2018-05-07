@@ -27,8 +27,23 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
         T Model { get; set; }
     }
 
-    public partial class HostsView : IsView<List<HostModel>> { }
 
-    public partial class HomeView : IsView { }
+    public enum PartialView
+    {
+        HomeView,
+        HostsView,
+    }
+
+    public partial class HostsView : IsView<List<HostModel>>
+    {
+        public static (string Host, string Path) Partial= (nameof(WebViews), typeof(HostsView).Name);
+
+    }
+
+    public partial class HomeView : IsView {
+
+        public static (string Host, string Path) Partial= (nameof(WebViews), typeof(HomeView).Name);
+
+    }
 
 }

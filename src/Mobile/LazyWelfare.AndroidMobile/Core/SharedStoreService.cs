@@ -15,6 +15,8 @@ namespace LazyWelfare.AndroidMobile
 {
     public abstract class SharedStoreService<T>
     {
+        protected abstract string SharedFileName { get; }
+
         public T GetModel(Guid domain)
         {
             var key = "";
@@ -23,17 +25,16 @@ namespace LazyWelfare.AndroidMobile
 
         public T GetModel(string key)
         {
-            var value = StoreService.Provider.Shared.GetValue(key, string.Empty);
+            var value = StoreService.Provider.Shared(SharedFileName).GetValue(key, string.Empty);
             if (string.IsNullOrEmpty(value)) return default(T);
             return JsonConvert.DeserializeObject<T>(value);
         }
 
-        public bool StoreModel(T model)
+        public bool StoreModel(string key,T model)
         {
             if (model == null) return false;
-            var key = "";
             var value = JsonConvert.SerializeObject(model);
-            StoreService.Provider.Shared.PutValue(key, value);
+            StoreService.Provider.Shared(SharedFileName).PutValue(key, value);
             return true;
         }
     }

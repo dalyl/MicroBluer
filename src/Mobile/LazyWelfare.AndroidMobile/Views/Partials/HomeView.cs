@@ -119,19 +119,28 @@ WriteLiteral(@">睡眠</li>
     $(function () {
         $("".ServiceScan"").click(function () {
             javascript: AndroidScript.ScanHost();
-            //var url = $(this).data(""hybrid"");
-            //location.href = ""scan:"" + url;
         });
 
         $("".HybridLink"").click(function () {
-            var url = $(this).data(""hybrid"");
-            location.href = ""hybrid:"" + url;
-        });
-    })
-</script>
+            ViewScript.PartialLoad('#MainContent', '");
 
 
- ");
+#line 39 "HomeView.cshtml"
+                                               Write(HostsView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 39 "HomeView.cshtml"
+                                                                          Write(HostsView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\');\r\n        });\r\n    })\r\n</script>\r\n\r\n\r\n ");
 
 }
 }

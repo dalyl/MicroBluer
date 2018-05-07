@@ -15,30 +15,36 @@ namespace LazyWelfare.AndroidMobile.Logic
 {
     public class HostStoreService : SharedStoreService<HostModel>
     {
-
-
         const string KeyRegex = @"^mm_[0-9]{8}_[0-9]+_[0-9]+$";
+
+        protected override string SharedFileName { get; } = "hostFile";
 
         public List<HostModel> GetList()
         {
             var list = new List<HostModel>();
-            var keys = StoreService.Provider.Shared.AllKeys();
+            var keys = StoreService.Provider.Shared(SharedFileName).AllKeys();
             var regPid = new Regex(KeyRegex, RegexOptions.IgnoreCase);
             foreach (var one in keys)
             {
-                var match = regPid.Match(one);
-                if (match.Success)
-                {
+                //var match = regPid.Match(one);
+                //if (match.Success)
+                //{
                     var model = GetModel(one);
                     if (model != null) list.Add(model);
-                }
+               // }
             }
             return list;
         }
 
         public void Add(string url)
         {
-
+            var model = new HostModel
+            {
+                Domain = Guid.NewGuid(),
+                Address = url,
+            };
+            var key = $"{model.Domain}";
+            base.StoreModel(key,model);
         }
 
     }

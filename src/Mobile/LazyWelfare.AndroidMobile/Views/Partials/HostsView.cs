@@ -32,114 +32,53 @@ public List<LazyWelfare.AndroidMobile.Models.HostModel> Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("<div");
+WriteLiteral("\r\n");
+
+
+#line 4 "HostsView.cshtml"
+ foreach (var one in Model)
+{
+
+
+#line default
+#line hidden
+WriteLiteral("    <div");
 
 WriteLiteral(" class=\"line-section\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n        <ul");
 
 WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n            <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">\r\n            <span");
+WriteLiteral(">\r\n                <span");
 
 WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>服务设置\r\n        </div>\r\n        <a");
+WriteLiteral("></span>");
 
-WriteLiteral(" href=\"javascript:void(0);\"");
 
-WriteLiteral(" class=\"list-group-item item-success HybridLink\"");
+#line 9 "HostsView.cshtml"
+                                                                             Write(one.Name);
 
-WriteLiteral(" data-hybrid=\"servicehost\"");
 
-WriteLiteral(">服务主机</a>\r\n        <a");
+#line default
+#line hidden
+WriteLiteral("\r\n            </li>\r\n        </ul>\r\n    </div>\r\n");
 
-WriteLiteral(" href=\"javascript:void(0);\"");
 
-WriteLiteral(" class=\"list-group-item item-success ServiceScan\"");
+#line 13 "HostsView.cshtml"
+}
 
-WriteLiteral(" data-hybrid=\"servicehost\"");
 
-WriteLiteral(">扫一扫</a>\r\n    </div>\r\n</div>\r\n<div");
-
-WriteLiteral(" class=\"line-section\"");
-
-WriteLiteral(">\r\n    <ul");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">\r\n            <span");
-
-WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span>音量调节\r\n        </li>\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">放大</li>\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">缩小</li>\r\n    </ul>\r\n</div>\r\n\r\n<div");
-
-WriteLiteral(" class=\"line-section\"");
-
-WriteLiteral(">\r\n    <ul");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">\r\n            <span");
-
-WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span> 操作命令\r\n        </li>\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item item-success\"");
-
-WriteLiteral(">关机</li>\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item item-success\"");
-
-WriteLiteral(">睡眠</li>\r\n    </ul>\r\n</div>\r\n\r\n\r\n\r\n<script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(@">
-    $(function () {
-
-        $("".ServiceScan"").click(function () {
-            var url = $(this).data(""hybrid"");
-            location.href = ""scan:"" + url;
-        });
-
-        $("".HybridLink"").click(function () {
-            var url = $(this).data(""hybrid"");
-            location.href = ""hybrid:"" + url;
-        });
-
-    })
-
-</script>
-
-");
+#line default
+#line hidden
+WriteLiteral("\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
 
 }
 }

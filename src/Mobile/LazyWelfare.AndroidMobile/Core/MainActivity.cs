@@ -24,7 +24,7 @@ namespace LazyWelfare.AndroidMobile
 
         public MainActivity()
         {
-            Partial = (nameof(WebViews), typeof(HomeView).Name);
+            Partial = HomeView.Partial;
         }
 
         public MainActivity((string Host, string Path) view)

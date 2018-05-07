@@ -33,13 +33,10 @@
     $(function () {
         $(".ServiceScan").click(function () {
             javascript: AndroidScript.ScanHost();
-            //var url = $(this).data("hybrid");
-            //location.href = "scan:" + url;
         });
 
         $(".HybridLink").click(function () {
-            var url = $(this).data("hybrid");
-            location.href = "hybrid:" + url;
+            ViewScript.PartialLoad('#MainContent', '@HostsView.Partial.Host', '@HostsView.Partial.Path');
         });
     })
 </script>

@@ -81,6 +81,7 @@
     <Compile Include="AgreementRoute\ScanAgreement.cs" />
     <Compile Include="Core\AndroidScript.cs" />
     <Compile Include="Core\SharedPreferences.cs" />
+    <Compile Include="Logic\Define.cs" />
     <Compile Include="Logic\HostStoreService.cs" />
     <Compile Include="Models\AppModel.cs" />
     <Compile Include="Models\HostModel.cs" />

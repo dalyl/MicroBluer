@@ -11,17 +11,21 @@ using Android.Widget;
 
 namespace LazyWelfare.AndroidMobile
 {
-  
+
+    public class AppcationContext
+    {
+        public static Context Current { get; set; }
+    }
+
 
     public class SharedPreferences
     {
-        public Context Context { get; private set; }
+        public Context Context { get { return AppcationContext.Current; } }
 
         public string File { get; private set; }
 
-        public SharedPreferences(Context context, string name)
+        public SharedPreferences(string name)
         {
-            Context = context;
             File = name;
         }
 

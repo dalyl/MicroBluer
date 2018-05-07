@@ -16,10 +16,9 @@ namespace LazyWelfare.AndroidMobile
     {
         private StoreService() { }
 
-
         public static readonly StoreService Provider = new StoreService();
 
-        public  SharedPreferences Shared { get; set; }
+        public SharedPreferences Shared(string file) => new SharedPreferences(file);
 
     }
 }

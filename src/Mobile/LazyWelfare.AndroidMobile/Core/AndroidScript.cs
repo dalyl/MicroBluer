@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Webkit;
 using Android.Widget;
 using Java.Interop;
+using LazyWelfare.AndroidMobile.Logic;
 using LazyWelfare.AndroidMobile.Models;
 using LazyWelfare.AndroidMobile.Views;
 using LazyWelfare.AndroidMobile.Views.Partials;
@@ -27,6 +28,7 @@ namespace LazyWelfare.AndroidMobile
         public AndroidScript(Activity activity)
         {
             _activity = activity;
+            AppcationContext.Current = _activity.ApplicationContext;
         }
 
 
@@ -39,7 +41,8 @@ namespace LazyWelfare.AndroidMobile
             Task.WaitAll(invoke);
             if (invoke.Result)
             {
-
+                var service = new HostStoreService();
+                service.Add(scan.Result);
             }
             else
             {
@@ -62,7 +65,7 @@ namespace LazyWelfare.AndroidMobile
         [JavascriptInterface]
         public string PartialLoad(string host, string url)
         {
-            if (host == nameof(WebViews)) return WebViews.Get(url);
+            if (host == nameof(WebViews)) return SwitchWebView(url);
             var ip = SwitchHost(host);
             if (string.IsNullOrEmpty(ip)) return string.Empty;
             HttpClient client = new HttpClient();
@@ -76,6 +79,21 @@ namespace LazyWelfare.AndroidMobile
         string SwitchHost(string host)
         {
 
+            return "";
+        }
+
+
+        string SwitchWebView(string url)
+        {
+            var view = Enum.Parse(typeof(PartialView), url);
+            switch (view) {
+                case PartialView.HomeView: return WebViews.Get(url);
+                case PartialView.HostsView: {
+                        var service = new HostStoreService();
+                        var list = service.GetList();
+                        return WebViews.Get(url, list);
+                    }
+            }
             return "";
         }
     }
