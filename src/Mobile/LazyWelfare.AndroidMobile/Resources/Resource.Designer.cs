@@ -48,13 +48,25 @@ namespace LazyWelfare.AndroidMobile
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int blue_face = 2130837504;
+			public const int area_above_left = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int splash_screen = 2130837505;
+			public const int area_above_right = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int splashscreen = 2130837506;
+			public const int area_below_left = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int area_below_right = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int blue_face = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int splash_screen = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int splashscreen = 2130837510;
 			
 			static Drawable()
 			{
@@ -92,10 +104,16 @@ namespace LazyWelfare.AndroidMobile
 			public const int Main = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int zxingscanneractivitylayout = 2130903041;
+			public const int Scan = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int zxingscannerfragmentlayout = 2130903042;
+			public const int ZxingOverlay = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int zxingscanneractivitylayout = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int zxingscannerfragmentlayout = 2130903044;
 			
 			static Layout()
 			{

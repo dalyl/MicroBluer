@@ -14,15 +14,15 @@ using ZXing.Mobile;
 
 namespace LazyWelfare.AndroidMobile
 {
-    public class Scan
+    public class ScanPlugin
     {
         public string Result { get; private set; } = "未识别";
 
-        public Context context { get; private set; }
+        public Activity context { get; private set; }
 
-        public Scan(Activity activity)
+        public ScanPlugin(Activity activity)
         {
-            context = activity.ApplicationContext;
+            context = activity;
         }
 
         public async Task<bool> Invoke()
@@ -38,24 +38,19 @@ namespace LazyWelfare.AndroidMobile
                         BarcodeFormat.EAN_13,
                         BarcodeFormat.EAN_8,
                         BarcodeFormat.QR_CODE
-                    }
+                    },
+                    CharacterSet = ""
                 };
 
-                opts.CharacterSet = "";
+                View zxingOverlay = LayoutInflater.FromContext(context).Inflate(Resource.Layout.ZxingOverlay, null);
 
                 var scanner = new MobileBarcodeScanner(context)
                 {
-                    //不使用自定义界面
-                    UseCustomOverlay = false,
-                    // CustomOverlay=,
-
-                    FlashButtonText = "识别",
-                    CancelButtonText = "取消",
-
-                    //设置上下提示文字
-                    TopText = "请将条形码对准方框内",
-                    BottomText = "确认后按下右下角识别按钮"
+                    //使用自定义界面
+                    UseCustomOverlay = true,
+                    CustomOverlay = zxingOverlay,
                 };
+
 
                 var result = await scanner.Scan(opts);
                 return ScanResultHandle(result);
@@ -78,7 +73,5 @@ namespace LazyWelfare.AndroidMobile
             Result = result.Text;
             return true;
         }
-
     }
-
 }

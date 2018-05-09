@@ -70,6 +70,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Appcation.cs" />
+    <Compile Include="Core\ScanPlugin.cs" />
     <Compile Include="Core\SharedStoreService.cs" />
     <Compile Include="Core\StoreService.cs" />
     <Compile Include="Core\MainActivity.cs" />
@@ -87,7 +89,7 @@
     <Compile Include="Models\HostModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\Scan.cs" />
+    <Compile Include="Core\CaptureActivity.cs" />
     <Compile Include="Core\SplashScreenActivity.cs" />
     <Compile Include="Core\TaskResult.cs" />
     <Compile Include="Core\Template.cs" />
@@ -191,6 +193,28 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\site.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Scan.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ZxingOverlay.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\area_above_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\area_above_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\area_below_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\area_below_right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

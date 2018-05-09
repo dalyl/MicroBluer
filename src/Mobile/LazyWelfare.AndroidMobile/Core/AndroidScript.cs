@@ -28,15 +28,37 @@ namespace LazyWelfare.AndroidMobile
         public AndroidScript(Activity activity)
         {
             _activity = activity;
-            AppcationContext.Current = _activity.ApplicationContext;
+            Appcation.CurrentContext = _activity.ApplicationContext;
         }
+
+
+        //[Export("ScanHost")]
+        //[JavascriptInterface]
+        //public void ScanHost()
+        //{
+        //    Appcation.ScanResultDo = (suceeeded, result) =>
+        //    {
+        //        if (suceeeded)
+        //        {
+        //            var service = new HostStoreService();
+        //            service.Add(result);
+        //        }
+        //        else
+        //        {
+        //            ShowToast(result);
+        //        }
+        //    };
+
+        //    Intent intent = new Intent(_activity, typeof(CaptureActivity ));
+        //    _activity.StartActivity(intent);
+        //}
 
 
         [Export("ScanHost")]
         [JavascriptInterface]
         public void ScanHost()
         {
-            var scan = new Scan(_activity);
+            var scan = new ScanPlugin(_activity);
             var invoke = scan.Invoke();
             Task.WaitAll(invoke);
             if (invoke.Result)

@@ -12,15 +12,9 @@ using Android.Widget;
 namespace LazyWelfare.AndroidMobile
 {
 
-    public class AppcationContext
-    {
-        public static Context Current { get; set; }
-    }
-
-
     public class SharedPreferences
     {
-        public Context Context { get { return AppcationContext.Current; } }
+        public Context Context { get { return Appcation.CurrentContext; } }
 
         public string File { get; private set; }
 
