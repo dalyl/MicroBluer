@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Provider;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -43,6 +44,11 @@ namespace LazyWelfare.AndroidMobile
                 };
 
                 View zxingOverlay = LayoutInflater.FromContext(context).Inflate(Resource.Layout.ZxingOverlay, null);
+                var bulbBtn = zxingOverlay.FindViewById(Resource.Id.scanBulbBtn);
+                var albumBtn = zxingOverlay.FindViewById(Resource.Id.scanAlbumBtn);
+
+                bulbBtn.Click += Bulb_Click;
+                albumBtn.Click += Album_Click;
 
                 var scanner = new MobileBarcodeScanner(context)
                 {
@@ -50,7 +56,6 @@ namespace LazyWelfare.AndroidMobile
                     UseCustomOverlay = true,
                     CustomOverlay = zxingOverlay,
                 };
-
 
                 var result = await scanner.Scan(opts);
                 return ScanResultHandle(result);
@@ -60,6 +65,45 @@ namespace LazyWelfare.AndroidMobile
                 Result = ex.Message;
                 return false;
             }
+        }
+
+
+
+        public void Bulb_Click(object sender, EventArgs e)
+        {
+
+            Toast.MakeText(context, " Bulb Click", ToastLength.Short).Show();
+
+        }
+
+        public void Album_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 相册选择
+                CutImageByImgStore();
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(context, "App Select Photo Gallery Error:" + ex.InnerException, ToastLength.Short).Show();
+            }
+
+        }
+
+
+
+
+        /// <summary>
+        /// 调用相册选择
+        /// </summary>
+        private void CutImageByImgStore()
+        {
+            Intent _intentCut = new Intent(Intent.ActionGetContent, null);
+            _intentCut.SetType("image/*");// 设置文件类型
+            var sdcardTempFile = new Java.IO.File("/mnt/sdcard/", "tmp_pic_" + SystemClock.CurrentThreadTimeMillis() + ".jpg");
+            _intentCut.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(sdcardTempFile));
+            _intentCut.PutExtra(MediaStore.ExtraVideoQuality, 1);
+            context.StartActivity(_intentCut);
         }
 
 

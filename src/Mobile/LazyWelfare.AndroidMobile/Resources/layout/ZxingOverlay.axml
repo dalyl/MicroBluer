@@ -7,26 +7,26 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#d9000000" />
+        android:background="#f0f0f0" />
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="330dp"
+        android:layout_height="220dp"
         android:orientation="horizontal">
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#d9000000" />
+            android:background="#f0f0f0" />
         <RelativeLayout
-            android:layout_width="220dp"
+            android:layout_width="240dp"
             android:layout_height="fill_parent"
             android:background="#00000000">
         <!--<ImageView
-                android:id="@+id/ivScanning"
-                android:layout_width="fill_parent"
-                android:layout_height="70dp"
-                android:layout_alignParentTop="true"
-                android:src="@drawable/scanning_animation" />-->
+                  android:id="@+id/ivScanning"
+                  android:layout_width="fill_parent"
+                  android:layout_height="70dp"
+                  android:layout_alignParentTop="true"
+                  android:src="@drawable/scanning_animation" />-->
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,22 +56,71 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#d9000000" />
+            android:background="#f0f0f0" />
     </LinearLayout>
-    <RelativeLayout
+    <TextView
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#d9000000">
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="11dp"
-            android:textSize="12sp"
-            android:textColor="#b2b2b2"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:text="请将二维码放入框内，即可自动扫描" />
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:textSize="12sp"
+        android:textColor="#b2b2b2"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:background="#f0f0f0"
+        android:text="请将二维码放入框内，即可自动扫描" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:background="#f0f0f0">
+        <LinearLayout
+            android:id="@+id/scanAlbumBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_margin="20pt"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageAlbum"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip"
+                android:src="@drawable/scan_album" />
+            <TextView
+                android:id="@+id/textAlbum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="相册"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/scanBulbBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_margin="20pt"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageBulb"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip"
+                android:src="@drawable/scan_bulb" />
+            <TextView
+                android:id="@+id/textBulb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="背灯"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

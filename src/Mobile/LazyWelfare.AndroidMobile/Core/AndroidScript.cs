@@ -28,9 +28,8 @@ namespace LazyWelfare.AndroidMobile
         public AndroidScript(Activity activity)
         {
             _activity = activity;
-            Appcation.CurrentContext = _activity.ApplicationContext;
+            Appcation.CurrentContext = _activity;
         }
-
 
         //[Export("ScanHost")]
         //[JavascriptInterface]
@@ -80,7 +79,7 @@ namespace LazyWelfare.AndroidMobile
         [JavascriptInterface]//表示这个Method是可以被js调用的  
         public void ShowToast(string Message)
         {
-            Toast.MakeText(_activity.ApplicationContext, Message, ToastLength.Short).Show();
+            Toast.MakeText(_activity, Message, ToastLength.Short).Show();
         }
 
         [Export("PartialLoad")]
