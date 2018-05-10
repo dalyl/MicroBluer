@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
+using Android.Hardware;
+using Android.Hardware.Camera2;
 using Android.OS;
 using Android.Provider;
 using Android.Runtime;
@@ -68,20 +71,13 @@ namespace LazyWelfare.AndroidMobile
         }
 
 
-
-        public void Bulb_Click(object sender, EventArgs e)
-        {
-
-            Toast.MakeText(context, " Bulb Click", ToastLength.Short).Show();
-
-        }
+        #region ---  Album_Click  ---
 
         public void Album_Click(object sender, EventArgs e)
         {
             try
             {
-                // 相册选择
-                CutImageByImgStore();
+                SelectImageByImgStore();
             }
             catch (Exception ex)
             {
@@ -90,13 +86,10 @@ namespace LazyWelfare.AndroidMobile
 
         }
 
-
-
-
         /// <summary>
         /// 调用相册选择
         /// </summary>
-        private void CutImageByImgStore()
+        private void SelectImageByImgStore()
         {
             Intent _intentCut = new Intent(Intent.ActionGetContent, null);
             _intentCut.SetType("image/*");// 设置文件类型
@@ -105,6 +98,94 @@ namespace LazyWelfare.AndroidMobile
             _intentCut.PutExtra(MediaStore.ExtraVideoQuality, 1);
             context.StartActivity(_intentCut);
         }
+
+        #endregion
+
+        #region ---  Bulb_Click  ---
+
+
+        public void Bulb_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //if (Build.VERSION.SdkInt >= Build.VERSION_CODES.M)
+                //{
+                //    lightSwitch();
+                //}
+                //else {
+                //    lightSwitchM();
+                //}
+
+                lightSwitchM();
+
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(context, "App Open Photo FlashLight Error:" + ex.InnerException, ToastLength.Short).Show();
+            }
+        }
+
+        bool lightStatus = false;
+        private void lightSwitch()
+        {
+            try
+            {
+                var manager = (CameraManager)context.GetSystemService(Context.CameraService);
+                lightStatus = !lightStatus;
+                manager.SetTorchMode("0", lightStatus);
+            }
+            catch {
+                throw (new  Exception("未发现照明灯"));
+            }
+        }
+
+        Camera m_Camera { get; set; } = null;
+        private void lightSwitchM()
+        {
+            if (m_Camera != null)
+            {
+                // 关闭手电筒
+                m_Camera.StopPreview();
+                m_Camera.Release();
+                m_Camera = null;
+            }
+            else
+            {
+                // 打开手电筒
+                var pm = context.PackageManager;
+                var features = pm.GetSystemAvailableFeatures();
+                foreach (var f in features)
+                {
+                    if (PackageManager.FeatureCameraFlash.Equals(f.Name))
+                    {
+                        // 判断设备是否支持闪光灯
+                        if (null == m_Camera)
+                        {
+                            m_Camera = Camera.Open();
+                        }
+                        var parameters = m_Camera.GetParameters();
+                        parameters.FlashMode = Camera.Parameters.FlashModeTorch;
+                        m_Camera.SetParameters(parameters);
+                        m_Camera.StartPreview();
+                    }
+                }
+            }
+        }
+
+        void Dispose()
+        {
+            if (m_Camera != null)
+            {
+                m_Camera.StopPreview();
+                m_Camera.Release();
+                m_Camera = null;
+            }
+        }
+
+
+        #endregion
+
+
 
 
         /// <summary>
