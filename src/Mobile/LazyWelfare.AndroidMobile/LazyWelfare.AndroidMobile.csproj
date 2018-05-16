@@ -62,6 +62,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Tools.AnnotationSupport" />
     <Reference Include="zxing.monoandroid, Version=0.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\ZXing.Net.Mobile.1.4.6\lib\MonoAndroid\zxing.monoandroid.dll</HintPath>
     </Reference>
@@ -71,6 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Appcation.cs" />
+    <Compile Include="Core\BulbActivity.cs" />
+    <Compile Include="Core\BulbPlugin.cs" />
+    <Compile Include="Core\ImageSelectActivity.cs" />
     <Compile Include="Core\ImageTextButton.cs" />
     <Compile Include="Core\ScanPlugin.cs" />
     <Compile Include="Core\SharedStoreService.cs" />
@@ -84,6 +91,21 @@
     <Compile Include="AgreementRoute\ScanAgreement.cs" />
     <Compile Include="Core\AndroidScript.cs" />
     <Compile Include="Core\SharedPreferences.cs" />
+    <Compile Include="ImageSelect\Adapter\AlbumAdapter.cs" />
+    <Compile Include="ImageSelect\Adapter\PictureAdapter.cs" />
+    <Compile Include="ImageSelect\Control\AlbumCollection.cs" />
+    <Compile Include="ImageSelect\Control\PictureCollection.cs" />
+    <Compile Include="ImageSelect\Control\SelectedUriCollection.cs" />
+    <Compile Include="ImageSelect\Engine\CustomEngine.cs" />
+    <Compile Include="ImageSelect\Engine\GlideEngine.cs" />
+    <Compile Include="ImageSelect\Engine\LoadEngine.cs" />
+    <Compile Include="ImageSelect\Loader\AlbumLoader.cs" />
+    <Compile Include="ImageSelect\Loader\PictureLoader.cs" />
+    <Compile Include="ImageSelect\MimeType.cs" />
+    <Compile Include="ImageSelect\Model\Album.cs" />
+    <Compile Include="ImageSelect\Model\Picture.cs" />
+    <Compile Include="ImageSelect\Model\SelectionSpec.cs" />
+    <Compile Include="ImageSelect\Widget\GridViewItemRelativeLayout.cs" />
     <Compile Include="Logic\Define.cs" />
     <Compile Include="Logic\HostStoreService.cs" />
     <Compile Include="Models\AppModel.cs" />
@@ -94,6 +116,14 @@
     <Compile Include="Core\SplashScreenActivity.cs" />
     <Compile Include="Core\TaskResult.cs" />
     <Compile Include="Core\Template.cs" />
+    <Compile Include="Utils\BundleUtils.cs" />
+    <Compile Include="Utils\CollectionExtension.cs" />
+    <Compile Include="Utils\ExifInterfaceCompat.cs" />
+    <Compile Include="Utils\HandlerUtils.cs" />
+    <Compile Include="Utils\MediaStoreCompat.cs" />
+    <Compile Include="Utils\ParcelUtils.cs" />
+    <Compile Include="Utils\PhotoMetadataUtils.cs" />
+    <Compile Include="Utils\WeakReferenceExtension.cs" />
     <Compile Include="Views\Partials\HomeView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,13 +176,7 @@
     </AndroidResource>
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\mipmap-hdpi\" />
-    <Folder Include="Resources\mipmap-mdpi\" />
-    <Folder Include="Resources\mipmap-xhdpi\" />
-    <Folder Include="Resources\mipmap-xxhdpi\" />
-    <Folder Include="Resources\mipmap-xxxhdpi\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidAsset Include="Assets\css\style.css" />
   </ItemGroup>
@@ -218,18 +242,95 @@
     <AndroidResource Include="Resources\drawable-hdpi\area_below_right.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\scan_bulb.png">
+    <AndroidResource Include="Resources\drawable-hdpi\scan_bulb.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\scan_album.png">
+    <AndroidResource Include="Resources\drawable-hdpi\scan_album.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\ImageTextButton.axml">
       <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\gallery_back.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\gallery_down.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\gallery_up.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_camera.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\image_not_exist.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\pick_photo_checkbox_check.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\pick_photo_checkbox_normal.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ImageSelect.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ImageSelect_IncludeTop.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\colors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ImageSelect_PhotoPickListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\listview_down.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ImageSelect_PhotoPickGridListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\pick_photo_checkbox.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\listview_fade_in.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\listview_fade_out.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\listview_up.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

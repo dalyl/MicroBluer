@@ -35,7 +35,7 @@ namespace LazyWelfare.AndroidMobile
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
@@ -77,6 +77,7 @@ namespace LazyWelfare.AndroidMobile
             return base.OnKeyDown(keyCode, e);
         }
 
+       
     }
 
 

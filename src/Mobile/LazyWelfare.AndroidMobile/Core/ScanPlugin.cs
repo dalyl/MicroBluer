@@ -77,7 +77,9 @@ namespace LazyWelfare.AndroidMobile
         {
             try
             {
-                SelectImageByImgStore();
+                // SelectImageByImgStore();
+                Intent intent = new Intent(context, typeof(ImageSelectActivity));
+                context.StartActivity(intent);
             }
             catch (Exception ex)
             {
@@ -96,13 +98,14 @@ namespace LazyWelfare.AndroidMobile
             var sdcardTempFile = new Java.IO.File("/mnt/sdcard/", "tmp_pic_" + SystemClock.CurrentThreadTimeMillis() + ".jpg");
             _intentCut.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(sdcardTempFile));
             _intentCut.PutExtra(MediaStore.ExtraVideoQuality, 1);
-            context.StartActivity(_intentCut);
+            context.StartActivityForResult(_intentCut, 1);
         }
 
         #endregion
 
         #region ---  Bulb_Click  ---
 
+       // 
 
         public void Bulb_Click(object sender, EventArgs e)
         {
@@ -117,7 +120,7 @@ namespace LazyWelfare.AndroidMobile
                 //}
 
                 lightSwitchM();
-
+ 
             }
             catch (Exception ex)
             {
@@ -186,8 +189,6 @@ namespace LazyWelfare.AndroidMobile
         #endregion
 
 
-
-
         /// <summary>
         /// 获取扫描结果的处理
         /// </summary>
@@ -199,4 +200,7 @@ namespace LazyWelfare.AndroidMobile
             return true;
         }
     }
+
+   
+    
 }
