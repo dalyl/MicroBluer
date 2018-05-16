@@ -12,7 +12,6 @@ namespace LazyWelfare.AndroidMobile
     using LazyWelfare.AndroidMobile.ImageSelect;
     using LazyWelfare.AndroidMobile.Utils;
     using Java.Lang;
-    using System;
 
     public sealed class Picker
     {

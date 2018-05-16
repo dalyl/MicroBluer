@@ -27,7 +27,7 @@
 
         public override View NewView(Context context, Cursor cursor, ViewGroup parent)
         {
-            View convertView = mInflater.Inflate(Resource.Layout.ImageSelect_PhotoPickListItem, parent, false);
+            View convertView = mInflater.Inflate(Resource.Layout.ImageSelect_PhotoPickGridListItem, parent, false);
             viewHolder = new ViewHolder(convertView, mCollection);
             return convertView;
         }

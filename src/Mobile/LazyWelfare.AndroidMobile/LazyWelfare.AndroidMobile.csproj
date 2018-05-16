@@ -77,7 +77,7 @@
     <Compile Include="Core\Appcation.cs" />
     <Compile Include="Core\BulbActivity.cs" />
     <Compile Include="Core\BulbPlugin.cs" />
-    <Compile Include="Core\ImageSelectActivity.cs" />
+    <Compile Include="ImageSelect\ImageSelectActivity.cs" />
     <Compile Include="Core\ImageTextButton.cs" />
     <Compile Include="Core\ScanPlugin.cs" />
     <Compile Include="Core\SharedStoreService.cs" />
@@ -176,7 +176,6 @@
     </AndroidResource>
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <AndroidAsset Include="Assets\css\style.css" />
   </ItemGroup>
@@ -184,6 +183,10 @@
     <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Common.csproj">
       <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
       <Name>LazyWelfare.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LazyWelfare.Glidex\LazyWelfare.Glidex.csproj">
+      <Project>{d8d4d6c6-b845-4114-ade0-ea3777c5e452}</Project>
+      <Name>LazyWelfare.Glidex</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -316,7 +319,7 @@
     <AndroidResource Include="Resources\layout\ImageSelect_PhotoPickGridListItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\pick_photo_checkbox.xml" />
+    <AndroidResource Include="Resources\drawable\pick_photo_checkbox.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\anim\listview_fade_in.xml">

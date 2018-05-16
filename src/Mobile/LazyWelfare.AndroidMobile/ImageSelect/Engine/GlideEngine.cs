@@ -8,6 +8,7 @@
     using Android.OS;
     using Java.Lang;
 
+    using Glide = LazyWelfare.Glidex;
     // using Glide = com.bumptech.glide.Glide;
 
     public class GlideEngine : LoadEngine
@@ -46,8 +47,10 @@
 
         public override void DisplayImage(string path, ImageView imageView)
         {
+             
+           // LazyWelfare.Glidex
             //ChargeInit(imageView.Context);
-            //Glide.with(imageView.Context).load(path).centerCrop().error(img_loading).placeholder(img_loading).dontAnimate().into(imageView);
+            Glide.with(imageView.Context).load(path).centerCrop().error(img_loading).placeholder(img_loading).dontAnimate().into(imageView);
         }
 
         public override void DisplayCameraItem(ImageView imageView)
