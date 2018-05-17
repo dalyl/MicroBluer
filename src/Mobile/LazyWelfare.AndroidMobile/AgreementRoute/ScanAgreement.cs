@@ -37,22 +37,22 @@ namespace LazyWelfare.AndroidMobile
 
                 opts.CharacterSet = "";
 
-                var scanner = new MobileBarcodeScanner(WebBrower.Context)
-                {
-                    //不使用自定义界面
-                    UseCustomOverlay = false,
+                //var scanner = new MobileBarcodeScanner(WebBrower.Context)
+                //{
+                //    //不使用自定义界面
+                //    UseCustomOverlay = false,
 
-                    FlashButtonText = "识别",
-                    CancelButtonText = "取消",
+                //    FlashButtonText = "识别",
+                //    CancelButtonText = "取消",
 
-                    //设置上下提示文字
-                    TopText = "请将条形码对准方框内",
-                    BottomText = "确认后按下右下角识别按钮"
-                };
+                //    //设置上下提示文字
+                //    TopText = "请将条形码对准方框内",
+                //    BottomText = "确认后按下右下角识别按钮"
+                //};
 
-                var result = await scanner.Scan(opts);
-                var handle = ScanResultHandle(result);
-                if (!handle) ScanCancel();
+                //var result = await scanner.Scan(opts);
+                //var handle = ScanResultHandle(result);
+                //if (!handle) ScanCancel();
             }
             catch (Exception ex)
             {

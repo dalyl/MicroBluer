@@ -12,21 +12,26 @@ using Android.Widget;
 using ZXing;
 using ZXing.Mobile;
 
-namespace LazyWelfare.AndroidMobile
+namespace LazyWelfare.AndroidMobile.QrcodeScan
 {
 
     [Activity]
-    public class CaptureActivity  : Activity
+    public class CaptureActivity : Activity
     {
+        public  CaptureActivity()
+        {
+            MobileBarcodeScanner.Initialize(Application);
+        }
+
         public string Result { get; private set; } = "未识别";
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Scan);
+           // SetContentView(Resource.Layout.Scan);
             var succeeded = await Invoke();
-            Appcation.ScanResultDo?.Invoke(succeeded, Result);
-            Appcation.ScanResultDo = null;
+            //Appcation.ScanResultDo?.Invoke(succeeded, Result);
+            //Appcation.ScanResultDo = null;
             Finish();
         }
 
@@ -49,8 +54,7 @@ namespace LazyWelfare.AndroidMobile
 
                 opts.CharacterSet = "";
 
-
-                var scanner = new MobileBarcodeScanner(this)
+                var scanner = new MobileBarcodeScanner()
                 {
                     //不使用自定义界面
                     UseCustomOverlay = false,

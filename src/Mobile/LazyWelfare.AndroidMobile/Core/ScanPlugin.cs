@@ -46,7 +46,8 @@ namespace LazyWelfare.AndroidMobile
             bulbBtn.Click += Bulb_Click;
             albumBtn.Click += Album_Click;
 
-            var scanner = new MobileBarcodeScanner(context)
+            MobileBarcodeScanner.Initialize(context.Application);
+            var scanner = new MobileBarcodeScanner()
             {
                 //使用自定义界面
                 UseCustomOverlay = true,

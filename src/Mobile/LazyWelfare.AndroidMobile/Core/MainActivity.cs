@@ -68,16 +68,14 @@ namespace LazyWelfare.AndroidMobile
                 }
                 else
                 {
-                    Intent intent = new Intent();
-                    intent.SetClass(this, typeof(MainActivity));
-                    StartActivity(intent);
+                    Finish();
                 }
                 return true;
             }
             return base.OnKeyDown(keyCode, e);
         }
 
-       
+
     }
 
 
