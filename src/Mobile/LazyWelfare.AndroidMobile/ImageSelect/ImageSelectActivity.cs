@@ -24,8 +24,7 @@ namespace LazyWelfare.AndroidMobile
 {
     using Action = System.Action;
 
-
-    [Activity]
+    [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public class ImageSelectActivity : FragmentActivity, AlbumCollection.OnDirectorySelectListener
     {
         public static string EXTRA_RESULT_SELECTION = BundleUtils.BuildKey<ImageSelectActivity>("EXTRA_RESULT_SELECTION");
@@ -55,6 +54,9 @@ namespace LazyWelfare.AndroidMobile
 
 
         private string mCapturePhotoUriHolder;
+
+
+        public static  System.Action<List<Uri>> OnSelectCompleted;
 
 
         private View.IOnClickListener mOnClickFoldName { get; set; }
@@ -134,14 +136,17 @@ namespace LazyWelfare.AndroidMobile
 
             if (selectionSpec.WillStartCamera()) ShowCameraAction();
 
-
         }
 
         public void SetResult()
         {
-            Intent intent = new Intent();
-            intent.PutParcelableArrayListExtra(ImageSelectActivity.EXTRA_RESULT_SELECTION, mCollection.AsIParcelableList());
-            SetResult(Result.Ok, intent);
+            if (OnSelectCompleted != null)
+                OnSelectCompleted(mCollection);
+            else {
+                Intent intent = new Intent();
+                intent.PutParcelableArrayListExtra(ImageSelectActivity.EXTRA_RESULT_SELECTION, mCollection.AsIParcelableList());
+                SetResult(Result.Ok, intent);
+            }
             Finish();
         }
 

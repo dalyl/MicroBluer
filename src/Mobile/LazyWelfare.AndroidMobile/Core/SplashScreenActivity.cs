@@ -14,17 +14,14 @@ using LazyWelfare.AndroidMobile.ImageSelect.Engine;
 
 namespace LazyWelfare.AndroidMobile
 {
-    [Activity(MainLauncher = true, NoHistory = true, Theme = "@style/Theme.Splash",
-      ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(MainLauncher = true, NoHistory = true, Theme = "@style/Theme.Splash",   ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class SplashScreenActivity : Activity
     {
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
-
 
             Finish();
         }

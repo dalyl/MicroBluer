@@ -15,10 +15,15 @@ using Android.Views;
 using Android.Widget;
 using LazyWelfare.AndroidMobile.ImageSelect.Engine;
 using ZXing;
+using ZXing.Common;
 using ZXing.Mobile;
+using ZXing.QrCode;
 
 namespace LazyWelfare.AndroidMobile
 {
+    using Bitmap= Android.Graphics.Bitmap;
+    using BitmapFactory = Android.Graphics.BitmapFactory;
+
     public class ScanPlugin
     {
         public string Result { get; private set; } = "未识别";
@@ -28,6 +33,27 @@ namespace LazyWelfare.AndroidMobile
         public ScanPlugin(Activity activity)
         {
             context = activity;
+            Init();
+        }
+
+        private void Init()
+        {
+            View zxingOverlay = LayoutInflater.FromContext(context).Inflate(Resource.Layout.ZxingOverlay, null);
+            var bulbBtn = zxingOverlay.FindViewById(Resource.Id.scanBulbBtn);
+            var albumBtn = zxingOverlay.FindViewById(Resource.Id.scanAlbumBtn);
+
+            bulbBtn.Click += Bulb_Click;
+            albumBtn.Click += Album_Click;
+
+            var scanner = new MobileBarcodeScanner(context)
+            {
+                //使用自定义界面
+                UseCustomOverlay = true,
+                CustomOverlay = zxingOverlay,
+            };
+
+            OverScan = scanner.Cancel;
+            ShowScan = async (opts) => await scanner.Scan(opts);
         }
 
         public async Task<bool> Invoke()
@@ -46,22 +72,7 @@ namespace LazyWelfare.AndroidMobile
                     },
                     CharacterSet = ""
                 };
-
-                View zxingOverlay = LayoutInflater.FromContext(context).Inflate(Resource.Layout.ZxingOverlay, null);
-                var bulbBtn = zxingOverlay.FindViewById(Resource.Id.scanBulbBtn);
-                var albumBtn = zxingOverlay.FindViewById(Resource.Id.scanAlbumBtn);
-
-                bulbBtn.Click += Bulb_Click;
-                albumBtn.Click += Album_Click;
-
-                var scanner = new MobileBarcodeScanner(context)
-                {
-                    //使用自定义界面
-                    UseCustomOverlay = true,
-                    CustomOverlay = zxingOverlay,
-                };
-
-                var result = await scanner.Scan(opts);
+                var result = await ShowScan(opts);
                 return ScanResultHandle(result);
             }
             catch (Exception ex)
@@ -71,6 +82,11 @@ namespace LazyWelfare.AndroidMobile
             }
         }
 
+        Func<MobileBarcodeScanningOptions, Task<ZXing.Result>> ShowScan { get; set; }
+
+        Action OverScan { get; set; }
+
+        Android.Net.Uri PickerResult { get; set; }
 
         #region ---  Album_Click  ---
 
@@ -82,13 +98,17 @@ namespace LazyWelfare.AndroidMobile
             {
                 // SelectImageByImgStore();
                 Picker.From(context)
-                    .Count(1)
-                    .EnableCamera(true)
+                    .SingleChoice()
+                    .EnableCamera(false)
                     .SetEngine(new GlideEngine())
-            //                .setEngine(new PicassoEngine())
-            //                .setEngine(new ImageLoaderEngine())
-                    .ForResult(REQUEST_CODE_CHOOSE);
-
+                    .ForResult(urls =>
+                    {
+                        if (urls != null && urls.Count > 0)
+                        {
+                            PickerResult = urls.FirstOrDefault();
+                            OverScan();
+                        }
+                    });
             }
             catch (Exception ex)
             {
@@ -114,7 +134,7 @@ namespace LazyWelfare.AndroidMobile
 
         #region ---  Bulb_Click  ---
 
-       // 
+        // 
 
         public void Bulb_Click(object sender, EventArgs e)
         {
@@ -129,7 +149,7 @@ namespace LazyWelfare.AndroidMobile
                 //}
 
                 lightSwitchM();
- 
+
             }
             catch (Exception ex)
             {
@@ -146,8 +166,9 @@ namespace LazyWelfare.AndroidMobile
                 lightStatus = !lightStatus;
                 manager.SetTorchMode("0", lightStatus);
             }
-            catch {
-                throw (new  Exception("未发现照明灯"));
+            catch
+            {
+                throw (new Exception("未发现照明灯"));
             }
         }
 
@@ -194,22 +215,117 @@ namespace LazyWelfare.AndroidMobile
             }
         }
 
-
         #endregion
-
 
         /// <summary>
         /// 获取扫描结果的处理
         /// </summary>
         private bool ScanResultHandle(ZXing.Result result)
         {
+            if (PickerResult != null) return PickerResultHandle();
             if (result == null) return false;
             if (string.IsNullOrEmpty(result.Text)) return false;
             Result = result.Text;
             return true;
         }
-    }
 
-   
-    
+        private bool PickerResultHandle()
+        {
+            var map= CreateBitmap(PickerResult.Path);
+            Result = YuvHandle(map);
+            return string.IsNullOrEmpty(Result) == false;
+        }
+
+        Bitmap CreateBitmap(string path)
+        {
+           
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.InJustDecodeBounds = true; // 先获取原大小
+
+            return BitmapFactory.DecodeFile(path, options);
+
+            options.InJustDecodeBounds = false; // 获取新的大小
+            int sampleSize = (int)(options.OutHeight / (float)200);
+            if (sampleSize <= 0)
+                sampleSize = 1;
+            options.InSampleSize = sampleSize;
+
+            return BitmapFactory.DecodeFile(path, options);
+        }
+
+        //string RgbHandle(Bitmap scanBitmap)
+        //{
+          
+        //    RGBLuminanceSource source = new RGBLuminanceSource(scanBitmap, scanBitmap.Width, scanBitmap.Height);
+        //    BinaryBitmap bitmap1 = new BinaryBitmap(new HybridBinarizer(source));
+        //    QRCodeReader reader = new QRCodeReader();
+
+        //    try
+        //    {
+        //        // DecodeHintType 和EncodeHintType
+        //        var hints = new Dictionary<DecodeHintType, object>();
+        //        hints.Add(DecodeHintType.CHARACTER_SET, "utf-8"); // 设置二维码内容的编码
+        //        var result= reader.decode(bitmap1, hints);
+        //        return result.Text;
+        //    }
+        //    catch
+        //    {
+        //        return string.Empty;
+        //    }
+        //}
+
+        string YuvHandle(Bitmap scanBitmap)
+        {
+            LuminanceSource source1 = new PlanarYUVLuminanceSource(rgb2YUV(scanBitmap), scanBitmap.Width, scanBitmap.Height, 0, 0, scanBitmap.Width, scanBitmap.Height, false);
+            BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(source1));
+            MultiFormatReader reader1 = new MultiFormatReader();
+            try
+            {
+                var result = reader1.decode(binaryBitmap);
+                return result.Text;
+            }
+            catch 
+            {
+                return string.Empty;
+            }
+        }
+
+        byte[] rgb2YUV(Bitmap bitmap)
+        {
+            int width = bitmap.Width;
+            int height = bitmap.Height;
+            int[] pixels = new int[width * height];
+            bitmap.GetPixels(pixels, 0, width, 0, 0, width, height);
+
+            int len = width * height;
+            byte[] yuv = new byte[len * 3 / 2];
+            int y, u, v;
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    int rgb = pixels[i * width + j] & 0x00FFFFFF;
+
+                    int r = rgb & 0xFF;
+                    int g = (rgb >> 8) & 0xFF;
+                    int b = (rgb >> 16) & 0xFF;
+
+                    y = ((66 * r + 129 * g + 25 * b + 128) >> 8) + 16;
+                    u = ((-38 * r - 74 * g + 112 * b + 128) >> 8) + 128;
+                    v = ((112 * r - 94 * g - 18 * b + 128) >> 8) + 128;
+
+                    y = y < 16 ? 16 : (y > 255 ? 255 : y);
+                    u = u < 0 ? 0 : (u > 255 ? 255 : u);
+                    v = v < 0 ? 0 : (v > 255 ? 255 : v);
+
+                    yuv[i * width + j] = (byte)y;
+                    //                yuv[len + (i >> 1) * width + (j & ~1) + 0] = (byte) u;
+                    //                yuv[len + (i >> 1) * width + (j & ~1) + 1] = (byte) v;
+                }
+            }
+            return yuv;
+        }
+
+
+    }
 }

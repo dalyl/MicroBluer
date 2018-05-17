@@ -7,11 +7,13 @@ namespace LazyWelfare.AndroidMobile
     using Uri = Android.Net.Uri;
     using Fragment = Android.Support.V4.App.Fragment;
     using System.Collections.Generic;
+    using System.Linq;
     using LazyWelfare.AndroidMobile.ImageSelect.Model;
     using LazyWelfare.AndroidMobile.ImageSelect.Engine;
     using LazyWelfare.AndroidMobile.ImageSelect;
     using LazyWelfare.AndroidMobile.Utils;
     using Java.Lang;
+    using Android.Content;
 
     public sealed class Picker
     {
@@ -152,6 +154,24 @@ namespace LazyWelfare.AndroidMobile
             return this;
         }
 
+
+        public void ForResult(System.Action<List<Uri>> OnSelectCompleted)
+        {
+            SetImageSelectCompleted(OnSelectCompleted);
+            ForResult(-999);
+        }
+
+        void SetImageSelectCompleted(System.Action<List<Uri>> OnSelectCompleted)
+        {
+            if (OnSelectCompleted == null) return;
+            System.Action<List<Uri>> act = urls =>
+            {
+                OnSelectCompleted(urls);
+                ImageSelectActivity.OnSelectCompleted = null;
+            };
+            ImageSelectActivity.OnSelectCompleted = act;
+        }
+
         /// <summary>
         /// Start to select photo.
         /// </summary>
@@ -227,6 +247,30 @@ namespace LazyWelfare.AndroidMobile
             hasInitPicker = true;
             return new Picker(fragment.Activity, fragment, mimeType);
         }
+
+        public static Uri GetSingleResult(Intent data)
+        {
+            var urls= data.GetParcelableArrayListExtra(ImageSelectActivity.EXTRA_RESULT_SELECTION) as List<Uri>;
+            return urls?.FirstOrDefault();
+        }
+
+        public static List<Uri> GetResult(Intent data)
+        {
+            return data.GetParcelableArrayListExtra(ImageSelectActivity.EXTRA_RESULT_SELECTION) as List<Uri>;
+        }
+
+        public static List<string> GetResult(ContentResolver resolver, Intent data)
+        {
+            List<Uri> uris = data.GetParcelableArrayListExtra(ImageSelectActivity.EXTRA_RESULT_SELECTION) as List<Uri>;
+            List<string> paths = new List<string>();
+            if (uris == null) return paths;
+            foreach (Uri uri in uris)
+            {
+                paths.Add(PhotoMetadataUtils.GetPath(resolver, uri));
+            }
+            return paths;
+        }
+
 
         /// <returns> the actual requester context. </returns>
         //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
