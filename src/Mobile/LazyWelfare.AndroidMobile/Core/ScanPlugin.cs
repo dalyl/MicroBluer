@@ -13,6 +13,7 @@ using Android.Provider;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using LazyWelfare.AndroidMobile.ImageSelect.Engine;
 using ZXing;
 using ZXing.Mobile;
 
@@ -73,13 +74,21 @@ namespace LazyWelfare.AndroidMobile
 
         #region ---  Album_Click  ---
 
+        public static int REQUEST_CODE_CHOOSE = 1;
+
         public void Album_Click(object sender, EventArgs e)
         {
             try
             {
                 // SelectImageByImgStore();
-                Intent intent = new Intent(context, typeof(ImageSelectActivity));
-                context.StartActivity(intent);
+                Picker.From(context)
+                    .Count(1)
+                    .EnableCamera(true)
+                    .SetEngine(new GlideEngine())
+            //                .setEngine(new PicassoEngine())
+            //                .setEngine(new ImageLoaderEngine())
+                    .ForResult(REQUEST_CODE_CHOOSE);
+
             }
             catch (Exception ex)
             {

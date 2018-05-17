@@ -202,7 +202,7 @@ namespace LazyWelfare.AndroidMobile
             galleryTip.SetImageResource(Resource.Drawable.gallery_down);
             Animation animation = AnimationUtils.LoadAnimation(this, Resource.Animation.listview_down);
             Animation fadeOut = AnimationUtils.LoadAnimation(this, Resource.Animation.listview_fade_out);
-            animation.SetAnimationListener(new AnimationListener(end: (Ani) => mListViewGroup.Visibility = ViewStates.Visible));
+            animation.SetAnimationListener(new AnimationListener(end: (Ani) => mListViewGroup.Visibility = ViewStates.Invisible));
 
             mListView.StartAnimation(animation);
             mListViewGroup.StartAnimation(fadeOut);

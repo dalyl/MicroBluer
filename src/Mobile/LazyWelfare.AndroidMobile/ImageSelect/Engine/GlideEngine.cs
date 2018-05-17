@@ -8,8 +8,7 @@
     using Android.OS;
     using Java.Lang;
 
-    using Glide = LazyWelfare.Glidex;
-    // using Glide = com.bumptech.glide.Glide;
+    using Glide = Com.Bumptech.Glide.Glide;
 
     public class GlideEngine : LoadEngine
     {
@@ -47,25 +46,23 @@
 
         public override void DisplayImage(string path, ImageView imageView)
         {
-             
-           // LazyWelfare.Glidex
-            //ChargeInit(imageView.Context);
-            Glide.with(imageView.Context).load(path).centerCrop().error(img_loading).placeholder(img_loading).dontAnimate().into(imageView);
+            ChargeInit(imageView.Context);
+            Glide.With(imageView.Context).Load(path).CenterCrop().Error(img_loading).Placeholder(img_loading).DontAnimate().Into(imageView);
         }
 
         public override void DisplayCameraItem(ImageView imageView)
         {
-            //ChargeInit(imageView.Context);
-            //Glide.with(imageView.Context).load(img_camera).centerCrop().error(img_camera).placeholder(img_camera).dontAnimate().into(imageView);
+            ChargeInit(imageView.Context);
+            Glide.With(imageView.Context).Load(img_camera).CenterCrop().Error(img_camera).Placeholder(img_camera).DontAnimate().Into(imageView);
         }
 
-        //private void ChargeInit(Context context)
-        //{
-        //    if (Glide.get(context) == null)
-        //    {
-        //        throw new ExceptionInInitializerError(LoadEngine_Fields.INITIALIZE_ENGINE_ERROR);
-        //    }
-        //}
+        private void ChargeInit(Context context)
+        {
+            if (Glide.Get(context) == null)
+            {
+                throw new ExceptionInInitializerError(LoadEngine_Fields.INITIALIZE_ENGINE_ERROR);
+            }
+        }
 
         public override void Scrolling(GridView view)
         {
