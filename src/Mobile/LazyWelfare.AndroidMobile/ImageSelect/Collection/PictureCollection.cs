@@ -18,7 +18,7 @@ using LazyWelfare.AndroidMobile.ImageSelect.Loader;
 using Java.Lang;
 using Android.Database;
 
-namespace LazyWelfare.AndroidMobile.ImageSelect.Control
+namespace LazyWelfare.AndroidMobile.ImageSelect.Collection
 {
 
 public class PictureCollection :Object, Android.Support.V4.App.LoaderManager.ILoaderCallbacks

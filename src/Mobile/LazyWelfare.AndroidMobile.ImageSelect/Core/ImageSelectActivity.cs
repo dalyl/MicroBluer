@@ -1,26 +1,18 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Android;
 using Android.App;
 using Android.Content;
 using Android.Net;
 using Android.OS;
-using Android.Provider;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using LazyWelfare.AndroidMobile.ImageSelect.Model;
-using LazyWelfare.AndroidMobile.Utils;
+using LazyWelfare.AndroidMobile.ImageSelect.Utils;
 using LazyWelfare.AndroidMobile.ImageSelect.Collection;
-using Android.Support.V4;
 using Android.Support.V4.App;
 using Java.Lang;
 using Android.Views.Animations;
 
-namespace LazyWelfare.AndroidMobile
+namespace LazyWelfare.AndroidMobile.ImageSelect
 {
     using Action = System.Action;
 

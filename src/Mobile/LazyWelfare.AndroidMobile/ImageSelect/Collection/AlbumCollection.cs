@@ -19,7 +19,7 @@ using LazyWelfare.AndroidMobile.Utils;
 using Java.Lang;
 using LazyWelfare.AndroidMobile.ImageSelect.Adapter;
 
-namespace LazyWelfare.AndroidMobile.ImageSelect.Control
+namespace LazyWelfare.AndroidMobile.ImageSelect.Collection
 {
 
     public class AlbumCollection : Java.Lang.Object, Android.Support.V4.App.LoaderManager.ILoaderCallbacks, AdapterView.IOnItemClickListener

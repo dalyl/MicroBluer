@@ -12,21 +12,15 @@ using LazyWelfare.AndroidMobile.ImageSelect.Model;
 using LazyWelfare.AndroidMobile.Utils;
 using System.Collections.Generic;
 
-namespace LazyWelfare.AndroidMobile.ImageSelect.Control
+namespace LazyWelfare.AndroidMobile.ImageSelect.Collection
 {
     public class SelectedUriCollection: List<Uri>
     {
         private static string STATE_SELECTION = BundleUtils.BuildKey<SelectedUriCollection>("STATE_SELECTION");
         private static string STATE_SELECTION_POSITION = BundleUtils.BuildKey<SelectedUriCollection>("STATE_SELECTION_POSITION");
-        private System.Lazy<Context> mContext;
         private SelectionSpec mSpec;
-        private OnSelectionChange onSelectionChange;
-
-        public SelectedUriCollection(Context context)
-        {
-            mContext = new System.Lazy<Context>(() => context);
-        }
-
+        private IOnSelectionChange onSelectionChange;
+  
         public void OnCreate(Bundle savedInstanceState)
         {
             if (savedInstanceState != null)
@@ -92,13 +86,13 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Control
             }
         }
 
-        public void SetOnSelectionChange(OnSelectionChange onSelectionChange)
+        public void SetOnSelectionChange(IOnSelectionChange onSelectionChange)
         {
             this.onSelectionChange = onSelectionChange;
         }
         
 
-        public interface OnSelectionChange
+        public interface IOnSelectionChange
         {
             void OnChange(int maxCount, int selectCount);
         }

@@ -13,6 +13,7 @@ using Android.Provider;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using LazyWelfare.AndroidMobile.ImageSelect;
 using LazyWelfare.AndroidMobile.ImageSelect.Engine;
 using ZXing;
 using ZXing.Common;
@@ -97,7 +98,7 @@ namespace LazyWelfare.AndroidMobile
             try
             {
                 // SelectImageByImgStore();
-                Picker.From(context)
+                BulbPlugin.From(context)
                     .SingleChoice()
                     .EnableCamera(false)
                     .SetEngine(new GlideEngine())
@@ -231,18 +232,18 @@ namespace LazyWelfare.AndroidMobile
 
         private bool PickerResultHandle()
         {
-            var map= CreateBitmap(PickerResult.Path);
+            var path = GetImagePath(PickerResult);
+            var map= CreateBitmap(path);
             Result = YuvHandle(map);
             return string.IsNullOrEmpty(Result) == false;
         }
 
         Bitmap CreateBitmap(string path)
         {
-           
             BitmapFactory.Options options = new BitmapFactory.Options();
-            options.InJustDecodeBounds = true; // 先获取原大小
+            //options.InJustDecodeBounds = true; // 先获取原大小
 
-            return BitmapFactory.DecodeFile(path, options);
+            //return BitmapFactory.DecodeFile(path, options);
 
             options.InJustDecodeBounds = false; // 获取新的大小
             int sampleSize = (int)(options.OutHeight / (float)200);
@@ -251,6 +252,15 @@ namespace LazyWelfare.AndroidMobile
             options.InSampleSize = sampleSize;
 
             return BitmapFactory.DecodeFile(path, options);
+        }
+
+        string GetImagePath(Android.Net.Uri uri)
+        {
+            String[] proj = { MediaStore.Images.Media.InterfaceConsts.Data };
+            var actualimagecursor = context.ContentResolver.Query(uri, proj, null, null, null);
+            int actual_image_column_index = actualimagecursor.GetColumnIndexOrThrow(MediaStore.Images.Media.InterfaceConsts.Data);
+            actualimagecursor.MoveToFirst();
+            return actualimagecursor.GetString(actual_image_column_index);
         }
 
         //string RgbHandle(Bitmap scanBitmap)

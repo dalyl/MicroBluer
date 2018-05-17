@@ -14,8 +14,6 @@ using Android.Provider;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using LazyWelfare.AndroidMobile.ImageSelect.Model;
-using LazyWelfare.AndroidMobile.Utils;
 
 namespace LazyWelfare.AndroidMobile
 {

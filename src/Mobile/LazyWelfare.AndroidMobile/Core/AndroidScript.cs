@@ -68,6 +68,7 @@ namespace LazyWelfare.AndroidMobile
             else
             {
                 ShowToast(scan.Result);
+               // ShowToast("未识别");
             }
         }
 
@@ -99,7 +100,6 @@ namespace LazyWelfare.AndroidMobile
 
         string SwitchHost(string host)
         {
-
             return "";
         }
 

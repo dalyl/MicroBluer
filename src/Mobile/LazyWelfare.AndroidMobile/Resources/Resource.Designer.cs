@@ -26,6 +26,44 @@ namespace LazyWelfare.AndroidMobile
 		
 		public static void UpdateIdValues()
 		{
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_down = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_down;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_fade_in = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_fade_in;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_fade_out = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_fade_out;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_up = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_up;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Color.top_bg = global::LazyWelfare.AndroidMobile.Resource.Color.top_bg;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.gallery_back = global::LazyWelfare.AndroidMobile.Resource.Drawable.gallery_back;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.gallery_down = global::LazyWelfare.AndroidMobile.Resource.Drawable.gallery_down;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.gallery_up = global::LazyWelfare.AndroidMobile.Resource.Drawable.gallery_up;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.ic_camera = global::LazyWelfare.AndroidMobile.Resource.Drawable.ic_camera;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.image_not_exist = global::LazyWelfare.AndroidMobile.Resource.Drawable.image_not_exist;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.pick_photo_checkbox = global::LazyWelfare.AndroidMobile.Resource.Drawable.pick_photo_checkbox;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.pick_photo_checkbox_check = global::LazyWelfare.AndroidMobile.Resource.Drawable.pick_photo_checkbox_check;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.pick_photo_checkbox_normal = global::LazyWelfare.AndroidMobile.Resource.Drawable.pick_photo_checkbox_normal;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.btn_back = global::LazyWelfare.AndroidMobile.Resource.Id.btn_back;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.check = global::LazyWelfare.AndroidMobile.Resource.Id.check;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.commit = global::LazyWelfare.AndroidMobile.Resource.Id.commit;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.foldName = global::LazyWelfare.AndroidMobile.Resource.Id.foldName;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.gallery_tip = global::LazyWelfare.AndroidMobile.Resource.Id.gallery_tip;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.gridView = global::LazyWelfare.AndroidMobile.Resource.Id.gridView;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.listView = global::LazyWelfare.AndroidMobile.Resource.Id.listView;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.listViewParent = global::LazyWelfare.AndroidMobile.Resource.Id.listViewParent;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.photoCount = global::LazyWelfare.AndroidMobile.Resource.Id.photoCount;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.rl = global::LazyWelfare.AndroidMobile.Resource.Id.rl;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.selectFold = global::LazyWelfare.AndroidMobile.Resource.Id.selectFold;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.thumbnail = global::LazyWelfare.AndroidMobile.Resource.Id.thumbnail;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.top_layout = global::LazyWelfare.AndroidMobile.Resource.Id.top_layout;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Layout.ImageSelect = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageSelect;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Layout.ImageSelect_IncludeTop = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageSelect_IncludeTop;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Layout.ImageSelect_PhotoPickGridListItem = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageSelect_PhotoPickGridListItem;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Layout.ImageSelect_PhotoPickListItem = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageSelect_PhotoPickListItem;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.app_name = global::LazyWelfare.AndroidMobile.Resource.String.app_name;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_all = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_all;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_camera = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_camera;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_download = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_download;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_screen_shot = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_screen_shot;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_selected = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_selected;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_confirm_dialog_message = global::LazyWelfare.AndroidMobile.Resource.String.l_confirm_dialog_message;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_confirm_dialog_title = global::LazyWelfare.AndroidMobile.Resource.String.l_confirm_dialog_title;
 			global::ZXing.Mobile.Resource.Id.contentFrame = global::LazyWelfare.AndroidMobile.Resource.Id.contentFrame;
 			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::LazyWelfare.AndroidMobile.Resource.Layout.zxingscanneractivitylayout;
 			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::LazyWelfare.AndroidMobile.Resource.Layout.zxingscannerfragmentlayout;
@@ -277,35 +315,29 @@ namespace LazyWelfare.AndroidMobile
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060002
-			public const int action_settings = 2131099650;
-			
 			// aapt resource value: 0x7f060000
 			public const int app_name = 2131099648;
 			
 			// aapt resource value: 0x7f060001
-			public const int hello_world = 2131099649;
+			public const int l_album_name_all = 2131099649;
 			
 			// aapt resource value: 0x7f060003
-			public const int l_album_name_all = 2131099651;
-			
-			// aapt resource value: 0x7f060005
-			public const int l_album_name_camera = 2131099653;
-			
-			// aapt resource value: 0x7f060006
-			public const int l_album_name_download = 2131099654;
-			
-			// aapt resource value: 0x7f060007
-			public const int l_album_name_screen_shot = 2131099655;
+			public const int l_album_name_camera = 2131099651;
 			
 			// aapt resource value: 0x7f060004
-			public const int l_album_name_selected = 2131099652;
+			public const int l_album_name_download = 2131099652;
 			
-			// aapt resource value: 0x7f060009
-			public const int l_confirm_dialog_message = 2131099657;
+			// aapt resource value: 0x7f060005
+			public const int l_album_name_screen_shot = 2131099653;
 			
-			// aapt resource value: 0x7f060008
-			public const int l_confirm_dialog_title = 2131099656;
+			// aapt resource value: 0x7f060002
+			public const int l_album_name_selected = 2131099650;
+			
+			// aapt resource value: 0x7f060007
+			public const int l_confirm_dialog_message = 2131099655;
+			
+			// aapt resource value: 0x7f060006
+			public const int l_confirm_dialog_title = 2131099654;
 			
 			static String()
 			{

@@ -10,7 +10,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using LazyWelfare.AndroidMobile.ImageSelect.Engine;
 
 namespace LazyWelfare.AndroidMobile
 {
