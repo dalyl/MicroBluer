@@ -7,4 +7,5 @@
     <item name="android:windowIsFloating">false</item>
     <item name="android:backgroundDimEnabled">true</item>
   </style>
+
 </resources>

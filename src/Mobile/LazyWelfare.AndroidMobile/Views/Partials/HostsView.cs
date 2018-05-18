@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.753")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.442")]
 public partial class HostsView : HostsViewBase
 {
 
@@ -65,6 +65,15 @@ WriteLiteral("></span>");
 
 #line 9 "HostsView.cshtml"
                                                                              Write(one.Name);
+
+
+#line default
+#line hidden
+WriteLiteral(" ");
+
+
+#line 9 "HostsView.cshtml"
+                                                                                       Write(one.Address);
 
 
 #line default

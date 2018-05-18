@@ -31,28 +31,6 @@ namespace LazyWelfare.AndroidMobile
             Appcation.CurrentContext = _activity;
         }
 
-        //[Export("ScanHost")]
-        //[JavascriptInterface]
-        //public void ScanHost()
-        //{
-        //    Appcation.ScanResultDo = (suceeeded, result) =>
-        //    {
-        //        if (suceeeded)
-        //        {
-        //            var service = new HostStoreService();
-        //            service.Add(result);
-        //        }
-        //        else
-        //        {
-        //            ShowToast(result);
-        //        }
-        //    };
-
-        //    Intent intent = new Intent(_activity, typeof(CaptureActivity ));
-        //    _activity.StartActivity(intent);
-        //}
-
-
         [Export("ScanHost")]
         [JavascriptInterface]
         public void ScanHost()
@@ -67,8 +45,7 @@ namespace LazyWelfare.AndroidMobile
             }
             else
             {
-                ShowToast(scan.Result);
-               // ShowToast("未识别");
+                ShowToast("未识别");
             }
         }
 

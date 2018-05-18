@@ -38,9 +38,11 @@ namespace LazyWelfare.AndroidMobile.Logic
 
         public void Add(string url)
         {
+            var id = Guid.NewGuid();
             var model = new HostModel
             {
-                Domain = Guid.NewGuid(),
+                Domain = id,
+                Name= id.ToString(),
                 Address = url,
             };
             var key = $"{model.Domain}";

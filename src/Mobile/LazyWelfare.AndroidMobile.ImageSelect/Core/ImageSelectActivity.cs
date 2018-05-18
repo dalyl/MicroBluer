@@ -16,7 +16,7 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
 {
     using Action = System.Action;
 
-    [Activity(Theme = "@android:style/Theme.NoTitleBar")]
+    [Activity(Theme = "@android:style/Theme.NoTitleBar.Fullscreen")]
     public class ImageSelectActivity : FragmentActivity, AlbumCollection.OnDirectorySelectListener
     {
         public static string EXTRA_RESULT_SELECTION = BundleUtils.BuildKey<ImageSelectActivity>("EXTRA_RESULT_SELECTION");
