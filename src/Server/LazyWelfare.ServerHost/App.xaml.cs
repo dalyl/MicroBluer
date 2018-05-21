@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LazyWelfare.ServerHost.Service;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,11 @@ namespace LazyWelfare.ServerHost
     /// </summary>
     public partial class App : Application
     {
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            ServiceProcess.Instance.Stop();
+        }
+
     }
 }

@@ -70,11 +70,8 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
-    </Reference>
-    <Reference Include="zxing.presentation, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\ZXing.Net.0.16.4\lib\net461\zxing.presentation.dll</HintPath>
+    <Reference Include="ZKWeb.System.Drawing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ZKWeb.System.Drawing.4.0.1\lib\net45\ZKWeb.System.Drawing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +154,10 @@
     <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Common.csproj">
       <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
       <Name>LazyWelfare.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj">
+      <Project>{e52051af-0f50-46ee-bfe1-eb5987adad54}</Project>
+      <Name>LazyWelfare.ServerCore</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

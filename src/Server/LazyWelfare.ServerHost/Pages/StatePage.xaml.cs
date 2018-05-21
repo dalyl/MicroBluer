@@ -28,19 +28,21 @@ namespace LazyWelfare.ServerHost.Pages
         public StatePage()
         {
             InitializeComponent();
-            QrCode.Source = ServiceProcess.Instance.CreateQRCode(250, 250);
+            QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
         }
 
         private void Button_ServiceStart_Click(object sender, RoutedEventArgs e)
         {
             ServiceProcess.Instance.Start();
+            QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
         }
 
         private void Button_ServiceStop_Click(object sender, RoutedEventArgs e)
         {
             ServiceProcess.Instance.Stop();
+            QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
         }
 
-     
+
     }
 }
