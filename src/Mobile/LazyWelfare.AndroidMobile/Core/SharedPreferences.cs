@@ -14,12 +14,13 @@ namespace LazyWelfare.AndroidMobile
 
     public class SharedPreferences
     {
-        public Context Context { get { return Appcation.CurrentContext; } }
+        Context Context { get; set; }
 
-        public string File { get; private set; }
+        string File { get; set; }
 
-        public SharedPreferences(string name)
+        public SharedPreferences(Context context, string name)
         {
+            Context = context;
             File = name;
         }
 
@@ -44,7 +45,7 @@ namespace LazyWelfare.AndroidMobile
             sp.Apply();
         }
 
-        public void PutValue(string key, string value, FileCreationMode mode= FileCreationMode.Private)
+        public void PutValue(string key, string value, FileCreationMode mode = FileCreationMode.Private)
         {
             var sp = Context.GetSharedPreferences(File, mode).Edit();
             sp.PutString(key, value);

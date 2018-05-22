@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LazyWelfare.ServerWeb.Controllers
 {
-    public class CommandController : Controller
+    public class UITestController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
@@ -17,6 +17,11 @@ namespace LazyWelfare.ServerWeb.Controllers
         }
 
         public IActionResult List()
+        {
+            return PartialView();
+        }
+
+        public IActionResult Form()
         {
             return PartialView();
         }

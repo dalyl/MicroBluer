@@ -32,6 +32,7 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
     {
         HomeView,
         HostsView,
+        HostDetailView,
     }
 
     public partial class HostsView : IsView<List<HostModel>>
@@ -43,6 +44,11 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
     public partial class HomeView : IsView {
 
         public static (string Host, string Path) Partial= (nameof(WebViews), typeof(HomeView).Name);
+
+    }
+    public partial class HostDetailView : IsView<HostModel>
+    {
+        public static (string Host, string Path) Partial = (nameof(WebViews), typeof(HostDetailView).Name);
 
     }
 

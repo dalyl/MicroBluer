@@ -77,12 +77,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Appcation.cs" />
+    <Compile Include="Core\BuinessScript.cs" />
     <Compile Include="Core\BulbActivity.cs" />
     <Compile Include="Core\ImageTextButton.cs" />
     <Compile Include="Core\ScanPlugin.cs" />
     <Compile Include="Core\SharedStoreService.cs" />
-    <Compile Include="Core\StoreService.cs" />
     <Compile Include="Core\MainActivity.cs" />
     <Compile Include="AgreementRoute\Agreement.cs" />
     <Compile Include="AgreementRoute\AgreementHandler.cs" />
@@ -92,6 +91,8 @@
     <Compile Include="AgreementRoute\ScanAgreement.cs" />
     <Compile Include="Core\AndroidScript.cs" />
     <Compile Include="Core\SharedPreferences.cs" />
+    <Compile Include="Core\TryCatch.cs" />
+    <Compile Include="Core\TryCatchException.cs" />
     <Compile Include="Logic\Define.cs" />
     <Compile Include="Logic\HostStoreService.cs" />
     <Compile Include="Models\AppModel.cs" />
@@ -112,6 +113,11 @@
       <DependentUpon>LayoutView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\PartialClass.cs" />
+    <Compile Include="Views\Partials\HostDetailView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HostDetailView.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Partials\HostsView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +145,10 @@
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>LayoutView.cs</LastGenOutput>
       <SubType>None</SubType>
+    </None>
+    <None Include="Views\Partials\HostDetailView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>HostDetailView.cs</LastGenOutput>
     </None>
     <None Include="Views\Partials\HostsView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>

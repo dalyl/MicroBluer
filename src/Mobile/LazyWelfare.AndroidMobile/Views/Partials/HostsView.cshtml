@@ -1,17 +1,34 @@
 ﻿@model  List<LazyWelfare.AndroidMobile.Models.HostModel>
-
-
-@foreach (var one in Model)
-{
-    <div class="line-section">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>@one.Name @one.Address
+<div class="line-section">
+    <ul class="list-group">
+        @foreach (var one in Model)
+        {
+            <li class="list-group-item main-item">
+                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>@one.Name
             </li>
-        </ul>
-    </div>
-}
+            <li class="list-group-item command-item " data-guid="@one.Domain">
+                <span class="command-item-set orangered">设置</span><span class="command-item-delete red">删除</span><span class="command-item-eidt blue">编辑</span>
+            </li>
+        }
+    </ul>
+</div>
 
+<script>
+    $(function () {
+        $(".command-item").css("display", "none");
+        $(".main-item").click(function () {
+            $(".command-item").css("display", "none");
+            $(this).next().fadeToggle();
+        });
+
+        $(".command-item-set").click(function () { });
+        $(".command-item-delete").click(function () { });
+        $(".command-item-eidt").click(function () {
+            var guid = $(this).parent().data("guid");
+            ViewScript.PartialLoad('#MainContent', '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
+        });
+    })
+</script>
 
 
 

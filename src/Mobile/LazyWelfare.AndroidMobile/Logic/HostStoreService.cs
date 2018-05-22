@@ -19,10 +19,12 @@ namespace LazyWelfare.AndroidMobile.Logic
 
         protected override string SharedFileName { get; } = "hostFile";
 
+        public HostStoreService(Context context) : base(context) { }
+
         public List<HostModel> GetList()
         {
             var list = new List<HostModel>();
-            var keys = StoreService.Provider.Shared(SharedFileName).AllKeys();
+            var keys = Shared.AllKeys();
             var regPid = new Regex(KeyRegex, RegexOptions.IgnoreCase);
             foreach (var one in keys)
             {
@@ -36,17 +38,30 @@ namespace LazyWelfare.AndroidMobile.Logic
             return list;
         }
 
+        public override HostModel GetModel(string key)
+        {
+            key = $"{key}";
+            return base.GetModel(key);
+        }
+
+
         public void Add(string url)
         {
             var id = Guid.NewGuid();
             var model = new HostModel
             {
                 Domain = id,
-                Name= id.ToString(),
+                Name= url,
                 Address = url,
             };
             var key = $"{model.Domain}";
             base.StoreModel(key,model);
+        }
+
+        public void Save(HostModel model)
+        {
+            var key = $"{model.Domain}";
+            base.StoreModel(key, model);
         }
 
     }

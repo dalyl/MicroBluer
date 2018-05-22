@@ -1,0 +1,95 @@
+﻿
+
+<div class="line-section">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>音量调节
+        </li>
+        <li class="list-group-item">放大</li>
+        <li class="list-group-item">缩小</li>
+    </ul>
+</div>
+
+<div class="line-section">
+    <ul class="list-group">
+        <li class="list-group-item main-item">
+            <span class="glyphicon  glyphicon-tags" aria-hidden="true"></span>  <span>操作命令</span>
+        </li>
+        <li class="list-group-item command-item ">
+            <span class="orangered">设置</span><span class="red">删除</span><span class="blue">编辑</span>
+            <span class="red">睡眠</span><span class="orangered">关机</span>
+        </li>
+        <li class="list-group-item main-item">
+            <span class="glyphicon  glyphicon-tags" aria-hidden="true"></span>  <span>操作命令</span>
+        </li>
+        <li class="list-group-item command-item ">
+            <span class="orangered">设置</span><span class="red">删除</span><span class="blue">编辑</span>
+            <span class="red">睡眠</span><span class="orangered">关机</span>
+        </li>
+  
+        <li class="list-group-item main-item">
+            <span class="glyphicon  glyphicon-tags" aria-hidden="true"></span>  <span>操作命令</span>
+        </li>
+        <li class="list-group-item command-item ">
+            <span class="orangered">设置</span><span class="red">删除</span><span class="blue">编辑</span>
+            <span class="red">睡眠</span><span class="orangered">关机</span>
+        </li>
+    </ul>
+</div>
+
+<style>
+    .main-item span {
+        cursor: pointer;
+        margin: 0;
+        padding: 10px 25px;
+        display: inline-block
+    }
+
+    .main-item {
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .command-item span {
+        cursor: pointer;
+        margin: 0;
+        padding: 10px 25px;
+        border-left: 1px solid #c0c0c0;
+        display: inline-block
+    }
+
+    .command-item {
+        color: #3c763d;
+        padding: 0;
+        background-color: #dff0d8;
+        border-right: 1px solid #c0c0c0;
+        text-align: right;
+    }
+
+    .red {
+        color: #231818;
+        background-color: #e43c3c;
+    }
+
+    .orangered {
+        color: #231818;
+        background-color: orangered;
+    }
+
+    .blue {
+        color: #231818;
+        background-color: #509bcc;
+    }
+</style>
+
+
+<script>
+    $(function () {
+        $(".command-item").css("display", "none");
+        $(".main-item").click(function () {
+            $(".command-item").css("display", "none");
+            $(this).next().fadeToggle();
+        });
+    });
+      
+</script>

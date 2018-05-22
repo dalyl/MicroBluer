@@ -18,13 +18,13 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.442")]
-public partial class HostsView : HostsViewBase
+public partial class HostDetailView : HostDetailViewBase
 {
 
 #line hidden
 
-#line 1 "HostsView.cshtml"
-public List<LazyWelfare.AndroidMobile.Models.HostModel> Model { get; set; }
+#line 1 "HostDetailView.cshtml"
+public LazyWelfare.AndroidMobile.Models.HostModel Model { get; set; }
 
 #line default
 #line hidden
@@ -34,105 +34,145 @@ public override void Execute()
 {
 WriteLiteral("<div");
 
-WriteLiteral(" class=\"line-section\"");
+WriteLiteral(" class=\"panel panel-default\"");
 
-WriteLiteral(">\r\n    <ul");
+WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"list-group\"");
+WriteLiteral(" class=\"panel-heading\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n        <h3");
 
+WriteLiteral(" class=\"panel-title\"");
 
-#line 4 "HostsView.cshtml"
-        
+WriteLiteral(">服务详情</h3>\r\n    </div>\r\n    <div");
 
-#line default
-#line hidden
+WriteLiteral(" class=\"panel-body\"");
 
-#line 4 "HostsView.cshtml"
-         foreach (var one in Model)
-        {
+WriteLiteral(">\r\n        <form");
 
+WriteLiteral(" class=\"HostModelForm\"");
 
-#line default
-#line hidden
-WriteLiteral("            <li");
+WriteLiteral(">\r\n            <input");
 
-WriteLiteral(" class=\"list-group-item main-item\"");
+WriteLiteral(" type=\"hidden\"");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(" name=\"Domain\"");
 
-WriteLiteral(" class=\"glyphicon glyphicon-tags\"");
+WriteAttribute ("value", " value=\"", "\""
 
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span>");
-
-
-#line 7 "HostsView.cshtml"
-                                                                            Write(one.Name);
-
+#line 9 "HostDetailView.cshtml"
+               , Tuple.Create<string,object,bool> ("", Model.Domain
 
 #line default
 #line hidden
-WriteLiteral("\r\n            </li>\r\n");
+, false)
+);
+WriteLiteral(" />\r\n            <div");
 
-WriteLiteral("            <li");
+WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(" class=\"list-group-item command-item \"");
+WriteLiteral(">\r\n                <label");
 
-WriteLiteral(" data-guid=\"");
+WriteLiteral(" class=\"control-label\"");
 
+WriteLiteral(">服务名称</label>\r\n                <div");
 
-#line 9 "HostsView.cshtml"
-                                                            Write(one.Domain);
+WriteLiteral(" class=\"controls\"");
 
+WriteLiteral(">\r\n                    <input");
 
-#line default
-#line hidden
-WriteLiteral("\"");
+WriteLiteral(" name=\"Name\"");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" class=\"command-item-set orangered\"");
+WriteLiteral(" placeholder=\"名称\"");
 
-WriteLiteral(">设置</span><span");
+WriteLiteral(" class=\"form-control\"");
 
-WriteLiteral(" class=\"command-item-delete red\"");
+WriteAttribute ("value", " value=\"", "\""
 
-WriteLiteral(">删除</span><span");
-
-WriteLiteral(" class=\"command-item-eidt blue\"");
-
-WriteLiteral(">编辑</span>\r\n            </li>\r\n");
-
-
-#line 12 "HostsView.cshtml"
-        }
-
+#line 13 "HostDetailView.cshtml"
+                                                         , Tuple.Create<string,object,bool> ("", Model.Name
 
 #line default
 #line hidden
-WriteLiteral(@"    </ul>
+, false)
+);
+WriteLiteral(" autocomplete=\"off\"");
+
+WriteLiteral(">\r\n                    <p");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">服务速记名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                <label");
+
+WriteLiteral(" class=\"control-label\"");
+
+WriteLiteral(">服务地址</label>\r\n                <div");
+
+WriteLiteral(" class=\"controls\"");
+
+WriteLiteral(">\r\n                    <input");
+
+WriteLiteral(" name=\"Address\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"地址\"");
+
+WriteLiteral(" class=\"form-control\"");
+
+WriteAttribute ("value", " value=\"", "\""
+
+#line 20 "HostDetailView.cshtml"
+                                                            , Tuple.Create<string,object,bool> ("", Model.Address
+
+#line default
+#line hidden
+, false)
+);
+WriteLiteral(" autocomplete=\"off\"");
+
+WriteLiteral(">\r\n                    <p");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">http://*****</p>\r\n                </div>\r\n            </div>\r\n        </form>\r\n " +
+"       <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n            <!-- Button -->\r\n            <div");
+
+WriteLiteral(" class=\"controls\"");
+
+WriteLiteral(">\r\n                <button");
+
+WriteLiteral(" class=\"btn btn-success HostModelSave\"");
+
+WriteLiteral(@">保存</button>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <script>
     $(function () {
-        $("".command-item"").css(""display"", ""none"");
-        $("".main-item"").click(function () {
-            $("".command-item"").css(""display"", ""none"");
-            $(this).next().fadeToggle();
-        });
-
-        $("".command-item-set"").click(function () { });
-        $("".command-item-delete"").click(function () { });
-        $("".command-item-eidt"").click(function () {
-            var guid = $(this).parent().data(""guid"");
-            ViewScript.PartialLoad('#MainContent', '");
+        $("".HostModelSave"").click(function () {
+            var model = $("".HostModelForm"").serialize();
+            var result = false;
+            javascript: result = BuinessScript.SaveHost(model);
+            if (result) {
+                 ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 28 "HostsView.cshtml"
-                                               Write(HostDetailView.Partial.Host);
+#line 42 "HostDetailView.cshtml"
+                                                    Write(HostsView.Partial.Host);
 
 
 #line default
@@ -140,13 +180,13 @@ WriteLiteral(@"    </ul>
 WriteLiteral("\', \'");
 
 
-#line 28 "HostsView.cshtml"
-                                                                               Write(HostDetailView.Partial.Path);
+#line 42 "HostDetailView.cshtml"
+                                                                               Write(HostsView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\', guid);\r\n        });\r\n    })\r\n</script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
+WriteLiteral("\');\r\n            }\r\n        });\r\n    })\r\n</script>");
 
 }
 }
@@ -154,7 +194,7 @@ WriteLiteral("\', guid);\r\n        });\r\n    })\r\n</script>\r\n\r\n\r\n\r\n\r
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class HostsViewBase
+public abstract class HostDetailViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

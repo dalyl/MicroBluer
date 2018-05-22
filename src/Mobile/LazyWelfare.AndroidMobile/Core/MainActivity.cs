@@ -49,8 +49,9 @@ namespace LazyWelfare.AndroidMobile
             settings.DomStorageEnabled = true;
             //加载javascript接口方法，以便调用前台方法  
             webView.AddJavascriptInterface(new AndroidScript(this), "AndroidScript");
+            webView.AddJavascriptInterface(new BuinessScript(this), "BuinessScript");
 
-            webView.SetWebViewClient(new AgreementRouteClient($"ViewScript.PartialLoad('#MainContent','{Partial.Host}','{Partial.Path}');"));
+            webView.SetWebViewClient(new AgreementRouteClient($"ViewScript.PartialLoad('#MainContent','{Partial.Host}','{Partial.Path}',null);"));
 
             var page = Template.Layout();
             webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);

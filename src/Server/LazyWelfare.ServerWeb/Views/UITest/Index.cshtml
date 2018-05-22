@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_MobileLayout";
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="content"></div>
+
+@section Scripts {
+<script>
+    $(function () {
+        FillSharp();
+        $(".navbar-link").click(function () {
+            var act = $(this).data("action");
+            location.hash = "#" + act;
+            FillSharp();
+        });
+    });
+
+    function FillSharp() {
+        var act = GetSharp();
+        if(act) BlueTouch.Partial("/UITest/" + act, ".content");
+    }
+
+    function GetSharp() {
+        var url = window.location.toString();
+        return url.split("#")[1];
+    }
+
+</script>
+}
+

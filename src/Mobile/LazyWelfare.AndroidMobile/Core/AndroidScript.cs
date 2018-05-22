@@ -24,23 +24,26 @@ namespace LazyWelfare.AndroidMobile
     public class AndroidScript : Java.Lang.Object//注意一定要继承java基类  
     {
 
-        Activity _activity = null;
+        protected Activity ViewActivity = null;
+        protected TryCatch Try { get; }
+
         public AndroidScript(Activity activity)
         {
-            _activity = activity;
-            Appcation.CurrentContext = _activity;
+            ViewActivity = activity;
+            Try = new TryCatch(ShowToast);
         }
+
 
         [Export("ScanHost")]
         [JavascriptInterface]
         public void ScanHost()
         {
-            var scan = new ScanPlugin(_activity);
+            var scan = new ScanPlugin(ViewActivity);
             var invoke = scan.Invoke();
             Task.WaitAll(invoke);
             if (invoke.Result)
             {
-                var service = new HostStoreService();
+                var service = new HostStoreService(ViewActivity);
                 service.Add(scan.Result);
             }
             else
@@ -57,14 +60,15 @@ namespace LazyWelfare.AndroidMobile
         [JavascriptInterface]//表示这个Method是可以被js调用的  
         public void ShowToast(string Message)
         {
-            Toast.MakeText(_activity, Message, ToastLength.Short).Show();
+            Toast.MakeText(ViewActivity, Message, ToastLength.Short).Show();
         }
+      
 
         [Export("PartialLoad")]
         [JavascriptInterface]
-        public string PartialLoad(string host, string url)
+        public string PartialLoad(string host, string url,string args)
         {
-            if (host == nameof(WebViews)) return SwitchWebView(url);
+            if (host == nameof(WebViews)) return SwitchWebView(url, args);
             var ip = SwitchHost(host);
             if (string.IsNullOrEmpty(ip)) return string.Empty;
             HttpClient client = new HttpClient();
@@ -74,25 +78,28 @@ namespace LazyWelfare.AndroidMobile
             return Encoding.Default.GetString(fetchResponse.Result);
         }
 
-
         string SwitchHost(string host)
         {
             return "";
         }
 
-
-        string SwitchWebView(string url)
+        string SwitchWebView(string url, string args)
         {
             var view = Enum.Parse(typeof(PartialView), url);
             switch (view) {
                 case PartialView.HomeView: return WebViews.Get(url);
                 case PartialView.HostsView: {
-                        var service = new HostStoreService();
+                        var service = new HostStoreService(ViewActivity);
                         var list = service.GetList();
                         return WebViews.Get(url, list);
-                    }
+                    };
+                case PartialView.HostDetailView: {
+                        var service = new HostStoreService(ViewActivity);
+                        var model = service.GetModel(args);
+                        return WebViews.Get(url, model);
+                }
             }
-            return "";
+            return string.Empty;
         }
     }
 
