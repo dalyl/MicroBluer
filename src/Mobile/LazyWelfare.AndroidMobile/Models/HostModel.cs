@@ -8,6 +8,7 @@ namespace LazyWelfare.AndroidMobile.Models
 
     public class HostModel
     {
+
         public Guid Domain { get; set; }
 
         public string Name { get; set; }

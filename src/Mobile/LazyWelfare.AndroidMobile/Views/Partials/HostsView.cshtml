@@ -1,19 +1,26 @@
 ﻿@model  List<LazyWelfare.AndroidMobile.Models.HostModel>
-<div class="line-section">
-    <ul class="list-group">
-        @foreach (var one in Model)
-        {
-            <li class="list-group-item main-item">
-                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>@one.Name
-            </li>
-            <li class="list-group-item command-item " data-guid="@one.Domain">
-                <span class="command-item-set orangered">设置</span><span class="command-item-delete red">删除</span><span class="command-item-eidt blue">编辑</span>
-            </li>
-        }
-    </ul>
-</div>
+    <div class="line-section">
+        <ul class="list-group">
+            @foreach (var one in Model)
+            {
+                <li class="list-group-item main-item">
+                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>@one.Name
+                </li>
+                <li class="list-group-item command-item " data-guid="@one.Domain">
+                    <span class="command-item-set orangered">设置</span><span class="command-item-delete red">删除</span><span class="command-item-eidt blue">编辑</span>
+                </li>
+            }
+        </ul>
+    </div>
 
-<script>
+    <div class="line-section">
+        <ul class="list-group">
+            <li class="list-group-item command-item-add">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>手动添加
+            </li>
+        </ul>
+    </div>
+    <script>
     $(function () {
         $(".command-item").css("display", "none");
         $(".main-item").click(function () {
@@ -21,6 +28,9 @@
             $(this).next().fadeToggle();
         });
 
+        $(".command-item-add").click(function () {
+            ViewScript.PartialLoad('#MainContent', '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', "");
+        });
         $(".command-item-set").click(function () { });
         $(".command-item-delete").click(function () { });
         $(".command-item-eidt").click(function () {
@@ -28,7 +38,7 @@
             ViewScript.PartialLoad('#MainContent', '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
         });
     })
-</script>
+    </script>
 
 
 

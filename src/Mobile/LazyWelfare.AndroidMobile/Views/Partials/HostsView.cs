@@ -32,11 +32,11 @@ public List<LazyWelfare.AndroidMobile.Models.HostModel> Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("<div");
+WriteLiteral("    <div");
 
 WriteLiteral(" class=\"line-section\"");
 
-WriteLiteral(">\r\n    <ul");
+WriteLiteral(">\r\n        <ul");
 
 WriteLiteral(" class=\"list-group\"");
 
@@ -44,23 +44,23 @@ WriteLiteral(">\r\n");
 
 
 #line 4 "HostsView.cshtml"
-        
+            
 
 #line default
 #line hidden
 
 #line 4 "HostsView.cshtml"
-         foreach (var one in Model)
-        {
+             foreach (var one in Model)
+            {
 
 
 #line default
 #line hidden
-WriteLiteral("            <li");
+WriteLiteral("                <li");
 
 WriteLiteral(" class=\"list-group-item main-item\"");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(">\r\n                    <span");
 
 WriteLiteral(" class=\"glyphicon glyphicon-tags\"");
 
@@ -70,14 +70,14 @@ WriteLiteral("></span>");
 
 
 #line 7 "HostsView.cshtml"
-                                                                            Write(one.Name);
+                                                                                Write(one.Name);
 
 
 #line default
 #line hidden
-WriteLiteral("\r\n            </li>\r\n");
+WriteLiteral("\r\n                </li>\r\n");
 
-WriteLiteral("            <li");
+WriteLiteral("                <li");
 
 WriteLiteral(" class=\"list-group-item command-item \"");
 
@@ -85,14 +85,14 @@ WriteLiteral(" data-guid=\"");
 
 
 #line 9 "HostsView.cshtml"
-                                                            Write(one.Domain);
+                                                                Write(one.Domain);
 
 
 #line default
 #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(">\r\n                    <span");
 
 WriteLiteral(" class=\"command-item-set orangered\"");
 
@@ -104,19 +104,38 @@ WriteLiteral(">删除</span><span");
 
 WriteLiteral(" class=\"command-item-eidt blue\"");
 
-WriteLiteral(">编辑</span>\r\n            </li>\r\n");
+WriteLiteral(">编辑</span>\r\n                </li>\r\n");
 
 
 #line 12 "HostsView.cshtml"
-        }
+            }
 
 
 #line default
 #line hidden
-WriteLiteral(@"    </ul>
-</div>
+WriteLiteral("        </ul>\r\n    </div>\r\n\r\n    <div");
 
-<script>
+WriteLiteral(" class=\"line-section\"");
+
+WriteLiteral(">\r\n        <ul");
+
+WriteLiteral(" class=\"list-group\"");
+
+WriteLiteral(">\r\n            <li");
+
+WriteLiteral(" class=\"list-group-item command-item-add\"");
+
+WriteLiteral(">\r\n                <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-plus\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral(@"></span>手动添加
+            </li>
+        </ul>
+    </div>
+    <script>
     $(function () {
         $("".command-item"").css(""display"", ""none"");
         $("".main-item"").click(function () {
@@ -124,14 +143,11 @@ WriteLiteral(@"    </ul>
             $(this).next().fadeToggle();
         });
 
-        $("".command-item-set"").click(function () { });
-        $("".command-item-delete"").click(function () { });
-        $("".command-item-eidt"").click(function () {
-            var guid = $(this).parent().data(""guid"");
+        $("".command-item-add"").click(function () {
             ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 28 "HostsView.cshtml"
+#line 32 "HostsView.cshtml"
                                                Write(HostDetailView.Partial.Host);
 
 
@@ -140,13 +156,37 @@ WriteLiteral(@"    </ul>
 WriteLiteral("\', \'");
 
 
-#line 28 "HostsView.cshtml"
+#line 32 "HostsView.cshtml"
                                                                                Write(HostDetailView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\', guid);\r\n        });\r\n    })\r\n</script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
+WriteLiteral(@"', """");
+        });
+        $("".command-item-set"").click(function () { });
+        $("".command-item-delete"").click(function () { });
+        $("".command-item-eidt"").click(function () {
+            var guid = $(this).parent().data(""guid"");
+            ViewScript.PartialLoad('#MainContent', '");
+
+
+#line 38 "HostsView.cshtml"
+                                               Write(HostDetailView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 38 "HostsView.cshtml"
+                                                                               Write(HostDetailView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\', guid);\r\n        });\r\n    })\r\n    </script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
 
 }
 }

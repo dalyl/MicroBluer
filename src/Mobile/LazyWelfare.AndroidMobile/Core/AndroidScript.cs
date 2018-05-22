@@ -62,11 +62,11 @@ namespace LazyWelfare.AndroidMobile
         {
             Toast.MakeText(ViewActivity, Message, ToastLength.Short).Show();
         }
-      
+
 
         [Export("PartialLoad")]
         [JavascriptInterface]
-        public string PartialLoad(string host, string url,string args)
+        public string PartialLoad(string host, string url, string args)
         {
             if (host == nameof(WebViews)) return SwitchWebView(url, args);
             var ip = SwitchHost(host);
@@ -86,18 +86,21 @@ namespace LazyWelfare.AndroidMobile
         string SwitchWebView(string url, string args)
         {
             var view = Enum.Parse(typeof(PartialView), url);
-            switch (view) {
+            switch (view)
+            {
                 case PartialView.HomeView: return WebViews.Get(url);
-                case PartialView.HostsView: {
+                case PartialView.HostsView:
+                    {
                         var service = new HostStoreService(ViewActivity);
                         var list = service.GetList();
                         return WebViews.Get(url, list);
                     };
-                case PartialView.HostDetailView: {
+                case PartialView.HostDetailView:
+                    {
                         var service = new HostStoreService(ViewActivity);
-                        var model = service.GetModel(args);
+                        var model = string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : service.GetModel(args);
                         return WebViews.Get(url, model);
-                }
+                    }
             }
             return string.Empty;
         }
