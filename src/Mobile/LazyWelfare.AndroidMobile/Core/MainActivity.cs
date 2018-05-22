@@ -11,16 +11,20 @@ using LazyWelfare.AndroidMobile.Views;
 using Android.Runtime;
 using Android.Views;
 using LazyWelfare.AndroidMobile.Views.Partials;
+using LazyWelfare.AndroidMobile.Script;
 
 namespace LazyWelfare.AndroidMobile
 {
-
     //LazyWelfare.AndroidMobile
     [Activity(Label = "@string/app_name", Icon = "@drawable/blue_face", Theme = "@android:style/Theme.NoTitleBar")]
-    public class MainActivity : Activity
+    public class MainActivity : WebPartialActivity
     {
 
         static (string Host, string Path) Partial;
+
+        static WebPartialRequestStack requestStack { get; set; } = new WebPartialRequestStack();
+
+        public override WebPartialRequestStack RequestStack { get; } = requestStack;
 
         public MainActivity()
         {
@@ -35,48 +39,30 @@ namespace LazyWelfare.AndroidMobile
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            var webView = FindViewById<WebView>(Resource.Id.webView);
+            PartialView = FindViewById<WebView>(Resource.Id.webView);
 
-            WebSettings settings = webView.Settings;
+            WebSettings settings = PartialView.Settings;
+
             //启用js事件  
             settings.SetSupportZoom(true);
             settings.JavaScriptEnabled = true;
             //启用js的dom缓存  
             settings.DomStorageEnabled = true;
             //加载javascript接口方法，以便调用前台方法  
-            webView.AddJavascriptInterface(new AndroidScript(this), "AndroidScript");
-            webView.AddJavascriptInterface(new BuinessScript(this), "BuinessScript");
+            PartialView.AddJavascriptInterface(new AndroidScript(this), "AndroidScript");
+            PartialView.AddJavascriptInterface(new PartialScript(this), "PartialScript");
+            PartialView.AddJavascriptInterface(new BuinessScript(this), "BuinessScript");
 
-            webView.SetWebViewClient(new AgreementRouteClient($"ViewScript.PartialLoad('#MainContent','{Partial.Host}','{Partial.Path}',null);"));
+            PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.PartialLoad('#MainContent','{Partial.Host}','{Partial.Path}',null);"));
 
             var page = Template.Layout();
-            webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
+            PartialView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
         }
-
-        DateTime? lastBackKeyDownTime;//记录上次按下Back的时间
-        public override bool OnKeyDown([GeneratedEnum] Keycode keyCode, KeyEvent e)
-        {
-            if (keyCode == Keycode.Back && e.Action == KeyEventActions.Down)//监听Back键
-            {
-                if (!lastBackKeyDownTime.HasValue || DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 2))
-                {
-                    Toast.MakeText(this, "再按一次退出程序", ToastLength.Short).Show();
-                    lastBackKeyDownTime = DateTime.Now;
-                }
-                else
-                {
-                    Finish();
-                }
-                return true;
-            }
-            return base.OnKeyDown(keyCode, e);
-        }
-
-
+       
     }
 
 

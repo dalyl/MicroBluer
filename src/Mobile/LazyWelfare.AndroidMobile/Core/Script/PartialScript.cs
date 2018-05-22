@@ -16,53 +16,22 @@ using LazyWelfare.AndroidMobile.Logic;
 using LazyWelfare.AndroidMobile.Models;
 using LazyWelfare.AndroidMobile.Views;
 using LazyWelfare.AndroidMobile.Views.Partials;
-using ZXing;
-using ZXing.Mobile;
 
-namespace LazyWelfare.AndroidMobile
+namespace LazyWelfare.AndroidMobile.Script
 {
-    public class AndroidScript : Java.Lang.Object//注意一定要继承java基类  
+    public class PartialScript : AndroidScript//注意一定要继承java基类  
     {
-
-        protected Activity ViewActivity = null;
-        protected TryCatch Try { get; }
-
-        public AndroidScript(Activity activity)
+        public WebPartialActivity PartialActivity
         {
-            ViewActivity = activity;
-            Try = new TryCatch(ShowToast);
-        }
-
-
-        [Export("ScanHost")]
-        [JavascriptInterface]
-        public void ScanHost()
-        {
-            var scan = new ScanPlugin(ViewActivity);
-            var invoke = scan.Invoke();
-            Task.WaitAll(invoke);
-            if (invoke.Result)
+            get
             {
-                var service = new HostStoreService(ViewActivity);
-                service.Add(scan.Result);
-            }
-            else
-            {
-                ShowToast("未识别");
+                return ViewActivity as WebPartialActivity;
             }
         }
 
-        /// <summary>  
-        /// 弹出有消息的提示框（有参无反）  
-        /// </summary>  
-        /// <param name="Message"></param>  
-        [Export("ShowToast")]//这个是js调用的c#类中方法名  
-        [JavascriptInterface]//表示这个Method是可以被js调用的  
-        public void ShowToast(string Message)
+        public PartialScript(WebPartialActivity activity) : base(activity)
         {
-            Toast.MakeText(ViewActivity, Message, ToastLength.Short).Show();
         }
-
 
         [Export("PartialLoad")]
         [JavascriptInterface]
@@ -85,26 +54,46 @@ namespace LazyWelfare.AndroidMobile
 
         string SwitchWebView(string url, string args)
         {
-            var view = Enum.Parse(typeof(PartialView), url);
+            PartialView view = PartialView.None;
+            if (Enum.TryParse<PartialView>(url, out view) == false) return string.Empty;
+
+            switch (view)
+            {
+                case PartialView.None: break;
+                case PartialView.HomeView:
+                    {
+                        PartialActivity.RequestStack.Clear();
+                        PartialActivity.RequestStack.Push(view, args);
+                        break;
+                    }
+                default:
+                    {
+                        PartialActivity.RequestStack.Push(view, args);
+                        break;
+                    }
+            }
+
             switch (view)
             {
                 case PartialView.HomeView: return WebViews.Get(url);
                 case PartialView.HostsView:
                     {
                         var service = new HostStoreService(ViewActivity);
-                        var list = service.GetList();
-                        return WebViews.Get(url, list);
-                    };
+                        var model = service.GetList();
+                        return WebViews.Get(url, model);
+                    }
                 case PartialView.HostDetailView:
                     {
                         var service = new HostStoreService(ViewActivity);
                         var model = string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : service.GetModel(args);
                         return WebViews.Get(url, model);
+
                     }
+
             }
             return string.Empty;
+
         }
+
     }
-
-
 }

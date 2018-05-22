@@ -16,7 +16,7 @@ using LazyWelfare.AndroidMobile.Logic;
 using LazyWelfare.AndroidMobile.Models;
 using Newtonsoft.Json;
 
-namespace LazyWelfare.AndroidMobile
+namespace LazyWelfare.AndroidMobile.Script
 {
     public class BuinessScript: AndroidScript//注意一定要继承java基类  
     {

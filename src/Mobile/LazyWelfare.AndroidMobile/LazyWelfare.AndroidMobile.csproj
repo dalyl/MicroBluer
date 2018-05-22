@@ -77,26 +77,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\BuinessScript.cs" />
+    <Compile Include="Core\Script\PartialScript.cs" />
+    <Compile Include="Core\WebPartial\WebPartialActivity.cs" />
+    <Compile Include="Core\WebPartial\WebPartialRequestStack.cs" />
+    <Compile Include="Core\Script\BuinessScript.cs" />
     <Compile Include="Core\BulbActivity.cs" />
+    <Compile Include="Core\PermissionGrantedClickListener.cs" />
     <Compile Include="Core\ImageTextButton.cs" />
     <Compile Include="Core\ScanPlugin.cs" />
-    <Compile Include="Core\SharedStoreService.cs" />
+    <Compile Include="Core\Stroage\SharedStoreService.cs" />
     <Compile Include="Core\MainActivity.cs" />
-    <Compile Include="AgreementRoute\Agreement.cs" />
-    <Compile Include="AgreementRoute\AgreementHandler.cs" />
-    <Compile Include="AgreementRoute\AgreementRouteClient.cs" />
-    <Compile Include="AgreementRoute\HybridAgreement.cs" />
-    <Compile Include="AgreementRoute\IAgreementHandler.cs" />
-    <Compile Include="AgreementRoute\ScanAgreement.cs" />
-    <Compile Include="Core\AndroidScript.cs" />
-    <Compile Include="Core\SharedPreferences.cs" />
+    <Compile Include="Core\AgreementRoute\Agreement.cs" />
+    <Compile Include="Core\AgreementRoute\AgreementHandler.cs" />
+    <Compile Include="Core\AgreementRoute\AgreementRouteClient.cs" />
+    <Compile Include="Core\AgreementRoute\HybridAgreement.cs" />
+    <Compile Include="Core\AgreementRoute\IAgreementHandler.cs" />
+    <Compile Include="Core\AgreementRoute\ScanAgreement.cs" />
+    <Compile Include="Core\Script\AndroidScript.cs" />
     <Compile Include="Core\TryCatch.cs" />
     <Compile Include="Core\TryCatchException.cs" />
-    <Compile Include="Logic\Define.cs" />
-    <Compile Include="Logic\HostStoreService.cs" />
-    <Compile Include="Models\AppModel.cs" />
-    <Compile Include="Models\HostModel.cs" />
+    <Compile Include="Core\Logic\HostStoreService.cs" />
+    <Compile Include="Core\Models\AppModel.cs" />
+    <Compile Include="Core\Models\HostModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\SplashScreenActivity.cs" />
@@ -240,6 +242,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\blue_face.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\App_IncludeTop.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\app_back.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Colors.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
   </ItemGroup>

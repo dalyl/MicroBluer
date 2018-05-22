@@ -39,12 +39,18 @@ namespace LazyWelfare.AndroidMobile
 
         private void Init()
         {
-            View zxingOverlay = LayoutInflater.FromContext(context).Inflate(Resource.Layout.ZxingOverlay, null);
+            var zxingOverlay = LayoutInflater.FromContext(context).Inflate(Resource.Layout.ZxingOverlay, null);
             var bulbBtn = zxingOverlay.FindViewById(Resource.Id.scanBulbBtn);
             var albumBtn = zxingOverlay.FindViewById(Resource.Id.scanAlbumBtn);
 
             bulbBtn.Click += Bulb_Click;
             albumBtn.Click += Album_Click;
+
+            var bar= zxingOverlay.FindViewById(Resource.Id.top_layout);
+            var title=bar.FindViewById(Resource.Id.context_Title);
+            var back=bar.FindViewById(Resource.Id.context_btback);
+
+            back.Click += Back_Click;
 
             MobileBarcodeScanner.Initialize(context.Application);
             var scanner = new MobileBarcodeScanner()
@@ -219,13 +225,22 @@ namespace LazyWelfare.AndroidMobile
 
         #endregion
 
+        #region ---  Back_Click  ---
+
+        public void Back_Click(object sender, EventArgs e)
+        {
+            OverScan();
+        }
+
+        #endregion
+
         /// <summary>
         /// 获取扫描结果的处理
         /// </summary>
         private bool ScanResultHandle(ZXing.Result result)
         {
             if (PickerResult != null) return PickerResultHandle();
-            if (result == null) return false;
+            if (result == null) return true;
             if (string.IsNullOrEmpty(result.Text)) return false;
             Result = result.Text;
             return true;

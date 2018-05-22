@@ -30,6 +30,7 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
 
     public enum PartialView
     {
+        None,
         HomeView,
         HostsView,
         HostDetailView,

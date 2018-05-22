@@ -38,7 +38,6 @@ namespace LazyWelfare.AndroidMobile
                 default: return false;
             }
         }
-        
 
         bool ThrowHandle<T>(WebView webView, string url) where T : IAgreementHandler, new()
         {

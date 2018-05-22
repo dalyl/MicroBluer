@@ -3,11 +3,17 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
+    <include
+        layout="@layout/App_IncludeTop"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="@color/transparent"
+        android:id="@+id/top_layout" />
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#f0f0f0" />
+        android:background="@color/transparent" />
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -16,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#f0f0f0" />
+            android:background="@color/transparent" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +35,7 @@
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:background="#f0f0f0" />
+                    android:background="@color/transparent" />
                 <RelativeLayout
                     android:layout_width="240dp"
                     android:layout_height="fill_parent"
@@ -69,7 +75,7 @@
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:background="#f0f0f0" />
+                    android:background="@color/transparent" />
             </LinearLayout>
             <TextView
                 android:layout_width="fill_parent"
@@ -79,14 +85,14 @@
                 android:textColor="#b2b2b2"
                 android:ellipsize="end"
                 android:gravity="center"
-                android:background="#f0f0f0"
+                android:background="@color/transparent"
                 android:text="请将二维码放入框内，即可自动扫描" />
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="200dp"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:background="#f0f0f0">
+                android:background="@color/transparent">
                 <LinearLayout
                     android:id="@+id/scanAlbumBtn"
                     android:layout_width="wrap_content"
@@ -141,11 +147,11 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#f0f0f0" />
+            android:background="@color/transparent" />
     </LinearLayout>
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#f0f0f0" />
+        android:background="@color/transparent" />
 </LinearLayout>

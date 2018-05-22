@@ -24,7 +24,7 @@ namespace LazyWelfare.AndroidMobile.Logic
         public List<HostModel> GetList()
         {
             var list = new List<HostModel>();
-            var keys = Shared.AllKeys();
+            var keys = AllKeys();
             var regPid = new Regex(KeyRegex, RegexOptions.IgnoreCase);
             foreach (var one in keys)
             {

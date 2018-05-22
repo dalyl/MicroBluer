@@ -113,6 +113,9 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f050000
 			public const int top_bg = 2131034112;
 			
+			// aapt resource value: 0x7f050001
+			public const int transparent = 2131034113;
+			
 			static Color()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -127,55 +130,58 @@ namespace LazyWelfare.AndroidMobile
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int area_above_left = 2130837504;
+			public const int app_back = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int area_above_right = 2130837505;
+			public const int area_above_left = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int area_below_left = 2130837506;
+			public const int area_above_right = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int area_below_right = 2130837507;
+			public const int area_below_left = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int blue_face = 2130837508;
+			public const int area_below_right = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int gallery_back = 2130837509;
+			public const int blue_face = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int gallery_down = 2130837510;
+			public const int gallery_back = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int gallery_up = 2130837511;
+			public const int gallery_down = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int ic_camera = 2130837512;
+			public const int gallery_up = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int image_not_exist = 2130837513;
+			public const int ic_camera = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int pick_photo_checkbox = 2130837514;
+			public const int image_not_exist = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int pick_photo_checkbox_check = 2130837515;
+			public const int pick_photo_checkbox = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int pick_photo_checkbox_normal = 2130837516;
+			public const int pick_photo_checkbox_check = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int scan_album = 2130837517;
+			public const int pick_photo_checkbox_normal = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int scan_bulb = 2130837518;
+			public const int scan_album = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int splash_screen = 2130837519;
+			public const int scan_bulb = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int splashscreen = 2130837520;
+			public const int splash_screen = 2130837520;
+			
+			// aapt resource value: 0x7f020011
+			public const int splashscreen = 2130837521;
 			
 			static Drawable()
 			{
@@ -190,74 +196,80 @@ namespace LazyWelfare.AndroidMobile
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080004
-			public const int btn_back = 2131230724;
-			
-			// aapt resource value: 0x7f08000b
-			public const int check = 2131230731;
-			
-			// aapt resource value: 0x7f080008
-			public const int commit = 2131230728;
-			
-			// aapt resource value: 0x7f080016
-			public const int contentFrame = 2131230742;
-			
 			// aapt resource value: 0x7f080006
-			public const int foldName = 2131230726;
-			
-			// aapt resource value: 0x7f080007
-			public const int gallery_tip = 2131230727;
-			
-			// aapt resource value: 0x7f080001
-			public const int gridView = 2131230721;
-			
-			// aapt resource value: 0x7f080011
-			public const int imageAlbum = 2131230737;
-			
-			// aapt resource value: 0x7f080014
-			public const int imageBulb = 2131230740;
+			public const int btn_back = 2131230726;
 			
 			// aapt resource value: 0x7f08000d
-			public const int imgview = 2131230733;
-			
-			// aapt resource value: 0x7f080003
-			public const int listView = 2131230723;
-			
-			// aapt resource value: 0x7f080002
-			public const int listViewParent = 2131230722;
-			
-			// aapt resource value: 0x7f08000c
-			public const int photoCount = 2131230732;
-			
-			// aapt resource value: 0x7f080009
-			public const int rl = 2131230729;
-			
-			// aapt resource value: 0x7f080010
-			public const int scanAlbumBtn = 2131230736;
-			
-			// aapt resource value: 0x7f080013
-			public const int scanBulbBtn = 2131230739;
-			
-			// aapt resource value: 0x7f080005
-			public const int selectFold = 2131230725;
-			
-			// aapt resource value: 0x7f080012
-			public const int textAlbum = 2131230738;
-			
-			// aapt resource value: 0x7f080015
-			public const int textBulb = 2131230741;
-			
-			// aapt resource value: 0x7f08000e
-			public const int textview = 2131230734;
+			public const int check = 2131230733;
 			
 			// aapt resource value: 0x7f08000a
-			public const int thumbnail = 2131230730;
+			public const int commit = 2131230730;
+			
+			// aapt resource value: 0x7f080018
+			public const int contentFrame = 2131230744;
+			
+			// aapt resource value: 0x7f080001
+			public const int context_Title = 2131230721;
 			
 			// aapt resource value: 0x7f080000
-			public const int top_layout = 2131230720;
+			public const int context_btback = 2131230720;
+			
+			// aapt resource value: 0x7f080008
+			public const int foldName = 2131230728;
+			
+			// aapt resource value: 0x7f080009
+			public const int gallery_tip = 2131230729;
+			
+			// aapt resource value: 0x7f080003
+			public const int gridView = 2131230723;
+			
+			// aapt resource value: 0x7f080013
+			public const int imageAlbum = 2131230739;
+			
+			// aapt resource value: 0x7f080016
+			public const int imageBulb = 2131230742;
 			
 			// aapt resource value: 0x7f08000f
-			public const int webView = 2131230735;
+			public const int imgview = 2131230735;
+			
+			// aapt resource value: 0x7f080005
+			public const int listView = 2131230725;
+			
+			// aapt resource value: 0x7f080004
+			public const int listViewParent = 2131230724;
+			
+			// aapt resource value: 0x7f08000e
+			public const int photoCount = 2131230734;
+			
+			// aapt resource value: 0x7f08000b
+			public const int rl = 2131230731;
+			
+			// aapt resource value: 0x7f080012
+			public const int scanAlbumBtn = 2131230738;
+			
+			// aapt resource value: 0x7f080015
+			public const int scanBulbBtn = 2131230741;
+			
+			// aapt resource value: 0x7f080007
+			public const int selectFold = 2131230727;
+			
+			// aapt resource value: 0x7f080014
+			public const int textAlbum = 2131230740;
+			
+			// aapt resource value: 0x7f080017
+			public const int textBulb = 2131230743;
+			
+			// aapt resource value: 0x7f080010
+			public const int textview = 2131230736;
+			
+			// aapt resource value: 0x7f08000c
+			public const int thumbnail = 2131230732;
+			
+			// aapt resource value: 0x7f080002
+			public const int top_layout = 2131230722;
+			
+			// aapt resource value: 0x7f080011
+			public const int webView = 2131230737;
 			
 			static Id()
 			{
@@ -273,31 +285,34 @@ namespace LazyWelfare.AndroidMobile
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int ImageSelect = 2130903040;
+			public const int App_IncludeTop = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int ImageSelect_IncludeTop = 2130903041;
+			public const int ImageSelect = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int ImageSelect_PhotoPickGridListItem = 2130903042;
+			public const int ImageSelect_IncludeTop = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ImageSelect_PhotoPickListItem = 2130903043;
+			public const int ImageSelect_PhotoPickGridListItem = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int ImageTextButton = 2130903044;
+			public const int ImageSelect_PhotoPickListItem = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Main = 2130903045;
+			public const int ImageTextButton = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int ZxingOverlay = 2130903046;
+			public const int Main = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int zxingscanneractivitylayout = 2130903047;
+			public const int ZxingOverlay = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int zxingscannerfragmentlayout = 2130903048;
+			public const int zxingscanneractivitylayout = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int zxingscannerfragmentlayout = 2130903049;
 			
 			static Layout()
 			{
