@@ -9,7 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using LazyWelfare.AndroidMobile.Views.Partials;
+using LazyWelfare.AndroidMobile.Views;
 
 namespace LazyWelfare.AndroidMobile
 {
@@ -18,12 +18,12 @@ namespace LazyWelfare.AndroidMobile
         public class ActionValue
         {
             public ActionValue() { }
-            public ActionValue(PartialView view,string args)
+            public ActionValue(string view,string args)
             {
                 Partial = view;
                 Args = args;
             }
-            public PartialView Partial { get; set; }
+            public string Partial { get; set; }
             public string Args { get; set; }
         }
 
@@ -42,7 +42,7 @@ namespace LazyWelfare.AndroidMobile
             RequestStacks.Clear();
         }
 
-        public void Push(PartialView partial, string args)
+        public void Push(string partial, string args)
         {
             var value = new ActionValue(partial, args);
             RequestStacks.Push(value);

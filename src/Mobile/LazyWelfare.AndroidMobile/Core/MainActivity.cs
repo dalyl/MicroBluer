@@ -12,9 +12,12 @@ using Android.Runtime;
 using Android.Views;
 using LazyWelfare.AndroidMobile.Views.Partials;
 using LazyWelfare.AndroidMobile.Script;
+using LazyWelfare.AndroidMobile.Logic;
 
 namespace LazyWelfare.AndroidMobile
 {
+
+
     //LazyWelfare.AndroidMobile
     [Activity(Label = "@string/app_name", Icon = "@drawable/blue_face", Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity : WebPartialActivity
@@ -46,7 +49,7 @@ namespace LazyWelfare.AndroidMobile
             PartialView = FindViewById<WebView>(Resource.Id.webView);
 
             WebSettings settings = PartialView.Settings;
-
+            
             //启用js事件  
             settings.SetSupportZoom(true);
             settings.JavaScriptEnabled = true;
@@ -59,7 +62,13 @@ namespace LazyWelfare.AndroidMobile
 
             PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.PartialLoad('#MainContent','{Partial.Host}','{Partial.Path}',null);"));
 
-            var page = Template.Layout();
+            var userService = new UserStoreService(this);
+            var hostService   = new HostStoreService(this);
+
+            var model = userService.Get();
+            var host = string.IsNullOrEmpty(model.Host) ? null : hostService.Get(model.Host);
+            ServiceHost.SetHost(host, Try);
+            var page = Template.Layout(model.Name);
             PartialView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
         }
        

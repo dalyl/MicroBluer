@@ -1,4 +1,4 @@
-﻿@model  LazyWelfare.AndroidMobile.Models.HomeModel
+﻿@model  LazyWelfare.AndroidMobile.Models.AppModel
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,7 +18,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{Model.Header}</a>
+            <a class="navbar-brand" href="#">@Model.Header</a>
         </div>
         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav">
@@ -96,6 +96,6 @@
     <script src="jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="site.min.js"></script>
- 
+
 </body>
 </html>

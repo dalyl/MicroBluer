@@ -77,9 +77,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Logic\ServiceHost.cs" />
+    <Compile Include="Core\Logic\UserStoreService.cs" />
+    <Compile Include="Core\Models\UserModel.cs" />
     <Compile Include="Core\Script\PartialScript.cs" />
-    <Compile Include="Core\WebPartial\WebPartialActivity.cs" />
-    <Compile Include="Core\WebPartial\WebPartialRequestStack.cs" />
+    <Compile Include="Core\TryCatchActivity.cs" />
+    <Compile Include="Core\Views\IPartialView.cs" />
+    <Compile Include="Core\Views\Partials\HomeView.cs" />
+    <Compile Include="Core\Views\Partials\HostDetailView.cs" />
+    <Compile Include="Core\Views\Partials\HostsView.cs" />
+    <Compile Include="Core\Views\PartialView.cs" />
+    <Compile Include="Core\Views\WebPartialActivity.cs" />
+    <Compile Include="Core\Views\WebPartialRequestStack.cs" />
     <Compile Include="Core\Script\BuinessScript.cs" />
     <Compile Include="Core\BulbActivity.cs" />
     <Compile Include="Core\PermissionGrantedClickListener.cs" />
@@ -114,7 +123,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LayoutView.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PartialClass.cs" />
     <Compile Include="Views\Partials\HostDetailView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,7 +133,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HostsView.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WebViews.cs" />
+    <Compile Include="Core\Views\WebPartialViews.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -189,9 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\bootstrap\bootstrap-theme.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\images\33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\splashscreen.xml" />
@@ -259,6 +264,9 @@
     <AndroidResource Include="Resources\values\Colors.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\images\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

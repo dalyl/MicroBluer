@@ -17,15 +17,22 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.753")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
 public partial class HomeView : HomeViewBase
 {
 
 #line hidden
 
+#line 1 "HomeView.cshtml"
+public LazyWelfare.AndroidMobile.Models.HostModel Model { get; set; }
+
+#line default
+#line hidden
+
+
 public override void Execute()
 {
-WriteLiteral("\r\n\r\n<div");
+WriteLiteral("<div");
 
 WriteLiteral(" class=\"line-section\"");
 
@@ -33,99 +40,156 @@ WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">\r\n            <span");
-
-WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span>服务设置\r\n        </div>\r\n        <a");
+WriteLiteral(">\r\n        <a");
 
 WriteLiteral(" href=\"javascript:void(0);\"");
 
-WriteLiteral(" class=\"list-group-item item-success HybridLink\"");
-
-WriteLiteral(" data-hybrid=\"servicehost\"");
-
-WriteLiteral(">服务主机</a>\r\n        <a");
-
-WriteLiteral(" href=\"javascript:void(0);\"");
-
-WriteLiteral(" class=\"list-group-item item-success ServiceScan\"");
-
-WriteLiteral(" data-hybrid=\"servicehost\"");
-
-WriteLiteral(">扫一扫</a>\r\n    </div>\r\n</div>\r\n<div");
-
-WriteLiteral(" class=\"line-section\"");
-
-WriteLiteral(">\r\n    <ul");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item\"");
+WriteLiteral(" class=\"list-group-item  service-list\"");
 
 WriteLiteral(">\r\n            <span");
 
-WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
+WriteLiteral(" class=\"glyphicon   glyphicon-th-list  \"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>音量调节\r\n        </li>\r\n        <li");
+WriteLiteral("></span> 管理服务\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n");
 
-WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">放大</li>\r\n        <li");
+#line 11 "HomeView.cshtml"
+ if (Model != null)
+{
 
-WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">缩小</li>\r\n    </ul>\r\n</div>\r\n\r\n<div");
-
-WriteLiteral(" class=\"line-section\"");
-
-WriteLiteral(">\r\n    <ul");
+#line default
+#line hidden
+WriteLiteral("    <ul");
 
 WriteLiteral(" class=\"list-group\"");
 
+WriteLiteral(" id=\"servicehost\"");
+
+WriteLiteral(" data-guid=\"");
+
+
+#line 13 "HomeView.cshtml"
+                                                  Write(Model.Domain);
+
+
+#line default
+#line hidden
+WriteLiteral("\"");
+
 WriteLiteral(">\r\n        <li");
 
-WriteLiteral(" class=\"list-group-item\"");
+WriteLiteral(" class=\"list-group-item service-edit active\"");
 
 WriteLiteral(">\r\n            <span");
 
-WriteLiteral(" class=\"glyphicon glyphicon-plane\"");
+WriteLiteral(" class=\"glyphicon glyphicon-cloud\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span> 操作命令\r\n        </li>\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item item-success\"");
-
-WriteLiteral(">关机</li>\r\n        <li");
-
-WriteLiteral(" class=\"list-group-item item-success\"");
-
-WriteLiteral(@">睡眠</li>
-    </ul>
-</div>
-
-<script>
-    $(function () {
-        $("".ServiceScan"").click(function () {
-            javascript: AndroidScript.ScanHost();
-        });
-
-        $("".HybridLink"").click(function () {
-            ViewScript.PartialLoad('#MainContent', '");
+WriteLiteral("></span> ");
 
 
-#line 39 "HomeView.cshtml"
+#line 15 "HomeView.cshtml"
+                                                                          Write(Model.Name);
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n        </li>\r\n        <li");
+
+WriteLiteral(" class=\"list-group-item main-item\"");
+
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-off\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span> 开关\r\n        </li>\r\n        <li");
+
+WriteLiteral(" class=\"list-group-item command-item\"");
+
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"command-item-button orangered \"");
+
+WriteLiteral(">关机</span><span");
+
+WriteLiteral(" class=\"command-item-button red\"");
+
+WriteLiteral(">睡眠</span>\r\n        </li>\r\n        <li");
+
+WriteLiteral(" class=\"list-group-item main-command-item\"");
+
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-headphones\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span>音量调节\r\n        </li>\r\n    </ul>\r\n");
+
+WriteLiteral(@"    <script>
+        $(function () {
+           var guid = $(""#servicehost"").data(""guid"");
+           
+           ViewScript.AppendPartial('#servicehost', 'ServiceHost', 'command-panel', guid, function () {
+                $("".command-item"").css(""display"", ""none"");
+                $("".main-item"").click(function () {
+                    $(this).next().fadeToggle();
+                });
+
+                $("".command-item-button"").click(function () {
+                    var name = $(this).text();
+                    ViewScript.Alert(name);
+                });
+
+                $("".main-command-item"").click(function () {
+                    var name = $(this).text();
+                    ViewScript.Alert(name);
+                });
+
+                $("".service-edit"").click(function () {
+                    ViewScript.PartialLoad('#MainContent', '");
+
+
+#line 48 "HomeView.cshtml"
+                                                       Write(HostDetailView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 48 "HomeView.cshtml"
+                                                                                       Write(HostDetailView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\', guid);\r\n                });\r\n                   \r\n            });\r\n        })\r" +
+"\n    </script>\r\n");
+
+
+#line 54 "HomeView.cshtml"
+}
+else
+{
+
+}
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n<script>\r\n    $(function () {\r\n\r\n        $(\".service-list\").click(function () {" +
+"\r\n            ViewScript.PartialLoad(\'#MainContent\', \'");
+
+
+#line 64 "HomeView.cshtml"
                                                Write(HostsView.Partial.Host);
 
 
@@ -134,13 +198,13 @@ WriteLiteral(@">睡眠</li>
 WriteLiteral("\', \'");
 
 
-#line 39 "HomeView.cshtml"
+#line 64 "HomeView.cshtml"
                                                                           Write(HostsView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\');\r\n        });\r\n    })\r\n</script>\r\n\r\n\r\n ");
+WriteLiteral("\');\r\n        });\r\n\r\n    })\r\n</script>\r\n\r\n\r\n");
 
 }
 }

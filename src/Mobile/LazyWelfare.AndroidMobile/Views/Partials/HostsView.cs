@@ -62,7 +62,7 @@ WriteLiteral(" class=\"list-group-item main-item\"");
 
 WriteLiteral(">\r\n                    <span");
 
-WriteLiteral(" class=\"glyphicon glyphicon-tags\"");
+WriteLiteral(" class=\"glyphicon glyphicon-cloud\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
@@ -70,7 +70,7 @@ WriteLiteral("></span>");
 
 
 #line 7 "HostsView.cshtml"
-                                                                                Write(one.Name);
+                                                                                 Write(one.Name);
 
 
 #line default
@@ -131,7 +131,19 @@ WriteLiteral(" class=\"glyphicon glyphicon-plus\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral(@"></span>手动添加
+WriteLiteral("></span>手动添加\r\n            </li>\r\n            <li");
+
+WriteLiteral("  class=\"list-group-item command-item-scan\"");
+
+WriteLiteral(" data-hybrid=\"servicehost\"");
+
+WriteLiteral(">\r\n                <span");
+
+WriteLiteral(" class=\"glyphicon   glyphicon-qrcode\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral(@"></span> 扫一扫
             </li>
         </ul>
     </div>
@@ -139,15 +151,18 @@ WriteLiteral(@"></span>手动添加
     $(function () {
         $("".command-item"").css(""display"", ""none"");
         $("".main-item"").click(function () {
+            var dispaly = $(this).next().css(""display"");
             $("".command-item"").css(""display"", ""none"");
-            $(this).next().fadeToggle();
+            if (dispaly == ""none"") {
+                $(this).next().fadeIn();
+            }
         });
 
         $("".command-item-add"").click(function () {
             ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 32 "HostsView.cshtml"
+#line 38 "HostsView.cshtml"
                                                Write(HostDetailView.Partial.Host);
 
 
@@ -156,7 +171,7 @@ WriteLiteral(@"></span>手动添加
 WriteLiteral("\', \'");
 
 
-#line 32 "HostsView.cshtml"
+#line 38 "HostsView.cshtml"
                                                                                Write(HostDetailView.Partial.Path);
 
 
@@ -164,7 +179,37 @@ WriteLiteral("\', \'");
 #line hidden
 WriteLiteral(@"', """");
         });
-        $("".command-item-set"").click(function () { });
+
+        $("".command-item-scan"").click(function () {
+            javascript: BuinessScript.ScanHost();
+        });
+
+        $("".command-item-set"").click(function () {
+            var guid = $(this).parent().data(""guid"");
+            var result = false;
+            javascript: result = BuinessScript.SetHost(guid);
+            if (result) {
+                ViewScript.PartialLoad('#MainContent', '");
+
+
+#line 50 "HostsView.cshtml"
+                                                   Write(HomeView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 50 "HostsView.cshtml"
+                                                                             Write(HomeView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral(@"');
+            }
+        });
         $("".command-item-delete"").click(function () {
             var guid = $(this).parent().data(""guid"");
             var result = false;
@@ -173,7 +218,7 @@ WriteLiteral(@"', """");
                 ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 40 "HostsView.cshtml"
+#line 58 "HostsView.cshtml"
                                                    Write(HostsView.Partial.Host);
 
 
@@ -182,7 +227,7 @@ WriteLiteral(@"', """");
 WriteLiteral("\', \'");
 
 
-#line 40 "HostsView.cshtml"
+#line 58 "HostsView.cshtml"
                                                                               Write(HostsView.Partial.Path);
 
 
@@ -193,7 +238,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 "pt.PartialLoad(\'#MainContent\', \'");
 
 
-#line 45 "HostsView.cshtml"
+#line 63 "HostsView.cshtml"
                                                Write(HostDetailView.Partial.Host);
 
 
@@ -202,7 +247,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 WriteLiteral("\', \'");
 
 
-#line 45 "HostsView.cshtml"
+#line 63 "HostsView.cshtml"
                                                                                Write(HostDetailView.Partial.Path);
 
 

@@ -15,36 +15,13 @@ namespace LazyWelfare.AndroidMobile.Script
     public class AndroidScript : Java.Lang.Object//注意一定要继承java基类  
     {
 
-        protected Activity ViewActivity = null;
-        protected TryCatch Try { get; }
+        protected TryCatchActivity ViewActivity = null;
 
-        public AndroidScript(Activity activity)
+        protected TryCatch Try => ViewActivity.Try;
+
+        public AndroidScript(TryCatchActivity activity)
         {
             ViewActivity = activity;
-            Try = new TryCatch(ShowToast);
-        }
-
-
-        [Export("ScanHost")]
-        [JavascriptInterface]
-        public void ScanHost()
-        {
-            var scan = new ScanPlugin(ViewActivity);
-            var invoke = scan.Invoke();
-            Task.WaitAll(invoke);
-            if (invoke.Result==false)
-            {
-                ShowToast("已取消");
-            }
-            if (string.IsNullOrEmpty(scan.Result))
-            {
-                ShowToast("未识别");
-            }
-            else
-            {
-                var service = new HostStoreService(ViewActivity);
-                service.Add(scan.Result);
-            }
         }
 
         /// <summary>  
@@ -55,7 +32,7 @@ namespace LazyWelfare.AndroidMobile.Script
         [JavascriptInterface]//表示这个Method是可以被js调用的  
         public void ShowToast(string Message)
         {
-            Toast.MakeText(ViewActivity, Message, ToastLength.Short).Show();
+            Toast.MakeText(ViewActivity, Message.Trim(), ToastLength.Short).Show();
         }
 
         protected T DeserializeForm<T>(string args)

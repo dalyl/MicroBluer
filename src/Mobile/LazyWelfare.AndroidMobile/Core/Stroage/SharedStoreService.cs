@@ -13,20 +13,42 @@ using Newtonsoft.Json;
 
 namespace LazyWelfare.AndroidMobile
 {
-    public abstract class SharedStoreService<T>: SharedStoreService
+    public abstract class SharedStoreService<T> : SharedStoreService
     {
 
-        public SharedStoreService(Context context) : base(context) { }
-     
+        protected override Func<Context> GetContext {  get; set; }
 
-        public virtual T GetModel(string key)
+        public SharedStoreService() { }
+
+        public SharedStoreService(Context context)
+        {
+            SetContext(context);
+        }
+
+        public SharedStoreService(Func<Context> fetchContext)
+        {
+            SetContext(fetchContext);
+        }
+
+        public void SetContext(Context context)
+        {
+            GetContext = ()=>context;
+        }
+
+        public void SetContext(Func<Context> fetchContext)
+        {
+            GetContext = fetchContext;
+        }
+
+
+        protected T Get(string key)
         {
             var value = GetValue(key, string.Empty);
             if (string.IsNullOrEmpty(value)) return default(T);
             return JsonConvert.DeserializeObject<T>(value);
         }
 
-        public virtual bool Save(string key,T model)
+        protected bool Save(string key, T model)
         {
             if (model == null) return false;
             var value = JsonConvert.SerializeObject(model);
@@ -34,7 +56,7 @@ namespace LazyWelfare.AndroidMobile
             return true;
         }
 
-        public virtual bool Delete(string key)
+        protected bool Delete(string key)
         {
             Remove(key);
             return true;
@@ -44,13 +66,16 @@ namespace LazyWelfare.AndroidMobile
 
     public abstract class SharedStoreService
     {
-        Context Context { get; set; }
+
+        protected abstract Func<Context> GetContext { get; set; }
 
         protected abstract string SharedFileName { get; }
 
-        public SharedStoreService(Context context)
-        {
-            Context = context;
+        private  Context Context {
+            get {
+                if (GetContext == null) throw (new  Exception(" Context 无法实例化 "));
+                return GetContext();
+            }
         }
 
         protected IEnumerable<string> AllKeys(FileCreationMode mode = FileCreationMode.Private)

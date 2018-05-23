@@ -31,7 +31,7 @@ namespace LazyWelfare.AndroidMobile
             throw (new TryCatchException(message));
         }
 
-        public void Invoke(Action invoke)
+        public void Invoke(Action invoke, string message = "")
         {
             try
             {
@@ -43,20 +43,31 @@ namespace LazyWelfare.AndroidMobile
             }
             catch (Exception ex)
             {
-                Show(ex.Message);
+                Show(string.IsNullOrEmpty(message) ? ex.Message : message);
             }
         }
+
         public T Show<T>(T defaultResult, string message)
         {
             ShowMessage?.Invoke(message);
             return defaultResult;
         }
+
+        public bool Show(bool defaultResult, string message, string failMessage)
+        {
+            if (defaultResult)
+                ShowMessage?.Invoke(message);
+            else
+                ShowMessage?.Invoke(failMessage);
+            return defaultResult;
+        }
+
         public T Throw<T>(string message)
         {
             throw (new TryCatchException(message));
         }
 
-        public T Invoke<T>(T exceptionValue, Func<T> invoke)
+        public T Invoke<T>(T exceptionValue, Func<T> invoke, string message = "")
         {
             try
             {
@@ -68,7 +79,7 @@ namespace LazyWelfare.AndroidMobile
             }
             catch (Exception ex)
             {
-                return Show(exceptionValue, ex.Message);
+                return Show(exceptionValue, string.IsNullOrEmpty(message) ? ex.Message : message);
             }
         }
 

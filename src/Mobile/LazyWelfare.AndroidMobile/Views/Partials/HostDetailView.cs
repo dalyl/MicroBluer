@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.442")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
 public partial class HostDetailView : HostDetailViewBase
 {
 
@@ -44,7 +44,13 @@ WriteLiteral(">\r\n        <h3");
 
 WriteLiteral(" class=\"panel-title\"");
 
-WriteLiteral(">服务详情</h3>\r\n    </div>\r\n    <div");
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-cloud\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span> 服务详情\r\n        </h3>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"panel-body\"");
 
@@ -60,7 +66,7 @@ WriteLiteral(" name=\"Domain\"");
 
 WriteAttribute ("value", " value=\"", "\""
 
-#line 9 "HostDetailView.cshtml"
+#line 11 "HostDetailView.cshtml"
                , Tuple.Create<string,object,bool> ("", Model.Domain
 
 #line default
@@ -91,7 +97,7 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteAttribute ("value", " value=\"", "\""
 
-#line 13 "HostDetailView.cshtml"
+#line 15 "HostDetailView.cshtml"
                                                          , Tuple.Create<string,object,bool> ("", Model.Name
 
 #line default
@@ -128,7 +134,7 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteAttribute ("value", " value=\"", "\""
 
-#line 20 "HostDetailView.cshtml"
+#line 22 "HostDetailView.cshtml"
                                                             , Tuple.Create<string,object,bool> ("", Model.Address
 
 #line default
@@ -160,7 +166,6 @@ WriteLiteral(@">保存</button>
     </div>
 </div>
 
-
 <script>
     $(function () {
         $("".HostModelSave"").click(function () {
@@ -171,7 +176,7 @@ WriteLiteral(@">保存</button>
                  ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 42 "HostDetailView.cshtml"
+#line 43 "HostDetailView.cshtml"
                                                     Write(HostsView.Partial.Host);
 
 
@@ -180,7 +185,7 @@ WriteLiteral(@">保存</button>
 WriteLiteral("\', \'");
 
 
-#line 42 "HostDetailView.cshtml"
+#line 43 "HostDetailView.cshtml"
                                                                                Write(HostsView.Partial.Path);
 
 

@@ -17,11 +17,11 @@ namespace LazyWelfare.AndroidMobile
 {
     public class Template
     {
-        public static string Layout()
+        public static string Layout(string name)
         {
             var model = new AppModel
             {
-                Header = "Hello,你好",
+                Header = $"Hello {name},你好",
             };
             var template = new LayoutView() { Model = model };
             return template.GenerateString();

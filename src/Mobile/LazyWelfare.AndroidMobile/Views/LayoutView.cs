@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.9.0.753")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
 public partial class LayoutView : LayoutViewBase
 {
 
@@ -102,7 +102,16 @@ WriteLiteral(" class=\"navbar-brand\"");
 
 WriteLiteral(" href=\"#\"");
 
-WriteLiteral(">{Model.Header}</a>\r\n        </div>\r\n        <div");
+WriteLiteral(">");
+
+
+#line 21 "LayoutView.cshtml"
+                                        Write(Model.Header);
+
+
+#line default
+#line hidden
+WriteLiteral("</a>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"navbar-collapse collapse\"");
 
@@ -297,7 +306,7 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"site.min.js\"");
 
-WriteLiteral("></script>\r\n \r\n</body>\r\n</html>");
+WriteLiteral("></script>\r\n\r\n</body>\r\n</html>");
 
 }
 }

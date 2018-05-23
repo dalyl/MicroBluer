@@ -1,45 +1,70 @@
-﻿
+﻿@model  LazyWelfare.AndroidMobile.Models.HostModel
 
 <div class="line-section">
     <div class="list-group">
-        <div class="list-group-item">
-            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>服务设置
-        </div>
-        <a href="javascript:void(0);" class="list-group-item item-success HybridLink" data-hybrid="servicehost">服务主机</a>
-        <a href="javascript:void(0);" class="list-group-item item-success ServiceScan" data-hybrid="servicehost">扫一扫</a>
+        <a href="javascript:void(0);" class="list-group-item  service-list">
+            <span class="glyphicon   glyphicon-th-list  " aria-hidden="true"></span> 管理服务
+        </a>
     </div>
 </div>
-<div class="line-section">
-    <ul class="list-group">
-        <li class="list-group-item">
-            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>音量调节
-        </li>
-        <li class="list-group-item">放大</li>
-        <li class="list-group-item">缩小</li>
-    </ul>
-</div>
 
-<div class="line-section">
-    <ul class="list-group">
-        <li class="list-group-item">
-            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 操作命令
+@if (Model != null)
+{
+    <ul class="list-group" id="servicehost" data-guid="@Model.Domain">
+        <li class="list-group-item service-edit active">
+            <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> @Model.Name
         </li>
-        <li class="list-group-item item-success">关机</li>
-        <li class="list-group-item item-success">睡眠</li>
+        <li class="list-group-item main-item">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span> 开关
+        </li>
+        <li class="list-group-item command-item">
+            <span class="command-item-button orangered ">关机</span><span class="command-item-button red">睡眠</span>
+        </li>
+        <li class="list-group-item main-command-item">
+            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>音量调节
+        </li>
     </ul>
-</div>
+    <script>
+        $(function () {
+           var guid = $("#servicehost").data("guid");
+           
+           ViewScript.AppendPartial('#servicehost', 'ServiceHost', 'command-panel', guid, function () {
+                $(".command-item").css("display", "none");
+                $(".main-item").click(function () {
+                    $(this).next().fadeToggle();
+                });
+
+                $(".command-item-button").click(function () {
+                    var name = $(this).text();
+                    ViewScript.Alert(name);
+                });
+
+                $(".main-command-item").click(function () {
+                    var name = $(this).text();
+                    ViewScript.Alert(name);
+                });
+
+                $(".service-edit").click(function () {
+                    ViewScript.PartialLoad('#MainContent', '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
+                });
+                   
+            });
+        })
+    </script>
+}
+else
+{
+
+}
 
 <script>
     $(function () {
-        $(".ServiceScan").click(function () {
-            javascript: AndroidScript.ScanHost();
-        });
 
-        $(".HybridLink").click(function () {
+        $(".service-list").click(function () {
             ViewScript.PartialLoad('#MainContent', '@HostsView.Partial.Host', '@HostsView.Partial.Path');
         });
+
     })
 </script>
 
 
- 

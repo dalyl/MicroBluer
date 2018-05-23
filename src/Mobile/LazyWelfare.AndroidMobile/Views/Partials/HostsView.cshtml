@@ -4,7 +4,7 @@
             @foreach (var one in Model)
             {
                 <li class="list-group-item main-item">
-                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>@one.Name
+                    <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>@one.Name
                 </li>
                 <li class="list-group-item command-item " data-guid="@one.Domain">
                     <span class="command-item-set orangered">设置</span><span class="command-item-delete red">删除</span><span class="command-item-eidt blue">编辑</span>
@@ -18,20 +18,38 @@
             <li class="list-group-item command-item-add">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>手动添加
             </li>
+            <li  class="list-group-item command-item-scan" data-hybrid="servicehost">
+                <span class="glyphicon   glyphicon-qrcode" aria-hidden="true"></span> 扫一扫
+            </li>
         </ul>
     </div>
     <script>
     $(function () {
         $(".command-item").css("display", "none");
         $(".main-item").click(function () {
+            var dispaly = $(this).next().css("display");
             $(".command-item").css("display", "none");
-            $(this).next().fadeToggle();
+            if (dispaly == "none") {
+                $(this).next().fadeIn();
+            }
         });
 
         $(".command-item-add").click(function () {
             ViewScript.PartialLoad('#MainContent', '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', "");
         });
-        $(".command-item-set").click(function () { });
+
+        $(".command-item-scan").click(function () {
+            javascript: BuinessScript.ScanHost();
+        });
+
+        $(".command-item-set").click(function () {
+            var guid = $(this).parent().data("guid");
+            var result = false;
+            javascript: result = BuinessScript.SetHost(guid);
+            if (result) {
+                ViewScript.PartialLoad('#MainContent', '@HomeView.Partial.Host', '@HomeView.Partial.Path');
+            }
+        });
         $(".command-item-delete").click(function () {
             var guid = $(this).parent().data("guid");
             var result = false;
