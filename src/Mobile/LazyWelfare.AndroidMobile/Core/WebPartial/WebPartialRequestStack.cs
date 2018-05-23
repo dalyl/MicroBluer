@@ -33,7 +33,7 @@ namespace LazyWelfare.AndroidMobile
         {
             get
             {
-              return  RequestStacks.Count == 0;
+              return  RequestStacks.Count < 2;
             }
         }
 
@@ -50,6 +50,7 @@ namespace LazyWelfare.AndroidMobile
 
         public ActionValue Fetch()
         {
+            RequestStacks.Pop();
             return RequestStacks.Pop();
         }
     }

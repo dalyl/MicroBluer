@@ -54,7 +54,7 @@ namespace LazyWelfare.AndroidMobile
                     var value = RequestStack.Fetch();
                     PartialView.EvaluateJavascript($"ViewScript.PartialLoad('#MainContent','{ nameof(WebViews) }','{ value.Partial.ToString() }','{value.Args}');", null);
                 }
-                else if (!lastBackKeyDownTime.HasValue || DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 2))
+                else if (!lastBackKeyDownTime.HasValue || DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 4))
                 {
                     Toast.MakeText(this, "再按一次退出程序", ToastLength.Short).Show();
                     lastBackKeyDownTime = DateTime.Now;

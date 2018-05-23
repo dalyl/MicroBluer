@@ -31,11 +31,11 @@ namespace LazyWelfare.AndroidMobile.Script
             Task.WaitAll(invoke);
             if (invoke.Result==false)
             {
-                ShowToast("未识别");
+                ShowToast("已取消");
             }
             if (string.IsNullOrEmpty(scan.Result))
             {
-                ShowToast("已取消");
+                ShowToast("未识别");
             }
             else
             {

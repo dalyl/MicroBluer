@@ -240,8 +240,7 @@ namespace LazyWelfare.AndroidMobile
         private bool ScanResultHandle(ZXing.Result result)
         {
             if (PickerResult != null) return PickerResultHandle();
-            if (result == null) return true;
-            if (string.IsNullOrEmpty(result.Text)) return false;
+            if (result == null) return false;
             Result = result.Text;
             return true;
         }
@@ -251,7 +250,7 @@ namespace LazyWelfare.AndroidMobile
             var path = GetImagePath(PickerResult);
             var map= CreateBitmap(path);
             Result = YuvHandle(map);
-            return string.IsNullOrEmpty(Result) == false;
+            return true;
         }
 
         Bitmap CreateBitmap(string path)
