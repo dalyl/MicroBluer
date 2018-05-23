@@ -1,9 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Webkit;
 using Android.Widget;
 using Java.Interop;
 using LazyWelfare.AndroidMobile.Logic;
+using Newtonsoft.Json;
 
 namespace LazyWelfare.AndroidMobile.Script
 {
@@ -54,6 +57,23 @@ namespace LazyWelfare.AndroidMobile.Script
         {
             Toast.MakeText(ViewActivity, Message, ToastLength.Short).Show();
         }
+
+        protected T DeserializeForm<T>(string args)
+        {
+            var code = WebUtility.UrlDecode(args);
+            var items = code.Split('&');
+            var json = new StringBuilder();
+            json.Append("{");
+            foreach (var it in items)
+            {
+                var part = it.Replace("=", ":'");
+                json.Append($"{part}',");
+            }
+            json.Append("}");
+            var result = json.ToString().Replace(",}", "}");
+            return JsonConvert.DeserializeObject<T>(result);
+        }
+
     }
 
 

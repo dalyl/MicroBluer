@@ -50,6 +50,7 @@ namespace LazyWelfare.AndroidMobile
 
         public ActionValue Fetch()
         {
+            if (IsEmpty) return null;
             RequestStacks.Pop();
             return RequestStacks.Pop();
         }

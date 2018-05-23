@@ -26,13 +26,20 @@ namespace LazyWelfare.AndroidMobile
             return JsonConvert.DeserializeObject<T>(value);
         }
 
-        public bool StoreModel(string key,T model)
+        public virtual bool Save(string key,T model)
         {
             if (model == null) return false;
             var value = JsonConvert.SerializeObject(model);
             PutValue(key, value);
             return true;
         }
+
+        public virtual bool Delete(string key)
+        {
+            Remove(key);
+            return true;
+        }
+
     }
 
     public abstract class SharedStoreService
@@ -73,6 +80,14 @@ namespace LazyWelfare.AndroidMobile
             sp.PutString(key, value);
             sp.Apply();
         }
+
+        protected void Remove(string key, FileCreationMode mode = FileCreationMode.Private)
+        {
+            var sp = Context.GetSharedPreferences(SharedFileName, mode).Edit();
+            sp.Remove(key);
+            sp.Apply();
+        }
+
 
         protected int GetValue(string key, int defValue, FileCreationMode mode = FileCreationMode.Private)
         {

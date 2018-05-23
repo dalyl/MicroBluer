@@ -38,31 +38,46 @@ namespace LazyWelfare.AndroidMobile.Logic
             return list;
         }
 
-        public override HostModel GetModel(string key)
+
+        string CreateKey(string guid)
         {
-            key = $"{key}";
+            return $"{guid}";
+        }
+        string CreateKey(Guid guid)
+        {
+            return CreateKey(guid.ToString());
+        }
+
+        public override HostModel GetModel(string guid)
+        {
+            var key = CreateKey (guid) ;
             return base.GetModel(key);
         }
 
 
-        public void Add(string url)
+        public void Add(string addr)
         {
             var id = Guid.NewGuid();
             var model = new HostModel
             {
                 Domain = id,
-                Name= url,
-                Address = url,
+                Name= addr,
+                Address = addr,
             };
             var key = $"{model.Domain}";
-            base.StoreModel(key,model);
+            base.Save(key,model);
         }
 
-        public void Save(HostModel model)
+        public bool Save(HostModel model)
         {
-            var key = $"{model.Domain}";
-            base.StoreModel(key, model);
+            var key = CreateKey(model.Domain);
+            return base.Save(key, model);
         }
 
+        public override bool Delete(string guid)
+        {
+            var key = CreateKey (guid) ;
+            return base.Delete(key);
+        }
     }
 }

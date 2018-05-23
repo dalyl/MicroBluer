@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -14,7 +9,6 @@ using Android.Widget;
 using Java.Interop;
 using LazyWelfare.AndroidMobile.Logic;
 using LazyWelfare.AndroidMobile.Models;
-using Newtonsoft.Json;
 
 namespace LazyWelfare.AndroidMobile.Script
 {
@@ -38,22 +32,17 @@ namespace LazyWelfare.AndroidMobile.Script
             return Try.Show(true,"保存成功");
         }
 
-        T DeserializeForm<T>(string args)
+        [Export("DeleteHost")]
+        [JavascriptInterface]
+        public bool DeleteHost(string args)
         {
-            var code = WebUtility.UrlDecode(args);
-            var items = code.Split('&');
-            var json =new StringBuilder();
-            json.Append("{");
-            foreach (var it in items)
-            {
-                var part= it.Replace("=", ":'");
-                json.Append($"{part}',");
-            }
-            json.Append("}");
-            var result= json.ToString().Replace(",}","}");
-            return JsonConvert.DeserializeObject<T>(result);
+            if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确识别");
+            var service = new HostStoreService(ViewActivity);
+            service.Delete(args);
+            return Try.Show(true, "成功删除");
         }
 
+       
     }
 
 

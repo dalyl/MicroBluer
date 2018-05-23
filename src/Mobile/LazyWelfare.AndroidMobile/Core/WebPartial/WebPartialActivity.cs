@@ -44,15 +44,24 @@ namespace LazyWelfare.AndroidMobile
         //    return base.OnKeyDown(keyCode, e);
         //}
 
+        public bool TryBack()
+        {
+            var value = RequestStack.Fetch();
+            if (value != null)
+            {
+                PartialView.EvaluateJavascript($"ViewScript.PartialLoad('#MainContent','{ nameof(WebViews) }','{ value.Partial.ToString() }','{value.Args}');", null);
+                return true;
+            }
+            return false;
+        }
+
         DateTime? lastBackKeyDownTime;//记录上次按下Back的时间
         public override bool OnKeyDown([GeneratedEnum] Keycode keyCode, KeyEvent e)
         {
             if (keyCode == Keycode.Back && e.Action == KeyEventActions.Down)//监听Back键
             {
-                if (RequestStack.IsEmpty == false)
-                {
-                    var value = RequestStack.Fetch();
-                    PartialView.EvaluateJavascript($"ViewScript.PartialLoad('#MainContent','{ nameof(WebViews) }','{ value.Partial.ToString() }','{value.Args}');", null);
+                if (TryBack()) {
+                    return true;
                 }
                 else if (!lastBackKeyDownTime.HasValue || DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 4))
                 {

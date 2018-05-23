@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.442")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
 public partial class HostsView : HostsViewBase
 {
 
@@ -165,13 +165,35 @@ WriteLiteral("\', \'");
 WriteLiteral(@"', """");
         });
         $("".command-item-set"").click(function () { });
-        $("".command-item-delete"").click(function () { });
-        $("".command-item-eidt"").click(function () {
+        $("".command-item-delete"").click(function () {
             var guid = $(this).parent().data(""guid"");
-            ViewScript.PartialLoad('#MainContent', '");
+            var result = false;
+            javascript: result = BuinessScript.DeleteHost(guid);
+            if (result) {
+                ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 38 "HostsView.cshtml"
+#line 40 "HostsView.cshtml"
+                                                   Write(HostsView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 40 "HostsView.cshtml"
+                                                                              Write(HostsView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-eidt\").click(function (" +
+") {\r\n            var guid = $(this).parent().data(\"guid\");\r\n            ViewScri" +
+"pt.PartialLoad(\'#MainContent\', \'");
+
+
+#line 45 "HostsView.cshtml"
                                                Write(HostDetailView.Partial.Host);
 
 
@@ -180,7 +202,7 @@ WriteLiteral(@"', """");
 WriteLiteral("\', \'");
 
 
-#line 38 "HostsView.cshtml"
+#line 45 "HostsView.cshtml"
                                                                                Write(HostDetailView.Partial.Path);
 
 
