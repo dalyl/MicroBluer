@@ -20,9 +20,17 @@ namespace LazyWelfare.AndroidMobile
 
         protected WebView PartialView { get; set; }
 
+        public LoadingView Loading { get; set; }
+
         public WebPartialActivity()
         {
             RequestStack.Clear();
+        }
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            Loading = new LoadingView(this, Resource.Style.CustomDialog);
         }
 
         //DateTime? lastBackKeyDownTime;//记录上次按下Back的时间

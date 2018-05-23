@@ -32,4 +32,8 @@
     <ProjectReference Include="..\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Page\" />
+  </ItemGroup>
+
 </Project>

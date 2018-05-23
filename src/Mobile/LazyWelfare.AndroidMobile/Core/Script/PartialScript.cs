@@ -30,8 +30,24 @@ namespace LazyWelfare.AndroidMobile.Script
             }
             return string.Empty;
         }
-       
+
+        [Export("ShowLoading")]
+        [JavascriptInterface]
+        public void ShowLoading()
+        {
+            var ac = ViewActivity as WebPartialActivity;
+            ac.Loading.Show();
+        }
+
+        [Export("CloseLoading")]
+        [JavascriptInterface]
+        public void CloseLoading()
+        {
+            var ac = ViewActivity as WebPartialActivity;
+            ac.Loading.Hide();
+        }
+
     }
 
-   
+
 }
