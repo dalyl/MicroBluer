@@ -12,7 +12,8 @@
 }
 
 body {
-    background-image: url("/images/33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg");
+    background-color: #C4C4C4;
+    /*background-image: url("../images/33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg");*/
     background-position: center 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -30,4 +31,64 @@ body {
 .item-success {
     color: #3c763d;
     background-color: #dff0d8;
+}
+
+span.glyphicon {
+    margin: 0;
+    padding: 10px 5px;
+    display: inline-block
+}
+
+.list-group-item span {
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.list-group-item {
+    font-size: 0;
+}
+
+
+
+.main-item {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.main-command-item {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.command-item span {
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;
+    padding: 10px 25px;
+    border-left: 1px solid #c0c0c0;
+    display: inline-block;
+}
+
+.command-item {
+    color: #3c763d;
+    padding: 0;
+    background-color: #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    text-align: right;
+}
+
+.red {
+    color: #231818;
+    background-color: #e43c3c;
+}
+
+.orangered {
+    color: #231818;
+    background-color: orangered;
+}
+
+.blue {
+    color: #231818;
+    background-color: #509bcc;
 }

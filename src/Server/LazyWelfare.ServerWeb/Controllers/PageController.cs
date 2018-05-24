@@ -8,5 +8,15 @@ namespace LazyWelfare.ServerWeb.Controllers
 {
     public class PageController : Controller
     {
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult CommandPanel()
+        {
+            return View();
+        }
     }
 }

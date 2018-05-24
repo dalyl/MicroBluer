@@ -26,8 +26,4 @@
     <None Include="wwwroot\images\33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Page\" />
-  </ItemGroup>
-
 </Project>

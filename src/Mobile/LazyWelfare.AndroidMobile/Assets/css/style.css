@@ -39,6 +39,18 @@ span.glyphicon {
     display: inline-block
 }
 
+.list-group-item span {
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.list-group-item {
+    font-size: 0;
+}
+
+
+
 .main-item {
     cursor: pointer;
     padding: 5px;
@@ -51,10 +63,11 @@ span.glyphicon {
 
 .command-item span {
     cursor: pointer;
+    font-size: 14px;
     margin: 0;
     padding: 10px 25px;
     border-left: 1px solid #c0c0c0;
-    display: inline-block
+    display: inline-block;
 }
 
 .command-item {

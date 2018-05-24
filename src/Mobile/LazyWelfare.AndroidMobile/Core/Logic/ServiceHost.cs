@@ -26,7 +26,7 @@ namespace LazyWelfare.AndroidMobile.Logic
         public static string PageDispatch(string url, string args, TryCatch Try)
         {
             if (Enable == false) return Try.Show<string>(string.Empty,"未设置 活动 Host 服务");
-            var addr = $"{CurrentHost.Address}{PageAddress}{url}";
+            var addr = $"{CurrentHost.Address}{PageAddress}{url.Replace("-",string.Empty)}";
             return Try.Invoke(string.Empty, () => GetContent(addr));
             return @"  <li class=""list-group-item main-item"">
                             <span class=""glyphicon glyphicon-off"" aria-hidden=""true""></span> 开关

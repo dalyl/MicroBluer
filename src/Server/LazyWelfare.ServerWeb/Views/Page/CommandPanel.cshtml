@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+<li class="list-group-item main-item">
+    <span class="glyphicon glyphicon-off" aria-hidden="true"></span> <span>开关</span>
+</li>
+<li class="list-group-item command-item">
+    <span class="command-item-button orangered " data-action="SystemClose" data-bind="">关机</span>
+    <span class="command-item-button red" data-action="SystemSleep" data-bind="">睡眠</span>
+    <span class="command-item-button red" data-action="SystemTimingClose" data-bind="">定时关机</span>
+</li>
+<li class="list-group-item main-command-item" data-action="SystemVolume" data-bind="VolumeControl">
+    <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span> <span>音量调节</span>
+</li>
+<li class="list-group-item main-item">
+    <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> <span>显示器</span>
+</li>
+<li class="list-group-item command-item">
+    <span class="command-item-button orangered " data-action="MonitorOpen" data-bind="">锁屏</span>
+    <span class="command-item-button red" data-action="MonitorClose" data-bind="">登陆</span>
+</li>

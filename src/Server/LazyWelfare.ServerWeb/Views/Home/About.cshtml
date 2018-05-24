@@ -1,14 +1,20 @@
 ﻿@{
     ViewData["Title"] = "About";
+    var address = $"{(this.Context.Request.IsHttps ? "https://" : "http://")}{ this.Context.Request.Host}";
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
+<p id="qrcode"></p>
 <p>
+    @address.ToString()
+</p>
 
-    <img  src="@Url.Action("QrCode","Home")"/>
-    
-</p>
-<p>
-    @ServerEnvironment.Instance.WebAddress
-</p>
+@section Scripts {
+    <script src="~/js/jquery.qrcode.js" ></script>
+    <script>
+        $(function () { 
+             $("#qrcode").qrcode({ width: 200, height: 200, correctLevel: 0, text: "@address.ToString()" });
+        })
+    </script>
+}

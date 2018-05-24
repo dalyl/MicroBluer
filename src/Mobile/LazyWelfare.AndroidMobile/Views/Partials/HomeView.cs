@@ -52,10 +52,10 @@ WriteLiteral(" class=\"glyphicon   glyphicon-th-list  \"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span> 管理服务\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n");
+WriteLiteral("></span> \r\n            <span>管理服务</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n");
 
 
-#line 11 "HomeView.cshtml"
+#line 12 "HomeView.cshtml"
  if (Model != null)
 {
 
@@ -71,7 +71,7 @@ WriteLiteral(" id=\"servicehost\"");
 WriteLiteral(" data-guid=\"");
 
 
-#line 13 "HomeView.cshtml"
+#line 14 "HomeView.cshtml"
                                                   Write(Model.Domain);
 
 
@@ -89,16 +89,16 @@ WriteLiteral(" class=\"glyphicon glyphicon-cloud\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span> ");
+WriteLiteral("></span>\r\n            <span>");
 
 
-#line 15 "HomeView.cshtml"
-                                                                          Write(Model.Name);
+#line 17 "HomeView.cshtml"
+             Write(Model.Name);
 
 
 #line default
 #line hidden
-WriteLiteral("\r\n        </li>\r\n        <li");
+WriteLiteral("</span>\r\n        </li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item main-item\"");
 
@@ -108,7 +108,7 @@ WriteLiteral(" class=\"glyphicon glyphicon-off\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span> 开关\r\n        </li>\r\n        <li");
+WriteLiteral("></span>\r\n            <span>开关</span>\r\n        </li>\r\n        <li");
 
 WriteLiteral(" class=\"list-group-item command-item\"");
 
@@ -116,7 +116,7 @@ WriteLiteral(">\r\n            <span");
 
 WriteLiteral(" class=\"command-item-button orangered \"");
 
-WriteLiteral(">关机</span><span");
+WriteLiteral(">关机</span>\r\n            <span");
 
 WriteLiteral(" class=\"command-item-button red\"");
 
@@ -130,7 +130,7 @@ WriteLiteral(" class=\"glyphicon glyphicon-headphones\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>音量调节\r\n        </li>\r\n    </ul>\r\n");
+WriteLiteral("></span>\r\n            <span>音量调节</span>\r\n        </li>\r\n    </ul>\r\n");
 
 WriteLiteral(@"    <script>
         $(function () {
@@ -143,20 +143,18 @@ WriteLiteral(@"    <script>
                 });
 
                 $("".command-item-button"").click(function () {
-                    var name = $(this).text();
-                    ViewScript.Alert(name);
+                    ViewScript.CommandInvoke(this);
                 });
 
                 $("".main-command-item"").click(function () {
-                    var name = $(this).text();
-                    ViewScript.Alert(name);
+                    ViewScript.CommandInvoke(this);
                 });
 
                 $("".service-edit"").click(function () {
                     ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 48 "HomeView.cshtml"
+#line 51 "HomeView.cshtml"
                                                        Write(HostDetailView.Partial.Host);
 
 
@@ -165,17 +163,16 @@ WriteLiteral(@"    <script>
 WriteLiteral("\', \'");
 
 
-#line 48 "HomeView.cshtml"
+#line 51 "HomeView.cshtml"
                                                                                        Write(HostDetailView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\', guid);\r\n                });\r\n                   \r\n            });\r\n        })\r" +
-"\n    </script>\r\n");
+WriteLiteral("\', guid);\r\n                });\r\n            });\r\n        })\r\n    </script>\r\n");
 
 
-#line 54 "HomeView.cshtml"
+#line 56 "HomeView.cshtml"
 }
 else
 {
@@ -189,7 +186,7 @@ WriteLiteral("\r\n<script>\r\n    $(function () {\r\n\r\n        $(\".service-li
 "\r\n            ViewScript.PartialLoad(\'#MainContent\', \'");
 
 
-#line 64 "HomeView.cshtml"
+#line 66 "HomeView.cshtml"
                                                Write(HostsView.Partial.Host);
 
 
@@ -198,7 +195,7 @@ WriteLiteral("\r\n<script>\r\n    $(function () {\r\n\r\n        $(\".service-li
 WriteLiteral("\', \'");
 
 
-#line 64 "HomeView.cshtml"
+#line 66 "HomeView.cshtml"
                                                                           Write(HostsView.Partial.Path);
 
 

@@ -3,7 +3,8 @@
 <div class="line-section">
     <div class="list-group">
         <a href="javascript:void(0);" class="list-group-item  service-list">
-            <span class="glyphicon   glyphicon-th-list  " aria-hidden="true"></span> 管理服务
+            <span class="glyphicon   glyphicon-th-list  " aria-hidden="true"></span> 
+            <span>管理服务</span>
         </a>
     </div>
 </div>
@@ -12,16 +13,20 @@
 {
     <ul class="list-group" id="servicehost" data-guid="@Model.Domain">
         <li class="list-group-item service-edit active">
-            <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> @Model.Name
+            <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+            <span>@Model.Name</span>
         </li>
         <li class="list-group-item main-item">
-            <span class="glyphicon glyphicon-off" aria-hidden="true"></span> 开关
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+            <span>开关</span>
         </li>
         <li class="list-group-item command-item">
-            <span class="command-item-button orangered ">关机</span><span class="command-item-button red">睡眠</span>
+            <span class="command-item-button orangered ">关机</span>
+            <span class="command-item-button red">睡眠</span>
         </li>
         <li class="list-group-item main-command-item">
-            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>音量调节
+            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+            <span>音量调节</span>
         </li>
     </ul>
     <script>
@@ -35,19 +40,16 @@
                 });
 
                 $(".command-item-button").click(function () {
-                    var name = $(this).text();
-                    ViewScript.Alert(name);
+                    ViewScript.CommandInvoke(this);
                 });
 
                 $(".main-command-item").click(function () {
-                    var name = $(this).text();
-                    ViewScript.Alert(name);
+                    ViewScript.CommandInvoke(this);
                 });
 
                 $(".service-edit").click(function () {
                     ViewScript.PartialLoad('#MainContent', '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
                 });
-                   
             });
         })
     </script>

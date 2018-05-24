@@ -66,16 +66,16 @@ WriteLiteral(" class=\"glyphicon glyphicon-cloud\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>");
+WriteLiteral("></span>\r\n                    <span>");
 
 
-#line 7 "HostsView.cshtml"
-                                                                                 Write(one.Name);
+#line 8 "HostsView.cshtml"
+                     Write(one.Name);
 
 
 #line default
 #line hidden
-WriteLiteral("\r\n                </li>\r\n");
+WriteLiteral("</span>\r\n                </li>\r\n");
 
 WriteLiteral("                <li");
 
@@ -84,7 +84,7 @@ WriteLiteral(" class=\"list-group-item command-item \"");
 WriteLiteral(" data-guid=\"");
 
 
-#line 9 "HostsView.cshtml"
+#line 10 "HostsView.cshtml"
                                                                 Write(one.Domain);
 
 
@@ -96,18 +96,18 @@ WriteLiteral(">\r\n                    <span");
 
 WriteLiteral(" class=\"command-item-set orangered\"");
 
-WriteLiteral(">设置</span><span");
+WriteLiteral(">设置</span>\r\n                    <span");
 
 WriteLiteral(" class=\"command-item-delete red\"");
 
-WriteLiteral(">删除</span><span");
+WriteLiteral(">删除</span>\r\n                    <span");
 
 WriteLiteral(" class=\"command-item-eidt blue\"");
 
 WriteLiteral(">编辑</span>\r\n                </li>\r\n");
 
 
-#line 12 "HostsView.cshtml"
+#line 15 "HostsView.cshtml"
             }
 
 
@@ -131,7 +131,7 @@ WriteLiteral(" class=\"glyphicon glyphicon-plus\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>手动添加\r\n            </li>\r\n            <li");
+WriteLiteral("></span>\r\n                <span>手动添加</span>\r\n            </li>\r\n            <li");
 
 WriteLiteral("  class=\"list-group-item command-item-scan\"");
 
@@ -139,11 +139,12 @@ WriteLiteral(" data-hybrid=\"servicehost\"");
 
 WriteLiteral(">\r\n                <span");
 
-WriteLiteral(" class=\"glyphicon   glyphicon-qrcode\"");
+WriteLiteral(" class=\"glyphicon glyphicon-qrcode\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral(@"></span> 扫一扫
+WriteLiteral(@"></span>
+                <span>扫一扫</span>
             </li>
         </ul>
     </div>
@@ -162,7 +163,7 @@ WriteLiteral(@"></span> 扫一扫
             ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 38 "HostsView.cshtml"
+#line 43 "HostsView.cshtml"
                                                Write(HostDetailView.Partial.Host);
 
 
@@ -171,7 +172,7 @@ WriteLiteral(@"></span> 扫一扫
 WriteLiteral("\', \'");
 
 
-#line 38 "HostsView.cshtml"
+#line 43 "HostsView.cshtml"
                                                                                Write(HostDetailView.Partial.Path);
 
 
@@ -192,7 +193,7 @@ WriteLiteral(@"', """");
                 ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 50 "HostsView.cshtml"
+#line 55 "HostsView.cshtml"
                                                    Write(HomeView.Partial.Host);
 
 
@@ -201,7 +202,7 @@ WriteLiteral(@"', """");
 WriteLiteral("\', \'");
 
 
-#line 50 "HostsView.cshtml"
+#line 55 "HostsView.cshtml"
                                                                              Write(HomeView.Partial.Path);
 
 
@@ -218,7 +219,7 @@ WriteLiteral(@"');
                 ViewScript.PartialLoad('#MainContent', '");
 
 
-#line 58 "HostsView.cshtml"
+#line 63 "HostsView.cshtml"
                                                    Write(HostsView.Partial.Host);
 
 
@@ -227,7 +228,7 @@ WriteLiteral(@"');
 WriteLiteral("\', \'");
 
 
-#line 58 "HostsView.cshtml"
+#line 63 "HostsView.cshtml"
                                                                               Write(HostsView.Partial.Path);
 
 
@@ -238,7 +239,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 "pt.PartialLoad(\'#MainContent\', \'");
 
 
-#line 63 "HostsView.cshtml"
+#line 68 "HostsView.cshtml"
                                                Write(HostDetailView.Partial.Host);
 
 
@@ -247,7 +248,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 WriteLiteral("\', \'");
 
 
-#line 63 "HostsView.cshtml"
+#line 68 "HostsView.cshtml"
                                                                                Write(HostDetailView.Partial.Path);
 
 

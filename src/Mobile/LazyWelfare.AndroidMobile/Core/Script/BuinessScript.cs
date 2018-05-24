@@ -86,8 +86,17 @@ namespace LazyWelfare.AndroidMobile.Script
             return set;
         }
 
+        [Export("CommandSumbit")]
+        [JavascriptInterface]
+        public bool CommandSumbit(string args)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确识别");
+
+
+            return Try.Throw<bool>(args);
+        }
     }
 
 
-   
+
 }

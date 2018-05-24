@@ -1,10 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "UITest Page";
+    ViewData["Title"] = "Interface Page";
 }
-
 <h2>@ViewData["Title"]</h2>
-<h3>UITest-Page</h3>
-<p class="content"></p>
+<h3>Interface-Page</h3>
+<p  class="content"></p>
 
 @section Scripts {
     <script>
@@ -14,14 +13,36 @@
 
         function FillSharp() {
             var act = GetSharp();
-            if (act) BlueTouch.Partial("/UITest/" + act, ".content");
+            if (act) BlueTouch.Partial("/Page/" + act, ".content", function () { 
+
+                $(".command-item").css("display", "none");
+                $(".main-item").click(function () {
+                    $(this).next().fadeToggle();
+                });
+
+                $(".command-item-button").click(function () {
+                    CommandInvoke(this);
+                });
+
+                $(".main-command-item").click(function () {
+                    CommandInvoke(this);
+                });
+
+            });
+        }
+
+        function CommandInvoke(btn) {
+            var name = $(btn).text();
+            var action = $(btn).data("action");
+            var bind = $(btn).data("bind");
+            if (bind != "")
+                alert(bind);
         }
 
         function GetSharp() {
             var url = window.location.toString();
             return url.split("#")[1];
         }
-
 
         if (('onhashchange' in window) && ((typeof document.documentMode === 'undefined') || document.documentMode == 8)) {
             // 浏览器支持onhashchange事件
@@ -36,10 +57,9 @@
             }, 150);
         }
 
-        function hashChangeFire() {
+        function hashChangeFire() { 
             FillSharp();
         }
-
     </script>
 }
 
