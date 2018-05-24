@@ -4,7 +4,7 @@ using System.Text;
 using Common.Logging;
 using LazyWelfare.Common;
 
-namespace LazyWelfare.ServerCore
+namespace LazyWelfare.ServerHost
 {
     public class ServerEnvironment
     {
@@ -27,15 +27,13 @@ namespace LazyWelfare.ServerCore
 
         public System.Net.IPAddress IPValue { get; private set; }
 
-        public int Port { get;  set; } = 6000;
+        public int Port { get;  set; } = 6001;
 
         public string WebAddress {
             get {
                 return $"http://{IP}:{Port}";
             }
         }
-
-
    
 
     }

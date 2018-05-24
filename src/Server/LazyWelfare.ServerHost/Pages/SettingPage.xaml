@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:LazyWelfare.ServerHost.Pages"
+             xmlns:page="clr-namespace:LazyWelfare.ServerHost.Pages"
              xmlns:ctrl="clr-namespace:LazyWelfare.ServerHost.Ctrls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="600">
     <Grid Background="White">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
@@ -16,6 +17,7 @@
             <RowDefinition Height="80"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        
 
         <!-- 标题 -->
         <Border  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="#FFC98484" >
@@ -23,18 +25,14 @@
         </Border>
 
         <!-- 路径 -->
-        <DockPanel   Grid.Row="1" Grid.Column="1"   DockPanel.Dock="Top" Height="50" >
-            <ctrl:TitleTextBox  Title="服务程序路径"  Height="Auto"  x:Name="ServicePath"  IsEnabled="False"  TextWrapping="Wrap"  />
-        </DockPanel>
+        <ctrl:TitleTextBox   Grid.Row="1" Grid.Column="1"  Title="服务程序路径"   Height="50"   x:Name="ServicePath"  IsEnabled="False"  TextWrapping="Wrap"  />
 
         <DockPanel   Grid.Row="2" Grid.Column="1"   DockPanel.Dock="Top"  Height="50" >
             <Button  DockPanel.Dock="Right"  Content="选择"  Click="Button_SelectServiceFile_Click"  Width="80" FontSize="14"  ></Button>
             <ctrl:TitleTextBox  Title="服务程序名称" x:Name="ServiceName" Height="Auto"  IsEnabled="False" />
         </DockPanel>
 
-        <DockPanel   Grid.Row="3" Grid.Column="1"   DockPanel.Dock="Top"  Height="50" >
-            <ctrl:TitleTextBox  Title="服务程序端口" x:Name="ServicePort" Height="Auto"  />
-        </DockPanel>
+        <ctrl:TitleTextBox   Grid.Row="3" Grid.Column="1"  Title="服务程序端口" x:Name="ServicePort" Height="50"  />
 
         <StackPanel   Grid.Row="4" Grid.Column="1"    Height="50" Orientation="Horizontal" HorizontalAlignment="Right"  >
             <Button   Content="应用修改"  Click="Button_SaveChanges_Click"  Width="80" FontSize="14"  ></Button>

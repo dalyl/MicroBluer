@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>42258478-4e2d-4b77-a028-7ff97f08f91c</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Common.Logging" Version="3.4.1" />
-    <PackageReference Include="Common.Logging.Log4Net1215" Version="3.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
@@ -25,11 +24,6 @@
   <ItemGroup>
     <None Include="wwwroot\css\ComicSansMSRegular.ttf" />
     <None Include="wwwroot\images\33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Common.csproj" />
-    <ProjectReference Include="..\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -14,11 +14,9 @@ namespace LazyWelfare.ServerHost
     /// </summary>
     public partial class App : Application
     {
-
         protected override void OnExit(ExitEventArgs e)
         {
-            ServiceProcess.Instance.Stop();
+            ServiceProcess.Instance.Stop(null);
         }
-
     }
 }

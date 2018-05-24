@@ -24,25 +24,40 @@ namespace LazyWelfare.ServerHost.Pages
     {
         private static readonly ILog logger = LogManager.GetLogger<StatePage>();
 
-    
+
         public StatePage()
         {
             InitializeComponent();
-            QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
+            Refresh();
         }
 
         private void Button_ServiceStart_Click(object sender, RoutedEventArgs e)
         {
-            ServiceProcess.Instance.Start();
-            QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
+            loading.Visibility = Visibility.Visible;
+            ServiceProcess.Instance.Start(Refresh);
         }
 
         private void Button_ServiceStop_Click(object sender, RoutedEventArgs e)
         {
-            ServiceProcess.Instance.Stop();
-            QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
+            loading.Visibility = Visibility.Visible;
+            ServiceProcess.Instance.Stop(Refresh);
         }
 
+        private void Button_ServicePreview_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceProcess.Instance.OpenBrower();
+        }
+
+        void Refresh()
+        {
+            Dispatcher.BeginInvoke(new Action(delegate
+            {
+                QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
+                ServiceAddress.Text = ServerEnvironment.Instance.WebAddress;
+                ServiceState.Text = ServiceProcess.Instance.State ? "正运行" : "已停止";
+                loading.Visibility = Visibility.Hidden;
+            }));
+        }
 
     }
 }

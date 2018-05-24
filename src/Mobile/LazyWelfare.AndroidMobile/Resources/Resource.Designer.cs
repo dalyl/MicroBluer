@@ -26,8 +26,47 @@ namespace LazyWelfare.AndroidMobile
 		
 		public static void UpdateIdValues()
 		{
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_down = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_down;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_fade_in = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_fade_in;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_fade_out = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_fade_out;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_up = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_up;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Color.top_bg = global::LazyWelfare.AndroidMobile.Resource.Color.top_bg;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.gallery_back = global::LazyWelfare.AndroidMobile.Resource.Drawable.gallery_back;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.gallery_down = global::LazyWelfare.AndroidMobile.Resource.Drawable.gallery_down;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.gallery_up = global::LazyWelfare.AndroidMobile.Resource.Drawable.gallery_up;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.ic_camera = global::LazyWelfare.AndroidMobile.Resource.Drawable.ic_camera;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.image_not_exist = global::LazyWelfare.AndroidMobile.Resource.Drawable.image_not_exist;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.pick_photo_checkbox = global::LazyWelfare.AndroidMobile.Resource.Drawable.pick_photo_checkbox;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.pick_photo_checkbox_check = global::LazyWelfare.AndroidMobile.Resource.Drawable.pick_photo_checkbox_check;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Drawable.pick_photo_checkbox_normal = global::LazyWelfare.AndroidMobile.Resource.Drawable.pick_photo_checkbox_normal;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.btn_back = global::LazyWelfare.AndroidMobile.Resource.Id.btn_back;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.check = global::LazyWelfare.AndroidMobile.Resource.Id.check;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.commit = global::LazyWelfare.AndroidMobile.Resource.Id.commit;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.foldName = global::LazyWelfare.AndroidMobile.Resource.Id.foldName;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.gallery_tip = global::LazyWelfare.AndroidMobile.Resource.Id.gallery_tip;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.gridView = global::LazyWelfare.AndroidMobile.Resource.Id.gridView;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.listView = global::LazyWelfare.AndroidMobile.Resource.Id.listView;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.listViewParent = global::LazyWelfare.AndroidMobile.Resource.Id.listViewParent;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.photoCount = global::LazyWelfare.AndroidMobile.Resource.Id.photoCount;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.rl = global::LazyWelfare.AndroidMobile.Resource.Id.rl;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.selectFold = global::LazyWelfare.AndroidMobile.Resource.Id.selectFold;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.thumbnail = global::LazyWelfare.AndroidMobile.Resource.Id.thumbnail;
 			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Id.top_layout = global::LazyWelfare.AndroidMobile.Resource.Id.top_layout;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Layout.ImageSelect = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageSelect;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Layout.ImageSelect_IncludeTop = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageSelect_IncludeTop;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Layout.ImageSelect_PhotoPickGridListItem = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageSelect_PhotoPickGridListItem;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Layout.ImageSelect_PhotoPickListItem = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageSelect_PhotoPickListItem;
 			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.app_name = global::LazyWelfare.AndroidMobile.Resource.String.app_name;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_all = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_all;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_camera = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_camera;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_download = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_download;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_screen_shot = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_screen_shot;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_album_name_selected = global::LazyWelfare.AndroidMobile.Resource.String.l_album_name_selected;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_confirm_dialog_message = global::LazyWelfare.AndroidMobile.Resource.String.l_confirm_dialog_message;
+			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.String.l_confirm_dialog_title = global::LazyWelfare.AndroidMobile.Resource.String.l_confirm_dialog_title;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::LazyWelfare.AndroidMobile.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::LazyWelfare.AndroidMobile.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::LazyWelfare.AndroidMobile.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Animation
@@ -62,6 +101,18 @@ namespace LazyWelfare.AndroidMobile
 			
 			// aapt resource value: 0x7f040009
 			public const int abc_slide_out_top = 2130968585;
+			
+			// aapt resource value: 0x7f04000a
+			public const int listview_down = 2130968586;
+			
+			// aapt resource value: 0x7f04000b
+			public const int listview_fade_in = 2130968587;
+			
+			// aapt resource value: 0x7f04000c
+			public const int listview_fade_out = 2130968588;
+			
+			// aapt resource value: 0x7f04000d
+			public const int listview_up = 2130968589;
 			
 			static Animation()
 			{
@@ -753,32 +804,32 @@ namespace LazyWelfare.AndroidMobile
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a003b
-			public const int abc_background_cache_hint_selector_material_dark = 2131361851;
-			
 			// aapt resource value: 0x7f0a003c
-			public const int abc_background_cache_hint_selector_material_light = 2131361852;
+			public const int abc_background_cache_hint_selector_material_dark = 2131361852;
 			
 			// aapt resource value: 0x7f0a003d
-			public const int abc_color_highlight_material = 2131361853;
+			public const int abc_background_cache_hint_selector_material_light = 2131361853;
+			
+			// aapt resource value: 0x7f0a003e
+			public const int abc_color_highlight_material = 2131361854;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int abc_input_method_navigation_guard = 2131361792;
 			
-			// aapt resource value: 0x7f0a003e
-			public const int abc_primary_text_disable_only_material_dark = 2131361854;
-			
 			// aapt resource value: 0x7f0a003f
-			public const int abc_primary_text_disable_only_material_light = 2131361855;
+			public const int abc_primary_text_disable_only_material_dark = 2131361855;
 			
 			// aapt resource value: 0x7f0a0040
-			public const int abc_primary_text_material_dark = 2131361856;
+			public const int abc_primary_text_disable_only_material_light = 2131361856;
 			
 			// aapt resource value: 0x7f0a0041
-			public const int abc_primary_text_material_light = 2131361857;
+			public const int abc_primary_text_material_dark = 2131361857;
 			
 			// aapt resource value: 0x7f0a0042
-			public const int abc_search_url_text = 2131361858;
+			public const int abc_primary_text_material_light = 2131361858;
+			
+			// aapt resource value: 0x7f0a0043
+			public const int abc_search_url_text = 2131361859;
 			
 			// aapt resource value: 0x7f0a0001
 			public const int abc_search_url_text_normal = 2131361793;
@@ -789,11 +840,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0a0003
 			public const int abc_search_url_text_selected = 2131361795;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int abc_secondary_text_material_dark = 2131361859;
-			
 			// aapt resource value: 0x7f0a0044
-			public const int abc_secondary_text_material_light = 2131361860;
+			public const int abc_secondary_text_material_dark = 2131361860;
+			
+			// aapt resource value: 0x7f0a0045
+			public const int abc_secondary_text_material_light = 2131361861;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int accent_material_dark = 2131361796;
@@ -951,11 +1002,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0a0037
 			public const int switch_thumb_disabled_material_light = 2131361847;
 			
-			// aapt resource value: 0x7f0a0045
-			public const int switch_thumb_material_dark = 2131361861;
-			
 			// aapt resource value: 0x7f0a0046
-			public const int switch_thumb_material_light = 2131361862;
+			public const int switch_thumb_material_dark = 2131361862;
+			
+			// aapt resource value: 0x7f0a0047
+			public const int switch_thumb_material_light = 2131361863;
 			
 			// aapt resource value: 0x7f0a0038
 			public const int switch_thumb_normal_material_dark = 2131361848;
@@ -964,7 +1015,10 @@ namespace LazyWelfare.AndroidMobile
 			public const int switch_thumb_normal_material_light = 2131361849;
 			
 			// aapt resource value: 0x7f0a003a
-			public const int transparent = 2131361850;
+			public const int top_bg = 2131361850;
+			
+			// aapt resource value: 0x7f0a003b
+			public const int transparent = 2131361851;
 			
 			static Color()
 			{
@@ -1461,22 +1515,46 @@ namespace LazyWelfare.AndroidMobile
 			public const int blue_face = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int Loading_Gears = 2130837585;
-			
-			// aapt resource value: 0x7f020056
-			public const int notification_template_icon_bg = 2130837590;
+			public const int gallery_back = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int scan_album = 2130837586;
+			public const int gallery_down = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int scan_bulb = 2130837587;
+			public const int gallery_up = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int splash_screen = 2130837588;
+			public const int ic_camera = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int splashscreen = 2130837589;
+			public const int image_not_exist = 2130837589;
+			
+			// aapt resource value: 0x7f020056
+			public const int Loading_Gears = 2130837590;
+			
+			// aapt resource value: 0x7f02005e
+			public const int notification_template_icon_bg = 2130837598;
+			
+			// aapt resource value: 0x7f020057
+			public const int pick_photo_checkbox = 2130837591;
+			
+			// aapt resource value: 0x7f020058
+			public const int pick_photo_checkbox_check = 2130837592;
+			
+			// aapt resource value: 0x7f020059
+			public const int pick_photo_checkbox_normal = 2130837593;
+			
+			// aapt resource value: 0x7f02005a
+			public const int scan_album = 2130837594;
+			
+			// aapt resource value: 0x7f02005b
+			public const int scan_bulb = 2130837595;
+			
+			// aapt resource value: 0x7f02005c
+			public const int splash_screen = 2130837596;
+			
+			// aapt resource value: 0x7f02005d
+			public const int splashscreen = 2130837597;
 			
 			static Drawable()
 			{
@@ -1491,8 +1569,8 @@ namespace LazyWelfare.AndroidMobile
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b0057
-			public const int action0 = 2131427415;
+			// aapt resource value: 0x7f0b0064
+			public const int action0 = 2131427428;
 			
 			// aapt resource value: 0x7f0b0041
 			public const int action_bar = 2131427393;
@@ -1518,8 +1596,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b0042
 			public const int action_context_bar = 2131427394;
 			
-			// aapt resource value: 0x7f0b005b
-			public const int action_divider = 2131427419;
+			// aapt resource value: 0x7f0b0068
+			public const int action_divider = 2131427432;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -1548,20 +1626,32 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b0019
 			public const int beginning = 2131427353;
 			
+			// aapt resource value: 0x7f0b0056
+			public const int btn_back = 2131427414;
+			
 			// aapt resource value: 0x7f0b002b
 			public const int buttonPanel = 2131427371;
 			
-			// aapt resource value: 0x7f0b0058
-			public const int cancel_action = 2131427416;
+			// aapt resource value: 0x7f0b0065
+			public const int cancel_action = 2131427429;
+			
+			// aapt resource value: 0x7f0b005d
+			public const int check = 2131427421;
 			
 			// aapt resource value: 0x7f0b0039
 			public const int checkbox = 2131427385;
 			
-			// aapt resource value: 0x7f0b005e
-			public const int chronometer = 2131427422;
+			// aapt resource value: 0x7f0b006b
+			public const int chronometer = 2131427435;
 			
 			// aapt resource value: 0x7f0b001d
 			public const int collapseActionView = 2131427357;
+			
+			// aapt resource value: 0x7f0b005a
+			public const int commit = 2131427418;
+			
+			// aapt resource value: 0x7f0b0077
+			public const int contentFrame = 2131427447;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int contentPanel = 2131427377;
@@ -1593,14 +1683,23 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b001a
 			public const int end = 2131427354;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int end_padder = 2131427427;
+			// aapt resource value: 0x7f0b0070
+			public const int end_padder = 2131427440;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int expand_activities_button = 2131427365;
 			
 			// aapt resource value: 0x7f0b0038
 			public const int expanded_menu = 2131427384;
+			
+			// aapt resource value: 0x7f0b0058
+			public const int foldName = 2131427416;
+			
+			// aapt resource value: 0x7f0b0059
+			public const int gallery_tip = 2131427417;
+			
+			// aapt resource value: 0x7f0b0053
+			public const int gridView = 2131427411;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int home = 2131427332;
@@ -1617,32 +1716,38 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b0026
 			public const int image = 2131427366;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int imageAlbum = 2131427430;
+			// aapt resource value: 0x7f0b0072
+			public const int imageAlbum = 2131427442;
+			
+			// aapt resource value: 0x7f0b0075
+			public const int imageBulb = 2131427445;
+			
+			// aapt resource value: 0x7f0b005f
+			public const int imgview = 2131427423;
+			
+			// aapt resource value: 0x7f0b006f
+			public const int info = 2131427439;
 			
 			// aapt resource value: 0x7f0b0069
-			public const int imageBulb = 2131427433;
+			public const int line1 = 2131427433;
 			
-			// aapt resource value: 0x7f0b0052
-			public const int imgview = 2131427410;
-			
-			// aapt resource value: 0x7f0b0062
-			public const int info = 2131427426;
-			
-			// aapt resource value: 0x7f0b005c
-			public const int line1 = 2131427420;
-			
-			// aapt resource value: 0x7f0b0060
-			public const int line3 = 2131427424;
+			// aapt resource value: 0x7f0b006d
+			public const int line3 = 2131427437;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
 			
+			// aapt resource value: 0x7f0b0055
+			public const int listView = 2131427413;
+			
+			// aapt resource value: 0x7f0b0054
+			public const int listViewParent = 2131427412;
+			
 			// aapt resource value: 0x7f0b0028
 			public const int list_item = 2131427368;
 			
-			// aapt resource value: 0x7f0b005a
-			public const int media_actions = 2131427418;
+			// aapt resource value: 0x7f0b0067
+			public const int media_actions = 2131427431;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int middle = 2131427355;
@@ -1662,8 +1767,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b002d
 			public const int parentPanel = 2131427373;
 			
-			// aapt resource value: 0x7f0b0054
-			public const int pb_load = 2131427412;
+			// aapt resource value: 0x7f0b0061
+			public const int pb_load = 2131427425;
+			
+			// aapt resource value: 0x7f0b005e
+			public const int photoCount = 2131427422;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int progress_circular = 2131427333;
@@ -1674,11 +1782,14 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b003b
 			public const int radio = 2131427387;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int scanAlbumBtn = 2131427429;
+			// aapt resource value: 0x7f0b005b
+			public const int rl = 2131427419;
 			
-			// aapt resource value: 0x7f0b0068
-			public const int scanBulbBtn = 2131427432;
+			// aapt resource value: 0x7f0b0071
+			public const int scanAlbumBtn = 2131427441;
+			
+			// aapt resource value: 0x7f0b0074
+			public const int scanBulbBtn = 2131427444;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int screen = 2131427349;
@@ -1722,6 +1833,9 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b004e
 			public const int search_voice_btn = 2131427406;
 			
+			// aapt resource value: 0x7f0b0057
+			public const int selectFold = 2131427415;
+			
 			// aapt resource value: 0x7f0b004f
 			public const int select_dialog_listview = 2131427407;
 			
@@ -1752,8 +1866,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b0018
 			public const int src_over = 2131427352;
 			
-			// aapt resource value: 0x7f0b0059
-			public const int status_bar_latest_event_content = 2131427417;
+			// aapt resource value: 0x7f0b0066
+			public const int status_bar_latest_event_content = 2131427430;
 			
 			// aapt resource value: 0x7f0b004c
 			public const int submit_area = 2131427404;
@@ -1761,26 +1875,29 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b000b
 			public const int tabMode = 2131427339;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int text = 2131427425;
+			// aapt resource value: 0x7f0b006e
+			public const int text = 2131427438;
 			
-			// aapt resource value: 0x7f0b005f
-			public const int text2 = 2131427423;
+			// aapt resource value: 0x7f0b006c
+			public const int text2 = 2131427436;
 			
-			// aapt resource value: 0x7f0b0067
-			public const int textAlbum = 2131427431;
+			// aapt resource value: 0x7f0b0073
+			public const int textAlbum = 2131427443;
 			
-			// aapt resource value: 0x7f0b006a
-			public const int textBulb = 2131427434;
+			// aapt resource value: 0x7f0b0076
+			public const int textBulb = 2131427446;
 			
 			// aapt resource value: 0x7f0b0034
 			public const int textSpacerNoButtons = 2131427380;
 			
-			// aapt resource value: 0x7f0b0053
-			public const int textview = 2131427411;
+			// aapt resource value: 0x7f0b0060
+			public const int textview = 2131427424;
 			
-			// aapt resource value: 0x7f0b005d
-			public const int time = 2131427421;
+			// aapt resource value: 0x7f0b005c
+			public const int thumbnail = 2131427420;
+			
+			// aapt resource value: 0x7f0b006a
+			public const int time = 2131427434;
 			
 			// aapt resource value: 0x7f0b002a
 			public const int title = 2131427370;
@@ -1791,11 +1908,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b002e
 			public const int topPanel = 2131427374;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int top_layout = 2131427428;
+			// aapt resource value: 0x7f0b0052
+			public const int top_layout = 2131427410;
 			
-			// aapt resource value: 0x7f0b0055
-			public const int tv_load_dialog = 2131427413;
+			// aapt resource value: 0x7f0b0062
+			public const int tv_load_dialog = 2131427426;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int up = 2131427336;
@@ -1803,8 +1920,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
-			// aapt resource value: 0x7f0b0056
-			public const int webView = 2131427414;
+			// aapt resource value: 0x7f0b0063
+			public const int webView = 2131427427;
 			
 			// aapt resource value: 0x7f0b0020
 			public const int withText = 2131427360;
@@ -1932,52 +2049,70 @@ namespace LazyWelfare.AndroidMobile
 			public const int App_IncludeTop = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int ImageTextButton = 2130903066;
+			public const int ImageSelect = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int Loading = 2130903067;
+			public const int ImageSelect_IncludeTop = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int Main = 2130903068;
+			public const int ImageSelect_PhotoPickGridListItem = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int notification_media_action = 2130903069;
+			public const int ImageSelect_PhotoPickListItem = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int notification_media_cancel_action = 2130903070;
+			public const int ImageTextButton = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int notification_template_big_media = 2130903071;
+			public const int Loading = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int notification_template_big_media_narrow = 2130903072;
+			public const int Main = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int notification_template_lines = 2130903073;
+			public const int notification_media_action = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int notification_template_media = 2130903074;
+			public const int notification_media_cancel_action = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int notification_template_part_chronometer = 2130903075;
+			public const int notification_template_big_media = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int notification_template_part_time = 2130903076;
+			public const int notification_template_big_media_narrow = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int select_dialog_item_material = 2130903077;
+			public const int notification_template_lines = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int select_dialog_multichoice_material = 2130903078;
+			public const int notification_template_media = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int select_dialog_singlechoice_material = 2130903079;
+			public const int notification_template_part_chronometer = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int support_simple_spinner_dropdown_item = 2130903080;
+			public const int notification_template_part_time = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int ZxingOverlay = 2130903081;
+			public const int select_dialog_item_material = 2130903081;
+			
+			// aapt resource value: 0x7f03002a
+			public const int select_dialog_multichoice_material = 2130903082;
+			
+			// aapt resource value: 0x7f03002b
+			public const int select_dialog_singlechoice_material = 2130903083;
+			
+			// aapt resource value: 0x7f03002c
+			public const int support_simple_spinner_dropdown_item = 2130903084;
+			
+			// aapt resource value: 0x7f03002d
+			public const int ZxingOverlay = 2130903085;
+			
+			// aapt resource value: 0x7f03002e
+			public const int zxingscanneractivitylayout = 2130903086;
+			
+			// aapt resource value: 0x7f03002f
+			public const int zxingscannerfragmentlayout = 2130903087;
 			
 			static Layout()
 			{
@@ -2051,6 +2186,27 @@ namespace LazyWelfare.AndroidMobile
 			
 			// aapt resource value: 0x7f050014
 			public const int app_name = 2131034132;
+			
+			// aapt resource value: 0x7f050015
+			public const int l_album_name_all = 2131034133;
+			
+			// aapt resource value: 0x7f050017
+			public const int l_album_name_camera = 2131034135;
+			
+			// aapt resource value: 0x7f050018
+			public const int l_album_name_download = 2131034136;
+			
+			// aapt resource value: 0x7f050019
+			public const int l_album_name_screen_shot = 2131034137;
+			
+			// aapt resource value: 0x7f050016
+			public const int l_album_name_selected = 2131034134;
+			
+			// aapt resource value: 0x7f05001b
+			public const int l_confirm_dialog_message = 2131034139;
+			
+			// aapt resource value: 0x7f05001a
+			public const int l_confirm_dialog_title = 2131034138;
 			
 			// aapt resource value: 0x7f050013
 			public const int status_bar_notification_info_overflow = 2131034131;

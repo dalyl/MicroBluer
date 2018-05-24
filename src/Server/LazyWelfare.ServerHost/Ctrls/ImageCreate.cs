@@ -1,11 +1,12 @@
 ﻿using ZXing.Common;
 using ZXing;
 using ZXing.QrCode;
-using System.DrawingCore;
 using System.IO;
-using System.DrawingCore.Imaging;
 using System;
-namespace LazyWelfare.ServerCore
+using System.Drawing;
+using System.Drawing.Imaging;
+
+namespace LazyWelfare.ServerHost.Ctrls
 {
 
     public class ImageCreate
@@ -73,7 +74,7 @@ namespace LazyWelfare.ServerCore
             g = Graphics.FromImage(bmp);
 
             //使用ClearType字体功能
-            g.TextRenderingHint = System.DrawingCore.Text.TextRenderingHint.ClearTypeGridFit;
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             g.FillRectangle(new SolidBrush(backColor), rect);
             g.DrawString(text, font,Brushes.Black, rect, format);
             return bmp;

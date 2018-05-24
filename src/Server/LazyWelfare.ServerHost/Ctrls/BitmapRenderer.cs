@@ -1,12 +1,12 @@
 ﻿using System;
-using System.DrawingCore;
-using System.DrawingCore.Imaging;
 using ZXing;
 using ZXing.Common;
 using ZXing.Rendering;
 using ZXing.OneD;
+using System.Drawing;
+using System.Drawing.Imaging;
 
-namespace LazyWelfare.ServerCore
+namespace LazyWelfare.ServerHost.Ctrls
 {
     /// <summary>
     /// Renders a <see cref="BitMatrix" /> to a <see cref="Bitmap" /> image

@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Runtime.InteropServices;
 using System.Windows;
-using LazyWelfare.ServerCore;
+using System.Drawing;
+using LazyWelfare.ServerHost.Ctrls;
+
 namespace LazyWelfare.ServerHost.Service
 {
     public class ServiceProcess
@@ -23,7 +25,9 @@ namespace LazyWelfare.ServerHost.Service
 
         #region Process
 
-        public Process Process { get; private set; }
+        private Process Process { get;  set; }
+
+        public bool State => Process != null;
 
         ProcessStartInfo SetProcessInfo(string args)
         {
@@ -42,15 +46,19 @@ namespace LazyWelfare.ServerHost.Service
             return psi;
         }
 
-        public void Start()
+        public void Start(Action After)
         {
-            if (Process != null) return;
-            Task.Run(() =>
+            if (State)
             {
+                After?.Invoke();
+                return;
+            }
+            Task.Run(()=> {
                 ServerEnvironment.Instance.Port = FreePort.FindNextAvailableTCPPort(ServerEnvironment.Instance.Port);
                 var line = $@"{ServerEnvironment.Instance.Path}{ServerEnvironment.Instance.WebName}.dll --urls=http://*:{ServerEnvironment.Instance.Port}";
                 var psi = SetProcessInfo(line);
                 Process = Process.Start(psi);
+                After?.Invoke();
                 Process.OutputDataReceived += new DataReceivedEventHandler(Instance.OnDataReceived);
                 Process.BeginOutputReadLine();
                 Process.WaitForExit();
@@ -63,11 +71,15 @@ namespace LazyWelfare.ServerHost.Service
             });
         }
 
-        public void Stop()
+        public void Stop(Action After)
         {
-            if (Process == null) return;
-            Process.Kill();
-            logger.Info("Process Closed");
+            Task.Run(() =>
+            {
+                if (State != false) Process.Kill();
+                while (State) { }
+                After?.Invoke();
+                logger.Info("Process Closed");
+            });
         }
 
         void OnDataReceived(object Sender, DataReceivedEventArgs e)
@@ -88,11 +100,11 @@ namespace LazyWelfare.ServerHost.Service
 
         public ImageSource CreateImageSource( int width, int height)
         {
-            if (Process == null) return CreateImageSource(()=> ServerCore.ImageCreate.TextBitmap("未启动", width, height));
-            return CreateImageSource(()=> ServerCore.ImageCreate.QRCode(ServerEnvironment.Instance.WebAddress, width, height));
+            if (Process == null) return CreateImageSource(()=> ImageCreate.TextBitmap("未启动", width, height));
+            return CreateImageSource(()=> ImageCreate.QRCode(ServerEnvironment.Instance.WebAddress, width, height));
         }
 
-        ImageSource CreateImageSource( Func<System.DrawingCore.Bitmap> fetchImage)
+        ImageSource CreateImageSource( Func<Bitmap> fetchImage)
         {
             var bitmap = fetchImage();
             IntPtr ip = bitmap.GetHbitmap();//从GDI+ Bitmap创建GDI位图对象
@@ -105,6 +117,10 @@ namespace LazyWelfare.ServerHost.Service
 
         #endregion
 
+        public void OpenBrower()
+        {
+            System.Diagnostics.Process.Start(ServerEnvironment.Instance.WebAddress);
+        }
 
     }
 }

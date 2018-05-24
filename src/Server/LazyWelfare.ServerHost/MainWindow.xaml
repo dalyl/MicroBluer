@@ -13,9 +13,9 @@
         
     <TabControl x:Name="tabControl"  DockPanel.Dock="Top" Margin="5" VerticalAlignment="Top" TabStripPlacement="Left">
         <TabItem Header="运行" Width="100" Height="50" FontSize="25" >
-            <ScrollViewer VerticalScrollBarVisibility="Auto" >
+             <ScrollViewer VerticalScrollBarVisibility="Auto" >
                 <page:StatePage  MinHeight="550" Width="660" />
-            </ScrollViewer>
+             </ScrollViewer>
         </TabItem>
         <TabItem Header="设置" Width="100" Height="50"  FontSize="25" VerticalAlignment="Bottom">
             <ScrollViewer VerticalScrollBarVisibility="Auto"  Height="Auto">

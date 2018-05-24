@@ -23,8 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.AndroidMobile.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.AndroidMobile.QrcodeScan", "src\Mobile\LazyWelfare.AndroidMobile.QrcodeScan\LazyWelfare.AndroidMobile.QrcodeScan.csproj", "{4B606BC6-C0EE-4F79-8D07-5DD8540049BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LazyWelfare.ServerCore", "src\Server\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj", "{8B9FA658-4AD6-41F7-8FD6-AA42F7DC52BE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,10 +55,6 @@ Global
 		{4B606BC6-C0EE-4F79-8D07-5DD8540049BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B606BC6-C0EE-4F79-8D07-5DD8540049BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B606BC6-C0EE-4F79-8D07-5DD8540049BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B9FA658-4AD6-41F7-8FD6-AA42F7DC52BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B9FA658-4AD6-41F7-8FD6-AA42F7DC52BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B9FA658-4AD6-41F7-8FD6-AA42F7DC52BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B9FA658-4AD6-41F7-8FD6-AA42F7DC52BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,7 +69,6 @@ Global
 		{ADE1CD75-C864-493A-A5E4-163EEB7D8CD6} = {47C29C30-D80E-445E-B15C-D913DC673F86}
 		{042B5E23-3EC9-4C6F-B6A3-BBD23759309D} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
 		{4B606BC6-C0EE-4F79-8D07-5DD8540049BB} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
-		{8B9FA658-4AD6-41F7-8FD6-AA42F7DC52BE} = {47C29C30-D80E-445E-B15C-D913DC673F86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BAB00A0-1B85-476C-951E-30CB476CE191}

@@ -32,14 +32,6 @@ namespace LazyWelfare.ServerWeb.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        public IActionResult QrCode()
-        {
-            var width = 100;
-            var height = 100;
-            var img= ServerCore.ImageCreate.QRCode(ServerCore.ServerEnvironment.Instance.WebAddress, width, height);
-            byte[] byData = ServerCore.ImageCreate.Convert(img);
-            return File(byData, "image/jpg");
-        }
+        
     }
 }
