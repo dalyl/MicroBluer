@@ -47,15 +47,14 @@ namespace LazyWelfare.AndroidMobile.Logic
 
         public static void SetHost(HostModel model, TryCatch Try)
         {
-            var can = Try.Invoke(false, () => initHost(model), "服务地址不可用");
+            var can = Try.Invoke(false, () => InitHost(model), "服务地址不可用");
             if (can == false) CurrentHost = null;
         }
 
-        static bool initHost(HostModel model)
+        static bool InitHost(HostModel model)
         {
             CurrentHost = model;
-            Client = new HttpClient();
-            Client.BaseAddress = new Uri(CurrentHost.Address);
+            Client = CreateClient();
             return true;
         }
 
@@ -76,11 +75,19 @@ namespace LazyWelfare.AndroidMobile.Logic
 
         static string GetContent(string host,string url)
         {
-            var client = new HttpClient();
-            client.BaseAddress = new Uri(CurrentHost.Address);
+            var client = CreateClient();
             var fetchResponse = client.GetByteArrayAsync(url);
             Task.WaitAll(fetchResponse);
             return Encoding.Default.GetString(fetchResponse.Result);
+        }
+
+        static HttpClient CreateClient()
+        {
+            return new HttpClient
+            {
+                Timeout = new TimeSpan(0, 0, 5),
+                BaseAddress = new Uri(CurrentHost.Address)
+            };
         }
 
     }

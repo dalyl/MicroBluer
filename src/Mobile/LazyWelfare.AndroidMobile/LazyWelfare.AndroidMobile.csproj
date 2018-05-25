@@ -88,12 +88,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\TryCatch-Interface.cs" />
     <Compile Include="Core\LoadingView.cs" />
     <Compile Include="Core\Logic\ServiceHost.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />
     <Compile Include="Core\Models\UserModel.cs" />
     <Compile Include="Core\Script\PartialScript.cs" />
     <Compile Include="Core\TryCatchActivity.cs" />
+    <Compile Include="Core\TryCatchTrust.cs" />
     <Compile Include="Core\Views\IPartialView.cs" />
     <Compile Include="Core\Views\Partials\HomeView.cs" />
     <Compile Include="Core\Views\Partials\HostDetailView.cs" />

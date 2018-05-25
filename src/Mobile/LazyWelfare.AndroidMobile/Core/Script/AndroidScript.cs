@@ -35,6 +35,20 @@ namespace LazyWelfare.AndroidMobile.Script
             Toast.MakeText(ViewActivity, Message.Trim(), ToastLength.Short).Show();
         }
 
+        [Export("ShowLoading")]
+        [JavascriptInterface]
+        public void ShowLoading()
+        {
+            ViewActivity.ShowLoading();
+        }
+
+        [Export("CloseLoading")]
+        [JavascriptInterface]
+        public void CloseLoading()
+        {
+            ViewActivity.CloseLoading();
+        }
+
         protected T DeserializeForm<T>(string args)
         {
             var code = WebUtility.UrlDecode(args);

@@ -16,9 +16,35 @@ namespace LazyWelfare.AndroidMobile
     {
         public TryCatch Try { get; }
 
+        public LoadingView Loading { get; set; }
+
         public TryCatchActivity()
         {
-            Try = new TryCatch(msg => Toast.MakeText(this, msg.Trim(), ToastLength.Short).Show());
+            Try = new TryCatchTrust(ShowMessage, ShowLoading, CloseLoading);
         }
+
+        void ShowMessage(string message)
+        {
+            Toast.MakeText(this, message.Trim(), ToastLength.Short).Show();
+        }
+
+        public void ShowLoading()
+        {
+            this.RunOnUiThread(()=> Loading.Show());
+        }
+
+        public void CloseLoading()
+        {
+            this.RunOnUiThread(()=> Loading.Hide());
+        }
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            Loading = new LoadingView(this, Resource.Style.CustomDialog);
+        }
+
+
+
     }
 }

@@ -25,26 +25,10 @@ namespace LazyWelfare.AndroidMobile.Script
         {
             switch (host)
             {
-                case nameof(WebPartialViews):return WebPartialViews.SwitchWebView(ViewActivity as WebPartialActivity, url, args);
+                case nameof(WebPartialViews):return Try.Invoke(string.Empty,()=> WebPartialViews.SwitchWebView(ViewActivity as WebPartialActivity, url, args));
                 case nameof(ServiceHost): return ServiceHost.PageDispatch(url, args, Try);
             }
             return string.Empty;
-        }
-
-        [Export("ShowLoading")]
-        [JavascriptInterface]
-        public void ShowLoading()
-        {
-            var ac = ViewActivity as WebPartialActivity;
-            ac.Loading.Show();
-        }
-
-        [Export("CloseLoading")]
-        [JavascriptInterface]
-        public void CloseLoading()
-        {
-            var ac = ViewActivity as WebPartialActivity;
-            ac.Loading.Hide();
         }
 
     }

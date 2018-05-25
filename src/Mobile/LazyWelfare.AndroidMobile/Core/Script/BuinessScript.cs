@@ -54,8 +54,7 @@ namespace LazyWelfare.AndroidMobile.Script
             var model = DeserializeForm<HostModel>(args);
             if (model == null) return Try.Throw<bool>("参数未正确识别");
             var service = new HostStoreService(ViewActivity);
-            service.Save(model);
-            return Try.Show(true,"保存成功");
+            return Try.Show(() => service.Save(model),"保存成功","保存失败");
         }
 
         [Export("DeleteHost")]
@@ -63,10 +62,8 @@ namespace LazyWelfare.AndroidMobile.Script
         public bool DeleteHost(string args)
         {
             if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确识别");
-
             var service = new HostStoreService(ViewActivity);
-            var result= service.Delete(args);
-            return Try.Show(result, "成功删除","删除失败");
+            return Try.Show(()=>service.Delete(args), "成功删除","删除失败");
         }
 
         [Export("SetHost")]
@@ -74,16 +71,14 @@ namespace LazyWelfare.AndroidMobile.Script
         public bool SetHost(string args)
         {
             if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确识别");
-
             var userService = new UserStoreService(ViewActivity);
-            var result = userService.SetAttr("Host", args);
-            var set= Try.Show(result, "设置成功", "设置失败");
-            if (set) {
+            var result= Try.Show(() => userService.SetAttr("Host", args), "设置成功", "设置失败");
+            if (result) {
                 var hostService = new HostStoreService(ViewActivity);
-                var host = hostService.Get(args);
+                var host = Try.Invoke(null, () => hostService.Get(args));
                 ServiceHost.SetHost(host, Try);
             }
-            return set;
+            return result;
         }
 
         [Export("CommandSumbit")]
@@ -91,9 +86,7 @@ namespace LazyWelfare.AndroidMobile.Script
         public bool CommandSumbit(string args)
         {
             if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确识别");
-
-
-            return Try.Throw<bool>(args);
+            return Try.Show<bool>(true, args);
         }
     }
 
