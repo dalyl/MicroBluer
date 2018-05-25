@@ -46,6 +46,10 @@ namespace LazyWelfare.AndroidMobile
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
+            ShowLoading();
+
+            return;
+
             PartialView = FindViewById<WebView>(Resource.Id.webView);
 
             WebSettings settings = PartialView.Settings;

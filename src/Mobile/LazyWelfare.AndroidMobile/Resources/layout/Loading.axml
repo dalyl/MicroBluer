@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
+    android:layout_width="140dp"
+    android:layout_height="140dp"
     android:layout_gravity="center_horizontal"
-    android:background="#c0c0c0"
+    android:background="#f0f0f0"
     android:layout_centerInParent="true"
     android:orientation="vertical">
 <!--android:background="@drawable/shape_dialog_bg"-->
@@ -11,12 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
-        <ProgressBar
+        <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/pb_load"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:indeterminateDrawable="@drawable/Loading_Gears"
-            android:layout_centerInParent="true" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/loading_gears_animated" />
+    <!--<ProgressBar
+            android:id="@+id/pb_load"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateDrawable="@drawable/loading_gears" 
+            android:layout_centerInParent="true" />-->
     </RelativeLayout>
     <TextView
         android:id="@+id/tv_load_dialog"
