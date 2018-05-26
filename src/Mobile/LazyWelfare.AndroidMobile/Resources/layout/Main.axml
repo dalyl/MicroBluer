@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LazyWelfare.AndroidMobile.AlphaMaskLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mask_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-  <WebView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:id="@+id/webView" />
-</LinearLayout>
+    android:layout_height="match_parent"
+    android:foreground="#000"
+    aml_alpha_from="0"
+    aml_alpha_to="127"
+    aml_duration="600">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webView" />
+    </LinearLayout>
+</LazyWelfare.AndroidMobile.AlphaMaskLayout>

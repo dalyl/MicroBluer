@@ -4,6 +4,7 @@
     android:height="100dp"
     android:viewportWidth="100"
     android:viewportHeight="100">
+  
     <group android:name="animgroup"
             android:translateX="50"
             android:translateY="50">

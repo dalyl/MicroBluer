@@ -8,6 +8,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Graphics.Drawable;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 
@@ -35,7 +36,8 @@ namespace LazyWelfare.AndroidMobile
             Window.Attributes.Width = ViewGroup.LayoutParams.WrapContent;
             Window.Attributes.Height = ViewGroup.LayoutParams.WrapContent;
 
-            ImageView imageview = (ImageView)FindViewById(Resource.Id.pb_load);
+            var imageview = (AppCompatImageView)FindViewById(Resource.Id.pb_load);
+             
             ((AnimatedVectorDrawableCompat)imageview.GetDrawableState()).Start();
         }
        

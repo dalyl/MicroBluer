@@ -85,7 +85,7 @@ namespace LazyWelfare.AndroidMobile.Logic
         {
             return new HttpClient
             {
-                Timeout = new TimeSpan(0, 0, 5),
+              //  Timeout = new TimeSpan(0, 0, 5),
                 BaseAddress = new Uri(CurrentHost.Address)
             };
         }

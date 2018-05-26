@@ -12,11 +12,13 @@ using Android.Widget;
 
 namespace LazyWelfare.AndroidMobile
 {
-    public class TryCatchActivity : Activity
+    public abstract class TryCatchActivity : Activity
     {
         public TryCatch Try { get; }
 
-        public LoadingView Loading { get; set; }
+       // public LoadingView Loading { get; set; }
+
+        public abstract AlphaMaskLayout MaskLayout { get; set; }
 
         public TryCatchActivity()
         {
@@ -30,18 +32,20 @@ namespace LazyWelfare.AndroidMobile
 
         public void ShowLoading()
         {
-            this.RunOnUiThread(()=> Loading.Show());
+            //this.RunOnUiThread(()=> Loading.Show());
+            MaskLayout.ShowMask();
         }
 
         public void CloseLoading()
         {
-            this.RunOnUiThread(()=> Loading.Hide());
+            // this.RunOnUiThread(()=> Loading.Hide());
+            MaskLayout.HideMask();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Loading = new LoadingView(this, Resource.Style.CustomDialog);
+          //  Loading = new LoadingView(this, Resource.Style.CustomDialog);
         }
 
 
