@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LazyWelfare.AndroidMobile.AlphaMaskLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attr="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mask_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foreground="#000"
-    aml_alpha_from="0"
-    aml_alpha_to="127"
-    aml_duration="600">
+    attr:aml_alpha_from="0"
+    attr:aml_alpha_to="127"
+    attr:aml_duration="600">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

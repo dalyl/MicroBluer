@@ -40,7 +40,7 @@
             var result = false;
             javascript: result = BuinessScript.SaveHost(model);
             if (result) {
-                 ViewScript.PartialLoad('#MainContent', '@HostsView.Partial.Host', '@HostsView.Partial.Path');
+                ViewScript.RequestPartial('#MainContent', "Replace", '@HostsView.Partial.Host', '@HostsView.Partial.Path');
             }
         });
     })

@@ -15,7 +15,7 @@ namespace LazyWelfare.AndroidMobile.Script
 {
     public class BuinessScript: AndroidScript//注意一定要继承java基类  
     {
-        public BuinessScript(TryCatchActivity activity) : base(activity) { }
+        public BuinessScript(TryCatchActivity activity, WebView brower) : base(activity, brower) { }
 
         [Export("ScanHost")]
         [JavascriptInterface]

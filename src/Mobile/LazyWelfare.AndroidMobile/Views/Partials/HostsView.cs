@@ -160,11 +160,11 @@ WriteLiteral(@"></span>
         });
 
         $("".command-item-add"").click(function () {
-            ViewScript.PartialLoad('#MainContent', '");
+            ViewScript.RequestPartial('#MainContent',""Replace"" , '");
 
 
 #line 43 "HostsView.cshtml"
-                                               Write(HostDetailView.Partial.Host);
+                                                             Write(HostDetailView.Partial.Host);
 
 
 #line default
@@ -173,7 +173,7 @@ WriteLiteral("\', \'");
 
 
 #line 43 "HostsView.cshtml"
-                                                                               Write(HostDetailView.Partial.Path);
+                                                                                             Write(HostDetailView.Partial.Path);
 
 
 #line default
@@ -190,11 +190,11 @@ WriteLiteral(@"', """");
             var result = false;
             javascript: result = BuinessScript.SetHost(guid);
             if (result) {
-                ViewScript.PartialLoad('#MainContent', '");
+                ViewScript.RequestPartial('#MainContent',""Replace"" , '");
 
 
 #line 55 "HostsView.cshtml"
-                                                   Write(HomeView.Partial.Host);
+                                                                 Write(HomeView.Partial.Host);
 
 
 #line default
@@ -203,7 +203,7 @@ WriteLiteral("\', \'");
 
 
 #line 55 "HostsView.cshtml"
-                                                                             Write(HomeView.Partial.Path);
+                                                                                           Write(HomeView.Partial.Path);
 
 
 #line default
@@ -216,11 +216,11 @@ WriteLiteral(@"');
             var result = false;
             javascript: result = BuinessScript.DeleteHost(guid);
             if (result) {
-                ViewScript.PartialLoad('#MainContent', '");
+                ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
 #line 63 "HostsView.cshtml"
-                                                   Write(HostsView.Partial.Host);
+                                                                 Write(HostsView.Partial.Host);
 
 
 #line default
@@ -229,18 +229,18 @@ WriteLiteral("\', \'");
 
 
 #line 63 "HostsView.cshtml"
-                                                                              Write(HostsView.Partial.Path);
+                                                                                            Write(HostsView.Partial.Path);
 
 
 #line default
 #line hidden
 WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-eidt\").click(function (" +
 ") {\r\n            var guid = $(this).parent().data(\"guid\");\r\n            ViewScri" +
-"pt.PartialLoad(\'#MainContent\', \'");
+"pt.RequestPartial(\'#MainContent\', \"Replace\",\'");
 
 
 #line 68 "HostsView.cshtml"
-                                               Write(HostDetailView.Partial.Host);
+                                                            Write(HostDetailView.Partial.Host);
 
 
 #line default
@@ -249,7 +249,7 @@ WriteLiteral("\', \'");
 
 
 #line 68 "HostsView.cshtml"
-                                                                               Write(HostDetailView.Partial.Path);
+                                                                                            Write(HostDetailView.Partial.Path);
 
 
 #line default

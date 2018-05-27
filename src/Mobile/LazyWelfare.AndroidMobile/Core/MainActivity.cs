@@ -61,11 +61,11 @@ namespace LazyWelfare.AndroidMobile
             //启用js的dom缓存  
             settings.DomStorageEnabled = true;
             //加载javascript接口方法，以便调用前台方法  
-            PartialView.AddJavascriptInterface(new AndroidScript(this), "AndroidScript");
-            PartialView.AddJavascriptInterface(new PartialScript(this), "PartialScript");
-            PartialView.AddJavascriptInterface(new BuinessScript(this), "BuinessScript");
+            PartialView.AddJavascriptInterface(new AndroidScript(this, PartialView), "AndroidScript");
+            PartialView.AddJavascriptInterface(new PartialScript(this, PartialView), "PartialScript");
+            PartialView.AddJavascriptInterface(new BuinessScript(this, PartialView), "BuinessScript");
 
-            PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.PartialLoad('#MainContent','{Partial.Host}','{Partial.Path}',null);"));
+            PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{Partial.Host}','{Partial.Path}',null);"));
 
             var userService = new UserStoreService(this);
             var hostService   = new HostStoreService(this);

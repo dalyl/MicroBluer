@@ -173,11 +173,11 @@ WriteLiteral(@">保存</button>
             var result = false;
             javascript: result = BuinessScript.SaveHost(model);
             if (result) {
-                 ViewScript.PartialLoad('#MainContent', '");
+                ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
 #line 43 "HostDetailView.cshtml"
-                                                    Write(HostsView.Partial.Host);
+                                                                 Write(HostsView.Partial.Host);
 
 
 #line default
@@ -186,7 +186,7 @@ WriteLiteral("\', \'");
 
 
 #line 43 "HostDetailView.cshtml"
-                                                                               Write(HostsView.Partial.Path);
+                                                                                            Write(HostsView.Partial.Path);
 
 
 #line default

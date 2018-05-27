@@ -14,16 +14,20 @@ using LazyWelfare.AndroidMobile.Models;
 
 namespace LazyWelfare.AndroidMobile.Views.Partials
 {
-    public partial class HostDetailView : IPartialView<HostModel>
+
+    public partial class HostMainView : IPartialView<HostModel>
     {
-        public static (string Host, string Path) Partial = (nameof(WebPartialViews), typeof(HostDetailView).Name);
+        public const string Placeholder_Append = "#############Append#############";
+
+        public static (string Host, string Path) Partial = (nameof(WebPartialViews), typeof(HostMainView).Name);
         public static string GenerateString(WebPartialActivity context, string args)
         {
-            context.RequestStack.Push(PartialView.HostsView, args);
             var service = new HostStoreService(context);
             var model = string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : service.Get(args);
-            return WebPartialViews.Get(typeof(HostDetailView).Name, model);
+            if (model == null) return context.Try.Show(string.Empty, "获取服务主机信息失败");
+            var append = ServiceHost.PageDispatch("command-panel", args, context.Try);
+            var page= WebPartialViews.Get(typeof(HostMainView).Name, model);
+            return page.Replace(HostMainView.Placeholder_Append, append);
         }
     }
-
 }

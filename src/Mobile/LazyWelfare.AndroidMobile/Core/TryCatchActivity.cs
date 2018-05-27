@@ -16,39 +16,17 @@ namespace LazyWelfare.AndroidMobile
     {
         public TryCatch Try { get; }
 
-       // public LoadingView Loading { get; set; }
-
         public abstract AlphaMaskLayout MaskLayout { get; set; }
 
         public TryCatchActivity()
         {
-            Try = new TryCatchTrust(ShowMessage, ShowLoading, CloseLoading);
+            Try = new TryCatch(ShowMessage);
         }
 
         void ShowMessage(string message)
         {
-            Toast.MakeText(this, message.Trim(), ToastLength.Short).Show();
+            RunOnUiThread(()=> Toast.MakeText(this, message.Trim(), ToastLength.Short).Show());
         }
-
-        public void ShowLoading()
-        {
-            //this.RunOnUiThread(()=> Loading.Show());
-            MaskLayout.ShowMask();
-        }
-
-        public void CloseLoading()
-        {
-            // this.RunOnUiThread(()=> Loading.Hide());
-            MaskLayout.HideMask();
-        }
-
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-          //  Loading = new LoadingView(this, Resource.Style.CustomDialog);
-        }
-
-
 
     }
 }

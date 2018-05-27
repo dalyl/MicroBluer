@@ -1,0 +1,46 @@
+﻿@model  LazyWelfare.AndroidMobile.Models.HostModel
+
+<ul class="list-group" data-guid="@Model.Domain">
+    <li class="list-group-item service-edit active">
+        <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+        <span>@Model.Name</span>
+    </li>
+    <li class="list-group-item main-item">
+        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        <span>开关</span>
+    </li>
+    <li class="list-group-item command-item">
+        <span class="command-item-button orangered ">关机</span>
+        <span class="command-item-button red">睡眠</span>
+    </li>
+    <li class="list-group-item main-command-item">
+        <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+        <span>音量调节</span>
+    </li>
+
+    @HostMainView.Placeholder_Append
+
+</ul>
+<script>
+        $(function () {
+            var guid ='@Model.Domain';
+
+            $(".command-item").css("display", "none");
+            $(".main-item").click(function () {
+                $(this).next().fadeToggle();
+            });
+
+            $(".command-item-button").click(function () {
+                ViewScript.CommandInvoke(this);
+            });
+
+            $(".main-command-item").click(function () {
+                ViewScript.CommandInvoke(this);
+            });
+
+            $(".service-edit").click(function () {
+                ViewScript.RequestPartial('#MainContent', "Replace", '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
+            });
+
+        })
+</script>

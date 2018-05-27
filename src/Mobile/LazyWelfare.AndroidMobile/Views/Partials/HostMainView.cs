@@ -18,12 +18,12 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
-public partial class HomeView : HomeViewBase
+public partial class HostMainView : HostMainViewBase
 {
 
 #line hidden
 
-#line 1 "HomeView.cshtml"
+#line 1 "HostMainView.cshtml"
 public LazyWelfare.AndroidMobile.Models.HostModel Model { get; set; }
 
 #line default
@@ -32,49 +32,113 @@ public LazyWelfare.AndroidMobile.Models.HostModel Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("<div");
-
-WriteLiteral(" class=\"line-section\"");
-
-WriteLiteral(">\r\n    <div");
+WriteLiteral("<ul");
 
 WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(">\r\n        <a");
+WriteLiteral(" data-guid=\"");
 
-WriteLiteral(" href=\"javascript:void(0);\"");
 
-WriteLiteral(" class=\"list-group-item  service-list\"");
+#line 3 "HostMainView.cshtml"
+                             Write(Model.Domain);
 
-WriteLiteral(">\r\n            <span");
 
-WriteLiteral(" class=\"glyphicon   glyphicon-th-list  \"");
+#line default
+#line hidden
+WriteLiteral("\"");
+
+WriteLiteral(">\r\n    <li");
+
+WriteLiteral(" class=\"list-group-item service-edit active\"");
+
+WriteLiteral(">\r\n        <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-cloud\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n            <span>管理服务</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n<div" +
-"");
-
-WriteLiteral(" class=\"line-section\"");
-
-WriteLiteral(" id=\"servicehost\"");
-
-WriteLiteral(">\r\n\r\n</div>\r\n\r\n");
+WriteLiteral("></span>\r\n        <span>");
 
 
-#line 16 "HomeView.cshtml"
- if (Model != null)
-{
+#line 6 "HostMainView.cshtml"
+         Write(Model.Name);
 
 
 #line default
 #line hidden
-WriteLiteral("    <script>\r\n        $(function () {\r\n            ViewScript.RequestPartial(\'#se" +
-"rvicehost\', \"Replace\", \'");
+WriteLiteral("</span>\r\n    </li>\r\n    <li");
+
+WriteLiteral(" class=\"list-group-item main-item\"");
+
+WriteLiteral(">\r\n        <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-off\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span>\r\n        <span>开关</span>\r\n    </li>\r\n    <li");
+
+WriteLiteral(" class=\"list-group-item command-item\"");
+
+WriteLiteral(">\r\n        <span");
+
+WriteLiteral(" class=\"command-item-button orangered \"");
+
+WriteLiteral(">关机</span>\r\n        <span");
+
+WriteLiteral(" class=\"command-item-button red\"");
+
+WriteLiteral(">睡眠</span>\r\n    </li>\r\n    <li");
+
+WriteLiteral(" class=\"list-group-item main-command-item\"");
+
+WriteLiteral(">\r\n        <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-headphones\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span>\r\n        <span>音量调节</span>\r\n    </li>\r\n\r\n");
+
+WriteLiteral("    ");
 
 
-#line 20 "HomeView.cshtml"
-                                                             Write(HostMainView.Partial.Host);
+#line 21 "HostMainView.cshtml"
+Write(HostMainView.Placeholder_Append);
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n\r\n</ul>\r\n<script>\r\n        $(function () {\r\n            var guid =\'");
+
+
+#line 26 "HostMainView.cshtml"
+                  Write(Model.Domain);
+
+
+#line default
+#line hidden
+WriteLiteral(@"';
+
+            $("".command-item"").css(""display"", ""none"");
+            $("".main-item"").click(function () {
+                $(this).next().fadeToggle();
+            });
+
+            $("".command-item-button"").click(function () {
+                ViewScript.CommandInvoke(this);
+            });
+
+            $("".main-command-item"").click(function () {
+                ViewScript.CommandInvoke(this);
+            });
+
+            $("".service-edit"").click(function () {
+                ViewScript.RequestPartial('#MainContent', ""Replace"", '");
+
+
+#line 42 "HostMainView.cshtml"
+                                                                 Write(HostDetailView.Partial.Host);
 
 
 #line default
@@ -82,54 +146,13 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            ViewScript.
 WriteLiteral("\', \'");
 
 
-#line 20 "HomeView.cshtml"
-                                                                                           Write(HostMainView.Partial.Path);
+#line 42 "HostMainView.cshtml"
+                                                                                                 Write(HostDetailView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\',\'");
-
-
-#line 20 "HomeView.cshtml"
-                                                                                                                        Write(Model.Domain);
-
-
-#line default
-#line hidden
-WriteLiteral("\');\r\n        })\r\n    </script>\r\n");
-
-
-#line 23 "HomeView.cshtml"
-}
-else
-{
-
-}
-
-
-#line default
-#line hidden
-WriteLiteral("\r\n<script>\r\n    $(function () {\r\n\r\n        $(\".service-list\").click(function () {" +
-"\r\n            ViewScript.RequestPartial(\'#MainContent\', \"Replace\", \'");
-
-
-#line 33 "HomeView.cshtml"
-                                                             Write(HostsView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 33 "HomeView.cshtml"
-                                                                                        Write(HostsView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral("\');\r\n        });\r\n\r\n    })\r\n</script>\r\n\r\n\r\n");
+WriteLiteral("\', guid);\r\n            });\r\n\r\n        })\r\n</script>");
 
 }
 }
@@ -137,7 +160,7 @@ WriteLiteral("\');\r\n        });\r\n\r\n    })\r\n</script>\r\n\r\n\r\n");
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class HomeViewBase
+public abstract class HostMainViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

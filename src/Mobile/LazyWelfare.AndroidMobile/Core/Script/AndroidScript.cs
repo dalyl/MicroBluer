@@ -15,13 +15,16 @@ namespace LazyWelfare.AndroidMobile.Script
     public class AndroidScript : Java.Lang.Object//注意一定要继承java基类  
     {
 
-        protected TryCatchActivity ViewActivity = null;
+        protected TryCatchActivity ViewActivity { get; }
+
+        protected WebView WebBrower { get; }
 
         protected TryCatch Try => ViewActivity.Try;
 
-        public AndroidScript(TryCatchActivity activity)
+        public AndroidScript(TryCatchActivity activity, WebView brower)
         {
             ViewActivity = activity;
+            WebBrower = brower;
         }
 
         /// <summary>  
@@ -34,20 +37,7 @@ namespace LazyWelfare.AndroidMobile.Script
         {
             Toast.MakeText(ViewActivity, Message.Trim(), ToastLength.Short).Show();
         }
-
-        [Export("ShowLoading")]
-        [JavascriptInterface]
-        public void ShowLoading()
-        {
-            ViewActivity.ShowLoading();
-        }
-
-        [Export("CloseLoading")]
-        [JavascriptInterface]
-        public void CloseLoading()
-        {
-            ViewActivity.CloseLoading();
-        }
+      
 
         protected T DeserializeForm<T>(string args)
         {
@@ -64,6 +54,13 @@ namespace LazyWelfare.AndroidMobile.Script
             var result = json.ToString().Replace(",}", "}");
             return JsonConvert.DeserializeObject<T>(result);
         }
+
+        public  void EvaluateJavascript( string script)
+        {
+            WebBrower.EvaluateJavascript(script, null);
+        }
+
+      
 
     }
 

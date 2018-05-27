@@ -106,6 +106,7 @@ namespace LazyWelfare.AndroidMobile.Views
                 case PartialView.HomeView: return HomeView.GenerateString(context);
                 case PartialView.HostsView: return HostsView.GenerateString(context);
                 case PartialView.HostDetailView: return HostDetailView.GenerateString(context, args);
+                case PartialView.HostMainView: return HostMainView.GenerateString(context, args);
             }
             return string.Empty;
         }

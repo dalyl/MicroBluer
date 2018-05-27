@@ -18,5 +18,6 @@ namespace LazyWelfare.AndroidMobile.Views
         public const string HomeView = nameof(HomeView);
         public const string HostsView = nameof(HostsView);
         public const string HostDetailView = nameof(HostDetailView);
+        public const string HostMainView = nameof(HostMainView);
     }
 }

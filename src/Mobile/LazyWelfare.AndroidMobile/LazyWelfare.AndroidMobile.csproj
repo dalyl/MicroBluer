@@ -115,12 +115,17 @@
     <Compile Include="Core\Script\PartialScript.cs" />
     <Compile Include="Core\TryCatchActivity.cs" />
     <Compile Include="Core\TryCatchTrust.cs" />
+    <Compile Include="Core\Utils\BundleUtils.cs" />
     <Compile Include="Core\Views\IPartialView.cs" />
+    <Compile Include="Core\Views\PartialLoadForm.cs" />
+    <Compile Include="Core\Views\PartialRequestContext.cs" />
     <Compile Include="Core\Views\Partials\HomeView.cs" />
     <Compile Include="Core\Views\Partials\HostDetailView.cs" />
+    <Compile Include="Core\Views\Partials\HostMainView.cs" />
     <Compile Include="Core\Views\Partials\HostsView.cs" />
     <Compile Include="Core\Views\PartialView.cs" />
     <Compile Include="Core\Views\WebPartialActivity.cs" />
+    <Compile Include="Core\Views\WebPartialLoadingAsyncTask.cs" />
     <Compile Include="Core\Views\WebPartialRequestStack.cs" />
     <Compile Include="Core\Script\BuinessScript.cs" />
     <Compile Include="Core\BulbActivity.cs" />
@@ -160,6 +165,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HostDetailView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Partials\HostMainView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HostMainView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Partials\HostsView.cs">
       <AutoGen>True</AutoGen>
@@ -330,6 +340,12 @@
     <AndroidResource Include="Resources\values\Attrs.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Partials\HostMainView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>HostMainView.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

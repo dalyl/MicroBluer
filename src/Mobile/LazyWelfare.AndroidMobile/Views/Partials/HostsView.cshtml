@@ -40,7 +40,7 @@
         });
 
         $(".command-item-add").click(function () {
-            ViewScript.PartialLoad('#MainContent', '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', "");
+            ViewScript.RequestPartial('#MainContent',"Replace" , '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', "");
         });
 
         $(".command-item-scan").click(function () {
@@ -52,7 +52,7 @@
             var result = false;
             javascript: result = BuinessScript.SetHost(guid);
             if (result) {
-                ViewScript.PartialLoad('#MainContent', '@HomeView.Partial.Host', '@HomeView.Partial.Path');
+                ViewScript.RequestPartial('#MainContent',"Replace" , '@HomeView.Partial.Host', '@HomeView.Partial.Path');
             }
         });
         $(".command-item-delete").click(function () {
@@ -60,12 +60,12 @@
             var result = false;
             javascript: result = BuinessScript.DeleteHost(guid);
             if (result) {
-                ViewScript.PartialLoad('#MainContent', '@HostsView.Partial.Host', '@HostsView.Partial.Path');
+                ViewScript.RequestPartial('#MainContent', "Replace", '@HostsView.Partial.Host', '@HostsView.Partial.Path');
             }
         });
         $(".command-item-eidt").click(function () {
             var guid = $(this).parent().data("guid");
-            ViewScript.PartialLoad('#MainContent', '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
+            ViewScript.RequestPartial('#MainContent', "Replace",'@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
         });
     })
     </script>

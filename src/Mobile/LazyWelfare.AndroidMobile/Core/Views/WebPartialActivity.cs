@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
+using LazyWelfare.AndroidMobile.Script;
 using LazyWelfare.AndroidMobile.Views;
 
 namespace LazyWelfare.AndroidMobile
@@ -18,7 +19,7 @@ namespace LazyWelfare.AndroidMobile
     {
         public abstract WebPartialRequestStack RequestStack { get; }
 
-        protected WebView PartialView { get; set; }
+        public WebView PartialView { get; set; }
 
         public WebPartialActivity()
         {
@@ -30,7 +31,7 @@ namespace LazyWelfare.AndroidMobile
             var value = RequestStack.Fetch();
             if (value != null)
             {
-                PartialView.EvaluateJavascript($"ViewScript.PartialLoad('#MainContent','{ nameof(WebPartialViews) }','{ value.Partial.ToString() }','{value.Args}');", null);
+                PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{ nameof(WebPartialViews) }','{ value.Partial.ToString() }','{value.Args}');", null);
                 return true;
             }
             return false;
