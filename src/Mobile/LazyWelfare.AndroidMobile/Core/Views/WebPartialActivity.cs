@@ -21,6 +21,8 @@ namespace LazyWelfare.AndroidMobile
 
         public abstract AlphaMaskLayout MaskLayer { get; set; }
 
+        public LoadingView WaitingView { get;private set; }
+
         public WebView PartialView { get; set; }
 
         public WebPartialActivity()
@@ -61,22 +63,17 @@ namespace LazyWelfare.AndroidMobile
             return base.OnKeyDown(keyCode, e);
         }
 
-        private PopupWindow WaitWindow;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-          
         }
 
         public void ShowMaskLayer()
         {
             RunOnUiThread(() => {
-
-                View content = LayoutInflater.From(this).Inflate(Resource.Layout.Popup, null);
-                WaitWindow = new PopupWindow(content, 100, 100, false) { OutsideTouchable = false };
-                WaitWindow.SetBackgroundDrawable(new Android.Graphics.Drawables.ColorDrawable());
-                WaitWindow.AnimationStyle= Resource.Style.CustomDialog;
+                WaitingView = new LoadingView(this);
+                WaitingView.Show();
                 MaskLayer.ShowMask();
             });
         }
@@ -84,7 +81,7 @@ namespace LazyWelfare.AndroidMobile
         public void HideMaskLayer()
         {
             RunOnUiThread(() => {
-                WaitWindow.Dismiss();
+                WaitingView.Dismiss();
                 MaskLayer.HideMask();
             });
         }

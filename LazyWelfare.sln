@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2A1ED7A3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "src\Tests\UnitTest\UnitTest.csproj", "{742D468B-101E-4D27-844D-E196B78514D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.AndroidMobile.Loading", "src\Mobile\LazyWelfare.AndroidMobile.Loading\LazyWelfare.AndroidMobile.Loading.csproj", "{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{742D468B-101E-4D27-844D-E196B78514D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{742D468B-101E-4D27-844D-E196B78514D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{742D468B-101E-4D27-844D-E196B78514D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{4B606BC6-C0EE-4F79-8D07-5DD8540049BB} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
 		{2A1ED7A3-3115-4B62-A550-8B320F091B12} = {67A04D0B-9D81-4F37-8FB7-07E5FFDFB43A}
 		{742D468B-101E-4D27-844D-E196B78514D2} = {2A1ED7A3-3115-4B62-A550-8B320F091B12}
+		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BAB00A0-1B85-476C-951E-30CB476CE191}

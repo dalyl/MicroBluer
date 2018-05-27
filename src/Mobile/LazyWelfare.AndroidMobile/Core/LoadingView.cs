@@ -29,16 +29,15 @@ namespace LazyWelfare.AndroidMobile
         {
             base.OnCreate(savedInstanceState);
 
-            SetCancelable(true);
-            SetCanceledOnTouchOutside(false);
+            //SetCancelable(true);
+            //SetCanceledOnTouchOutside(false);
 
             SetContentView(Resource.Layout.Loading);
             Window.Attributes.Width = ViewGroup.LayoutParams.WrapContent;
             Window.Attributes.Height = ViewGroup.LayoutParams.WrapContent;
 
-            var imageview = (AppCompatImageView)FindViewById(Resource.Id.pb_load);
-             
-            ((AnimatedVectorDrawableCompat)imageview.GetDrawableState()).Start();
+            //var imageview = (AppCompatImageView)FindViewById(Resource.Id.pb_load);
+            //((AnimatedVectorDrawableCompat)imageview.GetDrawableState()).Start();
         }
        
 
