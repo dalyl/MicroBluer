@@ -20,23 +20,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
-                <android.support.v7.widget.AppCompatImageView
+            <!--<android.support.v7.widget.AppCompatImageView
                     android:id="@+id/pb_load"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
-                    app:srcCompat="@drawable/loading_gears_animated" />
+                    app:srcCompat="@drawable/loading_gears_animated" />-->
             <!--<ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/pb_load"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_centerInParent="true"
                             app:srcCompat="@drawable/loading_gears_animated" />-->
-            <!--<ProgressBar
-                            android:id="@+id/pb_load"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:indeterminateDrawable="@drawable/loading_gears" 
-                            android:layout_centerInParent="true" />-->
+                <ProgressBar
+                    android:id="@+id/pb_load"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:indeterminateDrawable="@drawable/pretty_girl"
+                    android:layout_centerInParent="true" />
             </RelativeLayout>
             <TextView
                 android:id="@+id/tv_load_dialog"

@@ -24,6 +24,7 @@ namespace LazyWelfare.AndroidMobile.Views
 
         WebPartialActivity _activity { get; }
 
+
         WebView _brower { get; set; }
 
         PartialRequestContext _context { get;  }
@@ -56,7 +57,8 @@ namespace LazyWelfare.AndroidMobile.Views
         protected override void OnPreExecute()
         {
             base.OnPreExecute();
-            _activity.RunOnUiThread(() => _activity.MaskLayout.ShowMask());
+            _activity.ShowMaskLayer();
+
             //new AlertDialog.Builder(_activity)
             //   .SetTitle("Partial Loading")
             //   .SetMessage("Start!")
@@ -85,7 +87,7 @@ namespace LazyWelfare.AndroidMobile.Views
         {
             base.OnPostExecute(result);
             Response();
-            _activity.RunOnUiThread(() => _activity.MaskLayout.HideMask());
+            _activity.HideMaskLayer();
 
             //new AlertDialog.Builder(_activity)
             //    .SetTitle("Partial Loading")

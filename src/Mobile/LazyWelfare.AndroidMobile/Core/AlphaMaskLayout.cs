@@ -9,6 +9,7 @@
     using ColorDrawable = Android.Graphics.Drawables.ColorDrawable;
     using AttributeSet = Android.Util.IAttributeSet;
     using FrameLayout = Android.Widget.FrameLayout;
+    using Android.Views;
 
     /// <summary>
     /// AlphaMaskFrameLayout
@@ -57,8 +58,6 @@
             GetAttrs(context, attrs);
         }
 
-        //JAVA TO C# CONVERTER TODO TASK: Most Java Animations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @TargetApi(Android.os.Build.VERSION_CODES.LOLLIPOP) public AlphaMaskLayout(Android.content.Context context, Android.util.AttributeSet attrs, int defStyleAttr, int defStyleRes)
         public AlphaMaskLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) : base(context, attrs, defStyleAttr, defStyleRes)
         {
             GetAttrs(context, attrs);
@@ -106,8 +105,6 @@
             }
         }
 
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: private void executeAlphaAnimation(final int from, final int to, final int duration)
         private void ExecuteAlphaAnimation(int from, int to, int duration)
         {
             CheckAttrsValues();
@@ -119,48 +116,6 @@
             valueAnimator.AddUpdateListener(new AnimatorUpdateListenerAnonymousInnerClass(this, from, to, valueAnimator));
             valueAnimator.Start();
             animList.Add(valueAnimator);
-        }
-
-        private class AnimatorUpdateListenerAnonymousInnerClass :Java.Lang.Object, ValueAnimator.IAnimatorUpdateListener
-        {
-            private readonly AlphaMaskLayout outerInstance;
-
-            private int From { get; }
-
-            private int To { get; }
-
-            private ValueAnimator valueAnimator;
-
-            public AnimatorUpdateListenerAnonymousInnerClass(AlphaMaskLayout outerInstance, int from, int to, ValueAnimator valueAnimator)
-            {
-                this.outerInstance = outerInstance;
-                From = from;
-                To = to;
-                this.valueAnimator = valueAnimator;
-            }
-
-            public void OnAnimationUpdate(ValueAnimator animation)
-            {
-                int newAlpha = (int)animation.AnimatedValue;
-                outerInstance.ForgroundAlpha = newAlpha;
-                //anim finished
-                if (newAlpha == To)
-                {
-                    valueAnimator.Cancel();
-                    outerInstance.animList.Clear();
-                    if (outerInstance.onAlphaFinishedListener != null)
-                    {
-                        if (From > To)
-                        {
-                            outerInstance.onAlphaFinishedListener.OnHideFinished();
-                        }
-                        else
-                        {
-                            outerInstance.onAlphaFinishedListener.OnShowFinished();
-                        }
-                    }
-                }
-            }
         }
 
         /// <summary>
@@ -243,5 +198,49 @@
             void OnShowFinished();
             void OnHideFinished();
         }
+
+
+        private class AnimatorUpdateListenerAnonymousInnerClass : Java.Lang.Object, ValueAnimator.IAnimatorUpdateListener
+        {
+            private readonly AlphaMaskLayout outerInstance;
+
+            private int From { get; }
+
+            private int To { get; }
+
+            private ValueAnimator valueAnimator;
+
+            public AnimatorUpdateListenerAnonymousInnerClass(AlphaMaskLayout outerInstance, int from, int to, ValueAnimator valueAnimator)
+            {
+                this.outerInstance = outerInstance;
+                From = from;
+                To = to;
+                this.valueAnimator = valueAnimator;
+            }
+
+            public void OnAnimationUpdate(ValueAnimator animation)
+            {
+                int newAlpha = (int)animation.AnimatedValue;
+                outerInstance.ForgroundAlpha = newAlpha;
+                //anim finished
+                if (newAlpha == To)
+                {
+                    valueAnimator.Cancel();
+                    outerInstance.animList.Clear();
+                    if (outerInstance.onAlphaFinishedListener != null)
+                    {
+                        if (From > To)
+                        {
+                            outerInstance.onAlphaFinishedListener.OnHideFinished();
+                        }
+                        else
+                        {
+                            outerInstance.onAlphaFinishedListener.OnShowFinished();
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -16,7 +16,6 @@ namespace LazyWelfare.AndroidMobile
     {
         public TryCatch Try { get; }
 
-        public abstract AlphaMaskLayout MaskLayout { get; set; }
 
         public TryCatchActivity()
         {
@@ -28,5 +27,6 @@ namespace LazyWelfare.AndroidMobile
             RunOnUiThread(()=> Toast.MakeText(this, message.Trim(), ToastLength.Short).Show());
         }
 
+     
     }
 }
