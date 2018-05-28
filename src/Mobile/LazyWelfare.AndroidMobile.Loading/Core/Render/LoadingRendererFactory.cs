@@ -84,7 +84,7 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
             //    }
             //}
 
-            return new SwapLoadingRenderer(context);
+            return new CollisionLoadingRenderer(context);
 
             throw new InstantiationException();
         }

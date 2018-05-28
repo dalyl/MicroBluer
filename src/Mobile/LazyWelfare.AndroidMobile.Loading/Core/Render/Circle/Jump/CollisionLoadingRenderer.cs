@@ -72,7 +72,7 @@ namespace LazyWelfare.AndroidMobile.Loading.Render.Circle.Jump
 
 		private int mBallCount;
 
-		private CollisionLoadingRenderer(Context context) : base(context)
+		internal CollisionLoadingRenderer(Context context) : base(context)
 		{
 			Init(context);
 			AdjustParams();
