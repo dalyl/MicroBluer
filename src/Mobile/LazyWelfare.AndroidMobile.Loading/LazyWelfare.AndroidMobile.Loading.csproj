@@ -47,13 +47,25 @@
   <ItemGroup>
     <Compile Include="Core\DensityUtil.cs" />
     <Compile Include="Core\LoadingView .cs" />
+    <Compile Include="Core\Render\Animal\FishLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Animal\GhostsEyeLoadingRenderer.cs" />
     <Compile Include="Core\Render\Circle\Jump\CollisionLoadingRenderer.cs" />
     <Compile Include="Core\Render\Circle\Jump\DanceLoadingRenderer.cs" />
     <Compile Include="Core\Render\Circle\Jump\GuardLoadingRenderer.cs" />
     <Compile Include="Core\Render\Circle\Jump\SwapLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Circle\Rotate\GearLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Circle\Rotate\LevelLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Circle\Rotate\MaterialLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Circle\Rotate\WhorlLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Goods\BalloonLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Goods\WaterBottleLoadingRenderer.cs" />
     <Compile Include="Core\Render\LoadingDrawable.cs" />
     <Compile Include="Core\Render\LoadingRenderer.cs" />
     <Compile Include="Core\Render\LoadingRendererFactory.cs" />
+    <Compile Include="Core\Render\Scenery\DayNightLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Scenery\ElectricFanLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Shapechange\CircleBroodLoadingRenderer.cs" />
+    <Compile Include="Core\Render\Shapechange\CoolWaitLoadingRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

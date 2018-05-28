@@ -1,6 +1,4 @@
-﻿
-
-namespace LazyWelfare.AndroidMobile.Loading.Render.Circle.Jump
+﻿namespace LazyWelfare.AndroidMobile.Loading.Render.Circle.Jump
 {
 	using Context = Android.Content.Context;
 	using Canvas = Android.Graphics.Canvas;

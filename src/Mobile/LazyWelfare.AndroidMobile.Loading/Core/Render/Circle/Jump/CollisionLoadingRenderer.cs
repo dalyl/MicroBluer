@@ -1,12 +1,4 @@
-﻿//========================================================================
-// This conversion was produced by the Free Edition of
-// Java to C# Converter courtesy of Tangible Software Solutions.
-// Order the Premium Edition at https://www.tangiblesoftwaresolutions.com
-//========================================================================
-
-using System;
-
-namespace LazyWelfare.AndroidMobile.Loading.Render.Circle.Jump
+﻿namespace LazyWelfare.AndroidMobile.Loading.Render.Circle.Jump
 {
     using Context = Android.Content.Context;
     using Canvas = Android.Graphics.Canvas;
