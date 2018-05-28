@@ -1,5 +1,14 @@
 ﻿namespace LazyWelfare.AndroidMobile
 {
+//    <!--<LazyWelfare.AndroidMobile.AlphaMaskLayout
+//    xmlns:attr="http://schemas.android.com/apk/res-auto"
+//    android:id="@+id/mask_layout"
+//    android:foreground="#000"
+//    attr:aml_alpha_from="0"
+//    attr:aml_alpha_to="127"
+//    attr:aml_duration="600">
+//   </LazyWelfare.AndroidMobile.AlphaMaskLayout>-->  
+
     using System;
     using System.Collections.Generic;
     using ValueAnimator = Android.Animation.ValueAnimator;

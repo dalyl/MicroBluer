@@ -29,9 +29,6 @@ namespace LazyWelfare.AndroidMobile
 
         public override WebPartialRequestStack RequestStack { get; } = requestStack;
 
-        public override AlphaMaskLayout MaskLayer { get ; set ; }
-
-
         public MainActivity()
         {
             Partial = HomeView.Partial;
@@ -49,7 +46,6 @@ namespace LazyWelfare.AndroidMobile
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            MaskLayer= FindViewById<AlphaMaskLayout>(Resource.Id.mask_layout);
 
             PartialView = FindViewById<WebView>(Resource.Id.webView);
 

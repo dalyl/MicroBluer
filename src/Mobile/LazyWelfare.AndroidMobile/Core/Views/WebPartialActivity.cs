@@ -19,8 +19,6 @@ namespace LazyWelfare.AndroidMobile
     {
         public abstract WebPartialRequestStack RequestStack { get; }
 
-        public abstract AlphaMaskLayout MaskLayer { get; set; }
-
         public LoadingView WaitingView { get;private set; }
 
         public WebView PartialView { get; set; }
@@ -74,7 +72,6 @@ namespace LazyWelfare.AndroidMobile
             RunOnUiThread(() => {
                 WaitingView = new LoadingView(this);
                 WaitingView.Show();
-                MaskLayer.ShowMask();
             });
         }
 
@@ -82,7 +79,6 @@ namespace LazyWelfare.AndroidMobile
         {
             RunOnUiThread(() => {
                 WaitingView.Dismiss();
-                MaskLayer.HideMask();
             });
         }
 
