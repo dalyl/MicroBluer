@@ -81,7 +81,7 @@
 
 		private int mColor;
 
-		private GhostsEyeLoadingRenderer(Context context) : base(context)
+        internal GhostsEyeLoadingRenderer(Context context) : base(context)
 		{
 			if (!InstanceFieldsInitialized)
 			{

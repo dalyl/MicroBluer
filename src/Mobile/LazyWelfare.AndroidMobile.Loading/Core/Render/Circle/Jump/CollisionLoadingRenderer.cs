@@ -80,7 +80,6 @@
 
 			mColors = DEFAULT_COLORS;
 			mPositions = DEFAULT_POSITIONS;
-
 			mBallCount = DEFAULT_BALL_COUNT;
 
 			//mBallMoveYOffsets = mBallQuadCoefficient * mBallMoveXOffsets ^ 2

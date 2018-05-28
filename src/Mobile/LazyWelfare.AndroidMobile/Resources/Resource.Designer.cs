@@ -530,6 +530,7 @@ namespace LazyWelfare.AndroidMobile
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Id.LevelLoadingRenderer = global::LazyWelfare.AndroidMobile.Resource.Id.LevelLoadingRenderer;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Id.MaterialLoadingRenderer = global::LazyWelfare.AndroidMobile.Resource.Id.MaterialLoadingRenderer;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Id.SwapLoadingRenderer = global::LazyWelfare.AndroidMobile.Resource.Id.SwapLoadingRenderer;
+			global::LazyWelfare.AndroidMobile.Loading.Resource.Id.WaitingView = global::LazyWelfare.AndroidMobile.Resource.Id.WaitingView;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Id.WaterBottleLoadingRenderer = global::LazyWelfare.AndroidMobile.Resource.Id.WaterBottleLoadingRenderer;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Id.WhorlLoadingRenderer = global::LazyWelfare.AndroidMobile.Resource.Id.WhorlLoadingRenderer;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Id.action0 = global::LazyWelfare.AndroidMobile.Resource.Id.action0;
@@ -655,6 +656,7 @@ namespace LazyWelfare.AndroidMobile
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Layout.abc_search_dropdown_item_icons_2line = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_search_dropdown_item_icons_2line;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Layout.abc_search_view = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_search_view;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Layout.abc_select_dialog_material = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_select_dialog_material;
+			global::LazyWelfare.AndroidMobile.Loading.Resource.Layout.LoadingDialog = global::LazyWelfare.AndroidMobile.Resource.Layout.LoadingDialog;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Layout.notification_media_action = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_media_action;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Layout.notification_media_cancel_action = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_media_cancel_action;
 			global::LazyWelfare.AndroidMobile.Loading.Resource.Layout.notification_template_big_media = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_template_big_media;
@@ -3517,6 +3519,9 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06004b
 			public const int SwapLoadingRenderer = 2131099723;
 			
+			// aapt resource value: 0x7f060097
+			public const int WaitingView = 2131099799;
+			
 			// aapt resource value: 0x7f06004c
 			public const int WaterBottleLoadingRenderer = 2131099724;
 			
@@ -3624,9 +3629,6 @@ namespace LazyWelfare.AndroidMobile
 			
 			// aapt resource value: 0x7f060030
 			public const int collapseActionView = 2131099696;
-			
-			// aapt resource value: 0x7f060097
-			public const int collision_view = 2131099799;
 			
 			// aapt resource value: 0x7f060090
 			public const int commit = 2131099792;
@@ -4183,7 +4185,7 @@ namespace LazyWelfare.AndroidMobile
 			public const int ImageTextButton = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int Loading = 2130903083;
+			public const int LoadingDialog = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
 			public const int Main = 2130903084;
@@ -4837,9 +4839,6 @@ namespace LazyWelfare.AndroidMobile
 			
 			// aapt resource value: 0x7f07000e
 			public const int CardView_Light = 2131165198;
-			
-			// aapt resource value: 0x7f070167
-			public const int CustomDialog = 2131165543;
 			
 			// aapt resource value: 0x7f070026
 			public const int Platform_AppCompat = 2131165222;

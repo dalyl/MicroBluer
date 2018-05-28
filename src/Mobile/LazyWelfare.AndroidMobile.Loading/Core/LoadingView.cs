@@ -33,8 +33,7 @@ namespace LazyWelfare.AndroidMobile.Loading
             {
                 TypedArray ta = context.ObtainStyledAttributes(attrs, Resource.Styleable.LoadingView);
                 int loadingRendererId = ta.GetInt(Resource.Styleable.LoadingView_loading_renderer, 0);
-                LoadingRenderer loadingRenderer = LoadingRendererFactory.CreateLoadingRenderer(context, loadingRendererId);
-                LoadingRenderer = loadingRenderer;
+                LoadingRenderer = LoadingRendererFactory.CreateLoadingRenderer(context, loadingRendererId);
                 ta.Recycle();
             }
             catch (Exception e)

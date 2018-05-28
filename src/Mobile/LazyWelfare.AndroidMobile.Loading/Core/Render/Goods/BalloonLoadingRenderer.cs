@@ -88,7 +88,7 @@
 		private int mCannulaColor;
 		private int mPipeBodyColor;
 
-		private BalloonLoadingRenderer(Context context) : base(context)
+        internal BalloonLoadingRenderer(Context context) : base(context)
 		{
 			Init(context);
 			SetupPaint();

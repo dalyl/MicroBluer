@@ -77,7 +77,7 @@
 		private int mMiddleColor;
 		private int mBottomColor;
 
-		private CoolWaitLoadingRenderer(Context context) : base(context)
+        internal CoolWaitLoadingRenderer(Context context) : base(context)
 		{
 			Init(context);
 			SetupPaint();

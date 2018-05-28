@@ -67,7 +67,7 @@
 
 		private PathMeasure mPathMeasure;
 
-		private GuardLoadingRenderer(Context context) : base(context)
+		internal GuardLoadingRenderer(Context context) : base(context)
 		{
 
 			mDuration = ANIMATION_DURATION;

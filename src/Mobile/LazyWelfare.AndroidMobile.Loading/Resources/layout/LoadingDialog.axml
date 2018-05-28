@@ -10,11 +10,11 @@
         android:layout_weight="1"
         android:orientation="horizontal">
         <LazyWelfare.AndroidMobile.Loading.LoadingView
-            android:id="@+id/collision_view"
+            android:id="@+id/WaitingView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#ffe9e4d1"
-            app:loading_renderer="CollisionLoadingRenderer" />
+            android:background="#ffe9e4d1" />
+    <!--app:loading_renderer="ElectricFanLoadingRenderer"-->
     </LinearLayout>
 </LinearLayout>

@@ -129,7 +129,7 @@
 		private float mStageChildForwardBottomLeftLength;
 		private float mStageChildBackwardBottomLeftLength;
 
-		private CircleBroodLoadingRenderer(Context context) : base(context)
+        internal CircleBroodLoadingRenderer(Context context) : base(context)
 		{
 			if (!InstanceFieldsInitialized)
 			{

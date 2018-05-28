@@ -89,7 +89,7 @@
 		private float mStrokeWidth;
 		private float mCenterRadius;
 
-		private WhorlLoadingRenderer(Context context) : base(context)
+		internal WhorlLoadingRenderer(Context context) : base(context)
 		{
             AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);
             Init(context);

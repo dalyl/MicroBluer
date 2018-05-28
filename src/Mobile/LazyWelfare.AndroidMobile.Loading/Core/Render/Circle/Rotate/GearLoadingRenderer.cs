@@ -98,7 +98,7 @@
 		private float mStrokeWidth;
 		private float mCenterRadius;
 
-		private GearLoadingRenderer(Context context) : base(context)
+		internal GearLoadingRenderer(Context context) : base(context)
 		{
 
             AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);

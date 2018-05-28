@@ -1503,14 +1503,17 @@ namespace LazyWelfare.AndroidMobile.Loading
 			// aapt resource value: 0x7f0b002e
 			public static int SwapLoadingRenderer = 2131427374;
 			
+			// aapt resource value: 0x7f0b0060
+			public static int WaitingView = 2131427424;
+			
 			// aapt resource value: 0x7f0b002f
 			public static int WaterBottleLoadingRenderer = 2131427375;
 			
 			// aapt resource value: 0x7f0b0030
 			public static int WhorlLoadingRenderer = 2131427376;
 			
-			// aapt resource value: 0x7f0b0060
-			public static int action0 = 2131427424;
+			// aapt resource value: 0x7f0b0061
+			public static int action0 = 2131427425;
 			
 			// aapt resource value: 0x7f0b0051
 			public static int action_bar = 2131427409;
@@ -1536,8 +1539,8 @@ namespace LazyWelfare.AndroidMobile.Loading
 			// aapt resource value: 0x7f0b0052
 			public static int action_context_bar = 2131427410;
 			
-			// aapt resource value: 0x7f0b0064
-			public static int action_divider = 2131427428;
+			// aapt resource value: 0x7f0b0065
+			public static int action_divider = 2131427429;
 			
 			// aapt resource value: 0x7f0b0002
 			public static int action_menu_divider = 2131427330;
@@ -1569,14 +1572,14 @@ namespace LazyWelfare.AndroidMobile.Loading
 			// aapt resource value: 0x7f0b003b
 			public static int buttonPanel = 2131427387;
 			
-			// aapt resource value: 0x7f0b0061
-			public static int cancel_action = 2131427425;
+			// aapt resource value: 0x7f0b0062
+			public static int cancel_action = 2131427426;
 			
 			// aapt resource value: 0x7f0b0049
 			public static int checkbox = 2131427401;
 			
-			// aapt resource value: 0x7f0b0067
-			public static int chronometer = 2131427431;
+			// aapt resource value: 0x7f0b0068
+			public static int chronometer = 2131427432;
 			
 			// aapt resource value: 0x7f0b001d
 			public static int collapseActionView = 2131427357;
@@ -1605,8 +1608,8 @@ namespace LazyWelfare.AndroidMobile.Loading
 			// aapt resource value: 0x7f0b001a
 			public static int end = 2131427354;
 			
-			// aapt resource value: 0x7f0b006c
-			public static int end_padder = 2131427436;
+			// aapt resource value: 0x7f0b006d
+			public static int end_padder = 2131427437;
 			
 			// aapt resource value: 0x7f0b0035
 			public static int expand_activities_button = 2131427381;
@@ -1629,14 +1632,14 @@ namespace LazyWelfare.AndroidMobile.Loading
 			// aapt resource value: 0x7f0b0036
 			public static int image = 2131427382;
 			
-			// aapt resource value: 0x7f0b006b
-			public static int info = 2131427435;
+			// aapt resource value: 0x7f0b006c
+			public static int info = 2131427436;
 			
-			// aapt resource value: 0x7f0b0065
-			public static int line1 = 2131427429;
+			// aapt resource value: 0x7f0b0066
+			public static int line1 = 2131427430;
 			
-			// aapt resource value: 0x7f0b0069
-			public static int line3 = 2131427433;
+			// aapt resource value: 0x7f0b006a
+			public static int line3 = 2131427434;
 			
 			// aapt resource value: 0x7f0b0009
 			public static int listMode = 2131427337;
@@ -1644,8 +1647,8 @@ namespace LazyWelfare.AndroidMobile.Loading
 			// aapt resource value: 0x7f0b0038
 			public static int list_item = 2131427384;
 			
-			// aapt resource value: 0x7f0b0063
-			public static int media_actions = 2131427427;
+			// aapt resource value: 0x7f0b0064
+			public static int media_actions = 2131427428;
 			
 			// aapt resource value: 0x7f0b001b
 			public static int middle = 2131427355;
@@ -1746,8 +1749,8 @@ namespace LazyWelfare.AndroidMobile.Loading
 			// aapt resource value: 0x7f0b0018
 			public static int src_over = 2131427352;
 			
-			// aapt resource value: 0x7f0b0062
-			public static int status_bar_latest_event_content = 2131427426;
+			// aapt resource value: 0x7f0b0063
+			public static int status_bar_latest_event_content = 2131427427;
 			
 			// aapt resource value: 0x7f0b005c
 			public static int submit_area = 2131427420;
@@ -1755,17 +1758,17 @@ namespace LazyWelfare.AndroidMobile.Loading
 			// aapt resource value: 0x7f0b000b
 			public static int tabMode = 2131427339;
 			
-			// aapt resource value: 0x7f0b006a
-			public static int text = 2131427434;
+			// aapt resource value: 0x7f0b006b
+			public static int text = 2131427435;
 			
-			// aapt resource value: 0x7f0b0068
-			public static int text2 = 2131427432;
+			// aapt resource value: 0x7f0b0069
+			public static int text2 = 2131427433;
 			
 			// aapt resource value: 0x7f0b0044
 			public static int textSpacerNoButtons = 2131427396;
 			
-			// aapt resource value: 0x7f0b0066
-			public static int time = 2131427430;
+			// aapt resource value: 0x7f0b0067
+			public static int time = 2131427431;
 			
 			// aapt resource value: 0x7f0b003a
 			public static int title = 2131427386;
@@ -1905,40 +1908,43 @@ namespace LazyWelfare.AndroidMobile.Loading
 			public static int abc_select_dialog_material = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public static int notification_media_action = 2130903065;
+			public static int LoadingDialog = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public static int notification_media_cancel_action = 2130903066;
+			public static int notification_media_action = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public static int notification_template_big_media = 2130903067;
+			public static int notification_media_cancel_action = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public static int notification_template_big_media_narrow = 2130903068;
+			public static int notification_template_big_media = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public static int notification_template_lines = 2130903069;
+			public static int notification_template_big_media_narrow = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public static int notification_template_media = 2130903070;
+			public static int notification_template_lines = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public static int notification_template_part_chronometer = 2130903071;
+			public static int notification_template_media = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public static int notification_template_part_time = 2130903072;
+			public static int notification_template_part_chronometer = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public static int select_dialog_item_material = 2130903073;
+			public static int notification_template_part_time = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public static int select_dialog_multichoice_material = 2130903074;
+			public static int select_dialog_item_material = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public static int select_dialog_singlechoice_material = 2130903075;
+			public static int select_dialog_multichoice_material = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public static int support_simple_spinner_dropdown_item = 2130903076;
+			public static int select_dialog_singlechoice_material = 2130903076;
+			
+			// aapt resource value: 0x7f030025
+			public static int support_simple_spinner_dropdown_item = 2130903077;
 			
 			static Layout()
 			{

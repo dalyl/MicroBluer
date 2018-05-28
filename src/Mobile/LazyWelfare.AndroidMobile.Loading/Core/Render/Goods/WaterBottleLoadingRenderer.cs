@@ -72,7 +72,7 @@
 
 		private int mWaveCount;
 
-		private WaterBottleLoadingRenderer(Context context) : base(context)
+        internal WaterBottleLoadingRenderer(Context context) : base(context)
 		{
 			Init(context);
 			SetupPaint();

@@ -91,7 +91,7 @@
 		private float mStrokeWidth;
 		private float mCenterRadius;
 
-		private MaterialLoadingRenderer(Context context) : base(context)
+		internal MaterialLoadingRenderer(Context context) : base(context)
 		{
             AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);
             Init(context);

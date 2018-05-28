@@ -86,7 +86,7 @@
 		private int mColor;
 		private int mArcColor;
 
-		private DanceLoadingRenderer(Context context) : base(context)
+		internal DanceLoadingRenderer(Context context) : base(context)
 		{
 			Init(context);
 			SetupPaint();

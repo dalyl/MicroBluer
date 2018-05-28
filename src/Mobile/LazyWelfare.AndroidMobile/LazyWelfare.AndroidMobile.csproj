@@ -108,7 +108,6 @@
   <ItemGroup>
     <Compile Include="Core\AlphaMaskLayout.cs" />
     <Compile Include="Core\TryCatch-Interface.cs" />
-    <Compile Include="Core\LoadingView.cs" />
     <Compile Include="Core\Logic\ServiceHost.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />
     <Compile Include="Core\Models\UserModel.cs" />
@@ -314,11 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Loading.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\pretty_girl.xml">

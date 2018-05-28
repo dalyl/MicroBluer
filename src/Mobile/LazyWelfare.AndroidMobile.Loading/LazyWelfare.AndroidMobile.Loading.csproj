@@ -46,7 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\DensityUtil.cs" />
-    <Compile Include="Core\LoadingView .cs" />
+    <Compile Include="Core\LoadingView.cs" />
+    <Compile Include="Core\LoadingDialog.cs" />
     <Compile Include="Core\Render\Animal\FishLoadingRenderer.cs" />
     <Compile Include="Core\Render\Animal\GhostsEyeLoadingRenderer.cs" />
     <Compile Include="Core\Render\Circle\Jump\CollisionLoadingRenderer.cs" />
@@ -101,6 +102,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\ic_loading.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Preview\AnimalDrawable.gif" />
+    <Content Include="Preview\CircleJumpDrawable.gif" />
+    <Content Include="Preview\CircleRotateDrawable.gif" />
+    <Content Include="Preview\GoodsDrawable.gif" />
+    <Content Include="Preview\SceneryDrawable.gif" />
+    <Content Include="Preview\ShapeChangeDrawable.gif" />
+    <AndroidResource Include="Resources\layout\LoadingDialog.axml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
   </ItemGroup>

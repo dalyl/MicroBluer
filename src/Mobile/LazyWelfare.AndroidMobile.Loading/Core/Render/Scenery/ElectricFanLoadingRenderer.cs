@@ -122,7 +122,7 @@
 		private Drawable mLoadingDrawable;
 		private Drawable mElectricFanDrawable;
 
-		private ElectricFanLoadingRenderer(Context context) : base(context)
+        internal ElectricFanLoadingRenderer(Context context) : base(context)
 		{
             AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);
             Init(context);

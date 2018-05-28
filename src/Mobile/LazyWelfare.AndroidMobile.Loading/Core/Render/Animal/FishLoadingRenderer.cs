@@ -84,7 +84,7 @@
 
 		private int mColor;
 
-		private FishLoadingRenderer(Context context) : base(context)
+        internal FishLoadingRenderer(Context context) : base(context)
 		{
 			if (!InstanceFieldsInitialized)
 			{

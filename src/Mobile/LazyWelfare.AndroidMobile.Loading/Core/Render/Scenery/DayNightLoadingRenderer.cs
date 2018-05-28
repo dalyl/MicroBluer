@@ -119,7 +119,7 @@
 
 		private int mSunRayCount;
 
-		private DayNightLoadingRenderer(Context context) : base(context)
+		internal DayNightLoadingRenderer(Context context) : base(context)
 		{
 			Init(context);
 			SetupPaint();

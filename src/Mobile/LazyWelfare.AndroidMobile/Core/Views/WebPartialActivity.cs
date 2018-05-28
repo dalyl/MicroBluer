@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
-using LazyWelfare.AndroidMobile.Script;
+using LazyWelfare.AndroidMobile.Loading;
 using LazyWelfare.AndroidMobile.Views;
 
 namespace LazyWelfare.AndroidMobile
@@ -19,7 +19,7 @@ namespace LazyWelfare.AndroidMobile
     {
         public abstract WebPartialRequestStack RequestStack { get; }
 
-        public LoadingView WaitingView { get;private set; }
+        public LoadingDialog WaitingView { get;private set; }
 
         public WebView PartialView { get; set; }
 
@@ -70,9 +70,21 @@ namespace LazyWelfare.AndroidMobile
         public void ShowMaskLayer()
         {
             RunOnUiThread(() => {
-                WaitingView = new LoadingView(this);
+                WaitingView = CreateLoadingDialog();
                 WaitingView.Show();
             });
+        }
+
+        LoadingDialog CreateLoadingDialog()
+        {
+            var loading = new LoadingDialog(this)
+            {
+                Width = ViewGroup.LayoutParams.WrapContent,
+                Height = ViewGroup.LayoutParams.WrapContent,
+
+            };
+          
+            return loading;
         }
 
         public void HideMaskLayer()

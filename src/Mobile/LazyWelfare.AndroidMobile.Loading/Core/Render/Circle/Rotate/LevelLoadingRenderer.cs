@@ -96,7 +96,7 @@
 		private float mStrokeWidth;
 		private float mCenterRadius;
 
-		private LevelLoadingRenderer(Context context) : base(context)
+		internal LevelLoadingRenderer(Context context) : base(context)
 		{
             AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);
             Init(context);
