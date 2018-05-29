@@ -26,4 +26,20 @@
     <None Include="wwwroot\images\33f5a319ebc4b74532a0bbd2c4fc1e178b821559.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CSCore">
+      <HintPath>..\..\..\lib\SystemVolume\CSCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Command\Data\" />
+    <Folder Include="Areas\Command\Models\" />
+    <Folder Include="Areas\Command\Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj" />
+  </ItemGroup>
+
 </Project>

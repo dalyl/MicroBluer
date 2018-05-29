@@ -21,6 +21,7 @@ namespace LazyWelfare.ServerWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           // services.AddTransient<IVolumeControl, WindowsVolume>();
             services.AddMvc();
         }
 
@@ -41,6 +42,10 @@ namespace LazyWelfare.ServerWeb
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "Command",
+                    template: "Command/{controller=Home}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

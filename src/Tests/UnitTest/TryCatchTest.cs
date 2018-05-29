@@ -13,7 +13,7 @@ namespace UnitTest
             Action<string> show = msg => Console.WriteLine($"show:{msg}\n");
             Action begin = () => Console.WriteLine("begin\n");
             Action end = () => Console.WriteLine("end\n");
-            var test = new TryCatch(show, begin, end);
+            var test = new TryCatch(show);
             test.Invoke(() => Console.WriteLine("test\n"));
             Console.WriteLine(test.Invoke("default",()=> "test"));
             Console.WriteLine(test.Invoke("default", () => { Console.WriteLine("1 \n"); return "test"; }));

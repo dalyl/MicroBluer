@@ -14,6 +14,11 @@ namespace LazyWelfare.ServerHost
     /// </summary>
     public partial class App : Application
     {
+
+        public  App() {
+            ServerCore.PipeService.PipelinePool.CreatePipeLineAsync();
+        }
+
         protected override void OnExit(ExitEventArgs e)
         {
             ServiceProcess.Instance.Stop(null);

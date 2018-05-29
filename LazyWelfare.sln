@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "src\Tests\UnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.AndroidMobile.Loading", "src\Mobile\LazyWelfare.AndroidMobile.Loading\LazyWelfare.AndroidMobile.Loading.csproj", "{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreUnitTest", "src\Tests\CoreUnitTest\CoreUnitTest.csproj", "{50F5FC3C-222F-4F5A-825B-6F781B18E0BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.ServerCore", "src\Server\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj", "{E8304128-61D6-46B2-9875-3B64F7DA714C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F5FC3C-222F-4F5A-825B-6F781B18E0BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F5FC3C-222F-4F5A-825B-6F781B18E0BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F5FC3C-222F-4F5A-825B-6F781B18E0BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F5FC3C-222F-4F5A-825B-6F781B18E0BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8304128-61D6-46B2-9875-3B64F7DA714C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8304128-61D6-46B2-9875-3B64F7DA714C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8304128-61D6-46B2-9875-3B64F7DA714C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8304128-61D6-46B2-9875-3B64F7DA714C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +98,8 @@ Global
 		{2A1ED7A3-3115-4B62-A550-8B320F091B12} = {67A04D0B-9D81-4F37-8FB7-07E5FFDFB43A}
 		{742D468B-101E-4D27-844D-E196B78514D2} = {2A1ED7A3-3115-4B62-A550-8B320F091B12}
 		{F6AC2D76-5033-44E9-B4FB-A6C34FF72ED0} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
+		{50F5FC3C-222F-4F5A-825B-6F781B18E0BC} = {2A1ED7A3-3115-4B62-A550-8B320F091B12}
+		{E8304128-61D6-46B2-9875-3B64F7DA714C} = {47C29C30-D80E-445E-B15C-D913DC673F86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BAB00A0-1B85-476C-951E-30CB476CE191}

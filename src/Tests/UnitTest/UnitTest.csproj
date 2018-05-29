@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="TryCatchTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowsCommandTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\..\Mobile\LazyWelfare.AndroidMobile\LazyWelfare.AndroidMobile.csproj">
       <Project>{9554fdfe-b123-4f90-b1c8-af3b6f57c02c}</Project>
       <Name>LazyWelfare.AndroidMobile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Server\LazyWelfare.ServerHost\LazyWelfare.ServerHost.csproj">
+      <Project>{ade1cd75-c864-493a-a5e4-163eeb7d8cd6}</Project>
+      <Name>LazyWelfare.ServerHost</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
