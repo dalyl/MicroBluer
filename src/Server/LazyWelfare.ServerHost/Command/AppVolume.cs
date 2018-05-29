@@ -1,4 +1,4 @@
-﻿using LazyWelfare.ServerCore.Command;
+﻿using LazyWelfare.ServerCore.CommandInterface;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LazyWelfare.ServerHost.Command
 {
-    public class AppVolume : IVolumeControl
+    public class AppVolume 
     {
         public void SetValue(decimal value)
         {

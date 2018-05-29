@@ -1,5 +1,5 @@
-﻿using LazyWelfare.ServerCore.Command;
-using LazyWelfare.ServerWeb.Core;
+﻿using LazyWelfare.ServerCore;
+using LazyWelfare.ServerCore.CommandInterface;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,9 +11,9 @@ namespace LazyWelfare.ServerWeb.Controllers
     public class VolumeController : Controller
     {
 
-        public IVolumeControl VolumeService { get; private set; }
+        public IVolumeController VolumeService { get; private set; }
 
-        public VolumeController(IVolumeControl service)
+        public VolumeController(IVolumeController service)
         {
             VolumeService = service;
         }

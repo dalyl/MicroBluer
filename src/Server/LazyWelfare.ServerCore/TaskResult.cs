@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LazyWelfare.ServerWeb.Core
+namespace LazyWelfare.ServerCore
 {
     /// <summary>
     /// 操作返回结果对象

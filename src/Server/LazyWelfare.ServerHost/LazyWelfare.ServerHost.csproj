@@ -87,17 +87,19 @@
     </ApplicationDefinition>
     <Compile Include="Command\AppVolume.cs" />
     <Compile Include="Command\WindowsVolume.cs" />
+    <Compile Include="Core\LogTryCatch.cs" />
     <Compile Include="Ctrls\BitmapRenderer.cs" />
     <Compile Include="Ctrls\ImageCreate.cs" />
     <Compile Include="Ctrls\NotificationAreaIcon.cs" />
     <Compile Include="Pages\LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ServerEnvironment.cs" />
+    <Compile Include="Core\ServerEnvironment.cs" />
     <Compile Include="Service\ServiceProcess.cs" />
     <Compile Include="Service\ServiceSettings.cs" />
     <Compile Include="Service\ServiceStruct.cs" />
     <Compile Include="Service\SettingCache.cs" />
+    <Compile Include="Core\WindowsCommandDistributor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

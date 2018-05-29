@@ -71,6 +71,9 @@ namespace LazyWelfare.AndroidMobile.QrcodeScan
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050006
+			public static int contentFrame = 2131034118;
+			
 			// aapt resource value: 0x7f050001
 			public static int imageAlbum = 2131034113;
 			
@@ -104,6 +107,12 @@ namespace LazyWelfare.AndroidMobile.QrcodeScan
 			
 			// aapt resource value: 0x7f030000
 			public static int ZxingOverlay = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public static int zxingscanneractivitylayout = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public static int zxingscannerfragmentlayout = 2130903042;
 			
 			static Layout()
 			{

@@ -3,7 +3,7 @@ using System.IO;
 using System.IO.Pipes;
 using System.Threading.Tasks;
 
-namespace LazyWelfare.ServerCore.PipeService
+namespace LazyWelfare.ServerCore.NamedPipe
 {
     public class PipeServerWriter
     {

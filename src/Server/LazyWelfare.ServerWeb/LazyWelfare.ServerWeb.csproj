@@ -27,12 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="CSCore">
-      <HintPath>..\..\..\lib\SystemVolume\CSCore.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Areas\Command\Data\" />
     <Folder Include="Areas\Command\Models\" />
     <Folder Include="Areas\Command\Views\" />

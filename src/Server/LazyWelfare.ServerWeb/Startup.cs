@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using LazyWelfare.ServerCore.CommandInterface;
+using LazyWelfare.ServerCore.PipeServices;
 
 namespace LazyWelfare.ServerWeb
 {
@@ -21,7 +23,7 @@ namespace LazyWelfare.ServerWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           // services.AddTransient<IVolumeControl, WindowsVolume>();
+            services.AddTransient<IVolumeController, PipeVolume>();
             services.AddMvc();
         }
 

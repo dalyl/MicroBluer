@@ -107,13 +107,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AlphaMaskLayout.cs" />
-    <Compile Include="Core\TryCatch-Interface.cs" />
     <Compile Include="Core\Logic\ServiceHost.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />
     <Compile Include="Core\Models\UserModel.cs" />
     <Compile Include="Core\Script\PartialScript.cs" />
+    <Compile Include="Core\TryCatch.cs" />
     <Compile Include="Core\TryCatchActivity.cs" />
-    <Compile Include="Core\TryCatchTrust.cs" />
+    <Compile Include="Core\TryCatchException.cs" />
     <Compile Include="Core\Utils\BundleUtils.cs" />
     <Compile Include="Core\Views\IPartialView.cs" />
     <Compile Include="Core\Views\PartialLoadForm.cs" />
@@ -140,8 +140,6 @@
     <Compile Include="Core\AgreementRoute\IAgreementHandler.cs" />
     <Compile Include="Core\AgreementRoute\ScanAgreement.cs" />
     <Compile Include="Core\Script\AndroidScript.cs" />
-    <Compile Include="Core\TryCatch.cs" />
-    <Compile Include="Core\TryCatchException.cs" />
     <Compile Include="Core\Logic\HostStoreService.cs" />
     <Compile Include="Core\Models\AppModel.cs" />
     <Compile Include="Core\Models\HostModel.cs" />

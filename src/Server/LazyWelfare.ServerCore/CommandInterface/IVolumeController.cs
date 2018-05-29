@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LazyWelfare.ServerCore.Command
+namespace LazyWelfare.ServerCore.CommandInterface
 {
-    public interface IVolumeControl
+    public interface IVolumeController: ICommandService
     {
         decimal GetValue();
 
