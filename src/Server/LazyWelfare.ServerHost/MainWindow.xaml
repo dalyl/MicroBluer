@@ -24,7 +24,7 @@
         </TabItem>
     </TabControl>
 
-        <ctrl:NotificationAreaIcon Text="水水水水" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
+        <ctrl:NotificationAreaIcon Text="小蓝人" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
             <!--<local:NotificationAreaIcon.MenuItems>
                 <form:MenuItem Text="我在线上" Click="MenuItem_OnlineClick" />
                 <form:MenuItem Text="我在线上" Click="MenuItem_OnlineClick" />

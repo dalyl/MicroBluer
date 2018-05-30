@@ -9,6 +9,7 @@ namespace LazyWelfare.ServerCore.NamedPipe
         public const string PipeWithResultName = "LazyWelfare$PipeWithResult";
         public const string PipeName = "LazyWelfare$Pipe";
         public const string Localhost = ".";
+        public static int MaxPipe =5;
         public static int ClientConnectTimeout = 10;
     }
 }

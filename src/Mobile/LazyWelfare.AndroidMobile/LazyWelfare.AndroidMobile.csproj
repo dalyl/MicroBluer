@@ -221,6 +221,10 @@
       <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
       <Name>LazyWelfare.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Server\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj">
+      <Project>{e8304128-61d6-46b2-9875-3b64f7da714c}</Project>
+      <Name>LazyWelfare.ServerCore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LazyWelfare.AndroidMobile.ImageSelect\LazyWelfare.AndroidMobile.ImageSelect.csproj">
       <Project>{042B5E23-3EC9-4C6F-B6A3-BBD23759309D}</Project>
       <Name>LazyWelfare.AndroidMobile.ImageSelect</Name>

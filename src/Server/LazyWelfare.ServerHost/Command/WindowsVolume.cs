@@ -27,7 +27,7 @@ namespace LazyWelfare.ServerHost.Command
         public void Execute(string command, object[] args)
         {
             if (args == null || args.Length == 0) return;
-            var value = Convert.ToDecimal(args[1]);
+            var value = Convert.ToDecimal(args[0]);
             SetValue(value);
         }
 
@@ -42,9 +42,7 @@ namespace LazyWelfare.ServerHost.Command
         private static void SetVolume(decimal value) {
             using (var volume = GetDefaultAudioEndpointVolume())
             {
-                volume.GetVolumeRange(out float min, out float max, out float inc);
-
-                volume.MasterVolumeLevel = min + (float)value * (max - min);
+                volume.MasterVolumeLevelScalar = (float)value;
             }
           
         }
@@ -53,14 +51,16 @@ namespace LazyWelfare.ServerHost.Command
         {
             using (var volume = GetDefaultAudioEndpointVolume())
             {
-                volume.GetVolumeRange(out float min, out float max, out float inc);
-
-                var value= volume.MasterVolumeLevel ;
-
-                value = (value-min) / (max - min);
-                return new decimal(value);
+                var db= volume.MasterVolumeLevelScalar;
+                return new decimal(db);
             }
 
+        }
+
+        static double dbToPercent(double value)
+        {
+            return Math.Pow(10.0f, (value / 20.0f)) * 100.0f;
+          //  return powf(10.0f, (value / 20.0f)) * 100.0f;
         }
 
         private static AudioEndpointVolume GetDefaultAudioEndpointVolume()

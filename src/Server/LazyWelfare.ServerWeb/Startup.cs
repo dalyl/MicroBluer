@@ -46,7 +46,7 @@ namespace LazyWelfare.ServerWeb
             {
                 routes.MapRoute(
                     name: "Command",
-                    template: "Command/{controller=Home}/{action=Index}/{id?}");
+                    template: "Command/{controller=Home}/{action=Index}/{value?}");
 
                 routes.MapRoute(
                     name: "default",

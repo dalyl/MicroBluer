@@ -25,31 +25,35 @@ namespace LazyWelfare.ServerCore.NamedPipe
             FetchResult = fetchResult;
         }
 
-        public void BeginWaiting()
-        {
-            var pipe = new NamedPipeServerStream(Name, PipeDirection.InOut);
-            Task.Run(() => WaitingForRead(pipe));
-        }
+        public void BeginWaiting() => Task.Run(() => WaitingForRead());
 
-        async Task WaitingForRead(NamedPipeServerStream pipe)
+        async Task WaitingForRead()
         {
-            using (pipe)
+            try
             {
-                await pipe.WaitForConnectionAsync();
+                using (var pipe = new NamedPipeServerStream(Name, PipeDirection.InOut, PipeConfig.MaxPipe))
+                {
+                    await pipe.WaitForConnectionAsync();
+                    BeginWaiting();
+                    var reader = new StreamReader(pipe);
+                    var line = reader.ReadLine();
+                    if (string.IsNullOrEmpty(line)) return;
+                    if (FetchResult == null)
+                    {
+                        Invoke(line);
+                    }
+                    else
+                    {
+                        var writer = new StreamWriter(pipe);
+                        var result = FetchResult(line);
+                        writer.AutoFlush = true;
+                        writer.WriteLine(result);
+                    }
+                }
                 BeginWaiting();
-                var reader = new StreamReader(pipe);
-                var writer = new StreamWriter(pipe);
-                var line = reader.ReadLine();
-                if (FetchResult == null)
-                {
-                    Invoke(line);
-                }
-                else
-                {
-                    var result = FetchResult(line);
-                    writer.WriteLine(result);
-                    writer.Flush();
-                }
+            }
+            catch {
+
             }
         }
 

@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.Pipes;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace LazyWelfare.ServerCore.NamedPipe
 {
@@ -11,11 +12,13 @@ namespace LazyWelfare.ServerCore.NamedPipe
     {
         public IServiceDistributor Switcher { get; }
 
+        //    List<PipeServerReader> Listeners { get; } = new List<PipeServerReader>();
+
         public PipeServer(IServiceDistributor switcher)
         {
             Switcher = switcher;
-            SetReaderListener(PipeConfig.PipeWithResultName, 5, ReceiveWithResult);
-            SetReaderListener(PipeConfig.PipeName, 5, new Action<string>(Receive));
+            SetReaderListener(PipeConfig.PipeWithResultName, ReceiveWithResult);
+            SetReaderListener(PipeConfig.PipeName, new Action<string>(Receive));
         }
 
         void Receive(string data)
@@ -33,21 +36,23 @@ namespace LazyWelfare.ServerCore.NamedPipe
             return JsonConvert.SerializeObject(result);
         }
 
-        void SetReaderListener(string name, int count, Action<string> call)
+        void SetReaderListener(string name, Action<string> call)
         {
-            for (var i = 0; i < count; i++)
+            for (var i = 0; i < PipeConfig.MaxPipe; i++)
             {
                 var listener = new PipeServerReader(name, call);
                 listener.BeginWaiting();
+                //   Listeners.Add(listener);
             }
         }
 
-        void SetReaderListener(string name, int count, Func<string, string> call)
+        void SetReaderListener(string name, Func<string, string> call)
         {
-            for (var i = 0; i < count; i++)
+            for (var i = 0; i < PipeConfig.MaxPipe; i++)
             {
                 var listener = new PipeServerReader(name, call);
                 listener.BeginWaiting();
+                //   Listeners.Add(listener);
             }
         }
 
