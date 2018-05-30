@@ -1,6 +1,6 @@
 Exception: STATUS_ACCESS_VIOLATION at eip=004767DF
 eax=004D6403 ebx=0081C970 ecx=0081C980 edx=0081CC1C esi=00000001 edi=00000003
-ebp=00000000 esp=0081C960 program=D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\Git\usr\bin\sh.exe, pid 7588, thread main
+ebp=00000000 esp=0081C960 program=D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\Git\usr\bin\sh.exe, pid 14532, thread main
 cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
 Stack trace:
 Frame     Function  Args

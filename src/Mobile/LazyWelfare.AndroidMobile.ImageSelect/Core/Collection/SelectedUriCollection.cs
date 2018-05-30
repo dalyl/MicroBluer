@@ -1,19 +1,13 @@
-﻿
-
-using Android.App;
-using Android.Content;
-using Android.Net;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using LazyWelfare.AndroidMobile.ImageSelect.Engine;
-using LazyWelfare.AndroidMobile.ImageSelect.Model;
-using LazyWelfare.AndroidMobile.ImageSelect.Utils;
-using System.Collections.Generic;
-
-namespace LazyWelfare.AndroidMobile.ImageSelect.Collection
+﻿namespace LazyWelfare.AndroidMobile.ImageSelect.Collection
 {
+    using Object = Java.Lang.Object;
+    using Android.Net;
+    using Android.OS;
+    using LazyWelfare.AndroidMobile.ImageSelect.Engine;
+    using LazyWelfare.AndroidMobile.ImageSelect.Model;
+    using LazyWelfare.AndroidUtils.Common;
+    using System.Collections.Generic;
+
     public class SelectedUriCollection: List<Uri>
     {
         private static string STATE_SELECTION = BundleUtils.BuildKey<SelectedUriCollection>("STATE_SELECTION");

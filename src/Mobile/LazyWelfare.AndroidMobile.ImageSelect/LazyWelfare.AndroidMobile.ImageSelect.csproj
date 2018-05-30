@@ -69,14 +69,9 @@
     <Compile Include="Core\Model\Album.cs" />
     <Compile Include="Core\Model\Picture.cs" />
     <Compile Include="Core\Model\SelectionSpec.cs" />
-    <Compile Include="Core\Utils\BundleUtils.cs" />
-    <Compile Include="Core\Utils\CollectionExtension.cs" />
     <Compile Include="Core\Utils\ExifInterfaceCompat.cs" />
-    <Compile Include="Core\Utils\HandlerUtils.cs" />
     <Compile Include="Core\Utils\MediaStoreCompat.cs" />
-    <Compile Include="Core\Utils\ParcelUtils.cs" />
     <Compile Include="Core\Utils\PhotoMetadataUtils.cs" />
-    <Compile Include="Core\Utils\WeakReferenceExtension.cs" />
     <Compile Include="Core\Widget\GridViewItemRelativeLayout.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,7 +80,12 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LazyWelfare.AndroidUtils\LazyWelfare.AndroidUtils.csproj">
+      <Project>{6a64624c-9bd2-4ab5-8442-3bddca81417e}</Project>
+      <Name>LazyWelfare.AndroidUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\anim\listview_down.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>

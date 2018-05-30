@@ -6,35 +6,17 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using PointF = Android.Graphics.PointF;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using Path = Android.Graphics.Path;
     using Rect = Android.Graphics.Rect;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
-    using Drawable = Android.Graphics.Drawables.Drawable;
 	using PathMeasure = Android.Graphics.PathMeasure;
     using Interpolator = Android.Views.Animations.IInterpolator;
     using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
     using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
-    using Android.Graphics;
-    using System.Collections.Generic;
-    using System;
-
 	using AccelerateDecelerateInterpolator = Android.Views.Animations.AccelerateDecelerateInterpolator;
-    using FastOutLinearInInterpolator = Android.Support.V4.View.Animation.FastOutLinearInInterpolator;
-    using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
-    using Animator = Android.Animation.Animator;
-    using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
-    using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
-    using AnimatorSet = Android.Animation.AnimatorSet;
-    using ITypeEvaluator = Android.Animation.ITypeEvaluator;
-    using ValueAnimator = Android.Animation.ValueAnimator;
+    using LazyWelfare.AndroidUtils.Common;
 
- 
-	public class CoolWaitLoadingRenderer : LoadingRenderer
+    public class CoolWaitLoadingRenderer : LoadingRenderer
 	{
 		private readonly Interpolator ACCELERATE_INTERPOLATOR08 = new AccelerateInterpolator(0.8f);
 		private readonly Interpolator ACCELERATE_INTERPOLATOR10 = new AccelerateInterpolator(1.0f);
@@ -85,10 +67,10 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.dip2px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_HEIGHT);
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_WIDTH);
-			mWaitCircleRadius = DensityUtil.dip2px(context, WAIT_CIRCLE_RADIUS);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
+			mWaitCircleRadius = DensityUtil.Dip2Px(context, WAIT_CIRCLE_RADIUS);
 
 			mTopColor = Color.White;
 			mMiddleColor = Color.ParseColor("#FFF3C742");
@@ -257,42 +239,16 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-    
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter(value);
-    
-			}
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
-		protected internal override void Reset()
-		{
-		}
 
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual CoolWaitLoadingRenderer Build()
-			{
-				CoolWaitLoadingRenderer loadingRenderer = new CoolWaitLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
-	}
+    }
 
 }

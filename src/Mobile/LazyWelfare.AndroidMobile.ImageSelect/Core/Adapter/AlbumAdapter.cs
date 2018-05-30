@@ -1,27 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Java.Lang;
-using LazyWelfare.AndroidMobile.ImageSelect.Model;
-
-namespace LazyWelfare.AndroidMobile.ImageSelect.Adapter
+﻿namespace LazyWelfare.AndroidMobile.ImageSelect.Adapter
 {
+    using Object = Java.Lang.Object;
     using Context = Android.Content.Context;
     using Cursor = Android.Database.ICursor;
     using CursorAdapter = Android.Support.V4.Widget.CursorAdapter;
-    using Log = Android.Util.Log;
     using LayoutInflater = Android.Views.LayoutInflater;
     using View = Android.Views.View;
     using ViewGroup = Android.Views.ViewGroup;
-    using ImageView = Android.Widget.ImageView;
     using TextView = Android.Widget.TextView;
+    using LazyWelfare.AndroidMobile.ImageSelect.Model;
 
     public class AlbumAdapter : CursorAdapter
     {

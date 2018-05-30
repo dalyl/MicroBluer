@@ -1,15 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.Media;
-using Android.OS;
-using Android.Runtime;
+﻿using Android.Media;
 using Android.Text;
-using Android.Views;
-using Android.Widget;
 using Java.IO;
 using Java.Lang;
 using Java.Text;
@@ -47,7 +37,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
             }
             catch (IOException var5)
             {
-                //  Log.e(TAG, "cannot read exif", var5);
                 return null;
             }
 
@@ -66,7 +55,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
                 }
                 catch (ParseException var4)
                 {
-                    // Log.d(TAG, "failed to parse date taken", var4);
                     return null;
                 }
             }
@@ -88,7 +76,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
             }
             catch (IOException var3)
             {
-                // Log.e(TAG, "cannot read exif", var3);
                 return -1;
             }
 

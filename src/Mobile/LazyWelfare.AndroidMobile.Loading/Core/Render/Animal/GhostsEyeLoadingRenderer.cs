@@ -6,24 +6,15 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using LinearGradient = Android.Graphics.LinearGradient;
 	using Path = Android.Graphics.Path;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
     using Interpolator = Android.Views.Animations.IInterpolator;
-    using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
-    using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
     using Android.Graphics;
-    using System;
+    using LazyWelfare.AndroidUtils.Common;
 
-    using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
-
-
-	public class GhostsEyeLoadingRenderer : LoadingRenderer
+    public class GhostsEyeLoadingRenderer : LoadingRenderer
 	{
-		private bool InstanceFieldsInitialized = false;
+		private bool InstanceFieldsInitialized { get; } = false;
 
 		private void InitializeInstanceFields()
 		{
@@ -88,31 +79,31 @@
 				InitializeInstanceFields();
 				InstanceFieldsInitialized = true;
 			}
-			init(context);
-			setupPaint();
+			Init(context);
+			SetupPaint();
 		}
 
-		private void init(Context context)
+		private void Init(Context context)
 		{
-			mWidth = DensityUtil.dip2px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_HEIGHT);
-			mEyeEdgeWidth = DensityUtil.dip2px(context, DEFAULT_EYE_EDGE_WIDTH);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			mEyeEdgeWidth = DensityUtil.Dip2Px(context, DEFAULT_EYE_EDGE_WIDTH);
 
-			mEyeInterval = DensityUtil.dip2px(context, DEFAULT_EYE_CIRCLE_INTERVAL);
-			mEyeBallOffsetY = DensityUtil.dip2px(context, DEFAULT_EYE_BALL_OFFSET_Y);
-			mEyeCircleRadius = DensityUtil.dip2px(context, DEFAULT_EYE_CIRCLE_RADIUS);
-			mMaxEyeJumptDistance = DensityUtil.dip2px(context, DEFAULT_MAX_EYE_JUMP_DISTANCE);
-			mAboveRadianEyeOffsetX = DensityUtil.dip2px(context, DEFAULT_ABOVE_RADIAN_EYE_CIRCLE_OFFSET);
+			mEyeInterval = DensityUtil.Dip2Px(context, DEFAULT_EYE_CIRCLE_INTERVAL);
+			mEyeBallOffsetY = DensityUtil.Dip2Px(context, DEFAULT_EYE_BALL_OFFSET_Y);
+			mEyeCircleRadius = DensityUtil.Dip2Px(context, DEFAULT_EYE_CIRCLE_RADIUS);
+			mMaxEyeJumptDistance = DensityUtil.Dip2Px(context, DEFAULT_MAX_EYE_JUMP_DISTANCE);
+			mAboveRadianEyeOffsetX = DensityUtil.Dip2Px(context, DEFAULT_ABOVE_RADIAN_EYE_CIRCLE_OFFSET);
 
-			mEyeBallWidth = DensityUtil.dip2px(context, DEFAULT_EYE_BALL_WIDTH);
-			mEyeBallHeight = DensityUtil.dip2px(context, DEFAULT_EYE_BALL_HEIGHT);
+			mEyeBallWidth = DensityUtil.Dip2Px(context, DEFAULT_EYE_BALL_WIDTH);
+			mEyeBallHeight = DensityUtil.Dip2Px(context, DEFAULT_EYE_BALL_HEIGHT);
 
 			mColor = DEFAULT_COLOR;
 
 			mDuration = ANIMATION_DURATION;
 		}
 
-		private void setupPaint()
+		private void SetupPaint()
 		{
 			mPaint.AntiAlias = true;
 			mPaint.StrokeWidth = mEyeEdgeWidth;
@@ -130,14 +121,14 @@
 			mPaint.Color = new Color (mColor);
 
 			mPaint.SetStyle (Paint.Style.Stroke);
-			canvas.DrawPath(createLeftEyeCircle(arcBounds, mLeftEyeCircleOffsetY), mPaint);
-			canvas.DrawPath(createRightEyeCircle(arcBounds, mRightEyeCircleOffsetY), mPaint);
+			canvas.DrawPath(CreateLeftEyeCircle(arcBounds, mLeftEyeCircleOffsetY), mPaint);
+			canvas.DrawPath(CreateRightEyeCircle(arcBounds, mRightEyeCircleOffsetY), mPaint);
 
 			mPaint.SetStyle(Paint.Style.Fill);
 			//create left eye ball
-			canvas.DrawOval(createLeftEyeBall(arcBounds, mLeftEyeBallOffsetY), mPaint);
+			canvas.DrawOval(CreateLeftEyeBall(arcBounds, mLeftEyeBallOffsetY), mPaint);
 			//create right eye ball
-			canvas.DrawOval(createRightEyeBall(arcBounds, mRightEyeBallOffsetY), mPaint);
+			canvas.DrawOval(CreateRightEyeBall(arcBounds, mRightEyeBallOffsetY), mPaint);
 
 			canvas.RestoreToCount(saveCount);
 		}
@@ -193,7 +184,7 @@
 			mRightEyeCircleOffsetY = 0.0f;
 		}
 
-		private RectF createLeftEyeBall(RectF arcBounds, float offsetY)
+		private RectF CreateLeftEyeBall(RectF arcBounds, float offsetY)
 		{
 			//the center of the left eye
 			float leftEyeCenterX = arcBounds.CenterX() - mEyeInterval / 2.0f - mEyeCircleRadius;
@@ -204,7 +195,7 @@
 			return rectF;
 		}
 
-		private RectF createRightEyeBall(RectF arcBounds, float offsetY)
+		private RectF CreateRightEyeBall(RectF arcBounds, float offsetY)
 		{
 			//the center of the right eye
 			float rightEyeCenterX = arcBounds.CenterX() + mEyeInterval / 2.0f + mEyeCircleRadius;
@@ -216,7 +207,7 @@
 		}
 
 
-		private Path createLeftEyeCircle(RectF arcBounds, float offsetY)
+		private Path CreateLeftEyeCircle(RectF arcBounds, float offsetY)
 		{
 			Path path = new Path();
 
@@ -232,7 +223,7 @@
 			return path;
 		}
 
-		private Path createRightEyeCircle(RectF arcBounds, float offsetY)
+		private Path CreateRightEyeCircle(RectF arcBounds, float offsetY)
 		{
 			Path path = new Path();
 
@@ -289,7 +280,6 @@
 				this.outerInstance = outerInstance;
 			}
 
-
 			public  float GetInterpolation(float input)
 			{
 				if (input < 0.333333f)
@@ -300,22 +290,6 @@
 				{
 					return 1.0f - (input - 0.333333f) * 1.5f;
 				}
-			}
-		}
-
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual GhostsEyeLoadingRenderer build()
-			{
-				GhostsEyeLoadingRenderer loadingRenderer = new GhostsEyeLoadingRenderer(mContext);
-				return loadingRenderer;
 			}
 		}
 	}

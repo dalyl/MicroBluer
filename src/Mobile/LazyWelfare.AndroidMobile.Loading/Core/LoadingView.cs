@@ -68,8 +68,6 @@ namespace LazyWelfare.AndroidMobile.Loading
         {
             base.OnVisibilityChanged(changedView, visibility);
 
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final boolean visible = visibility == VISIBLE && getVisibility() == VISIBLE;
             bool visible = visibility ==  ViewStates.Visible && Visibility == ViewStates.Visible;
             if (visible)
             {

@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\DensityUtil.cs" />
     <Compile Include="Core\LoadingView.cs" />
     <Compile Include="Core\LoadingDialog.cs" />
     <Compile Include="Core\Render\Animal\FishLoadingRenderer.cs" />
@@ -116,6 +115,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LazyWelfare.AndroidUtils\LazyWelfare.AndroidUtils.csproj">
+      <Project>{6a64624c-9bd2-4ab5-8442-3bddca81417e}</Project>
+      <Name>LazyWelfare.AndroidUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

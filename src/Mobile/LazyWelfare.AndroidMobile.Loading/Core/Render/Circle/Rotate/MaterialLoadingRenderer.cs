@@ -5,25 +5,16 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using LinearGradient = Android.Graphics.LinearGradient;
-    using Path = Android.Graphics.Path;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
     using Interpolator = Android.Views.Animations.IInterpolator;
-    using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
-    using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
-    using Android.Graphics;
-    using System;
-
     using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
     using Animator = Android.Animation.Animator;
     using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
-    using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
+    using LazyWelfare.AndroidUtils.Common;
+    using System;
+    using LazyWelfare.AndroidUtils.Animation;
 
-
-	public class MaterialLoadingRenderer : LoadingRenderer
+    public class MaterialLoadingRenderer : LoadingRenderer
 	{
 		private static readonly Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();
 
@@ -47,32 +38,6 @@
 
 		private  Animator.IAnimatorListener AnimatorListener { get; }
 
-		private class AnimatorListenerAdapterAnonymousInnerClass : AnimatorListenerAdapter
-		{
-            MaterialLoadingRenderer OuterInstance { get; }
-            public AnimatorListenerAdapterAnonymousInnerClass(MaterialLoadingRenderer master)
-			{
-                OuterInstance = master;
-
-            }
-
-			public override void OnAnimationRepeat(Animator animator)
-			{
-				base.OnAnimationRepeat(animator);
-				OuterInstance.StoreOriginals();
-				OuterInstance.GoToNextColor();
-
-				OuterInstance.mStartDegrees = OuterInstance.mEndDegrees;
-				OuterInstance.mRotationCount = (OuterInstance.mRotationCount + 1) % (NUM_POINTS);
-			}
-
-			public override void OnAnimationStart(Animator animation)
-			{
-				base.OnAnimationStart(animation);
-				OuterInstance.mRotationCount = 0;
-			}
-		}
-
 		private int[] mColors;
 		private int mColorIndex;
 		private int mCurrentColor;
@@ -93,7 +58,15 @@
 
 		internal MaterialLoadingRenderer(Context context) : base(context)
 		{
-            AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);
+            AnimatorListener = new AnonymousAnimatorListenerAdapter {
+                Start = amor => this.mRotationCount = 0,
+                Repeat = amor => {
+                    this.StoreOriginals();
+                    this.GoToNextColor();
+                    this.mStartDegrees = this.mEndDegrees;
+                    this.mRotationCount = (this.mRotationCount + 1) % (NUM_POINTS);
+                },
+            };
             Init(context);
 			SetupPaint();
 			AddRenderListener(AnimatorListener);
@@ -101,8 +74,8 @@
 
 		private void Init(Context context)
 		{
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_WIDTH);
-			mCenterRadius = DensityUtil.dip2px(context, DEFAULT_CENTER_RADIUS);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
+			mCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_CENTER_RADIUS);
 
 			mColors = DEFAULT_COLORS;
 
@@ -122,7 +95,7 @@
 		{
 			int saveCount = canvas.Save();
 
-			mTempBounds.Set(mBounds);
+			mTempBounds.Set(Bounds);
 			mTempBounds.Inset(mStrokeInset, mStrokeInset);
 
 			canvas.Rotate(mGroupRotation, mTempBounds.CenterX(), mTempBounds.CenterY());
@@ -267,83 +240,6 @@
 			return ((startA + (int)(fraction * (endA - startA))) << 24) | ((startR + (int)(fraction * (endR - startR))) << 16) | ((startG + (int)(fraction * (endG - startG))) << 8) | ((startB + (int)(fraction * (endB - startB))));
 		}
 
-		private void Apply(Builder builder)
-		{
-			this.mWidth = builder.mWidth > 0 ? builder.mWidth : this.mWidth;
-			this.mHeight = builder.mHeight > 0 ? builder.mHeight : this.mHeight;
-			this.mStrokeWidth = builder.mStrokeWidth > 0 ? builder.mStrokeWidth : this.mStrokeWidth;
-			this.mCenterRadius = builder.mCenterRadius > 0 ? builder.mCenterRadius : this.mCenterRadius;
-
-			this.mDuration = builder.mDuration > 0 ? builder.mDuration : this.mDuration;
-
-			this.mColors = builder.mColors != null && builder.mColors.Length > 0 ? builder.mColors : this.mColors;
-
-			ColorIndex = 0;
-			SetupPaint();
-			InitStrokeInset(this.mWidth, this.mHeight);
-		}
-
-		public class Builder
-		{
-			internal Context mContext;
-
-			internal int mWidth;
-			internal int mHeight;
-			internal int mStrokeWidth;
-			internal int mCenterRadius;
-
-			internal int mDuration;
-
-			internal int[] mColors;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual Builder SetWidth(int width)
-			{
-				this.mWidth = width;
-				return this;
-			}
-
-			public virtual Builder SetHeight(int height)
-			{
-				this.mHeight = height;
-				return this;
-			}
-
-			public virtual Builder SetStrokeWidth(int strokeWidth)
-			{
-				this.mStrokeWidth = strokeWidth;
-				return this;
-			}
-
-			public virtual Builder SetCenterRadius(int centerRadius)
-			{
-				this.mCenterRadius = centerRadius;
-				return this;
-			}
-
-			public virtual Builder SetDuration(int duration)
-			{
-				this.mDuration = duration;
-				return this;
-			}
-
-			public virtual Builder SetColors(int[] colors)
-			{
-				this.mColors = colors;
-				return this;
-			}
-
-			public virtual MaterialLoadingRenderer Build()
-			{
-				MaterialLoadingRenderer loadingRenderer = new MaterialLoadingRenderer(mContext);
-				loadingRenderer.Apply(this);
-				return loadingRenderer;
-			}
-		}
 	}
 
 }

@@ -2,6 +2,7 @@
 
 namespace LazyWelfare.AndroidMobile.ImageSelect
 {
+    using Object = Java.Lang.Object;
     using Activity = Android.App.Activity;
     using Intent = Android.Content.Intent;
     using Uri = Android.Net.Uri;
@@ -10,28 +11,29 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
     using System.Linq;
     using LazyWelfare.AndroidMobile.ImageSelect.Model;
     using LazyWelfare.AndroidMobile.ImageSelect.Engine;
-    using LazyWelfare.AndroidMobile.ImageSelect;
     using LazyWelfare.AndroidMobile.ImageSelect.Utils;
-    using Java.Lang;
     using Android.Content;
+    using LazyWelfare.AndroidUtils.Extension;
+    using System;
+    using Java.Lang;
 
     public sealed class BulbPlugin
     {
         private const string INITIALIZE_PICKER_ERROR = "Try to initialize Picker which had already been initialized before";
         private static bool hasInitPicker;
-        private readonly System.WeakReference<Activity> mContext;
-        private readonly System.WeakReference<Fragment> mFragment;
-        private readonly List<MimeType> MimeTypes;
-        private readonly SelectionSpec mSelectionSpec;
+        private WeakReference<Activity> mContext { get; }
+        private  WeakReference<Fragment> mFragment { get; }
+        private  List<MimeType> MimeTypes { get; }
+        private  SelectionSpec mSelectionSpec { get; }
         private LoadEngine engine; //图片加载器 glide  imageloder picasso
         private IList<Uri> mResumeList;
 
         internal BulbPlugin(Activity activity, Fragment fragment, List<MimeType> mimeType)
         {
-            mContext = new System.WeakReference<Activity>(activity);
+            mContext = new WeakReference<Activity>(activity);
             if (fragment != null)
             {
-                mFragment = new System.WeakReference<Fragment>(fragment);
+                mFragment = new WeakReference<Fragment>(fragment);
             }
             else
             {
@@ -46,10 +48,10 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
 
         internal BulbPlugin(Activity activity, Fragment fragment)
         {
-            mContext = new System.WeakReference<Activity>(activity);
+            mContext = new WeakReference<Activity>(activity);
             if (fragment != null)
             {
-                mFragment = new System.WeakReference<Fragment>(fragment);
+                mFragment = new WeakReference<Fragment>(fragment);
             }
             else
             {
@@ -155,21 +157,20 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
         }
 
 
-        public void ForResult(System.Action<List<Uri>> OnSelectCompleted)
+        public void ForResult(Action<List<Uri>> OnSelectCompleted)
         {
             SetImageSelectCompleted(OnSelectCompleted);
             ForResult(-999);
         }
 
-        void SetImageSelectCompleted(System.Action<List<Uri>> OnSelectCompleted)
+        void SetImageSelectCompleted(Action<List<Uri>> OnSelectCompleted)
         {
             if (OnSelectCompleted == null) return;
-            System.Action<List<Uri>> act = urls =>
-            {
-                OnSelectCompleted(urls);
-                ImageSelectActivity.OnSelectCompleted = null;
-            };
-            ImageSelectActivity.OnSelectCompleted = act;
+            ImageSelectActivity.OnSelectCompleted = urls =>
+             {
+                 OnSelectCompleted(urls);
+                 ImageSelectActivity.OnSelectCompleted = null;
+             };
         }
 
         /// <summary>
@@ -180,7 +181,7 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
         {
             if (engine == null)
             {
-                throw new ExceptionInInitializerError(LoadEngine_Fields.INITIALIZE_ENGINE_ERROR);
+                throw new ExceptionInInitializerError(LoadEngine.INITIALIZE_ENGINE_ERROR);
             }
 
             Activity activity = Activity;
@@ -272,9 +273,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
         }
 
 
-        /// <returns> the actual requester context. </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Nullable android.app.Activity getActivity()
         internal Activity Activity
         {
             get
@@ -283,9 +281,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
             }
         }
 
-        /// <returns> the fragment that is responsible for result handling. </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Nullable android.support.v4.app.Fragment getFragment()
         internal Fragment Fragment
         {
             get

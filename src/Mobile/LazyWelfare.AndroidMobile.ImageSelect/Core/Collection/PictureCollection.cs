@@ -1,51 +1,42 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.Support.V4;
-using Android.Support.V4.App;
-using Android.Support.V4.Content;
-using Android.Support.V4.Content.PM;
-using LazyWelfare.AndroidMobile.ImageSelect.Model;
-using LazyWelfare.AndroidMobile.ImageSelect.Utils;
-using LazyWelfare.AndroidMobile.ImageSelect.Adapter;
-using LazyWelfare.AndroidMobile.ImageSelect.Loader;
-using Java.Lang;
-using Android.Database;
-
 namespace LazyWelfare.AndroidMobile.ImageSelect.Collection
 {
+    using Object = Java.Lang.Object;
+    using Loader=Android.Support.V4.Content.Loader;
+    using Android.Content;
+    using Android.OS;
+    using Android.Widget;
+    using Android.Support.V4.App;
+    using LazyWelfare.AndroidMobile.ImageSelect.Model;
+    using LazyWelfare.AndroidMobile.ImageSelect.Adapter;
+    using LazyWelfare.AndroidMobile.ImageSelect.Loader;
+    using Android.Database;
+    using LazyWelfare.AndroidUtils.Common;
+    using LazyWelfare.AndroidUtils.Extension;
 
-public class PictureCollection :Object, Android.Support.V4.App.LoaderManager.ILoaderCallbacks
+    public class PictureCollection :Object, LoaderManager.ILoaderCallbacks
 {
 		private const int LOADER_ID = 2;
 		private static readonly string ARGS_ALBUM = BundleUtils.BuildKey<PictureCollection>("ARGS_ALBUM");
 		private System.WeakReference<Context> mContext;
-		private Android.Support.V4.App.LoaderManager mLoaderManager;
+		private LoaderManager mLoaderManager;
 		private PictureAdapter albumPhotoAdapter;
 		private SelectionSpec selectionSpec;
 
-		public  Android.Support.V4.Content.Loader OnCreateLoader(int id, Bundle args)
+		public Loader OnCreateLoader(int id, Bundle args)
 		{
             Context context =mContext.Get();
 			if (context == null)
 			{
 				return null;
 			}
-			var album = args.GetParcelable(ARGS_ALBUM) as Album;
-			if (album == null)
-			{
-				return null;
-			}
-			return PictureLoader.NewInstance(context, album, selectionSpec);
+            if (!(args.GetParcelable(ARGS_ALBUM) is Album album))
+            {
+                return null;
+            }
+            return PictureLoader.NewInstance(context, album, selectionSpec);
 		}
 
-		public  void OnLoadFinished(Android.Support.V4.Content.Loader loader, Object data)
+		public  void OnLoadFinished(Loader loader, Object data)
 		{
 			Context context =mContext.Get();
 			if (context == null)
@@ -56,7 +47,7 @@ public class PictureCollection :Object, Android.Support.V4.App.LoaderManager.ILo
 			albumPhotoAdapter.SwapCursor(cursor);
         }
 
-		public  void OnLoaderReset(Android.Support.V4.Content.Loader loader)
+		public  void OnLoaderReset(Loader loader)
 		{
 			Context context =mContext.Get();
 			if (context == null)
@@ -84,17 +75,17 @@ public class PictureCollection :Object, Android.Support.V4.App.LoaderManager.ILo
 		public virtual void LoadAllPhoto()
 		{
 			Album album = new Album(Album.ALBUM_ID_ALL, -1, Album.ALBUM_NAME_ALL, "");
-			load(album);
+			Load(album);
 		}
 
-		public virtual void load(Album target)
+		public virtual void Load(Album target)
 		{
 			Bundle args = new Bundle();
 			args.PutParcelable(ARGS_ALBUM, target);
 			mLoaderManager.InitLoader(LOADER_ID, args, this);
 		}
 
-		public virtual void resetLoad(Album target)
+		public virtual void ResetLoad(Album target)
 		{
 			Bundle args = new Bundle();
 			args.PutParcelable(ARGS_ALBUM, target);

@@ -9,7 +9,6 @@
     using ImageView = Android.Widget.ImageView;
     using LazyWelfare.AndroidMobile.ImageSelect.Collection;
     using LazyWelfare.AndroidMobile.ImageSelect.Model;
-    using Java.Lang;
     using LazyWelfare.AndroidMobile.ImageSelect.Widget;
 
     public class PictureAdapter : CursorAdapter
@@ -32,15 +31,13 @@
             return convertView;
         }
 
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: @Override public void bindView(android.view.View view, final android.content.Context context, android.database.Cursor cursor)
         public override void BindView(View view, Context context, Cursor cursor)
         {
             viewHolder = view.Tag as ViewHolder;
             viewHolder.itemView.Item = Picture.ValueOf(cursor);
         }
 
-        internal class ViewHolder:Object
+        internal class ViewHolder:Java.Lang.Object
         {
             internal GridViewItemRelativeLayout itemView;
 

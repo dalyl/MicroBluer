@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
+﻿namespace LazyWelfare.AndroidUtils.Common
 {
     using Handler = Android.OS.Handler;
     using Looper = Android.OS.Looper;
+    using System;
 
     public class HandlerUtils
     {

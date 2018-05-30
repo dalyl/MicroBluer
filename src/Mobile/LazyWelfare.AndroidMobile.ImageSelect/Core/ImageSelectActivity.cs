@@ -1,23 +1,23 @@
-﻿using System.Collections.Generic;
-using Android.App;
-using Android.Content;
-using Android.Net;
-using Android.OS;
-using Android.Views;
-using Android.Widget;
-using LazyWelfare.AndroidMobile.ImageSelect.Model;
-using LazyWelfare.AndroidMobile.ImageSelect.Utils;
-using LazyWelfare.AndroidMobile.ImageSelect.Collection;
-using Android.Support.V4.App;
-using Java.Lang;
-using Android.Views.Animations;
-
-namespace LazyWelfare.AndroidMobile.ImageSelect
+﻿namespace LazyWelfare.AndroidMobile.ImageSelect
 {
-    using Action = System.Action;
+    using System.Collections.Generic;
+    using Android.App;
+    using Android.Content;
+    using Android.Net;
+    using Android.OS;
+    using Android.Views;
+    using Android.Widget;
+    using LazyWelfare.AndroidMobile.ImageSelect.Model;
+    using LazyWelfare.AndroidMobile.ImageSelect.Utils;
+    using LazyWelfare.AndroidMobile.ImageSelect.Collection;
+    using Android.Support.V4.App;
+    using Android.Views.Animations;
+    using LazyWelfare.AndroidUtils.View;
+    using LazyWelfare.AndroidUtils.Common;
+    using LazyWelfare.AndroidUtils.Extension;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar.Fullscreen")]
-    public class ImageSelectActivity : FragmentActivity, AlbumCollection.OnDirectorySelectListener
+    public class ImageSelectActivity : FragmentActivity, AlbumCollection.IOnDirectorySelectListener
     {
         public static string EXTRA_RESULT_SELECTION = BundleUtils.BuildKey<ImageSelectActivity>("EXTRA_RESULT_SELECTION");
         public static string EXTRA_SELECTION_SPEC = BundleUtils.BuildKey<ImageSelectActivity>("EXTRA_SELECTION_SPEC");
@@ -33,7 +33,7 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
         private GridView mGridView;
         public static int REQUEST_CODE_CAPTURE = 3;
 
-        private MediaStoreCompat MediaStoreCompat { get; set; }
+        public MediaStoreCompat MediaStoreCompat { get;private  set; }
 
         private Button commit;
         private ImageView galleryTip;
@@ -41,23 +41,21 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
         private ImageView btnBack;
         private AlbumCollection albumCollection = new AlbumCollection();
         private PictureCollection mPhotoCollection = new PictureCollection();
-
-        private SelectedUriCollection mCollection { get; set; }
-
-
         private string mCapturePhotoUriHolder;
+
+        private SelectedUriCollection UriSelecteds { get; set; } = new SelectedUriCollection();
 
 
         public static  System.Action<List<Uri>> OnSelectCompleted;
 
-
         private View.IOnClickListener mOnClickFoldName { get; set; }
 
-
-        public ImageSelectActivity()
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            mCollection = new SelectedUriCollection();
-            mOnClickFoldName = new ButtonClickListener(() => {
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.ImageSelect);
+
+            mOnClickFoldName = new AnonymousOnClickListener((v) => {
                 if (mListViewGroup.Visibility == ViewStates.Visible)
                 {
                     HideFolderList();
@@ -67,12 +65,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
                     ShowFolderList();
                 }
             });
-        }
-
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.ImageSelect);
 
             mCapturePhotoUriHolder = savedInstanceState != null ? savedInstanceState.GetString(STATE_CAPTURE_PHOTO_URI) : "";
 
@@ -81,14 +73,14 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
           //  selectionSpec = (SelectionSpec)Intent.GetParcelableExtra(ImageSelectActivity.EXTRA_SELECTION_SPEC);
             MediaStoreCompat = new MediaStoreCompat(this, new Handler(Looper.MainLooper));
 
-            mCollection.OnCreate(savedInstanceState);
-            mCollection.PrepareSelectionSpec(selectionSpec);
+            UriSelecteds.OnCreate(savedInstanceState);
+            UriSelecteds.PrepareSelectionSpec(selectionSpec);
 
             var Extra_uris = Intent.GetParcelableArrayListExtra(EXTRA_RESUME_LIST);
             var uris = Extra_uris as IEnumerable<Uri>;
-            if (uris != null) mCollection.AddRange(uris);
+            if (uris != null) UriSelecteds.AddRange(uris);
 
-            mCollection.SetOnSelectionChange(new SelectionChange(commit));
+            UriSelecteds.SetOnSelectionChange(new SelectionChange(commit));
 
             mGridView = (GridView)FindViewById(Resource.Id.gridView);
             mListView = (ListView)FindViewById(Resource.Id.listView);
@@ -107,14 +99,14 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
             mFoldName.SetText("最近图片", TextView.BufferType.Normal);
             selectFold.SetOnClickListener(mOnClickFoldName);
 
-            albumCollection.onCreate(this, this, selectionSpec, mListView);
+            albumCollection.OnCreate(this, this, selectionSpec, mListView);
             albumCollection.LoadAlbums();
-            mPhotoCollection.OnCreate(this, mGridView, mCollection, selectionSpec);
+            mPhotoCollection.OnCreate(this, mGridView, UriSelecteds, selectionSpec);
             mPhotoCollection.LoadAllPhoto();
 
-            commit.SetOnClickListener(new ButtonClickListener(() =>
+            commit.SetOnClickListener(new AnonymousOnClickListener((v) =>
             {
-                if (mCollection.IsEmpty)
+                if (UriSelecteds.IsEmpty)
                 {
                     Toast.MakeText(ApplicationContext, "未选择图片", ToastLength.Long).Show();
                 }
@@ -124,7 +116,7 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
                 }
             }));
 
-            btnBack.SetOnClickListener(new ButtonClickListener(() => this.Finish()));
+            btnBack.SetOnClickListener(new AnonymousOnClickListener((v) => this.Finish()));
 
             if (selectionSpec.WillStartCamera()) ShowCameraAction();
 
@@ -133,10 +125,10 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
         public void SetResult()
         {
             if (OnSelectCompleted != null)
-                OnSelectCompleted(mCollection);
+                OnSelectCompleted(UriSelecteds);
             else {
                 Intent intent = new Intent();
-                intent.PutParcelableArrayListExtra(ImageSelectActivity.EXTRA_RESULT_SELECTION, mCollection.AsIParcelableList());
+                intent.PutParcelableArrayListExtra(ImageSelectActivity.EXTRA_RESULT_SELECTION, UriSelecteds.AsIParcelableList());
                 SetResult(Result.Ok, intent);
             }
             Finish();
@@ -144,8 +136,8 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
 
         protected override void OnSaveInstanceState(Bundle outState)
         {
-            mCollection.OnSaveInstanceState(outState);
-            albumCollection.onSaveInstanceState(outState);
+            UriSelecteds.OnSaveInstanceState(outState);
+            albumCollection.OnSaveInstanceState(outState);
             outState.PutString(STATE_CAPTURE_PHOTO_URI, mCapturePhotoUriHolder);
             base.OnSaveInstanceState(outState);
         }
@@ -166,9 +158,9 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
                 Uri captured = MediaStoreCompat.GetCapturedPhotoUri(data, mCapturePhotoUriHolder);
                 if (captured != null)
                 {
-                    mCollection.Add(captured);
+                    UriSelecteds.Add(captured);
                     MediaStoreCompat.CleanUp(mCapturePhotoUriHolder);
-                    if (mCollection.IsSingleChoose)
+                    if (UriSelecteds.IsSingleChoose)
                     {
                         SetResult();
                     }
@@ -205,12 +197,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
             mListViewGroup.StartAnimation(fadeOut);
         }
 
-        public MediaStoreCompat GetMediaStoreCompat()
-        {
-            return MediaStoreCompat;
-        }
-
-
         protected override void OnDestroy()
         {
             MediaStoreCompat.Destroy();
@@ -221,12 +207,13 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
 
         public override void OnBackPressed()
         {
-            if (mCollection.IsEmpty)
+            if (UriSelecteds.IsEmpty)
             {
                 SetResult(Result.Canceled);
                 base.OnBackPressed();
             }
         }
+
         /**
          * 选择相机
          */
@@ -240,13 +227,13 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
         {
             HideFolderList();
             mFoldName.SetText(album.GetDisplayName(this),TextView.BufferType.Normal);
-            mPhotoCollection.resetLoad(album);
+            mPhotoCollection.ResetLoad(album);
         }
 
 
         public void OnReset(Album album)
         {
-            mPhotoCollection.load(album);
+            mPhotoCollection.Load(album);
         }
 
 
@@ -262,51 +249,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
                 _commit.SetText("确定(" + selectCount + "/" + maxCount + ")", TextView.BufferType.Normal);
             }
         }
-
-        class ButtonClickListener : Object, View.IOnClickListener
-        {
-            Action Invoke { get; set; }
-            public ButtonClickListener(Action invoke)
-            {
-                Invoke = invoke;
-            }
-            public void OnClick(View v)
-            {
-                Invoke();
-            }
-        }
-
-        class AnimationListener : Object, Animation.IAnimationListener
-        {
-            System.Action<Animation> Start = null;
-            System.Action<Animation> End = null;
-            System.Action<Animation> Repeat = null;
-            public AnimationListener(System.Action<Animation> start = null, System.Action<Animation> end = null, System.Action<Animation> repeat = null)
-            {
-                Start = start;
-                End = end;
-                Repeat = repeat;
-            }
-
-            public void OnAnimationStart(Animation animation)
-            {
-                Start?.Invoke(animation);
-            }
-
-
-            public void OnAnimationEnd(Animation animation)
-            {
-                End?.Invoke(animation);
-            }
-
-
-            public void OnAnimationRepeat(Animation animation)
-            {
-                Repeat?.Invoke(animation);
-            }
-        }
-
-
 
 
     }

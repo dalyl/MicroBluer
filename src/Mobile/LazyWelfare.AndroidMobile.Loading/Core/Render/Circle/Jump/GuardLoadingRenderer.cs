@@ -5,10 +5,8 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using Path = Android.Graphics.Path;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
     using Interpolator = Android.Views.Animations.IInterpolator;
     using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
     using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
@@ -17,9 +15,9 @@
 
 	using PathMeasure = Android.Graphics.PathMeasure;
 	using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
+    using LazyWelfare.AndroidUtils.Common;
 
-
-	public class GuardLoadingRenderer : LoadingRenderer
+    public class GuardLoadingRenderer : LoadingRenderer
 	{
 		private static readonly Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();
 		private static readonly Interpolator ACCELERATE_INTERPOLATOR = new AccelerateInterpolator();
@@ -69,7 +67,6 @@
 
 		internal GuardLoadingRenderer(Context context) : base(context)
 		{
-
 			mDuration = ANIMATION_DURATION;
 			Init(context);
 			SetupPaint();
@@ -77,9 +74,9 @@
 
 		private void Init(Context context)
 		{
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_WIDTH);
-			mCenterRadius = DensityUtil.dip2px(context, DEFAULT_CENTER_RADIUS);
-			mSkipBallSize = DensityUtil.dip2px(context, DEFAULT_SKIP_BALL_RADIUS);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
+			mCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_CENTER_RADIUS);
+			mSkipBallSize = DensityUtil.Dip2Px(context, DEFAULT_SKIP_BALL_RADIUS);
 
 			mColor = DEFAULT_COLOR;
 			mBallColor = DEFAULT_BALL_COLOR;
@@ -191,24 +188,16 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-    
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter (value);
-    
-			}
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
-		protected internal override void Reset()
+        protected internal override void Reset()
 		{
 			mScale = 1.0f;
 			mEndTrim = 0.0f;
@@ -249,8 +238,6 @@
 
 		private void SetInsets(int width, int height)
 		{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float minEdge = (float) Math.min(width, height);
 			float minEdge = (float) Math.Min(width, height);
 			float insets;
 			if (mCenterRadius <= 0 || minEdge < 0)
@@ -264,21 +251,7 @@
 			mStrokeInset = insets;
 		}
 
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual GuardLoadingRenderer Build()
-			{
-				GuardLoadingRenderer loadingRenderer = new GuardLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
+		
 	}
 
 }

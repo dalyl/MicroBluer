@@ -5,35 +5,20 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using PointF = Android.Graphics.PointF;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using Path = Android.Graphics.Path;
     using Rect = Android.Graphics.Rect;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
-    using Drawable = Android.Graphics.Drawables.Drawable;
     using Interpolator = Android.Views.Animations.IInterpolator;
     using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
     using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
+    using LazyWelfare.AndroidUtils.Common;
     using Android.Graphics;
-    using System.Collections.Generic;
     using System;
 
-    using FastOutLinearInInterpolator = Android.Support.V4.View.Animation.FastOutLinearInInterpolator;
-    using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
-    using Animator = Android.Animation.Animator;
-    using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
-    using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
-    using AnimatorSet = Android.Animation.AnimatorSet;
-    using ITypeEvaluator = Android.Animation.ITypeEvaluator;
-    using ValueAnimator = Android.Animation.ValueAnimator;
 
-
-	public class CircleBroodLoadingRenderer : LoadingRenderer
+    public class CircleBroodLoadingRenderer : LoadingRenderer
 	{
-		private bool InstanceFieldsInitialized = false;
+		private bool InstanceFieldsInitialized { get; } = false;
 
 		private void InitializeInstanceFields()
 		{
@@ -59,7 +44,6 @@
 		private float STAGE_MOTHER_BACKWARD_TOP_LEFT = 0.5f;
 		private float STAGE_MOTHER_FORWARD_BOTTOM_LEFT = 0.65f;
 		private float STAGE_MOTHER_BACKWARD_BOTTOM_LEFT = 0.833f;
-
 		private float STAGE_CHILD_DELAY = 0.1f;
 		private float STAGE_CHILD_PRE_FORWARD_TOP_LEFT = 0.26f;
 		private float STAGE_CHILD_FORWARD_TOP_LEFT = 0.34f;
@@ -142,11 +126,11 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.dip2px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_HEIGHT);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
 
-			mMaxMotherOvalSize = DensityUtil.dip2px(context, MAX_MATHER_OVAL_SIZE);
-			mBasicChildOvalRadius = DensityUtil.dip2px(context, MIN_CHILD_OVAL_RADIUS);
+			mMaxMotherOvalSize = DensityUtil.Dip2Px(context, MAX_MATHER_OVAL_SIZE);
+			mBasicChildOvalRadius = DensityUtil.Dip2Px(context, MIN_CHILD_OVAL_RADIUS);
 
 			mOvalColor = DEFAULT_OVAL_COLOR;
 			mOvalDeepColor = DEFAULT_OVAL_DEEP_COLOR;
@@ -661,26 +645,14 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-    
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter(value);
-    
-			}
-		}
-
-		protected internal override void Reset()
-		{
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
 		private class MotherMoveInterpolator :Java.Lang.Object, Interpolator
 		{
@@ -771,20 +743,5 @@
 			}
 		}
 
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual CircleBroodLoadingRenderer Build()
-			{
-				CircleBroodLoadingRenderer loadingRenderer = new CircleBroodLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
 	}
 }

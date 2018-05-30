@@ -6,32 +6,26 @@
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
     using PointF = Android.Graphics.PointF;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using Path = Android.Graphics.Path;
     using Rect = Android.Graphics.Rect;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
 	using Drawable = Android.Graphics.Drawables.Drawable;
     using Interpolator = Android.Views.Animations.IInterpolator;
     using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
     using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
-    using Android.Graphics;
-    using System.Collections.Generic;
-    using System;
-
     using FastOutLinearInInterpolator = Android.Support.V4.View.Animation.FastOutLinearInInterpolator;
     using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
     using Animator = Android.Animation.Animator;
-    using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
     using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
     using AnimatorSet = Android.Animation.AnimatorSet;
     using ITypeEvaluator = Android.Animation.ITypeEvaluator;
 	using ValueAnimator = Android.Animation.ValueAnimator;
+    using LazyWelfare.AndroidUtils.Common;
+    using LazyWelfare.AndroidUtils.Animation;
+    using System.Collections.Generic;
+    using System;
 
-
-	public class ElectricFanLoadingRenderer : LoadingRenderer
+    public class ElectricFanLoadingRenderer : LoadingRenderer
 	{
 		private static readonly Interpolator LINEAR_INTERPOLATOR = new LinearInterpolator();
 		private static readonly Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();
@@ -44,28 +38,11 @@
 		private static readonly Random mRandom = new Random();
 		private  Animator.IAnimatorListener AnimatorListener { get; }
 
-		private class AnimatorListenerAdapterAnonymousInnerClass : AnimatorListenerAdapter
-		{
-            ElectricFanLoadingRenderer outerInstance { get; }
-            public AnimatorListenerAdapterAnonymousInnerClass(ElectricFanLoadingRenderer master)
-			{
-                outerInstance = master;
-            }
-
-            public override void OnAnimationRepeat(Animator animator)
-			{
-				base.OnAnimationRepeat(animator);
-				outerInstance.Reset();
-			}
-		}
 
 		public const int MODE_NORMAL = 0;
 		public const int MODE_LEAF_COUNT = 1;
 
- 
-
 		private const string PERCENTAGE_100 = "100%";
-
 		private const long ANIMATION_DURATION = 7333;
 
 		private const int LEAF_COUNT = 28;
@@ -85,7 +62,6 @@
 		private const float DEFAULT_STROKE_INTERVAL = .2f;
 		private const float DEFAULT_CENTER_RADIUS = 16.0f;
 		private const float DEFAULT_PROGRESS_CENTER_RADIUS = 11.0f;
-
 		private const float DEFAULT_LEAF_FLY_DURATION_FACTOR = 0.1f;
 
 		private static readonly float LEAF_CREATE_DURATION_INTERVAL = 1.0f / LEAF_COUNT;
@@ -100,11 +76,9 @@
 		private float mStrokeXInset;
 		private float mStrokeYInset;
 		private float mProgressCenterRadius;
-
 		private float mScale;
 		private float mRotation;
 		private float mProgress;
-
 		private float mNextLeafCreateThreshold;
 
 		private int mProgressColor;
@@ -124,7 +98,7 @@
 
         internal ElectricFanLoadingRenderer(Context context) : base(context)
 		{
-            AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);
+            AnimatorListener = new AnonymousAnimatorListenerAdapter { Repeat = amor => this.Reset() };
             Init(context);
 			SetupPaint();
 			AddRenderListener(AnimatorListener);
@@ -134,21 +108,21 @@
 		{
 			mMode = MODE_NORMAL;
 
-			mWidth = DensityUtil.dip2px(context, DEFAULT_Width);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_Height);
-			mTextSize = DensityUtil.dip2px(context, DEFAULT_TEXT_SIZE);
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_Width);
-			mCenterRadius = DensityUtil.dip2px(context, DEFAULT_CENTER_RADIUS);
-			mProgressCenterRadius = DensityUtil.dip2px(context, DEFAULT_PROGRESS_CENTER_RADIUS);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_Width);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_Height);
+			mTextSize = DensityUtil.Dip2Px(context, DEFAULT_TEXT_SIZE);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_Width);
+			mCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_CENTER_RADIUS);
+			mProgressCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_PROGRESS_CENTER_RADIUS);
 
 			mProgressColor = DEFAULT_PROGRESS_COLOR;
 			mProgressBgColor = DEFAULT_PROGRESS_BGCOLOR;
 			mElectricFanBgColor = DEFAULT_ELECTRIC_FAN_BGCOLOR;
 			mElectricFanOutlineColor = DEFAULT_ELECTRIC_FAN_OUTLINE_COLOR;
 
-			mLeafDrawable = context.Resources.GetDrawable(Resource.Drawable.ic_leaf);
-            mLoadingDrawable = context.Resources.GetDrawable(Resource.Drawable.ic_loading);
-			mElectricFanDrawable = context.Resources.GetDrawable(Resource.Drawable.ic_eletric_fan);
+			mLeafDrawable = context.GetDrawable(Resource.Drawable.ic_leaf);
+            mLoadingDrawable = context.GetDrawable(Resource.Drawable.ic_loading);
+			mElectricFanDrawable = context.GetDrawable(Resource.Drawable.ic_eletric_fan);
 
 			mDuration = ANIMATION_DURATION;
 			SetInsets((int) mWidth, (int) mHeight);
@@ -310,24 +284,16 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-    
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter(value);
-    
-			}
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
-		protected internal override void Reset()
+        protected internal override void Reset()
 		{
 			mScale = 1.0f;
 			mCurrentLeafCount = 0;
@@ -359,14 +325,17 @@
 			}
 			mNextLeafCreateThreshold += LEAF_CREATE_DURATION_INTERVAL;
 
-			LeafHolder leafHolder = new LeafHolder(this);
+			LeafHolder leafHolder = new LeafHolder();
 			mLeafHolders.Add(leafHolder);
 			Animator leafAnimator = GetAnimator(leafHolder, leafFlyRect, progress);
-			leafAnimator.AddListener(new AnimEndListener(this, leafHolder));
+			leafAnimator.AddListener(new AnimEndListener(anim => {
+                mLeafHolders.Remove(leafHolder);
+                this.mCurrentLeafCount++;
+            }));
 			leafAnimator.Start();
 		}
 
-		private Animator GetAnimator(LeafHolder target, RectF leafFlyRect, float progress)
+        private Animator GetAnimator(LeafHolder target, RectF leafFlyRect, float progress)
 		{
 			ValueAnimator bezierValueAnimator = GetBezierValueAnimator(target, leafFlyRect, progress);
 
@@ -379,7 +348,7 @@
 
 		private ValueAnimator GetBezierValueAnimator(LeafHolder target, RectF leafFlyRect, float progress)
 		{
-			BezierEvaluator evaluator = new BezierEvaluator(this, GetPoint1(leafFlyRect), GetPoint2(leafFlyRect));
+			BezierEvaluator evaluator = new BezierEvaluator( GetPoint1(leafFlyRect), GetPoint2(leafFlyRect));
 
 			int leafFlyStartY = (int)(mCurrentProgressBounds.Bottom - mLeafDrawable.IntrinsicHeight);
 			int leafFlyRange = (int)(mCurrentProgressBounds.Height() - mLeafDrawable.IntrinsicHeight);
@@ -399,31 +368,31 @@
 		//get the pointF which belong to the Right half side
 		private PointF GetPoint1(RectF leafFlyRect)
 		{
-			PointF point = new PointF();
-			point.X = leafFlyRect.Right - mRandom.Next((int)(leafFlyRect.Width() / 2));
-			point.Y = (int)(leafFlyRect.Bottom - mRandom.Next((int) leafFlyRect.Height()));
-			return point;
+            return new PointF
+            {
+                X = leafFlyRect.Right - mRandom.Next((int)(leafFlyRect.Width() / 2)),
+                Y = (int)(leafFlyRect.Bottom - mRandom.Next((int)leafFlyRect.Height()))
+            };
 		}
 
 		//get the pointF which belong to the Left half side
 		private PointF GetPoint2(RectF leafFlyRect)
 		{
-			PointF point = new PointF();
-			point.X = leafFlyRect.Left + mRandom.Next((int)(leafFlyRect.Width() / 2));
-			point.Y = (int)(leafFlyRect.Bottom - mRandom.Next((int) leafFlyRect.Height()));
-			return point;
+            return new PointF
+            {
+                X = leafFlyRect.Left + mRandom.Next((int)(leafFlyRect.Width() / 2)),
+                Y = (int)(leafFlyRect.Bottom - mRandom.Next((int)leafFlyRect.Height()))
+            };
 		}
 
 		private class BezierEvaluator : Java.Lang.Object,ITypeEvaluator
 		{
-			private readonly ElectricFanLoadingRenderer outerInstance;
 
 			internal PointF point1;
 			internal PointF point2;
 
-			public BezierEvaluator(ElectricFanLoadingRenderer outerInstance, PointF point1, PointF point2)
+			public BezierEvaluator( PointF point1, PointF point2)
 			{
-				this.outerInstance = outerInstance;
 				this.point1 = point1;
 				this.point2 = point2;
 			}
@@ -463,56 +432,13 @@
 			}
 		}
 
-		private class AnimEndListener : AnimatorListenerAdapter
-		{
-			private readonly ElectricFanLoadingRenderer outerInstance;
-
-			internal LeafHolder target;
-
-			public AnimEndListener(ElectricFanLoadingRenderer outerInstance, LeafHolder target)
-			{
-				this.outerInstance = outerInstance;
-				this.target = target;
-			}
-
-			public override void OnAnimationEnd(Animator animation)
-			{
-				base.OnAnimationEnd(animation);
-				mLeafHolders.Remove(target);
-				outerInstance.mCurrentLeafCount++;
-			}
-		}
-
 		private class LeafHolder:Java.Lang.Object
 		{
-			private readonly ElectricFanLoadingRenderer outerInstance;
-
-			public LeafHolder(ElectricFanLoadingRenderer outerInstance)
-			{
-				this.outerInstance = outerInstance;
-			}
-
 			public Rect mLeafRect = new Rect();
 			public float mLeafRotation = 0.0f;
-
 			public float mMaxRotation = mRandom.Next(120);
 		}
 
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual ElectricFanLoadingRenderer Build()
-			{
-				ElectricFanLoadingRenderer loadingRenderer = new ElectricFanLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
 	}
 
 }

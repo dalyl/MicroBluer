@@ -1,30 +1,22 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Database;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.Provider;
-using LazyWelfare.AndroidMobile.ImageSelect.Model;
-using Android.Net;
-using Java.Lang;
-using Android.Content;
-
-namespace LazyWelfare.AndroidMobile.ImageSelect.Loader
+﻿namespace LazyWelfare.AndroidMobile.ImageSelect.Loader
 {
-    public class AlbumLoader : Android.Support.V4.Content.CursorLoader
+    using CursorLoader = Android.Support.V4.Content.CursorLoader;
+    using Object = Java.Lang.Object;
+    using Android.Database;
+    using Android.Provider;
+    using LazyWelfare.AndroidMobile.ImageSelect.Model;
+    using Android.Net;
+    using Android.Content;
+
+    public class AlbumLoader : CursorLoader
     {
         private static readonly string[] PROJECTION = new string[] { MediaStore.Images.Media.InterfaceConsts.BucketId, MediaStore.Images.Media.InterfaceConsts.BucketDisplayName, MediaStore.Images.Media.InterfaceConsts.Id, "count(bucket_id) as cou" };
         private const string BUCKET_GROUP_BY = ") GROUP BY  1,(2";
         private const string BUCKET_ORDER_BY = "MAX(datetaken) DESC";
-        private static readonly String MEDIA_ID_DUMMY = new String ("-1");
+        private const string MEDIA_ID_DUMMY = "-1";
         private const string IS_LARGE_SIZE = " _size > ? or _size is null";
 
-        public static Android.Support.V4.Content.CursorLoader NewInstance(Context context, SelectionSpec selectionSpec)
+        public static CursorLoader NewInstance(Context context, SelectionSpec selectionSpec)
         {
             return new AlbumLoader(context, MediaStore.Images.Media.ExternalContentUri, PROJECTION, IS_LARGE_SIZE + BUCKET_GROUP_BY, new string[] { selectionSpec.MinPixels + "" }, BUCKET_ORDER_BY, selectionSpec);
         }
@@ -33,11 +25,7 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Loader
         {
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>ICursor</returns>
-        public override Java.Lang.Object LoadInBackground()
+        public override Object LoadInBackground()
         {
             ICursor albums = base.LoadInBackground() as ICursor;
             MatrixCursor allAlbum = new MatrixCursor(PROJECTION);
@@ -50,7 +38,7 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Loader
                     count += albums.GetLong(3);
                 }
             }
-            allAlbum.AddRow(new Object[] { Album.ALBUM_ID_ALL, Album.ALBUM_NAME_ALL, MEDIA_ID_DUMMY, new String($"{count}") });
+            allAlbum.AddRow(new Object[] { Album.ALBUM_ID_ALL, Album.ALBUM_NAME_ALL, MEDIA_ID_DUMMY, $"{count}" });
 
             return new MergeCursor(new ICursor[] { allAlbum, albums });
         }

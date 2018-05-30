@@ -3,11 +3,11 @@ using Java.Lang;
 using Java.Nio.Channels;
 using Java.Text;
 using Java.Util;
+using LazyWelfare.AndroidUtils.Database;
 
 namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
 {
 
-    using TargetApi = Android.Annotation.TargetApi;
     using Activity = Android.App.Activity;
     using ContentResolver = Android.Content.ContentResolver;
     using ContentUris = Android.Content.ContentUris;
@@ -23,7 +23,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
     using Handler = Android.OS.Handler;
     using Media = Android.Provider.MediaStore.Images.Media;
     using Thumbnails = Android.Provider.MediaStore.Images.Thumbnails;
-    using Log = Android.Util.Log;
 
 
     public class MediaStoreCompat
@@ -41,24 +40,8 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
         {
             this.mContext = context;
             this.MEDIA_FILE_DIRECTORY = context.PackageName;
-            this.mObserver = new ContentObserverAnonymousInnerClass(this, handler);
+            this.mObserver = new AnonymousContentObserver(handler, state => this.UpdateLatestPhotos());
             this.mContext.ContentResolver.RegisterContentObserver(Media.ExternalContentUri, true, this.mObserver);
-        }
-
-        private class ContentObserverAnonymousInnerClass : ContentObserver
-        {
-            private readonly MediaStoreCompat outerInstance;
-
-            public ContentObserverAnonymousInnerClass(MediaStoreCompat outerInstance, Handler handler) : base(handler)
-            {
-                this.outerInstance = outerInstance;
-            }
-
-            public virtual void onChange(bool selfChange)
-            {
-                base.OnChange(selfChange);
-                outerInstance.UpdateLatestPhotos();
-            }
         }
 
         public static bool HasCameraFeature(Context context)
@@ -281,7 +264,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
             }
             catch (Exception e)
             {
-                Log.Error(TAG, "cannot insert", e);
                 return null;
             }
         }
@@ -298,10 +280,12 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
 
                     while (c.MoveToNext())
                     {
-                        MediaStoreCompat.PhotoContent item = new MediaStoreCompat.PhotoContent();
-                        item.id = c.GetLong(0);
-                        item.taken = c.GetLong(1);
-                        item.size = c.GetInt(2);
+                        MediaStoreCompat.PhotoContent item = new MediaStoreCompat.PhotoContent
+                        {
+                            id = c.GetLong(0),
+                            taken = c.GetLong(1),
+                            size = c.GetInt(2)
+                        };
                         this.mRecentlyUpdatedPhotos.Add(item);
                         ++count;
                         if (count > 5)
@@ -352,10 +336,6 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Utils
             public long id;
             public long taken;
             public int size;
-
-            internal PhotoContent()
-            {
-            }
         }
     }
 }

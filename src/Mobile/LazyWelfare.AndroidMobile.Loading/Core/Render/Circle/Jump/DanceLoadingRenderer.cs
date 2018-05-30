@@ -5,9 +5,7 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
     using Interpolator = Android.Views.Animations.IInterpolator;
     using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
     using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
@@ -15,11 +13,9 @@
     using System;
 
 	using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-	using DisplayMetrics = Android.Util.DisplayMetrics;
-	using TypedValue = Android.Util.TypedValue;
+    using LazyWelfare.AndroidUtils.Common;
 
-
-	public class DanceLoadingRenderer : LoadingRenderer
+    public class DanceLoadingRenderer : LoadingRenderer
 	{
 		private static readonly Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();
 		private static readonly Interpolator ACCELERATE_INTERPOLATOR = new AccelerateInterpolator();
@@ -94,12 +90,12 @@
 
 		private void Init(Context context)
 		{
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_WIDTH);
-			mCenterRadius = DensityUtil.dip2px(context, DEFAULT_CENTER_RADIUS);
-			mDanceBallRadius = DensityUtil.dip2px(context, DEFAULT_DANCE_BALL_RADIUS);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
+			mCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_CENTER_RADIUS);
+			mDanceBallRadius = DensityUtil.Dip2Px(context, DEFAULT_DANCE_BALL_RADIUS);
 
 			Color = DEFAULT_COLOR;
-			setInsets((int) mWidth, (int) mHeight);
+			SetInsets((int) mWidth, (int) mHeight);
 			mDuration = ANIMATION_DURATION;
 		}
 
@@ -161,8 +157,6 @@
 
 			if (renderProgress <= BALL_FORWARD_END_ENTER_DURATION_OFFSET && renderProgress > BALL_FORWARD_START_ENTER_DURATION_OFFSET)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float ballForwardEnterProgress = (renderProgress - BALL_FORWARD_START_ENTER_DURATION_OFFSET) / (BALL_FORWARD_END_ENTER_DURATION_OFFSET - BALL_FORWARD_START_ENTER_DURATION_OFFSET);
 				float ballForwardEnterProgress = (renderProgress - BALL_FORWARD_START_ENTER_DURATION_OFFSET) / (BALL_FORWARD_END_ENTER_DURATION_OFFSET - BALL_FORWARD_START_ENTER_DURATION_OFFSET);
 
 				mShapeChangeHeight = (0.5f - ballForwardEnterProgress) * mDanceBallRadius / 2.0f;
@@ -186,16 +180,12 @@
 
 			if (renderProgress <= RING_FORWARD_END_ROTATE_DURATION_OFFSET && renderProgress > RING_FORWARD_START_ROTATE_DURATION_OFFSET)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float forwardRotateProgress = (renderProgress - RING_FORWARD_START_ROTATE_DURATION_OFFSET) / (RING_FORWARD_END_ROTATE_DURATION_OFFSET - RING_FORWARD_START_ROTATE_DURATION_OFFSET);
 				float forwardRotateProgress = (renderProgress - RING_FORWARD_START_ROTATE_DURATION_OFFSET) / (RING_FORWARD_END_ROTATE_DURATION_OFFSET - RING_FORWARD_START_ROTATE_DURATION_OFFSET);
 				mRotation = DEGREE_360 * MATERIAL_INTERPOLATOR.GetInterpolation(forwardRotateProgress);
 			}
 
 			if (renderProgress <= CENTER_CIRCLE_FORWARD_END_SCALE_DURATION_OFFSET && renderProgress > CENTER_CIRCLE_FORWARD_START_SCALE_DURATION_OFFSET)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float centerCircleScaleProgress = (renderProgress - CENTER_CIRCLE_FORWARD_START_SCALE_DURATION_OFFSET) / (CENTER_CIRCLE_FORWARD_END_SCALE_DURATION_OFFSET - CENTER_CIRCLE_FORWARD_START_SCALE_DURATION_OFFSET);
 				float centerCircleScaleProgress = (renderProgress - CENTER_CIRCLE_FORWARD_START_SCALE_DURATION_OFFSET) / (CENTER_CIRCLE_FORWARD_END_SCALE_DURATION_OFFSET - CENTER_CIRCLE_FORWARD_START_SCALE_DURATION_OFFSET);
 
 				if (centerCircleScaleProgress <= 0.5f)
@@ -211,8 +201,6 @@
 
 			if (renderProgress <= BALL_FORWARD_END_EXIT_DURATION_OFFSET && renderProgress > BALL_FORWARD_START_EXIT_DURATION_OFFSET)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float ballForwardExitProgress = (renderProgress - BALL_FORWARD_START_EXIT_DURATION_OFFSET) / (BALL_FORWARD_END_EXIT_DURATION_OFFSET - BALL_FORWARD_START_EXIT_DURATION_OFFSET);
 				float ballForwardExitProgress = (renderProgress - BALL_FORWARD_START_EXIT_DURATION_OFFSET) / (BALL_FORWARD_END_EXIT_DURATION_OFFSET - BALL_FORWARD_START_EXIT_DURATION_OFFSET);
 				mShapeChangeHeight = (ballForwardExitProgress - 0.5f) * mDanceBallRadius / 2.0f;
 				mShapeChangeWidth = -mShapeChangeHeight;
@@ -240,8 +228,6 @@
 
 			if (renderProgress <= BALL_REVERSAL_END_ENTER_DURATION_OFFSET && renderProgress > BALL_REVERSAL_START_ENTER_DURATION_OFFSET)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float ballReversalEnterProgress = (renderProgress - BALL_REVERSAL_START_ENTER_DURATION_OFFSET) / (BALL_REVERSAL_END_ENTER_DURATION_OFFSET - BALL_REVERSAL_START_ENTER_DURATION_OFFSET);
 				float ballReversalEnterProgress = (renderProgress - BALL_REVERSAL_START_ENTER_DURATION_OFFSET) / (BALL_REVERSAL_END_ENTER_DURATION_OFFSET - BALL_REVERSAL_START_ENTER_DURATION_OFFSET);
 				mShapeChangeHeight = (0.5f - ballReversalEnterProgress) * mDanceBallRadius / 2.0f;
 				mShapeChangeWidth = -mShapeChangeHeight;
@@ -260,8 +246,6 @@
 
 			if (renderProgress <= CENTER_CIRCLE_REVERSAL_END_SCALE_DURATION_OFFSET && renderProgress > CENTER_CIRCLE_REVERSAL_START_SCALE_DURATION_OFFSET)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float centerCircleScaleProgress = (renderProgress - CENTER_CIRCLE_REVERSAL_START_SCALE_DURATION_OFFSET) / (CENTER_CIRCLE_REVERSAL_END_SCALE_DURATION_OFFSET - CENTER_CIRCLE_REVERSAL_START_SCALE_DURATION_OFFSET);
 				float centerCircleScaleProgress = (renderProgress - CENTER_CIRCLE_REVERSAL_START_SCALE_DURATION_OFFSET) / (CENTER_CIRCLE_REVERSAL_END_SCALE_DURATION_OFFSET - CENTER_CIRCLE_REVERSAL_START_SCALE_DURATION_OFFSET);
 
 				if (centerCircleScaleProgress <= 0.5f)
@@ -277,8 +261,6 @@
 
 			if (renderProgress <= BALL_REVERSAL_END_EXIT_DURATION_OFFSET && renderProgress > BALL_REVERSAL_START_EXIT_DURATION_OFFSET)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float ballReversalExitProgress = (renderProgress - BALL_REVERSAL_START_EXIT_DURATION_OFFSET) / (BALL_REVERSAL_END_EXIT_DURATION_OFFSET - BALL_REVERSAL_START_EXIT_DURATION_OFFSET);
 				float ballReversalExitProgress = (renderProgress - BALL_REVERSAL_START_EXIT_DURATION_OFFSET) / (BALL_REVERSAL_END_EXIT_DURATION_OFFSET - BALL_REVERSAL_START_EXIT_DURATION_OFFSET);
 				mShapeChangeHeight = (ballReversalExitProgress - 0.5f) * mDanceBallRadius / 2.0f;
 				mShapeChangeWidth = -mShapeChangeHeight;
@@ -297,24 +279,16 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-    
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter (value);
-    
-			}
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
-		protected internal override void Reset()
+        protected internal override void Reset()
 		{
 			mScale = 1.0f;
 			mRotation = 0;
@@ -325,42 +299,17 @@
 			set
 			{
 				mColor = value;
-				mArcColor = halfAlphaColor(mColor);
+				mArcColor = HalfAlphaColor(mColor);
 			}
 		}
 
-		private float Rotation
+		private float Rotation { get; set; }
+
+		private float DanceBallRadius { get; set; }
+		
+
+		private void SetInsets(int width, int height)
 		{
-			set
-			{
-				mRotation = value;
-    
-			}
-			get
-			{
-				return mRotation;
-			}
-		}
-
-		private float DanceBallRadius
-		{
-			set
-			{
-				this.mDanceBallRadius = value;
-    
-			}
-			get
-			{
-				return mDanceBallRadius;
-			}
-		}
-
-
-
-		private void setInsets(int width, int height)
-		{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final float minEdge = (float) Math.min(width, height);
 			float minEdge = (float) Math.Min(width, height);
 			float insets;
 			if (mCenterRadius <= 0 || minEdge < 0)
@@ -374,7 +323,7 @@
 			mStrokeInset = insets;
 		}
 
-		private int halfAlphaColor(int colorValue)
+		private int HalfAlphaColor(int colorValue)
 		{
 			int startA = (colorValue >> 24) & 0xff;
 			int startR = (colorValue >> 16) & 0xff;
@@ -384,21 +333,6 @@
 			return ((startA / 2) << 24) | (startR << 16) | (startG << 8) | startB;
 		}
 
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual DanceLoadingRenderer build()
-			{
-				DanceLoadingRenderer loadingRenderer = new DanceLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
 	}
 
 }

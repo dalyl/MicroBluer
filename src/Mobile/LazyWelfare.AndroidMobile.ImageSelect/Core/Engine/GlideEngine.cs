@@ -9,6 +9,7 @@
     using Java.Lang;
 
     using Glide = Com.Bumptech.Glide.Glide;
+    using LazyWelfare.AndroidUtils.Parcel;
 
     public class GlideEngine : LoadEngine
     {
@@ -44,6 +45,17 @@
             }
         }
 
+        internal GlideEngine(Parcel data)
+        {
+            ConvertFromParcel(data);
+        }
+
+        public override void ConvertFromParcel(Parcel data)
+        {
+            this.img_loading = data.ReadInt();
+            this.img_camera = data.ReadInt();
+        }
+
         public override void DisplayImage(string path, ImageView imageView)
         {
             ChargeInit(imageView.Context);
@@ -60,7 +72,7 @@
         {
             if (Glide.Get(context) == null)
             {
-                throw new ExceptionInInitializerError(LoadEngine_Fields.INITIALIZE_ENGINE_ERROR);
+                throw new ExceptionInInitializerError(LoadEngine.INITIALIZE_ENGINE_ERROR);
             }
         }
 
@@ -80,27 +92,12 @@
             dest.WriteInt(this.img_camera);
         }
 
-        protected internal GlideEngine(Parcel @in)
-        {
-            this.img_loading = @in.ReadInt();
-            this.img_camera = @in.ReadInt();
-        }
-
-        public class GlideEngineParcelableCreator : Java.Lang.Object, IParcelableCreator
-        {
-            public Java.Lang.Object CreateFromParcel(Parcel source)
-            {
-                return new GlideEngine(source);
-            }
-
-            public Java.Lang.Object[] NewArray(int size)
-            {
-                return new Java.Lang.Object[size];
-            }
-        }
-
-
         [Java.Interop.ExportField("CREATOR")]
-        public static GlideEngineParcelableCreator Creator() => new GlideEngineParcelableCreator();
+        public static ParcelableCreator<GlideEngine> Creator() => new ParcelableCreator<GlideEngine>();
     }
+
+
+ 
+
+  
 }

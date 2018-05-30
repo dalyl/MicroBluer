@@ -13,6 +13,7 @@
 	using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
     using Android.Graphics;
     using System;
+    using LazyWelfare.AndroidUtils.Common;
 
     public class CollisionLoadingRenderer : LoadingRenderer
 	{
@@ -41,8 +42,6 @@
         private readonly Paint mPaint = new Paint(PaintFlags.AntiAlias);
         private readonly RectF mOvalRect = new RectF();
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Size(2) private int[] mColors;
 		private int[] mColors;
 		private float[] mPositions;
 
@@ -73,10 +72,10 @@
 
 		private void Init(Context context)
 		{
-			mBallRadius = DensityUtil.dip2px(context, DEFAULT_BALL_RADIUS);
-			mWidth = DensityUtil.dip2px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_HEIGHT);
-			mOvalVerticalRadius = DensityUtil.dip2px(context, DEFAULT_OVAL_HEIGHT);
+			mBallRadius = DensityUtil.Dip2Px(context, DEFAULT_BALL_RADIUS);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			mOvalVerticalRadius = DensityUtil.Dip2Px(context, DEFAULT_OVAL_HEIGHT);
 
 			mColors = DEFAULT_COLORS;
 			mPositions = DEFAULT_POSITIONS;
@@ -191,130 +190,15 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter(value);
-			}
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
-		protected internal override void Reset()
-		{
-		}
-
-		private void Apply(Builder builder)
-		{
-			this.mWidth = builder.mWidth > 0 ? builder.mWidth : this.mWidth;
-			this.mHeight = builder.mHeight > 0 ? builder.mHeight : this.mHeight;
-
-			this.mOvalVerticalRadius = builder.mOvalVerticalRadius > 0 ? builder.mOvalVerticalRadius : this.mOvalVerticalRadius;
-			this.mBallRadius = builder.mBallRadius > 0 ? builder.mBallRadius : this.mBallRadius;
-			this.mBallMoveXOffsets = builder.mBallMoveXOffsets > 0 ? builder.mBallMoveXOffsets : this.mBallMoveXOffsets;
-			this.mBallQuadCoefficient = builder.mBallQuadCoefficient > 0 ? builder.mBallQuadCoefficient : this.mBallQuadCoefficient;
-			this.mBallCount = builder.mBallCount > 0 ? builder.mBallCount : this.mBallCount;
-
-			this.mDuration = builder.mDuration > 0 ? builder.mDuration : this.mDuration;
-
-			this.mColors = builder.mColors ?? this.mColors;
-
-			AdjustParams();
-			SetupPaint();
-		}
-
-		public class Builder
-		{
-			internal Context mContext;
-
-			internal int mWidth;
-			internal int mHeight;
-
-			internal float mOvalVerticalRadius;
-
-			internal int mBallCount;
-			internal float mBallRadius;
-			internal float mBallMoveXOffsets;
-			internal float mBallQuadCoefficient;
-
-			internal int mDuration;
-
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Size(2) private int[] mColors;
-			internal int[] mColors;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual Builder SetWidth(int width)
-			{
-				this.mWidth = width;
-				return this;
-			}
-
-			public virtual Builder SetHeight(int height)
-			{
-				this.mHeight = height;
-				return this;
-			}
-
-			public virtual Builder SetOvalVerticalRadius(int ovalVerticalRadius)
-			{
-				this.mOvalVerticalRadius = ovalVerticalRadius;
-				return this;
-			}
-
-			public virtual Builder SetBallRadius(int ballRadius)
-			{
-				this.mBallRadius = ballRadius;
-				return this;
-			}
-
-			public virtual Builder SetBallMoveXOffsets(int ballMoveXOffsets)
-			{
-				this.mBallMoveXOffsets = ballMoveXOffsets;
-				return this;
-			}
-
-			public virtual Builder SetBallQuadCoefficient(int ballQuadCoefficient)
-			{
-				this.mBallQuadCoefficient = ballQuadCoefficient;
-				return this;
-			}
-
-			public virtual Builder SetBallCount(int ballCount)
-			{
-				this.mBallCount = ballCount;
-				return this;
-			}
-
-			public virtual Builder SetColors( int[] colors)
-			{
-				this.mColors = colors;
-				return this;
-			}
-
-			public virtual Builder SetDuration(int duration)
-			{
-				this.mDuration = duration;
-				return this;
-			}
-
-			public virtual CollisionLoadingRenderer Build()
-			{
-				CollisionLoadingRenderer loadingRenderer = new CollisionLoadingRenderer(mContext);
-				loadingRenderer.Apply(this);
-				return loadingRenderer;
-			}
-		}
-	}
+    }
 
 }

@@ -6,24 +6,18 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using LinearGradient = Android.Graphics.LinearGradient;
-    using Path = Android.Graphics.Path;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
     using Interpolator = Android.Views.Animations.IInterpolator;
     using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
     using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
-    using Android.Graphics;
     using System;
 
-    using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
     using Animator = Android.Animation.Animator;
 	using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
+    using LazyWelfare.AndroidUtils.Common;
+    using LazyWelfare.AndroidUtils.Animation;
 
-
-	public class GearLoadingRenderer : LoadingRenderer
+    public class GearLoadingRenderer : LoadingRenderer
 	{
 		private static readonly Interpolator ACCELERATE_INTERPOLATOR = new AccelerateInterpolator();
 		private static readonly Interpolator DECELERATE_INTERPOLATOR = new DecelerateInterpolator();
@@ -52,39 +46,11 @@
 
 		private Animator.IAnimatorListener AnimatorListener { get; }
 
-		private class AnimatorListenerAdapterAnonymousInnerClass : AnimatorListenerAdapter
-		{
-
-            GearLoadingRenderer OuterInstance { get; }
-            public AnimatorListenerAdapterAnonymousInnerClass(GearLoadingRenderer master)
-			{
-                OuterInstance = master;
-
-            }
-
-			public override void OnAnimationRepeat(Animator animator)
-			{
-				base.OnAnimationRepeat(animator);
-				OuterInstance.storeOriginals();
-
-				OuterInstance.mStartDegrees = OuterInstance.mEndDegrees;
-				OuterInstance.mRotationCount = (OuterInstance.mRotationCount + 1) % NUM_POINTS;
-			}
-
-			public override void OnAnimationStart(Animator animation)
-			{
-				base.OnAnimationStart(animation);
-				OuterInstance.mRotationCount = 0;
-			}
-		}
-
 		private int mColor;
-
 		private int mGearCount;
 		private int mGearSwipeDegrees;
 
 		private float mStrokeInset;
-
 		private float mRotationCount;
 		private float mGroupRotation;
 
@@ -94,14 +60,21 @@
 		private float mSwipeDegrees;
 		private float mOriginEndDegrees;
 		private float mOriginStartDegrees;
-
 		private float mStrokeWidth;
 		private float mCenterRadius;
 
 		internal GearLoadingRenderer(Context context) : base(context)
 		{
 
-            AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);
+            AnimatorListener = new AnonymousAnimatorListenerAdapter
+            {
+                Start = amor => this.mRotationCount = 0,
+                Repeat = amor => {
+                    this.StoreOriginals();
+                    this.mStartDegrees = this.mEndDegrees;
+                    this.mRotationCount = (this.mRotationCount + 1) % NUM_POINTS;
+                },
+            };
 			Init(context);
             SetupPaint();
 			AddRenderListener(AnimatorListener);
@@ -110,8 +83,8 @@
 
 		private void Init(Context context)
 		{
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_WIDTH);
-			mCenterRadius = DensityUtil.dip2px(context, DEFAULT_CENTER_RADIUS);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
+			mCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_CENTER_RADIUS);
 
 			mColor = DEFAULT_COLOR;
 
@@ -126,14 +99,14 @@
 			mPaint.SetStyle(Paint.Style.Stroke);
 			mPaint.StrokeCap = Paint.Cap.Round;
 
-			initStrokeInset(mWidth, mHeight);
+			InitStrokeInset(mWidth, mHeight);
 		}
 
 		protected internal override void Draw(Canvas canvas)
 		{
 			int saveCount = canvas.Save();
 
-			mTempBounds.Set(mBounds);
+			mTempBounds.Set(Bounds);
 			mTempBounds.Inset(mStrokeInset, mStrokeInset);
 			mTempBounds.Inset(mTempBounds.Width() * (1.0f - mScale) / 2.0f, mTempBounds.Width() * (1.0f - mScale) / 2.0f);
 
@@ -214,10 +187,10 @@
 
 		protected internal override void Reset()
 		{
-			resetOriginals();
+			ResetOriginals();
 		}
 
-		private void initStrokeInset(float width, float height)
+		private void InitStrokeInset(float width, float height)
 		{
 			float minSize = Math.Min(width, height);
 			float strokeInset = minSize / 2.0f - mCenterRadius;
@@ -225,13 +198,13 @@
 			mStrokeInset = strokeInset < minStrokeInset ? minStrokeInset : strokeInset;
 		}
 
-		private void storeOriginals()
+		private void StoreOriginals()
 		{
 			mOriginEndDegrees = mEndDegrees;
 			mOriginStartDegrees = mEndDegrees;
 		}
 
-		private void resetOriginals()
+		private void ResetOriginals()
 		{
 			mOriginEndDegrees = 0;
 			mOriginStartDegrees = 0;
@@ -242,101 +215,7 @@
 			mSwipeDegrees = 1;
 		}
 
-		private void apply(Builder builder)
-		{
-			this.mWidth = builder.mWidth > 0 ? builder.mWidth : this.mWidth;
-			this.mHeight = builder.mHeight > 0 ? builder.mHeight : this.mHeight;
-			this.mStrokeWidth = builder.mStrokeWidth > 0 ? builder.mStrokeWidth : this.mStrokeWidth;
-			this.mCenterRadius = builder.mCenterRadius > 0 ? builder.mCenterRadius : this.mCenterRadius;
 
-			this.mDuration = builder.mDuration > 0 ? builder.mDuration : this.mDuration;
-
-			this.mColor = builder.mColor != 0 ? builder.mColor : this.mColor;
-
-			this.mGearCount = builder.mGearCount > 0 ? builder.mGearCount : this.mGearCount;
-			this.mGearSwipeDegrees = builder.mGearSwipeDegrees > 0 ? builder.mGearSwipeDegrees : this.mGearSwipeDegrees;
-
-			SetupPaint();
-			initStrokeInset(this.mWidth, this.mHeight);
-		}
-
-		public class Builder
-		{
-			internal Context mContext;
-
-			internal int mWidth;
-			internal int mHeight;
-			internal int mStrokeWidth;
-			internal int mCenterRadius;
-
-			internal int mDuration;
-
-			internal int mColor;
-
-			internal int mGearCount;
-			internal int mGearSwipeDegrees;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual Builder setWidth(int width)
-			{
-				this.mWidth = width;
-				return this;
-			}
-
-			public virtual Builder setHeight(int height)
-			{
-				this.mHeight = height;
-				return this;
-			}
-
-			public virtual Builder setStrokeWidth(int strokeWidth)
-			{
-				this.mStrokeWidth = strokeWidth;
-				return this;
-			}
-
-			public virtual Builder setCenterRadius(int centerRadius)
-			{
-				this.mCenterRadius = centerRadius;
-				return this;
-			}
-
-			public virtual Builder setDuration(int duration)
-			{
-				this.mDuration = duration;
-				return this;
-			}
-
-			public virtual Builder setColor(int color)
-			{
-				this.mColor = color;
-				return this;
-			}
-
-			public virtual Builder setGearCount(int gearCount)
-			{
-				this.mGearCount = gearCount;
-				return this;
-			}
-
-            //(from = 0, to = 360)
-            public virtual Builder SetGearSwipeDegrees( int gearSwipeDegrees)
-			{
-                this.mGearSwipeDegrees = gearSwipeDegrees;
-				return this;
-			}
-
-			public virtual GearLoadingRenderer Build()
-			{
-				GearLoadingRenderer loadingRenderer = new GearLoadingRenderer(mContext);
-				loadingRenderer.apply(this);
-				return loadingRenderer;
-			}
-		}
 	}
 
 }

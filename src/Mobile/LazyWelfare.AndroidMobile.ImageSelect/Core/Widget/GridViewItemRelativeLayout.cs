@@ -1,19 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using LazyWelfare.AndroidMobile.ImageSelect.Collection;
-using LazyWelfare.AndroidMobile.ImageSelect.Model;
-using static Android.Views.View;
-
-namespace LazyWelfare.AndroidMobile.ImageSelect.Widget
+﻿namespace LazyWelfare.AndroidMobile.ImageSelect.Widget
 {
     using Context = Android.Content.Context;
     using Bitmap = Android.Graphics.Bitmap;
@@ -23,10 +8,10 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Widget
     using View = Android.Views.View;
     using ImageView = Android.Widget.ImageView;
     using RelativeLayout = Android.Widget.RelativeLayout;
-
-    //using DisplayImageOptions = com.nostra13.universalimageloader.core.DisplayImageOptions;
-    //using ImageLoader = com.nostra13.universalimageloader.core.ImageLoader;
-    //using ImageScaleType = com.nostra13.universalimageloader.core.assist.ImageScaleType;
+    using Android.Views;
+    using LazyWelfare.AndroidMobile.ImageSelect.Collection;
+    using LazyWelfare.AndroidMobile.ImageSelect.Model;
+    using LazyWelfare.AndroidUtils.View;
 
     public class GridViewItemRelativeLayout : RelativeLayout
     {
@@ -60,53 +45,41 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Widget
             this.imageView.SetMinimumHeight(Height);
             this.imageCheck = imageCheck;
             this.mCollection = mCollection;
-            this.imageView.SetOnClickListener (new OnClickListenerAnonymousInnerClass(this));
-        }
-
-        private class OnClickListenerAnonymousInnerClass :Java.Lang.Object, IOnClickListener
-        {
-            private readonly GridViewItemRelativeLayout outerInstance;
-
-            public OnClickListenerAnonymousInnerClass(GridViewItemRelativeLayout outerInstance)
-            {
-                this.outerInstance = outerInstance;
-            }
-
-            public  void OnClick(View v)
-            {
-                var a = outerInstance.mCollection.IsCountOver();
-                var b = !outerInstance.mCollection.IsSelected(outerInstance.item.BuildContentUri());
+            this.imageView.SetOnClickListener (new AnonymousOnClickListener(v=> {
+                var a = this.mCollection.IsCountOver();
+                var b = !this.mCollection.IsSelected(this.item.BuildContentUri());
                 if (a && b)
                 {
                     return;
                 }
 
-                if (outerInstance.item.Capture)
+                if (this.item.Capture)
                 {
                     ((ImageSelectActivity)v.Context).ShowCameraAction();
                     return;
                 }
-                else if (outerInstance.mCollection.IsSingleChoose)
+                else if (this.mCollection.IsSingleChoose)
                 {
-                    outerInstance.mCollection.Add(outerInstance.item.BuildContentUri());
+                    this.mCollection.Add(this.item.BuildContentUri());
                     ((ImageSelectActivity)v.Context).SetResult();
                     return;
                 }
-                if (outerInstance.mCollection.IsSelected(outerInstance.item.BuildContentUri()))
+                if (this.mCollection.IsSelected(this.item.BuildContentUri()))
                 {
-                    outerInstance.mCollection.Remove(outerInstance.item.BuildContentUri());
-                    outerInstance.imageCheck.SetImageResource (Resource.Drawable.pick_photo_checkbox_normal);
-                    outerInstance.imageView.ClearColorFilter();
+                    this.mCollection.Remove(this.item.BuildContentUri());
+                    this.imageCheck.SetImageResource(Resource.Drawable.pick_photo_checkbox_normal);
+                    this.imageView.ClearColorFilter();
                 }
                 else
                 {
-                    outerInstance.mCollection.Add(outerInstance.item.BuildContentUri());
-                    outerInstance.imageCheck.SetImageResource(Resource.Drawable.pick_photo_checkbox_check);
-                    outerInstance.imageView.SetColorFilter(Color.Gray, PorterDuff.Mode.Multiply);
+                    this.mCollection.Add(this.item.BuildContentUri());
+                    this.imageCheck.SetImageResource(Resource.Drawable.pick_photo_checkbox_check);
+                    this.imageView.SetColorFilter(Color.Gray, PorterDuff.Mode.Multiply);
                 }
-            }
+            }));
         }
 
+       
         public virtual Picture Item
         {
             set
@@ -120,11 +93,11 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Widget
                     imageCheck.SetImageResource(Resource.Drawable.pick_photo_checkbox_check);
                 }
                 imageCheck.Visibility = mCollection.IsSingleChoose || value.Capture ? ViewStates.Gone : ViewStates.Visible;
-                disPlay();
+                DisPlay();
             }
         }
 
-        private void disPlay()
+        private void DisPlay()
         {
             if (item.Capture)
             {

@@ -6,25 +6,14 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using Path = Android.Graphics.Path;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
     using Interpolator = Android.Views.Animations.IInterpolator;
     using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
-    using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
+    using LazyWelfare.AndroidUtils.Common;
     using Android.Graphics;
-    using System;
 
-    using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
-    using Animator = Android.Animation.Animator;
-    using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
-    using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
-
-   
-	public class BalloonLoadingRenderer : LoadingRenderer
+    public class BalloonLoadingRenderer : LoadingRenderer
 	{
 		private const string PERCENT_SIGN = "%";
 
@@ -96,23 +85,23 @@
 
 		private void Init(Context context)
 		{
-			mTextSize = DensityUtil.dip2px(context, DEFAULT_TEXT_SIZE);
+			mTextSize = DensityUtil.Dip2Px(context, DEFAULT_TEXT_SIZE);
 
-			mWidth = DensityUtil.dip2px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_HEIGHT);
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_WIDTH);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
 
-			mGasTubeWidth = DensityUtil.dip2px(context, DEFAULT_GAS_TUBE_WIDTH);
-			mGasTubeHeight = DensityUtil.dip2px(context, DEFAULT_GAS_TUBE_HEIGHT);
-			mCannulaWidth = DensityUtil.dip2px(context, DEFAULT_CANNULA_WIDTH);
-			mCannulaHeight = DensityUtil.dip2px(context, DEFAULT_CANNULA_HEIGHT);
-			mCannulaOffsetY = DensityUtil.dip2px(context, DEFAULT_CANNULA_OFFSET_Y);
-			mCannulaMaxOffsetY = DensityUtil.dip2px(context, DEFAULT_CANNULA_MAX_OFFSET_Y);
-			mPipeBodyWidth = DensityUtil.dip2px(context, DEFAULT_PIPE_BODY_WIDTH);
-			mPipeBodyHeight = DensityUtil.dip2px(context, DEFAULT_PIPE_BODY_HEIGHT);
-			mBalloonWidth = DensityUtil.dip2px(context, DEFAULT_BALLOON_WIDTH);
-			mBalloonHeight = DensityUtil.dip2px(context, DEFAULT_BALLOON_HEIGHT);
-			mRectCornerRadius = DensityUtil.dip2px(context, DEFAULT_RECT_CORNER_RADIUS);
+			mGasTubeWidth = DensityUtil.Dip2Px(context, DEFAULT_GAS_TUBE_WIDTH);
+			mGasTubeHeight = DensityUtil.Dip2Px(context, DEFAULT_GAS_TUBE_HEIGHT);
+			mCannulaWidth = DensityUtil.Dip2Px(context, DEFAULT_CANNULA_WIDTH);
+			mCannulaHeight = DensityUtil.Dip2Px(context, DEFAULT_CANNULA_HEIGHT);
+			mCannulaOffsetY = DensityUtil.Dip2Px(context, DEFAULT_CANNULA_OFFSET_Y);
+			mCannulaMaxOffsetY = DensityUtil.Dip2Px(context, DEFAULT_CANNULA_MAX_OFFSET_Y);
+			mPipeBodyWidth = DensityUtil.Dip2Px(context, DEFAULT_PIPE_BODY_WIDTH);
+			mPipeBodyHeight = DensityUtil.Dip2Px(context, DEFAULT_PIPE_BODY_HEIGHT);
+			mBalloonWidth = DensityUtil.Dip2Px(context, DEFAULT_BALLOON_WIDTH);
+			mBalloonHeight = DensityUtil.Dip2Px(context, DEFAULT_BALLOON_HEIGHT);
+			mRectCornerRadius = DensityUtil.Dip2Px(context, DEFAULT_RECT_CORNER_RADIUS);
 
 			mBalloonColor = DEFAULT_BALLOON_COLOR;
 			mGasTubeColor = DEFAULT_GAS_TUBE_COLOR;
@@ -293,40 +282,14 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-    
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter (value);
-			}
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
-		protected internal override void Reset()
-		{
-		}
-
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual BalloonLoadingRenderer Build()
-			{
-				BalloonLoadingRenderer loadingRenderer = new BalloonLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
-	}
+    }
 }

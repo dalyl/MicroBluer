@@ -237,6 +237,10 @@
       <Project>{f6ac2d76-5033-44e9-b4fb-a6c34ff72ed0}</Project>
       <Name>LazyWelfare.AndroidMobile.Loading</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LazyWelfare.AndroidUtils\LazyWelfare.AndroidUtils.csproj">
+      <Project>{6A64624C-9BD2-4AB5-8442-3BDDCA81417E}</Project>
+      <Name>LazyWelfare.AndroidUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\jquery.min.js" />

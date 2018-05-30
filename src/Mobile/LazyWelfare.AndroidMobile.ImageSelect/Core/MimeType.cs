@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using Android.Content;
-using Android.Net;
-using Android.OS;
-using Android.Runtime;
-using Android.Webkit;
-using Java.Lang;
-using LazyWelfare.AndroidMobile.ImageSelect.Utils;
-
-namespace LazyWelfare.AndroidMobile.ImageSelect
+﻿namespace LazyWelfare.AndroidMobile.ImageSelect
 {
+    using Parcelable = AndroidUtils.Parcel.Parcelable;
+    using System.Collections.Generic;
+    using Android.Content;
+    using Android.Net;
+    using Android.OS;
+    using Android.Runtime;
+    using Android.Webkit;
+    using Java.Lang;
+    using LazyWelfare.AndroidMobile.ImageSelect.Utils;
+    using LazyWelfare.AndroidUtils.Parcel;
 
-
-    public sealed class MimeType : Java.Lang.Object, IParcelable
+    public sealed class MimeType : Parcelable
     {
 
         public static MimeType JPEG = new MimeType("image/jpeg", new string[] { "jpg", "jpeg" });
@@ -28,18 +28,19 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
             mMimeTypeName = mimeTypeName;
             mExtensions.AddRange(extensions);
         }
-        internal MimeType(Parcel source)
+        public MimeType(){ }
+
+        internal MimeType(Parcel data)
         {
-            mMimeTypeName = source.ReadString();
-            source.ReadStringList(mExtensions);
+            ConvertFromParcel(data);
+        }
+        public override void ConvertFromParcel(Parcel data)
+        {
+            mMimeTypeName = data.ReadString();
+            data.ReadStringList(mExtensions);
         }
 
-        public int DescribeContents()
-        {
-            return 0;
-        }
-
-        public void WriteToParcel(Parcel dest, [GeneratedEnum] ParcelableWriteFlags flags)
+        public override void WriteToParcel(Parcel dest, [GeneratedEnum] ParcelableWriteFlags flags)
         {
             dest.WriteString(mMimeTypeName);
             dest.WriteStringList(mExtensions);
@@ -80,23 +81,10 @@ namespace LazyWelfare.AndroidMobile.ImageSelect
             return false;
         }
 
-        public class MimeTypeParcelableCreator : Java.Lang.Object, IParcelableCreator
-        {
-            public Java.Lang.Object CreateFromParcel(Parcel source)
-            {
-                return new MimeType(source);
-            }
-
-            public Object[] NewArray(int size)
-            {
-                return new Object[size];
-            }
-        }
-
-
         [Java.Interop.ExportField("CREATOR")]
-        public static MimeTypeParcelableCreator Creator() => new MimeTypeParcelableCreator();
+        public static ParcelableCreator<MimeType> Creator() => new ParcelableCreator<MimeType>();
 
+       
     }
 }
 

@@ -1,13 +1,12 @@
-﻿
-namespace LazyWelfare.AndroidMobile.Loading
+﻿namespace LazyWelfare.AndroidUtils.Common
 {
     using System;
     using Context = Android.Content.Context;
 
-    public class DensityUtil
+    public static class DensityUtil
     {
 
-        public static float dip2px(Context context, float dpValue)
+        public static float Dip2Px(Context context, float dpValue)
         {
             float scale = context.Resources.DisplayMetrics.Density;
             return dpValue * scale;
@@ -19,5 +18,4 @@ namespace LazyWelfare.AndroidMobile.Loading
             return radian * 180 / Math.PI;
         }
     }
-
 }

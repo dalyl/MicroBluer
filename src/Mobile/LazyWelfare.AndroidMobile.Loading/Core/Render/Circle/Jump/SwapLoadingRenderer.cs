@@ -9,6 +9,7 @@
     using Interpolator = Android.Views.Animations.IInterpolator;
     using Android.Graphics;
     using System;
+    using LazyWelfare.AndroidUtils.Common;
 
     public class SwapLoadingRenderer : LoadingRenderer
 	{
@@ -52,10 +53,10 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.dip2px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_HEIGHT);
-			mBallRadius = DensityUtil.dip2px(context, DEFAULT_BALL_RADIUS);
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_WIDTH);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			mBallRadius = DensityUtil.Dip2Px(context, DEFAULT_BALL_RADIUS);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
 
 			mColor = DEFAULT_COLOR;
 			mDuration = ANIMATION_DURATION;
@@ -126,119 +127,14 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter(value);
-			}
-		}
-
-		protected internal override void Reset()
-		{
-		}
-
-		private void Apply(Builder builder)
-		{
-			this.mWidth = builder.mWidth > 0 ? builder.mWidth : this.mWidth;
-			this.mHeight = builder.mHeight > 0 ? builder.mHeight : this.mHeight;
-			this.mStrokeWidth = builder.mStrokeWidth > 0 ? builder.mStrokeWidth : this.mStrokeWidth;
-
-			this.mBallRadius = builder.mBallRadius > 0 ? builder.mBallRadius : this.mBallRadius;
-			this.mBallInterval = builder.mBallInterval > 0 ? builder.mBallInterval : this.mBallInterval;
-			this.mBallCount = builder.mBallCount > 0 ? builder.mBallCount : this.mBallCount;
-
-			this.mColor = builder.mColor != 0 ? builder.mColor : this.mColor;
-
-			this.mDuration = builder.mDuration > 0 ? builder.mDuration : this.mDuration;
-
-			AdjustParams();
-			SetupPaint();
-		}
-
-		public class Builder
-		{
-			internal Context mContext;
-
-			internal int mWidth;
-			internal int mHeight;
-			internal int mStrokeWidth;
-
-			internal int mBallCount;
-			internal int mBallRadius;
-			internal int mBallInterval;
-
-			internal int mDuration;
-
-			internal int mColor;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual Builder SetWidth(int width)
-			{
-				this.mWidth = width;
-				return this;
-			}
-
-			public virtual Builder SetHeight(int height)
-			{
-				this.mHeight = height;
-				return this;
-			}
-
-			public virtual Builder SetStrokeWidth(int strokeWidth)
-			{
-				this.mStrokeWidth = strokeWidth;
-				return this;
-			}
-
-			public virtual Builder SetBallRadius(int ballRadius)
-			{
-				this.mBallRadius = ballRadius;
-				return this;
-			}
-
-			public virtual Builder SetBallInterval(int ballInterval)
-			{
-				this.mBallInterval = ballInterval;
-				return this;
-			}
-
-			public virtual Builder SetBallCount(int ballCount)
-			{
-				this.mBallCount = ballCount;
-				return this;
-			}
-
-			public virtual Builder SetColor(int color)
-			{
-				this.mColor = color;
-				return this;
-			}
-
-			public virtual Builder SetDuration(int duration)
-			{
-				this.mDuration = duration;
-				return this;
-			}
-
-			public virtual SwapLoadingRenderer Build()
-			{
-				SwapLoadingRenderer loadingRenderer = new SwapLoadingRenderer(mContext);
-				loadingRenderer.Apply(this);
-				return loadingRenderer;
-			}
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 	}
 
 }

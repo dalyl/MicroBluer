@@ -7,29 +7,23 @@
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
 	using PointF = Android.Graphics.PointF;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using Path = Android.Graphics.Path;
     using Rect = Android.Graphics.Rect;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
     using Interpolator = Android.Views.Animations.IInterpolator;
     using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
     using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
-    using Android.Graphics;
-    using System.Collections.Generic;
-    using System;
-
 	using FastOutLinearInInterpolator = Android.Support.V4.View.Animation.FastOutLinearInInterpolator;
     using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
     using Animator = Android.Animation.Animator;
     using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
     using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
+    using LazyWelfare.AndroidUtils.Common;
+    using System.Collections.Generic;
+    using System;
+    using LazyWelfare.AndroidUtils.Animation;
 
-
-
-	public class DayNightLoadingRenderer : LoadingRenderer
+    public class DayNightLoadingRenderer : LoadingRenderer
 	{
 		private static readonly Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();
 		private static readonly Interpolator LINEAR_INTERPOLATOR = new LinearInterpolator();
@@ -72,30 +66,17 @@
 
 		private const long ANIMATION_DURATION = 5111;
 
-		private readonly Random mRandom = new Random();
+		private static readonly Random mRandom = new Random();
 		private readonly IList<StarHolder> mStarHolders = new List<StarHolder>();
 
 		private readonly Paint mPaint = new Paint();
 		private readonly RectF mTempBounds = new RectF();
 
-		private readonly Animator.IAnimatorListener mAnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass();
-
-		private class AnimatorListenerAdapterAnonymousInnerClass : AnimatorListenerAdapter
-		{
-			public AnimatorListenerAdapterAnonymousInnerClass()
-			{
-			}
-
-			public override void OnAnimationRepeat(Animator animator)
-			{
-				base.OnAnimationRepeat(animator);
-			}
-		}
+		private readonly Animator.IAnimatorListener mAnimatorListener = new AnonymousAnimatorListenerAdapter();
 
 		private int mCurrentColor;
 
 		private float mMaxStarOffsets;
-
 		private float mStrokeWidth;
 		private float mStarRadius;
 		private float mSun_MoonRadius;
@@ -128,19 +109,19 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.dip2px(context, DEFAULT_Width);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_Height);
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_Width);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_Width);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_Height);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_Width);
 
-			mStarRadius = DensityUtil.dip2px(context, DEFAULT_STAR_RADIUS);
-			mSun_MoonRadius = DensityUtil.dip2px(context, DEFAULT_SUN_MOON_RADIUS);
+			mStarRadius = DensityUtil.Dip2Px(context, DEFAULT_STAR_RADIUS);
+			mSun_MoonRadius = DensityUtil.Dip2Px(context, DEFAULT_SUN_MOON_RADIUS);
 			mInitSun_MoonCoordinateY = mHeight + mSun_MoonRadius + mStrokeWidth * 2.0f;
 			mMaxSun_MoonRiseDistance = mHeight / 2.0f + mSun_MoonRadius;
 
-			mSunRayStartCoordinateY = mInitSun_MoonCoordinateY - mMaxSun_MoonRiseDistance - mSun_MoonRadius - mStrokeWidth - DensityUtil.dip2px(context, DEFAULT_SUN_RAY_OFFSET); //sub the interval between the sun and the sun ray -  sub the with the sun circle - sub the radius - the center
+			mSunRayStartCoordinateY = mInitSun_MoonCoordinateY - mMaxSun_MoonRiseDistance - mSun_MoonRadius - mStrokeWidth - DensityUtil.Dip2Px(context, DEFAULT_SUN_RAY_OFFSET); //sub the interval between the sun and the sun ray -  sub the with the sun circle - sub the radius - the center
 
 			//add strokeWidth * 2.0f because the stroke cap is Paint.Cap.ROUND
-			mSunRayEndCoordinateY = mSunRayStartCoordinateY - DensityUtil.dip2px(context, DEFAULT_SUN_RAY_LENGTH) + mStrokeWidth;
+			mSunRayEndCoordinateY = mSunRayStartCoordinateY - DensityUtil.Dip2Px(context, DEFAULT_SUN_RAY_LENGTH) + mStrokeWidth;
 
 			mSunCoordinateY = mInitSun_MoonCoordinateY;
 			mMoonCoordinateY = mInitSun_MoonCoordinateY;
@@ -299,40 +280,29 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-    
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter (value);
-    
-			}
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
-		protected internal override void Reset()
+        private void InitStarHolders(RectF currentBounds)
 		{
-		}
 
-		private void InitStarHolders(RectF currentBounds)
-		{
-			mStarHolders.Add(new StarHolder(this, 0.3f, new PointF(currentBounds.Left + currentBounds.Width() * 0.175f, currentBounds.Top + currentBounds.Height() * 0.0934f)));
-			mStarHolders.Add(new StarHolder(this, 0.2f, new PointF(currentBounds.Left + currentBounds.Width() * 0.175f, currentBounds.Top + currentBounds.Height() * 0.62f)));
-			mStarHolders.Add(new StarHolder(this, 0.2f, new PointF(currentBounds.Left + currentBounds.Width() * 0.2525f, currentBounds.Top + currentBounds.Height() * 0.43f)));
-			mStarHolders.Add(new StarHolder(this, 0.5f, new PointF(currentBounds.Left + currentBounds.Width() * 0.4075f, currentBounds.Top + currentBounds.Height() * 0.0934f)));
-			mStarHolders.Add(new StarHolder(this, new PointF(currentBounds.Left + currentBounds.Width() * 0.825f, currentBounds.Top + currentBounds.Height() * 0.04f)));
-			mStarHolders.Add(new StarHolder(this, new PointF(currentBounds.Left + currentBounds.Width() * 0.7075f, currentBounds.Top + currentBounds.Height() * 0.147f)));
-			mStarHolders.Add(new StarHolder(this, new PointF(currentBounds.Left + currentBounds.Width() * 0.3475f, currentBounds.Top + currentBounds.Height() * 0.2567f)));
-			mStarHolders.Add(new StarHolder(this, 0.6f, new PointF(currentBounds.Left + currentBounds.Width() * 0.5825f, currentBounds.Top + currentBounds.Height() * 0.277f)));
-			mStarHolders.Add(new StarHolder(this, new PointF(currentBounds.Left + currentBounds.Width() * 0.84f, currentBounds.Top + currentBounds.Height() * 0.32f)));
-			mStarHolders.Add(new StarHolder(this, new PointF(currentBounds.Left + currentBounds.Width() * 0.8f, currentBounds.Top + currentBounds.Height() / 0.502f)));
-			mStarHolders.Add(new StarHolder(this, 0.6f, new PointF(currentBounds.Left + currentBounds.Width() * 0.7f, currentBounds.Top + currentBounds.Height() * 0.473f)));
+            mStarHolders.Add(new StarHolder( 0.3f, new PointF(currentBounds.Left + currentBounds.Width() * 0.175f, currentBounds.Top + currentBounds.Height() * 0.0934f)));
+			mStarHolders.Add(new StarHolder( 0.2f, new PointF(currentBounds.Left + currentBounds.Width() * 0.175f, currentBounds.Top + currentBounds.Height() * 0.62f)));
+			mStarHolders.Add(new StarHolder( 0.2f, new PointF(currentBounds.Left + currentBounds.Width() * 0.2525f, currentBounds.Top + currentBounds.Height() * 0.43f)));
+			mStarHolders.Add(new StarHolder( 0.5f, new PointF(currentBounds.Left + currentBounds.Width() * 0.4075f, currentBounds.Top + currentBounds.Height() * 0.0934f)));
+			mStarHolders.Add(new StarHolder( new PointF(currentBounds.Left + currentBounds.Width() * 0.825f, currentBounds.Top + currentBounds.Height() * 0.04f)));
+			mStarHolders.Add(new StarHolder( new PointF(currentBounds.Left + currentBounds.Width() * 0.7075f, currentBounds.Top + currentBounds.Height() * 0.147f)));
+			mStarHolders.Add(new StarHolder( new PointF(currentBounds.Left + currentBounds.Width() * 0.3475f, currentBounds.Top + currentBounds.Height() * 0.2567f)));
+			mStarHolders.Add(new StarHolder( 0.6f, new PointF(currentBounds.Left + currentBounds.Width() * 0.5825f, currentBounds.Top + currentBounds.Height() * 0.277f)));
+			mStarHolders.Add(new StarHolder( new PointF(currentBounds.Left + currentBounds.Width() * 0.84f, currentBounds.Top + currentBounds.Height() * 0.32f)));
+			mStarHolders.Add(new StarHolder( new PointF(currentBounds.Left + currentBounds.Width() * 0.8f, currentBounds.Top + currentBounds.Height() / 0.502f)));
+			mStarHolders.Add(new StarHolder( 0.6f, new PointF(currentBounds.Left + currentBounds.Width() * 0.7f, currentBounds.Top + currentBounds.Height() * 0.473f)));
 
 			mMaxStarOffsets = currentBounds.Height();
 		}
@@ -348,8 +318,6 @@
 
 		private class StarHolder
 		{
-			private readonly DayNightLoadingRenderer outerInstance;
-
 			public int mAlpha;
 			public PointF mCurrentPoint;
 
@@ -357,37 +325,20 @@
 			public readonly float mFlashOffset;
 			public readonly Interpolator mInterpolator;
 
-			public StarHolder(DayNightLoadingRenderer outerInstance, PointF point) : this(outerInstance, 1.0f, point)
+			public StarHolder(PointF point) : this( 1.0f, point)
 			{
-				this.outerInstance = outerInstance;
 			}
 
-			public StarHolder(DayNightLoadingRenderer outerInstance, float flashOffset, PointF mPoint)
+			public StarHolder( float flashOffset, PointF mPoint)
 			{
-				this.outerInstance = outerInstance;
 				this.mAlpha = MAX_ALPHA;
 				this.mCurrentPoint = new PointF();
 				this.mPoint = mPoint;
 				this.mFlashOffset = flashOffset;
-				this.mInterpolator = INTERPOLATORS[outerInstance.mRandom.Next(INTERPOLATORS.Length)];
-			}
+                this.mInterpolator = INTERPOLATORS[mRandom.Next(INTERPOLATORS.Length)];
+            }
 		}
 
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual DayNightLoadingRenderer Build()
-			{
-				DayNightLoadingRenderer loadingRenderer = new DayNightLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
 	}
 
 }

@@ -15,6 +15,8 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
     using Log = Android.Util.Log;
     using Animation = Android.Views.Animations.Animation;
     using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
+    using LazyWelfare.AndroidUtils.Common;
+    using LazyWelfare.AndroidUtils.Animation;
 
     public abstract class LoadingRenderer
     {
@@ -23,28 +25,14 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
 
         private ValueAnimator.IAnimatorUpdateListener AnimatorUpdateListener { get; }
 
-        private class AnimatorUpdateListenerAnonymousInnerClass : Java.Lang.Object,ValueAnimator.IAnimatorUpdateListener
-        {
-            LoadingRenderer outerInstance { get; }
-            public AnimatorUpdateListenerAnonymousInnerClass(LoadingRenderer master)
-            {
-                outerInstance = master;
-            }
-
-            public  void OnAnimationUpdate(ValueAnimator animation)
-            {
-                outerInstance.ComputeRender((float)animation.AnimatedValue);
-                outerInstance.InvalidateSelf();
-            }
-        }
 
         /// <summary>
         /// Whenever <seealso cref="LoadingDrawable"/> boundary changes mBounds will be updated.
         /// More details you can see <seealso cref="LoadingDrawable#onBoundsChange(Rect)"/>
         /// </summary>
-        protected internal readonly Rect mBounds = new Rect();
+        protected internal Rect Bounds { protected get;    set; }= new Rect();
 
-        private Drawable.ICallback mCallback;
+        internal Drawable.ICallback Callback { private get; set; }
         private ValueAnimator mRenderAnimator;
 
         protected internal long mDuration;
@@ -54,7 +42,10 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
 
         public LoadingRenderer(Context context)
         {
-            AnimatorUpdateListener = new AnimatorUpdateListenerAnonymousInnerClass(this);
+            AnimatorUpdateListener = new AnonymousAnimatorUpdateListener(amor=> {
+                this.ComputeRender((float)amor.AnimatedValue);
+                this.InvalidateSelf();
+            });
             InitParams(context);
             SetupAnimators();
         }
@@ -64,7 +55,7 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
         {
         }
 
-        protected internal virtual void Draw(Canvas canvas) => Draw(canvas, mBounds);
+        protected internal virtual void Draw(Canvas canvas) => Draw(canvas, Bounds);
 
         protected internal abstract void ComputeRender(float renderProgress);
 
@@ -72,7 +63,7 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
 
         protected internal abstract ColorFilter ColorFilter { set; }
 
-        protected internal abstract void Reset();
+        protected internal virtual void Reset() { }
 
         protected internal virtual void AddRenderListener(Animator.IAnimatorListener animatorListener)
         {
@@ -101,34 +92,12 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
             mRenderAnimator.End();
         }
 
-        internal virtual bool Running
-        {
-            get
-            {
-                return mRenderAnimator.IsRunning;
-            }
-        }
-
-        internal virtual Drawable.ICallback Callback
-        {
-            set
-            {
-                this.mCallback = value;
-            }
-        }
-
-        internal virtual Rect Bounds
-        {
-            set
-            {
-                mBounds.Set(value);
-            }
-        }
+        internal virtual bool Running => mRenderAnimator.IsRunning;
 
         private void InitParams(Context context)
         {
-            mWidth = DensityUtil.dip2px(context, DEFAULT_SIZE);
-            mHeight = DensityUtil.dip2px(context, DEFAULT_SIZE);
+            mWidth = DensityUtil.Dip2Px(context, DEFAULT_SIZE);
+            mHeight = DensityUtil.Dip2Px(context, DEFAULT_SIZE);
 
             mDuration = ANIMATION_DURATION;
         }
@@ -146,7 +115,7 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
 
         private void InvalidateSelf()
         {
-            mCallback.InvalidateDrawable(null);
+            Callback.InvalidateDrawable(null);
         }
 
     }

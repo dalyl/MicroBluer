@@ -5,24 +5,14 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using Path = Android.Graphics.Path;
 	using Rect = Android.Graphics.Rect;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
     using Interpolator = Android.Views.Animations.IInterpolator;
-    using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
-    using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
-    using Android.Graphics;
+    using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
+    using LazyWelfare.AndroidUtils.Common;
     using System.Collections.Generic;
     using System;
-
-    using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
-    using Animator = Android.Animation.Animator;
-    using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
-    using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
 
     public class WaterBottleLoadingRenderer : LoadingRenderer
 	{
@@ -37,7 +27,6 @@
 
 		private const int DEFAULT_WAVE_COUNT = 5;
 		private const int DEFAULT_WATER_DROP_COUNT = 25;
-
 		private const int MAX_WATER_DROP_RADIUS = 5;
 		private const int MIN_WATER_DROP_RADIUS = 1;
 
@@ -45,13 +34,10 @@
 		private static readonly int DEFAULT_WATER_COLOR = Color.ParseColor("#FF29E3F2");
 
 		private const float DEFAULT_TEXT_SIZE = 7.0f;
-
 		private const string LOADING_TEXT = "loading";
-
 		private const long ANIMATION_DURATION = 11111;
 
 		private readonly Random mRandom = new Random();
-
 		private readonly Paint mPaint = new Paint();
 		private readonly RectF mCurrentBounds = new RectF();
 		private readonly RectF mBottleBounds = new RectF();
@@ -61,7 +47,6 @@
 
 		private float mTextSize;
 		private float mProgress;
-
 		private float mBottleWidth;
 		private float mBottleHeight;
 		private float mStrokeWidth;
@@ -69,7 +54,6 @@
 
 		private int mBottleColor;
 		private int mWaterColor;
-
 		private int mWaveCount;
 
         internal WaterBottleLoadingRenderer(Context context) : base(context)
@@ -80,15 +64,15 @@
 
 		private void Init(Context context)
 		{
-			mTextSize = DensityUtil.dip2px(context, DEFAULT_TEXT_SIZE);
+			mTextSize = DensityUtil.Dip2Px(context, DEFAULT_TEXT_SIZE);
 
-			mWidth = DensityUtil.dip2px(context, DEFAULT_Width);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_Height);
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_Width);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_Width);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_Height);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_Width);
 
-			mBottleWidth = DensityUtil.dip2px(context, DEFAULT_BOTTLE_Width);
-			mBottleHeight = DensityUtil.dip2px(context, DEFAULT_BOTTLE_Height);
-			mWaterLowestPointToBottleneckDistance = DensityUtil.dip2px(context, WATER_LOWEST_POINT_TO_BOTTLENECK_DISTANCE);
+			mBottleWidth = DensityUtil.Dip2Px(context, DEFAULT_BOTTLE_Width);
+			mBottleHeight = DensityUtil.Dip2Px(context, DEFAULT_BOTTLE_Height);
+			mWaterLowestPointToBottleneckDistance = DensityUtil.Dip2Px(context, WATER_LOWEST_POINT_TO_BOTTLENECK_DISTANCE);
 
 			mBottleColor = DEFAULT_BOTTLE_COLOR;
 			mWaterColor = DEFAULT_WATER_COLOR;
@@ -119,7 +103,7 @@
 			//draw water
 			mPaint.SetStyle (Paint.Style.FillAndStroke);
 			mPaint.Color = new Color (mWaterColor);
-			canvas.DrawPath(createWaterPath(mWaterBounds, mProgress), mPaint);
+			canvas.DrawPath(CreateWaterPath(mWaterBounds, mProgress), mPaint);
 
 			//draw water drop
 			mPaint.SetStyle(Paint.Style.Fill);
@@ -225,7 +209,7 @@
 			return path;
 		}
 
-		private Path createWaterPath(RectF waterRect, float progress)
+		private Path CreateWaterPath(RectF waterRect, float progress)
 		{
 			Path path = new Path();
 
@@ -267,10 +251,12 @@
 
 			for (int i = 0; i < DEFAULT_WATER_DROP_COUNT; i++)
 			{
-				WaterDropHolder waterDropHolder = new WaterDropHolder(this);
-				waterDropHolder.mRadius = MIN_WATER_DROP_RADIUS + mRandom.Next(radiusRandomRange);
-				waterDropHolder.mInitX = bottleRect.Left + twoSidesInterval + (float)mRandom.NextDouble() * currentXRandomRange;
-				waterDropHolder.mInitY = lowestWaterPointY + waterDropHolder.mRadius / 2.0f;
+                WaterDropHolder waterDropHolder = new WaterDropHolder
+                {
+                    mRadius = MIN_WATER_DROP_RADIUS + mRandom.Next(radiusRandomRange),
+                    mInitX = bottleRect.Left + twoSidesInterval + (float)mRandom.NextDouble() * currentXRandomRange
+                };
+                waterDropHolder.mInitY = lowestWaterPointY + waterDropHolder.mRadius / 2.0f;
 				waterDropHolder.mRiseHeight = GetMaxRiseHeight(bottleRadius, waterDropHolder.mRadius, waterDropHolder.mInitX - bottleRect.Left) * (0.2f + 0.8f * (float)mRandom.NextDouble());
 				waterDropHolder.mDelayDuration = atLeastDelayDuration + (float)mRandom.NextDouble() * delayDurationRange;
 				waterDropHolder.mDuration = waterDropHolder.mRiseHeight / bottleRadius * unitDuration;
@@ -292,63 +278,26 @@
 		}
 
 		protected internal override int Alpha
-		{
-			set
-			{
-				mPaint.Alpha = value;
-    
-			}
-		}
+        {
+            set => mPaint.Alpha = value;
+        }
 
-		protected internal override ColorFilter ColorFilter
-		{
-			set
-			{
-				mPaint.SetColorFilter (value);
-    
-			}
-		}
-
-		protected internal override void Reset()
-		{
-		}
+        protected internal override ColorFilter ColorFilter
+        {
+            set => mPaint.SetColorFilter(value);
+        }
 
 		private class WaterDropHolder
 		{
-			private readonly WaterBottleLoadingRenderer outerInstance;
-
-			public WaterDropHolder(WaterBottleLoadingRenderer outerInstance)
-			{
-				this.outerInstance = outerInstance;
-			}
-
 			public float mCurrentY;
-
 			public float mInitX;
 			public float mInitY;
 			public float mDelayDuration;
 			public float mRiseHeight;
-
 			public float mRadius;
 			public float mDuration;
-
 			public bool mNeedDraw;
 		}
 
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual WaterBottleLoadingRenderer Build()
-			{
-				WaterBottleLoadingRenderer loadingRenderer = new WaterBottleLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
 	}
 }

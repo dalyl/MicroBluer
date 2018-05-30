@@ -6,31 +6,19 @@
     using Color = Android.Graphics.Color;
     using ColorFilter = Android.Graphics.ColorFilter;
     using Paint = Android.Graphics.Paint;
-    using LinearGradient = Android.Graphics.LinearGradient;
     using Path = Android.Graphics.Path;
 	using Rect = Android.Graphics.Rect;
     using RectF = Android.Graphics.RectF;
-    using Shader = Android.Graphics.Shader;
 	using Matrix = Android.Graphics.Matrix;
     using PathMeasure = Android.Graphics.PathMeasure;
     using Region = Android.Graphics.Region;
     using DashPathEffect = Android.Graphics.DashPathEffect;
     using Interpolator = Android.Views.Animations.IInterpolator;
-    using AccelerateInterpolator = Android.Views.Animations.AccelerateInterpolator;
-    using DecelerateInterpolator = Android.Views.Animations.DecelerateInterpolator;
-    using Android.Graphics;
-    using System;
+    using LazyWelfare.AndroidUtils.Common;
 
-    using FastOutSlowInInterpolator = Android.Support.V4.View.Animation.FastOutSlowInInterpolator;
-    using DisplayMetrics = Android.Util.DisplayMetrics;
-    using TypedValue = Android.Util.TypedValue;
-
-
-
-
-	public class FishLoadingRenderer : LoadingRenderer
+    public class FishLoadingRenderer : LoadingRenderer
 	{
-		private bool InstanceFieldsInitialized = false;
+		private bool InstanceFieldsInitialized { get; } = false;
 
 		private void InitializeInstanceFields()
 		{
@@ -97,17 +85,17 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.dip2px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.dip2px(context, DEFAULT_HEIGHT);
-			mRiverBankWidth = DensityUtil.dip2px(context, DEFAULT_RIVER_BANK_WIDTH);
+			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			mRiverBankWidth = DensityUtil.Dip2Px(context, DEFAULT_RIVER_BANK_WIDTH);
 
-			mPathFullLineSize = DensityUtil.dip2px(context, DEFAULT_PATH_FULL_LINE_SIZE);
-			mPathDottedLineSize = DensityUtil.dip2px(context, DEFAULT_PATH_DOTTED_LINE_SIZE);
-			mFishWidth = DensityUtil.dip2px(context, DEFAULT_FISH_WIDTH);
-			mFishHeight = DensityUtil.dip2px(context, DEFAULT_FISH_HEIGHT);
-			mFishEyeSize = DensityUtil.dip2px(context, DEFAULT_FISH_EYE_SIZE);
-			mRiverWidth = DensityUtil.dip2px(context, DEFAULT_RIVER_WIDTH);
-			mRiverHeight = DensityUtil.dip2px(context, DEFAULT_RIVER_HEIGHT);
+			mPathFullLineSize = DensityUtil.Dip2Px(context, DEFAULT_PATH_FULL_LINE_SIZE);
+			mPathDottedLineSize = DensityUtil.Dip2Px(context, DEFAULT_PATH_DOTTED_LINE_SIZE);
+			mFishWidth = DensityUtil.Dip2Px(context, DEFAULT_FISH_WIDTH);
+			mFishHeight = DensityUtil.Dip2Px(context, DEFAULT_FISH_HEIGHT);
+			mFishEyeSize = DensityUtil.Dip2Px(context, DEFAULT_FISH_EYE_SIZE);
+			mRiverWidth = DensityUtil.Dip2Px(context, DEFAULT_RIVER_WIDTH);
+			mRiverHeight = DensityUtil.Dip2Px(context, DEFAULT_RIVER_HEIGHT);
 
 			mColor = DEFAULT_COLOR;
 
@@ -142,7 +130,7 @@
 			int riverSaveCount = canvas.Save();
 			mPaint.SetStyle (Paint.Style.Stroke);
 			canvas.ClipRect(fishRectF, Region.Op.Difference);
-			canvas.DrawPath(createRiverPath(arcBounds), mPaint);
+			canvas.DrawPath(CreateRiverPath(arcBounds), mPaint);
 			canvas.RestoreToCount(riverSaveCount);
 
 			//draw fish
@@ -209,10 +197,7 @@
     
 			}
 		}
-
-		protected internal override void Reset()
-		{
-		}
+		
 
 		private Path CreateFishEyePath(float fishEyeCenterX, float fishEyeCenterY)
 		{
@@ -252,7 +237,7 @@
 			return path;
 		}
 
-		private Path createRiverPath(RectF arcBounds)
+		private Path CreateRiverPath(RectF arcBounds)
 		{
 			if (mRiverPath != null)
 			{
@@ -290,22 +275,7 @@
 				return outerInstance.FISH_MOVE_POINTS[index];
 			}
 		}
-
-		public class Builder
-		{
-			internal Context mContext;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual FishLoadingRenderer build()
-			{
-				FishLoadingRenderer loadingRenderer = new FishLoadingRenderer(mContext);
-				return loadingRenderer;
-			}
-		}
+		
 	}
 
 }

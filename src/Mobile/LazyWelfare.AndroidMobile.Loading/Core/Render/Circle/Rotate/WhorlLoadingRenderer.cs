@@ -22,9 +22,10 @@
     using Animator = Android.Animation.Animator;
     using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
     using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
+    using LazyWelfare.AndroidUtils.Common;
+    using LazyWelfare.AndroidUtils.Animation;
 
-
-	public class WhorlLoadingRenderer : LoadingRenderer
+    public class WhorlLoadingRenderer : LoadingRenderer
 	{
 		private static readonly Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();
 
@@ -37,7 +38,6 @@
 
 		private const float START_TRIM_DURATION_OFFSet = 0.5f;
 		private const float END_TRIM_DURATION_OFFSet = 1.0f;
-
 		private const float DEFAULT_CENTER_RADIUS = 12.5f;
 		private const float DEFAULT_STROKE_WIDTH = 2.5f;
 
@@ -49,49 +49,30 @@
 
 		private Animator.IAnimatorListener AnimatorListener { get; }
 
-		private class AnimatorListenerAdapterAnonymousInnerClass : AnimatorListenerAdapter
-		{
-            WhorlLoadingRenderer OuterInstance { get; }
-            public AnimatorListenerAdapterAnonymousInnerClass(WhorlLoadingRenderer master)
-			{
-                OuterInstance = master;
-            }
-
-			public override void OnAnimationRepeat(Animator animator)
-			{
-				base.OnAnimationRepeat(animator);
-				OuterInstance.storeOriginals();
-
-				OuterInstance.mStartDegrees = OuterInstance.mEndDegrees;
-				OuterInstance.mRotationCount = (OuterInstance.mRotationCount + 1) % (NUM_POINTS);
-			}
-
-			public override void OnAnimationStart(Animator animation)
-			{
-				base.OnAnimationStart(animation);
-				OuterInstance.mRotationCount = 0;
-			}
-		}
-
 		private int[] mColors;
 
 		private float mStrokeInSet;
-
 		private float mRotationCount;
 		private float mGroupRotation;
-
 		private float mEndDegrees;
 		private float mStartDegrees;
 		private float mSwipeDegrees;
 		private float mOriginEndDegrees;
 		private float mOriginStartDegrees;
-
 		private float mStrokeWidth;
 		private float mCenterRadius;
 
 		internal WhorlLoadingRenderer(Context context) : base(context)
 		{
-            AnimatorListener = new AnimatorListenerAdapterAnonymousInnerClass(this);
+            AnimatorListener = new AnonymousAnimatorListenerAdapter
+            {
+                Start = amor => this.mRotationCount = 0,
+                Repeat = amor => {
+                    this.StoreOriginals();
+                    this.mStartDegrees = this.mEndDegrees;
+                    this.mRotationCount = (this.mRotationCount + 1) % (NUM_POINTS);
+                }
+            };
             Init(context);
 			SetupPaint();
 			AddRenderListener(AnimatorListener);
@@ -100,10 +81,10 @@
 		private void Init(Context context)
 		{
 			mColors = DEFAULT_COLORS;
-			mStrokeWidth = DensityUtil.dip2px(context, DEFAULT_STROKE_WIDTH);
-			mCenterRadius = DensityUtil.dip2px(context, DEFAULT_CENTER_RADIUS);
+			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
+			mCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_CENTER_RADIUS);
 
-			initStrokeInSet(mWidth, mHeight);
+			InitStrokeInSet(mWidth, mHeight);
 		}
 
 		private void SetupPaint()
@@ -118,7 +99,7 @@
 		{
 			int saveCount = canvas.Save();
 
-			mTempBounds.Set(mBounds);
+			mTempBounds.Set(Bounds);
 			mTempBounds.Inset(mStrokeInSet, mStrokeInSet);
 
 			canvas.Rotate(mGroupRotation, mTempBounds.CenterX(), mTempBounds.CenterY());
@@ -129,14 +110,14 @@
 				{
 					mPaint.StrokeWidth = mStrokeWidth / (i + 1);
 					mPaint.Color =new Color(mColors[i]);
-					canvas.DrawArc(createArcBounds(mTempBounds, i), mStartDegrees + DEGREE_180 * (i % 2), mSwipeDegrees, false, mPaint);
+					canvas.DrawArc(CreateArcBounds(mTempBounds, i), mStartDegrees + DEGREE_180 * (i % 2), mSwipeDegrees, false, mPaint);
 				}
 			}
 
 			canvas.RestoreToCount(saveCount);
 		}
 
-		private RectF createArcBounds(RectF sourceArcBounds, int index)
+		private RectF CreateArcBounds(RectF sourceArcBounds, int index)
 		{
 			int intervalWidth = 0;
 
@@ -198,10 +179,10 @@
 
 		protected internal override void Reset()
 		{
-			reSetOriginals();
+			ReSetOriginals();
 		}
 
-		private void initStrokeInSet(float width, float height)
+		private void InitStrokeInSet(float width, float height)
 		{
 			float minSize = Math.Min(width, height);
 			float strokeInSet = minSize / 2.0f - mCenterRadius;
@@ -209,13 +190,13 @@
 			mStrokeInSet = strokeInSet < minStrokeInSet ? minStrokeInSet : strokeInSet;
 		}
 
-		private void storeOriginals()
+		private void StoreOriginals()
 		{
 			mOriginEndDegrees = mEndDegrees;
 			mOriginStartDegrees = mEndDegrees;
 		}
 
-		private void reSetOriginals()
+		private void ReSetOriginals()
 		{
 			mOriginEndDegrees = 0;
 			mOriginStartDegrees = 0;
@@ -226,82 +207,7 @@
 			mSwipeDegrees = 0;
 		}
 
-		private void apply(Builder builder)
-		{
-			this.mWidth = builder.mWidth > 0 ? builder.mWidth : this.mWidth;
-			this.mHeight = builder.mHeight > 0 ? builder.mHeight : this.mHeight;
-			this.mStrokeWidth = builder.mStrokeWidth > 0 ? builder.mStrokeWidth : this.mStrokeWidth;
-			this.mCenterRadius = builder.mCenterRadius > 0 ? builder.mCenterRadius : this.mCenterRadius;
 
-			this.mDuration = builder.mDuration > 0 ? builder.mDuration : this.mDuration;
-
-			this.mColors = builder.mColors != null && builder.mColors.Length > 0 ? builder.mColors : this.mColors;
-
-			SetupPaint();
-			initStrokeInSet(this.mWidth, this.mHeight);
-		}
-
-		public class Builder
-		{
-			internal Context mContext;
-
-			internal int mWidth;
-			internal int mHeight;
-			internal int mStrokeWidth;
-			internal int mCenterRadius;
-
-			internal int mDuration;
-
-			internal int[] mColors;
-
-			public Builder(Context mContext)
-			{
-				this.mContext = mContext;
-			}
-
-			public virtual Builder SetWidth(int width)
-			{
-				this.mWidth = width;
-				return this;
-			}
-
-			public virtual Builder SetHeight(int height)
-			{
-				this.mHeight = height;
-				return this;
-			}
-
-			public virtual Builder SetStrokeWidth(int strokeWidth)
-			{
-				this.mStrokeWidth = strokeWidth;
-				return this;
-			}
-
-			public virtual Builder SetCenterRadius(int centerRadius)
-			{
-				this.mCenterRadius = centerRadius;
-				return this;
-			}
-
-			public virtual Builder SetDuration(int duration)
-			{
-				this.mDuration = duration;
-				return this;
-			}
-
-			public virtual Builder SetColors(int[] colors)
-			{
-				this.mColors = colors;
-				return this;
-			}
-
-			public virtual WhorlLoadingRenderer build()
-			{
-				WhorlLoadingRenderer loadingRenderer = new WhorlLoadingRenderer(mContext);
-				loadingRenderer.apply(this);
-				return loadingRenderer;
-			}
-		}
 	}
 
 }

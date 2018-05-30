@@ -1,20 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Java.Lang;
-using LazyWelfare.AndroidMobile.ImageSelect.Utils;
-using LazyWelfare.AndroidMobile.ImageSelect.Engine;
+﻿
 
 namespace LazyWelfare.AndroidMobile.ImageSelect.Model
 {
-    public class SelectionSpec:Java.Lang.Object, IParcelable
+
+    using Parcelable = AndroidUtils.Parcel.Parcelable;
+    using System.Collections.Generic;
+    using Android.OS;
+    using Android.Runtime;
+    using Java.Lang;
+    using LazyWelfare.AndroidMobile.ImageSelect.Utils;
+    using LazyWelfare.AndroidMobile.ImageSelect.Engine;
+    using LazyWelfare.AndroidUtils.Parcel;
+    using LazyWelfare.AndroidUtils.Extension;
+
+    public class SelectionSpec: Parcelable
     {
 
         /// <summary>
@@ -64,39 +63,36 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Model
 
         SelectionSpec(Parcel source)
         {
-            MinSelectable = source.ReadInt();
-            MaxSelectable = source.ReadInt();
-            MinPixels = source.ReadLong();
-            MaxPixels = source.ReadLong();
-            IsEnableCamera = ParcelUtils.ReadBoolean(source);
-            mStartWithCamera = ParcelUtils.ReadBoolean(source);
-            Engine = source.ReadParcelable(Class.FromType(typeof(LoadEngine)).ClassLoader) as LoadEngine;
+            ConvertFromParcel(source);
+        }
+
+        public override void ConvertFromParcel(Parcel data)
+        {
+            MinSelectable = data.ReadInt();
+            MaxSelectable = data.ReadInt();
+            MinPixels = data.ReadLong();
+            MaxPixels = data.ReadLong();
+            IsEnableCamera = data.ReadBoolean();
+            mStartWithCamera = data.ReadBoolean();
+            Engine = data.ReadParcelable(Class.FromType(typeof(LoadEngine)).ClassLoader) as LoadEngine;
             List<MimeType> list = new List<MimeType>();
-            source.ReadList(list, Class.FromType(typeof(MimeType)).ClassLoader);
+            data.ReadList(list, Class.FromType(typeof(MimeType)).ClassLoader);
             MimeTypes = list;
         }
 
-        public int DescribeContents()
+        public override void WriteToParcel(Parcel data, [GeneratedEnum] ParcelableWriteFlags flags)
         {
-            return 0;
+            data.WriteInt(MinSelectable);
+            data.WriteInt(MaxSelectable);
+            data.WriteLong(MinPixels);
+            data.WriteLong(MaxPixels);
+            data.WriteBoolean(IsEnableCamera);
+            data.WriteBoolean(mStartWithCamera);
+            data.WriteParcelable(this.Engine, ParcelableWriteFlags.None);
+            data.WriteList(MimeTypes);
         }
-
-        public void WriteToParcel(Parcel dest,  [GeneratedEnum] ParcelableWriteFlags  flags)
-        {
-            dest.WriteInt(MinSelectable);
-            dest.WriteInt(MaxSelectable);
-            dest.WriteLong(MinPixels);
-            dest.WriteLong(MaxPixels);
-            ParcelUtils.WriteBoolean(dest, IsEnableCamera);
-            ParcelUtils.WriteBoolean(dest, mStartWithCamera);
-            dest.WriteParcelable(this.Engine,  ParcelableWriteFlags.None);
-            dest.WriteList(MimeTypes);
-        }
-
-
 
         public bool WillStartCamera() { return mStartWithCamera; }
-
 
         public void StartWithCamera(bool mStartWithCamera) { this.mStartWithCamera = mStartWithCamera; }
 
@@ -113,25 +109,12 @@ namespace LazyWelfare.AndroidMobile.ImageSelect.Model
                 }
             }
         }
-
-
-        public class SelectionSpecParcelableCreator : Java.Lang.Object, IParcelableCreator
-        {
-            public Java.Lang.Object CreateFromParcel(Parcel source)
-            {
-                return new SelectionSpec(source);
-            }
-
-            public Java.Lang.Object[] NewArray(int size)
-            {
-                return new Object[size];
-            }
-        }
-
+     
+     
         [Java.Interop.ExportField("CREATOR")]
-        public static SelectionSpecParcelableCreator Creator() => new SelectionSpecParcelableCreator();
+        public static ParcelableCreator<SelectionSpec> Creator() => new ParcelableCreator<SelectionSpec>();
 
     }
 
-    
+
 }

@@ -19,6 +19,7 @@
     using AttributeSet = Android.Util.IAttributeSet;
     using FrameLayout = Android.Widget.FrameLayout;
     using Android.Views;
+    using LazyWelfare.AndroidUtils.Animation;
 
     /// <summary>
     /// AlphaMaskFrameLayout
@@ -118,11 +119,29 @@
         {
             CheckAttrsValues();
 
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final Android.animation.ValueAnimator valueAnimator = Android.animation.ValueAnimator.ofInt(from, to);
             ValueAnimator valueAnimator = ValueAnimator.OfInt(from, to);
             valueAnimator.SetDuration(duration);
-            valueAnimator.AddUpdateListener(new AnimatorUpdateListenerAnonymousInnerClass(this, from, to, valueAnimator));
+            valueAnimator.AddUpdateListener(new AnonymousAnimatorUpdateListener(animation => {
+                int newAlpha = (int)animation.AnimatedValue;
+                this.ForgroundAlpha = newAlpha;
+                //anim finished
+                if (newAlpha == to)
+                {
+                    valueAnimator.Cancel();
+                    this.animList.Clear();
+                    if (this.onAlphaFinishedListener != null)
+                    {
+                        if (from > to)
+                        {
+                            this.onAlphaFinishedListener.OnHideFinished();
+                        }
+                        else
+                        {
+                            this.onAlphaFinishedListener.OnShowFinished();
+                        }
+                    }
+                }
+            }));
             valueAnimator.Start();
             animList.Add(valueAnimator);
         }
@@ -206,49 +225,6 @@
         {
             void OnShowFinished();
             void OnHideFinished();
-        }
-
-
-        private class AnimatorUpdateListenerAnonymousInnerClass : Java.Lang.Object, ValueAnimator.IAnimatorUpdateListener
-        {
-            private readonly AlphaMaskLayout outerInstance;
-
-            private int From { get; }
-
-            private int To { get; }
-
-            private ValueAnimator valueAnimator;
-
-            public AnimatorUpdateListenerAnonymousInnerClass(AlphaMaskLayout outerInstance, int from, int to, ValueAnimator valueAnimator)
-            {
-                this.outerInstance = outerInstance;
-                From = from;
-                To = to;
-                this.valueAnimator = valueAnimator;
-            }
-
-            public void OnAnimationUpdate(ValueAnimator animation)
-            {
-                int newAlpha = (int)animation.AnimatedValue;
-                outerInstance.ForgroundAlpha = newAlpha;
-                //anim finished
-                if (newAlpha == To)
-                {
-                    valueAnimator.Cancel();
-                    outerInstance.animList.Clear();
-                    if (outerInstance.onAlphaFinishedListener != null)
-                    {
-                        if (From > To)
-                        {
-                            outerInstance.onAlphaFinishedListener.OnHideFinished();
-                        }
-                        else
-                        {
-                            outerInstance.onAlphaFinishedListener.OnShowFinished();
-                        }
-                    }
-                }
-            }
         }
 
     }

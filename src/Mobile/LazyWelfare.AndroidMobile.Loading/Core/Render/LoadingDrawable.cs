@@ -9,6 +9,7 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
     using Drawable = Android.Graphics.Drawables.Drawable;
     using Android.Graphics;
     using Java.Lang;
+    using LazyWelfare.AndroidUtils.Graphics;
 
     public class LoadingDrawable : Drawable, IAnimatable
     {
@@ -16,33 +17,14 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
 
         private ICallback mCallback { get; }
 
-        private class CallbackAnonymousInnerClass : Java.Lang.Object,ICallback
-        {
-            LoadingDrawable Master { get; }
-            public CallbackAnonymousInnerClass(LoadingDrawable master)
-            {
-                Master = master;
-            }
-
-            public  void InvalidateDrawable(Drawable d)
-            {
-                Master.InvalidateSelf();
-            }
-
-            public  void ScheduleDrawable(Drawable d, IRunnable what, long when)
-            {
-                Master.ScheduleSelf(what, when);
-            }
-
-            public  void UnscheduleDrawable(Drawable d, IRunnable what)
-            {
-                Master.UnscheduleSelf(what);
-            }
-        }
-
         public LoadingDrawable(LoadingRenderer loadingRender)
         {
-            mCallback = new CallbackAnonymousInnerClass(this);
+            mCallback = new AnonymousDrawableICallback
+            {
+                Invalidate = d => InvalidateSelf(),
+                Schedule = (d, what, when) => ScheduleSelf(what, when),
+                Unschedule = (d, what) => UnscheduleSelf(what),
+            };
             mLoadingRender = loadingRender;
             mLoadingRender.Callback = mCallback;
         }
