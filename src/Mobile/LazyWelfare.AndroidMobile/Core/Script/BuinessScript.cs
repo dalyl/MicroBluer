@@ -46,10 +46,10 @@ namespace LazyWelfare.AndroidMobile.Script
         [JavascriptInterface]
         public bool SaveHost(string args)
         {
-            return Try.Invoke(false,()=> saveHost(args));
+            return Try.Invoke(false,()=> HostSave(args));
         }
 
-        bool saveHost(string args)
+        bool HostSave(string args)
         {
             var model = DeserializeForm<HostModel>(args);
             if (model == null) return Try.Throw<bool>("参数未正确识别");
@@ -86,6 +86,10 @@ namespace LazyWelfare.AndroidMobile.Script
         public bool CommandSumbit(string args)
         {
             if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确识别");
+
+            var ctrl = new ImageCtrlView(ViewActivity);
+            ctrl.Show();
+
             return Try.Show<bool>(true, args);
         }
     }
