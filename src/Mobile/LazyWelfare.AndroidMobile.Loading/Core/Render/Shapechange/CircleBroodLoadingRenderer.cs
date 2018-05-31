@@ -126,8 +126,8 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
 
 			mMaxMotherOvalSize = DensityUtil.Dip2Px(context, MAX_MATHER_OVAL_SIZE);
 			mBasicChildOvalRadius = DensityUtil.Dip2Px(context, MIN_CHILD_OVAL_RADIUS);
@@ -140,9 +140,9 @@
 			mMotherOvalHalfWidth = mMaxMotherOvalSize;
 			mMotherOvalHalfHeight = mMaxMotherOvalSize;
 
-			mMaxRevealCircleRadius = (int)(Math.Sqrt(mWidth * mWidth + mHeight * mHeight) / 2 + 1);
+			mMaxRevealCircleRadius = (int)(Math.Sqrt(Width * Width + Height * Height) / 2 + 1);
 
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 		}
 
 		private void SetupPaint()
@@ -152,7 +152,7 @@
 			mPaint.StrokeWidth = 1.0f;
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int SaveCount = canvas.Save();
 

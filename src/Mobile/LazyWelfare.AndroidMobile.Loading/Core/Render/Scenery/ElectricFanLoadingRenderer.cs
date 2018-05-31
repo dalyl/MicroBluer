@@ -108,8 +108,8 @@
 		{
 			mMode = MODE_NORMAL;
 
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_Width);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_Height);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_Width);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_Height);
 			mTextSize = DensityUtil.Dip2Px(context, DEFAULT_TEXT_SIZE);
 			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_Width);
 			mCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_CENTER_RADIUS);
@@ -124,8 +124,8 @@
             mLoadingDrawable = context.GetDrawable(Resource.Drawable.ic_loading);
 			mElectricFanDrawable = context.GetDrawable(Resource.Drawable.ic_eletric_fan);
 
-			mDuration = ANIMATION_DURATION;
-			SetInsets((int) mWidth, (int) mHeight);
+			Duration = ANIMATION_DURATION;
+			SetInsets((int) Width, (int) Height);
 		}
 
 		private void SetupPaint()
@@ -136,7 +136,7 @@
 			mPaint.StrokeCap = Paint.Cap.Round;
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int saveCount = canvas.Save();
 
@@ -360,7 +360,7 @@
 			animator.AddUpdateListener(new BezierListener(this, target));
 			animator.SetTarget (target);
 
-			animator.SetDuration ((long)((mRandom.Next(300) + mDuration * DEFAULT_LEAF_FLY_DURATION_FACTOR) * (1.0f - progress)));
+			animator.SetDuration ((long)((mRandom.Next(300) + Duration * DEFAULT_LEAF_FLY_DURATION_FACTOR) * (1.0f - progress)));
 
 			return animator;
 		}

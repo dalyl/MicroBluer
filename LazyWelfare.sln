@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LazyWelfare.ServerCore", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.AndroidUtils", "src\Mobile\LazyWelfare.AndroidUtils\LazyWelfare.AndroidUtils.csproj", "{6A64624C-9BD2-4AB5-8442-3BDDCA81417E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWelfare.AndroidAreaView", "src\Mobile\LazyWelfare.AndroidAreaView\LazyWelfare.AndroidAreaView.csproj", "{979912AF-6F8A-4B28-9DD9-5419A0EA506F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{6A64624C-9BD2-4AB5-8442-3BDDCA81417E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A64624C-9BD2-4AB5-8442-3BDDCA81417E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A64624C-9BD2-4AB5-8442-3BDDCA81417E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{979912AF-6F8A-4B28-9DD9-5419A0EA506F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979912AF-6F8A-4B28-9DD9-5419A0EA506F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979912AF-6F8A-4B28-9DD9-5419A0EA506F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979912AF-6F8A-4B28-9DD9-5419A0EA506F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{50F5FC3C-222F-4F5A-825B-6F781B18E0BC} = {2A1ED7A3-3115-4B62-A550-8B320F091B12}
 		{E8304128-61D6-46B2-9875-3B64F7DA714C} = {47C29C30-D80E-445E-B15C-D913DC673F86}
 		{6A64624C-9BD2-4AB5-8442-3BDDCA81417E} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
+		{979912AF-6F8A-4B28-9DD9-5419A0EA506F} = {4376E57E-0485-4FD2-B39E-ECDB354354B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BAB00A0-1B85-476C-951E-30CB476CE191}

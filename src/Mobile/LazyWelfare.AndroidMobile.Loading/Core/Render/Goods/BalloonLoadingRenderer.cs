@@ -87,8 +87,8 @@
 		{
 			mTextSize = DensityUtil.Dip2Px(context, DEFAULT_TEXT_SIZE);
 
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
 			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
 
 			mGasTubeWidth = DensityUtil.Dip2Px(context, DEFAULT_GAS_TUBE_WIDTH);
@@ -110,7 +110,7 @@
 
 			mProgressText = 10 + PERCENT_SIGN;
 
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 		}
 
 		private void SetupPaint()
@@ -119,7 +119,7 @@
 			mPaint.StrokeWidth = mStrokeWidth;
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int saveCount = canvas.Save();
 

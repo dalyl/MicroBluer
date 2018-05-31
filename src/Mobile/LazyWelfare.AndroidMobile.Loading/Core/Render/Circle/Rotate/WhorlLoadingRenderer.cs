@@ -84,7 +84,7 @@
 			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
 			mCenterRadius = DensityUtil.Dip2Px(context, DEFAULT_CENTER_RADIUS);
 
-			InitStrokeInSet(mWidth, mHeight);
+			InitStrokeInSet(Width, Height);
 		}
 
 		private void SetupPaint()
@@ -95,7 +95,7 @@
 			mPaint.StrokeCap = Paint.Cap.Round;
 		}
 
-		protected internal override void Draw(Canvas canvas)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int saveCount = canvas.Save();
 

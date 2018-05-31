@@ -8,86 +8,52 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
     using IAnimatable = Android.Graphics.Drawables.IAnimatable;//Animatable;
     using Drawable = Android.Graphics.Drawables.Drawable;
     using Android.Graphics;
-    using Java.Lang;
     using LazyWelfare.AndroidUtils.Graphics;
 
     public class LoadingDrawable : Drawable, IAnimatable
     {
-        private readonly LoadingRenderer mLoadingRender;
-
-        private ICallback mCallback { get; }
+        private LoadingRenderer LoadingRender { get; }
 
         public LoadingDrawable(LoadingRenderer loadingRender)
         {
-            mCallback = new AnonymousDrawableICallback
+            LoadingRender = loadingRender;
+            LoadingRender.Callback = new AnonymousDrawableICallback
             {
                 Invalidate = d => InvalidateSelf(),
                 Schedule = (d, what, when) => ScheduleSelf(what, when),
                 Unschedule = (d, what) => UnscheduleSelf(what),
             };
-            mLoadingRender = loadingRender;
-            mLoadingRender.Callback = mCallback;
         }
 
-        protected  override void OnBoundsChange(Rect bounds)
+        protected override void OnBoundsChange(Rect bounds)
         {
             base.OnBoundsChange(bounds);
-            this.mLoadingRender.Bounds = bounds;
+            this.LoadingRender.Bounds = bounds;
         }
 
         public override void Draw(Canvas canvas)
         {
             if (!Bounds.IsEmpty)
             {
-                this.mLoadingRender.Draw(canvas);
+                this.LoadingRender.Draw(canvas);
             }
         }
 
-        public override void SetAlpha(int value)
-        {
-            this.mLoadingRender.Alpha = value;
-        }
+        public override void SetAlpha(int value) => this.LoadingRender.Alpha = value;
 
-        public override void SetColorFilter(ColorFilter value)
-        {
-            this.mLoadingRender.ColorFilter = value;
-        }
+        public override void SetColorFilter(ColorFilter value) => this.LoadingRender.ColorFilter = value;
 
         public override int Opacity => (int)Format.Translucent;
 
-        public  void Start()
-        {
-            this.mLoadingRender.Start();
-        }
+        public void Start() => this.LoadingRender.Start();
 
-        public  void Stop()
-        {
-            this.mLoadingRender.Stop();
-        }
+        public void Stop() => this.LoadingRender.Stop();
 
-        public  bool IsRunning
-        {
-            get
-            {
-                return this.mLoadingRender.Running;
-            }
-        }
+        public bool IsRunning => this.LoadingRender.Running;
 
-        public override int IntrinsicHeight
-        {
-            get
-            {
-                return (int)this.mLoadingRender.mHeight;
-            }
-        }
+        public override int IntrinsicHeight => (int)this.LoadingRender.Height;
 
-        public override int IntrinsicWidth
-        {
-            get
-            {
-                return (int)this.mLoadingRender.mWidth;
-            }
-        }
+        public override int IntrinsicWidth => (int)this.LoadingRender.Width;
     }
 
 }

@@ -67,8 +67,8 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
 			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
 			mWaitCircleRadius = DensityUtil.Dip2Px(context, WAIT_CIRCLE_RADIUS);
 
@@ -76,7 +76,7 @@
 			mMiddleColor = Color.ParseColor("#FFF3C742");
 			mBottomColor = Color.ParseColor("#FF89CC59");
 
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 		}
 
 		private void SetupPaint()
@@ -88,7 +88,7 @@
 			mPaint.StrokeCap = Paint.Cap.Round;
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int SaveCount = canvas.Save();
 			RectF arcBounds = mCurrentBounds;

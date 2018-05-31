@@ -26,6 +26,1286 @@ namespace LazyWelfare.AndroidMobile
 		
 		public static void UpdateIdValues()
 		{
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_fade_in = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_fade_in;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_fade_out = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_fade_out;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_grow_fade_in_from_bottom = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_popup_enter = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_popup_enter;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_popup_exit = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_popup_exit;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_shrink_fade_out_from_bottom = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_slide_in_bottom = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_slide_in_bottom;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_slide_in_top = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_slide_in_top;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_slide_out_bottom = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_slide_out_bottom;
+			global::LazyWelfare.AndroidAreaView.Resource.Animation.abc_slide_out_top = global::LazyWelfare.AndroidMobile.Resource.Animation.abc_slide_out_top;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarDivider = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarDivider;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarItemBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarItemBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarPopupTheme = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarPopupTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarSize = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarSize;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarSplitStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarSplitStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarTabBarStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarTabBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarTabStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarTabStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarTabTextStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarTabTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarTheme = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionBarWidgetTheme = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionBarWidgetTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionDropDownStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionDropDownStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionMenuTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionMenuTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionMenuTextColor = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionMenuTextColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeCloseButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeCloseButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeCloseDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeCloseDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeCopyDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeCopyDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeCutDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeCutDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeFindDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeFindDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModePasteDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModePasteDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModePopupWindowStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModePopupWindowStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeSelectAllDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeSelectAllDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeShareDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeShareDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeSplitBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeSplitBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionModeWebSearchDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionModeWebSearchDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionOverflowButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionOverflowButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionOverflowMenuStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionOverflowMenuStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionProviderClass = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionProviderClass;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.actionViewClass = global::LazyWelfare.AndroidMobile.Resource.Attribute.actionViewClass;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.activityChooserViewStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.activityChooserViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.alertDialogButtonGroupStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.alertDialogCenterButtons = global::LazyWelfare.AndroidMobile.Resource.Attribute.alertDialogCenterButtons;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.alertDialogStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.alertDialogStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.alertDialogTheme = global::LazyWelfare.AndroidMobile.Resource.Attribute.alertDialogTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.allowStacking = global::LazyWelfare.AndroidMobile.Resource.Attribute.allowStacking;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.arrowHeadLength = global::LazyWelfare.AndroidMobile.Resource.Attribute.arrowHeadLength;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.arrowShaftLength = global::LazyWelfare.AndroidMobile.Resource.Attribute.arrowShaftLength;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.autoCompleteTextViewStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.autoCompleteTextViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.background = global::LazyWelfare.AndroidMobile.Resource.Attribute.background;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.backgroundSplit = global::LazyWelfare.AndroidMobile.Resource.Attribute.backgroundSplit;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.backgroundStacked = global::LazyWelfare.AndroidMobile.Resource.Attribute.backgroundStacked;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.backgroundTint = global::LazyWelfare.AndroidMobile.Resource.Attribute.backgroundTint;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.backgroundTintMode = global::LazyWelfare.AndroidMobile.Resource.Attribute.backgroundTintMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.barLength = global::LazyWelfare.AndroidMobile.Resource.Attribute.barLength;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.borderlessButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.borderlessButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonBarButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonBarButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonBarNegativeButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonBarNeutralButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonBarPositiveButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonBarStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonPanelSideLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonPanelSideLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonStyleSmall = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonStyleSmall;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonTint = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonTint;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.buttonTintMode = global::LazyWelfare.AndroidMobile.Resource.Attribute.buttonTintMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.checkboxStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.checkboxStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.checkedTextViewStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.checkedTextViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.closeIcon = global::LazyWelfare.AndroidMobile.Resource.Attribute.closeIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.closeItemLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.closeItemLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.collapseContentDescription = global::LazyWelfare.AndroidMobile.Resource.Attribute.collapseContentDescription;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.collapseIcon = global::LazyWelfare.AndroidMobile.Resource.Attribute.collapseIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.color = global::LazyWelfare.AndroidMobile.Resource.Attribute.color;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.colorAccent = global::LazyWelfare.AndroidMobile.Resource.Attribute.colorAccent;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.colorButtonNormal = global::LazyWelfare.AndroidMobile.Resource.Attribute.colorButtonNormal;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.colorControlActivated = global::LazyWelfare.AndroidMobile.Resource.Attribute.colorControlActivated;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.colorControlHighlight = global::LazyWelfare.AndroidMobile.Resource.Attribute.colorControlHighlight;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.colorControlNormal = global::LazyWelfare.AndroidMobile.Resource.Attribute.colorControlNormal;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.colorPrimary = global::LazyWelfare.AndroidMobile.Resource.Attribute.colorPrimary;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.colorPrimaryDark = global::LazyWelfare.AndroidMobile.Resource.Attribute.colorPrimaryDark;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.colorSwitchThumbNormal = global::LazyWelfare.AndroidMobile.Resource.Attribute.colorSwitchThumbNormal;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.commitIcon = global::LazyWelfare.AndroidMobile.Resource.Attribute.commitIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.contentInsetEnd = global::LazyWelfare.AndroidMobile.Resource.Attribute.contentInsetEnd;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.contentInsetLeft = global::LazyWelfare.AndroidMobile.Resource.Attribute.contentInsetLeft;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.contentInsetRight = global::LazyWelfare.AndroidMobile.Resource.Attribute.contentInsetRight;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.contentInsetStart = global::LazyWelfare.AndroidMobile.Resource.Attribute.contentInsetStart;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.controlBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.controlBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.customNavigationLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.customNavigationLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.defaultQueryHint = global::LazyWelfare.AndroidMobile.Resource.Attribute.defaultQueryHint;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.dialogPreferredPadding = global::LazyWelfare.AndroidMobile.Resource.Attribute.dialogPreferredPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.dialogTheme = global::LazyWelfare.AndroidMobile.Resource.Attribute.dialogTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.displayOptions = global::LazyWelfare.AndroidMobile.Resource.Attribute.displayOptions;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.divider = global::LazyWelfare.AndroidMobile.Resource.Attribute.divider;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.dividerHorizontal = global::LazyWelfare.AndroidMobile.Resource.Attribute.dividerHorizontal;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.dividerPadding = global::LazyWelfare.AndroidMobile.Resource.Attribute.dividerPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.dividerVertical = global::LazyWelfare.AndroidMobile.Resource.Attribute.dividerVertical;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.drawableSize = global::LazyWelfare.AndroidMobile.Resource.Attribute.drawableSize;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.drawerArrowStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.drawerArrowStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.dropDownListViewStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.dropDownListViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.dropdownListPreferredItemHeight = global::LazyWelfare.AndroidMobile.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.editTextBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.editTextBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.editTextColor = global::LazyWelfare.AndroidMobile.Resource.Attribute.editTextColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.editTextStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.editTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.elevation = global::LazyWelfare.AndroidMobile.Resource.Attribute.elevation;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.expandActivityOverflowButtonDrawable = global::LazyWelfare.AndroidMobile.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.gapBetweenBars = global::LazyWelfare.AndroidMobile.Resource.Attribute.gapBetweenBars;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.goIcon = global::LazyWelfare.AndroidMobile.Resource.Attribute.goIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.height = global::LazyWelfare.AndroidMobile.Resource.Attribute.height;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.hideOnContentScroll = global::LazyWelfare.AndroidMobile.Resource.Attribute.hideOnContentScroll;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.homeAsUpIndicator = global::LazyWelfare.AndroidMobile.Resource.Attribute.homeAsUpIndicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.homeLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.homeLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.icon = global::LazyWelfare.AndroidMobile.Resource.Attribute.icon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.iconifiedByDefault = global::LazyWelfare.AndroidMobile.Resource.Attribute.iconifiedByDefault;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.imageButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.imageButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.indeterminateProgressStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.indeterminateProgressStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.initialActivityCount = global::LazyWelfare.AndroidMobile.Resource.Attribute.initialActivityCount;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.isLightTheme = global::LazyWelfare.AndroidMobile.Resource.Attribute.isLightTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.itemPadding = global::LazyWelfare.AndroidMobile.Resource.Attribute.itemPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.layout = global::LazyWelfare.AndroidMobile.Resource.Attribute.layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listChoiceBackgroundIndicator = global::LazyWelfare.AndroidMobile.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listDividerAlertDialog = global::LazyWelfare.AndroidMobile.Resource.Attribute.listDividerAlertDialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listItemLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.listItemLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.listLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listPopupWindowStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.listPopupWindowStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listPreferredItemHeight = global::LazyWelfare.AndroidMobile.Resource.Attribute.listPreferredItemHeight;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listPreferredItemHeightLarge = global::LazyWelfare.AndroidMobile.Resource.Attribute.listPreferredItemHeightLarge;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listPreferredItemHeightSmall = global::LazyWelfare.AndroidMobile.Resource.Attribute.listPreferredItemHeightSmall;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listPreferredItemPaddingLeft = global::LazyWelfare.AndroidMobile.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.listPreferredItemPaddingRight = global::LazyWelfare.AndroidMobile.Resource.Attribute.listPreferredItemPaddingRight;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.logo = global::LazyWelfare.AndroidMobile.Resource.Attribute.logo;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.logoDescription = global::LazyWelfare.AndroidMobile.Resource.Attribute.logoDescription;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.maxButtonHeight = global::LazyWelfare.AndroidMobile.Resource.Attribute.maxButtonHeight;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.measureWithLargestChild = global::LazyWelfare.AndroidMobile.Resource.Attribute.measureWithLargestChild;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.multiChoiceItemLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.multiChoiceItemLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.navigationContentDescription = global::LazyWelfare.AndroidMobile.Resource.Attribute.navigationContentDescription;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.navigationIcon = global::LazyWelfare.AndroidMobile.Resource.Attribute.navigationIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.navigationMode = global::LazyWelfare.AndroidMobile.Resource.Attribute.navigationMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.overlapAnchor = global::LazyWelfare.AndroidMobile.Resource.Attribute.overlapAnchor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.paddingEnd = global::LazyWelfare.AndroidMobile.Resource.Attribute.paddingEnd;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.paddingStart = global::LazyWelfare.AndroidMobile.Resource.Attribute.paddingStart;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.panelBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.panelBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.panelMenuListTheme = global::LazyWelfare.AndroidMobile.Resource.Attribute.panelMenuListTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.panelMenuListWidth = global::LazyWelfare.AndroidMobile.Resource.Attribute.panelMenuListWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.popupMenuStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.popupMenuStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.popupTheme = global::LazyWelfare.AndroidMobile.Resource.Attribute.popupTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.popupWindowStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.popupWindowStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.preserveIconSpacing = global::LazyWelfare.AndroidMobile.Resource.Attribute.preserveIconSpacing;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.progressBarPadding = global::LazyWelfare.AndroidMobile.Resource.Attribute.progressBarPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.progressBarStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.progressBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.queryBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.queryBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.queryHint = global::LazyWelfare.AndroidMobile.Resource.Attribute.queryHint;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.radioButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.radioButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.ratingBarStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.ratingBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.ratingBarStyleIndicator = global::LazyWelfare.AndroidMobile.Resource.Attribute.ratingBarStyleIndicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.ratingBarStyleSmall = global::LazyWelfare.AndroidMobile.Resource.Attribute.ratingBarStyleSmall;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.searchHintIcon = global::LazyWelfare.AndroidMobile.Resource.Attribute.searchHintIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.searchIcon = global::LazyWelfare.AndroidMobile.Resource.Attribute.searchIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.searchViewStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.searchViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.seekBarStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.seekBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.selectableItemBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.selectableItemBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.selectableItemBackgroundBorderless = global::LazyWelfare.AndroidMobile.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.showAsAction = global::LazyWelfare.AndroidMobile.Resource.Attribute.showAsAction;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.showDividers = global::LazyWelfare.AndroidMobile.Resource.Attribute.showDividers;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.showText = global::LazyWelfare.AndroidMobile.Resource.Attribute.showText;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.singleChoiceItemLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.singleChoiceItemLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.spinBars = global::LazyWelfare.AndroidMobile.Resource.Attribute.spinBars;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.spinnerDropDownItemStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.spinnerDropDownItemStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.spinnerStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.spinnerStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.splitTrack = global::LazyWelfare.AndroidMobile.Resource.Attribute.splitTrack;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.srcCompat = global::LazyWelfare.AndroidMobile.Resource.Attribute.srcCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.state_above_anchor = global::LazyWelfare.AndroidMobile.Resource.Attribute.state_above_anchor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.submitBackground = global::LazyWelfare.AndroidMobile.Resource.Attribute.submitBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.subtitle = global::LazyWelfare.AndroidMobile.Resource.Attribute.subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.subtitleTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Attribute.subtitleTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.subtitleTextColor = global::LazyWelfare.AndroidMobile.Resource.Attribute.subtitleTextColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.subtitleTextStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.subtitleTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.suggestionRowLayout = global::LazyWelfare.AndroidMobile.Resource.Attribute.suggestionRowLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.switchMinWidth = global::LazyWelfare.AndroidMobile.Resource.Attribute.switchMinWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.switchPadding = global::LazyWelfare.AndroidMobile.Resource.Attribute.switchPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.switchStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.switchStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.switchTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Attribute.switchTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textAllCaps = global::LazyWelfare.AndroidMobile.Resource.Attribute.textAllCaps;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textAppearanceLargePopupMenu = global::LazyWelfare.AndroidMobile.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textAppearanceListItem = global::LazyWelfare.AndroidMobile.Resource.Attribute.textAppearanceListItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textAppearanceListItemSmall = global::LazyWelfare.AndroidMobile.Resource.Attribute.textAppearanceListItemSmall;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textAppearanceSearchResultSubtitle = global::LazyWelfare.AndroidMobile.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textAppearanceSearchResultTitle = global::LazyWelfare.AndroidMobile.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textAppearanceSmallPopupMenu = global::LazyWelfare.AndroidMobile.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textColorAlertDialogListItem = global::LazyWelfare.AndroidMobile.Resource.Attribute.textColorAlertDialogListItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.textColorSearchUrl = global::LazyWelfare.AndroidMobile.Resource.Attribute.textColorSearchUrl;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.theme = global::LazyWelfare.AndroidMobile.Resource.Attribute.theme;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.thickness = global::LazyWelfare.AndroidMobile.Resource.Attribute.thickness;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.thumbTextPadding = global::LazyWelfare.AndroidMobile.Resource.Attribute.thumbTextPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.title = global::LazyWelfare.AndroidMobile.Resource.Attribute.title;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.titleMarginBottom = global::LazyWelfare.AndroidMobile.Resource.Attribute.titleMarginBottom;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.titleMarginEnd = global::LazyWelfare.AndroidMobile.Resource.Attribute.titleMarginEnd;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.titleMarginStart = global::LazyWelfare.AndroidMobile.Resource.Attribute.titleMarginStart;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.titleMarginTop = global::LazyWelfare.AndroidMobile.Resource.Attribute.titleMarginTop;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.titleMargins = global::LazyWelfare.AndroidMobile.Resource.Attribute.titleMargins;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.titleTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Attribute.titleTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.titleTextColor = global::LazyWelfare.AndroidMobile.Resource.Attribute.titleTextColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.titleTextStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.titleTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.toolbarNavigationButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.toolbarStyle = global::LazyWelfare.AndroidMobile.Resource.Attribute.toolbarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.track = global::LazyWelfare.AndroidMobile.Resource.Attribute.track;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.voiceIcon = global::LazyWelfare.AndroidMobile.Resource.Attribute.voiceIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowActionBar = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowActionBarOverlay = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowActionBarOverlay;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowActionModeOverlay = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowActionModeOverlay;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowFixedHeightMajor = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowFixedHeightMajor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowFixedHeightMinor = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowFixedHeightMinor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowFixedWidthMajor = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowFixedWidthMajor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowFixedWidthMinor = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowFixedWidthMinor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowMinWidthMajor = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowMinWidthMajor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowMinWidthMinor = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowMinWidthMinor;
+			global::LazyWelfare.AndroidAreaView.Resource.Attribute.windowNoTitle = global::LazyWelfare.AndroidMobile.Resource.Attribute.windowNoTitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Boolean.abc_action_bar_embed_tabs = global::LazyWelfare.AndroidMobile.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::LazyWelfare.AndroidAreaView.Resource.Boolean.abc_action_bar_embed_tabs_pre_jb = global::LazyWelfare.AndroidMobile.Resource.Boolean.abc_action_bar_embed_tabs_pre_jb;
+			global::LazyWelfare.AndroidAreaView.Resource.Boolean.abc_action_bar_expanded_action_views_exclusive = global::LazyWelfare.AndroidMobile.Resource.Boolean.abc_action_bar_expanded_action_views_exclusive;
+			global::LazyWelfare.AndroidAreaView.Resource.Boolean.abc_allow_stacked_button_bar = global::LazyWelfare.AndroidMobile.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::LazyWelfare.AndroidAreaView.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::LazyWelfare.AndroidMobile.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::LazyWelfare.AndroidAreaView.Resource.Boolean.abc_config_allowActionMenuItemTextWithIcon = global::LazyWelfare.AndroidMobile.Resource.Boolean.abc_config_allowActionMenuItemTextWithIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::LazyWelfare.AndroidMobile.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::LazyWelfare.AndroidAreaView.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::LazyWelfare.AndroidMobile.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_background_cache_hint_selector_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_background_cache_hint_selector_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_color_highlight_material = global::LazyWelfare.AndroidMobile.Resource.Color.abc_color_highlight_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_input_method_navigation_guard = global::LazyWelfare.AndroidMobile.Resource.Color.abc_input_method_navigation_guard;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_primary_text_disable_only_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_primary_text_disable_only_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_primary_text_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.abc_primary_text_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_primary_text_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.abc_primary_text_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_search_url_text = global::LazyWelfare.AndroidMobile.Resource.Color.abc_search_url_text;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_search_url_text_normal = global::LazyWelfare.AndroidMobile.Resource.Color.abc_search_url_text_normal;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_search_url_text_pressed = global::LazyWelfare.AndroidMobile.Resource.Color.abc_search_url_text_pressed;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_search_url_text_selected = global::LazyWelfare.AndroidMobile.Resource.Color.abc_search_url_text_selected;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_secondary_text_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.abc_secondary_text_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.abc_secondary_text_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.abc_secondary_text_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.accent_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.accent_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.accent_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.accent_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.background_floating_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.background_floating_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.background_floating_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.background_floating_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.background_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.background_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.background_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.background_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.bright_foreground_disabled_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.bright_foreground_disabled_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.bright_foreground_disabled_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.bright_foreground_disabled_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.bright_foreground_inverse_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.bright_foreground_inverse_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.bright_foreground_inverse_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.bright_foreground_inverse_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.bright_foreground_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.bright_foreground_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.bright_foreground_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.bright_foreground_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.button_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.button_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.button_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.button_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.dim_foreground_disabled_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.dim_foreground_disabled_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.dim_foreground_disabled_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.dim_foreground_disabled_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.dim_foreground_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.dim_foreground_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.dim_foreground_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.dim_foreground_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.foreground_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.foreground_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.foreground_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.foreground_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.gray_9999 = global::LazyWelfare.AndroidMobile.Resource.Color.gray_9999;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.gray_f2f2 = global::LazyWelfare.AndroidMobile.Resource.Color.gray_f2f2;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.highlighted_text_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.highlighted_text_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.highlighted_text_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.highlighted_text_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.hint_foreground_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.hint_foreground_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.hint_foreground_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.hint_foreground_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_blue_grey_800 = global::LazyWelfare.AndroidMobile.Resource.Color.material_blue_grey_800;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_blue_grey_900 = global::LazyWelfare.AndroidMobile.Resource.Color.material_blue_grey_900;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_blue_grey_950 = global::LazyWelfare.AndroidMobile.Resource.Color.material_blue_grey_950;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_deep_teal_200 = global::LazyWelfare.AndroidMobile.Resource.Color.material_deep_teal_200;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_deep_teal_500 = global::LazyWelfare.AndroidMobile.Resource.Color.material_deep_teal_500;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_grey_100 = global::LazyWelfare.AndroidMobile.Resource.Color.material_grey_100;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_grey_300 = global::LazyWelfare.AndroidMobile.Resource.Color.material_grey_300;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_grey_50 = global::LazyWelfare.AndroidMobile.Resource.Color.material_grey_50;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_grey_600 = global::LazyWelfare.AndroidMobile.Resource.Color.material_grey_600;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_grey_800 = global::LazyWelfare.AndroidMobile.Resource.Color.material_grey_800;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_grey_850 = global::LazyWelfare.AndroidMobile.Resource.Color.material_grey_850;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.material_grey_900 = global::LazyWelfare.AndroidMobile.Resource.Color.material_grey_900;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.primary_dark_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.primary_dark_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.primary_dark_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.primary_dark_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.primary_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.primary_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.primary_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.primary_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.primary_text_default_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.primary_text_default_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.primary_text_default_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.primary_text_default_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.primary_text_disabled_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.primary_text_disabled_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.primary_text_disabled_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.primary_text_disabled_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.ripple_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.ripple_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.ripple_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.ripple_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.secondary_text_default_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.secondary_text_default_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.secondary_text_default_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.secondary_text_default_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.secondary_text_disabled_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.secondary_text_disabled_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.secondary_text_disabled_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.secondary_text_disabled_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.switch_thumb_disabled_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.switch_thumb_disabled_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.switch_thumb_disabled_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.switch_thumb_disabled_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.switch_thumb_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.switch_thumb_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.switch_thumb_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.switch_thumb_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.switch_thumb_normal_material_dark = global::LazyWelfare.AndroidMobile.Resource.Color.switch_thumb_normal_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.switch_thumb_normal_material_light = global::LazyWelfare.AndroidMobile.Resource.Color.switch_thumb_normal_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Color.transparent = global::LazyWelfare.AndroidMobile.Resource.Color.transparent;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_content_inset_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_default_height_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_default_height_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_default_padding_end_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_default_padding_start_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_progress_bar_size = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_stacked_max_height = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_button_min_height_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_button_min_height_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_button_min_width_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_button_min_width_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_action_button_min_width_overflow_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_alert_dialog_button_bar_height = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_button_inset_horizontal_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_button_inset_vertical_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_button_inset_vertical_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_button_padding_horizontal_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_button_padding_vertical_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_button_padding_vertical_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_config_prefDialogWidth = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_config_prefDialogWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_control_corner_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_control_corner_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_control_inset_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_control_inset_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_control_padding_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_control_padding_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_fixed_height_major = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_fixed_height_minor = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_fixed_width_major = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_fixed_width_minor = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_list_padding_vertical_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_list_padding_vertical_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_min_width_major = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_min_width_major;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_min_width_minor = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_min_width_minor;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_padding_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_padding_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dialog_padding_top_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dialog_padding_top_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_disabled_alpha_material_dark = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_disabled_alpha_material_light = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dropdownitem_icon_width = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dropdownitem_text_padding_left = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_dropdownitem_text_padding_right = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_edit_text_inset_bottom_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_edit_text_inset_top_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_floating_window_z = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_floating_window_z;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_list_item_padding_horizontal_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_panel_menu_list_width = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_panel_menu_list_width;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_search_view_preferred_width = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_search_view_preferred_width;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_search_view_text_min_width = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_search_view_text_min_width;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_seekbar_track_background_height_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_seekbar_track_progress_height_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_select_dialog_padding_start_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_switch_padding = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_switch_padding;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_body_1_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_body_1_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_body_2_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_body_2_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_button_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_button_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_caption_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_caption_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_display_1_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_display_1_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_display_2_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_display_2_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_display_3_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_display_3_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_display_4_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_display_4_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_headline_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_headline_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_large_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_large_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_medium_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_medium_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_menu_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_menu_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_small_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_small_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_subhead_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_subhead_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_title_material = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_title_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.abc_text_size_title_material_toolbar = global::LazyWelfare.AndroidMobile.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.disabled_alpha_material_dark = global::LazyWelfare.AndroidMobile.Resource.Dimension.disabled_alpha_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.disabled_alpha_material_light = global::LazyWelfare.AndroidMobile.Resource.Dimension.disabled_alpha_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.highlight_alpha_material_colored = global::LazyWelfare.AndroidMobile.Resource.Dimension.highlight_alpha_material_colored;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.highlight_alpha_material_dark = global::LazyWelfare.AndroidMobile.Resource.Dimension.highlight_alpha_material_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.highlight_alpha_material_light = global::LazyWelfare.AndroidMobile.Resource.Dimension.highlight_alpha_material_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.notification_large_icon_height = global::LazyWelfare.AndroidMobile.Resource.Dimension.notification_large_icon_height;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.notification_large_icon_width = global::LazyWelfare.AndroidMobile.Resource.Dimension.notification_large_icon_width;
+			global::LazyWelfare.AndroidAreaView.Resource.Dimension.notification_subtext_size = global::LazyWelfare.AndroidMobile.Resource.Dimension.notification_subtext_size;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_action_bar_item_background_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_action_bar_item_background_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_borderless_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_borderless_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_check_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_check_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_colored_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_colored_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_default_mtrl_shape = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_radio_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_radio_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_rating_star_off_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_rating_star_off_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_rating_star_on_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_rating_star_on_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_cab_background_internal_bg = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_cab_background_internal_bg;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_cab_background_top_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_cab_background_top_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_control_background_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_control_background_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_dialog_material_background_dark = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_dialog_material_background_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_dialog_material_background_light = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_dialog_material_background_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_edit_text_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_edit_text_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_ab_back_mtrl_am_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_ab_back_mtrl_am_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_clear_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_clear_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_go_search_api_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_go_search_api_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_menu_moreoverflow_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_menu_moreoverflow_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_search_api_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_search_api_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_star_black_16dp = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_star_black_16dp;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_star_black_36dp = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_star_black_36dp;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_star_half_black_16dp = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_star_half_black_36dp = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ic_voice_search_api_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ic_voice_search_api_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_item_background_holo_dark = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_item_background_holo_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_item_background_holo_light = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_item_background_holo_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_divider_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_focused_holo = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_focused_holo;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_longpressed_holo = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_longpressed_holo;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_pressed_holo_dark = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_pressed_holo_light = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_pressed_holo_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_selector_disabled_holo_light = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_selector_holo_dark = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_selector_holo_dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_list_selector_holo_light = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_list_selector_holo_light;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_popup_background_mtrl_mult = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ratingbar_full_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ratingbar_full_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ratingbar_indicator_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_ratingbar_small_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_ratingbar_small_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_seekbar_thumb_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_seekbar_thumb_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_seekbar_track_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_seekbar_track_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_spinner_textfield_background_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_switch_thumb_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_switch_thumb_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_switch_track_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_tab_indicator_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_tab_indicator_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_text_cursor_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_text_cursor_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.abc_textfield_search_material = global::LazyWelfare.AndroidMobile.Resource.Drawable.abc_textfield_search_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.ic_launcher = global::LazyWelfare.AndroidMobile.Resource.Drawable.ic_launcher;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.ic_launcher_round = global::LazyWelfare.AndroidMobile.Resource.Drawable.ic_launcher_round;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.notification_template_icon_bg = global::LazyWelfare.AndroidMobile.Resource.Drawable.notification_template_icon_bg;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_backward = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_backward;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_channel = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_channel;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_cursor = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_cursor;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_exit = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_exit;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_forward = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_forward;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_height = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_height;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_menu = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_menu;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_mute = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_mute;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_next = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_next;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_out = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_out;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_pause = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_pause;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_pause2 = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_pause2;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_play = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_play;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_playloop = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_playloop;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_previous = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_previous;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_random = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_random;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_stop = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_stop;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_vol = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_vol;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.offered_width = global::LazyWelfare.AndroidMobile.Resource.Drawable.offered_width;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.shape_button = global::LazyWelfare.AndroidMobile.Resource.Drawable.shape_button;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.svg_new_back = global::LazyWelfare.AndroidMobile.Resource.Drawable.svg_new_back;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.svg_new_close = global::LazyWelfare.AndroidMobile.Resource.Drawable.svg_new_close;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.svg_new_home = global::LazyWelfare.AndroidMobile.Resource.Drawable.svg_new_home;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.svg_new_setting = global::LazyWelfare.AndroidMobile.Resource.Drawable.svg_new_setting;
+			global::LazyWelfare.AndroidAreaView.Resource.Drawable.svg_new_source = global::LazyWelfare.AndroidMobile.Resource.Drawable.svg_new_source;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action0 = global::LazyWelfare.AndroidMobile.Resource.Id.action0;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_bar = global::LazyWelfare.AndroidMobile.Resource.Id.action_bar;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_bar_activity_content = global::LazyWelfare.AndroidMobile.Resource.Id.action_bar_activity_content;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_bar_container = global::LazyWelfare.AndroidMobile.Resource.Id.action_bar_container;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_bar_root = global::LazyWelfare.AndroidMobile.Resource.Id.action_bar_root;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_bar_spinner = global::LazyWelfare.AndroidMobile.Resource.Id.action_bar_spinner;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_bar_subtitle = global::LazyWelfare.AndroidMobile.Resource.Id.action_bar_subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_bar_title = global::LazyWelfare.AndroidMobile.Resource.Id.action_bar_title;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_context_bar = global::LazyWelfare.AndroidMobile.Resource.Id.action_context_bar;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_divider = global::LazyWelfare.AndroidMobile.Resource.Id.action_divider;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_menu_divider = global::LazyWelfare.AndroidMobile.Resource.Id.action_menu_divider;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_menu_presenter = global::LazyWelfare.AndroidMobile.Resource.Id.action_menu_presenter;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_mode_bar = global::LazyWelfare.AndroidMobile.Resource.Id.action_mode_bar;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_mode_bar_stub = global::LazyWelfare.AndroidMobile.Resource.Id.action_mode_bar_stub;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.action_mode_close_button = global::LazyWelfare.AndroidMobile.Resource.Id.action_mode_close_button;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.activity_chooser_view_content = global::LazyWelfare.AndroidMobile.Resource.Id.activity_chooser_view_content;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.alertTitle = global::LazyWelfare.AndroidMobile.Resource.Id.alertTitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.always = global::LazyWelfare.AndroidMobile.Resource.Id.always;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.beginning = global::LazyWelfare.AndroidMobile.Resource.Id.beginning;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.buttonPanel = global::LazyWelfare.AndroidMobile.Resource.Id.buttonPanel;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.cancel_action = global::LazyWelfare.AndroidMobile.Resource.Id.cancel_action;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.checkbox = global::LazyWelfare.AndroidMobile.Resource.Id.checkbox;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.chronometer = global::LazyWelfare.AndroidMobile.Resource.Id.chronometer;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.collapseActionView = global::LazyWelfare.AndroidMobile.Resource.Id.collapseActionView;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.contentPanel = global::LazyWelfare.AndroidMobile.Resource.Id.contentPanel;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.custom = global::LazyWelfare.AndroidMobile.Resource.Id.custom;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.customPanel = global::LazyWelfare.AndroidMobile.Resource.Id.customPanel;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.decor_content_parent = global::LazyWelfare.AndroidMobile.Resource.Id.decor_content_parent;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.default_activity_button = global::LazyWelfare.AndroidMobile.Resource.Id.default_activity_button;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.disableHome = global::LazyWelfare.AndroidMobile.Resource.Id.disableHome;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.edit_query = global::LazyWelfare.AndroidMobile.Resource.Id.edit_query;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.end = global::LazyWelfare.AndroidMobile.Resource.Id.end;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.end_padder = global::LazyWelfare.AndroidMobile.Resource.Id.end_padder;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.expand_activities_button = global::LazyWelfare.AndroidMobile.Resource.Id.expand_activities_button;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.expanded_menu = global::LazyWelfare.AndroidMobile.Resource.Id.expanded_menu;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.home = global::LazyWelfare.AndroidMobile.Resource.Id.home;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.homeAsUp = global::LazyWelfare.AndroidMobile.Resource.Id.homeAsUp;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.icon = global::LazyWelfare.AndroidMobile.Resource.Id.icon;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.ifRoom = global::LazyWelfare.AndroidMobile.Resource.Id.ifRoom;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.image = global::LazyWelfare.AndroidMobile.Resource.Id.image;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.imageCtrl = global::LazyWelfare.AndroidMobile.Resource.Id.imageCtrl;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.imageCtrl_Exit = global::LazyWelfare.AndroidMobile.Resource.Id.imageCtrl_Exit;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.info = global::LazyWelfare.AndroidMobile.Resource.Id.info;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.line1 = global::LazyWelfare.AndroidMobile.Resource.Id.line1;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.line3 = global::LazyWelfare.AndroidMobile.Resource.Id.line3;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.listMode = global::LazyWelfare.AndroidMobile.Resource.Id.listMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.list_item = global::LazyWelfare.AndroidMobile.Resource.Id.list_item;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.media_actions = global::LazyWelfare.AndroidMobile.Resource.Id.media_actions;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.middle = global::LazyWelfare.AndroidMobile.Resource.Id.middle;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.multiply = global::LazyWelfare.AndroidMobile.Resource.Id.multiply;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.never = global::LazyWelfare.AndroidMobile.Resource.Id.never;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.none = global::LazyWelfare.AndroidMobile.Resource.Id.none;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.normal = global::LazyWelfare.AndroidMobile.Resource.Id.normal;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.parentPanel = global::LazyWelfare.AndroidMobile.Resource.Id.parentPanel;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.progress_circular = global::LazyWelfare.AndroidMobile.Resource.Id.progress_circular;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.progress_horizontal = global::LazyWelfare.AndroidMobile.Resource.Id.progress_horizontal;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.radio = global::LazyWelfare.AndroidMobile.Resource.Id.radio;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.screen = global::LazyWelfare.AndroidMobile.Resource.Id.screen;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.scrollIndicatorDown = global::LazyWelfare.AndroidMobile.Resource.Id.scrollIndicatorDown;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.scrollIndicatorUp = global::LazyWelfare.AndroidMobile.Resource.Id.scrollIndicatorUp;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.scrollView = global::LazyWelfare.AndroidMobile.Resource.Id.scrollView;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_badge = global::LazyWelfare.AndroidMobile.Resource.Id.search_badge;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_bar = global::LazyWelfare.AndroidMobile.Resource.Id.search_bar;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_button = global::LazyWelfare.AndroidMobile.Resource.Id.search_button;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_close_btn = global::LazyWelfare.AndroidMobile.Resource.Id.search_close_btn;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_edit_frame = global::LazyWelfare.AndroidMobile.Resource.Id.search_edit_frame;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_go_btn = global::LazyWelfare.AndroidMobile.Resource.Id.search_go_btn;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_mag_icon = global::LazyWelfare.AndroidMobile.Resource.Id.search_mag_icon;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_plate = global::LazyWelfare.AndroidMobile.Resource.Id.search_plate;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_src_text = global::LazyWelfare.AndroidMobile.Resource.Id.search_src_text;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.search_voice_btn = global::LazyWelfare.AndroidMobile.Resource.Id.search_voice_btn;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.select_dialog_listview = global::LazyWelfare.AndroidMobile.Resource.Id.select_dialog_listview;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.shortcut = global::LazyWelfare.AndroidMobile.Resource.Id.shortcut;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.showCustom = global::LazyWelfare.AndroidMobile.Resource.Id.showCustom;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.showHome = global::LazyWelfare.AndroidMobile.Resource.Id.showHome;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.showTitle = global::LazyWelfare.AndroidMobile.Resource.Id.showTitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.spacer = global::LazyWelfare.AndroidMobile.Resource.Id.spacer;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.split_action_bar = global::LazyWelfare.AndroidMobile.Resource.Id.split_action_bar;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.src_atop = global::LazyWelfare.AndroidMobile.Resource.Id.src_atop;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.src_in = global::LazyWelfare.AndroidMobile.Resource.Id.src_in;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.src_over = global::LazyWelfare.AndroidMobile.Resource.Id.src_over;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.status_bar_latest_event_content = global::LazyWelfare.AndroidMobile.Resource.Id.status_bar_latest_event_content;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.submit_area = global::LazyWelfare.AndroidMobile.Resource.Id.submit_area;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.tabMode = global::LazyWelfare.AndroidMobile.Resource.Id.tabMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.text = global::LazyWelfare.AndroidMobile.Resource.Id.text;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.text2 = global::LazyWelfare.AndroidMobile.Resource.Id.text2;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.textSpacerNoButtons = global::LazyWelfare.AndroidMobile.Resource.Id.textSpacerNoButtons;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.time = global::LazyWelfare.AndroidMobile.Resource.Id.time;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.title = global::LazyWelfare.AndroidMobile.Resource.Id.title;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.title_template = global::LazyWelfare.AndroidMobile.Resource.Id.title_template;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.topPanel = global::LazyWelfare.AndroidMobile.Resource.Id.topPanel;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.up = global::LazyWelfare.AndroidMobile.Resource.Id.up;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.useLogo = global::LazyWelfare.AndroidMobile.Resource.Id.useLogo;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.withText = global::LazyWelfare.AndroidMobile.Resource.Id.withText;
+			global::LazyWelfare.AndroidAreaView.Resource.Id.wrap_content = global::LazyWelfare.AndroidMobile.Resource.Id.wrap_content;
+			global::LazyWelfare.AndroidAreaView.Resource.Integer.abc_config_activityDefaultDur = global::LazyWelfare.AndroidMobile.Resource.Integer.abc_config_activityDefaultDur;
+			global::LazyWelfare.AndroidAreaView.Resource.Integer.abc_config_activityShortDur = global::LazyWelfare.AndroidMobile.Resource.Integer.abc_config_activityShortDur;
+			global::LazyWelfare.AndroidAreaView.Resource.Integer.abc_max_action_buttons = global::LazyWelfare.AndroidMobile.Resource.Integer.abc_max_action_buttons;
+			global::LazyWelfare.AndroidAreaView.Resource.Integer.cancel_button_image_alpha = global::LazyWelfare.AndroidMobile.Resource.Integer.cancel_button_image_alpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Integer.status_bar_notification_info_maxnum = global::LazyWelfare.AndroidMobile.Resource.Integer.status_bar_notification_info_maxnum;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_action_bar_title_item = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_action_bar_title_item;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_action_bar_up_container = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_action_bar_up_container;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_action_bar_view_list_nav_layout = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_action_bar_view_list_nav_layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_action_menu_item_layout = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_action_menu_item_layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_action_menu_layout = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_action_menu_layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_action_mode_bar = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_action_mode_bar;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_action_mode_close_item_material = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_action_mode_close_item_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_activity_chooser_view = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_activity_chooser_view;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_activity_chooser_view_list_item = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_alert_dialog_button_bar_material = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_alert_dialog_material = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_alert_dialog_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_dialog_title_material = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_dialog_title_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_expanded_menu_layout = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_expanded_menu_layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_list_menu_item_checkbox = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_list_menu_item_checkbox;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_list_menu_item_icon = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_list_menu_item_icon;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_list_menu_item_layout = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_list_menu_item_layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_list_menu_item_radio = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_list_menu_item_radio;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_popup_menu_item_layout = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_popup_menu_item_layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_screen_content_include = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_screen_content_include;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_screen_simple = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_screen_simple;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_screen_simple_overlay_action_mode = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_screen_toolbar = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_screen_toolbar;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_search_dropdown_item_icons_2line = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_search_view = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_search_view;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.abc_select_dialog_material = global::LazyWelfare.AndroidMobile.Resource.Layout.abc_select_dialog_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.ImageCtrl = global::LazyWelfare.AndroidMobile.Resource.Layout.ImageCtrl;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.notification_media_action = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_media_action;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.notification_media_cancel_action = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_media_cancel_action;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.notification_template_big_media = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_template_big_media;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.notification_template_big_media_narrow = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_template_big_media_narrow;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.notification_template_lines = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_template_lines;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.notification_template_media = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_template_media;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.notification_template_part_chronometer = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_template_part_chronometer;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.notification_template_part_time = global::LazyWelfare.AndroidMobile.Resource.Layout.notification_template_part_time;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.select_dialog_item_material = global::LazyWelfare.AndroidMobile.Resource.Layout.select_dialog_item_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.select_dialog_multichoice_material = global::LazyWelfare.AndroidMobile.Resource.Layout.select_dialog_multichoice_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.select_dialog_singlechoice_material = global::LazyWelfare.AndroidMobile.Resource.Layout.select_dialog_singlechoice_material;
+			global::LazyWelfare.AndroidAreaView.Resource.Layout.support_simple_spinner_dropdown_item = global::LazyWelfare.AndroidMobile.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_action_bar_home_description = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_bar_home_description;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_action_bar_home_description_format = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_bar_home_description_format;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_action_bar_home_subtitle_description_format = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_bar_home_subtitle_description_format;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_action_bar_up_description = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_bar_up_description;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_action_menu_overflow_description = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_menu_overflow_description;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_action_mode_done = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_mode_done;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_activity_chooser_view_see_all = global::LazyWelfare.AndroidMobile.Resource.String.abc_activity_chooser_view_see_all;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_activitychooserview_choose_application = global::LazyWelfare.AndroidMobile.Resource.String.abc_activitychooserview_choose_application;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_capital_off = global::LazyWelfare.AndroidMobile.Resource.String.abc_capital_off;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_capital_on = global::LazyWelfare.AndroidMobile.Resource.String.abc_capital_on;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_search_hint = global::LazyWelfare.AndroidMobile.Resource.String.abc_search_hint;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_searchview_description_clear = global::LazyWelfare.AndroidMobile.Resource.String.abc_searchview_description_clear;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_searchview_description_query = global::LazyWelfare.AndroidMobile.Resource.String.abc_searchview_description_query;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_searchview_description_search = global::LazyWelfare.AndroidMobile.Resource.String.abc_searchview_description_search;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_searchview_description_submit = global::LazyWelfare.AndroidMobile.Resource.String.abc_searchview_description_submit;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_searchview_description_voice = global::LazyWelfare.AndroidMobile.Resource.String.abc_searchview_description_voice;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_shareactionprovider_share_with = global::LazyWelfare.AndroidMobile.Resource.String.abc_shareactionprovider_share_with;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_shareactionprovider_share_with_application = global::LazyWelfare.AndroidMobile.Resource.String.abc_shareactionprovider_share_with_application;
+			global::LazyWelfare.AndroidAreaView.Resource.String.abc_toolbar_collapse_description = global::LazyWelfare.AndroidMobile.Resource.String.abc_toolbar_collapse_description;
+			global::LazyWelfare.AndroidAreaView.Resource.String.status_bar_notification_info_overflow = global::LazyWelfare.AndroidMobile.Resource.String.status_bar_notification_info_overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.AlertDialog_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.AlertDialog_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.AlertDialog_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.AlertDialog_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Animation_AppCompat_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Animation_AppCompat_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Animation_AppCompat_DropDownUp = global::LazyWelfare.AndroidMobile.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_AlertDialog_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_AlertDialog_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_AlertDialog_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Animation_AppCompat_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_DialogWindowTitle_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Button = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Large = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Small = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Title = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::LazyWelfare.AndroidMobile.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_ThemeOverlay_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::LazyWelfare.AndroidMobile.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V21_Theme_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V21_Theme_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V21_Theme_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V22_Theme_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V22_Theme_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V22_Theme_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V23_Theme_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V23_Theme_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V23_Theme_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V7_Theme_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V7_Theme_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V7_Theme_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::LazyWelfare.AndroidMobile.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionButton = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActionMode = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Button = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Button;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Button_Small = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_EditText = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ImageButton = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ListView = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_RatingBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_SearchView = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_SeekBar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Spinner = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Toolbar = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::LazyWelfare.AndroidMobile.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_ThemeOverlay_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_V11_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_V11_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_V11_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_V11_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_V14_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_V14_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_V14_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_V14_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Platform_Widget_AppCompat_Spinner = global::LazyWelfare.AndroidMobile.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::LazyWelfare.AndroidMobile.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::LazyWelfare.AndroidMobile.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::LazyWelfare.AndroidMobile.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Body1 = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Body2 = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Button = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Button;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Caption = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Display1 = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Display2 = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Display3 = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Display4 = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Headline = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Large = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Large;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Medium = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Menu = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Small = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Subhead = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Title = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_StatusBar_EventContent = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_StatusBar_EventContent;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_StatusBar_EventContent_Info = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_StatusBar_EventContent_Info;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_StatusBar_EventContent_Line2 = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_StatusBar_EventContent_Line2;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_StatusBar_EventContent_Time = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_StatusBar_EventContent_Time;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_StatusBar_EventContent_Title = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_StatusBar_EventContent_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::LazyWelfare.AndroidMobile.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_CompactMenu = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_DayNight = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_DayNight;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Dialog_Alert = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Light_Dialog = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Theme_AppCompat_NoActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.ThemeOverlay_AppCompat = global::LazyWelfare.AndroidMobile.Resource.Style.ThemeOverlay_AppCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.ThemeOverlay_AppCompat_Dark = global::LazyWelfare.AndroidMobile.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.ThemeOverlay_AppCompat_Light = global::LazyWelfare.AndroidMobile.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionButton = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActionMode = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActionMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ActivityChooserView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Button = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Button;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Button_Borderless = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Button_Colored = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Button_Small = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Button_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ButtonBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_EditText = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_EditText;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ImageButton = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ImageButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionButton = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_SearchView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ListPopupWindow = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ListView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ListView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ListView_DropDown = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ListView_Menu = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_PopupMenu = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_PopupWindow = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ProgressBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_RatingBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_RatingBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_RatingBar_Small = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_SearchView = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_SearchView;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_SeekBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_SeekBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Spinner = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Spinner;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Toolbar = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Toolbar;
+			global::LazyWelfare.AndroidAreaView.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::LazyWelfare.AndroidMobile.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_background = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_background;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_backgroundSplit = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_backgroundSplit;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_backgroundStacked = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_backgroundStacked;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_contentInsetEnd = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_contentInsetLeft = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_contentInsetRight = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_contentInsetRight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_contentInsetStart = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_contentInsetStart;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_customNavigationLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_displayOptions = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_displayOptions;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_divider = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_divider;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_elevation = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_elevation;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_height = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_height;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_hideOnContentScroll = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_homeAsUpIndicator = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_homeLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_homeLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_icon = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_icon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_itemPadding = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_itemPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_logo = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_logo;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_navigationMode = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_navigationMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_popupTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_popupTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_progressBarPadding = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_progressBarPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_progressBarStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_progressBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_subtitle = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_subtitleTextStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_title = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_title;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBar_titleTextStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBar_titleTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBarLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBarLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMenuItemView = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMenuItemView;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMenuItemView_android_minWidth = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMenuView = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMenuView;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMode = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMode_background = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMode_background;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMode_backgroundSplit = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMode_backgroundSplit;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMode_closeItemLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMode_closeItemLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMode_height = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMode_height;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMode_subtitleTextStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActionMode_titleTextStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActionMode_titleTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActivityChooserView = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActivityChooserView;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ActivityChooserView_initialActivityCount = global::LazyWelfare.AndroidMobile.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AlertDialog = global::LazyWelfare.AndroidMobile.Resource.Styleable.AlertDialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AlertDialog_android_layout = global::LazyWelfare.AndroidMobile.Resource.Styleable.AlertDialog_android_layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AlertDialog_listItemLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.AlertDialog_listItemLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AlertDialog_listLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.AlertDialog_listLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatImageView = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatImageView;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatImageView_android_src = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatImageView_android_src;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatImageView_srcCompat = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTextView = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTextView;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTextView_android_textAppearance = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTextView_textAllCaps = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarDivider = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarSize = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_buttonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_checkboxStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_colorAccent = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_colorControlActivated = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_colorControlNormal = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_colorPrimary = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_controlBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_dialogTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_dividerVertical = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_editTextBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_editTextColor = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_editTextStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_panelBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_searchViewStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_seekBarStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_spinnerStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_switchStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_toolbarStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowActionBar = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.AppCompatTheme_windowNoTitle = global::LazyWelfare.AndroidMobile.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ButtonBarLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.ButtonBarLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ButtonBarLayout_allowStacking = global::LazyWelfare.AndroidMobile.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.CompoundButton = global::LazyWelfare.AndroidMobile.Resource.Styleable.CompoundButton;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.CompoundButton_android_button = global::LazyWelfare.AndroidMobile.Resource.Styleable.CompoundButton_android_button;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.CompoundButton_buttonTint = global::LazyWelfare.AndroidMobile.Resource.Styleable.CompoundButton_buttonTint;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.CompoundButton_buttonTintMode = global::LazyWelfare.AndroidMobile.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle_barLength = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle_color = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle_color;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle_drawableSize = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle_spinBars = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.DrawerArrowToggle_thickness = global::LazyWelfare.AndroidMobile.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_android_gravity = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_android_orientation = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_divider = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_divider;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_showDividers = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_Layout = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::LazyWelfare.AndroidMobile.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ListPopupWindow = global::LazyWelfare.AndroidMobile.Resource.Styleable.ListPopupWindow;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::LazyWelfare.AndroidMobile.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::LazyWelfare.AndroidMobile.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuGroup = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuGroup;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuGroup_android_checkableBehavior = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuGroup_android_enabled = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuGroup_android_enabled;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuGroup_android_id = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuGroup_android_id;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuGroup_android_menuCategory = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuGroup_android_orderInCategory = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuGroup_android_visible = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuGroup_android_visible;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_actionLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_actionLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_actionProviderClass = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_actionProviderClass;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_actionViewClass = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_actionViewClass;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_checkable = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_checkable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_checked = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_checked;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_enabled = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_enabled;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_icon = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_icon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_id = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_id;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_menuCategory = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_menuCategory;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_numericShortcut = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_onClick = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_onClick;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_orderInCategory = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_title = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_title;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_titleCondensed = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_android_visible = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_android_visible;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuItem_showAsAction = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuItem_showAsAction;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView_android_headerBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView_android_headerBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView_android_horizontalDivider = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView_android_itemBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView_android_itemBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView_android_itemTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView_android_verticalDivider = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView_android_verticalDivider;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView_android_windowAnimationStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.MenuView_preserveIconSpacing = global::LazyWelfare.AndroidMobile.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.PopupWindow = global::LazyWelfare.AndroidMobile.Resource.Styleable.PopupWindow;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.PopupWindow_android_popupBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.PopupWindow_overlapAnchor = global::LazyWelfare.AndroidMobile.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.PopupWindowBackgroundState = global::LazyWelfare.AndroidMobile.Resource.Styleable.PopupWindowBackgroundState;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::LazyWelfare.AndroidMobile.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_android_focusable = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_android_focusable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_android_imeOptions = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_android_imeOptions;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_android_inputType = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_android_inputType;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_android_maxWidth = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_android_maxWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_closeIcon = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_closeIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_commitIcon = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_commitIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_defaultQueryHint = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_defaultQueryHint;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_goIcon = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_goIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_iconifiedByDefault = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_layout = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_layout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_queryBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_queryBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_queryHint = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_queryHint;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_searchHintIcon = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_searchHintIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_searchIcon = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_searchIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_submitBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_submitBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_suggestionRowLayout = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SearchView_voiceIcon = global::LazyWelfare.AndroidMobile.Resource.Styleable.SearchView_voiceIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Spinner = global::LazyWelfare.AndroidMobile.Resource.Styleable.Spinner;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Spinner_android_dropDownWidth = global::LazyWelfare.AndroidMobile.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Spinner_android_entries = global::LazyWelfare.AndroidMobile.Resource.Styleable.Spinner_android_entries;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Spinner_android_popupBackground = global::LazyWelfare.AndroidMobile.Resource.Styleable.Spinner_android_popupBackground;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Spinner_android_prompt = global::LazyWelfare.AndroidMobile.Resource.Styleable.Spinner_android_prompt;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Spinner_popupTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.Spinner_popupTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_android_textOff = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_android_textOff;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_android_textOn = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_android_textOn;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_android_thumb = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_android_thumb;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_showText = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_showText;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_splitTrack = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_splitTrack;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_switchMinWidth = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_switchPadding = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_switchPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_switchTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_thumbTextPadding = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.SwitchCompat_track = global::LazyWelfare.AndroidMobile.Resource.Styleable.SwitchCompat_track;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_android_shadowColor = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_android_shadowDx = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_android_shadowDy = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_android_shadowRadius = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_android_textColor = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_android_textColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_android_textSize = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_android_textSize;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_android_textStyle = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_android_textStyle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_android_typeface = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_android_typeface;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.TextAppearance_textAllCaps = global::LazyWelfare.AndroidMobile.Resource.Styleable.TextAppearance_textAllCaps;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_android_gravity = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_android_gravity;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_android_minHeight = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_android_minHeight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_collapseContentDescription = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_collapseIcon = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_collapseIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_contentInsetEnd = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_contentInsetLeft = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_contentInsetRight = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_contentInsetRight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_contentInsetStart = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_contentInsetStart;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_logo = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_logo;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_logoDescription = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_logoDescription;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_maxButtonHeight = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_navigationContentDescription = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_navigationIcon = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_navigationIcon;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_popupTheme = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_popupTheme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_subtitle = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_subtitle;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_subtitleTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_subtitleTextColor = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_title = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_title;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_titleMarginBottom = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_titleMarginEnd = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_titleMarginStart = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_titleMarginStart;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_titleMarginTop = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_titleMarginTop;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_titleMargins = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_titleMargins;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_titleTextAppearance = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.Toolbar_titleTextColor = global::LazyWelfare.AndroidMobile.Resource.Styleable.Toolbar_titleTextColor;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.View = global::LazyWelfare.AndroidMobile.Resource.Styleable.View;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.View_android_focusable = global::LazyWelfare.AndroidMobile.Resource.Styleable.View_android_focusable;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.View_android_theme = global::LazyWelfare.AndroidMobile.Resource.Styleable.View_android_theme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.View_paddingEnd = global::LazyWelfare.AndroidMobile.Resource.Styleable.View_paddingEnd;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.View_paddingStart = global::LazyWelfare.AndroidMobile.Resource.Styleable.View_paddingStart;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.View_theme = global::LazyWelfare.AndroidMobile.Resource.Styleable.View_theme;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ViewBackgroundHelper = global::LazyWelfare.AndroidMobile.Resource.Styleable.ViewBackgroundHelper;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ViewBackgroundHelper_android_background = global::LazyWelfare.AndroidMobile.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::LazyWelfare.AndroidMobile.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::LazyWelfare.AndroidMobile.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ViewStubCompat = global::LazyWelfare.AndroidMobile.Resource.Styleable.ViewStubCompat;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ViewStubCompat_android_id = global::LazyWelfare.AndroidMobile.Resource.Styleable.ViewStubCompat_android_id;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ViewStubCompat_android_inflatedId = global::LazyWelfare.AndroidMobile.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::LazyWelfare.AndroidAreaView.Resource.Styleable.ViewStubCompat_android_layout = global::LazyWelfare.AndroidMobile.Resource.Styleable.ViewStubCompat_android_layout;
 			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_down = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_down;
 			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_fade_in = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_fade_in;
 			global::LazyWelfare.AndroidMobile.ImageSelect.Resource.Animation.listview_fade_out = global::LazyWelfare.AndroidMobile.Resource.Animation.listview_fade_out;
@@ -3621,8 +4901,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06004b
 			public const int SwapLoadingRenderer = 2131099723;
 			
-			// aapt resource value: 0x7f06009a
-			public const int WaitingView = 2131099802;
+			// aapt resource value: 0x7f060099
+			public const int WaitingView = 2131099801;
 			
 			// aapt resource value: 0x7f06004c
 			public const int WaterBottleLoadingRenderer = 2131099724;
@@ -3630,8 +4910,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06004d
 			public const int WhorlLoadingRenderer = 2131099725;
 			
-			// aapt resource value: 0x7f06009c
-			public const int action0 = 2131099804;
+			// aapt resource value: 0x7f06009b
+			public const int action0 = 2131099803;
 			
 			// aapt resource value: 0x7f06006e
 			public const int action_bar = 2131099758;
@@ -3657,8 +4937,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06006f
 			public const int action_context_bar = 2131099759;
 			
-			// aapt resource value: 0x7f0600a0
-			public const int action_divider = 2131099808;
+			// aapt resource value: 0x7f06009f
+			public const int action_divider = 2131099807;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -3696,14 +4976,14 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06000f
 			public const int bottom = 2131099663;
 			
-			// aapt resource value: 0x7f06008f
-			public const int btn_back = 2131099791;
+			// aapt resource value: 0x7f06008e
+			public const int btn_back = 2131099790;
 			
 			// aapt resource value: 0x7f060058
 			public const int buttonPanel = 2131099736;
 			
-			// aapt resource value: 0x7f06009d
-			public const int cancel_action = 2131099805;
+			// aapt resource value: 0x7f06009c
+			public const int cancel_action = 2131099804;
 			
 			// aapt resource value: 0x7f060010
 			public const int center = 2131099664;
@@ -3714,14 +4994,14 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060012
 			public const int center_vertical = 2131099666;
 			
-			// aapt resource value: 0x7f060096
-			public const int check = 2131099798;
+			// aapt resource value: 0x7f060095
+			public const int check = 2131099797;
 			
 			// aapt resource value: 0x7f060066
 			public const int checkbox = 2131099750;
 			
-			// aapt resource value: 0x7f0600a3
-			public const int chronometer = 2131099811;
+			// aapt resource value: 0x7f0600a2
+			public const int chronometer = 2131099810;
 			
 			// aapt resource value: 0x7f060013
 			public const int clip_horizontal = 2131099667;
@@ -3732,11 +5012,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060030
 			public const int collapseActionView = 2131099696;
 			
-			// aapt resource value: 0x7f060093
-			public const int commit = 2131099795;
+			// aapt resource value: 0x7f060092
+			public const int commit = 2131099794;
 			
-			// aapt resource value: 0x7f0600b3
-			public const int contentFrame = 2131099827;
+			// aapt resource value: 0x7f0600b2
+			public const int contentFrame = 2131099826;
 			
 			// aapt resource value: 0x7f06005e
 			public const int contentPanel = 2131099742;
@@ -3783,8 +5063,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060015
 			public const int end = 2131099669;
 			
-			// aapt resource value: 0x7f0600a8
-			public const int end_padder = 2131099816;
+			// aapt resource value: 0x7f0600a7
+			public const int end_padder = 2131099815;
 			
 			// aapt resource value: 0x7f060034
 			public const int enterAlways = 2131099700;
@@ -3813,14 +5093,14 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06003c
 			public const int @fixed = 2131099708;
 			
+			// aapt resource value: 0x7f060090
+			public const int foldName = 2131099792;
+			
 			// aapt resource value: 0x7f060091
-			public const int foldName = 2131099793;
+			public const int gallery_tip = 2131099793;
 			
-			// aapt resource value: 0x7f060092
-			public const int gallery_tip = 2131099794;
-			
-			// aapt resource value: 0x7f06008c
-			public const int gridView = 2131099788;
+			// aapt resource value: 0x7f06008b
+			public const int gridView = 2131099787;
 			
 			// aapt resource value: 0x7f060005
 			public const int home = 2131099653;
@@ -3834,8 +5114,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060056
 			public const int icon = 2131099734;
 			
-			// aapt resource value: 0x7f0600a9
-			public const int icon_frame = 2131099817;
+			// aapt resource value: 0x7f0600a8
+			public const int icon_frame = 2131099816;
 			
 			// aapt resource value: 0x7f060031
 			public const int ifRoom = 2131099697;
@@ -3843,11 +5123,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060053
 			public const int image = 2131099731;
 			
-			// aapt resource value: 0x7f0600ae
-			public const int imageAlbum = 2131099822;
+			// aapt resource value: 0x7f0600ad
+			public const int imageAlbum = 2131099821;
 			
-			// aapt resource value: 0x7f0600b1
-			public const int imageBulb = 2131099825;
+			// aapt resource value: 0x7f0600b0
+			public const int imageBulb = 2131099824;
 			
 			// aapt resource value: 0x7f060089
 			public const int imageCtrl = 2131099785;
@@ -3855,14 +5135,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060088
 			public const int imageCtrl_Exit = 2131099784;
 			
-			// aapt resource value: 0x7f06008a
-			public const int imageCtrl_Exit_btn = 2131099786;
+			// aapt resource value: 0x7f060097
+			public const int imgview = 2131099799;
 			
-			// aapt resource value: 0x7f060098
-			public const int imgview = 2131099800;
-			
-			// aapt resource value: 0x7f0600a7
-			public const int info = 2131099815;
+			// aapt resource value: 0x7f0600a6
+			public const int info = 2131099814;
 			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
@@ -3870,32 +5147,32 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060019
 			public const int left = 2131099673;
 			
-			// aapt resource value: 0x7f0600a1
-			public const int line1 = 2131099809;
+			// aapt resource value: 0x7f0600a0
+			public const int line1 = 2131099808;
 			
-			// aapt resource value: 0x7f0600a5
-			public const int line3 = 2131099813;
+			// aapt resource value: 0x7f0600a4
+			public const int line3 = 2131099812;
 			
-			// aapt resource value: 0x7f0600ab
-			public const int list = 2131099819;
+			// aapt resource value: 0x7f0600aa
+			public const int list = 2131099818;
 			
 			// aapt resource value: 0x7f06001d
 			public const int listMode = 2131099677;
 			
-			// aapt resource value: 0x7f06008e
-			public const int listView = 2131099790;
-			
 			// aapt resource value: 0x7f06008d
-			public const int listViewParent = 2131099789;
+			public const int listView = 2131099789;
 			
-			// aapt resource value: 0x7f0600aa
-			public const int list_container = 2131099818;
+			// aapt resource value: 0x7f06008c
+			public const int listViewParent = 2131099788;
+			
+			// aapt resource value: 0x7f0600a9
+			public const int list_container = 2131099817;
 			
 			// aapt resource value: 0x7f060055
 			public const int list_item = 2131099733;
 			
-			// aapt resource value: 0x7f06009f
-			public const int media_actions = 2131099807;
+			// aapt resource value: 0x7f06009e
+			public const int media_actions = 2131099806;
 			
 			// aapt resource value: 0x7f06002e
 			public const int middle = 2131099694;
@@ -3924,8 +5201,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06005a
 			public const int parentPanel = 2131099738;
 			
-			// aapt resource value: 0x7f060097
-			public const int photoCount = 2131099799;
+			// aapt resource value: 0x7f060096
+			public const int photoCount = 2131099798;
 			
 			// aapt resource value: 0x7f06003a
 			public const int pin = 2131099706;
@@ -3942,14 +5219,14 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06001a
 			public const int right = 2131099674;
 			
-			// aapt resource value: 0x7f060094
-			public const int rl = 2131099796;
+			// aapt resource value: 0x7f060093
+			public const int rl = 2131099795;
 			
-			// aapt resource value: 0x7f0600ad
-			public const int scanAlbumBtn = 2131099821;
+			// aapt resource value: 0x7f0600ac
+			public const int scanAlbumBtn = 2131099820;
 			
-			// aapt resource value: 0x7f0600b0
-			public const int scanBulbBtn = 2131099824;
+			// aapt resource value: 0x7f0600af
+			public const int scanBulbBtn = 2131099823;
 			
 			// aapt resource value: 0x7f060029
 			public const int screen = 2131099689;
@@ -3999,8 +5276,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06007b
 			public const int search_voice_btn = 2131099771;
 			
-			// aapt resource value: 0x7f060090
-			public const int selectFold = 2131099792;
+			// aapt resource value: 0x7f06008f
+			public const int selectFold = 2131099791;
 			
 			// aapt resource value: 0x7f06007c
 			public const int select_dialog_listview = 2131099772;
@@ -4044,41 +5321,41 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06001b
 			public const int start = 2131099675;
 			
-			// aapt resource value: 0x7f06009e
-			public const int status_bar_latest_event_content = 2131099806;
+			// aapt resource value: 0x7f06009d
+			public const int status_bar_latest_event_content = 2131099805;
 			
 			// aapt resource value: 0x7f060079
 			public const int submit_area = 2131099769;
 			
-			// aapt resource value: 0x7f0600ac
-			public const int switchWidget = 2131099820;
+			// aapt resource value: 0x7f0600ab
+			public const int switchWidget = 2131099819;
 			
 			// aapt resource value: 0x7f06001f
 			public const int tabMode = 2131099679;
 			
-			// aapt resource value: 0x7f0600a6
-			public const int text = 2131099814;
+			// aapt resource value: 0x7f0600a5
+			public const int text = 2131099813;
 			
-			// aapt resource value: 0x7f0600a4
-			public const int text2 = 2131099812;
+			// aapt resource value: 0x7f0600a3
+			public const int text2 = 2131099811;
 			
-			// aapt resource value: 0x7f0600af
-			public const int textAlbum = 2131099823;
+			// aapt resource value: 0x7f0600ae
+			public const int textAlbum = 2131099822;
 			
-			// aapt resource value: 0x7f0600b2
-			public const int textBulb = 2131099826;
+			// aapt resource value: 0x7f0600b1
+			public const int textBulb = 2131099825;
 			
 			// aapt resource value: 0x7f060061
 			public const int textSpacerNoButtons = 2131099745;
 			
-			// aapt resource value: 0x7f060099
-			public const int textview = 2131099801;
+			// aapt resource value: 0x7f060098
+			public const int textview = 2131099800;
 			
-			// aapt resource value: 0x7f060095
-			public const int thumbnail = 2131099797;
+			// aapt resource value: 0x7f060094
+			public const int thumbnail = 2131099796;
 			
-			// aapt resource value: 0x7f0600a2
-			public const int time = 2131099810;
+			// aapt resource value: 0x7f0600a1
+			public const int time = 2131099809;
 			
 			// aapt resource value: 0x7f060057
 			public const int title = 2131099735;
@@ -4092,8 +5369,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06005b
 			public const int topPanel = 2131099739;
 			
-			// aapt resource value: 0x7f06008b
-			public const int top_layout = 2131099787;
+			// aapt resource value: 0x7f06008a
+			public const int top_layout = 2131099786;
 			
 			// aapt resource value: 0x7f06007f
 			public const int touch_outside = 2131099775;
@@ -4110,8 +5387,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06000a
 			public const int view_offset_helper = 2131099658;
 			
-			// aapt resource value: 0x7f06009b
-			public const int webView = 2131099803;
+			// aapt resource value: 0x7f06009a
+			public const int webView = 2131099802;
 			
 			// aapt resource value: 0x7f060033
 			public const int withText = 2131099699;

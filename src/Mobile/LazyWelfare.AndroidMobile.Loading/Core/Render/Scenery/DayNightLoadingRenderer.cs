@@ -109,14 +109,14 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_Width);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_Height);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_Width);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_Height);
 			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_Width);
 
 			mStarRadius = DensityUtil.Dip2Px(context, DEFAULT_STAR_RADIUS);
 			mSun_MoonRadius = DensityUtil.Dip2Px(context, DEFAULT_SUN_MOON_RADIUS);
-			mInitSun_MoonCoordinateY = mHeight + mSun_MoonRadius + mStrokeWidth * 2.0f;
-			mMaxSun_MoonRiseDistance = mHeight / 2.0f + mSun_MoonRadius;
+			mInitSun_MoonCoordinateY = Height + mSun_MoonRadius + mStrokeWidth * 2.0f;
+			mMaxSun_MoonRiseDistance = Height / 2.0f + mSun_MoonRadius;
 
 			mSunRayStartCoordinateY = mInitSun_MoonCoordinateY - mMaxSun_MoonRiseDistance - mSun_MoonRadius - mStrokeWidth - DensityUtil.Dip2Px(context, DEFAULT_SUN_RAY_OFFSET); //sub the interval between the sun and the sun ray -  sub the with the sun circle - sub the radius - the center
 
@@ -128,7 +128,7 @@
 
 			mCurrentColor = DEFAULT_COLOR;
 
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 		}
 
 		private void SetupPaint()
@@ -140,7 +140,7 @@
 			mPaint.StrokeCap = Paint.Cap.Round;
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int saveCount = canvas.Save();
 

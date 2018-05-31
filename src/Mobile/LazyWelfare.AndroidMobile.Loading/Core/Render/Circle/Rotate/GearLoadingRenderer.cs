@@ -16,6 +16,7 @@
 	using AnimatorListenerAdapter = Android.Animation.AnimatorListenerAdapter;
     using LazyWelfare.AndroidUtils.Common;
     using LazyWelfare.AndroidUtils.Animation;
+    using Android.Graphics;
 
     public class GearLoadingRenderer : LoadingRenderer
 	{
@@ -99,11 +100,11 @@
 			mPaint.SetStyle(Paint.Style.Stroke);
 			mPaint.StrokeCap = Paint.Cap.Round;
 
-			InitStrokeInset(mWidth, mHeight);
+			InitStrokeInset(Width, Height);
 		}
 
-		protected internal override void Draw(Canvas canvas)
-		{
+		protected  override void Draw(Canvas canvas, Rect bounds)
+        {
 			int saveCount = canvas.Save();
 
 			mTempBounds.Set(Bounds);

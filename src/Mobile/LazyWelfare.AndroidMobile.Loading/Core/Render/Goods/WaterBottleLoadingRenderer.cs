@@ -66,8 +66,8 @@
 		{
 			mTextSize = DensityUtil.Dip2Px(context, DEFAULT_TEXT_SIZE);
 
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_Width);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_Height);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_Width);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_Height);
 			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_Width);
 
 			mBottleWidth = DensityUtil.Dip2Px(context, DEFAULT_BOTTLE_Width);
@@ -79,7 +79,7 @@
 
 			mWaveCount = DEFAULT_WAVE_COUNT;
 
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 		}
 
 		private void SetupPaint()
@@ -89,7 +89,7 @@
 			mPaint.StrokeJoin = Paint.Join.Round;
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int saveCount = canvas.Save();
 

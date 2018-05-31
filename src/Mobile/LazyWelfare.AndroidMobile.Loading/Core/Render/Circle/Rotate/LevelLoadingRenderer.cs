@@ -18,6 +18,7 @@
 	using LinearInterpolator = Android.Views.Animations.LinearInterpolator;
     using LazyWelfare.AndroidUtils.Common;
     using LazyWelfare.AndroidUtils.Animation;
+    using Android.Graphics;
 
     public class LevelLoadingRenderer : LoadingRenderer
 	{
@@ -100,11 +101,11 @@
 			mPaint.SetStyle(Paint.Style.Stroke);
 			mPaint.StrokeCap = Paint.Cap.Round;
 
-			InitStrokeInset((int) mWidth, (int) mHeight);
+			InitStrokeInset((int) Width, (int) Height);
 		}
 
-		protected internal override void Draw(Canvas canvas)
-		{
+		protected  override void Draw(Canvas canvas, Rect bounds)
+        {
 			int saveCount = canvas.Save();
 
 			mTempBounds.Set(Bounds);

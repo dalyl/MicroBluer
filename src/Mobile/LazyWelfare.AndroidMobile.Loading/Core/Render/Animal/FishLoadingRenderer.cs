@@ -85,8 +85,8 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
 			mRiverBankWidth = DensityUtil.Dip2Px(context, DEFAULT_RIVER_BANK_WIDTH);
 
 			mPathFullLineSize = DensityUtil.Dip2Px(context, DEFAULT_PATH_FULL_LINE_SIZE);
@@ -99,7 +99,7 @@
 
 			mColor = DEFAULT_COLOR;
 
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 		}
 
 		private void SetupPaint()
@@ -111,7 +111,7 @@
             mPaint.SetPathEffect(new DashPathEffect(new float[] { mPathFullLineSize, mPathDottedLineSize }, mPathDottedLineSize));
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int saveCount = canvas.Save();
 			RectF arcBounds = mTempBounds;

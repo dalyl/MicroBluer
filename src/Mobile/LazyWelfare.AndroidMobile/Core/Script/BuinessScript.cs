@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Webkit;
 using Android.Widget;
 using Java.Interop;
+using LazyWelfare.AndroidAreaView.Core;
 using LazyWelfare.AndroidMobile.Logic;
 using LazyWelfare.AndroidMobile.Models;
 using System.Threading.Tasks;
@@ -87,7 +88,7 @@ namespace LazyWelfare.AndroidMobile.Script
         {
             if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确识别");
 
-            var ctrl = new ImageCtrlView(ViewActivity);
+            var ctrl = new MapCtrlDialog(ViewActivity);
             ctrl.Show();
 
             return Try.Show<bool>(true, args);

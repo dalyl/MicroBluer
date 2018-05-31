@@ -13,6 +13,7 @@
     using LazyWelfare.AndroidUtils.Common;
     using System;
     using LazyWelfare.AndroidUtils.Animation;
+    using Android.Graphics;
 
     public class MaterialLoadingRenderer : LoadingRenderer
 	{
@@ -80,7 +81,7 @@
 			mColors = DEFAULT_COLORS;
 
 			ColorIndex = 0;
-			InitStrokeInset(mWidth, mHeight);
+			InitStrokeInset(Width, Height);
 		}
 
 		private void SetupPaint()
@@ -91,8 +92,8 @@
 			mPaint.StrokeCap = Paint.Cap.Round;
 		}
 
-		protected internal override void Draw(Canvas canvas)
-		{
+		protected  override void Draw(Canvas canvas, Rect bounds)
+        {
 			int saveCount = canvas.Save();
 
 			mTempBounds.Set(Bounds);

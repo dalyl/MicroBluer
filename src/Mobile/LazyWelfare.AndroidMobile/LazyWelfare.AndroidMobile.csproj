@@ -107,12 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AlphaMaskLayout.cs" />
-    <Compile Include="Core\ImageCtrlView.cs" />
     <Compile Include="Core\Logic\ServiceHost.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />
     <Compile Include="Core\Models\UserModel.cs" />
     <Compile Include="Core\RoundMenuView.cs" />
-    <Compile Include="Core\CtrlDialog.cs" />
     <Compile Include="Core\Script\PartialScript.cs" />
     <Compile Include="Core\TryCatch.cs" />
     <Compile Include="Core\TryCatchActivity.cs" />
@@ -131,7 +129,6 @@
     <Compile Include="Core\Views\WebPartialLoadingAsyncTask.cs" />
     <Compile Include="Core\Views\WebPartialRequestStack.cs" />
     <Compile Include="Core\Script\BuinessScript.cs" />
-    <Compile Include="Core\BulbActivity.cs" />
     <Compile Include="Core\PermissionGrantedClickListener.cs" />
     <Compile Include="Core\ImageTextButton.cs" />
     <Compile Include="Core\ScanPlugin.cs" />
@@ -228,6 +225,10 @@
     <ProjectReference Include="..\..\Server\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj">
       <Project>{e8304128-61d6-46b2-9875-3b64f7da714c}</Project>
       <Name>LazyWelfare.ServerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LazyWelfare.AndroidAreaView\LazyWelfare.AndroidAreaView.csproj">
+      <Project>{979912AF-6F8A-4B28-9DD9-5419A0EA506F}</Project>
+      <Name>LazyWelfare.AndroidAreaView</Name>
     </ProjectReference>
     <ProjectReference Include="..\LazyWelfare.AndroidMobile.ImageSelect\LazyWelfare.AndroidMobile.ImageSelect.csproj">
       <Project>{042B5E23-3EC9-4C6F-B6A3-BBD23759309D}</Project>
@@ -494,14 +495,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\svg_new_source.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\ImageCtrl.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\shape_button.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

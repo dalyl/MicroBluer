@@ -53,13 +53,13 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
 			mBallRadius = DensityUtil.Dip2Px(context, DEFAULT_BALL_RADIUS);
 			mStrokeWidth = DensityUtil.Dip2Px(context, DEFAULT_STROKE_WIDTH);
 
 			mColor = DEFAULT_COLOR;
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 			mBallCount = DEFAULT_CIRCLE_COUNT;
 
 			mBallInterval = mBallRadius;
@@ -67,8 +67,8 @@
 
 		private void AdjustParams()
 		{
-			mBallCenterY = mHeight / 2.0f;
-			mBallSideOffsets = (mWidth - mBallRadius * 2 * mBallCount - mBallInterval * (mBallCount - 1)) / 2.0f;
+			mBallCenterY = Height / 2.0f;
+			mBallSideOffsets = (Width - mBallRadius * 2 * mBallCount - mBallInterval * (mBallCount - 1)) / 2.0f;
 
 			mASwapThreshold = 1.0f / mBallCount;
 		}
@@ -79,8 +79,8 @@
 			mPaint.StrokeWidth = mStrokeWidth;
 		}
 
-		protected internal override void Draw(Canvas canvas)
-		{
+		protected  override void Draw(Canvas canvas, Rect bounds)
+        {
 			int saveCount = canvas.Save();
 
 			for (int i = 0; i < mBallCount; i++)

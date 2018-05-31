@@ -95,8 +95,8 @@
 			mDanceBallRadius = DensityUtil.Dip2Px(context, DEFAULT_DANCE_BALL_RADIUS);
 
 			Color = DEFAULT_COLOR;
-			SetInsets((int) mWidth, (int) mHeight);
-			mDuration = ANIMATION_DURATION;
+			SetInsets((int) Width, (int) Height);
+			Duration = ANIMATION_DURATION;
 		}
 
 		private void SetupPaint()
@@ -106,7 +106,7 @@
 			mPaint.SetStyle (Paint.Style.Stroke);
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int saveCount = canvas.Save();
 

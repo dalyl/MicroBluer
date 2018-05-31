@@ -13,6 +13,7 @@ using Android.Views;
 using LazyWelfare.AndroidMobile.Views.Partials;
 using LazyWelfare.AndroidMobile.Script;
 using LazyWelfare.AndroidMobile.Logic;
+using LazyWelfare.AndroidAreaView.Core;
 
 namespace LazyWelfare.AndroidMobile
 {
@@ -47,6 +48,11 @@ namespace LazyWelfare.AndroidMobile
             SetContentView(Resource.Layout.Main);
 
 
+            var ctrl = new MapCtrlDialog(this);
+            ctrl.Show();
+
+            return;
+
             PartialView = FindViewById<WebView>(Resource.Id.webView);
 
             WebSettings settings = PartialView.Settings;
@@ -71,6 +77,8 @@ namespace LazyWelfare.AndroidMobile
             ServiceHost.SetHost(host, Try);
             var page = Template.Layout(model.Name);
             PartialView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
+
+          
         }
        
     }

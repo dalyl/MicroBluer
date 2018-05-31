@@ -73,8 +73,8 @@
 		private void Init(Context context)
 		{
 			mBallRadius = DensityUtil.Dip2Px(context, DEFAULT_BALL_RADIUS);
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
 			mOvalVerticalRadius = DensityUtil.Dip2Px(context, DEFAULT_OVAL_HEIGHT);
 
 			mColors = DEFAULT_COLORS;
@@ -90,18 +90,18 @@
 
 		private void AdjustParams()
 		{
-			mBallCenterY = mHeight / 2.0f;
-			mBallSideOffsets = (mWidth - mBallRadius * 2.0f * (mBallCount - 2)) / 2;
+			mBallCenterY = Height / 2.0f;
+			mBallSideOffsets = (Width - mBallRadius * 2.0f * (mBallCount - 2)) / 2;
 		}
 
 		private void SetupPaint()
 		{
 			mPaint.SetStyle(Paint.Style.Fill);
-            mPaint.SetShader(new LinearGradient(mBallSideOffsets, 0, mWidth - mBallSideOffsets, 0, mColors, mPositions, Shader.TileMode.Clamp));
+            mPaint.SetShader(new LinearGradient(mBallSideOffsets, 0, Width - mBallSideOffsets, 0, mColors, mPositions, Shader.TileMode.Clamp));
 		}
 
-		protected internal override void Draw(Canvas canvas)
-		{
+		protected  override void Draw(Canvas canvas, Rect bounds)
+        {
 			int saveCount = canvas.Save();
 
 			for (int i = 1; i < mBallCount - 1; i++)
@@ -109,7 +109,7 @@
 				mPaint.Alpha = MAX_ALPHA;
 				canvas.DrawCircle(mBallRadius * (i * 2 - 1) + mBallSideOffsets, mBallCenterY, mBallRadius, mPaint);
 
-				mOvalRect.Set(mBallRadius * (i * 2 - 2) + mBallSideOffsets, mHeight - mOvalVerticalRadius * 2, mBallRadius * (i * 2) + mBallSideOffsets, mHeight);
+				mOvalRect.Set(mBallRadius * (i * 2 - 2) + mBallSideOffsets, Height - mOvalVerticalRadius * 2, mBallRadius * (i * 2) + mBallSideOffsets, Height);
 				mPaint.Alpha = OVAL_ALPHA;
 				canvas.DrawOval(mOvalRect, mPaint);
 			}
@@ -118,7 +118,7 @@
 			mPaint.Alpha = MAX_ALPHA;
 			canvas.DrawCircle(mBallSideOffsets - mBallRadius - mLeftBallMoveXOffsets, mBallCenterY - mLeftBallMoveYOffsets, mBallRadius, mPaint);
 
-			mOvalRect.Set(mBallSideOffsets - mBallRadius - mBallRadius * mLeftOvalShapeRate - mLeftBallMoveXOffsets, mHeight - mOvalVerticalRadius - mOvalVerticalRadius * mLeftOvalShapeRate, mBallSideOffsets - mBallRadius + mBallRadius * mLeftOvalShapeRate - mLeftBallMoveXOffsets, mHeight - mOvalVerticalRadius + mOvalVerticalRadius * mLeftOvalShapeRate);
+			mOvalRect.Set(mBallSideOffsets - mBallRadius - mBallRadius * mLeftOvalShapeRate - mLeftBallMoveXOffsets, Height - mOvalVerticalRadius - mOvalVerticalRadius * mLeftOvalShapeRate, mBallSideOffsets - mBallRadius + mBallRadius * mLeftOvalShapeRate - mLeftBallMoveXOffsets, Height - mOvalVerticalRadius + mOvalVerticalRadius * mLeftOvalShapeRate);
 			mPaint.Alpha = OVAL_ALPHA;
 			canvas.DrawOval(mOvalRect, mPaint);
 
@@ -126,7 +126,7 @@
 			mPaint.Alpha = MAX_ALPHA;
 			canvas.DrawCircle(mBallRadius * (mBallCount * 2 - 3) + mBallSideOffsets + mRightBallMoveXOffsets, mBallCenterY - mRightBallMoveYOffsets, mBallRadius, mPaint);
 
-			mOvalRect.Set(mBallRadius * (mBallCount * 2 - 3) - mBallRadius * mRightOvalShapeRate + mBallSideOffsets + mRightBallMoveXOffsets, mHeight - mOvalVerticalRadius - mOvalVerticalRadius * mRightOvalShapeRate, mBallRadius * (mBallCount * 2 - 3) + mBallRadius * mRightOvalShapeRate + mBallSideOffsets + mRightBallMoveXOffsets, mHeight - mOvalVerticalRadius + mOvalVerticalRadius * mRightOvalShapeRate);
+			mOvalRect.Set(mBallRadius * (mBallCount * 2 - 3) - mBallRadius * mRightOvalShapeRate + mBallSideOffsets + mRightBallMoveXOffsets, Height - mOvalVerticalRadius - mOvalVerticalRadius * mRightOvalShapeRate, mBallRadius * (mBallCount * 2 - 3) + mBallRadius * mRightOvalShapeRate + mBallSideOffsets + mRightBallMoveXOffsets, Height - mOvalVerticalRadius + mOvalVerticalRadius * mRightOvalShapeRate);
 			mPaint.Alpha = OVAL_ALPHA;
 			canvas.DrawOval(mOvalRect, mPaint);
 

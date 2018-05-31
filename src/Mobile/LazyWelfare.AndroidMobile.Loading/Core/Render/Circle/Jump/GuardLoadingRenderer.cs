@@ -67,7 +67,7 @@
 
 		internal GuardLoadingRenderer(Context context) : base(context)
 		{
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 			Init(context);
 			SetupPaint();
 		}
@@ -89,10 +89,10 @@
 			mPaint.SetStyle(Paint.Style.Stroke);
 			mPaint.StrokeCap = Paint.Cap.Round;
 
-			SetInsets((int) mWidth, (int) mHeight);
+			SetInsets((int) Width, (int) Height);
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			RectF arcBounds = mTempBounds;
 			arcBounds.Set(bounds);

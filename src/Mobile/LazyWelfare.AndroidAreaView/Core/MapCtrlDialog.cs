@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-namespace LazyWelfare.AndroidMobile
+﻿namespace LazyWelfare.AndroidAreaView.Core
 {
-    public  class ImageCtrlView : ProgressDialog
+    using System;
+    using Android.App;
+    using Android.Content;
+    using Android.OS;
+    using Android.Views;
+    using Android.Widget;
+    using LazyWelfare.AndroidAreaView.Core.Renderer;
+    using LazyWelfare.AndroidUtils.View;
+
+    public  class MapCtrlDialog : ProgressDialog
     {
-        public ImageCtrlView(Context context) : base(context)
+        public MapCtrlDialog(Context context) : base(context)
         {
         }
 
-        public ImageCtrlView(Context context, int theme) : base(context, theme)
+        public MapCtrlDialog(Context context, int theme) : base(context, theme)
         {
         }
 
@@ -34,26 +31,24 @@ namespace LazyWelfare.AndroidMobile
 
             SetContentView(Resource.Layout.ImageCtrl);
 
-            var view = this.FindViewById<ImageView>(Resource.Id.imageCtrl);
-            view.SetImageResource(Resource.Drawable.offered_vol);
+            var view = this.FindViewById<AreaImageView>(Resource.Id.imageCtrl);
+            view.AreaRender =new VolumeControllerRenderer(Context);
 
             var exitView = this.FindViewById<LinearLayout>(Resource.Id.imageCtrl_Exit);
-           // exitView.SetOnClickListener
+            exitView.SetOnClickListener(new AnonymousOnClickListener(v => Dismiss()));
 
-
-            var exitBtn = this.FindViewById<Button>(Resource.Id.imageCtrl_Exit_btn);
 
         }
-       
+
         /// <summary>
         /// Window.Width
         /// </summary>
-        public int Width { get; set; } = ViewGroup.LayoutParams.WrapContent;
+        public int Width { get; set; } = ViewGroup.LayoutParams.FillParent;
 
         /// <summary>
         /// Window.Height
         /// </summary>
-        public int Height { get; set; } = ViewGroup.LayoutParams.WrapContent;
+        public int Height { get; set; } = ViewGroup.LayoutParams.FillParent;
 
         /// <summary>
         /// 是否可以取消

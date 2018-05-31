@@ -30,32 +30,29 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
         /// Whenever <seealso cref="LoadingDrawable"/> boundary changes mBounds will be updated.
         /// More details you can see <seealso cref="LoadingDrawable#onBoundsChange(Rect)"/>
         /// </summary>
-        protected internal Rect Bounds { protected get;    set; }= new Rect();
+        protected internal Rect Bounds { protected get; set; } = new Rect();
 
         internal Drawable.ICallback Callback { private get; set; }
-        private ValueAnimator mRenderAnimator;
 
-        protected internal long mDuration;
-
-        protected internal float mWidth;
-        protected internal float mHeight;
+        private ValueAnimator RenderAnimator;
+        protected internal long Duration;
+        protected internal float Width;
+        protected internal float Height;
 
         public LoadingRenderer(Context context)
         {
-            AnimatorUpdateListener = new AnonymousAnimatorUpdateListener(amor=> {
+            AnimatorUpdateListener = new AnonymousAnimatorUpdateListener(amor =>
+            {
                 this.ComputeRender((float)amor.AnimatedValue);
-                this.InvalidateSelf();
+                Callback.InvalidateDrawable(null);
             });
             InitParams(context);
             SetupAnimators();
         }
 
-        [Obsolete]
-        protected internal virtual void Draw(Canvas canvas, Rect bounds)
-        {
-        }
+        protected abstract void Draw(Canvas canvas, Rect bounds);
 
-        protected internal virtual void Draw(Canvas canvas) => Draw(canvas, Bounds);
+        internal void Draw(Canvas canvas) => Draw(canvas, Bounds);
 
         protected internal abstract void ComputeRender(float renderProgress);
 
@@ -63,21 +60,21 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
 
         protected internal abstract ColorFilter ColorFilter { set; }
 
-        protected internal virtual void Reset() { }
+        internal virtual bool Running => RenderAnimator.IsRunning;
 
         protected internal virtual void AddRenderListener(Animator.IAnimatorListener animatorListener)
         {
-            mRenderAnimator.AddListener(animatorListener);
+            RenderAnimator.AddListener(animatorListener);
         }
 
         internal virtual void Start()
         {
             Reset();
-            mRenderAnimator.AddUpdateListener(AnimatorUpdateListener);
+            RenderAnimator.AddUpdateListener(AnimatorUpdateListener);
 
-            mRenderAnimator.RepeatCount = ValueAnimator.Infinite;
-            mRenderAnimator.SetDuration(mDuration);
-            mRenderAnimator.Start();
+            RenderAnimator.RepeatCount = ValueAnimator.Infinite;
+            RenderAnimator.SetDuration(Duration);
+            RenderAnimator.Start();
         }
 
         internal virtual void Stop()
@@ -85,39 +82,34 @@ namespace LazyWelfare.AndroidMobile.Loading.Render
             // if I just call mRenderAnimator.end(),
             // it will always call the method onAnimationUpdate(ValueAnimator animation)
             // why ? if you know why please send email to me (dinus_developer@163.com)
-            mRenderAnimator.RemoveUpdateListener(AnimatorUpdateListener);
+            RenderAnimator.RemoveUpdateListener(AnimatorUpdateListener);
 
-            mRenderAnimator.RepeatCount = 0;
-            mRenderAnimator.SetDuration(0) ;
-            mRenderAnimator.End();
+            RenderAnimator.RepeatCount = 0;
+            RenderAnimator.SetDuration(0);
+            RenderAnimator.End();
         }
 
-        internal virtual bool Running => mRenderAnimator.IsRunning;
+        protected internal virtual void Reset() { }
 
         private void InitParams(Context context)
         {
-            mWidth = DensityUtil.Dip2Px(context, DEFAULT_SIZE);
-            mHeight = DensityUtil.Dip2Px(context, DEFAULT_SIZE);
-
-            mDuration = ANIMATION_DURATION;
+            Width = DensityUtil.Dip2Px(context, DEFAULT_SIZE);
+            Height = DensityUtil.Dip2Px(context, DEFAULT_SIZE);
+            Duration = ANIMATION_DURATION;
         }
 
         private void SetupAnimators()
         {
-            mRenderAnimator = ValueAnimator.OfFloat(0.0f, 1.0f);
-            mRenderAnimator.RepeatCount = Animation.Infinite;
-            mRenderAnimator.RepeatMode = Android.Animation.ValueAnimatorRepeatMode.Restart;
-            mRenderAnimator.SetDuration(mDuration);
+            RenderAnimator = ValueAnimator.OfFloat(0.0f, 1.0f);
+            RenderAnimator.RepeatCount = Animation.Infinite;
+            RenderAnimator.RepeatMode = Android.Animation.ValueAnimatorRepeatMode.Restart;
+            RenderAnimator.SetDuration(Duration);
             //fuck you! the default interpolator is AccelerateDecelerateInterpolator
-            mRenderAnimator.SetInterpolator(new LinearInterpolator());
-            mRenderAnimator.AddUpdateListener(AnimatorUpdateListener);
+            RenderAnimator.SetInterpolator(new LinearInterpolator());
+            RenderAnimator.AddUpdateListener(AnimatorUpdateListener);
         }
 
-        private void InvalidateSelf()
-        {
-            Callback.InvalidateDrawable(null);
-        }
-
+      
     }
 
 }

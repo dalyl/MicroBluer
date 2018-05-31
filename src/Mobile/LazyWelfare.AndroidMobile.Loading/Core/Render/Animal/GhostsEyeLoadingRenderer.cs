@@ -85,8 +85,8 @@
 
 		private void Init(Context context)
 		{
-			mWidth = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
-			mHeight = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
+			Width = DensityUtil.Dip2Px(context, DEFAULT_WIDTH);
+			Height = DensityUtil.Dip2Px(context, DEFAULT_HEIGHT);
 			mEyeEdgeWidth = DensityUtil.Dip2Px(context, DEFAULT_EYE_EDGE_WIDTH);
 
 			mEyeInterval = DensityUtil.Dip2Px(context, DEFAULT_EYE_CIRCLE_INTERVAL);
@@ -100,7 +100,7 @@
 
 			mColor = DEFAULT_COLOR;
 
-			mDuration = ANIMATION_DURATION;
+			Duration = ANIMATION_DURATION;
 		}
 
 		private void SetupPaint()
@@ -112,7 +112,7 @@
 			mPaint.StrokeCap = Paint.Cap.Round;
 		}
 
-		protected internal override void Draw(Canvas canvas, Rect bounds)
+		protected  override void Draw(Canvas canvas, Rect bounds)
 		{
 			int saveCount = canvas.Save();
 			RectF arcBounds = mTempBounds;
