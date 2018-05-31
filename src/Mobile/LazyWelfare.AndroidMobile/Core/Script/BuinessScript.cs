@@ -8,6 +8,7 @@ using Android.Webkit;
 using Android.Widget;
 using Java.Interop;
 using LazyWelfare.AndroidAreaView.Core;
+using LazyWelfare.AndroidAreaView.Core.Renderer;
 using LazyWelfare.AndroidMobile.Logic;
 using LazyWelfare.AndroidMobile.Models;
 using System.Threading.Tasks;
@@ -89,6 +90,7 @@ namespace LazyWelfare.AndroidMobile.Script
             if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确识别");
 
             var ctrl = new MapCtrlDialog(ViewActivity);
+            ctrl.FetchRender = context => new VolumeControllerRenderer(context);
             ctrl.Show();
 
             return Try.Show<bool>(true, args);

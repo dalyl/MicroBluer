@@ -47,12 +47,6 @@ namespace LazyWelfare.AndroidMobile
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-
-            var ctrl = new MapCtrlDialog(this);
-            ctrl.Show();
-
-            return;
-
             PartialView = FindViewById<WebView>(Resource.Id.webView);
 
             WebSettings settings = PartialView.Settings;

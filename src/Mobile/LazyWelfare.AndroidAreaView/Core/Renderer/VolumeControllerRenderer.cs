@@ -21,17 +21,22 @@
         private const float DEFAULT_Width = 200.0f;
         private const float DEFAULT_Height = 200.0f;
         private const float DEFAULT_RADIUS = 100.0f;
-
         private const float ImageVolumeWidth = 132.0f;
         private const float ImageVolumeHeight = 316.0f;
 
-        private int VolumeWidth { get; }
-        private int VolumeHeight { get; }
-
-        private float Center { get; }
-
         private  Drawable VolumeDrawable { get; }
         private  Paint mPaint { get; } =new Paint();
+
+        private float Center { get; }
+        private int VolumeWidth { get; set; }
+        private int VolumeHeight { get; set; }
+        private int VolumeX { get; set; }
+        private int VolumeY { get; set; }
+        private int VolumeWidthX { get; set; }
+        private int VolumeHeightY { get; set; }
+
+        public Action OnClickTop { get; set; }
+        public Action OnClickBottom { get; set; }
 
         public VolumeControllerRenderer(Context context) : base(context)
         {
@@ -39,8 +44,33 @@
             Width = DensityUtil.Dip2Px(context, DEFAULT_Width);
             Height = DensityUtil.Dip2Px(context, DEFAULT_Height);
             Center = DensityUtil.Dip2Px(context, DEFAULT_RADIUS);
-            VolumeHeight = (int) Height - 10;
+            InitSize();
+        }
+
+        private void InitSize()
+        {
+            VolumeHeight = (int)Height - 10;
             VolumeWidth = (int)((ImageVolumeWidth / ImageVolumeHeight) * VolumeHeight);
+            VolumeX = (int)((Width / 2) - (VolumeWidth / 2));
+            VolumeY = (int)((Height / 2) - (VolumeHeight / 2));
+            VolumeWidthX = VolumeX + VolumeWidth;
+            VolumeHeightY = VolumeY + VolumeHeight;
+        }
+
+        bool PressTop(float x, float y)
+        {
+            return x > (VolumeX)
+              && x < (VolumeWidthX)
+              && y > (VolumeY)
+              && y < (VolumeHeightY / 2);
+        }
+
+        bool PressBottom(float x, float y)
+        {
+            return x > (VolumeX)
+                && x < (VolumeWidthX)
+                && y > (VolumeHeightY / 2)
+                && y < (VolumeHeightY);
         }
 
         public bool IsPressTop { get; set; } = false;
@@ -50,57 +80,56 @@
         protected override void Draw(Canvas canvas, Rect bounds)
         {
             var begin = canvas.Save();
-
-            var leftX = (int)((Width / 2) - (VolumeWidth / 2));
-            var topY = (int)((Height / 2) - (VolumeHeight / 2));
-            var widthX = leftX + VolumeWidth;
-            var heightY = topY + VolumeHeight;
-
             if (IsPressTop)
             {
                 var topCircleRadius = VolumeWidth / 2;
                 var topCircleX = Center;
-                var topCircleY = topY + topCircleRadius;
+                var topCircleY = VolumeY + topCircleRadius;
                 mPaint.Color = Color.Green;
                 canvas.DrawCircle(topCircleX, topCircleY, topCircleRadius, mPaint);
 
                 mPaint.Color = Color.Green;
-                canvas.DrawRect(leftX, topCircleY, widthX, heightY / 2, mPaint);
+                canvas.DrawRect(VolumeX, topCircleY, VolumeWidthX, VolumeHeightY / 2, mPaint);
             }
 
             if (IsPressBottom)
             {
                 var bottomCircleRadius = VolumeWidth / 2;
                 var bottomCircleX = Center;
-                var bottomCircleY = heightY - bottomCircleRadius;
+                var bottomCircleY = VolumeHeightY - bottomCircleRadius;
                 mPaint.Color = Color.Green;
                 canvas.DrawCircle(bottomCircleX, bottomCircleY, bottomCircleRadius, mPaint);
 
                 mPaint.Color = Color.Green;
-                canvas.DrawRect(leftX, Center, widthX, bottomCircleY, mPaint);
+                canvas.DrawRect(VolumeX, Center, VolumeWidthX, bottomCircleY, mPaint);
             }
 
-            VolumeDrawable.SetBounds(leftX, topY, widthX, heightY);
+            VolumeDrawable.SetBounds(VolumeX, VolumeY, VolumeWidthX, VolumeHeightY);
             VolumeDrawable.Draw(canvas);
             canvas.RestoreToCount(begin);
         }
 
-        public override void TouchArea(MotionEvent act)
+        public override bool TouchArea(MotionEvent act)
         {
             if (act.Action == MotionEventActions.Down)
             {
-               
-                float x = act.XPrecision;
-                float y = act.YPrecision;
-                Toast.MakeText(Context, $"x:{x},y{y}", ToastLength.Short).Show();
+                float x = act.GetX();
+                float y = act.GetY();
+                IsPressTop = PressTop(x, y);
+                IsPressBottom = PressBottom(x, y);
+                if (IsPressTop) OnClickTop?.Invoke();
+                if (IsPressBottom) OnClickBottom?.Invoke();
+                return true;
             }
             else if (act.Action == MotionEventActions.Up)
             {
-                float x = act.RawX;
-                float y = act.RawY;
+                float x = act.GetX();
+                float y = act.GetY();
 
-                Toast.MakeText(Context, $"x:{x},y{y}", ToastLength.Short).Show();
+                IsPressTop =false;
+                IsPressBottom = false;
             }
+            return false;
         }
 
 

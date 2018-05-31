@@ -38,6 +38,8 @@
 
         protected Context Context { get; }
 
+        public AreaImageView View { get;private set; }
+
         public AreaRenderer(Context context)
         {
             Context = context;
@@ -53,7 +55,7 @@
             Duration = ANIMATION_DURATION;
 
             RenderAnimator = ValueAnimator.OfFloat(0.0f, 1.0f);
-            RenderAnimator.RepeatCount = Android.Views.Animations.Animation.Infinite;
+            RenderAnimator.RepeatCount = Animation.Infinite;
             RenderAnimator.RepeatMode = ValueAnimatorRepeatMode.Restart;
             RenderAnimator.SetDuration(Duration);
             RenderAnimator.SetInterpolator(new LinearInterpolator());
@@ -79,7 +81,7 @@
 
         protected internal virtual void Reset() { }
 
-        public virtual void TouchArea(MotionEvent act) { }
+        public virtual bool TouchArea(MotionEvent act) => false;
 
     }
 }

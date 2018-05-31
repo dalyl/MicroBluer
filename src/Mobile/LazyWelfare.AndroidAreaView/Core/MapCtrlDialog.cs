@@ -32,13 +32,16 @@
             SetContentView(Resource.Layout.ImageCtrl);
 
             var view = this.FindViewById<AreaImageView>(Resource.Id.imageCtrl);
-            view.AreaRender =new VolumeControllerRenderer(Context);
+            view.AreaRender = FetchRender?.Invoke(Context);
 
             var exitView = this.FindViewById<LinearLayout>(Resource.Id.imageCtrl_Exit);
             exitView.SetOnClickListener(new AnonymousOnClickListener(v => Dismiss()));
-
-
         }
+
+        /// <summary>
+        /// 设置渲染器
+        /// </summary>
+        public Func<Context, AreaRenderer> FetchRender { get; set; } = context => new VolumeControllerRenderer(context);
 
         /// <summary>
         /// Window.Width

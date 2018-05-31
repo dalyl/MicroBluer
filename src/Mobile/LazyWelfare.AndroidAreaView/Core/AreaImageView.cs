@@ -46,10 +46,9 @@
 
         public override bool OnTouchEvent(MotionEvent act)
         {
-            AreaDrawable.TouchArea(act);
+            return AreaDrawable.TouchArea(act);
             return base.OnTouchEvent(act);
         }
-
 
         protected override void OnVisibilityChanged(View changedView, ViewStates visibility)
         {

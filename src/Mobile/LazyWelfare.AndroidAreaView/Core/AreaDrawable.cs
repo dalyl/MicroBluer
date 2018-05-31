@@ -21,7 +21,7 @@
 
         private AreaRenderer AreaRender { get; }
 
-        public AreaDrawable(AreaRenderer render)
+        public AreaDrawable( AreaRenderer render)
         {
             AreaRender = render;
             AreaRender.Callback = new AnonymousDrawableICallback
@@ -36,7 +36,7 @@
 
         public void Stop() => this.AreaRender.Stop();
 
-        public void TouchArea(MotionEvent act) => this.AreaRender.TouchArea(act);
+        public bool TouchArea(MotionEvent act) => this.AreaRender.TouchArea(act);
 
         public bool IsRunning => this.AreaRender.IsRunning;
 
