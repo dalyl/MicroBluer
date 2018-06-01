@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\LazyWelfare.Interface\LazyWelfare.Interface.csproj" />
     <ProjectReference Include="..\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj" />
   </ItemGroup>
 

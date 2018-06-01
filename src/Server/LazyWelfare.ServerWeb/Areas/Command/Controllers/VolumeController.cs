@@ -1,5 +1,5 @@
-﻿using LazyWelfare.ServerCore;
-using LazyWelfare.ServerCore.CommandInterface;
+﻿using LazyWelfare.Interface;
+using LazyWelfare.ServerCore;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

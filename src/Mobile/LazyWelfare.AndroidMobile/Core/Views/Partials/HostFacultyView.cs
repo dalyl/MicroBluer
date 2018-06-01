@@ -14,12 +14,14 @@ using LazyWelfare.AndroidMobile.Models;
 
 namespace LazyWelfare.AndroidMobile.Views.Partials
 {
-    public partial class HostDetailView : IPartialView<HostModel>
+
+    public partial class HostFacultyView : IPartialView<HostModel>
     {
+        public const string Placeholder_Append = "#############Append#############";
 
-        public static (string Host, string Path) Partial = (nameof(PartialView), typeof(HostDetailView).Name);
+        public static (string Host, string Path) Partial = (nameof(PartialView), typeof(HostFacultyView).Name);
 
-        public string GenerateStringWithoutModel() => GenerateString();
+        public string GenerateStringWithoutModel() => ActiveContext.Try.Show(string.Empty, "获取服务主机信息失败");
 
         public HostModel GetModel(string args)
         {
@@ -27,5 +29,4 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
             return string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : service.Get(args);
         }
     }
-
 }

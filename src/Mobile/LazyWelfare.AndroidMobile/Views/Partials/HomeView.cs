@@ -74,7 +74,7 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            ViewScript.
 
 
 #line 20 "HomeView.cshtml"
-                                                             Write(HostMainView.Partial.Host);
+                                                             Write(HostFacultyView.Partial.Host);
 
 
 #line default
@@ -83,7 +83,7 @@ WriteLiteral("\', \'");
 
 
 #line 20 "HomeView.cshtml"
-                                                                                           Write(HostMainView.Partial.Path);
+                                                                                              Write(HostFacultyView.Partial.Path);
 
 
 #line default
@@ -92,7 +92,7 @@ WriteLiteral("\',\'");
 
 
 #line 20 "HomeView.cshtml"
-                                                                                                                        Write(Model.Domain);
+                                                                                                                              Write(Model.Domain);
 
 
 #line default

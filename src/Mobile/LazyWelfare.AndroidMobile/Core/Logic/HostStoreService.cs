@@ -24,12 +24,6 @@ namespace LazyWelfare.AndroidMobile.Logic
 
         protected override string SharedFileName { get; } = "hostFile";
 
-
-        public HostStoreService(Context context) : base(context) { }
-
-        public HostStoreService() : base() { }
-
-
         public List<HostModel> GetList()
         {
             var list = new List<HostModel>();
@@ -62,7 +56,6 @@ namespace LazyWelfare.AndroidMobile.Logic
             var key = CreateKey (guid) ;
             return base.Get(key);
         }
-
 
         public void Add(string addr)
         {

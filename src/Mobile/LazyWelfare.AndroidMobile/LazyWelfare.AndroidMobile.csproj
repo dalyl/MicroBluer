@@ -106,25 +106,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ActiveContext.cs" />
+    <Compile Include="Core\AgreementServices\AgreementService.cs" />
     <Compile Include="Core\AlphaMaskLayout.cs" />
     <Compile Include="Core\Logic\ServiceHost.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />
+    <Compile Include="Core\Models\Argument.cs" />
     <Compile Include="Core\Models\UserModel.cs" />
     <Compile Include="Core\RoundMenuView.cs" />
     <Compile Include="Core\Script\PartialScript.cs" />
     <Compile Include="Core\TryCatch.cs" />
-    <Compile Include="Core\TryCatchActivity.cs" />
+    <Compile Include="Core\ActiveActivity.cs" />
     <Compile Include="Core\TryCatchException.cs" />
     <Compile Include="Core\Utils\BundleUtils.cs" />
     <Compile Include="Core\Utils\ImageUtils.cs" />
+    <Compile Include="Core\AgreementServices\VolumeService.cs" />
     <Compile Include="Core\Views\IPartialView.cs" />
     <Compile Include="Core\Views\PartialLoadForm.cs" />
     <Compile Include="Core\Views\PartialRequestContext.cs" />
     <Compile Include="Core\Views\Partials\HomeView.cs" />
     <Compile Include="Core\Views\Partials\HostDetailView.cs" />
-    <Compile Include="Core\Views\Partials\HostMainView.cs" />
+    <Compile Include="Core\Views\Partials\HostFacultyView.cs" />
     <Compile Include="Core\Views\Partials\HostsView.cs" />
-    <Compile Include="Core\Views\PartialView.cs" />
     <Compile Include="Core\Views\WebPartialActivity.cs" />
     <Compile Include="Core\Views\WebPartialLoadingAsyncTask.cs" />
     <Compile Include="Core\Views\WebPartialRequestStack.cs" />
@@ -164,17 +167,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HostDetailView.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Partials\HostMainView.cs">
+    <Compile Include="Views\Partials\HostFacultyView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HostMainView.cshtml</DependentUpon>
+      <DependentUpon>HostFacultyView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Partials\HostsView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HostsView.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Core\Views\WebPartialViews.cs" />
+    <Compile Include="Core\Views\PartialView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -218,13 +221,13 @@
     <AndroidAsset Include="Assets\css\style.css" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\LazyWelfare.Interface\LazyWelfare.Interface.csproj">
+      <Project>{7a48729d-6623-40a1-aad9-d6a1f2d06e43}</Project>
+      <Name>LazyWelfare.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Common.csproj">
       <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
       <Name>LazyWelfare.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Server\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj">
-      <Project>{e8304128-61d6-46b2-9875-3b64f7da714c}</Project>
-      <Name>LazyWelfare.ServerCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\LazyWelfare.AndroidAreaView\LazyWelfare.AndroidAreaView.csproj">
       <Project>{979912AF-6F8A-4B28-9DD9-5419A0EA506F}</Project>
@@ -336,9 +339,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Partials\HostMainView.cshtml">
+    <None Include="Views\Partials\HostFacultyView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>HostMainView.cs</LastGenOutput>
+      <LastGenOutput>HostFacultyView.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

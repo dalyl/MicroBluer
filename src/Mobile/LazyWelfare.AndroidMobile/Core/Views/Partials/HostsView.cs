@@ -14,16 +14,16 @@ using LazyWelfare.AndroidMobile.Models;
 
 namespace LazyWelfare.AndroidMobile.Views.Partials
 {
-    public partial class HostsView : IPartialView<List<HostModel>>
+    public partial class HostsView :  IPartialView<List<HostModel>>
     {
-        public static (string Host, string Path) Partial = (nameof(WebPartialViews), typeof(HostsView).Name);
+        public static (string Host, string Path) Partial = (nameof(PartialView), typeof(HostsView).Name);
 
-        public static string GenerateString(WebPartialActivity context)
+        public string GenerateStringWithoutModel() => GenerateString();
+
+        public List<HostModel> GetModel(string args)
         {
-            context.RequestStack.Push(PartialView.HostsView, "");
-            var service = new HostStoreService(context);
-            var model = service.GetList();
-            return WebPartialViews.Get(typeof(HostsView).Name, model);
+            var service = new HostStoreService();
+            return service.GetList();
         }
     }
 }

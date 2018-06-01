@@ -5,12 +5,12 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using CSCore.CoreAudioAPI;
-using LazyWelfare.ServerCore.CommandInterface;
+using LazyWelfare.Interface;
 
 namespace LazyWelfare.ServerHost.Command
 {
 
-    public class WindowsVolume : IVolumeController
+    public class WindowsVolume : IVolumeController,IService
     {
         public void SetValue(decimal value)
         {

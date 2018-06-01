@@ -16,31 +16,6 @@ namespace LazyWelfare.AndroidMobile
     public abstract class SharedStoreService<T> : SharedStoreService
     {
 
-        protected override Func<Context> GetContext {  get; set; }
-
-        public SharedStoreService() { }
-
-        public SharedStoreService(Context context)
-        {
-            SetContext(context);
-        }
-
-        public SharedStoreService(Func<Context> fetchContext)
-        {
-            SetContext(fetchContext);
-        }
-
-        public void SetContext(Context context)
-        {
-            GetContext = ()=>context;
-        }
-
-        public void SetContext(Func<Context> fetchContext)
-        {
-            GetContext = fetchContext;
-        }
-
-
         protected T Get(string key)
         {
             var value = GetValue(key, string.Empty);
@@ -67,16 +42,9 @@ namespace LazyWelfare.AndroidMobile
     public abstract class SharedStoreService
     {
 
-        protected abstract Func<Context> GetContext { get; set; }
-
         protected abstract string SharedFileName { get; }
 
-        private  Context Context {
-            get {
-                if (GetContext == null) throw (new  Exception(" Context 无法实例化 "));
-                return GetContext();
-            }
-        }
+        private Context Context { get; } = ActiveContext.Current.ActivityContext;
 
         protected IEnumerable<string> AllKeys(FileCreationMode mode = FileCreationMode.Private)
         {

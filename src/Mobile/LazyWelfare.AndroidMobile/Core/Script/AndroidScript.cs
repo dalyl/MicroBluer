@@ -15,13 +15,13 @@ namespace LazyWelfare.AndroidMobile.Script
     public class AndroidScript : Java.Lang.Object//注意一定要继承java基类  
     {
 
-        protected TryCatchActivity ViewActivity { get; }
+        protected ActiveActivity ViewActivity { get; }
 
         protected WebView WebBrower { get; }
 
-        protected TryCatch Try => ViewActivity.Try;
+        protected TryCatch Try => ActiveContext.Try;
 
-        public AndroidScript(TryCatchActivity activity, WebView brower)
+        public AndroidScript(ActiveActivity activity, WebView brower)
         {
             ViewActivity = activity;
             WebBrower = brower;

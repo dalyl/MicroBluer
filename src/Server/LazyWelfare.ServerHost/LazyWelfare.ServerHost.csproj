@@ -171,6 +171,10 @@
     <Folder Include="setting\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\LazyWelfare.Interface\LazyWelfare.Interface.csproj">
+      <Project>{7A48729D-6623-40A1-AAD9-D6A1F2D06E43}</Project>
+      <Name>LazyWelfare.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Core\LazyWelfare.Service\LazyWelfare.Common.csproj">
       <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
       <Name>LazyWelfare.Common</Name>

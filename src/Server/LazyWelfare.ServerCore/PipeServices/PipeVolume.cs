@@ -1,4 +1,4 @@
-﻿using LazyWelfare.ServerCore.CommandInterface;
+﻿using LazyWelfare.Interface;
 using LazyWelfare.ServerCore.NamedPipe;
 using System;
 using System.Collections.Generic;
@@ -9,16 +9,11 @@ namespace LazyWelfare.ServerCore.PipeServices
 {
     public class PipeVolume : IVolumeController
     {
-        PipeClient Pipe { get; } = new PipeClient();
+        PipeClient Pipe { get; }
 
-        void ICommandService.Execute(string command, object[] args)
+        public PipeVolume(string server= PipeConfig.Localhost)
         {
-            throw new NotImplementedException();
-        }
-
-        object ICommandService.ExecuteResult(string command, object[] args)
-        {
-            throw new NotImplementedException();
+               Pipe  = new PipeClient(server);
         }
 
         public decimal GetValue()

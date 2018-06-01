@@ -1,44 +1,21 @@
-﻿using Android.App;
-using Android.Widget;
-using Android.OS;
-using Android.Webkit;
-using LazyWelfare.AndroidMobile.Models;
-using System.Collections.Generic;
-using LazyWelfare.Common;
-using Android.Content;
-using System;
-using LazyWelfare.AndroidMobile.Views;
-using Android.Runtime;
-using Android.Views;
-using LazyWelfare.AndroidMobile.Views.Partials;
-using LazyWelfare.AndroidMobile.Script;
-using LazyWelfare.AndroidMobile.Logic;
-using LazyWelfare.AndroidAreaView.Core;
-
-namespace LazyWelfare.AndroidMobile
+﻿namespace LazyWelfare.AndroidMobile
 {
+    using LazyWelfare.AndroidMobile.Views;
+    using LazyWelfare.AndroidMobile.Views.Partials;
+    using LazyWelfare.AndroidMobile.Script;
+    using LazyWelfare.AndroidMobile.Logic;
+    using Android.App;
+    using Android.OS;
+    using Android.Webkit;
 
-
-    //LazyWelfare.AndroidMobile
-    [Activity(Label = "@string/app_name", Icon = "@drawable/blue_face", Theme = "@android:style/Theme.NoTitleBar")]
+    [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity : WebPartialActivity
     {
-
-        static (string Host, string Path) Partial;
-
         static WebPartialRequestStack requestStack { get; set; } = new WebPartialRequestStack();
 
+        public (string Host, string Path) Partial { get; set; } = HomeView.Partial;
+
         public override WebPartialRequestStack RequestStack { get; } = requestStack;
-
-        public MainActivity()
-        {
-            Partial = HomeView.Partial;
-        }
-
-        public MainActivity((string Host, string Path) view)
-        {
-            Partial = view;
-        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -63,15 +40,14 @@ namespace LazyWelfare.AndroidMobile
 
             PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{Partial.Host}','{Partial.Path}',null);"));
 
-            var userService = new UserStoreService(this);
-            var hostService   = new HostStoreService(this);
+            var userService = new UserStoreService();
+            var hostService   = new HostStoreService();
 
             var model = userService.Get();
             var host = string.IsNullOrEmpty(model.Host) ? null : hostService.Get(model.Host);
-            ServiceHost.SetHost(host, Try);
+            ServiceHost.SetHost(host);
             var page = Template.Layout(model.Name);
             PartialView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
-
           
         }
        

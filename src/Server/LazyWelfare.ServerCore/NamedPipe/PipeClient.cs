@@ -10,13 +10,19 @@ namespace LazyWelfare.ServerCore.NamedPipe
 {
     public sealed class PipeClient
     {
+        public string Server { get; }
+        public PipeClient(string server)
+        {
+            Server = server;
+        }
+
         public void SendMessage(object data)
         {
             string message = JsonConvert.SerializeObject(data);
-            using (var pipe = new NamedPipeClientStream(PipeConfig.Localhost, PipeConfig.PipeName, PipeDirection.InOut, PipeOptions.Asynchronous | PipeOptions.WriteThrough))
+            using (var pipe = new NamedPipeClientStream(Server, PipeConfig.PipeName, PipeDirection.InOut, PipeOptions.Asynchronous | PipeOptions.WriteThrough))
             {
                 pipe.Connect();
-               // pipe.ReadMode = PipeTransmissionMode.Byte;
+                // pipe.ReadMode = PipeTransmissionMode.Byte;
                 var writer = new StreamWriter(pipe);
                 var reader = new StreamReader(pipe);
                 writer.AutoFlush = true;
@@ -27,10 +33,10 @@ namespace LazyWelfare.ServerCore.NamedPipe
         public T ApplyMessage<T>(object data)
         {
             string message = JsonConvert.SerializeObject(data);
-            using (var pipe = new NamedPipeClientStream(PipeConfig.Localhost, PipeConfig.PipeWithResultName, PipeDirection.InOut, PipeOptions.Asynchronous | PipeOptions.WriteThrough))
+            using (var pipe = new NamedPipeClientStream(Server, PipeConfig.PipeWithResultName, PipeDirection.InOut, PipeOptions.Asynchronous | PipeOptions.WriteThrough))
             {
                 pipe.Connect();
-              //  pipe.ReadMode = PipeTransmissionMode.Byte;
+                //  pipe.ReadMode = PipeTransmissionMode.Byte;
                 var writer = new StreamWriter(pipe);
                 writer.AutoFlush = true;
                 writer.WriteLine(message);

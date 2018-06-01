@@ -1,13 +1,13 @@
-﻿using LazyWelfare.ServerCore.CommandInterface;
+﻿using LazyWelfare.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LazyWelfare.ServerCore
 {
-    public  interface IServiceDistributor
+    public interface IServiceDistributor
     {
-       ICommandService GetService(ServiceDefine define);
+       IService GetService(ServiceDefine define);
     }
    
 }

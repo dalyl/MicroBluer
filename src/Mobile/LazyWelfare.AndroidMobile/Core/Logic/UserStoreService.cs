@@ -14,8 +14,6 @@ using Newtonsoft.Json;
 
 namespace LazyWelfare.AndroidMobile.Logic
 {
-  
-
     public class UserStoreService : SharedStoreService<string>
     {
         const string KeyPro = "_user_";
@@ -25,10 +23,6 @@ namespace LazyWelfare.AndroidMobile.Logic
         readonly static string KeyRegex = $@"^{KeyPro}{attrPattern}$";
 
         protected override string SharedFileName { get; } = "userFile";
-
-        public UserStoreService(Context context) : base(context) { }
-
-        public UserStoreService() : base() { }
 
         string CreateKey(string attr)
         {
@@ -68,7 +62,6 @@ namespace LazyWelfare.AndroidMobile.Logic
             return true;
         }
 
-
         public string GetAttr(string attr)
         {
             var key = CreateKey(attr);
@@ -80,7 +73,6 @@ namespace LazyWelfare.AndroidMobile.Logic
             var key = CreateKey(attr);
             return base.Save(key, attrVlaue);
         }
-
          
     }
 }

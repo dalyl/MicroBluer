@@ -18,12 +18,12 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
-public partial class HostMainView : HostMainViewBase
+public partial class HostFacultyView : HostFacultyViewBase
 {
 
 #line hidden
 
-#line 1 "HostMainView.cshtml"
+#line 1 "HostFacultyView.cshtml"
 public LazyWelfare.AndroidMobile.Models.HostModel Model { get; set; }
 
 #line default
@@ -39,7 +39,7 @@ WriteLiteral(" class=\"list-group\"");
 WriteLiteral(" data-guid=\"");
 
 
-#line 3 "HostMainView.cshtml"
+#line 3 "HostFacultyView.cshtml"
                              Write(Model.Domain);
 
 
@@ -60,7 +60,7 @@ WriteLiteral(" aria-hidden=\"true\"");
 WriteLiteral("></span>\r\n        <span>");
 
 
-#line 6 "HostMainView.cshtml"
+#line 6 "HostFacultyView.cshtml"
          Write(Model.Name);
 
 
@@ -92,6 +92,8 @@ WriteLiteral(">睡眠</span>\r\n    </li>\r\n    <li");
 
 WriteLiteral(" class=\"list-group-item main-command-item\"");
 
+WriteLiteral(" data-Service=\"IVolumeController\"");
+
 WriteLiteral(">\r\n        <span");
 
 WriteLiteral(" class=\"glyphicon glyphicon-headphones\"");
@@ -103,8 +105,8 @@ WriteLiteral("></span>\r\n        <span>音量调节</span>\r\n    </li>\r\n\r\n
 WriteLiteral("    ");
 
 
-#line 21 "HostMainView.cshtml"
-Write(HostMainView.Placeholder_Append);
+#line 21 "HostFacultyView.cshtml"
+Write(HostFacultyView.Placeholder_Append);
 
 
 #line default
@@ -112,7 +114,7 @@ Write(HostMainView.Placeholder_Append);
 WriteLiteral("\r\n\r\n</ul>\r\n<script>\r\n        $(function () {\r\n            var guid =\'");
 
 
-#line 26 "HostMainView.cshtml"
+#line 26 "HostFacultyView.cshtml"
                   Write(Model.Domain);
 
 
@@ -137,7 +139,7 @@ WriteLiteral(@"';
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 42 "HostMainView.cshtml"
+#line 42 "HostFacultyView.cshtml"
                                                                  Write(HostDetailView.Partial.Host);
 
 
@@ -146,7 +148,7 @@ WriteLiteral(@"';
 WriteLiteral("\', \'");
 
 
-#line 42 "HostMainView.cshtml"
+#line 42 "HostFacultyView.cshtml"
                                                                                                  Write(HostDetailView.Partial.Path);
 
 
@@ -160,7 +162,7 @@ WriteLiteral("\', guid);\r\n            });\r\n\r\n        })\r\n</script>");
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class HostMainViewBase
+public abstract class HostFacultyViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

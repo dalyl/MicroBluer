@@ -17,14 +17,11 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
     public partial class HomeView : IPartialView<HostModel>
     {
 
-        public static (string Host, string Path) Partial = (nameof(WebPartialViews), typeof(HomeView).Name);
+        public static (string Host, string Path) Partial = (nameof(PartialView), typeof(HomeView).Name);
 
-        public static string GenerateString(WebPartialActivity context)
-        {
-            context.RequestStack.Clear();
-            context.RequestStack.Push(PartialView.HomeView, "");
-            return WebPartialViews.Get(typeof(HomeView).Name, ServiceHost.CurrentHost);
-        }
+        public HostModel GetModel(string args) => ServiceHost.CurrentHost;
+
+        public string GenerateStringWithoutModel() => GenerateString();
 
     }
 }

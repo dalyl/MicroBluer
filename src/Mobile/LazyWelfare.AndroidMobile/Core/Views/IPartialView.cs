@@ -21,5 +21,9 @@ namespace LazyWelfare.AndroidMobile.Views
     public interface IPartialView<T> : IPartialView
     {
         T Model { get; set; }
+
+        T GetModel(string args);
+
+        string GenerateStringWithoutModel();
     }
 }

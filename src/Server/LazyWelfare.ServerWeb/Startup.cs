@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using LazyWelfare.ServerCore.CommandInterface;
 using LazyWelfare.ServerCore.PipeServices;
+using LazyWelfare.Interface;
 
 namespace LazyWelfare.ServerWeb
 {

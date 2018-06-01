@@ -20,7 +20,7 @@ namespace LazyWelfare.AndroidMobile.Views
     {
         public static string EXTRA_ASYNCTASK_PARTIALREQUESTCONTEXT { get; } = BundleUtils.BuildKey<WebPartialLoadingAsyncTask>("EXTRA_ASYNCTASK_PARTIALREQUESTCONTEXT");
 
-        TryCatch _try { get; }
+       
 
         WebPartialActivity _activity { get; }
 
@@ -34,7 +34,7 @@ namespace LazyWelfare.AndroidMobile.Views
         public WebPartialLoadingAsyncTask(WebPartialActivity viewActivity, PartialRequestContext context)
         {
             _activity = viewActivity;
-            _try = _activity.Try;
+           
             _brower = _activity.PartialView;
             _context = context;
         }
@@ -43,11 +43,11 @@ namespace LazyWelfare.AndroidMobile.Views
         {
             switch (_context.Host)
             {
-                case nameof(WebPartialViews):
-                    _content = _try.Invoke(string.Empty, () => WebPartialViews.SwitchWebView(_activity as WebPartialActivity, _context.Url, _context.Args));
+                case nameof(PartialView):
+                    _content = ActiveContext.Try.Invoke(string.Empty, () => PartialView.SwitchWebView(_activity as WebPartialActivity, _context.Url, _context.Args));
                     break;
                 case nameof(ServiceHost):
-                    _content = ServiceHost.PageDispatch(_context.Url, _context.Args, _try);
+                    _content = ServiceHost.PageDispatch(_context.Url, _context.Args);
                     break;
 
             }

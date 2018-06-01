@@ -43,6 +43,14 @@
         /// </summary>
         public Func<Context, AreaRenderer> FetchRender { get; set; } = context => new VolumeControllerRenderer(context);
 
+        public AreaRenderer Render
+        {
+            set
+            {
+                FetchRender = context => value;
+            }
+        }
+
         /// <summary>
         /// Window.Width
         /// </summary>

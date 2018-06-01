@@ -9,4 +9,8 @@
     <PackageReference Include="System.IO.Pipes.AccessControl" Version="4.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\LazyWelfare.Interface\LazyWelfare.Interface.csproj" />
+  </ItemGroup>
+
 </Project>

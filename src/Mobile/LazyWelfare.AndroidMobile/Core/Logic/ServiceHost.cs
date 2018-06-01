@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using LazyWelfare.AndroidMobile.Models;
-using Newtonsoft.Json;
-
-namespace LazyWelfare.AndroidMobile.Logic
+﻿namespace LazyWelfare.AndroidMobile.Logic
 {
+    using System;
+    using System.Net.Http;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Android.Content;
+    using LazyWelfare.AndroidMobile.AgreementServices;
+    using LazyWelfare.AndroidMobile.Models;
+    using Newtonsoft.Json;
     public class ServiceHost
     {
 
@@ -23,70 +16,87 @@ namespace LazyWelfare.AndroidMobile.Logic
         const string CommandAddress = "/Command/";
         const string PageAddress = "/Page/";
 
-        public static string PageDispatch(string url, string args, TryCatch Try)
-        {
-            if (Enable == false) return Try.Show<string>(string.Empty,"未设置 活动 Host 服务");
-            var addr = $"{CurrentHost.Address}{PageAddress}{url.Replace("-",string.Empty)}";
-            return Try.Invoke(string.Empty, () => GetContent(addr));
-            return @"  <li class=""list-group-item main-item"">
-                            <span class=""glyphicon glyphicon-off"" aria-hidden=""true""></span> 开关
-                        </li>
-                        <li class=""list-group-item command-item"">
-                            <span class=""command-item-button orangered "">关机</span><span class=""command-item-button red"">睡眠</span>
-                        </li>
-                        <li class=""list-group-item main-command-item"">
-                            <span class=""glyphicon glyphicon-headphones"" aria-hidden=""true""></span>音量调节
-                        </li>";
-        }
-
         public static HostModel CurrentHost { get; set; }
 
         static HttpClient Client { get; set; }
 
         public static bool Enable => CurrentHost != null;
 
-        public static void SetHost(HostModel model, TryCatch Try)
+        public static void SetHost(HostModel model)
         {
-            var can = Try.Invoke(false, () => InitHost(model), "服务地址不可用");
+            var can = ActiveContext.Try.Invoke(false, () => InitHost(model), "服务地址不可用");
             if (can == false) CurrentHost = null;
         }
+
 
         static bool InitHost(HostModel model)
         {
             CurrentHost = model;
-            Client = CreateClient();
+            Client = CreateClient(CurrentHost.Address);
             return true;
         }
 
-        public static HostModel GetServiceDefine(string host, TryCatch Try)
+        public static string PageDispatch(string url, string args)
         {
-            var addr = $"{host}{ServiceDefineAddress}";
-            var content = Try.Invoke(string.Empty, () => GetContent(addr), "服务地址不正确或服务不可用");
-            if (string.IsNullOrEmpty(content)) return null;
-            return Try.Invoke(null, () => JsonConvert.DeserializeObject<HostModel>(content),"服务接口数据解析失败");
+            if (Enable == false) return ActiveContext.Try.Show<string>(string.Empty, "Host 服务不可用");
+            var addr = $"{CurrentHost.Address}{PageAddress}{url.Replace("-", string.Empty)}";
+            return ActiveContext.Try.Invoke(string.Empty, () => GetPageContent(addr));
         }
 
-        static string GetContent(string url)
+        public static HostModel GetServiceDefine(string host)
         {
+            var content = ActiveContext.Try.Invoke(string.Empty, () => GetHostService(host, ServiceDefineAddress), "服务地址不正确或服务不可用");
+            if (string.IsNullOrEmpty(content)) return null;
+            return ActiveContext.Try.Invoke(null, () => JsonConvert.DeserializeObject<HostModel>(content),"服务接口数据解析失败");
+        }
+
+        public static bool InvokeCommand(Argument arg, Context context )
+        {
+            if (Enable == false) return ActiveContext.Try.Show(false, "Host 服务不可用");
+            if(AgreementService.Contains(arg.Service)) return ActiveContext.Try.Invoke<bool>(false, () => AgreementService.Execute(context));
+            if (string.IsNullOrEmpty(arg.Uri)) return ActiveContext.Try.Show(false, $"自定义{arg.Service}服务地址未提供");
+            ActiveContext.Try.Invoke(false,()=> SendCommand(arg.Uri));
+            return true;
+        }
+
+        internal static bool SendCommand(string cmd)
+        {
+            if (Enable == false) return false;
+            var url = $"{CommandAddress}{cmd}";
+            var fetchResponse = Client.GetAsync(url);
+            return true;
+        }
+
+        internal static string GetCommandResult(string cmd)
+        {
+            var url = $"{CommandAddress}{cmd}";
             var fetchResponse = Client.GetByteArrayAsync(url);
             Task.WaitAll(fetchResponse);
             return Encoding.Default.GetString(fetchResponse.Result);
         }
 
-        static string GetContent(string host,string url)
+        static string GetPageContent(string page)
         {
-            var client = CreateClient();
+            var url = $"{PageAddress}{page.Replace("-", string.Empty)}";
+            var fetchResponse = Client.GetByteArrayAsync(url);
+            Task.WaitAll(fetchResponse);
+            return Encoding.Default.GetString(fetchResponse.Result);
+        }
+
+        static string GetHostService(string host,string url)
+        {
+            var client = CreateClient(host);
             var fetchResponse = client.GetByteArrayAsync(url);
             Task.WaitAll(fetchResponse);
             return Encoding.Default.GetString(fetchResponse.Result);
         }
 
-        static HttpClient CreateClient()
+        static HttpClient CreateClient(string host)
         {
             return new HttpClient
             {
                 Timeout = new TimeSpan(0, 0, 5),
-                BaseAddress = new Uri(CurrentHost.Address)
+                BaseAddress = new Uri(host)
             };
         }
 

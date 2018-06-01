@@ -15,7 +15,7 @@ using LazyWelfare.AndroidMobile.Views;
 
 namespace LazyWelfare.AndroidMobile
 {
-    public abstract class WebPartialActivity : TryCatchActivity
+    public abstract class WebPartialActivity : ActiveActivity
     {
         public abstract WebPartialRequestStack RequestStack { get; }
 
@@ -33,7 +33,7 @@ namespace LazyWelfare.AndroidMobile
             var value = RequestStack.Fetch();
             if (value != null)
             {
-                PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{ nameof(WebPartialViews) }','{ value.Partial.ToString() }','{value.Args}');", null);
+                PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{ nameof(Views.PartialView) }','{ value.Partial.ToString() }','{value.Args}');", null);
                 return true;
             }
             return false;
