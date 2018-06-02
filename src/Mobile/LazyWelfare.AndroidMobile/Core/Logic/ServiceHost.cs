@@ -8,6 +8,7 @@
     using LazyWelfare.AndroidMobile.AgreementServices;
     using LazyWelfare.AndroidMobile.Models;
     using Newtonsoft.Json;
+
     public class ServiceHost
     {
 
@@ -39,8 +40,7 @@
         public static string PageDispatch(string url, string args)
         {
             if (Enable == false) return ActiveContext.Try.Show<string>(string.Empty, "Host 服务不可用");
-            var addr = $"{CurrentHost.Address}{PageAddress}{url.Replace("-", string.Empty)}";
-            return ActiveContext.Try.Invoke(string.Empty, () => GetPageContent(addr));
+            return ActiveContext.Try.Invoke(string.Empty, () => GetPageContent(url));
         }
 
         public static HostModel GetServiceDefine(string host)
@@ -50,13 +50,14 @@
             return ActiveContext.Try.Invoke(null, () => JsonConvert.DeserializeObject<HostModel>(content),"服务接口数据解析失败");
         }
 
-        public static bool InvokeCommand(Argument arg, Context context )
+        public static bool InvokeCommand(Argument arg, Context context)
         {
             if (Enable == false) return ActiveContext.Try.Show(false, "Host 服务不可用");
-            if(AgreementService.Contains(arg.Service)) return ActiveContext.Try.Invoke<bool>(false, () => AgreementService.Execute(context));
-            if (string.IsNullOrEmpty(arg.Uri)) return ActiveContext.Try.Show(false, $"自定义{arg.Service}服务地址未提供");
-            ActiveContext.Try.Invoke(false,()=> SendCommand(arg.Uri));
-            return true;
+            if (AgreementService.Contains(arg.Service)) return ActiveContext.Try.Invoke<bool>(false, () => AgreementService.Execute(context));
+            if (string.IsNullOrEmpty(arg.Uri)) return ActiveContext.Try.Show(false, $"{arg.Name.Trim()}服务地址未提供");
+            var result = ActiveContext.Try.Invoke(false, () => SendCommand(arg.Uri));
+            if (result == false) ActiveContext.Try.Show(false, $"{arg.Name} 命令执行失败");
+            return result;
         }
 
         internal static bool SendCommand(string cmd)

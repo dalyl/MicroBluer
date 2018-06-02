@@ -27,12 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Command\Data\" />
-    <Folder Include="Areas\Command\Models\" />
-    <Folder Include="Areas\Command\Views\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\LazyWelfare.Interface\LazyWelfare.Interface.csproj" />
     <ProjectReference Include="..\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj" />
   </ItemGroup>

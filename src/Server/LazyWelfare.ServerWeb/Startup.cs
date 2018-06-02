@@ -45,8 +45,8 @@ namespace LazyWelfare.ServerWeb
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "Command",
-                    template: "Command/{controller=Home}/{action=Index}/{value?}");
+                    name: "areaRoute",
+                    template: "{area:exists}/{controller}/{action}/{value?}");
 
                 routes.MapRoute(
                     name: "default",

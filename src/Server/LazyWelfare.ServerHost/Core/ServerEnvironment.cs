@@ -19,7 +19,7 @@ namespace LazyWelfare.ServerHost
 
         public readonly static ServerEnvironment Instance = new ServerEnvironment();
 
-        public string Path { get; private set; } = @"E:\Project\Github\LazyWelfare\src\Server\LazyWelfare.ServerHost\bin\Debug\webroot\";
+        public string Path { get; private set; } = @"E:\Project\Github\LazyWelfare\src\Server\LazyWelfare.ServerHost\bin\Release\webroot\";
 
         public string WebName { get; private set; } = "LazyWelfare.ServerWeb";
 

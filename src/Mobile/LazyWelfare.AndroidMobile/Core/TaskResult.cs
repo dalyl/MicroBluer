@@ -84,12 +84,12 @@ namespace LazyWelfare.AndroidMobile
         /// <summary>
         /// 操作执行状态结果
         /// </summary>
-        public bool Succeeded { get; private set; }
+        public bool Succeeded { get;  set; }
 
         /// <summary>
         /// 操作执行错误记录
         /// </summary>
-        public List<string> Errors { get; private set; }
+        public List<string> Errors { get;  set; }
 
         #endregion
 
@@ -291,7 +291,7 @@ namespace LazyWelfare.AndroidMobile
         /// <summary>
         /// 数据结果
         /// </summary>
-        public T Content { get; protected set; }
+        public T Content { get;  set; }
 
         #endregion
 

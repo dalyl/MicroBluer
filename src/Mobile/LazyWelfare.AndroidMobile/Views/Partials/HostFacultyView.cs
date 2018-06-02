@@ -92,7 +92,7 @@ WriteLiteral(">睡眠</span>\r\n    </li>\r\n    <li");
 
 WriteLiteral(" class=\"list-group-item main-command-item\"");
 
-WriteLiteral(" data-Service=\"IVolumeController\"");
+WriteLiteral(" data-service=\"IVolumeController\"");
 
 WriteLiteral(">\r\n        <span");
 

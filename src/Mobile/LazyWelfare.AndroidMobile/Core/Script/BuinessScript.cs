@@ -43,14 +43,14 @@
         [JavascriptInterface]
         public bool SaveHost(string args)
         {
-            if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确提供");
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false,"参数未正确提供");
             return Try.Invoke(false,()=> HostSave(args));
         }
 
         bool HostSave(string args)
         {
             var model = Try.Invoke(null, () => DeserializeForm<HostModel>(args));
-            if (model == null) return Try.Throw<bool>("参数未正确识别");
+            if (model == null) return Try.Show<bool>(false, "参数未正确识别");
             var service = new HostStoreService();
             return Try.Show(() => service.Save(model),"保存成功","保存失败");
         }
@@ -59,7 +59,7 @@
         [JavascriptInterface]
         public bool DeleteHost(string args)
         {
-            if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确提供");
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
             var service = new HostStoreService();
             return Try.Show(()=>service.Delete(args), "成功删除","删除失败");
         }
@@ -68,7 +68,7 @@
         [JavascriptInterface]
         public bool SetHost(string args)
         {
-            if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确提供");
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
             var userService = new UserStoreService();
             var result= Try.Show(() => userService.SetAttr("Host", args), "设置成功", "设置失败");
             if (result) {
@@ -83,9 +83,9 @@
         [JavascriptInterface]
         public bool CommandSumbit(string args)
         {
-            if (string.IsNullOrEmpty(args)) return Try.Throw<bool>("参数未正确提供");
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
             var model = Try.Invoke(null, () => JsonConvert.DeserializeObject<Argument>(args));
-            if (model == null) return Try.Throw<bool>("参数未正确识别");
+            if (model == null) return Try.Show<bool>(false, "参数未正确识别");
             return ServiceHost.InvokeCommand(model, ViewActivity);
         }
 
