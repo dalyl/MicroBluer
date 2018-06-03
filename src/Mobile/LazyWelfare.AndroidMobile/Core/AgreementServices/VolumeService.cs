@@ -34,6 +34,7 @@ namespace LazyWelfare.AndroidMobile.AgreementServices
                 {
                     OnClickTop = () => SetValue(0.01m),
                     OnClickBottom = () => SetValue(-0.01m),
+                    FetchText = () => $"音量：{(int)(Current * 100)}%",
                 }
             };
             Current = GetValue();

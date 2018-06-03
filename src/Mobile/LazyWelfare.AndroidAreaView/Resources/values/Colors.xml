@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <color name="transparent">#00000000</color>
+  <color name="top_bg">#0f0f0f</color>
   <color name="gray_9999">#999999</color>
   <color name="gray_f2f2">#CCCCCC</color>
 

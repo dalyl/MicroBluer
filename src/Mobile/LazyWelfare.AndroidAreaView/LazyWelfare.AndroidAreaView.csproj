@@ -64,7 +64,11 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="23.4.0.1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ImageCtrl_Top.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LazyWelfare.AndroidUtils\LazyWelfare.AndroidUtils.csproj">
       <Project>{6A64624C-9BD2-4AB5-8442-3BDDCA81417E}</Project>

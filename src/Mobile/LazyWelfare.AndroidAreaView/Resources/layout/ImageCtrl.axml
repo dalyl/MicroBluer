@@ -3,32 +3,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
+    <include
+        layout="@layout/ImageCtrl_Top"
+        android:layout_height="?android:attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:id="@+id/imageCtrl_Exit"
-            android:padding="20dp"
-            android:orientation="vertical"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/svg_new_source" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:text="退出"
-                android:textColor="#ffffff" />
-        </LinearLayout>
-    </RelativeLayout>
+        android:id="@+id/top_layout" />
     <LinearLayout
         android:orientation="vertical"
-        android:padding="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LazyWelfare.AndroidAreaView.Core.AreaImageView

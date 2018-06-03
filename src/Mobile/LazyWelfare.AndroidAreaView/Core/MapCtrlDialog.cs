@@ -34,14 +34,15 @@
             var view = this.FindViewById<AreaImageView>(Resource.Id.imageCtrl);
             view.AreaRender = FetchRender?.Invoke(Context);
 
-            var exitView = this.FindViewById<LinearLayout>(Resource.Id.imageCtrl_Exit);
+            var top = this.FindViewById<RelativeLayout>(Resource.Id.top_layout); 
+            var exitView = top.FindViewById<LinearLayout>(Resource.Id.imageCtrl_Exit);
             exitView.SetOnClickListener(new AnonymousOnClickListener(v => Dismiss()));
         }
 
         /// <summary>
         /// 设置渲染器
         /// </summary>
-        public Func<Context, AreaRenderer> FetchRender { get; set; } = context => new VolumeControllerRenderer(context);
+        public Func<Context, AreaRenderer> FetchRender { get; set; } = context => new VolumeControllerRenderer(context) ;
 
         public AreaRenderer Render
         {

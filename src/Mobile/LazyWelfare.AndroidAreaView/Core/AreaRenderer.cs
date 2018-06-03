@@ -4,16 +4,15 @@
     using Android.Content;
     using Android.Graphics;
     using Android.Graphics.Drawables;
+    using Android.Util;
     using Android.Views;
     using Android.Views.Animations;
     using LazyWelfare.AndroidUtils.Animation;
-    using LazyWelfare.AndroidUtils.Common;
     using System;
 
     public abstract class AreaRenderer
     {
         const long ANIMATION_DURATION = 1333;
-        const float DEFAULT_SIZE = 56.0f;
 
         public bool IsRunning { get; internal set; }
         public float Height { get; internal set; }
@@ -50,8 +49,18 @@
                 Callback.InvalidateDrawable(null);
             });
 
-            Width = DensityUtil.Dip2Px(context, DEFAULT_SIZE);
-            Height = DensityUtil.Dip2Px(context, DEFAULT_SIZE);
+            TypedValue tv = new TypedValue();
+            if (context.Theme.ResolveAttribute(Android.Resource.Attribute.ActionBarSize, tv, true))
+            {
+                ActionBarHeight = TypedValue.ComplexToDimensionPixelSize(tv.Data, context.Resources.DisplayMetrics);
+            }
+
+            var dm = context.Resources.DisplayMetrics;
+            float density = dm.Density;
+            Width = dm.WidthPixels;
+            Height = dm.HeightPixels - StatusBarHeight - ActionBarHeight;
+          
+
             Duration = ANIMATION_DURATION;
 
             RenderAnimator = ValueAnimator.OfFloat(0.0f, 1.0f);
@@ -61,6 +70,36 @@
             RenderAnimator.SetInterpolator(new LinearInterpolator());
             RenderAnimator.AddUpdateListener(AnimatorUpdateListener);
         }
+
+        internal int ActionBarHeight { get; }
+
+        int statusBarHeight = 0;
+
+        internal int StatusBarHeight
+        {
+            get
+            {
+                if (statusBarHeight == 0) {
+                    try
+                    {
+                        var c = Type.GetType("com.android.internal.R$dimen");
+                        var obj = System.Activator.CreateInstance(c);
+                        var field = c.GetField("status_bar_height");
+                        int x = int.Parse(field.GetValue(obj).ToString());
+                        statusBarHeight= Context.Resources.GetDimensionPixelSize(x);
+                    }
+                    catch (Exception ex)
+                    {
+                        statusBarHeight = 75;
+                    }
+                }
+                return statusBarHeight;
+            }
+            set {
+                statusBarHeight = value;
+            }
+        }
+
 
         internal void Start()
         {

@@ -1,60 +1,66 @@
 ﻿namespace LazyWelfare.AndroidAreaView.Core.Renderer
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
-    using Android.App;
     using Android.Content;
     using Android.Graphics;
     using Android.Graphics.Drawables;
-    using Android.OS;
-    using Android.Runtime;
     using Android.Views;
-    using Android.Widget;
-    using LazyWelfare.AndroidUtils.Common;
 
     public class VolumeControllerRenderer : AreaRenderer
     {
-
-        private const float DEFAULT_Width = 200.0f;
-        private const float DEFAULT_Height = 200.0f;
-        private const float DEFAULT_RADIUS = 100.0f;
-        private const float ImageVolumeWidth = 132.0f;
-        private const float ImageVolumeHeight = 316.0f;
+        private const int ImageVolumeWidth = 132;
+        private const int ImageVolumeHeight = 316;
+        private const int TextWidth = 330;
+        private const int TextHeight = 120;
 
         private  Drawable VolumeDrawable { get; }
         private  Paint mPaint { get; } =new Paint();
 
-        private float Center { get; }
         private int VolumeWidth { get; set; }
         private int VolumeHeight { get; set; }
         private int VolumeX { get; set; }
         private int VolumeY { get; set; }
+        private int VolumeCenterX { get; set; }
+        private int VolumeCenterY { get; set; }
         private int VolumeWidthX { get; set; }
         private int VolumeHeightY { get; set; }
+
+
+        private int TextX { get; set; }
+        private int TextY { get; set; }
+        private int TextWidthX { get; set; }
+        private int TextHeightY { get; set; }
 
         public Action OnClickTop { get; set; }
         public Action OnClickBottom { get; set; }
 
+        public Func<string> FetchText { get; set; }
+
         public VolumeControllerRenderer(Context context) : base(context)
         {
             VolumeDrawable = context.GetDrawable(Resource.Drawable.offered_vol);
-            Width = DensityUtil.Dip2Px(context, DEFAULT_Width);
-            Height = DensityUtil.Dip2Px(context, DEFAULT_Height);
-            Center = DensityUtil.Dip2Px(context, DEFAULT_RADIUS);
+            mPaint.TextSize = 60;
+            mPaint.TextAlign = Paint.Align.Center;
             InitSize();
         }
 
         private void InitSize()
         {
-            VolumeHeight = (int)Height - 10;
-            VolumeWidth = (int)((ImageVolumeWidth / ImageVolumeHeight) * VolumeHeight);
-            VolumeX = (int)((Width / 2) - (VolumeWidth / 2));
-            VolumeY = (int)((Height / 2) - (VolumeHeight / 2));
+            VolumeCenterX = (int)(Width / 2);
+            VolumeCenterY = (int)(Height / 2);
+
+            VolumeHeight = (int)(1.5 * ImageVolumeHeight);
+            VolumeWidth = (int)(1.5 * ImageVolumeWidth);
+
+            VolumeX = VolumeCenterX - (VolumeWidth / 2);
+            VolumeY = VolumeCenterY - (VolumeHeight / 2);
             VolumeWidthX = VolumeX + VolumeWidth;
             VolumeHeightY = VolumeY + VolumeHeight;
+
+            TextY = (VolumeY / 2) - (TextHeight / 2);
+            TextX = VolumeCenterX - (TextWidth / 2);
+            TextWidthX = TextX + TextWidth;
+            TextHeightY = TextY + TextHeight;
         }
 
         bool PressTop(float x, float y)
@@ -62,14 +68,14 @@
             return x > (VolumeX)
               && x < (VolumeWidthX)
               && y > (VolumeY)
-              && y < (VolumeHeightY / 2);
+              && y < (VolumeCenterY);
         }
 
         bool PressBottom(float x, float y)
         {
             return x > (VolumeX)
                 && x < (VolumeWidthX)
-                && y > (VolumeHeightY / 2)
+                && y > (VolumeCenterY)
                 && y < (VolumeHeightY);
         }
 
@@ -80,28 +86,34 @@
         protected override void Draw(Canvas canvas, Rect bounds)
         {
             var begin = canvas.Save();
+
+            mPaint.Color = Color.White;
+            var text = FetchText?.Invoke();
+            if (text != null) canvas.DrawText(text, VolumeCenterX, TextHeightY, mPaint);
+            mPaint.SetStyle(Paint.Style.Fill);
+
             if (IsPressTop)
             {
                 var topCircleRadius = VolumeWidth / 2;
-                var topCircleX = Center;
+                var topCircleX = VolumeCenterX;
                 var topCircleY = VolumeY + topCircleRadius;
                 mPaint.Color = Color.Green;
                 canvas.DrawCircle(topCircleX, topCircleY, topCircleRadius, mPaint);
 
                 mPaint.Color = Color.Green;
-                canvas.DrawRect(VolumeX, topCircleY, VolumeWidthX, VolumeHeightY / 2, mPaint);
+                canvas.DrawRect(VolumeX, topCircleY, VolumeWidthX, VolumeCenterY, mPaint);
             }
 
             if (IsPressBottom)
             {
                 var bottomCircleRadius = VolumeWidth / 2;
-                var bottomCircleX = Center;
+                var bottomCircleX = VolumeCenterX;
                 var bottomCircleY = VolumeHeightY - bottomCircleRadius;
                 mPaint.Color = Color.Green;
                 canvas.DrawCircle(bottomCircleX, bottomCircleY, bottomCircleRadius, mPaint);
 
                 mPaint.Color = Color.Green;
-                canvas.DrawRect(VolumeX, Center, VolumeWidthX, bottomCircleY, mPaint);
+                canvas.DrawRect(VolumeX, VolumeCenterY, VolumeWidthX, bottomCircleY, mPaint);
             }
 
             VolumeDrawable.SetBounds(VolumeX, VolumeY, VolumeWidthX, VolumeHeightY);
