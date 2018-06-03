@@ -15,15 +15,15 @@ using LazyWelfare.AndroidMobile.Views;
 
 namespace LazyWelfare.AndroidMobile
 {
-    public abstract class WebPartialActivity : ActiveActivity
+    public abstract class PartialActivity : ActiveActivity
     {
-        public abstract WebPartialRequestStack RequestStack { get; }
+        public abstract PartialRequestStack RequestStack { get; }
 
         public LoadingDialog WaitingView { get;private set; }
 
         public WebView PartialView { get; set; }
 
-        public WebPartialActivity()
+        public PartialActivity()
         {
             RequestStack.Clear();
         }

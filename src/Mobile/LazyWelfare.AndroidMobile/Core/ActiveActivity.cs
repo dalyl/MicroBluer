@@ -9,10 +9,7 @@
 
         public ActiveActivity()
         {
-            ActiveInfo = new ActiveContext
-            {
-                ActivityContext = this,
-            };
+            ActiveInfo = new ActiveContext(this);
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {

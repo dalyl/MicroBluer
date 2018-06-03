@@ -51,6 +51,7 @@
     <Compile Include="Common\BundleUtils.cs" />
     <Compile Include="Common\DensityUtil.cs" />
     <Compile Include="Common\HandlerUtils.cs" />
+    <Compile Include="Common\ImageUtils.cs" />
     <Compile Include="Database\ContentObserver.cs" />
     <Compile Include="Extension\CollectionExtension.cs" />
     <Compile Include="Extension\ParcelExtension.cs" />

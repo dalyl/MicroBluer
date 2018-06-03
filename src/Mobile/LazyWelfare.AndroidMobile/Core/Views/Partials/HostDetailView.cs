@@ -23,8 +23,7 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
 
         public HostModel GetModel(string args)
         {
-            var service = new HostStoreService();
-            return string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : service.Get(args);
+            return string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : ActiveContext.Current.HostStore.Get(args);
         }
     }
 

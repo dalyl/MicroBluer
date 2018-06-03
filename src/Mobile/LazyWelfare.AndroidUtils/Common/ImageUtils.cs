@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.Graphics;
-using Android.Graphics.Drawables;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-namespace LazyWelfare.AndroidMobile.Utils
+﻿namespace LazyWelfare.AndroidUtils.Common
 {
+    using System;
+    using Android.Content;
+    using Android.Graphics;
+    using Android.Graphics.Drawables;
+
     public static class ImageUtils
     {
-        public static Bitmap Drawable2Bitmap(this Context context,int drawable)
+        public static Bitmap Drawable2Bitmap(this Context context, int drawable)
         {
-            var image= context.GetDrawable(drawable);
+            var image = context.GetDrawable(drawable);
             return GetBitmapFromDrawable(image);
         }
 
@@ -69,4 +60,5 @@ namespace LazyWelfare.AndroidMobile.Utils
             }
         }
     }
+
 }

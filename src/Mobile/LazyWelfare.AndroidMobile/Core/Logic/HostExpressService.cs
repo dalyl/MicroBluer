@@ -9,50 +9,32 @@
     using LazyWelfare.AndroidMobile.Models;
     using Newtonsoft.Json;
 
-    public class ServiceHost
+    internal class HostExpressService
     {
-
         const string ServiceDefineAddress = "/Data/ServiceDefine";
         const string DataAddress = "/Data/";
         const string CommandAddress = "/Command/";
         const string PageAddress = "/Page/";
 
-        public static HostModel CurrentHost { get; set; }
+        HttpClient Client { get; set; }
 
-        static HttpClient Client { get; set; }
-
-        public static bool Enable => CurrentHost != null;
-
-        public static void SetHost(HostModel model)
+        public HostExpressService(HostModel model)
         {
-            var can = ActiveContext.Try.Invoke(false, () => InitHost(model), "服务地址不可用");
-            if (can == false) CurrentHost = null;
+            Client = ActiveContext.Try.Invoke(null, () => CreateClient(model.Address), "服务地址不可用");
         }
 
+        public bool Enable => Client != null;
 
-        static bool InitHost(HostModel model)
-        {
-            CurrentHost = model;
-            Client = CreateClient(CurrentHost.Address);
-            return true;
-        }
-
-        public static string PageDispatch(string url, string args)
-        {
-            if (Enable == false) return ActiveContext.Try.Show<string>(string.Empty, "Host 服务不可用");
-            return ActiveContext.Try.Invoke(string.Empty, () => GetPageContent(url));
-        }
-
-        public static HostModel GetServiceDefine(string host)
+        public HostModel GetServiceDefine(string host)
         {
             var content = ActiveContext.Try.Invoke(string.Empty, () => GetHostService(host, ServiceDefineAddress), "服务地址不正确或服务不可用");
             if (string.IsNullOrEmpty(content)) return null;
-            return ActiveContext.Try.Invoke(null, () => JsonConvert.DeserializeObject<HostModel>(content),"服务接口数据解析失败");
+            return ActiveContext.Try.Invoke(null, () => JsonConvert.DeserializeObject<HostModel>(content), "服务接口数据解析失败");
         }
 
-        public static bool InvokeCommand(Argument arg, Context context)
+        public bool InvokeCommand(Argument arg, Context context)
         {
-            if (Enable == false) return ActiveContext.Try.Show(false, "Host 服务不可用");
+            if (Enable == false) return ActiveContext.Try.Throw<bool> ("Host 服务不可用");
             if (AgreementService.Contains(arg.Service)) return ActiveContext.Try.Invoke<bool>(false, () => AgreementService.Execute(context));
             if (string.IsNullOrEmpty(arg.Uri)) return ActiveContext.Try.Show(false, $"{arg.Name.Trim()}服务地址未提供");
             var result = ActiveContext.Try.Invoke(false, () => SendCommand(arg.Uri));
@@ -60,31 +42,33 @@
             return result;
         }
 
-        internal static bool SendCommand(string cmd)
+        public bool SendCommand(string cmd)
         {
-            if (Enable == false) return false;
+            if (Enable == false) return ActiveContext.Try.Throw<bool> ("Host 服务不可用");
             var url = $"{CommandAddress}{cmd}";
             var fetchResponse = Client.GetAsync(url);
             return true;
         }
 
-        internal static string GetCommandResult(string cmd)
+        public string GetCommandResult(string cmd)
         {
+            if (Enable == false) return ActiveContext.Try.Throw<string>("Host 服务不可用");
             var url = $"{CommandAddress}{cmd}";
             var fetchResponse = Client.GetByteArrayAsync(url);
             Task.WaitAll(fetchResponse);
             return Encoding.Default.GetString(fetchResponse.Result);
         }
 
-        static string GetPageContent(string page)
+        public string GetPageContent(string page)
         {
+            if (Enable == false) return ActiveContext.Try.Throw<string>("Host 服务不可用");
             var url = $"{PageAddress}{page.Replace("-", string.Empty)}";
             var fetchResponse = Client.GetByteArrayAsync(url);
             Task.WaitAll(fetchResponse);
             return Encoding.Default.GetString(fetchResponse.Result);
         }
 
-        static string GetHostService(string host,string url)
+        string GetHostService(string host, string url)
         {
             var client = CreateClient(host);
             var fetchResponse = client.GetByteArrayAsync(url);
@@ -92,7 +76,7 @@
             return Encoding.Default.GetString(fetchResponse.Result);
         }
 
-        static HttpClient CreateClient(string host)
+        HttpClient CreateClient(string host)
         {
             return new HttpClient
             {

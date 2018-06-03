@@ -41,7 +41,7 @@ namespace LazyWelfare.AndroidMobile.AgreementServices
 
         decimal GetValue()
         {
-            var data = ServiceHost.GetCommandResult(GetCommand);
+            var data = ActiveContext.Current.Host.GetCommandResult(GetCommand);
             if (string.IsNullOrEmpty(data)) return ActiveContext.Try.Throw<decimal>("服务接口数据为空");
             var result = JsonConvert.DeserializeObject<TaskResult<decimal>>(data);
             if(result==null) return ActiveContext.Try.Throw<decimal>("服务接口数据格式转换异常");
@@ -51,7 +51,7 @@ namespace LazyWelfare.AndroidMobile.AgreementServices
         void SetValue(decimal value)
         {
             Current += value;
-            var result = ServiceHost.SendCommand(string.Format(SetCommand, Current));
+            var result = ActiveContext.Current.Host.SendCommand(string.Format(SetCommand, Current));
             if (result == false) Current -= value;
         }
 

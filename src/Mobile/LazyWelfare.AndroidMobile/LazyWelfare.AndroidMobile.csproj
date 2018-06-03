@@ -109,7 +109,7 @@
     <Compile Include="Core\ActiveContext.cs" />
     <Compile Include="Core\AgreementServices\AgreementService.cs" />
     <Compile Include="Core\AlphaMaskLayout.cs" />
-    <Compile Include="Core\Logic\ServiceHost.cs" />
+    <Compile Include="Core\Logic\HostExpressService.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />
     <Compile Include="Core\Models\Argument.cs" />
     <Compile Include="Core\Models\UserModel.cs" />
@@ -118,8 +118,6 @@
     <Compile Include="Core\TryCatch.cs" />
     <Compile Include="Core\ActiveActivity.cs" />
     <Compile Include="Core\TryCatchException.cs" />
-    <Compile Include="Core\Utils\BundleUtils.cs" />
-    <Compile Include="Core\Utils\ImageUtils.cs" />
     <Compile Include="Core\AgreementServices\VolumeService.cs" />
     <Compile Include="Core\Views\IPartialView.cs" />
     <Compile Include="Core\Views\PartialLoadForm.cs" />
@@ -128,9 +126,9 @@
     <Compile Include="Core\Views\Partials\HostDetailView.cs" />
     <Compile Include="Core\Views\Partials\HostFacultyView.cs" />
     <Compile Include="Core\Views\Partials\HostsView.cs" />
-    <Compile Include="Core\Views\WebPartialActivity.cs" />
-    <Compile Include="Core\Views\WebPartialLoadingAsyncTask.cs" />
-    <Compile Include="Core\Views\WebPartialRequestStack.cs" />
+    <Compile Include="Core\Views\PartialActivity.cs" />
+    <Compile Include="Core\Views\PartialLoadingAsyncTask.cs" />
+    <Compile Include="Core\Views\PartialRequestStack.cs" />
     <Compile Include="Core\Script\BuinessScript.cs" />
     <Compile Include="Core\PermissionGrantedClickListener.cs" />
     <Compile Include="Core\ImageTextButton.cs" />

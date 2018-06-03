@@ -123,26 +123,31 @@
             return view.GenerateString();
         }
 
-        public static string SwitchWebView(WebPartialActivity context, string url, string args)
+        public static string SwitchWebView(PartialActivity context, string url, string args)
         {
+             
             switch (url)
             {
-                case PartialView.HomeViewPartial: {
+                case PartialView.HomeViewPartial:
+                    {
                         context.RequestStack.Clear();
                         context.RequestStack.Push(PartialView.HomeViewPartial, "");
                         return Get<HostModel>(typeof(HomeView).Name, args);
                     }
-                case PartialView.HostsViewPartial: {
+                case PartialView.HostsViewPartial:
+                    {
                         context.RequestStack.Push(PartialView.HostsViewPartial, "");
                         return Get<List<HostModel>>(typeof(HostsView).Name, args);
                     }
-                case PartialView.HostDetailViewPartial: {
+                case PartialView.HostDetailViewPartial:
+                    {
                         context.RequestStack.Push(PartialView.HostsViewPartial, args);
                         return Get<HostModel>(typeof(HostDetailView).Name, args);
                     }
-                case PartialView.HostFacultyViewPartial: {
+                case PartialView.HostFacultyViewPartial:
+                    {
                         var page = Get<HostModel>(typeof(HostFacultyView).Name, args);
-                        var append = ServiceHost.PageDispatch("command-panel", args);
+                        var append = ActiveContext.Current.Host.GetPageContent("command-panel");
                         return page.Replace(HostFacultyView.Placeholder_Append, append);
                     }
             }

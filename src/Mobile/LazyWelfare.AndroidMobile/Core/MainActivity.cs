@@ -9,13 +9,13 @@
     using Android.Webkit;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
-    public class MainActivity : WebPartialActivity
+    public class MainActivity : PartialActivity
     {
-        static WebPartialRequestStack requestStack { get; set; } = new WebPartialRequestStack();
+        static PartialRequestStack requestStack { get; set; } = new PartialRequestStack();
 
         public (string Host, string Path) Partial { get; set; } = HomeView.Partial;
 
-        public override WebPartialRequestStack RequestStack { get; } = requestStack;
+        public override PartialRequestStack RequestStack { get; } = requestStack;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,13 +39,10 @@
             PartialView.AddJavascriptInterface(new BuinessScript(this, PartialView), "BuinessScript");
 
             PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{Partial.Host}','{Partial.Path}',null);"));
-
-            var userService = new UserStoreService();
-            var hostService   = new HostStoreService();
-
-            var model = userService.Get();
-            var host = string.IsNullOrEmpty(model.Host) ? null : hostService.Get(model.Host);
-            ServiceHost.SetHost(host);
+            
+            var model = ActiveContext.Current.UserStore.Get();
+            var host = string.IsNullOrEmpty(model.Host) ? null : ActiveContext.Current.HostStore.Get(model.Host);
+            ActiveContext.CurrentHost = host;
             var page = Template.Layout(model.Name);
             PartialView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
           

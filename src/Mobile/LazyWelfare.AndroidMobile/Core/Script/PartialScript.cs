@@ -18,14 +18,14 @@ namespace LazyWelfare.AndroidMobile.Script
     public class PartialScript : AndroidScript//注意一定要继承java基类  
     {
 
-        public PartialScript(WebPartialActivity activity, WebView brower) : base(activity, brower) { }
+        public PartialScript(PartialActivity activity, WebView brower) : base(activity, brower) { }
 
         [Export("RequestPartial")]
         [JavascriptInterface]
         public void RequestPartial(string frame, string type, string host, string url, string args,string after)
         {
             var context = new PartialRequestContext(frame, type, host, url, args, after);
-            WebPartialLoadingAsyncTask loading = new WebPartialLoadingAsyncTask(ViewActivity as WebPartialActivity, context);
+            PartialLoadingAsyncTask loading = new PartialLoadingAsyncTask(ViewActivity as PartialActivity, context);
             loading.Execute();
         }
 

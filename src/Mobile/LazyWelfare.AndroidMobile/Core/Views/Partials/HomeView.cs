@@ -19,7 +19,7 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
 
         public static (string Host, string Path) Partial = (nameof(PartialView), typeof(HomeView).Name);
 
-        public HostModel GetModel(string args) => ServiceHost.CurrentHost;
+        public HostModel GetModel(string args) => ActiveContext.CurrentHost;
 
         public string GenerateStringWithoutModel() => GenerateString();
 
