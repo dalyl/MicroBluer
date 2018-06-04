@@ -73,6 +73,17 @@ namespace LazyWelfare.AndroidMobile.Logic
             var key = CreateKey(attr);
             return base.Save(key, attrVlaue);
         }
+
+        public bool SetHost(string value)
+        {
+            var key = "Host";
+            var result= base.Save(key, value);
+            if (result) {
+                ActiveContext.ExpireSercvice<UserModel>();
+                ActiveContext.ExpireSercvice<HostModel>();
+            }
+            return result;
+        }
          
     }
 }

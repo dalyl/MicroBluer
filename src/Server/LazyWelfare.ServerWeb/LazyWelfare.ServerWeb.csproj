@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.6.19" />
+    <PackageReference Include="Hangfire.Core" Version="1.6.19" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
@@ -29,6 +31,13 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\LazyWelfare.Interface\LazyWelfare.Interface.csproj" />
     <ProjectReference Include="..\LazyWelfare.ServerCore\LazyWelfare.ServerCore.csproj" />
+    <ProjectReference Include="..\LazyWelfare.TimeTask\LazyWelfare.TimeTask.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

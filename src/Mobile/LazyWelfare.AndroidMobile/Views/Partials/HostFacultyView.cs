@@ -76,19 +76,21 @@ WriteLiteral(" class=\"glyphicon glyphicon-off\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
+WriteLiteral(" data-service=\"IComputerCloseFire\"");
+
 WriteLiteral("></span>\r\n        <span>开关</span>\r\n    </li>\r\n    <li");
 
 WriteLiteral(" class=\"list-group-item command-item\"");
 
-WriteLiteral(">\r\n        <span");
+WriteLiteral(" >\r\n        <span");
 
 WriteLiteral(" class=\"command-item-button orangered \"");
 
-WriteLiteral(">关机</span>\r\n        <span");
+WriteLiteral("  >关机</span>\r\n        <span");
 
 WriteLiteral(" class=\"command-item-button red\"");
 
-WriteLiteral(">睡眠</span>\r\n    </li>\r\n    <li");
+WriteLiteral("  >睡眠</span>\r\n    </li>\r\n    <li");
 
 WriteLiteral(" class=\"list-group-item main-command-item\"");
 

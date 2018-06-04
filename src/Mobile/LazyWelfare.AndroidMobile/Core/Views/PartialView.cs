@@ -147,7 +147,7 @@
                 case PartialView.HostFacultyViewPartial:
                     {
                         var page = Get<HostModel>(typeof(HostFacultyView).Name, args);
-                        var append = ActiveContext.Current.Host.GetPageContent("command-panel");
+                        var append = ActiveContext.HostExpress.GetPageContent("command-panel");
                         return page.Replace(HostFacultyView.Placeholder_Append, append);
                     }
             }

@@ -17,12 +17,12 @@ using Newtonsoft.Json;
 
 namespace LazyWelfare.AndroidMobile.AgreementServices
 {
-    public class VolumeService
+    public class VolumeService: IAgreementService
     {
         const string GetCommand = "volume/get";
         const string SetCommand = "volume/set/{0}";
 
-        public MapCtrlDialog View { get; }
+        public MapCtrlDialog View { get; private set; }
 
         public decimal Current { get; private set; }
 
@@ -42,7 +42,7 @@ namespace LazyWelfare.AndroidMobile.AgreementServices
 
         decimal GetValue()
         {
-            var data = ActiveContext.Current.Host.GetCommandResult(GetCommand);
+            var data = ActiveContext.HostExpress.GetCommandResult(GetCommand);
             if (string.IsNullOrEmpty(data)) return ActiveContext.Try.Throw<decimal>("服务接口数据为空");
             var result = JsonConvert.DeserializeObject<TaskResult<decimal>>(data);
             if(result==null) return ActiveContext.Try.Throw<decimal>("服务接口数据格式转换异常");
@@ -52,13 +52,14 @@ namespace LazyWelfare.AndroidMobile.AgreementServices
         void SetValue(decimal value)
         {
             Current += value;
-            var result = ActiveContext.Current.Host.SendCommand(string.Format(SetCommand, Current));
+            var result = ActiveContext.HostExpress.SendCommand(string.Format(SetCommand, Current));
             if (result == false) Current -= value;
         }
 
-        public bool Show()
+        public bool Execute()
         {
-            if (View != null) View.Show();
+            if (View != null) return ActiveContext.Try.Throw<bool>("控件视图没有正确实例化");
+            View.Show();
             return true;
         }
     }

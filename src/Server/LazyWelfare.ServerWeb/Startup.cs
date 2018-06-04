@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using LazyWelfare.ServerCore.PipeServices;
+using LazyWelfare.TimeTask;
 using LazyWelfare.Interface;
 
 namespace LazyWelfare.ServerWeb
@@ -25,6 +26,8 @@ namespace LazyWelfare.ServerWeb
         {
             services.AddTransient<IVolumeController, PipeVolume>();
             services.AddMvc();
+            var TimeTaskConnection= "Data Source=hangfire.data;";
+            services.AddTimeTask(TimeTaskConnection);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +43,7 @@ namespace LazyWelfare.ServerWeb
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseTimeTask();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>

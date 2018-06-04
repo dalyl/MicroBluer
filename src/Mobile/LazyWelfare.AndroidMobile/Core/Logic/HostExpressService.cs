@@ -20,6 +20,7 @@
 
         public HostExpressService(HostModel model)
         {
+            if (model == null) ActiveContext.Try.Throw($"{nameof(HostModel)} 未实例化");
             Client = ActiveContext.Try.Invoke(null, () => CreateClient(model.Address), "服务地址不可用");
         }
 
@@ -35,7 +36,7 @@
         public bool InvokeCommand(Argument arg, Context context)
         {
             if (Enable == false) return ActiveContext.Try.Throw<bool> ("Host 服务不可用");
-            if (AgreementService.Contains(arg.Service)) return ActiveContext.Try.Invoke<bool>(false, () => AgreementService.Execute(context));
+            if (ActiveContext.Agreement.Contains(arg.Service)) return ActiveContext.Try.Invoke<bool>(false, () => ActiveContext.Agreement.Execute(arg.Service, context));
             if (string.IsNullOrEmpty(arg.Uri)) return ActiveContext.Try.Show(false, $"{arg.Name.Trim()}服务地址未提供");
             var result = ActiveContext.Try.Invoke(false, () => SendCommand(arg.Uri));
             if (result == false) ActiveContext.Try.Show(false, $"{arg.Name} 命令执行失败");

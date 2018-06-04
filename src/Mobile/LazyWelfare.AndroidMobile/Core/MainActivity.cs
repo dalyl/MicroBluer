@@ -40,10 +40,7 @@
 
             PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{Partial.Host}','{Partial.Path}',null);"));
             
-            var model = ActiveContext.Current.UserStore.Get();
-            var host = string.IsNullOrEmpty(model.Host) ? null : ActiveContext.Current.HostStore.Get(model.Host);
-            ActiveContext.CurrentHost = host;
-            var page = Template.Layout(model.Name);
+            var page = Template.Layout(ActiveContext.User.Name);
             PartialView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
           
         }

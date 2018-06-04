@@ -13,22 +13,33 @@ using LazyWelfare.Interface;
 
 namespace LazyWelfare.AndroidMobile.AgreementServices
 {
-    public abstract class AgreementService
+    public sealed class AgreementService
     {
-        static Dictionary<string, Type> Servces = new Dictionary<string, Type>();
+        static Dictionary<string, Func<Context, IAgreementService>> Servces = new Dictionary<string, Func<Context, IAgreementService>>();
 
         static AgreementService()
         {
-            Servces.Add(nameof(IVolumeController), typeof(VolumeService));
+            Servces.Add(nameof(IVolumeController), context => new VolumeService(context));
+            Servces.Add(nameof(IComputerCloseFire), context => new CloseFireService(context));
         }
 
-        public static bool Contains(string service) => Servces.Keys.Contains(service);
+        public bool Contains(string service) => Servces.Keys.Contains(service);
 
-        public static bool Execute(Context context)
+        public bool Execute(string name, Context context)
         {
-            var ctrl = new VolumeService(context);
-            ctrl.Show();
+            if (Contains(name) == false) return ActiveContext.Try.Throw<bool>($"{name} 服务未不属于协议服务或未被正确注册");
+            var fetchService = Servces[name];
+            var service = fetchService(context);
+            service.Execute();
             return true;
         }
     }
+     
+   
+    public interface IComputerCloseFire
+    {
+
+    }
+
+  
 }

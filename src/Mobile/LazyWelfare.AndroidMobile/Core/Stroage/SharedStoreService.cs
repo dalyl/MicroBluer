@@ -44,7 +44,7 @@ namespace LazyWelfare.AndroidMobile
 
         protected abstract string SharedFileName { get; }
 
-        private Context Context { get; } = ActiveContext.Current.ActivityContext;
+        private Context Context { get; } = ActiveContext.Activity;
 
         protected IEnumerable<string> AllKeys(FileCreationMode mode = FileCreationMode.Private)
         {

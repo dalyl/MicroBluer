@@ -108,6 +108,8 @@
   <ItemGroup>
     <Compile Include="Core\ActiveContext.cs" />
     <Compile Include="Core\AgreementServices\AgreementService.cs" />
+    <Compile Include="Core\AgreementServices\CloseFireService.cs" />
+    <Compile Include="Core\AgreementServices\IAgreementService.cs" />
     <Compile Include="Core\AlphaMaskLayout.cs" />
     <Compile Include="Core\Logic\HostExpressService.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />

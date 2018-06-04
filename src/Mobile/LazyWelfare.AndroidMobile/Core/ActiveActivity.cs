@@ -11,21 +11,22 @@
         {
             ActiveInfo = new ActiveContext(this);
         }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            if(ActiveContext.Current==null) ActiveContext.Current = ActiveInfo;
+            ActiveContext.RegisterContext(ActiveInfo);
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-            ActiveContext.Current = ActiveInfo;
+            ActiveContext.RepalceContext(ActiveInfo);
         }
 
         protected override void OnDestroy()
         {
-            if (ActiveContext.Current == ActiveInfo) ActiveContext.Current = null;
+            ActiveContext.ExprieContext();
             ActiveInfo = null;
             base.OnDestroy();
         }

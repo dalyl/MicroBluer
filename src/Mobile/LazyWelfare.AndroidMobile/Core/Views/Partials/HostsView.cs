@@ -22,7 +22,7 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
 
         public List<HostModel> GetModel(string args)
         {
-            return ActiveContext.Current.HostStore.GetList();
+            return ActiveContext.HostStore.GetList();
         }
     }
 }
