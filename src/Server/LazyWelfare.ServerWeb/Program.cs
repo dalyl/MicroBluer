@@ -17,6 +17,7 @@ namespace LazyWelfare.ServerWeb
         {
             var config = new ConfigurationBuilder()
              .SetBasePath(Directory.GetCurrentDirectory())
+             .AddJsonFile("appsettings.json")
              .AddCommandLine(args)   //添加对命令参数的支持
              .Build();
 

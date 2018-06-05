@@ -58,7 +58,7 @@ namespace LazyWelfare.AndroidMobile.AgreementServices
 
         public bool Execute()
         {
-            if (View != null) return ActiveContext.Try.Throw<bool>("控件视图没有正确实例化");
+            if (View == null) return ActiveContext.Try.Throw<bool>("控件视图没有正确实例化");
             View.Show();
             return true;
         }

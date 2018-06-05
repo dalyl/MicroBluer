@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
 public partial class HostFacultyView : HostFacultyViewBase
 {
 
@@ -70,15 +70,13 @@ WriteLiteral("</span>\r\n    </li>\r\n    <li");
 
 WriteLiteral(" class=\"list-group-item main-item\"");
 
-WriteLiteral(">\r\n        <span");
+WriteLiteral(" >\r\n        <span");
 
 WriteLiteral(" class=\"glyphicon glyphicon-off\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral(" data-service=\"IComputerCloseFire\"");
-
-WriteLiteral("></span>\r\n        <span>开关</span>\r\n    </li>\r\n    <li");
+WriteLiteral(" ></span>\r\n        <span>开关</span>\r\n    </li>\r\n    <li");
 
 WriteLiteral(" class=\"list-group-item command-item\"");
 
@@ -86,11 +84,15 @@ WriteLiteral(" >\r\n        <span");
 
 WriteLiteral(" class=\"command-item-button orangered \"");
 
-WriteLiteral("  >关机</span>\r\n        <span");
+WriteLiteral("  data-service=\"IComputerCloseFire\"");
+
+WriteLiteral(" >关机</span>\r\n        <span");
 
 WriteLiteral(" class=\"command-item-button red\"");
 
-WriteLiteral("  >睡眠</span>\r\n    </li>\r\n    <li");
+WriteLiteral("  data-service=\"IComputerCloseFire\"");
+
+WriteLiteral(">睡眠</span>\r\n    </li>\r\n    <li");
 
 WriteLiteral(" class=\"list-group-item main-command-item\"");
 
