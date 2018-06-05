@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
 
-    public class FolderStoreService : SharedStoreService<FolderMapModel>
+    public class FolderMapStoreService : SharedStoreService<FolderMapModel>
     {
         protected override string SharedFileName { get; } = "folderFile";
 

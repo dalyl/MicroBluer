@@ -9,28 +9,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LazyWelfare.AndroidMobile.Views
+namespace LazyWelfare.AndroidMobile.Views.Partials
 {
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-#line 1 "LayoutView.cshtml"
-using LazyWelfare.AndroidMobile.Views.Partials;
-
-#line default
-#line hidden
-
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
-public partial class LayoutView : LayoutViewBase
+public partial class FolderMapsView : FolderMapsViewBase
 {
 
 #line hidden
 
-#line 2 "LayoutView.cshtml"
-public LazyWelfare.AndroidMobile.Models.AppModel Model { get; set; }
+#line 1 "FolderMapsView.cshtml"
+public List<LazyWelfare.AndroidMobile.Models.FolderMapModel> Model { get; set; }
 
 #line default
 #line hidden
@@ -38,133 +32,143 @@ public LazyWelfare.AndroidMobile.Models.AppModel Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("<html>\r\n<head>\r\n    <meta");
+WriteLiteral("    <div");
 
-WriteLiteral(" charset=\"utf-8\"");
+WriteLiteral(" class=\"line-section\"");
 
-WriteLiteral(" />\r\n    <meta");
+WriteLiteral(">\r\n        <ul");
 
-WriteLiteral(" name=\"viewport\"");
+WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(" content=\"width=device-width, initial-scale=1.0\"");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" />\r\n    <link");
 
-WriteLiteral(" rel=\"stylesheet\"");
+#line 4 "FolderMapsView.cshtml"
+            
 
-WriteLiteral(" href=\"bootstrap/bootstrap.css\"");
+#line default
+#line hidden
 
-WriteLiteral(" />\r\n    <link");
+#line 4 "FolderMapsView.cshtml"
+             foreach (var one in Model)
+            {
 
-WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(" href=\"bootstrap/bootstrap-theme.css\"");
+#line default
+#line hidden
+WriteLiteral("            <li");
 
-WriteLiteral(" />\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" href=\"css/style.css\"");
-
-WriteLiteral(" />\r\n</head>\r\n\r\n<body>\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"navbar-header navbar-default\"");
-
-WriteLiteral(">\r\n            <button");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"navbar-toggle collapsed\"");
-
-WriteLiteral(" data-toggle=\"collapse\"");
-
-WriteLiteral(" data-target=\"#bs-example-navbar-collapse-1\"");
-
-WriteLiteral("\r\n                    aria-expanded=\"false\"");
+WriteLiteral(" class=\"list-group-item main-item\"");
 
 WriteLiteral(">\r\n                <span");
 
-WriteLiteral(" class=\"sr-only\"");
+WriteLiteral(" class=\"glyphicon glyphicon-link\"");
 
-WriteLiteral(">Toggle navigation</span>\r\n                <span");
+WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n                <span");
-
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n                <span");
-
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n            </button>\r\n            <a");
-
-WriteLiteral(" class=\"navbar-brand\"");
-
-WriteLiteral("   href=\"javascript:void(0);\"");
-
-WriteLiteral(" >");
+WriteLiteral("></span>\r\n                <span>");
 
 
-#line 23 "LayoutView.cshtml"
-                                                             Write(Model.Header);
+#line 8 "FolderMapsView.cshtml"
+                 Write(one.Name);
 
 
 #line default
 #line hidden
-WriteLiteral("</a>\r\n        </div>\r\n        <div");
+WriteLiteral("</span>\r\n            </li>\r\n");
 
-WriteLiteral(" class=\"navbar-collapse collapse\"");
+WriteLiteral("            <li");
 
-WriteLiteral(" id=\"bs-example-navbar-collapse-1\"");
+WriteLiteral(" class=\"list-group-item command-item \"");
 
-WriteLiteral(" aria-expanded=\"false\"");
-
-WriteLiteral(" style=\"height: 1px;\"");
-
-WriteLiteral(">\r\n            <ul");
-
-WriteLiteral(" class=\"nav navbar-nav\"");
-
-WriteLiteral(">\r\n                <li");
-
-WriteLiteral(" class=\"menuLink hostPage\"");
-
-WriteLiteral("> 主机遥控  </li>\r\n                <li");
-
-WriteLiteral(" class=\"menuLink forderPage\"");
-
-WriteLiteral("> 文件归档  </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n    <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n    <div");
-
-WriteLiteral(" id=\"MainContent\"");
-
-WriteLiteral("></div>\r\n    <script");
-
-WriteLiteral(" src=\"jquery.min.js\"");
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteLiteral(" src=\"bootstrap/bootstrap.min.js\"");
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteLiteral(" src=\"site.min.js\"");
-
-WriteLiteral("></script>\r\n    <script>\r\n        $(function () {\r\n            \r\n            $(\"." +
-"hostPage\").click(function () {\r\n                changeMenu(this, \'");
+WriteLiteral(" data-guid=\"");
 
 
-#line 41 "LayoutView.cshtml"
-                             Write(HomeView.Partial.Host);
+#line 10 "FolderMapsView.cshtml"
+                                                            Write(one.Guid);
+
+
+#line default
+#line hidden
+WriteLiteral("\"");
+
+WriteLiteral(">\r\n                <span");
+
+WriteLiteral(" class=\"command-item-delete red\"");
+
+WriteLiteral(">删除</span>\r\n                <span");
+
+WriteLiteral(" class=\"command-item-eidt blue\"");
+
+WriteLiteral(">编辑</span>\r\n            </li>\r\n");
+
+
+#line 14 "FolderMapsView.cshtml"
+            }
+
+
+#line default
+#line hidden
+WriteLiteral("        </ul>\r\n    </div>\r\n\r\n    <div");
+
+WriteLiteral(" class=\"line-section\"");
+
+WriteLiteral(">\r\n        <ul");
+
+WriteLiteral(" class=\"list-group\"");
+
+WriteLiteral(">\r\n            <li");
+
+WriteLiteral(" class=\"list-group-item command-item-explor\"");
+
+WriteLiteral(">\r\n                <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-folder-open\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span>\r\n                <span>查看归档</span>\r\n            </li>\r\n            <li");
+
+WriteLiteral(" class=\"list-group-item command-item-play\"");
+
+WriteLiteral(">\r\n                <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-play\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span>\r\n                <span>开始归档</span>\r\n            </li>\r\n            <li");
+
+WriteLiteral(" class=\"list-group-item command-item-add\"");
+
+WriteLiteral(">\r\n                <span");
+
+WriteLiteral(" class=\"glyphicon glyphicon-plus\"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral(@"></span>
+                <span>添加</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+    $(function () {
+        $("".command-item"").css(""display"", ""none"");
+        $("".main-item"").click(function () {
+            var dispaly = $(this).next().css(""display"");
+            $("".command-item"").css(""display"", ""none"");
+            if (dispaly == ""none"") {
+                $(this).next().fadeIn();
+            }
+        });
+
+        $("".command-item-add"").click(function () {
+            ViewScript.RequestPartial('#MainContent',""Replace"" , '");
+
+
+#line 46 "FolderMapsView.cshtml"
+                                                             Write(FolderMapDetailView.Partial.Host);
 
 
 #line default
@@ -172,18 +176,25 @@ WriteLiteral("></script>\r\n    <script>\r\n        $(function () {\r\n         
 WriteLiteral("\', \'");
 
 
-#line 41 "LayoutView.cshtml"
-                                                       Write(HomeView.Partial.Path);
+#line 46 "FolderMapsView.cshtml"
+                                                                                                  Write(FolderMapDetailView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\');\r\n            });\r\n\r\n            $(\".forderPage\").click(function () {\r\n       " +
-"         changeMenu(this, \'");
+WriteLiteral(@"', """");
+        });
+     
+        $("".command-item-delete"").click(function () {
+            var guid = $(this).parent().data(""guid"");
+            var result = false;
+            javascript: result = BuinessScript.DeleteHost(guid);
+            if (result) {
+                ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 45 "LayoutView.cshtml"
-                             Write(FolderMapsView.Partial.Host);
+#line 54 "FolderMapsView.cshtml"
+                                                                 Write(FolderMapsView.Partial.Host);
 
 
 #line default
@@ -191,26 +202,33 @@ WriteLiteral("\');\r\n            });\r\n\r\n            $(\".forderPage\").clic
 WriteLiteral("\', \'");
 
 
-#line 45 "LayoutView.cshtml"
-                                                          Write(FolderMapsView.Partial.Path);
+#line 54 "FolderMapsView.cshtml"
+                                                                                                 Write(FolderMapsView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral(@"');
-            });
-        })
+WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-eidt\").click(function (" +
+") {\r\n            var guid = $(this).parent().data(\"guid\");\r\n            ViewScri" +
+"pt.RequestPartial(\'#MainContent\', \"Replace\",\'");
 
-        function changeMenu(menu,host,page)
-        {
-            $("".menuLink"").removeClass(""active"");
-            $(menu).addClass(""active"");
-            ViewScript.RequestPartial('#MainContent', ""Replace"", host, page,null);
-        }
 
-    </script>
-</body>
-</html>");
+#line 59 "FolderMapsView.cshtml"
+                                                            Write(FolderMapDetailView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 59 "FolderMapsView.cshtml"
+                                                                                                 Write(FolderMapDetailView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\', guid);\r\n        });\r\n    })\r\n    </script>\r\n\r\n");
 
 }
 }
@@ -218,7 +236,7 @@ WriteLiteral(@"');
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class LayoutViewBase
+public abstract class FolderMapsViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

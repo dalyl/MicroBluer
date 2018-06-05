@@ -4,7 +4,7 @@
             @foreach (var one in Model)
             {
             <li class="list-group-item main-item">
-                <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
                 <span>@one.Name</span>
             </li>
             <li class="list-group-item command-item " data-guid="@one.Guid">
@@ -17,6 +17,14 @@
 
     <div class="line-section">
         <ul class="list-group">
+            <li class="list-group-item command-item-explor">
+                <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                <span>查看归档</span>
+            </li>
+            <li class="list-group-item command-item-play">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                <span>开始归档</span>
+            </li>
             <li class="list-group-item command-item-add">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 <span>添加</span>
@@ -35,21 +43,20 @@
         });
 
         $(".command-item-add").click(function () {
-            ViewScript.RequestPartial('#MainContent',"Replace" , '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', "");
+            ViewScript.RequestPartial('#MainContent',"Replace" , '@FolderMapDetailView.Partial.Host', '@FolderMapDetailView.Partial.Path', "");
         });
-
      
         $(".command-item-delete").click(function () {
             var guid = $(this).parent().data("guid");
             var result = false;
             javascript: result = BuinessScript.DeleteHost(guid);
             if (result) {
-                ViewScript.RequestPartial('#MainContent', "Replace", '@HostsView.Partial.Host', '@HostsView.Partial.Path');
+                ViewScript.RequestPartial('#MainContent', "Replace", '@FolderMapsView.Partial.Host', '@FolderMapsView.Partial.Path');
             }
         });
         $(".command-item-eidt").click(function () {
             var guid = $(this).parent().data("guid");
-            ViewScript.RequestPartial('#MainContent', "Replace",'@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
+            ViewScript.RequestPartial('#MainContent', "Replace",'@FolderMapDetailView.Partial.Host', '@FolderMapDetailView.Partial.Path', guid);
         });
     })
     </script>

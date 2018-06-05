@@ -107,12 +107,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\ActiveContext.cs" />
+    <Compile Include="Core\Views\Partials\FolderMapDetailView.cs" />
     <Compile Include="Core\WebAgreement\AgreementUri.cs" />
     <Compile Include="Core\ServiceAgreement\AgreementService.cs" />
     <Compile Include="Core\ServiceAgreement\CloseFireService.cs" />
     <Compile Include="Core\ServiceAgreement\IAgreementService.cs" />
     <Compile Include="Core\AlphaMaskLayout.cs" />
-    <Compile Include="Core\Logic\FolderStoreService.cs" />
+    <Compile Include="Core\Logic\FolderMapStoreService.cs" />
     <Compile Include="Core\Logic\HostExpressService.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />
     <Compile Include="Core\Models\Argument.cs" />
@@ -127,7 +128,7 @@
     <Compile Include="Core\Views\IPartialView.cs" />
     <Compile Include="Core\Views\PartialLoadForm.cs" />
     <Compile Include="Core\Views\PartialRequestContext.cs" />
-    <Compile Include="Core\Views\Partials\FoldersView.cs" />
+    <Compile Include="Core\Views\Partials\FolderMapsView.cs" />
     <Compile Include="Core\Views\Partials\HomeView.cs" />
     <Compile Include="Core\Views\Partials\HostDetailView.cs" />
     <Compile Include="Core\Views\Partials\HostFacultyView.cs" />
@@ -156,10 +157,15 @@
     <Compile Include="Core\SplashScreenActivity.cs" />
     <Compile Include="Core\TaskResult.cs" />
     <Compile Include="Core\Template.cs" />
-    <Compile Include="Views\Partials\FoldersView.cs">
+    <Compile Include="Views\Partials\FolderMapDetailView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FoldersView.cshtml</DependentUpon>
+      <DependentUpon>FolderMapDetailView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Partials\FolderMapsView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FolderMapsView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Partials\HomeView.cs">
       <AutoGen>True</AutoGen>
@@ -199,6 +205,10 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
+    <None Include="Views\Partials\FolderMapDetailView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>FolderMapDetailView.cs</LastGenOutput>
+    </None>
     <None Include="Views\Partials\HomeView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>HomeView.cs</LastGenOutput>
@@ -509,9 +519,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Partials\FoldersView.cshtml">
+    <None Include="Views\Partials\FolderMapsView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>FoldersView.cs</LastGenOutput>
+      <LastGenOutput>FolderMapsView.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

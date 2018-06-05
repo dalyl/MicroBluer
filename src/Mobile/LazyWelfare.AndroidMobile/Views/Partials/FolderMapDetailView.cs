@@ -18,13 +18,13 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
-public partial class FoldersView : FoldersViewBase
+public partial class FolderMapDetailView : FolderMapDetailViewBase
 {
 
 #line hidden
 
-#line 1 "FoldersView.cshtml"
-public List<LazyWelfare.AndroidMobile.Models.FolderMapModel> Model { get; set; }
+#line 1 "FolderMapDetailView.cshtml"
+public LazyWelfare.AndroidMobile.Models.FolderMapModel Model { get; set; }
 
 #line default
 #line hidden
@@ -32,150 +32,152 @@ public List<LazyWelfare.AndroidMobile.Models.FolderMapModel> Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("    <div");
+WriteLiteral("<div");
 
-WriteLiteral(" class=\"line-section\"");
+WriteLiteral(" class=\"panel panel-default\"");
 
-WriteLiteral(">\r\n        <ul");
+WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"list-group\"");
+WriteLiteral(" class=\"panel-heading\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n        <h3");
 
+WriteLiteral(" class=\"panel-title\"");
 
-#line 4 "FoldersView.cshtml"
-            
+WriteLiteral(">\r\n            <span");
 
-#line default
-#line hidden
-
-#line 4 "FoldersView.cshtml"
-             foreach (var one in Model)
-            {
-
-
-#line default
-#line hidden
-WriteLiteral("            <li");
-
-WriteLiteral(" class=\"list-group-item main-item\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"glyphicon glyphicon-cloud\"");
+WriteLiteral(" class=\"glyphicon glyphicon-link\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n                <span>");
+WriteLiteral("></span> 归档映射详情\r\n        </h3>\r\n    </div>\r\n    <div");
 
+WriteLiteral(" class=\"panel-body\"");
 
-#line 8 "FoldersView.cshtml"
-                 Write(one.Name);
+WriteLiteral(">\r\n        <form");
 
+WriteLiteral(" class=\"FolderModelForm\"");
 
-#line default
-#line hidden
-WriteLiteral("</span>\r\n            </li>\r\n");
+WriteLiteral(">\r\n            <input");
 
-WriteLiteral("            <li");
+WriteLiteral(" type=\"hidden\"");
 
-WriteLiteral(" class=\"list-group-item command-item \"");
+WriteLiteral(" name=\"Domain\"");
 
-WriteLiteral(" data-guid=\"");
+WriteAttribute ("value", " value=\"", "\""
 
-
-#line 10 "FoldersView.cshtml"
-                                                            Write(one.Guid);
-
+#line 11 "FolderMapDetailView.cshtml"
+               , Tuple.Create<string,object,bool> ("", Model.Guid
 
 #line default
 #line hidden
-WriteLiteral("\"");
+, false)
+);
+WriteLiteral(" />\r\n            <div");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(" class=\"command-item-delete red\"");
+WriteLiteral(">\r\n                <label");
 
-WriteLiteral(">删除</span>\r\n                <span");
+WriteLiteral(" class=\"control-label\"");
 
-WriteLiteral(" class=\"command-item-eidt blue\"");
+WriteLiteral(">归档名称</label>\r\n                <div");
 
-WriteLiteral(">编辑</span>\r\n            </li>\r\n");
+WriteLiteral(" class=\"controls\"");
 
+WriteLiteral(">\r\n                    <input");
 
-#line 14 "FoldersView.cshtml"
-            }
+WriteLiteral(" name=\"Name\"");
 
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"名称\"");
+
+WriteLiteral(" class=\"form-control\"");
+
+WriteAttribute ("value", " value=\"", "\""
+
+#line 15 "FolderMapDetailView.cshtml"
+                                                         , Tuple.Create<string,object,bool> ("", Model.Name
 
 #line default
 #line hidden
-WriteLiteral("        </ul>\r\n    </div>\r\n\r\n    <div");
+, false)
+);
+WriteLiteral(" autocomplete=\"off\"");
 
-WriteLiteral(" class=\"line-section\"");
+WriteLiteral(">\r\n                    <p");
 
-WriteLiteral(">\r\n        <ul");
+WriteLiteral(" class=\"help-block\"");
 
-WriteLiteral(" class=\"list-group\"");
+WriteLiteral(">归档文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
 
-WriteLiteral(">\r\n            <li");
+WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(" class=\"list-group-item command-item-add\"");
+WriteLiteral(">\r\n                <label");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(" class=\"control-label\"");
 
-WriteLiteral(" class=\"glyphicon glyphicon-plus\"");
+WriteLiteral(">归档文件夹</label>\r\n                <div");
 
-WriteLiteral(" aria-hidden=\"true\"");
+WriteLiteral(" class=\"controls\"");
 
-WriteLiteral(@"></span>
-                <span>添加</span>
-            </li>
-        </ul>
+WriteLiteral(">\r\n                    <input");
+
+WriteLiteral(" name=\"MapFolder\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"归档文件夹\"");
+
+WriteLiteral(" class=\"form-control\"");
+
+WriteAttribute ("value", " value=\"", "\""
+
+#line 22 "FolderMapDetailView.cshtml"
+                                                                 , Tuple.Create<string,object,bool> ("", Model.MapFolder
+
+#line default
+#line hidden
+, false)
+);
+WriteLiteral(" autocomplete=\"off\"");
+
+WriteLiteral(">\r\n                    <p");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">原归档文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n        </form>\r\n " +
+"       <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n            <!-- Button -->\r\n            <div");
+
+WriteLiteral(" class=\"controls\"");
+
+WriteLiteral(">\r\n                <button");
+
+WriteLiteral(" class=\"btn btn-success FolderModelSave\"");
+
+WriteLiteral(@">保存</button>
+            </div>
+        </div>
     </div>
-    <script>
+</div>
+
+<script>
     $(function () {
-        $("".command-item"").css(""display"", ""none"");
-        $("".main-item"").click(function () {
-            var dispaly = $(this).next().css(""display"");
-            $("".command-item"").css(""display"", ""none"");
-            if (dispaly == ""none"") {
-                $(this).next().fadeIn();
-            }
-        });
-
-        $("".command-item-add"").click(function () {
-            ViewScript.RequestPartial('#MainContent',""Replace"" , '");
-
-
-#line 38 "FoldersView.cshtml"
-                                                             Write(HostDetailView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 38 "FoldersView.cshtml"
-                                                                                             Write(HostDetailView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral(@"', """");
-        });
-
-     
-        $("".command-item-delete"").click(function () {
-            var guid = $(this).parent().data(""guid"");
+        $("".FolderModelSave"").click(function () {
+            var model = $("".FolderModelForm"").serialize();
             var result = false;
-            javascript: result = BuinessScript.DeleteHost(guid);
+            javascript: result = BuinessScript.SaveFolderMap(model);
             if (result) {
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 47 "FoldersView.cshtml"
-                                                                 Write(HostsView.Partial.Host);
+#line 43 "FolderMapDetailView.cshtml"
+                                                                 Write(FolderMapsView.Partial.Host);
 
 
 #line default
@@ -183,33 +185,13 @@ WriteLiteral(@"', """");
 WriteLiteral("\', \'");
 
 
-#line 47 "FoldersView.cshtml"
-                                                                                            Write(HostsView.Partial.Path);
+#line 43 "FolderMapDetailView.cshtml"
+                                                                                                 Write(FolderMapsView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-eidt\").click(function (" +
-") {\r\n            var guid = $(this).parent().data(\"guid\");\r\n            ViewScri" +
-"pt.RequestPartial(\'#MainContent\', \"Replace\",\'");
-
-
-#line 52 "FoldersView.cshtml"
-                                                            Write(HostDetailView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 52 "FoldersView.cshtml"
-                                                                                            Write(HostDetailView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral("\', guid);\r\n        });\r\n    })\r\n    </script>\r\n\r\n");
+WriteLiteral("\');\r\n            }\r\n        });\r\n    })\r\n</script>");
 
 }
 }
@@ -217,7 +199,7 @@ WriteLiteral("\', guid);\r\n        });\r\n    })\r\n    </script>\r\n\r\n");
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class FoldersViewBase
+public abstract class FolderMapDetailViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

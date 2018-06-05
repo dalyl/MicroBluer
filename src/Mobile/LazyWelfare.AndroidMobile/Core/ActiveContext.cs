@@ -23,7 +23,7 @@
 
         public static UserStoreService UserStore => Instantiate<UserStoreService>();
 
-        public static FolderStoreService FolderStore => Instantiate<FolderStoreService>();
+        public static FolderMapStoreService FolderMapStore => Instantiate<FolderMapStoreService>();
 
         public static AgreementService Agreement => Instantiate<AgreementService>();
 

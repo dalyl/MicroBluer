@@ -14,6 +14,9 @@
         {
         }
 
+        #region Host
+
+
         [Export("ScanHost")]
         [JavascriptInterface]
         public void ScanHost()
@@ -44,14 +47,9 @@
         public bool SaveHost(string args)
         {
             if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false,"参数未正确提供");
-            return Try.Invoke(false,()=> HostSave(args));
-        }
-
-        bool HostSave(string args)
-        {
             var model = Try.Invoke(null, () => DeserializeForm<HostModel>(args));
             if (model == null) return Try.Show<bool>(false, "参数未正确识别");
-            return Try.Show(() => ActiveContext.HostStore.Save(model),"保存成功","保存失败");
+            return Try.Show(() => ActiveContext.HostStore.Save(model), "保存成功", "保存失败");
         }
 
         [Export("DeleteHost")]
@@ -70,6 +68,24 @@
             var result= Try.Show(() => ActiveContext.UserStore.SetHost(args), "设置成功", "设置失败");
             return result;
         }
+
+        #endregion
+
+        #region FolderMap
+
+
+        [Export("SaveFolderMap")]
+        [JavascriptInterface]
+        public bool SaveFolderMap(string args)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            var model = Try.Invoke(null, () => DeserializeForm<FolderMapModel>(args));
+            if (model == null) return Try.Show<bool>(false, "参数未正确识别");
+            return Try.Show(() => ActiveContext.FolderMapStore.Save(model), "保存成功", "保存失败");
+        }
+
+        #endregion
+
 
         [Export("CommandSumbit")]
         [JavascriptInterface]
