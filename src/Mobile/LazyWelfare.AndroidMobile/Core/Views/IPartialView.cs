@@ -14,16 +14,13 @@ namespace LazyWelfare.AndroidMobile.Views
 {
     public interface IPartialView
     {
-        string GenerateString();
+        void PushRequest(PartialActivity context, string args);
 
+        string GenerateString(string args);
     }
 
     public interface IPartialView<T> : IPartialView
     {
         T Model { get; set; }
-
-        T GetModel(string args);
-
-        string GenerateStringWithoutModel();
     }
 }

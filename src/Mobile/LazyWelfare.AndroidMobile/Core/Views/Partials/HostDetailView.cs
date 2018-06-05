@@ -1,29 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using LazyWelfare.AndroidMobile.Logic;
-using LazyWelfare.AndroidMobile.Models;
-
-namespace LazyWelfare.AndroidMobile.Views.Partials
+﻿namespace LazyWelfare.AndroidMobile.Views.Partials
 {
+    using System;
+    using LazyWelfare.AndroidMobile.Models;
+    using LazyWelfare.AndroidMobile.WebAgreement;
     public partial class HostDetailView : IPartialView<HostModel>
     {
+        public static AgreementUri Partial = new AgreementUri(nameof(HostDetailView), nameof(PartialHost), typeof(HostDetailView).Name);
 
-        public static (string Host, string Path) Partial = (nameof(PartialView), typeof(HostDetailView).Name);
+        public void PushRequest(PartialActivity context, string args) => context.RequestStack.Push(Partial.Name, args);
 
-        public string GenerateStringWithoutModel() => GenerateString();
-
-        public HostModel GetModel(string args)
+        public string GenerateString(string args)
         {
-            return string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : ActiveContext.HostStore.Get(args);
+            this.Model = string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : ActiveContext.HostStore.Get(args);
+            return GenerateString();
         }
     }
 

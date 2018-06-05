@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Webkit;
-using Android.Widget;
-using LazyWelfare.AndroidMobile.Loading;
-using LazyWelfare.AndroidMobile.Views;
-
-namespace LazyWelfare.AndroidMobile
+﻿namespace LazyWelfare.AndroidMobile
 {
+    using System;
+    using Android.OS;
+    using Android.Runtime;
+    using Android.Views;
+    using Android.Webkit;
+    using Android.Widget;
+    using LazyWelfare.AndroidMobile.Loading;
+    using LazyWelfare.AndroidMobile.Views;
+
     public abstract class PartialActivity : ActiveActivity
     {
         public abstract PartialRequestStack RequestStack { get; }
@@ -33,7 +27,7 @@ namespace LazyWelfare.AndroidMobile
             var value = RequestStack.Fetch();
             if (value != null)
             {
-                PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{ nameof(Views.PartialView) }','{ value.Partial.ToString() }','{value.Args}');", null);
+                PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{ nameof(Views.PartialHost) }','{ value.Partial.ToString() }','{value.Args}');", null);
                 return true;
             }
             return false;

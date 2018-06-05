@@ -3,6 +3,7 @@
     using LazyWelfare.AndroidMobile.Views;
     using LazyWelfare.AndroidMobile.Views.Partials;
     using LazyWelfare.AndroidMobile.Script;
+    using LazyWelfare.AndroidMobile.WebAgreement;
     using Android.App;
     using Android.OS;
     using Android.Webkit;
@@ -12,7 +13,7 @@
     {
         static PartialRequestStack requestStack { get; set; } = new PartialRequestStack();
 
-        public (string Host, string Path) Partial { get; set; } = HomeView.Partial;
+        public AgreementUri Partial { get; set; } = HomeView.Partial;
 
         public override PartialRequestStack RequestStack { get; } = requestStack;
 

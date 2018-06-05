@@ -28,8 +28,8 @@
         {
             switch (_context.Host)
             {
-                case nameof(PartialView):
-                    _content = ActiveContext.Try.Invoke(string.Empty, () => PartialView.SwitchWebView(_activity as PartialActivity, _context.Url, _context.Args));
+                case nameof(PartialHost):
+                    _content = ActiveContext.Try.Invoke(string.Empty, () => PartialHost.Dispatch(_activity as PartialActivity, _context.Url, _context.Args));
                     break;
 
             }

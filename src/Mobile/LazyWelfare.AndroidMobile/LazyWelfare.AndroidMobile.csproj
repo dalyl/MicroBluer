@@ -107,9 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\ActiveContext.cs" />
-    <Compile Include="Core\AgreementServices\AgreementService.cs" />
-    <Compile Include="Core\AgreementServices\CloseFireService.cs" />
-    <Compile Include="Core\AgreementServices\IAgreementService.cs" />
+    <Compile Include="Core\WebAgreement\AgreementUri.cs" />
+    <Compile Include="Core\ServiceAgreement\AgreementService.cs" />
+    <Compile Include="Core\ServiceAgreement\CloseFireService.cs" />
+    <Compile Include="Core\ServiceAgreement\IAgreementService.cs" />
     <Compile Include="Core\AlphaMaskLayout.cs" />
     <Compile Include="Core\Logic\FolderStoreService.cs" />
     <Compile Include="Core\Logic\HostExpressService.cs" />
@@ -122,7 +123,7 @@
     <Compile Include="Core\TryCatch.cs" />
     <Compile Include="Core\ActiveActivity.cs" />
     <Compile Include="Core\TryCatchException.cs" />
-    <Compile Include="Core\AgreementServices\VolumeService.cs" />
+    <Compile Include="Core\ServiceAgreement\VolumeService.cs" />
     <Compile Include="Core\Views\IPartialView.cs" />
     <Compile Include="Core\Views\PartialLoadForm.cs" />
     <Compile Include="Core\Views\PartialRequestContext.cs" />
@@ -140,12 +141,12 @@
     <Compile Include="Core\ScanPlugin.cs" />
     <Compile Include="Core\Stroage\SharedStoreService.cs" />
     <Compile Include="Core\MainActivity.cs" />
-    <Compile Include="Core\AgreementRoute\Agreement.cs" />
-    <Compile Include="Core\AgreementRoute\AgreementHandler.cs" />
-    <Compile Include="Core\AgreementRoute\AgreementRouteClient.cs" />
-    <Compile Include="Core\AgreementRoute\HybridAgreement.cs" />
-    <Compile Include="Core\AgreementRoute\IAgreementHandler.cs" />
-    <Compile Include="Core\AgreementRoute\ScanAgreement.cs" />
+    <Compile Include="Core\WebAgreement\Agreement.cs" />
+    <Compile Include="Core\WebAgreement\AgreementHandler.cs" />
+    <Compile Include="Core\WebAgreement\AgreementRouteClient.cs" />
+    <Compile Include="Core\WebAgreement\HybridAgreement.cs" />
+    <Compile Include="Core\WebAgreement\IAgreementHandler.cs" />
+    <Compile Include="Core\WebAgreement\ScanAgreement.cs" />
     <Compile Include="Core\Script\AndroidScript.cs" />
     <Compile Include="Core\Logic\HostStoreService.cs" />
     <Compile Include="Core\Models\AppModel.cs" />
@@ -185,7 +186,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HostsView.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Core\Views\PartialView.cs" />
+    <Compile Include="Core\Views\PartialHost.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
