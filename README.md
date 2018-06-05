@@ -2,9 +2,9 @@
 
 ![MIT License](https://img.shields.io/badge/license-MIT-orange.svg)
 
-LazyWelfare 功能规划：手机资料归档及管理，遥控电脑，定时任务设置等
+LazyWelfare 功能规划：手机资料归档及管理，远程操作电脑和设置定时任务等功能
 
-![LazyWelfare]
+![LazyWelfare](https://github.com/dalyl/LazyWelfare/blob/master/src/Server/LazyWelfare.ServerHost/Resources/images/blue_face.ico)
 
 
 ## Features
@@ -18,9 +18,9 @@ LazyWelfare 功能规划：手机资料归档及管理，遥控电脑，定时�
 #手机端
 扫一扫功能参考项目：https://github.com/yuzhiqiang1993/zxing
 
-图片选择参考项目：https://github.com/ValuesFeng/AndroidPicturePicker
-				  https://github.com/beraybentesen/glide-xamarin-android
-				  https://github.com/bumptech/glide
+图片选择参考项目：https://github.com/ValuesFeng/AndroidPicturePicker 
+https://github.com/beraybentesen/glide-xamarin-android
+https://github.com/bumptech/glide
 
 Loading 过度动画参考项目：https://github.com/dinuscxj/LoadingDrawable
 
