@@ -3,7 +3,6 @@
     using LazyWelfare.AndroidMobile.Views;
     using LazyWelfare.AndroidMobile.Views.Partials;
     using LazyWelfare.AndroidMobile.Script;
-    using LazyWelfare.AndroidMobile.Logic;
     using Android.App;
     using Android.OS;
     using Android.Webkit;

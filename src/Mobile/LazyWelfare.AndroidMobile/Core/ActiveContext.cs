@@ -23,6 +23,8 @@
 
         public static UserStoreService UserStore => Instantiate<UserStoreService>();
 
+        public static FolderStoreService FolderStore => Instantiate<FolderStoreService>();
+
         public static AgreementService Agreement => Instantiate<AgreementService>();
 
         internal static HostExpressService HostExpress => Instantiate(() => new HostExpressService(Host));

@@ -1,23 +1,23 @@
 ﻿namespace LazyWelfare.AndroidMobile.Logic
 {
+    using LazyWelfare.AndroidMobile.Models;
     using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
-    using LazyWelfare.AndroidMobile.Models;
-    public class HostStoreService : SharedStoreService<HostModel>
+
+    public class FolderStoreService : SharedStoreService<FolderMapModel>
     {
-        protected override string SharedFileName { get; } = "hostFile";
+        protected override string SharedFileName { get; } = "folderFile";
 
-
-        const string KeyPro = "_host_";
+        const string KeyPro = "_folder_";
 
         const string guidPattern = "[?a-zA-Z0-9]{8}-[?a-zA-Z0-9]{4}-[?a-zA-Z0-9]{4}-[?a-zA-Z0-9]{4}-[?a-zA-Z0-9]{12}";
 
-        readonly static string KeyRegex = $@"^{KeyPro}{guidPattern}$" ;
+        readonly static string KeyRegex = $@"^{KeyPro}{guidPattern}$";
 
-        public List<HostModel> GetList()
+        public List<FolderMapModel> GetList()
         {
-            var list = new List<HostModel>();
+            var list = new List<FolderMapModel>();
             var keys = AllKeys();
             var regPid = new Regex(KeyRegex, RegexOptions.IgnoreCase);
             foreach (var one in keys)
@@ -25,7 +25,7 @@
                 var match = regPid.Match(one);
                 if (match.Success)
                 {
-                    var model =base.Get(one);
+                    var model = base.Get(one);
                     if (model != null) list.Add(model);
                 }
             }
@@ -42,34 +42,34 @@
             return CreateKey(guid.ToString());
         }
 
-        public new HostModel Get(string guid)
+        public new FolderMapModel Get(string guid)
         {
-            var key = CreateKey (guid) ;
+            var key = CreateKey(guid);
             return base.Get(key);
         }
 
-        public void Add(string addr)
+        public void Add(string name, string map)
         {
             var id = Guid.NewGuid();
-            var model = new HostModel
+            var model = new FolderMapModel
             {
-                Domain = id,
-                Name= addr,
-                Address = addr,
+                Guid = id,
+                Name = name,
+                MapFolder = map,
             };
-            var key = $"{model.Domain}";
-            base.Save(key,model);
+            var key = $"{id}";
+            base.Save(key, model);
         }
 
-        public bool Save(HostModel model)
+        public bool Save(FolderMapModel model)
         {
-            var key = CreateKey(model.Domain);
+            var key = CreateKey(model.Guid);
             return base.Save(key, model);
         }
 
         public new bool Delete(string guid)
         {
-            var key = CreateKey (guid) ;
+            var key = CreateKey(guid);
             return base.Delete(key);
         }
     }

@@ -111,9 +111,11 @@
     <Compile Include="Core\AgreementServices\CloseFireService.cs" />
     <Compile Include="Core\AgreementServices\IAgreementService.cs" />
     <Compile Include="Core\AlphaMaskLayout.cs" />
+    <Compile Include="Core\Logic\FolderStoreService.cs" />
     <Compile Include="Core\Logic\HostExpressService.cs" />
     <Compile Include="Core\Logic\UserStoreService.cs" />
     <Compile Include="Core\Models\Argument.cs" />
+    <Compile Include="Core\Models\FolderMapModel.cs" />
     <Compile Include="Core\Models\UserModel.cs" />
     <Compile Include="Core\RoundMenuView.cs" />
     <Compile Include="Core\Script\PartialScript.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Core\Views\IPartialView.cs" />
     <Compile Include="Core\Views\PartialLoadForm.cs" />
     <Compile Include="Core\Views\PartialRequestContext.cs" />
+    <Compile Include="Core\Views\Partials\FoldersView.cs" />
     <Compile Include="Core\Views\Partials\HomeView.cs" />
     <Compile Include="Core\Views\Partials\HostDetailView.cs" />
     <Compile Include="Core\Views\Partials\HostFacultyView.cs" />
@@ -152,6 +155,11 @@
     <Compile Include="Core\SplashScreenActivity.cs" />
     <Compile Include="Core\TaskResult.cs" />
     <Compile Include="Core\Template.cs" />
+    <Compile Include="Views\Partials\FoldersView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoldersView.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Partials\HomeView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -498,6 +506,12 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\svg_new_source.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Partials\FoldersView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>FoldersView.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

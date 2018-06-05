@@ -11,11 +11,13 @@
 
     public  class PartialView
     {
+
         public const string None = "";
         public const string HomeViewPartial = nameof(HomeView);
         public const string HostsViewPartial = nameof(HostsView);
         public const string HostDetailViewPartial = nameof(HostDetailView);
         public const string HostFacultyViewPartial = nameof(HostFacultyView);
+        public const string FoldersViewPartial = nameof(FoldersView);
 
 
         static Dictionary<string, string> _ViewKeys = null;
@@ -69,6 +71,7 @@
             Views.TryAdd(name, view);
             return view.GenerateString();
         }
+
         public static string Get(string viewName)
         {
             if (_ViewKeys.Keys.Contains(viewName) == false) return string.Empty;
@@ -101,7 +104,6 @@
             if (view.Model == null) return view.GenerateStringWithoutModel();
             return view.GenerateString();
         }
-      
 
         public static string Get<T>(string viewName,string args)
         {
@@ -125,7 +127,8 @@
 
         public static string SwitchWebView(PartialActivity context, string url, string args)
         {
-             
+            if (_ViewKeys.Keys.Contains(url) == false) return string.Empty;
+
             switch (url)
             {
                 case PartialView.HomeViewPartial:
@@ -149,6 +152,11 @@
                         var page = Get<HostModel>(typeof(HostFacultyView).Name, args);
                         var append = ActiveContext.HostExpress.GetPageContent("command-panel");
                         return page.Replace(HostFacultyView.Placeholder_Append, append);
+                    }
+                case PartialView.FoldersViewPartial:
+                    {
+                        context.RequestStack.Push(PartialView.FoldersViewPartial, args);
+                        return Get<List<FolderMapModel>>(typeof(FoldersView).Name, args);
                     }
             }
             return string.Empty;

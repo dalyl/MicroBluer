@@ -1,0 +1,56 @@
+﻿@model  List<LazyWelfare.AndroidMobile.Models.FolderMapModel>
+    <div class="line-section">
+        <ul class="list-group">
+            @foreach (var one in Model)
+            {
+            <li class="list-group-item main-item">
+                <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+                <span>@one.Name</span>
+            </li>
+            <li class="list-group-item command-item " data-guid="@one.Guid">
+                <span class="command-item-delete red">删除</span>
+                <span class="command-item-eidt blue">编辑</span>
+            </li>
+            }
+        </ul>
+    </div>
+
+    <div class="line-section">
+        <ul class="list-group">
+            <li class="list-group-item command-item-add">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span>添加</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+    $(function () {
+        $(".command-item").css("display", "none");
+        $(".main-item").click(function () {
+            var dispaly = $(this).next().css("display");
+            $(".command-item").css("display", "none");
+            if (dispaly == "none") {
+                $(this).next().fadeIn();
+            }
+        });
+
+        $(".command-item-add").click(function () {
+            ViewScript.RequestPartial('#MainContent',"Replace" , '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', "");
+        });
+
+     
+        $(".command-item-delete").click(function () {
+            var guid = $(this).parent().data("guid");
+            var result = false;
+            javascript: result = BuinessScript.DeleteHost(guid);
+            if (result) {
+                ViewScript.RequestPartial('#MainContent', "Replace", '@HostsView.Partial.Host', '@HostsView.Partial.Path');
+            }
+        });
+        $(".command-item-eidt").click(function () {
+            var guid = $(this).parent().data("guid");
+            ViewScript.RequestPartial('#MainContent', "Replace",'@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
+        });
+    })
+    </script>
+
