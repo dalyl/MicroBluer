@@ -1,5 +1,5 @@
 ﻿@using LazyWelfare.AndroidMobile.Views.Partials
-@model  LazyWelfare.AndroidMobile.Models.AppModel
+@model  LazyWelfare.AndroidMobile.Template.Setting
 
 <html>
 <head>
@@ -8,50 +8,20 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.css" />
     <link rel="stylesheet" href="bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+        body {
+            background-color: @Model.Background;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar-header navbar-default">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand"   href="javascript:void(0);" >@Model.Header</a>
-        </div>
-        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
-            <ul class="nav navbar-nav">
-                <li class="menuLink hostPage"> 主机遥控  </li>
-                <li class="menuLink forderPage"> 文件归档  </li>
-            </ul>
-        </div>
-    </div>
     <div class="clearfix"></div>
     <div id="MainContent"></div>
     <script src="jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="site.min.js"></script>
     <script>
-        $(function () {
-            
-            $(".hostPage").click(function () {
-                changeMenu(this, '@HomeView.Partial.Host', '@HomeView.Partial.Path');
-            });
-
-            $(".forderPage").click(function () {
-                changeMenu(this, '@FolderMapsView.Partial.Host', '@FolderMapsView.Partial.Path');
-            });
-        })
-
-        function changeMenu(menu,host,page)
-        {
-            $(".menuLink").removeClass("active");
-            $(menu).addClass("active");
-            ViewScript.RequestPartial('#MainContent', "Replace", host, page,null);
-        }
 
     </script>
 </body>

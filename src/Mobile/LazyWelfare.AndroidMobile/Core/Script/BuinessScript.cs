@@ -21,7 +21,7 @@
         [JavascriptInterface]
         public void ScanHost()
         {
-            var scan = new ScanPlugin(ViewActivity);
+            var scan = new ScanPlugin(ViewActivity,"添加主机");
             var invoke = scan.Invoke();
             Task.WaitAll(invoke);
             if (invoke.Result == false)

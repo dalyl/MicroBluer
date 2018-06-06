@@ -22,6 +22,11 @@
             RequestStack.Clear();
         }
 
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+        }
+
         public bool TryBack()
         {
             var value = RequestStack.Fetch();
@@ -32,6 +37,8 @@
             }
             return false;
         }
+
+        #region --- OnKeyDown ---
 
         DateTime? lastBackKeyDownTime;//记录上次按下Back的时间
         public override bool OnKeyDown([GeneratedEnum] Keycode keyCode, KeyEvent e)
@@ -55,11 +62,28 @@
             return base.OnKeyDown(keyCode, e);
         }
 
+        //DateTime? lastBackKeyDownTime;//记录上次按下Back的时间
+        //public override bool OnKeyDown([GeneratedEnum] Keycode keyCode, KeyEvent e)
+        //{
+        //    if (keyCode == Keycode.Back && e.Action == KeyEventActions.Down)//监听Back键
+        //    {
+        //        if (!lastBackKeyDownTime.HasValue || DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 2))
+        //        {
+        //            Toast.MakeText(this, "再按一次退出程序", ToastLength.Short).Show();
+        //            lastBackKeyDownTime = DateTime.Now;
+        //        }
+        //        else
+        //        {
+        //            Finish();
+        //        }
+        //        return true;
+        //    }
+        //    return base.OnKeyDown(keyCode, e);
+        //}
 
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-        }
+        #endregion
+
+        #region --- WaitingView ---
 
         public void ShowMaskLayer()
         {
@@ -88,24 +112,19 @@
             });
         }
 
-        //DateTime? lastBackKeyDownTime;//记录上次按下Back的时间
-        //public override bool OnKeyDown([GeneratedEnum] Keycode keyCode, KeyEvent e)
-        //{
-        //    if (keyCode == Keycode.Back && e.Action == KeyEventActions.Down)//监听Back键
-        //    {
-        //        if (!lastBackKeyDownTime.HasValue || DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 2))
-        //        {
-        //            Toast.MakeText(this, "再按一次退出程序", ToastLength.Short).Show();
-        //            lastBackKeyDownTime = DateTime.Now;
-        //        }
-        //        else
-        //        {
-        //            Finish();
-        //        }
-        //        return true;
-        //    }
-        //    return base.OnKeyDown(keyCode, e);
-        //}
+        #endregion
+
+      
+        public virtual void ShowLeftMenu(string args)
+        {
+
+        }
+
+        public virtual void ShowRightMenu(string args)
+        {
+
+        }
+
     }
 
 }

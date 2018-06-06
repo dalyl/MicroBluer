@@ -22,22 +22,29 @@ namespace LazyWelfare.AndroidMobile.Script
 
         [Export("RequestPartial")]
         [JavascriptInterface]
-        public void RequestPartial(string frame, string type, string host, string url, string args,string after)
+        public void RequestPartial(string frame, string type, string host, string url, string args, string after)
         {
             var context = new PartialRequestContext(frame, type, host, url, args, after);
             PartialLoadingAsyncTask loading = new PartialLoadingAsyncTask(ViewActivity as PartialActivity, context);
             loading.Execute();
         }
 
-        void ShowLoading(Action Call)
+        [Export("ShowLeftMenu")]
+        [JavascriptInterface]
+        public void ShowLeftMenu(string args)
         {
-            Call?.Invoke();
+            Try.Invoke(() => (ViewActivity as PartialActivity).ShowLeftMenu(args));
         }
 
-        void HideLoading(Action Call)
+
+        [Export("ShowRightMenu")]
+        [JavascriptInterface]
+        public void ShowRightMenu(string args)
         {
-            Call?.Invoke();
+            Try.Invoke(() => (ViewActivity as PartialActivity).ShowRightMenu(args));
         }
+
+
     }
 
 

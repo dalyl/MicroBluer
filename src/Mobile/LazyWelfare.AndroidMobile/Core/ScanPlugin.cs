@@ -29,17 +29,21 @@ namespace LazyWelfare.AndroidMobile
     {
         public string Result { get; private set; } = "未识别";
 
-        public Activity context { get; private set; }
+        public Activity Context { get; }
 
-        public ScanPlugin(Activity activity)
+        public string Title { get;}
+
+        public ScanPlugin(Activity activity,string title)
         {
-            context = activity;
+            Context = activity;
+            Title = title;
             Init();
         }
 
         private void Init()
         {
-            var zxingOverlay = LayoutInflater.FromContext(context).Inflate(Resource.Layout.ZxingOverlay, null);
+            var zxingOverlay = LayoutInflater.FromContext(Context).Inflate(Resource.Layout.ZxingOverlay, null);
+
             var bulbBtn = zxingOverlay.FindViewById(Resource.Id.scanBulbBtn);
             var albumBtn = zxingOverlay.FindViewById(Resource.Id.scanAlbumBtn);
 
@@ -47,12 +51,13 @@ namespace LazyWelfare.AndroidMobile
             albumBtn.Click += Album_Click;
 
             var bar= zxingOverlay.FindViewById(Resource.Id.top_layout);
-            var title=bar.FindViewById(Resource.Id.context_Title);
+            var title=bar.FindViewById<TextView>(Resource.Id.context_Title);
             var back=bar.FindViewById(Resource.Id.context_btback);
 
+            title.Text = Title;
             back.Click += Back_Click;
 
-            MobileBarcodeScanner.Initialize(context.Application);
+            MobileBarcodeScanner.Initialize(Context.Application);
             var scanner = new MobileBarcodeScanner()
             {
                 //使用自定义界面
@@ -105,7 +110,7 @@ namespace LazyWelfare.AndroidMobile
             try
             {
                 // SelectImageByImgStore();
-                BulbPlugin.From(context)
+                BulbPlugin.From(Context)
                     .SingleChoice()
                     .EnableCamera(false)
                     .SetEngine(new GlideEngine())
@@ -120,7 +125,7 @@ namespace LazyWelfare.AndroidMobile
             }
             catch (Exception ex)
             {
-                Toast.MakeText(context, "App Select Photo Gallery Error:" + ex.InnerException, ToastLength.Short).Show();
+                Toast.MakeText(Context, "App Select Photo Gallery Error:" + ex.InnerException, ToastLength.Short).Show();
             }
 
         }
@@ -135,7 +140,7 @@ namespace LazyWelfare.AndroidMobile
             var sdcardTempFile = new Java.IO.File("/mnt/sdcard/", "tmp_pic_" + SystemClock.CurrentThreadTimeMillis() + ".jpg");
             _intentCut.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(sdcardTempFile));
             _intentCut.PutExtra(MediaStore.ExtraVideoQuality, 1);
-            context.StartActivityForResult(_intentCut, 1);
+            Context.StartActivityForResult(_intentCut, 1);
         }
 
         #endregion
@@ -161,7 +166,7 @@ namespace LazyWelfare.AndroidMobile
             }
             catch (Exception ex)
             {
-                Toast.MakeText(context, "App Open Photo FlashLight Error:" + ex.InnerException, ToastLength.Short).Show();
+                Toast.MakeText(Context, "App Open Photo FlashLight Error:" + ex.InnerException, ToastLength.Short).Show();
             }
         }
 
@@ -170,7 +175,7 @@ namespace LazyWelfare.AndroidMobile
         {
             try
             {
-                var manager = (CameraManager)context.GetSystemService(Context.CameraService);
+                var manager = (CameraManager)Context.GetSystemService(Android.Content.Context.CameraService);
                 lightStatus = !lightStatus;
                 manager.SetTorchMode("0", lightStatus);
             }
@@ -193,7 +198,7 @@ namespace LazyWelfare.AndroidMobile
             else
             {
                 // 打开手电筒
-                var pm = context.PackageManager;
+                var pm = Context.PackageManager;
                 var features = pm.GetSystemAvailableFeatures();
                 foreach (var f in features)
                 {
@@ -272,7 +277,7 @@ namespace LazyWelfare.AndroidMobile
         string GetImagePath(Android.Net.Uri uri)
         {
             String[] proj = { MediaStore.Images.Media.InterfaceConsts.Data };
-            var actualimagecursor = context.ContentResolver.Query(uri, proj, null, null, null);
+            var actualimagecursor = Context.ContentResolver.Query(uri, proj, null, null, null);
             int actual_image_column_index = actualimagecursor.GetColumnIndexOrThrow(MediaStore.Images.Media.InterfaceConsts.Data);
             actualimagecursor.MoveToFirst();
             return actualimagecursor.GetString(actual_image_column_index);

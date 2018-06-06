@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#CD2626">
+    android:layout_height="wrap_content">
     <LinearLayout
-        android:id="@+id/toolbar_left"
+        android:id="@+id/context_btback"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
@@ -12,13 +11,19 @@
         android:paddingLeft="5dp"
         android:paddingRight="20dp">
         <ImageView
-            android:id="@+id/toolbar_leftImage"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:src="@drawable/offered_menu" />
+            android:src="@drawable/app_back" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="返回"
+            android:textColor="#d6d6d6"
+            android:textSize="14dp" />
     </LinearLayout>
     <TextView
-        android:id="@+id/toolbar_Title"
+        android:id="@+id/context_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -26,19 +31,4 @@
         android:text="标题"
         android:textColor="#d6d6d6"
         android:textSize="14dp" />
-    <LinearLayout
-        android:id="@+id/toolbar_right"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="20dp">
-        <ImageView
-            android:id="@+id/toolbar_rightImage"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_launcher_round" />
-    </LinearLayout>
 </RelativeLayout>

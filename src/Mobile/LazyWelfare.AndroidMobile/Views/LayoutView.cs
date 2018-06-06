@@ -30,7 +30,7 @@ public partial class LayoutView : LayoutViewBase
 #line hidden
 
 #line 2 "LayoutView.cshtml"
-public LazyWelfare.AndroidMobile.Models.AppModel Model { get; set; }
+public LazyWelfare.AndroidMobile.Template.Setting Model { get; set; }
 
 #line default
 #line hidden
@@ -66,80 +66,16 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" href=\"css/style.css\"");
 
-WriteLiteral(" />\r\n</head>\r\n\r\n<body>\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"navbar-header navbar-default\"");
-
-WriteLiteral(">\r\n            <button");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"navbar-toggle collapsed\"");
-
-WriteLiteral(" data-toggle=\"collapse\"");
-
-WriteLiteral(" data-target=\"#bs-example-navbar-collapse-1\"");
-
-WriteLiteral("\r\n                    aria-expanded=\"false\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"sr-only\"");
-
-WriteLiteral(">Toggle navigation</span>\r\n                <span");
-
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n                <span");
-
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n                <span");
-
-WriteLiteral(" class=\"icon-bar\"");
-
-WriteLiteral("></span>\r\n            </button>\r\n            <a");
-
-WriteLiteral(" class=\"navbar-brand\"");
-
-WriteLiteral("   href=\"javascript:void(0);\"");
-
-WriteLiteral(" >");
+WriteLiteral(" />\r\n    <style>\r\n        body {\r\n            background-color: ");
 
 
-#line 23 "LayoutView.cshtml"
-                                                             Write(Model.Header);
+#line 13 "LayoutView.cshtml"
+                         Write(Model.Background);
 
 
 #line default
 #line hidden
-WriteLiteral("</a>\r\n        </div>\r\n        <div");
-
-WriteLiteral(" class=\"navbar-collapse collapse\"");
-
-WriteLiteral(" id=\"bs-example-navbar-collapse-1\"");
-
-WriteLiteral(" aria-expanded=\"false\"");
-
-WriteLiteral(" style=\"height: 1px;\"");
-
-WriteLiteral(">\r\n            <ul");
-
-WriteLiteral(" class=\"nav navbar-nav\"");
-
-WriteLiteral(">\r\n                <li");
-
-WriteLiteral(" class=\"menuLink hostPage\"");
-
-WriteLiteral("> 主机遥控  </li>\r\n                <li");
-
-WriteLiteral(" class=\"menuLink forderPage\"");
-
-WriteLiteral("> 文件归档  </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n    <div");
+WriteLiteral(";\r\n        }\r\n    </style>\r\n</head>\r\n\r\n<body>\r\n    <div");
 
 WriteLiteral(" class=\"clearfix\"");
 
@@ -159,58 +95,7 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"site.min.js\"");
 
-WriteLiteral("></script>\r\n    <script>\r\n        $(function () {\r\n            \r\n            $(\"." +
-"hostPage\").click(function () {\r\n                changeMenu(this, \'");
-
-
-#line 41 "LayoutView.cshtml"
-                             Write(HomeView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 41 "LayoutView.cshtml"
-                                                       Write(HomeView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral("\');\r\n            });\r\n\r\n            $(\".forderPage\").click(function () {\r\n       " +
-"         changeMenu(this, \'");
-
-
-#line 45 "LayoutView.cshtml"
-                             Write(FolderMapsView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 45 "LayoutView.cshtml"
-                                                          Write(FolderMapsView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral(@"');
-            });
-        })
-
-        function changeMenu(menu,host,page)
-        {
-            $("".menuLink"").removeClass(""active"");
-            $(menu).addClass(""active"");
-            ViewScript.RequestPartial('#MainContent', ""Replace"", host, page,null);
-        }
-
-    </script>
-</body>
-</html>");
+WriteLiteral("></script>\r\n    <script>\r\n\r\n    </script>\r\n</body>\r\n</html>");
 
 }
 }

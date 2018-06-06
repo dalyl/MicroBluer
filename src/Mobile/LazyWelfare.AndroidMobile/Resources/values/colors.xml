@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <color name="transparent">#00000000</color>
+  <color name="iv_main_ToolBar">#CD3700</color>
+  <color name="iv_main_Background">#C4C4C4</color>
   <color name="gray_9999">#999999</color>
   <color name="gray_f2f2">#CCCCCC</color>
-
-
+  <color name="Indigo_colorPrimaryDark">#303f9f</color>
+  <color name="Indigo_colorPrimary">#3f51b5</color>
+  <color name="Indigo_nav_color">#4675FF</color>
+  
 </resources>
