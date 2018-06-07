@@ -15,7 +15,7 @@
             android:id="@+id/toolbar_leftImage"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:src="@drawable/offered_menu" />
+            android:src="@drawable/base_menu_white" />
     </LinearLayout>
     <TextView
         android:id="@+id/toolbar_Title"

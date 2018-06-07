@@ -29,22 +29,6 @@ namespace LazyWelfare.AndroidMobile.Script
             loading.Execute();
         }
 
-        [Export("ShowLeftMenu")]
-        [JavascriptInterface]
-        public void ShowLeftMenu(string args)
-        {
-            Try.Invoke(() => (ViewActivity as PartialActivity).ShowLeftMenu(args));
-        }
-
-
-        [Export("ShowRightMenu")]
-        [JavascriptInterface]
-        public void ShowRightMenu(string args)
-        {
-            Try.Invoke(() => (ViewActivity as PartialActivity).ShowRightMenu(args));
-        }
-
-
     }
 
 

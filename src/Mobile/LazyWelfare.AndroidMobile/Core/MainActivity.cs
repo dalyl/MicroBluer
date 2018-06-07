@@ -12,16 +12,14 @@
     using Android.Support.V4.Widget;
     using View = Android.Views.View;
     using Android.Views;
-
-    //   using Toolbar = Android.Support.V7.Widget.Toolbar;
-    //   using Android.Support.V7.App;
+    using LazyWelfare.AndroidUtils.View;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity :  PartialActivity
     {
         static PartialRequestStack requestStack { get; set; } = new PartialRequestStack();
 
-        public AgreementUri Partial { get; set; } = HomeView.Partial;
+        public AgreementUri Partial { get; set; } = HostView.Partial;
 
         public override PartialRequestStack RequestStack { get; } = requestStack;
 
@@ -31,7 +29,6 @@
 
             var view = LayoutInflater.FromContext(this).Inflate(Resource.Layout.MenuLayout, null);
             InitView(view);
-            // Set our view from the "main" layout resource
 
             SetContentView(view);
             SetTitle(ActiveContext.User.Name);
@@ -41,7 +38,9 @@
         }
 
         public DrawerLayout MenuLayout { get; protected set; }
+
         public View LeftMenu { get; protected set; }
+
         public View RightMenu { get; protected set; }
 
         public View ToolBar { get; protected set; }
@@ -49,9 +48,9 @@
         void InitView(View view)
         {
             MenuLayout = view.FindViewById<DrawerLayout>(Resource.Id.menu_layout);
-            LeftMenu = MenuLayout.FindViewById(Resource.Id.left);
-            RightMenu = MenuLayout.FindViewById(Resource.Id.right);
-            ToolBar = MenuLayout.FindViewById(Resource.Id.toolBar);
+            LeftMenu = MenuLayout.FindViewById(Resource.Id.MenuLeftContent);
+            RightMenu = MenuLayout.FindViewById(Resource.Id.MenuRightContent);
+            ToolBar = MenuLayout.FindViewById(Resource.Id.MenuToolBar);
 
             var leftBtn = ToolBar.FindViewById(Resource.Id.toolbar_left);
             var rightBtn = ToolBar.FindViewById(Resource.Id.toolbar_right);
@@ -59,14 +58,13 @@
             leftBtn.Click += (o, e) => MenuLayout.OpenDrawer(LeftMenu);
             rightBtn.Click += (o, e) => MenuLayout.OpenDrawer(RightMenu);
 
-            var iv_main = MenuLayout.FindViewById<LinearLayout>(Resource.Id.iv_main);
+            var panel = MenuLayout.FindViewById<LinearLayout>(Resource.Id.MenuMainPanel);
             PartialView = new WebView(this);
-            iv_main.AddView(PartialView);
+            panel.AddView(PartialView);
         }
 
         void LoadWebview()
         {
-
             WebSettings settings = PartialView.Settings;
 
             //启用js事件  
@@ -80,7 +78,7 @@
             PartialView.AddJavascriptInterface(new BuinessScript(this, PartialView), "BuinessScript");
             PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{Partial.Host}','{Partial.Path}',null);"));
 
-            var intColor = Resource.Color.iv_main_Background;
+            var intColor = Resource.Color.MenuMainPanel_Background;
             var color = GetColor(intColor);
             var setting = new Template.Setting {
                 Background= string.Format("#%06X", 0xFFFFFF & color),
@@ -97,41 +95,29 @@
 
         void LoadMenu()
         {
-            var listView = (ListView)MenuLayout.FindViewById(Resource.Id.left_listview);
-            var data = new List<MenuContentItem>
+            var listView = (ListView)MenuLayout.FindViewById(Resource.Id.MenuLeft_ListView);
+            var data = new MenuContentItem[]
             {
-                new MenuContentItem(Resource.Drawable.ic_launcher_round, "新闻", 1),
-                new MenuContentItem(Resource.Drawable.ic_launcher_round, "订阅", 2),
-                new MenuContentItem(Resource.Drawable.ic_launcher_round, "图片", 3),
-                new MenuContentItem(Resource.Drawable.ic_launcher_round, "视频", 4),
-                new MenuContentItem(Resource.Drawable.ic_launcher_round, "跟帖", 5),
-                new MenuContentItem(Resource.Drawable.ic_launcher_round, "投票", 6)
+                new MenuContentItem(Resource.Drawable.base_home_black, "首页", 1,()=>OpenWebview(HostView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_folder_black, "资源归档", 2,()=>OpenWebview(FolderMapsView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_cloud_black, "主机服务", 3,()=>OpenWebview(HostView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_qrcode_black, "扫一扫", 4),
+                new MenuContentItem(Resource.Drawable.base_cast_connected_black, "联机服务", 5),
             };
             var adapter = new MenuContentAdapter(this, data);
             listView.Adapter = adapter;
+            listView.OnItemClickListener = new ItemClickListener((adpter, view, position) => data[position].Click());
+            //去除行与行之间的黑线：  
+            listView.Divider=(null);
         }
 
-        public override void ShowLeftMenu(string args)
+        void OpenWebview(AgreementUri uri)
         {
-            RunOnUiThread(() => {
-                MenuLayout.CloseDrawers();
-                MenuLayout.OpenDrawer(LeftMenu);
-            });
+            MenuLayout.CloseDrawers();
+            PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{uri.Host}','{uri.Path}',null);", null);
         }
-
-        public override void ShowRightMenu(string args)
-        {
-            RunOnUiThread(() =>
-            {
-                MenuLayout.CloseDrawers();
-                MenuLayout.OpenDrawer(RightMenu);
-            });
-        }
-
 
     }
-
-
 
 
 }

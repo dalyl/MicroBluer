@@ -114,17 +114,6 @@
 
         #endregion
 
-      
-        public virtual void ShowLeftMenu(string args)
-        {
-
-        }
-
-        public virtual void ShowRightMenu(string args)
-        {
-
-        }
-
     }
 
 }

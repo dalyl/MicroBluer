@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
 public partial class HostsView : HostsViewBase
 {
 
@@ -194,7 +194,7 @@ WriteLiteral(@"', """");
 
 
 #line 55 "HostsView.cshtml"
-                                                                 Write(HomeView.Partial.Host);
+                                                                 Write(HostView.Partial.Host);
 
 
 #line default
@@ -203,7 +203,7 @@ WriteLiteral("\', \'");
 
 
 #line 55 "HostsView.cshtml"
-                                                                                           Write(HomeView.Partial.Path);
+                                                                                           Write(HostView.Partial.Path);
 
 
 #line default

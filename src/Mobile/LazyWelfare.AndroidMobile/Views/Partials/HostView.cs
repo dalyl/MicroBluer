@@ -17,13 +17,13 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.0.448")]
-public partial class HomeView : HomeViewBase
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
+public partial class HostView : HostViewBase
 {
 
 #line hidden
 
-#line 1 "HomeView.cshtml"
+#line 1 "HostView.cshtml"
 public LazyWelfare.AndroidMobile.Models.HostModel Model { get; set; }
 
 #line default
@@ -62,7 +62,7 @@ WriteLiteral(" id=\"servicehost\"");
 WriteLiteral(">\r\n\r\n</div>\r\n\r\n");
 
 
-#line 16 "HomeView.cshtml"
+#line 16 "HostView.cshtml"
  if (Model != null)
 {
 
@@ -73,7 +73,7 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            ViewScript.
 "rvicehost\', \"Replace\", \'");
 
 
-#line 20 "HomeView.cshtml"
+#line 20 "HostView.cshtml"
                                                              Write(HostFacultyView.Partial.Host);
 
 
@@ -82,7 +82,7 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            ViewScript.
 WriteLiteral("\', \'");
 
 
-#line 20 "HomeView.cshtml"
+#line 20 "HostView.cshtml"
                                                                                               Write(HostFacultyView.Partial.Path);
 
 
@@ -91,7 +91,7 @@ WriteLiteral("\', \'");
 WriteLiteral("\',\'");
 
 
-#line 20 "HomeView.cshtml"
+#line 20 "HostView.cshtml"
                                                                                                                               Write(Model.Domain);
 
 
@@ -100,7 +100,7 @@ WriteLiteral("\',\'");
 WriteLiteral("\');\r\n        })\r\n    </script>\r\n");
 
 
-#line 23 "HomeView.cshtml"
+#line 23 "HostView.cshtml"
 }
 else
 {
@@ -114,7 +114,7 @@ WriteLiteral("\r\n<script>\r\n    $(function () {\r\n\r\n        $(\".service-li
 "\r\n            ViewScript.RequestPartial(\'#MainContent\', \"Replace\", \'");
 
 
-#line 33 "HomeView.cshtml"
+#line 33 "HostView.cshtml"
                                                              Write(HostsView.Partial.Host);
 
 
@@ -123,7 +123,7 @@ WriteLiteral("\r\n<script>\r\n    $(function () {\r\n\r\n        $(\".service-li
 WriteLiteral("\', \'");
 
 
-#line 33 "HomeView.cshtml"
+#line 33 "HostView.cshtml"
                                                                                         Write(HostsView.Partial.Path);
 
 
@@ -137,7 +137,7 @@ WriteLiteral("\');\r\n        });\r\n\r\n    })\r\n</script>\r\n\r\n\r\n");
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class HomeViewBase
+public abstract class HostViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

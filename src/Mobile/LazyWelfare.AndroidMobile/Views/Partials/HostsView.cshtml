@@ -52,7 +52,7 @@
             var result = false;
             javascript: result = BuinessScript.SetHost(guid);
             if (result) {
-                ViewScript.RequestPartial('#MainContent',"Replace" , '@HomeView.Partial.Host', '@HomeView.Partial.Path');
+                ViewScript.RequestPartial('#MainContent',"Replace" , '@HostView.Partial.Host', '@HostView.Partial.Path');
             }
         });
         $(".command-item-delete").click(function () {
