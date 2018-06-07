@@ -1,34 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using LazyWelfare.AndroidAreaView.Core;
-using LazyWelfare.AndroidAreaView.Core.Renderer;
-using LazyWelfare.AndroidMobile.Logic;
-using LazyWelfare.Interface;
-using Newtonsoft.Json;
-
-namespace LazyWelfare.AndroidMobile.AgreementServices
+﻿namespace LazyWelfare.AndroidMobile.AgreementServices
 {
+    using System;
+    using Android.Content;
+    using LazyWelfare.AndroidCtrls.Contorls.ImageAction.Renderer;
+    using LazyWelfare.AndroidCtrls.Dialogs;
+    using Newtonsoft.Json;
+
     public class VolumeService: IAgreementService
     {
         const string GetCommand = "volume/get";
         const string SetCommand = "volume/set/{0}";
 
-        public MapCtrlDialog View { get; private set; }
+        public ImageActionDialog View { get; private set; }
 
         public decimal Current { get; private set; }
 
         public VolumeService(Context context)
         {
-            View = new MapCtrlDialog(context)
+            View = new ImageActionDialog(context)
             {
                 Render = new VolumeControllerRenderer(context)
                 {

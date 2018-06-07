@@ -21,5 +21,7 @@ namespace LazyWelfare.AndroidMobile.Models
 
         public string MapFolder { get; set; }
 
+        public string InnerFolder { get; set; }
+
     }
 }

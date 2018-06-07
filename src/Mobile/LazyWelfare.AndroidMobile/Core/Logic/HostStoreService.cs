@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using LazyWelfare.AndroidMobile.Models;
-    public class HostStoreService : SharedStoreService<HostModel>
+    public class HostStoreService : StoreService<HostModel>
     {
         protected override string SharedFileName { get; } = "hostFile";
 
@@ -18,7 +18,7 @@
         public List<HostModel> GetList()
         {
             var list = new List<HostModel>();
-            var keys = AllKeys();
+            var keys = Shared.AllKeys();
             var regPid = new Regex(KeyRegex, RegexOptions.IgnoreCase);
             foreach (var one in keys)
             {

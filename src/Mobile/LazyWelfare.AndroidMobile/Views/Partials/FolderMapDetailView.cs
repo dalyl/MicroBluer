@@ -56,7 +56,7 @@ WriteLiteral(" class=\"panel-body\"");
 
 WriteLiteral(">\r\n        <form");
 
-WriteLiteral(" class=\"FolderModelForm\"");
+WriteLiteral(" class=\"folderModelForm\"");
 
 WriteLiteral(">\r\n            <input");
 
@@ -110,7 +110,46 @@ WriteLiteral(">\r\n                    <p");
 
 WriteLiteral(" class=\"help-block\"");
 
-WriteLiteral(">归档文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
+WriteLiteral(">归档服务名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                <label");
+
+WriteLiteral(" class=\"control-label\"");
+
+WriteLiteral(">源文件夹</label>\r\n                <div");
+
+WriteLiteral(" class=\"controls\"");
+
+WriteLiteral(">\r\n                    <input");
+
+WriteLiteral(" name=\"MapFolder\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"选择\"");
+
+WriteLiteral(" class=\"form-control folderSelecter\"");
+
+WriteAttribute ("value", " value=\"", "\""
+
+#line 22 "FolderMapDetailView.cshtml"
+                                                                             , Tuple.Create<string,object,bool> ("", Model.MapFolder
+
+#line default
+#line hidden
+, false)
+);
+WriteLiteral(" readonly=\"readonly\"");
+
+WriteLiteral("  autocomplete=\"off\"");
+
+WriteLiteral(">\r\n                    <p");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">原文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -124,18 +163,18 @@ WriteLiteral(" class=\"controls\"");
 
 WriteLiteral(">\r\n                    <input");
 
-WriteLiteral(" name=\"MapFolder\"");
+WriteLiteral(" name=\"InnerFolder\"");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" placeholder=\"归档文件夹\"");
+WriteLiteral(" placeholder=\"路径名称\"");
 
 WriteLiteral(" class=\"form-control\"");
 
 WriteAttribute ("value", " value=\"", "\""
 
-#line 22 "FolderMapDetailView.cshtml"
-                                                                 , Tuple.Create<string,object,bool> ("", Model.MapFolder
+#line 29 "FolderMapDetailView.cshtml"
+                                                                  , Tuple.Create<string,object,bool> ("", Model.InnerFolder
 
 #line default
 #line hidden
@@ -147,8 +186,8 @@ WriteLiteral(">\r\n                    <p");
 
 WriteLiteral(" class=\"help-block\"");
 
-WriteLiteral(">原归档文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n        </form>\r\n " +
-"       <div");
+WriteLiteral(">归档文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n        </form>\r\n  " +
+"      <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -158,7 +197,7 @@ WriteLiteral(" class=\"controls\"");
 
 WriteLiteral(">\r\n                <button");
 
-WriteLiteral(" class=\"btn btn-success FolderModelSave\"");
+WriteLiteral(" class=\"btn btn-success folderModelSave\"");
 
 WriteLiteral(@">保存</button>
             </div>
@@ -168,15 +207,15 @@ WriteLiteral(@">保存</button>
 
 <script>
     $(function () {
-        $("".FolderModelSave"").click(function () {
-            var model = $("".FolderModelForm"").serialize();
+        $("".folderModelSave"").click(function () {
+            var model = $("".folderModelForm"").serialize();
             var result = false;
             javascript: result = BuinessScript.SaveFolderMap(model);
             if (result) {
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 43 "FolderMapDetailView.cshtml"
+#line 50 "FolderMapDetailView.cshtml"
                                                                  Write(FolderMapsView.Partial.Host);
 
 
@@ -185,13 +224,24 @@ WriteLiteral(@">保存</button>
 WriteLiteral("\', \'");
 
 
-#line 43 "FolderMapDetailView.cshtml"
+#line 50 "FolderMapDetailView.cshtml"
                                                                                                  Write(FolderMapsView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\');\r\n            }\r\n        });\r\n    })\r\n</script>");
+WriteLiteral(@"');
+            }
+        });
+
+        $("".folderSelecter"").click(function () {
+            var result = $(this).val();
+            javascript: result = BuinessScript.GetSrcFolder(result);
+            if (result) $(this).val(result);
+        });
+
+    })
+</script>");
 
 }
 }

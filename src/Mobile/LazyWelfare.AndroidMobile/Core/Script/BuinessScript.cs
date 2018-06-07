@@ -3,18 +3,18 @@
 
     using Android.Webkit;
     using Java.Interop;
-    using LazyWelfare.AndroidMobile.Logic;
+    using LazyWelfare.AndroidCtrls.Dialogs;
     using LazyWelfare.AndroidMobile.Models;
     using Newtonsoft.Json;
     using System.Threading.Tasks;
 
-    public class BuinessScript: AndroidScript//注意一定要继承java基类  
+    public class BuinessScript: AndroidScript //注意一定要继承java基类  
     {
         public BuinessScript(ActiveActivity activity, WebView brower) : base(activity, brower)
         {
         }
 
-        #region Host
+        #region --- Host ---
 
 
         [Export("ScanHost")]
@@ -57,7 +57,7 @@
         public bool DeleteHost(string args)
         {
             if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
-            return Try.Show(()=> ActiveContext.HostStore.Delete(args), "成功删除","删除失败");
+            return Try.Show(() => ActiveContext.HostStore.Delete(args), "成功删除", "删除失败");
         }
 
         [Export("SetHost")]
@@ -69,10 +69,11 @@
             return result;
         }
 
+      
+
         #endregion
 
-        #region FolderMap
-
+        #region --- FolderMap   ---
 
         [Export("SaveFolderMap")]
         [JavascriptInterface]
@@ -84,8 +85,22 @@
             return Try.Show(() => ActiveContext.FolderMapStore.Save(model), "保存成功", "保存失败");
         }
 
-        #endregion
+        [Export("DeleteFolderMap")]
+        [JavascriptInterface]
+        public bool DeleteFolderMap(string args)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            return Try.Show(() => ActiveContext.FolderMapStore.Delete(args), "成功删除", "删除失败");
+        }
 
+        [Export("GetSrcFolder")]
+        [JavascriptInterface]
+        public string GetSrcFolder(string path)
+        {
+            return Try.Invoke(path,()=>FolderSelector.SelectSingle(ViewActivity, path));
+        }
+
+        #endregion
 
         [Export("CommandSumbit")]
         [JavascriptInterface]
@@ -97,10 +112,6 @@
             return ActiveContext.HostExpress.InvokeCommand(model, ViewActivity);
         }
 
-
-
     }
-
-
 
 }

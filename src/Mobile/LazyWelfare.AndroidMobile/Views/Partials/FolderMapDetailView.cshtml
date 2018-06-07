@@ -7,27 +7,34 @@
         </h3>
     </div>
     <div class="panel-body">
-        <form class="FolderModelForm">
+        <form class="folderModelForm">
             <input type="hidden" name="Domain" value="@Model.Guid" />
             <div class="form-group">
                 <label class="control-label">归档名称</label>
                 <div class="controls">
                     <input name="Name" type="text" placeholder="名称" class="form-control" value="@Model.Name" autocomplete="off">
-                    <p class="help-block">归档文件存储文件夹名称</p>
+                    <p class="help-block">归档服务名称</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">源文件夹</label>
+                <div class="controls">
+                    <input name="MapFolder" type="text" placeholder="选择" class="form-control folderSelecter" value="@Model.MapFolder" readonly="readonly"  autocomplete="off">
+                    <p class="help-block">原文件存储文件夹名称</p>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label">归档文件夹</label>
                 <div class="controls">
-                    <input name="MapFolder" type="text" placeholder="归档文件夹" class="form-control" value="@Model.MapFolder" autocomplete="off">
-                    <p class="help-block">原归档文件存储文件夹名称</p>
+                    <input name="InnerFolder" type="text" placeholder="路径名称" class="form-control" value="@Model.InnerFolder" autocomplete="off">
+                    <p class="help-block">归档文件存储文件夹名称</p>
                 </div>
             </div>
         </form>
         <div class="form-group">
             <!-- Button -->
             <div class="controls">
-                <button class="btn btn-success FolderModelSave">保存</button>
+                <button class="btn btn-success folderModelSave">保存</button>
             </div>
         </div>
     </div>
@@ -35,13 +42,20 @@
 
 <script>
     $(function () {
-        $(".FolderModelSave").click(function () {
-            var model = $(".FolderModelForm").serialize();
+        $(".folderModelSave").click(function () {
+            var model = $(".folderModelForm").serialize();
             var result = false;
             javascript: result = BuinessScript.SaveFolderMap(model);
             if (result) {
                 ViewScript.RequestPartial('#MainContent', "Replace", '@FolderMapsView.Partial.Host', '@FolderMapsView.Partial.Path');
             }
         });
+
+        $(".folderSelecter").click(function () {
+            var result = $(this).val();
+            javascript: result = BuinessScript.GetSrcFolder(result);
+            if (result) $(this).val(result);
+        });
+
     })
 </script>

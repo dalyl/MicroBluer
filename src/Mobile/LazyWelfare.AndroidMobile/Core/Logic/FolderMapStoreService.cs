@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
 
-    public class FolderMapStoreService : SharedStoreService<FolderMapModel>
+    public class FolderMapStoreService : StoreService<FolderMapModel>
     {
         protected override string SharedFileName { get; } = "folderFile";
 
@@ -18,7 +18,7 @@
         public List<FolderMapModel> GetList()
         {
             var list = new List<FolderMapModel>();
-            var keys = AllKeys();
+            var keys = Shared.AllKeys();
             var regPid = new Regex(KeyRegex, RegexOptions.IgnoreCase);
             foreach (var one in keys)
             {
@@ -48,7 +48,7 @@
             return base.Get(key);
         }
 
-        public void Add(string name, string map)
+        public void Add(string name, string map, string inner)
         {
             var id = Guid.NewGuid();
             var model = new FolderMapModel
@@ -56,6 +56,7 @@
                 Guid = id,
                 Name = name,
                 MapFolder = map,
+                InnerFolder = inner,
             };
             var key = $"{id}";
             base.Save(key, model);

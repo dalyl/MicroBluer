@@ -1,4 +1,4 @@
-﻿namespace LazyWelfare.AndroidAreaView.Core
+﻿namespace LazyWelfare.AndroidCtrls.Contorls.ImageAction
 {
     using System;
     using System.Collections;

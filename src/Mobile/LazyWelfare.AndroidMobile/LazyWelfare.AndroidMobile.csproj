@@ -107,8 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\ActiveContext.cs" />
+    <Compile Include="Core\Logic\StoreService.cs" />
     <Compile Include="Core\MenuContentAdapter.cs" />
     <Compile Include="Core\MenuContentItem.cs" />
+    <Compile Include="Core\Stroage\FileStore.cs" />
     <Compile Include="Core\Views\Partials\FolderMapDetailView.cs" />
     <Compile Include="Core\WebAgreement\AgreementUri.cs" />
     <Compile Include="Core\ServiceAgreement\AgreementService.cs" />
@@ -142,7 +144,7 @@
     <Compile Include="Core\PermissionGrantedClickListener.cs" />
     <Compile Include="Core\ImageTextButton.cs" />
     <Compile Include="Core\ScanPlugin.cs" />
-    <Compile Include="Core\Stroage\SharedStoreService.cs" />
+    <Compile Include="Core\Stroage\SharedStore.cs" />
     <Compile Include="Core\MainActivity.cs" />
     <Compile Include="Core\WebAgreement\Agreement.cs" />
     <Compile Include="Core\WebAgreement\AgreementHandler.cs" />
@@ -247,9 +249,9 @@
       <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
       <Name>LazyWelfare.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LazyWelfare.AndroidAreaView\LazyWelfare.AndroidAreaView.csproj">
-      <Project>{979912AF-6F8A-4B28-9DD9-5419A0EA506F}</Project>
-      <Name>LazyWelfare.AndroidAreaView</Name>
+    <ProjectReference Include="..\LazyWelfare.AndroidCtrls\LazyWelfare.AndroidCtrls.csproj">
+      <Project>{979912af-6f8a-4b28-9dd9-5419a0ea506f}</Project>
+      <Name>LazyWelfare.AndroidCtrls</Name>
     </ProjectReference>
     <ProjectReference Include="..\LazyWelfare.AndroidMobile.ImageSelect\LazyWelfare.AndroidMobile.ImageSelect.csproj">
       <Project>{042B5E23-3EC9-4C6F-B6A3-BBD23759309D}</Project>

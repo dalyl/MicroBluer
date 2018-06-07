@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using LazyWelfare.AndroidMobile.Models;
-using Newtonsoft.Json;
-
-namespace LazyWelfare.AndroidMobile.Logic
+﻿namespace LazyWelfare.AndroidMobile.Logic
 {
-    public class UserStoreService : SharedStoreService<string>
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using LazyWelfare.AndroidMobile.Models;
+    using Newtonsoft.Json;
+
+    public class UserStoreService : StoreService<string>
     {
         const string KeyPro = "_user_";
 
@@ -31,7 +22,7 @@ namespace LazyWelfare.AndroidMobile.Logic
 
         public  UserModel Get()
         {
-            var keys = AllKeys();
+            var keys = Shared.AllKeys();
             var regPid = new Regex(KeyRegex, RegexOptions.IgnoreCase);
             var json = new StringBuilder();
             json.Append("{");

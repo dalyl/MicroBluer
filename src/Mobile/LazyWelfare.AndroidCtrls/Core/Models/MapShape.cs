@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace LazyWelfare.AndroidAreaView.Core
+namespace LazyWelfare.AndroidCtrls.Models
 {
     public enum MapShape
     {

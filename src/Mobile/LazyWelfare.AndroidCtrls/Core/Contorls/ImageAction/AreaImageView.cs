@@ -1,19 +1,10 @@
-﻿namespace LazyWelfare.AndroidAreaView.Core
+﻿namespace LazyWelfare.AndroidCtrls.Contorls.ImageAction
 {
-
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     using Android.Views;
-
     using Context = Android.Content.Context;
-    using TypedArray = Android.Content.Res.TypedArray;
     using AttributeSet = Android.Util.IAttributeSet;
     using View = Android.Views.View;
     using ImageView = Android.Widget.ImageView;
-    using Android.Content.Res;
-    using Android.Graphics.Drawables;
-    using Android.Graphics;
 
     public class AreaImageView : ImageView
     {

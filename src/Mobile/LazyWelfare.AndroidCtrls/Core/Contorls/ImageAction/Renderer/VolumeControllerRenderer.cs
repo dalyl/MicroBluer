@@ -1,4 +1,4 @@
-﻿namespace LazyWelfare.AndroidAreaView.Core.Renderer
+﻿namespace LazyWelfare.AndroidCtrls.Contorls.ImageAction.Renderer
 {
     using System;
     using Android.Content;

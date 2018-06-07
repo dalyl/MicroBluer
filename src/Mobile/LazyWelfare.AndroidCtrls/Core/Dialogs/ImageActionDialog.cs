@@ -1,4 +1,4 @@
-﻿namespace LazyWelfare.AndroidAreaView.Core
+﻿namespace LazyWelfare.AndroidCtrls.Dialogs
 {
     using System;
     using Android.App;
@@ -6,16 +6,17 @@
     using Android.OS;
     using Android.Views;
     using Android.Widget;
-    using LazyWelfare.AndroidAreaView.Core.Renderer;
+    using LazyWelfare.AndroidCtrls.Contorls.ImageAction;
+    using LazyWelfare.AndroidCtrls.Contorls.ImageAction.Renderer;
     using LazyWelfare.AndroidUtils.View;
 
-    public  class MapCtrlDialog : ProgressDialog
+    public  class ImageActionDialog : AlertDialog
     {
-        public MapCtrlDialog(Context context) : base(context)
+        public ImageActionDialog(Context context) : base(context)
         {
         }
 
-        public MapCtrlDialog(Context context, int theme) : base(context, theme)
+        public ImageActionDialog(Context context, int theme) : base(context, theme)
         {
         }
 
