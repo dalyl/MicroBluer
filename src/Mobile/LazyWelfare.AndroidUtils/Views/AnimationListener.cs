@@ -1,4 +1,4 @@
-﻿namespace LazyWelfare.AndroidUtils.View
+﻿namespace LazyWelfare.AndroidUtils.Views
 {
     using System;
     using Android.Views.Animations;

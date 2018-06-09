@@ -12,7 +12,7 @@
     using LazyWelfare.AndroidMobile.ImageSelect.Collection;
     using Android.Support.V4.App;
     using Android.Views.Animations;
-    using LazyWelfare.AndroidUtils.View;
+    using LazyWelfare.AndroidUtils.Views;
     using LazyWelfare.AndroidUtils.Common;
     using LazyWelfare.AndroidUtils.Extension;
 

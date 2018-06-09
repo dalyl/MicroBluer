@@ -11,7 +11,7 @@
     using Android.Views;
     using LazyWelfare.AndroidMobile.ImageSelect.Collection;
     using LazyWelfare.AndroidMobile.ImageSelect.Model;
-    using LazyWelfare.AndroidUtils.View;
+    using LazyWelfare.AndroidUtils.Views;
 
     public class GridViewItemRelativeLayout : RelativeLayout
     {

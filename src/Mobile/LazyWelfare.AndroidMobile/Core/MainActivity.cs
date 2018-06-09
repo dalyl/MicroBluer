@@ -8,11 +8,10 @@
     using Android.OS;
     using Android.Webkit;
     using Android.Widget;
-    using System.Collections.Generic;
     using Android.Support.V4.Widget;
     using View = Android.Views.View;
     using Android.Views;
-    using LazyWelfare.AndroidUtils.View;
+    using LazyWelfare.AndroidUtils.Views;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity :  PartialActivity
@@ -27,8 +26,7 @@
         {
             base.OnCreate(savedInstanceState);
 
-            var view = LayoutInflater.FromContext(this).Inflate(Resource.Layout.MenuLayout, null);
-            InitView(view);
+            var view= InitComponents();
 
             SetContentView(view);
             SetTitle(ActiveContext.User.Name);
@@ -45,12 +43,16 @@
 
         public View ToolBar { get; protected set; }
 
-        void InitView(View view)
+        View InitComponents()
         {
+            var view = LayoutInflater.FromContext(this).Inflate(Resource.Layout.MenuLayout, null);
             MenuLayout = view.FindViewById<DrawerLayout>(Resource.Id.menu_layout);
             LeftMenu = MenuLayout.FindViewById(Resource.Id.MenuLeftContent);
             RightMenu = MenuLayout.FindViewById(Resource.Id.MenuRightContent);
             ToolBar = MenuLayout.FindViewById(Resource.Id.MenuToolBar);
+
+            var leftTop= MenuLayout.FindViewById(Resource.Id.MenuLeft_TopLayout);
+            leftTop.Clickable = true;
 
             var leftBtn = ToolBar.FindViewById(Resource.Id.toolbar_left);
             var rightBtn = ToolBar.FindViewById(Resource.Id.toolbar_right);
@@ -61,7 +63,10 @@
             var panel = MenuLayout.FindViewById<LinearLayout>(Resource.Id.MenuMainPanel);
             PartialView = new WebView(this);
             panel.AddView(PartialView);
+            return view;
         }
+
+        
 
         void LoadWebview()
         {

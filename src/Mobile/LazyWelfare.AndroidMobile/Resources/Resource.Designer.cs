@@ -5023,14 +5023,17 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f0600ac
 			public const int MenuLeftContent = 2131099820;
 			
-			// aapt resource value: 0x7f0600b0
-			public const int MenuLeft_ListView = 2131099824;
+			// aapt resource value: 0x7f0600b1
+			public const int MenuLeft_ListView = 2131099825;
 			
 			// aapt resource value: 0x7f0600ae
-			public const int MenuLeft_UserHead = 2131099822;
+			public const int MenuLeft_TopLayout = 2131099822;
 			
 			// aapt resource value: 0x7f0600af
-			public const int MenuLeft_UserName = 2131099823;
+			public const int MenuLeft_UserHead = 2131099823;
+			
+			// aapt resource value: 0x7f0600b0
+			public const int MenuLeft_UserName = 2131099824;
 			
 			// aapt resource value: 0x7f0600aa
 			public const int MenuMainPanel = 2131099818;
@@ -5053,8 +5056,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06004d
 			public const int WhorlLoadingRenderer = 2131099725;
 			
-			// aapt resource value: 0x7f0600b3
-			public const int action0 = 2131099827;
+			// aapt resource value: 0x7f0600b4
+			public const int action0 = 2131099828;
 			
 			// aapt resource value: 0x7f06006e
 			public const int action_bar = 2131099758;
@@ -5080,8 +5083,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06006f
 			public const int action_context_bar = 2131099759;
 			
-			// aapt resource value: 0x7f0600b7
-			public const int action_divider = 2131099831;
+			// aapt resource value: 0x7f0600b8
+			public const int action_divider = 2131099832;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -5128,8 +5131,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060058
 			public const int buttonPanel = 2131099736;
 			
-			// aapt resource value: 0x7f0600b4
-			public const int cancel_action = 2131099828;
+			// aapt resource value: 0x7f0600b5
+			public const int cancel_action = 2131099829;
 			
 			// aapt resource value: 0x7f060010
 			public const int center = 2131099664;
@@ -5149,8 +5152,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060066
 			public const int checkbox = 2131099750;
 			
-			// aapt resource value: 0x7f0600ba
-			public const int chronometer = 2131099834;
+			// aapt resource value: 0x7f0600bb
+			public const int chronometer = 2131099835;
 			
 			// aapt resource value: 0x7f060013
 			public const int clip_horizontal = 2131099667;
@@ -5164,8 +5167,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06009a
 			public const int commit = 2131099802;
 			
-			// aapt resource value: 0x7f0600ca
-			public const int contentFrame = 2131099850;
+			// aapt resource value: 0x7f0600cb
+			public const int contentFrame = 2131099851;
 			
 			// aapt resource value: 0x7f06005e
 			public const int contentPanel = 2131099742;
@@ -5215,8 +5218,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060015
 			public const int end = 2131099669;
 			
-			// aapt resource value: 0x7f0600bf
-			public const int end_padder = 2131099839;
+			// aapt resource value: 0x7f0600c0
+			public const int end_padder = 2131099840;
 			
 			// aapt resource value: 0x7f060034
 			public const int enterAlways = 2131099700;
@@ -5266,8 +5269,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060056
 			public const int icon = 2131099734;
 			
-			// aapt resource value: 0x7f0600c0
-			public const int icon_frame = 2131099840;
+			// aapt resource value: 0x7f0600c1
+			public const int icon_frame = 2131099841;
 			
 			// aapt resource value: 0x7f060031
 			public const int ifRoom = 2131099697;
@@ -5275,11 +5278,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060053
 			public const int image = 2131099731;
 			
-			// aapt resource value: 0x7f0600c5
-			public const int imageAlbum = 2131099845;
+			// aapt resource value: 0x7f0600c6
+			public const int imageAlbum = 2131099846;
 			
-			// aapt resource value: 0x7f0600c8
-			public const int imageBulb = 2131099848;
+			// aapt resource value: 0x7f0600c9
+			public const int imageBulb = 2131099849;
 			
 			// aapt resource value: 0x7f060091
 			public const int imageCtrl = 2131099793;
@@ -5293,8 +5296,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06009f
 			public const int imgview = 2131099807;
 			
-			// aapt resource value: 0x7f0600be
-			public const int info = 2131099838;
+			// aapt resource value: 0x7f0600bf
+			public const int info = 2131099839;
 			
 			// aapt resource value: 0x7f0600a2
 			public const int item_imageview = 2131099810;
@@ -5308,14 +5311,14 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060019
 			public const int left = 2131099673;
 			
-			// aapt resource value: 0x7f0600b8
-			public const int line1 = 2131099832;
+			// aapt resource value: 0x7f0600b9
+			public const int line1 = 2131099833;
 			
-			// aapt resource value: 0x7f0600bc
-			public const int line3 = 2131099836;
+			// aapt resource value: 0x7f0600bd
+			public const int line3 = 2131099837;
 			
-			// aapt resource value: 0x7f0600c2
-			public const int list = 2131099842;
+			// aapt resource value: 0x7f0600c3
+			public const int list = 2131099843;
 			
 			// aapt resource value: 0x7f06001d
 			public const int listMode = 2131099677;
@@ -5326,14 +5329,14 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f060094
 			public const int listViewParent = 2131099796;
 			
-			// aapt resource value: 0x7f0600c1
-			public const int list_container = 2131099841;
+			// aapt resource value: 0x7f0600c2
+			public const int list_container = 2131099842;
 			
 			// aapt resource value: 0x7f060055
 			public const int list_item = 2131099733;
 			
-			// aapt resource value: 0x7f0600b6
-			public const int media_actions = 2131099830;
+			// aapt resource value: 0x7f0600b7
+			public const int media_actions = 2131099831;
 			
 			// aapt resource value: 0x7f0600a9
 			public const int menu_layout = 2131099817;
@@ -5359,8 +5362,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06001e
 			public const int normal = 2131099678;
 			
-			// aapt resource value: 0x7f0600b1
-			public const int p_pic = 2131099825;
+			// aapt resource value: 0x7f0600b2
+			public const int p_pic = 2131099826;
 			
 			// aapt resource value: 0x7f060039
 			public const int parallax = 2131099705;
@@ -5386,8 +5389,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06001a
 			public const int right = 2131099674;
 			
-			// aapt resource value: 0x7f0600b2
-			public const int right_textview = 2131099826;
+			// aapt resource value: 0x7f0600b3
+			public const int right_textview = 2131099827;
 			
 			// aapt resource value: 0x7f06009b
 			public const int rl = 2131099803;
@@ -5398,11 +5401,11 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06008b
 			public const int rvFileView = 2131099787;
 			
-			// aapt resource value: 0x7f0600c4
-			public const int scanAlbumBtn = 2131099844;
+			// aapt resource value: 0x7f0600c5
+			public const int scanAlbumBtn = 2131099845;
 			
-			// aapt resource value: 0x7f0600c7
-			public const int scanBulbBtn = 2131099847;
+			// aapt resource value: 0x7f0600c8
+			public const int scanBulbBtn = 2131099848;
 			
 			// aapt resource value: 0x7f060029
 			public const int screen = 2131099689;
@@ -5497,29 +5500,29 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06001b
 			public const int start = 2131099675;
 			
-			// aapt resource value: 0x7f0600b5
-			public const int status_bar_latest_event_content = 2131099829;
+			// aapt resource value: 0x7f0600b6
+			public const int status_bar_latest_event_content = 2131099830;
 			
 			// aapt resource value: 0x7f060079
 			public const int submit_area = 2131099769;
 			
-			// aapt resource value: 0x7f0600c3
-			public const int switchWidget = 2131099843;
+			// aapt resource value: 0x7f0600c4
+			public const int switchWidget = 2131099844;
 			
 			// aapt resource value: 0x7f06001f
 			public const int tabMode = 2131099679;
 			
-			// aapt resource value: 0x7f0600bd
-			public const int text = 2131099837;
+			// aapt resource value: 0x7f0600be
+			public const int text = 2131099838;
 			
-			// aapt resource value: 0x7f0600bb
-			public const int text2 = 2131099835;
+			// aapt resource value: 0x7f0600bc
+			public const int text2 = 2131099836;
 			
-			// aapt resource value: 0x7f0600c6
-			public const int textAlbum = 2131099846;
+			// aapt resource value: 0x7f0600c7
+			public const int textAlbum = 2131099847;
 			
-			// aapt resource value: 0x7f0600c9
-			public const int textBulb = 2131099849;
+			// aapt resource value: 0x7f0600ca
+			public const int textBulb = 2131099850;
 			
 			// aapt resource value: 0x7f060061
 			public const int textSpacerNoButtons = 2131099745;
@@ -5530,8 +5533,8 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06009c
 			public const int thumbnail = 2131099804;
 			
-			// aapt resource value: 0x7f0600b9
-			public const int time = 2131099833;
+			// aapt resource value: 0x7f0600ba
+			public const int time = 2131099834;
 			
 			// aapt resource value: 0x7f060057
 			public const int title = 2131099735;

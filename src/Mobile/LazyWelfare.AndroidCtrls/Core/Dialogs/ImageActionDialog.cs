@@ -8,7 +8,7 @@
     using Android.Widget;
     using LazyWelfare.AndroidCtrls.Contorls.ImageAction;
     using LazyWelfare.AndroidCtrls.Contorls.ImageAction.Renderer;
-    using LazyWelfare.AndroidUtils.View;
+    using LazyWelfare.AndroidUtils.Views;
 
     public  class ImageActionDialog : AlertDialog
     {
