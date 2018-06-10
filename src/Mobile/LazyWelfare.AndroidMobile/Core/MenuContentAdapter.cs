@@ -50,7 +50,7 @@
             ViewHold hold;
             if (convertView == null)
             {
-                hold = new ViewHold(this);
+                hold = new ViewHold();
                 convertView = LayoutInflater.From(context).Inflate(Resource.Layout.MenuContent_item, null);
                 convertView.Tag = hold;
             }
@@ -59,8 +59,8 @@
                 hold = convertView.Tag as ViewHold;
             }
 
-            hold.imageView = (ImageView)convertView.FindViewById(Resource.Id.item_imageview);
-            hold.textView = (TextView)convertView.FindViewById(Resource.Id.item_textview);
+            hold.imageView = convertView.FindViewById<ImageView>(Resource.Id.item_imageview);
+            hold.textView = convertView.FindViewById<TextView>(Resource.Id.item_textview);
 
             hold.imageView.SetImageResource(list[position].ImageView);
             hold.textView.Text = list[position].Text;
@@ -69,13 +69,6 @@
 
         internal class ViewHold : Object
         {
-            private readonly MenuContentAdapter outerInstance;
-
-            public ViewHold(MenuContentAdapter outerInstance)
-            {
-                this.outerInstance = outerInstance;
-            }
-
             public ImageView imageView;
             public TextView textView;
         }

@@ -45,6 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acp\Acp.cs" />
+    <Compile Include="Acp\AcpActivity.cs" />
+    <Compile Include="Acp\IAcpListener.cs" />
+    <Compile Include="Acp\AcpManager.cs" />
+    <Compile Include="Acp\AcpOptions.cs" />
+    <Compile Include="Acp\AcpService.cs" />
+    <Compile Include="Acp\MiuiOs.cs" />
     <Compile Include="Animation\AnimEndListener.cs" />
     <Compile Include="Animation\AnonymousAnimatorListenerAdapter.cs" />
     <Compile Include="Animation\AnonymousAnimatorUpdateListener.cs" />
@@ -59,6 +66,7 @@
     <Compile Include="Graphics\Anonymous.cs" />
     <Compile Include="Parcel\Parcelable.cs" />
     <Compile Include="Parcel\ParcelableCreator.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Views\AnimationListener.cs" />
     <Compile Include="Views\AnonymousOnClickListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,7 +79,12 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="23.4.0.1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Colors.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

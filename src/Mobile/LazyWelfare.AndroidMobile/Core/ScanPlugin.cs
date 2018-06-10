@@ -31,17 +31,12 @@ namespace LazyWelfare.AndroidMobile
 
         public Activity Context { get; }
 
-        public string Title { get;}
+        MobileBarcodeScanner Scanner { get; }
 
         public ScanPlugin(Activity activity,string title)
         {
             Context = activity;
-            Title = title;
-            Init();
-        }
-
-        private void Init()
-        {
+      
             var zxingOverlay = LayoutInflater.FromContext(Context).Inflate(Resource.Layout.ZxingOverlay, null);
 
             var bulbBtn = zxingOverlay.FindViewById(Resource.Id.scanBulbBtn);
@@ -51,27 +46,26 @@ namespace LazyWelfare.AndroidMobile
             albumBtn.Click += Album_Click;
 
             var bar= zxingOverlay.FindViewById(Resource.Id.top_layout);
-            var title=bar.FindViewById<TextView>(Resource.Id.context_Title);
+            var titleBar=bar.FindViewById<TextView>(Resource.Id.context_Title);
             var back=bar.FindViewById(Resource.Id.context_btback);
 
-            title.Text = Title;
+            titleBar.Text = title;
             back.Click += Back_Click;
 
             MobileBarcodeScanner.Initialize(Context.Application);
-            var scanner = new MobileBarcodeScanner()
+            Scanner = new MobileBarcodeScanner()
             {
                 //使用自定义界面
                 UseCustomOverlay = true,
                 CustomOverlay = zxingOverlay,
             };
 
-            OverScan = scanner.Cancel;
-            ShowScan = async (opts) => await scanner.Scan(opts);
+            OverScan = Scanner.Cancel;
+            ShowScan = async (opts) => await Scanner.Scan(opts);
         }
 
         public async Task<bool> Invoke()
         {
-
             try
             {
                 var opts = new MobileBarcodeScanningOptions
@@ -160,8 +154,9 @@ namespace LazyWelfare.AndroidMobile
                 //else {
                 //    lightSwitchM();
                 //}
-
-                lightSwitchM();
+                lightStatus = !lightStatus;
+                Scanner.Torch(lightStatus);
+               // lightSwitchM();
 
             }
             catch (Exception ex)

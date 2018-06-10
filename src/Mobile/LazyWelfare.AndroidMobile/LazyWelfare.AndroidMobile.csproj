@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\ActiveContext.cs" />
+    <Compile Include="Core\Application.cs" />
     <Compile Include="Core\Logic\StoreService.cs" />
     <Compile Include="Core\MenuContentAdapter.cs" />
     <Compile Include="Core\MenuContentItem.cs" />

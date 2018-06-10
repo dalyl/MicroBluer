@@ -2,8 +2,8 @@
 {
     using System;
     using Android.Content;
-    using LazyWelfare.AndroidCtrls.Contorls.ImageAction.Renderer;
-    using LazyWelfare.AndroidCtrls.Dialogs;
+    using LazyWelfare.AndroidCtrls.ImageAction;
+    using LazyWelfare.AndroidCtrls.ImageAction.Renderer;
     using Newtonsoft.Json;
 
     public class VolumeService: IAgreementService

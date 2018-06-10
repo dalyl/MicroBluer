@@ -3,7 +3,7 @@
 
     using Android.Webkit;
     using Java.Interop;
-    using LazyWelfare.AndroidCtrls.Dialogs;
+    using LazyWelfare.AndroidCtrls.FolderSelect;
     using LazyWelfare.AndroidMobile.Models;
     using Newtonsoft.Json;
     using System.Threading.Tasks;
@@ -69,8 +69,6 @@
             return result;
         }
 
-      
-
         #endregion
 
         #region --- FolderMap   ---
@@ -97,7 +95,9 @@
         [JavascriptInterface]
         public string GetSrcFolder(string path)
         {
-            return Try.Invoke(path,()=>FolderSelector.SelectSingle(ViewActivity, path));
+            var fetchResult = FolderSelector.SelectSingle(ViewActivity, SelectorType.Directory, path);
+            Task.WaitAll(fetchResult);
+            return fetchResult.Result;
         }
 
         #endregion

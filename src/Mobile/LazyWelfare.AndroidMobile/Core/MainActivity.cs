@@ -18,15 +18,14 @@
     {
         static PartialRequestStack requestStack { get; set; } = new PartialRequestStack();
 
-        public AgreementUri Partial { get; set; } = HostView.Partial;
+        public AgreementUri Partial { get; set; } = FolderMapsView.Partial;
 
         public override PartialRequestStack RequestStack { get; } = requestStack;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            var view= InitComponents();
+            var view = InitComponents();
 
             SetContentView(view);
             SetTitle(ActiveContext.User.Name);
@@ -47,12 +46,12 @@
         {
             var view = LayoutInflater.FromContext(this).Inflate(Resource.Layout.MenuLayout, null);
             MenuLayout = view.FindViewById<DrawerLayout>(Resource.Id.menu_layout);
-            LeftMenu = MenuLayout.FindViewById(Resource.Id.MenuLeftContent);
-            RightMenu = MenuLayout.FindViewById(Resource.Id.MenuRightContent);
+            LeftMenu = MenuLayout.FindViewById<LinearLayout>(Resource.Id.MenuLeftContent);
+            RightMenu = MenuLayout.FindViewById<RelativeLayout>(Resource.Id.MenuRightContent);
             ToolBar = MenuLayout.FindViewById(Resource.Id.MenuToolBar);
 
-            var leftTop= MenuLayout.FindViewById(Resource.Id.MenuLeft_TopLayout);
-            leftTop.Clickable = true;
+            LeftMenu.Clickable = true;
+            RightMenu.Clickable = true;
 
             var leftBtn = ToolBar.FindViewById(Resource.Id.toolbar_left);
             var rightBtn = ToolBar.FindViewById(Resource.Id.toolbar_right);
@@ -65,8 +64,6 @@
             panel.AddView(PartialView);
             return view;
         }
-
-        
 
         void LoadWebview()
         {
@@ -103,7 +100,7 @@
             var listView = (ListView)MenuLayout.FindViewById(Resource.Id.MenuLeft_ListView);
             var data = new MenuContentItem[]
             {
-                new MenuContentItem(Resource.Drawable.base_home_black, "首页", 1,()=>OpenWebview(HostView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_home_black, "首页", 1,()=>OpenWebview(FolderMapsView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_folder_black, "资源归档", 2,()=>OpenWebview(FolderMapsView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_cloud_black, "主机服务", 3,()=>OpenWebview(HostView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_qrcode_black, "扫一扫", 4),

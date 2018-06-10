@@ -22,13 +22,13 @@
     </LinearLayout>
     <include
         layout="@layout/MenuLeftContent"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:id="@+id/MenuLeftContent" />
     <include
         layout="@layout/MenuRightContent"
-        android:layout_width="260dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="right"
         android:id="@+id/MenuRightContent" />

@@ -2,28 +2,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rootLayout"
+    android:id="@+id/FolderSelectorItem_Layout"
+    android:background="@drawable/selector_item_shape"
+    android:layout_marginTop="4dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/FolderSelectorItem_FolderImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginStart="8dp"
-        android:src="@drawable/selector_file" />
+        android:src="@drawable/selector_folder" />
     <TextView
-        android:id="@+id/tvFileDir"
+        android:id="@+id/FolderSelectorItem_Path"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:layout_marginRight="70dp"
+        android:layout_marginLeft="70dp"
+        android:inputType="textMultiLine"
+        android:ellipsize="start"
+        android:maxLines="2"
+        scrollHorizontally="false"
+        android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextVTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewiewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView"
         android:layout_centerInParent="true" />
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/FolderSelectorItem_CheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="8dp"
-        android:button="@drawable/bg_check" />
+        android:button="@drawable/selector_bg_check" />
 </RelativeLayout>
