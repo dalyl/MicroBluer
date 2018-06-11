@@ -86,10 +86,10 @@
             var lower = extension.ToLower();
             switch (lower)
             {
-                case "jpg": return Resource.Drawable.selector_file_jpg;
-                case "jpeg": return Resource.Drawable.selector_file_jpg;
-                case "png": return Resource.Drawable.selector_file_png;
-                case "gif": return Resource.Drawable.selector_file_gif;
+                case ".jpg": return Resource.Drawable.selector_file_jpg;
+                case ".jpeg": return Resource.Drawable.selector_file_jpg;
+                case ".png": return Resource.Drawable.selector_file_png;
+                case ".gif": return Resource.Drawable.selector_file_gif;
             }
             return Resource.Drawable.selector_file_none;
         }

@@ -1594,7 +1594,7 @@ namespace LazyWelfare.AndroidCtrls
 			public static int FolderSelectorItem_CheckBox = 2131099738;
 			
 			// aapt resource value: 0x7f060058
-			public static int FolderSelectorItem_FolderImage = 2131099736;
+			public static int FolderSelectorItem_Image = 2131099736;
 			
 			// aapt resource value: 0x7f060057
 			public static int FolderSelectorItem_Layout = 2131099735;

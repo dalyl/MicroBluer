@@ -522,7 +522,7 @@ namespace LazyWelfare.AndroidMobile
 			global::LazyWelfare.AndroidCtrls.Resource.Drawable.svg_new_source = global::LazyWelfare.AndroidMobile.Resource.Drawable.svg_new_source;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.FolderSelectorEmptyItem_Tip = global::LazyWelfare.AndroidMobile.Resource.Id.FolderSelectorEmptyItem_Tip;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.FolderSelectorItem_CheckBox = global::LazyWelfare.AndroidMobile.Resource.Id.FolderSelectorItem_CheckBox;
-			global::LazyWelfare.AndroidCtrls.Resource.Id.FolderSelectorItem_FolderImage = global::LazyWelfare.AndroidMobile.Resource.Id.FolderSelectorItem_FolderImage;
+			global::LazyWelfare.AndroidCtrls.Resource.Id.FolderSelectorItem_Image = global::LazyWelfare.AndroidMobile.Resource.Id.FolderSelectorItem_Image;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.FolderSelectorItem_Layout = global::LazyWelfare.AndroidMobile.Resource.Id.FolderSelectorItem_Layout;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.FolderSelectorItem_Path = global::LazyWelfare.AndroidMobile.Resource.Id.FolderSelectorItem_Path;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.FolderSelector_Back = global::LazyWelfare.AndroidMobile.Resource.Id.FolderSelector_Back;
@@ -6254,7 +6254,7 @@ namespace LazyWelfare.AndroidMobile
 			public const int FolderSelectorItem_CheckBox = 2131099793;
 			
 			// aapt resource value: 0x7f06008f
-			public const int FolderSelectorItem_FolderImage = 2131099791;
+			public const int FolderSelectorItem_Image = 2131099791;
 			
 			// aapt resource value: 0x7f06008e
 			public const int FolderSelectorItem_Layout = 2131099790;

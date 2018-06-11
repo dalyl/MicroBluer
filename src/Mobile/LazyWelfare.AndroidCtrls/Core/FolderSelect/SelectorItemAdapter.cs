@@ -112,10 +112,11 @@
                 var itemView = holder as ItemViewHolder;
                 itemView.CheckBox.CheckedChange += (sender, e) => CheckedChange(item.FullName, e.IsChecked);
                 itemView.CheckBox.Checked = Selects.Contains(item.FullName);
-                itemView.Name.Text = item.Name;
+                itemView.Path.Text = item.Name;
                 itemView.Layout.SetOnClickListener(new AnonymousOnClickListener(v => ItemClick(item)));
-                itemView.Name.SetOnClickListener(new AnonymousOnClickListener(v => ItemClick(item)));
+                itemView.Path.SetOnClickListener(new AnonymousOnClickListener(v => ItemClick(item)));
                 itemView.CheckBox.Visibility = item.IsSelectable ? ViewStates.Visible : ViewStates.Invisible;
+                itemView.Icon.SetImageResource(item.Icon);
             }
             if (holder is EmptyItemViewHolder)
             {
@@ -144,14 +145,14 @@
         internal class ItemViewHolder : RecyclerView.ViewHolder
         {
             public ImageView Icon;
-            public TextView Name;
+            public TextView Path;
             public RelativeLayout Layout;
             public CheckBox CheckBox;
 
             public ItemViewHolder(View view) : base(view)
             {
-                Icon = view.FindViewById<ImageView>(Resource.Id.FolderSelectorItem_FolderImage);
-                Name = view.FindViewById<TextView>(Resource.Id.FolderSelectorItem_Path);
+                Icon = view.FindViewById<ImageView>(Resource.Id.FolderSelectorItem_Image);
+                Path = view.FindViewById<TextView>(Resource.Id.FolderSelectorItem_Path);
                 Layout = view.FindViewById<RelativeLayout>(Resource.Id.FolderSelectorItem_Layout);
                 CheckBox = view.FindViewById<CheckBox>(Resource.Id.FolderSelectorItem_CheckBox);
             }
