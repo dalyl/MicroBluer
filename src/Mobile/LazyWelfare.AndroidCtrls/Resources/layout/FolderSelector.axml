@@ -56,21 +56,21 @@
                 android:textColor="#458B74" />
         </LinearLayout>
     </RelativeLayout>
-  <RelativeLayout  
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/FolderSelector_RecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/FolderSelector_Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="start"
-        android:maxLines="1"
-        android:textColor="#458B74"
-        android:text="目录"
-        android:layout_alignParentBottom="true"/>
-  </RelativeLayout>
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/FolderSelector_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/FolderSelector_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="start"
+            android:maxLines="1"
+            android:textColor="#458B74"
+            android:text="目录"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
 </LinearLayout>

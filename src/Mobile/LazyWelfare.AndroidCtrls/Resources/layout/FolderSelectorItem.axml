@@ -26,6 +26,7 @@
         android:maxLines="2"
         scrollHorizontally="false"
         android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextVTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewiewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView"
+        android:duplicateParentState="true"
         android:layout_centerInParent="true" />
     <CheckBox
         android:id="@+id/FolderSelectorItem_CheckBox"

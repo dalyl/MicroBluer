@@ -9,6 +9,7 @@
     using Android.Widget;
     using Object = Java.Lang.Object;
     using System.IO;
+    using LazyWelfare.AndroidUtils.Views;
 
     public class SelectorItemAdapter : RecyclerView.Adapter
     {
@@ -103,6 +104,7 @@
             }
         }
 
+
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             if (holder is ItemViewHolder) {
@@ -111,13 +113,13 @@
                 itemView.CheckBox.CheckedChange += (sender, e) => CheckedChange(item.FullName, e.IsChecked);
                 itemView.CheckBox.Checked = Selects.Contains(item.FullName);
                 itemView.Name.Text = item.Name;
-               // itemView.Layout.Click += (sender, e) => ItemClick(item);
-                itemView.Name.Click += (sender, e) => ItemClick(item);
+                itemView.Layout.SetOnClickListener(new AnonymousOnClickListener(v => ItemClick(item)));
+                itemView.Name.SetOnClickListener(new AnonymousOnClickListener(v => ItemClick(item)));
                 itemView.CheckBox.Visibility = item.IsSelectable ? ViewStates.Visible : ViewStates.Invisible;
             }
             if (holder is EmptyItemViewHolder)
             {
-
+               
             }
         }
 
@@ -137,6 +139,7 @@
             View view = LayoutInflater.From(Context).Inflate(Resource.Layout.FolderSelectorItem, parent, false);
             return new ItemViewHolder(view);
         }
+     
 
         internal class ItemViewHolder : RecyclerView.ViewHolder
         {
