@@ -1,4 +1,4 @@
-﻿namespace LazyWelfare.AndroidCtrls.FolderSelect
+﻿namespace LazyWelfare.AndroidCtrls.FileSelect
 {
     public enum SelectorItemType
     {

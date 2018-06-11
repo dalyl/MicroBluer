@@ -45,20 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\FolderSelect\SelectorItem.cs" />
-    <Compile Include="Core\FolderSelect\SelectorItemAdapter.cs" />
-    <Compile Include="Core\FolderSelect\SelectorItemCollection.cs" />
-    <Compile Include="Core\FolderSelect\SelectorItemType.cs" />
-    <Compile Include="Core\FolderSelect\SelectorResult.cs" />
-    <Compile Include="Core\FolderSelect\SelectorType.cs" />
+    <Compile Include="Core\FileSelect\SelectorItem.cs" />
+    <Compile Include="Core\FileSelect\SelectorItemAdapter.cs" />
+    <Compile Include="Core\FileSelect\SelectorItemCollection.cs" />
+    <Compile Include="Core\FileSelect\SelectorItemType.cs" />
+    <Compile Include="Core\FileSelect\SelectorResult.cs" />
+    <Compile Include="Core\FileSelect\SelectorType.cs" />
     <Compile Include="Core\ImageAction\ActionImageDrawable.cs" />
     <Compile Include="Core\ImageAction\ActionImageView.cs" />
     <Compile Include="Core\ImageAction\ActionImageRenderer.cs" />
-    <Compile Include="Core\FolderSelect\FolderSelector.cs" />
-    <Compile Include="Core\FolderSelect\FolderSelectorActivity.cs" />
+    <Compile Include="Core\FileSelect\FileSelector.cs" />
+    <Compile Include="Core\FileSelect\FileSelectorActivity.cs" />
     <Compile Include="Core\ImageAction\ActionImageDialog.cs" />
-    <Compile Include="Core\Models\MapArea.cs" />
-    <Compile Include="Core\Models\MapShape.cs" />
+    <Compile Include="Core\AreaMap\MapArea.cs" />
+    <Compile Include="Core\AreaMap\MapShape.cs" />
     <Compile Include="Core\ImageAction\Renderer\VolumeControllerRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -282,6 +282,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\selector_file_zip.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\FileExpleror\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

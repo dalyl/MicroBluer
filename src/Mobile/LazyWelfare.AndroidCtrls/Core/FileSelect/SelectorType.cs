@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace LazyWelfare.AndroidCtrls.FolderSelect
+namespace LazyWelfare.AndroidCtrls.FileSelect
 {
     public enum SelectorType
     {

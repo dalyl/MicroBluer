@@ -1,4 +1,4 @@
-﻿namespace LazyWelfare.AndroidCtrls.FolderSelect
+﻿namespace LazyWelfare.AndroidCtrls.FileSelect
 {
     using System;
     using System.Linq;
@@ -14,7 +14,7 @@
     using Permission = Android.Manifest.Permission;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
-    public class FolderSelectorActivity : FragmentActivity
+    public class FileSelectorActivity : FragmentActivity
     {
         public static bool IsSelectMany { get; set; } = false;
 
@@ -121,7 +121,7 @@
         public void CancelSelect()
         {
             Finish();
-            FolderSelectorActivity.OnCanceled?.Invoke();
+            FileSelectorActivity.OnCanceled?.Invoke();
         }
     }
 }

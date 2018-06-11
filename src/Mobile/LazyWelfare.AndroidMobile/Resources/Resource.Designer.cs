@@ -5738,15 +5738,6 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f05004b
 			public const int disabled_alpha_material_light = 2131034187;
 			
-			// aapt resource value: 0x7f05006f
-			public const int filechoose_barheight = 2131034223;
-			
-			// aapt resource value: 0x7f050070
-			public const int filechoose_height = 2131034224;
-			
-			// aapt resource value: 0x7f050071
-			public const int filechoose_martop = 2131034225;
-			
 			// aapt resource value: 0x7f05004c
 			public const int highlight_alpha_material_colored = 2131034188;
 			
@@ -6102,191 +6093,122 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f020068
 			public const int image_not_exist = 2130837608;
 			
-			// aapt resource value: 0x7f0200a6
-			public const int notification_template_icon_bg = 2130837670;
+			// aapt resource value: 0x7f02008f
+			public const int notification_template_icon_bg = 2130837647;
 			
 			// aapt resource value: 0x7f020069
-			public const int offered_backward = 2130837609;
+			public const int offered_vol = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int offered_channel = 2130837610;
+			public const int pick_photo_checkbox = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int offered_cursor = 2130837611;
+			public const int pick_photo_checkbox_check = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int offered_exit = 2130837612;
+			public const int pick_photo_checkbox_normal = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int offered_forward = 2130837613;
+			public const int pretty_girl = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int offered_height = 2130837614;
+			public const int scan_album = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int offered_menu = 2130837615;
+			public const int scan_bulb = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int offered_mute = 2130837616;
+			public const int selector_bg_button = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int offered_next = 2130837617;
+			public const int selector_bg_check = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int offered_out = 2130837618;
+			public const int selector_bg_rename = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int offered_pause = 2130837619;
+			public const int selector_black = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int offered_pause2 = 2130837620;
+			public const int selector_choose = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int offered_play = 2130837621;
+			public const int selector_file_aac = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int offered_playloop = 2130837622;
+			public const int selector_file_bmp = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int offered_previous = 2130837623;
+			public const int selector_file_gif = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int offered_random = 2130837624;
+			public const int selector_file_jpg = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int offered_stop = 2130837625;
+			public const int selector_file_mp3 = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int offered_vol = 2130837626;
+			public const int selector_file_none = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int offered_width = 2130837627;
+			public const int selector_file_ogg = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int pick_photo_checkbox = 2130837628;
+			public const int selector_file_png = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int pick_photo_checkbox_check = 2130837629;
+			public const int selector_file_psd = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int pick_photo_checkbox_normal = 2130837630;
+			public const int selector_file_swf = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int pretty_girl = 2130837631;
+			public const int selector_file_tiff = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int scan_album = 2130837632;
+			public const int selector_file_txt = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int scan_bulb = 2130837633;
+			public const int selector_file_wav = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int selector_bg_button = 2130837634;
+			public const int selector_file_wma = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int selector_bg_check = 2130837635;
+			public const int selector_file_wmv = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int selector_bg_rename = 2130837636;
+			public const int selector_file_wpd = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int selector_black = 2130837637;
+			public const int selector_file_wps = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int selector_choose = 2130837638;
+			public const int selector_file_xls = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int selector_file = 2130837639;
+			public const int selector_file_zip = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int selector_file_aac = 2130837640;
+			public const int selector_folder = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int selector_file_bmp = 2130837641;
+			public const int selector_item_shape = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int selector_file_gif = 2130837642;
+			public const int selector_unchoose = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int selector_file_jpg = 2130837643;
+			public const int shape_button = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int selector_file_mp3 = 2130837644;
+			public const int splash_screen = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int selector_file_none = 2130837645;
+			public const int splashscreen = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int selector_file_ogg = 2130837646;
-			
-			// aapt resource value: 0x7f02008f
-			public const int selector_file_png = 2130837647;
-			
-			// aapt resource value: 0x7f020090
-			public const int selector_file_psd = 2130837648;
-			
-			// aapt resource value: 0x7f020091
-			public const int selector_file_swf = 2130837649;
-			
-			// aapt resource value: 0x7f020092
-			public const int selector_file_tiff = 2130837650;
-			
-			// aapt resource value: 0x7f020093
-			public const int selector_file_txt = 2130837651;
-			
-			// aapt resource value: 0x7f020094
-			public const int selector_file_wav = 2130837652;
-			
-			// aapt resource value: 0x7f020095
-			public const int selector_file_wma = 2130837653;
-			
-			// aapt resource value: 0x7f020096
-			public const int selector_file_wmv = 2130837654;
-			
-			// aapt resource value: 0x7f020097
-			public const int selector_file_wpd = 2130837655;
-			
-			// aapt resource value: 0x7f020098
-			public const int selector_file_wps = 2130837656;
-			
-			// aapt resource value: 0x7f020099
-			public const int selector_file_xls = 2130837657;
-			
-			// aapt resource value: 0x7f02009a
-			public const int selector_file_zip = 2130837658;
-			
-			// aapt resource value: 0x7f02009b
-			public const int selector_folder = 2130837659;
-			
-			// aapt resource value: 0x7f02009c
-			public const int selector_item_shape = 2130837660;
-			
-			// aapt resource value: 0x7f02009d
-			public const int selector_unchoose = 2130837661;
-			
-			// aapt resource value: 0x7f02009e
-			public const int shape_button = 2130837662;
-			
-			// aapt resource value: 0x7f02009f
-			public const int splash_screen = 2130837663;
-			
-			// aapt resource value: 0x7f0200a0
-			public const int splashscreen = 2130837664;
-			
-			// aapt resource value: 0x7f0200a1
-			public const int svg_new_back = 2130837665;
-			
-			// aapt resource value: 0x7f0200a2
-			public const int svg_new_close = 2130837666;
-			
-			// aapt resource value: 0x7f0200a3
-			public const int svg_new_home = 2130837667;
-			
-			// aapt resource value: 0x7f0200a4
-			public const int svg_new_setting = 2130837668;
-			
-			// aapt resource value: 0x7f0200a5
-			public const int svg_new_source = 2130837669;
+			public const int svg_new_source = 2130837646;
 			
 			static Drawable()
 			{

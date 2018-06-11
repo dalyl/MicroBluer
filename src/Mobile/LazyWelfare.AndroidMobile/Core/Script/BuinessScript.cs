@@ -3,7 +3,7 @@
 
     using Android.Webkit;
     using Java.Interop;
-    using LazyWelfare.AndroidCtrls.FolderSelect;
+    using LazyWelfare.AndroidCtrls.FileSelect;
     using LazyWelfare.AndroidMobile.Models;
     using LazyWelfare.AndroidMobile.Views;
     using Newtonsoft.Json;
@@ -111,7 +111,7 @@
         [JavascriptInterface]
         public string GetSrcFolder(string path)
         {
-            var fetchResult = FolderSelector.SelectSingle(ViewActivity, SelectorType.Directory, path);
+            var fetchResult = FileSelector.SelectSingle(ViewActivity, SelectorType.Directory, path);
             Task.WaitAll(fetchResult);
             return fetchResult.Result;
         }

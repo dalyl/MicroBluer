@@ -1,4 +1,4 @@
-﻿namespace LazyWelfare.AndroidCtrls.FolderSelect
+﻿namespace LazyWelfare.AndroidCtrls.FileSelect
 {
     using System;
     using System.Collections.Generic;

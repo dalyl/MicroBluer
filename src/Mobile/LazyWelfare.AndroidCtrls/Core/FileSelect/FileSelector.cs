@@ -1,10 +1,10 @@
-﻿namespace LazyWelfare.AndroidCtrls.FolderSelect
+﻿namespace LazyWelfare.AndroidCtrls.FileSelect
 {
     using Android.Content;
     using System.Threading;
     using System.Threading.Tasks;
 
-    public class FolderSelector
+    public class FileSelector
     {
         public static async Task<string> SelectSingle(Context context, SelectorType type, string older)
         {
@@ -25,16 +25,16 @@
                 SelectorResult selected = null;
 
                 var waitSelectedResetEvent = new ManualResetEvent(false);
-                var selectorIntent = new Intent(context, typeof(FolderSelectorActivity));
-                FolderSelectorActivity.IsSelectMany = isSelectMany;
-                FolderSelectorActivity.SelectorType = type;
+                var selectorIntent = new Intent(context, typeof(FileSelectorActivity));
+                FileSelectorActivity.IsSelectMany = isSelectMany;
+                FileSelectorActivity.SelectorType = type;
 
-                FolderSelectorActivity.OnCanceled += () =>
+                FileSelectorActivity.OnCanceled += () =>
                 {
                     selected = new SelectorResult { SelectItem = path, SelectItems = paths };
                     waitSelectedResetEvent.Set();
                 };
-                FolderSelectorActivity.OnSelectorCompleted += (SelectorResult result) =>
+                FileSelectorActivity.OnSelectorCompleted += (SelectorResult result) =>
                 {
                     selected = result;
                     waitSelectedResetEvent.Set();

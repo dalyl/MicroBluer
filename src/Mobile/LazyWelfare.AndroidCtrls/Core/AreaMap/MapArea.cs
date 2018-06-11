@@ -1,5 +1,5 @@
 ﻿
-namespace LazyWelfare.AndroidCtrls.Models
+namespace LazyWelfare.AndroidCtrls.AreaMap
 {
     using Android.Views;
 
