@@ -98,12 +98,20 @@ WriteLiteral(" class=\"command-item-delete red\"");
 
 WriteLiteral(">删除</span>\r\n                <span");
 
+WriteLiteral(" class=\"command-item-play orangered\"");
+
+WriteLiteral(">执行</span>\r\n                <span");
+
+WriteLiteral(" class=\"command-item-restore black\"");
+
+WriteLiteral(">还原</span>\r\n                <span");
+
 WriteLiteral(" class=\"command-item-eidt blue\"");
 
 WriteLiteral(">编辑</span>\r\n            </li>\r\n");
 
 
-#line 14 "FolderMapsView.cshtml"
+#line 16 "FolderMapsView.cshtml"
             }
 
 
@@ -119,7 +127,7 @@ WriteLiteral(" class=\"list-group\"");
 
 WriteLiteral(">\r\n            <li");
 
-WriteLiteral(" class=\"list-group-item command-item-explor\"");
+WriteLiteral(" class=\"list-group-item command-explor\"");
 
 WriteLiteral(">\r\n                <span");
 
@@ -129,7 +137,7 @@ WriteLiteral(" aria-hidden=\"true\"");
 
 WriteLiteral("></span>\r\n                <span>查看归档</span>\r\n            </li>\r\n            <li");
 
-WriteLiteral(" class=\"list-group-item command-item-play\"");
+WriteLiteral(" class=\"list-group-item command-play\"");
 
 WriteLiteral(">\r\n                <span");
 
@@ -167,8 +175,8 @@ WriteLiteral(@"></span>
             ViewScript.RequestPartial('#MainContent',""Replace"" , '");
 
 
-#line 46 "FolderMapsView.cshtml"
-                                                             Write(FolderMapDetailView.Partial.Host);
+#line 48 "FolderMapsView.cshtml"
+                                                             Write(FolderMapEditView.Partial.Host);
 
 
 #line default
@@ -176,8 +184,8 @@ WriteLiteral(@"></span>
 WriteLiteral("\', \'");
 
 
-#line 46 "FolderMapsView.cshtml"
-                                                                                                  Write(FolderMapDetailView.Partial.Path);
+#line 48 "FolderMapsView.cshtml"
+                                                                                                Write(FolderMapEditView.Partial.Path);
 
 
 #line default
@@ -188,12 +196,12 @@ WriteLiteral(@"', """");
         $("".command-item-delete"").click(function () {
             var guid = $(this).parent().data(""guid"");
             var result = false;
-            javascript: result = BuinessScript.DeleteHost(guid);
+            javascript: result = BuinessScript.DeleteFolderMap(guid);
             if (result) {
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 54 "FolderMapsView.cshtml"
+#line 56 "FolderMapsView.cshtml"
                                                                  Write(FolderMapsView.Partial.Host);
 
 
@@ -202,7 +210,7 @@ WriteLiteral(@"', """");
 WriteLiteral("\', \'");
 
 
-#line 54 "FolderMapsView.cshtml"
+#line 56 "FolderMapsView.cshtml"
                                                                                                  Write(FolderMapsView.Partial.Path);
 
 
@@ -213,8 +221,8 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 "pt.RequestPartial(\'#MainContent\', \"Replace\",\'");
 
 
-#line 59 "FolderMapsView.cshtml"
-                                                            Write(FolderMapDetailView.Partial.Host);
+#line 61 "FolderMapsView.cshtml"
+                                                            Write(FolderMapEditView.Partial.Host);
 
 
 #line default
@@ -222,13 +230,34 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 WriteLiteral("\', \'");
 
 
-#line 59 "FolderMapsView.cshtml"
-                                                                                                 Write(FolderMapDetailView.Partial.Path);
+#line 61 "FolderMapsView.cshtml"
+                                                                                               Write(FolderMapEditView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\', guid);\r\n        });\r\n    })\r\n    </script>\r\n\r\n");
+WriteLiteral(@"', guid);
+        });
+
+        $("".command-play"").click(function () {
+            javascript: BuinessScript.PullMapFiles("""")
+        });
+
+
+        $("".command-item-play"").click(function () {
+            var guid = $(this).parent().data(""guid"");
+            javascript: BuinessScript.PullMapFiles(guid)
+        });
+
+        $("".command-item-restore"").click(function () {
+            var guid = $(this).parent().data(""guid"");
+            javascript: BuinessScript.PushMapFiles(guid)
+        });
+
+    })
+    </script>
+
+");
 
 }
 }

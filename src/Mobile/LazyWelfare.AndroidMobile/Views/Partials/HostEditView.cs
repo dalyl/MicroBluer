@@ -18,13 +18,13 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
-public partial class FolderMapDetailView : FolderMapDetailViewBase
+public partial class HostEditView : HostEditViewBase
 {
 
 #line hidden
 
-#line 1 "FolderMapDetailView.cshtml"
-public LazyWelfare.AndroidMobile.Models.FolderMapModel Model { get; set; }
+#line 1 "HostEditView.cshtml"
+public LazyWelfare.AndroidMobile.Models.HostModel Model { get; set; }
 
 #line default
 #line hidden
@@ -46,17 +46,17 @@ WriteLiteral(" class=\"panel-title\"");
 
 WriteLiteral(">\r\n            <span");
 
-WriteLiteral(" class=\"glyphicon glyphicon-link\"");
+WriteLiteral(" class=\"glyphicon glyphicon-cloud\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span> 归档映射详情\r\n        </h3>\r\n    </div>\r\n    <div");
+WriteLiteral("></span> 服务详情\r\n        </h3>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"panel-body\"");
 
 WriteLiteral(">\r\n        <form");
 
-WriteLiteral(" class=\"folderModelForm\"");
+WriteLiteral(" class=\"HostModelForm\"");
 
 WriteLiteral(">\r\n            <input");
 
@@ -66,8 +66,8 @@ WriteLiteral(" name=\"Domain\"");
 
 WriteAttribute ("value", " value=\"", "\""
 
-#line 11 "FolderMapDetailView.cshtml"
-               , Tuple.Create<string,object,bool> ("", Model.Guid
+#line 11 "HostEditView.cshtml"
+               , Tuple.Create<string,object,bool> ("", Model.Domain
 
 #line default
 #line hidden
@@ -81,7 +81,7 @@ WriteLiteral(">\r\n                <label");
 
 WriteLiteral(" class=\"control-label\"");
 
-WriteLiteral(">归档名称</label>\r\n                <div");
+WriteLiteral(">服务名称</label>\r\n                <div");
 
 WriteLiteral(" class=\"controls\"");
 
@@ -97,7 +97,7 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteAttribute ("value", " value=\"", "\""
 
-#line 15 "FolderMapDetailView.cshtml"
+#line 15 "HostEditView.cshtml"
                                                          , Tuple.Create<string,object,bool> ("", Model.Name
 
 #line default
@@ -110,7 +110,7 @@ WriteLiteral(">\r\n                    <p");
 
 WriteLiteral(" class=\"help-block\"");
 
-WriteLiteral(">归档服务名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
+WriteLiteral(">服务速记名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -118,63 +118,24 @@ WriteLiteral(">\r\n                <label");
 
 WriteLiteral(" class=\"control-label\"");
 
-WriteLiteral(">源文件夹</label>\r\n                <div");
+WriteLiteral(">服务地址</label>\r\n                <div");
 
 WriteLiteral(" class=\"controls\"");
 
 WriteLiteral(">\r\n                    <input");
 
-WriteLiteral(" name=\"MapFolder\"");
+WriteLiteral(" name=\"Address\"");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" placeholder=\"选择\"");
-
-WriteLiteral(" class=\"form-control folderSelecter\"");
-
-WriteAttribute ("value", " value=\"", "\""
-
-#line 22 "FolderMapDetailView.cshtml"
-                                                                             , Tuple.Create<string,object,bool> ("", Model.MapFolder
-
-#line default
-#line hidden
-, false)
-);
-WriteLiteral(" readonly=\"readonly\"");
-
-WriteLiteral("  autocomplete=\"off\"");
-
-WriteLiteral(">\r\n                    <p");
-
-WriteLiteral(" class=\"help-block\"");
-
-WriteLiteral(">原文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                <label");
-
-WriteLiteral(" class=\"control-label\"");
-
-WriteLiteral(">归档文件夹</label>\r\n                <div");
-
-WriteLiteral(" class=\"controls\"");
-
-WriteLiteral(">\r\n                    <input");
-
-WriteLiteral(" name=\"InnerFolder\"");
-
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" placeholder=\"路径名称\"");
+WriteLiteral(" placeholder=\"地址\"");
 
 WriteLiteral(" class=\"form-control\"");
 
 WriteAttribute ("value", " value=\"", "\""
 
-#line 29 "FolderMapDetailView.cshtml"
-                                                                  , Tuple.Create<string,object,bool> ("", Model.InnerFolder
+#line 22 "HostEditView.cshtml"
+                                                            , Tuple.Create<string,object,bool> ("", Model.Address
 
 #line default
 #line hidden
@@ -186,8 +147,8 @@ WriteLiteral(">\r\n                    <p");
 
 WriteLiteral(" class=\"help-block\"");
 
-WriteLiteral(">归档文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n        </form>\r\n  " +
-"      <div");
+WriteLiteral(">http://*****</p>\r\n                </div>\r\n            </div>\r\n        </form>\r\n " +
+"       <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -197,7 +158,7 @@ WriteLiteral(" class=\"controls\"");
 
 WriteLiteral(">\r\n                <button");
 
-WriteLiteral(" class=\"btn btn-success folderModelSave\"");
+WriteLiteral(" class=\"btn btn-success HostModelSave\"");
 
 WriteLiteral(@">保存</button>
             </div>
@@ -207,16 +168,16 @@ WriteLiteral(@">保存</button>
 
 <script>
     $(function () {
-        $("".folderModelSave"").click(function () {
-            var model = $("".folderModelForm"").serialize();
+        $("".HostModelSave"").click(function () {
+            var model = $("".HostModelForm"").serialize();
             var result = false;
-            javascript: result = BuinessScript.SaveFolderMap(model);
+            javascript: result = BuinessScript.SaveHost(model);
             if (result) {
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 50 "FolderMapDetailView.cshtml"
-                                                                 Write(FolderMapsView.Partial.Host);
+#line 43 "HostEditView.cshtml"
+                                                                 Write(HostsView.Partial.Host);
 
 
 #line default
@@ -224,24 +185,13 @@ WriteLiteral(@">保存</button>
 WriteLiteral("\', \'");
 
 
-#line 50 "FolderMapDetailView.cshtml"
-                                                                                                 Write(FolderMapsView.Partial.Path);
+#line 43 "HostEditView.cshtml"
+                                                                                            Write(HostsView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral(@"');
-            }
-        });
-
-        $("".folderSelecter"").click(function () {
-            var result = $(this).val();
-            javascript: result = BuinessScript.GetSrcFolder(result);
-            if (result) $(this).val(result);
-        });
-
-    })
-</script>");
+WriteLiteral("\');\r\n            }\r\n        });\r\n    })\r\n</script>");
 
 }
 }
@@ -249,7 +199,7 @@ WriteLiteral(@"');
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class FolderMapDetailViewBase
+public abstract class HostEditViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

@@ -102,7 +102,7 @@
             {
                 new MenuContentItem(Resource.Drawable.base_home_black, "首页", 1,()=>OpenWebview(FolderMapsView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_folder_black, "资源归档", 2,()=>OpenWebview(FolderMapsView.Partial)),
-                new MenuContentItem(Resource.Drawable.base_cloud_black, "主机服务", 3,()=>OpenWebview(HostView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_cloud_black, "主机服务", 3,()=>OpenWebview(HostIndexView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_qrcode_black, "扫一扫", 4),
                 new MenuContentItem(Resource.Drawable.base_cast_connected_black, "联机服务", 5),
             };

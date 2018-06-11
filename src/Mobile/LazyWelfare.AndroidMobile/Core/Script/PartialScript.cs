@@ -25,7 +25,7 @@ namespace LazyWelfare.AndroidMobile.Script
         public void RequestPartial(string frame, string type, string host, string url, string args, string after)
         {
             var context = new PartialRequestContext(frame, type, host, url, args, after);
-            PartialLoadingAsyncTask loading = new PartialLoadingAsyncTask(ViewActivity as PartialActivity, context);
+            var loading = new PartialLoadingAsyncTask(ViewActivity as PartialActivity, context);
             loading.Execute();
         }
 

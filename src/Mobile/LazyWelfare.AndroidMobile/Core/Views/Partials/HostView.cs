@@ -4,10 +4,10 @@
     using LazyWelfare.AndroidMobile.Models;
     using LazyWelfare.AndroidMobile.WebAgreement;
 
-    public partial class HostView : IPartialView<HostModel>
+    public partial class HostIndexView : IPartialView<HostModel>
     {
 
-        public static AgreementUri Partial = new AgreementUri(nameof(HostView), nameof(PartialHost), typeof(HostView).Name);
+        public static AgreementUri Partial = new AgreementUri(nameof(HostIndexView), nameof(PartialHost), typeof(HostIndexView).Name);
 
         public void PushRequest(PartialActivity context, string args)
         {

@@ -40,7 +40,7 @@
         });
 
         $(".command-item-add").click(function () {
-            ViewScript.RequestPartial('#MainContent',"Replace" , '@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', "");
+            ViewScript.RequestPartial('#MainContent',"Replace" , '@HostEditView.Partial.Host', '@HostEditView.Partial.Path', "");
         });
 
         $(".command-item-scan").click(function () {
@@ -52,7 +52,7 @@
             var result = false;
             javascript: result = BuinessScript.SetHost(guid);
             if (result) {
-                ViewScript.RequestPartial('#MainContent',"Replace" , '@HostView.Partial.Host', '@HostView.Partial.Path');
+                ViewScript.RequestPartial('#MainContent',"Replace" , '@HostIndexView.Partial.Host', '@HostIndexView.Partial.Path');
             }
         });
         $(".command-item-delete").click(function () {
@@ -65,7 +65,7 @@
         });
         $(".command-item-eidt").click(function () {
             var guid = $(this).parent().data("guid");
-            ViewScript.RequestPartial('#MainContent', "Replace",'@HostDetailView.Partial.Host', '@HostDetailView.Partial.Path', guid);
+            ViewScript.RequestPartial('#MainContent', "Replace",'@HostEditView.Partial.Host', '@HostEditView.Partial.Path', guid);
         });
     })
     </script>

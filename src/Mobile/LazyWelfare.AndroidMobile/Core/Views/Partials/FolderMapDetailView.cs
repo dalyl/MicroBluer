@@ -4,9 +4,9 @@
     using LazyWelfare.AndroidMobile.Models;
     using LazyWelfare.AndroidMobile.WebAgreement;
 
-    public partial class FolderMapDetailView : IPartialView<FolderMapModel>
+    public partial class FolderMapEditView : IPartialView<FolderMapModel>
     {
-        public static AgreementUri Partial = new AgreementUri(nameof(FolderMapsView), nameof(PartialHost), typeof(FolderMapDetailView).Name);
+        public static AgreementUri Partial = new AgreementUri(nameof(FolderMapsView), nameof(PartialHost), typeof(FolderMapEditView).Name);
 
         public void PushRequest(PartialActivity context, string args) => context.RequestStack.Push(Partial.Name, args);
 

@@ -1,14 +1,10 @@
 ﻿namespace LazyWelfare.AndroidMobile.Views
 {
-    using Android.OS;
     using Android.Webkit;
-    using LazyWelfare.AndroidUtils.Common;
+    using System;
 
-    public class PartialLoadingAsyncTask : AsyncTask
+    public class PartialLoadingAsyncTask : PartialBackgroudWorkerAsyncTask
     {
-        public static string EXTRA_ASYNCTASK_PARTIALREQUESTCONTEXT { get; } = BundleUtils.BuildKey<PartialLoadingAsyncTask>("EXTRA_ASYNCTASK_PARTIALREQUESTCONTEXT");
-
-        PartialActivity _activity { get; }
 
         WebView _brower { get; set; }
 
@@ -16,30 +12,24 @@
 
         string _content { get; set; }
 
-        public PartialLoadingAsyncTask(PartialActivity viewActivity, PartialRequestContext context)
+        protected override Action _invoke => DoInBackground;
+
+        protected override Action _after => Response;
+
+        public PartialLoadingAsyncTask(PartialActivity viewActivity, PartialRequestContext context) : base(viewActivity)
         {
-            _activity = viewActivity;
-           
             _brower = _activity.PartialView;
             _context = context;
         }
 
-        protected override Java.Lang.Object DoInBackground(params Java.Lang.Object[] @params)
+        void  DoInBackground()
         {
             switch (_context.Host)
             {
                 case nameof(PartialHost):
                     _content = ActiveContext.Try.Invoke(string.Empty, () => PartialHost.Dispatch(_activity as PartialActivity, _context.Url, _context.Args));
                     break;
-
             }
-            return true;
-        }
-
-        protected override void OnPreExecute()
-        {
-            base.OnPreExecute();
-            _activity.ShowMaskLayer();
         }
 
         void Response()
@@ -59,12 +49,8 @@
                 _brower.EvaluateJavascript(_context.After, null);
             }
         }
-
-        protected override void OnPostExecute(Java.Lang.Object result)
-        {
-            base.OnPostExecute(result);
-            Response();
-            _activity.HideMaskLayer();
-        }
+      
     }
+
+
 }

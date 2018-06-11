@@ -144,7 +144,7 @@ WriteLiteral(@"';
 
 
 #line 42 "HostFacultyView.cshtml"
-                                                                 Write(HostDetailView.Partial.Host);
+                                                                 Write(HostEditView.Partial.Host);
 
 
 #line default
@@ -153,7 +153,7 @@ WriteLiteral("\', \'");
 
 
 #line 42 "HostFacultyView.cshtml"
-                                                                                                 Write(HostDetailView.Partial.Path);
+                                                                                               Write(HostEditView.Partial.Path);
 
 
 #line default

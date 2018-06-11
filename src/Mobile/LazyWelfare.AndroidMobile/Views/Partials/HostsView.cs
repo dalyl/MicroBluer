@@ -164,7 +164,7 @@ WriteLiteral(@"></span>
 
 
 #line 43 "HostsView.cshtml"
-                                                             Write(HostDetailView.Partial.Host);
+                                                             Write(HostEditView.Partial.Host);
 
 
 #line default
@@ -173,7 +173,7 @@ WriteLiteral("\', \'");
 
 
 #line 43 "HostsView.cshtml"
-                                                                                             Write(HostDetailView.Partial.Path);
+                                                                                           Write(HostEditView.Partial.Path);
 
 
 #line default
@@ -194,7 +194,7 @@ WriteLiteral(@"', """");
 
 
 #line 55 "HostsView.cshtml"
-                                                                 Write(HostView.Partial.Host);
+                                                                 Write(HostIndexView.Partial.Host);
 
 
 #line default
@@ -203,7 +203,7 @@ WriteLiteral("\', \'");
 
 
 #line 55 "HostsView.cshtml"
-                                                                                           Write(HostView.Partial.Path);
+                                                                                                Write(HostIndexView.Partial.Path);
 
 
 #line default
@@ -240,7 +240,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 
 
 #line 68 "HostsView.cshtml"
-                                                            Write(HostDetailView.Partial.Host);
+                                                            Write(HostEditView.Partial.Host);
 
 
 #line default
@@ -249,7 +249,7 @@ WriteLiteral("\', \'");
 
 
 #line 68 "HostsView.cshtml"
-                                                                                            Write(HostDetailView.Partial.Path);
+                                                                                          Write(HostEditView.Partial.Path);
 
 
 #line default

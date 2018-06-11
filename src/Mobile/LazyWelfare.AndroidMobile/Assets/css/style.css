@@ -92,3 +92,8 @@ span.glyphicon {
     color: #231818;
     background-color: #509bcc;
 }
+
+.black {
+    color: white;
+    background-color: black;
+}

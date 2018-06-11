@@ -18,13 +18,13 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
-public partial class HostView : HostViewBase
+public partial class FolderMapEditView : FolderMapEditViewBase
 {
 
 #line hidden
 
-#line 1 "HostView.cshtml"
-public LazyWelfare.AndroidMobile.Models.HostModel Model { get; set; }
+#line 1 "FolderMapEditView.cshtml"
+public LazyWelfare.AndroidMobile.Models.FolderMapModel Model { get; set; }
 
 #line default
 #line hidden
@@ -34,47 +34,189 @@ public override void Execute()
 {
 WriteLiteral("<div");
 
-WriteLiteral(" class=\"line-section\"");
+WriteLiteral(" class=\"panel panel-default\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"list-group\"");
+WriteLiteral(" class=\"panel-heading\"");
 
-WriteLiteral(">\r\n        <a");
+WriteLiteral(">\r\n        <h3");
 
-WriteLiteral(" href=\"javascript:void(0);\"");
-
-WriteLiteral(" class=\"list-group-item  service-list\"");
+WriteLiteral(" class=\"panel-title\"");
 
 WriteLiteral(">\r\n            <span");
 
-WriteLiteral(" class=\"glyphicon   glyphicon-th-list  \"");
+WriteLiteral(" class=\"glyphicon glyphicon-link\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n            <span>管理服务</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n<div" +
-"");
+WriteLiteral("></span> 归档映射详情\r\n        </h3>\r\n    </div>\r\n    <div");
 
-WriteLiteral(" class=\"line-section\"");
+WriteLiteral(" class=\"panel-body\"");
 
-WriteLiteral(" id=\"servicehost\"");
+WriteLiteral(">\r\n        <form");
 
-WriteLiteral(">\r\n\r\n</div>\r\n\r\n");
+WriteLiteral(" class=\"folderModelForm\"");
 
+WriteLiteral(">\r\n            <input");
 
-#line 16 "HostView.cshtml"
- if (Model != null)
-{
+WriteLiteral(" type=\"hidden\"");
 
+WriteLiteral(" name=\"Domain\"");
+
+WriteAttribute ("value", " value=\"", "\""
+
+#line 11 "FolderMapEditView.cshtml"
+               , Tuple.Create<string,object,bool> ("", Model.Guid
 
 #line default
 #line hidden
-WriteLiteral("    <script>\r\n        $(function () {\r\n            ViewScript.RequestPartial(\'#se" +
-"rvicehost\', \"Replace\", \'");
+, false)
+);
+WriteLiteral(" />\r\n            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                <label");
+
+WriteLiteral(" class=\"control-label\"");
+
+WriteLiteral(">归档名称</label>\r\n                <div");
+
+WriteLiteral(" class=\"controls\"");
+
+WriteLiteral(">\r\n                    <input");
+
+WriteLiteral(" name=\"Name\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"名称\"");
+
+WriteLiteral(" class=\"form-control\"");
+
+WriteAttribute ("value", " value=\"", "\""
+
+#line 15 "FolderMapEditView.cshtml"
+                                                         , Tuple.Create<string,object,bool> ("", Model.Name
+
+#line default
+#line hidden
+, false)
+);
+WriteLiteral(" autocomplete=\"off\"");
+
+WriteLiteral(">\r\n                    <p");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">归档服务名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                <label");
+
+WriteLiteral(" class=\"control-label\"");
+
+WriteLiteral(">源文件夹</label>\r\n                <div");
+
+WriteLiteral(" class=\"controls\"");
+
+WriteLiteral(">\r\n                    <input");
+
+WriteLiteral(" name=\"MapFolder\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"选择\"");
+
+WriteLiteral(" class=\"form-control folderSelecter\"");
+
+WriteAttribute ("value", " value=\"", "\""
+
+#line 22 "FolderMapEditView.cshtml"
+                                                                             , Tuple.Create<string,object,bool> ("", Model.MapFolder
+
+#line default
+#line hidden
+, false)
+);
+WriteLiteral(" readonly=\"readonly\"");
+
+WriteLiteral("  autocomplete=\"off\"");
+
+WriteLiteral(">\r\n                    <p");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">原文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                <label");
+
+WriteLiteral(" class=\"control-label\"");
+
+WriteLiteral(">归档文件夹</label>\r\n                <div");
+
+WriteLiteral(" class=\"controls\"");
+
+WriteLiteral(">\r\n                    <input");
+
+WriteLiteral(" name=\"InnerFolder\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"路径名称\"");
+
+WriteLiteral(" class=\"form-control\"");
+
+WriteAttribute ("value", " value=\"", "\""
+
+#line 29 "FolderMapEditView.cshtml"
+                                                                  , Tuple.Create<string,object,bool> ("", Model.InnerFolder
+
+#line default
+#line hidden
+, false)
+);
+WriteLiteral(" autocomplete=\"off\"");
+
+WriteLiteral(">\r\n                    <p");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">归档文件存储文件夹名称</p>\r\n                </div>\r\n            </div>\r\n        </form>\r\n  " +
+"      <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n            <!-- Button -->\r\n            <div");
+
+WriteLiteral(" class=\"controls\"");
+
+WriteLiteral(">\r\n                <button");
+
+WriteLiteral(" class=\"btn btn-success folderModelSave\"");
+
+WriteLiteral(@">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("".folderModelSave"").click(function () {
+            var model = $("".folderModelForm"").serialize();
+            var result = false;
+            javascript: result = BuinessScript.SaveFolderMap(model);
+            if (result) {
+                ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 20 "HostView.cshtml"
-                                                             Write(HostFacultyView.Partial.Host);
+#line 50 "FolderMapEditView.cshtml"
+                                                                 Write(FolderMapsView.Partial.Host);
 
 
 #line default
@@ -82,54 +224,24 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            ViewScript.
 WriteLiteral("\', \'");
 
 
-#line 20 "HostView.cshtml"
-                                                                                              Write(HostFacultyView.Partial.Path);
+#line 50 "FolderMapEditView.cshtml"
+                                                                                                 Write(FolderMapsView.Partial.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("\',\'");
+WriteLiteral(@"');
+            }
+        });
 
+        $("".folderSelecter"").click(function () {
+            var result = $(this).val();
+            javascript: result = BuinessScript.GetSrcFolder(result);
+            if (result) $(this).val(result);
+        });
 
-#line 20 "HostView.cshtml"
-                                                                                                                              Write(Model.Domain);
-
-
-#line default
-#line hidden
-WriteLiteral("\');\r\n        })\r\n    </script>\r\n");
-
-
-#line 23 "HostView.cshtml"
-}
-else
-{
-
-}
-
-
-#line default
-#line hidden
-WriteLiteral("\r\n<script>\r\n    $(function () {\r\n\r\n        $(\".service-list\").click(function () {" +
-"\r\n            ViewScript.RequestPartial(\'#MainContent\', \"Replace\", \'");
-
-
-#line 33 "HostView.cshtml"
-                                                             Write(HostsView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 33 "HostView.cshtml"
-                                                                                        Write(HostsView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral("\');\r\n        });\r\n\r\n    })\r\n</script>\r\n\r\n\r\n");
+    })
+</script>");
 
 }
 }
@@ -137,7 +249,7 @@ WriteLiteral("\');\r\n        });\r\n\r\n    })\r\n</script>\r\n\r\n\r\n");
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class HostViewBase
+public abstract class FolderMapEditViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

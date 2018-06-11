@@ -19,8 +19,14 @@ namespace LazyWelfare.AndroidMobile.Models
 
         public string Name { get; set; }
 
+        /// <summary>
+        /// 源文件夹
+        /// </summary>
         public string MapFolder { get; set; }
 
+        /// <summary>
+        /// 归档文件夹
+        /// </summary>
         public string InnerFolder { get; set; }
 
     }
