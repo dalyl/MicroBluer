@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.OS;
 
 namespace LazyWelfare.AndroidMobile.Models
 {
@@ -19,6 +9,16 @@ namespace LazyWelfare.AndroidMobile.Models
 
         public string Host { get; set; }
 
+        public string Icon { get; set; }
 
+        public string Signature { get; set; }
+
+        public string Folder { get; set; }
+
+        public string Root {
+            get {
+                return $"{Environment.ExternalStorageDirectory.Path}/{Folder}";
+            }
+        }
     }
 }

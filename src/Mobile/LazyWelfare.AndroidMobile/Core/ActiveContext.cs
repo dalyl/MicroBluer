@@ -8,6 +8,7 @@
     using LazyWelfare.AndroidMobile.AgreementServices;
     using LazyWelfare.AndroidMobile.Logic;
     using LazyWelfare.AndroidMobile.Models;
+    using Android.Content;
 
     public class ActiveContext
     {
@@ -15,7 +16,7 @@
 
         public static Activity Activity => Current.activity;
 
-        public static UserModel User => Instantiate(UserStore.Get);
+        public static UserModel User => Instantiate(UserStore.Get,after: MainActivity.UpdateView<UserModel>);
 
         public static HostModel Host => Instantiate(()=> string.IsNullOrEmpty(User.Host) ? null : ActiveContext.HostStore.Get(User.Host));
 
@@ -96,6 +97,22 @@
             if (ServiceInstances.Keys.Contains(key)) ServiceInstances.Remove(key);
         }
 
+
+
+        public static bool IsMainActivityAlive(string activityName)
+        {
+            ActivityManager am = (ActivityManager)Activity.GetSystemService(Context.ActivityService);
+            var list = am.GetRunningTasks(100);
+            foreach (ActivityManager.RunningTaskInfo info in list)
+            {
+                // 注意这里的 topActivity 包含 packageName和className，可以打印出来看看
+                if (info.TopActivity.ClassName.Equals(activityName) || info.BaseActivity.ClassName.Equals(activityName))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
 

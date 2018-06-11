@@ -114,6 +114,8 @@
     <Compile Include="Core\MenuContentItem.cs" />
     <Compile Include="Core\Views\PartialBackgroudWorkerAsyncTask.cs" />
     <Compile Include="Core\Views\Partials\FolderMapDetailView.cs" />
+    <Compile Include="Core\Views\Partials\UserEditView.cs" />
+    <Compile Include="Core\Views\Partials\UserIndexView.cs" />
     <Compile Include="Core\WebAgreement\AgreementUri.cs" />
     <Compile Include="Core\ServiceAgreement\AgreementService.cs" />
     <Compile Include="Core\ServiceAgreement\CloseFireService.cs" />
@@ -135,7 +137,7 @@
     <Compile Include="Core\Views\PartialLoadForm.cs" />
     <Compile Include="Core\Views\PartialRequestContext.cs" />
     <Compile Include="Core\Views\Partials\FolderMapsView.cs" />
-    <Compile Include="Core\Views\Partials\HostView.cs" />
+    <Compile Include="Core\Views\Partials\HostIndexView.cs" />
     <Compile Include="Core\Views\Partials\HostDetailView.cs" />
     <Compile Include="Core\Views\Partials\HostFacultyView.cs" />
     <Compile Include="Core\Views\Partials\HostsView.cs" />
@@ -168,6 +170,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FolderMapEditView.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Partials\FolderMapIndexView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FolderMapIndexView.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Partials\FolderMapsView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,6 +206,16 @@
       <DependentUpon>HostsView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Core\Views\PartialHost.cs" />
+    <Compile Include="Views\Partials\UserEditView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserEditView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Partials\UserIndexView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserIndexView.cshtml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -234,8 +251,14 @@
       <LastGenOutput>HostsView.cs</LastGenOutput>
       <SubType>None</SubType>
     </None>
-    <None Include="Views\Partials\FolderMapIndexView.cshtml" />
-    <None Include="Views\Partials\UserEditView.cshtml" />
+    <None Include="Views\Partials\FolderMapIndexView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>FolderMapIndexView.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Partials\UserEditView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>UserEditView.cs</LastGenOutput>
+    </None>
     <None Include="Views\web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -470,7 +493,10 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Partials\UserIndexView.cshtml" />
+    <None Include="Views\Partials\UserIndexView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>UserIndexView.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

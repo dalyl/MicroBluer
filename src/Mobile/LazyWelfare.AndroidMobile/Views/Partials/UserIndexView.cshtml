@@ -1,1 +1,22 @@
-﻿
+﻿@model  LazyWelfare.AndroidMobile.Models.UserModel
+
+
+
+<div class="line-section">
+    <div class="list-group">
+        <a href="javascript:void(0);" class="list-group-item  user-edit">
+            <span class="glyphicon   glyphicon-edit  " aria-hidden="true"></span>
+            <span>编辑</span>
+        </a>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        $(".user-edit").click(function () {
+            ViewScript.RequestPartial('#MainContent', "Replace", '@UserEditView.Partial.Host', '@UserEditView.Partial.Path');
+        });
+
+    })
+</script>

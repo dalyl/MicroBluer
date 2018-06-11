@@ -1,9 +1,11 @@
 ﻿namespace LazyWelfare.AndroidMobile
 {
+
     using LazyWelfare.AndroidMobile.Views;
     using LazyWelfare.AndroidMobile.Views.Partials;
     using LazyWelfare.AndroidMobile.Script;
     using LazyWelfare.AndroidMobile.WebAgreement;
+    using System;
     using Android.App;
     using Android.OS;
     using Android.Webkit;
@@ -12,13 +14,14 @@
     using View = Android.Views.View;
     using Android.Views;
     using LazyWelfare.AndroidUtils.Views;
+    using LazyWelfare.AndroidMobile.Models;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity :  PartialActivity
     {
         static PartialRequestStack requestStack { get; set; } = new PartialRequestStack();
 
-        public AgreementUri Partial { get; set; } = FolderMapsView.Partial;
+        public AgreementUri Partial { get; set; } = UserIndexView.Partial;
 
         public override PartialRequestStack RequestStack { get; } = requestStack;
 
@@ -29,7 +32,7 @@
 
             SetContentView(view);
             SetTitle(ActiveContext.User.Name);
-
+            LoadUser();
             LoadMenu();
             LoadWebview();
         }
@@ -95,12 +98,47 @@
             titleBar.Text = title;
         }
 
+        public static void UpdateView<T>()
+        {
+            if (ActiveContext.Activity == null) return;
+            if (ActiveContext.IsMainActivityAlive(nameof(MainActivity)) == false) return;
+            if ((ActiveContext.Activity is MainActivity) == false) return;
+            var The = ActiveContext.Activity as MainActivity;
+            if (typeof(T) == typeof(UserModel))
+            {
+                The.LoadUser();
+            }
+        }
+
+        void LoadUser()
+        {
+            var userHead = MenuLayout.FindViewById<ImageView>(Resource.Id.MenuLeft_UserHead);
+            var userName = MenuLayout.FindViewById<TextView>(Resource.Id.MenuLeft_UserName);
+            var userSignature = MenuLayout.FindViewById<TextView>(Resource.Id.MenuLeft_UserSignature);
+            userName.Text = $"{Greetings},{ActiveContext.User.Name}";
+            userSignature.Text = ActiveContext.User.Signature;
+        }
+
+        string Greetings
+        {
+            get
+            {
+                var hour = DateTime.Now.Hour;
+                if (hour > 5 && hour < 11) return "早上好";    //6.7.8.9.10
+                if (hour > 10 && hour < 14) return "中午好";   //11.12.13
+                if (hour > 13 && hour < 19) return "下午好";   //14.15.16.17.18
+                if (hour > 18 && hour < 23) return "晚上好";   //19.20.21.22
+                if (hour > 18 && hour < 23) return "该睡了";   //23.0.1.2,3,4.5
+                return "您好";
+            }
+        }
+
         void LoadMenu()
         {
-            var listView = (ListView)MenuLayout.FindViewById(Resource.Id.MenuLeft_ListView);
+            var listView = MenuLayout.FindViewById<ListView>(Resource.Id.MenuLeft_ListView);
             var data = new MenuContentItem[]
             {
-                new MenuContentItem(Resource.Drawable.base_home_black, "首页", 1,()=>OpenWebview(FolderMapsView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_home_black, "首页", 1,()=>OpenWebview(UserIndexView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_folder_black, "资源归档", 2,()=>OpenWebview(FolderMapsView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_cloud_black, "主机服务", 3,()=>OpenWebview(HostIndexView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_qrcode_black, "扫一扫", 4),

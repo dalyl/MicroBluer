@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using Newtonsoft.Json;
-
-namespace LazyWelfare.AndroidMobile.Models
+﻿namespace LazyWelfare.AndroidMobile.Models
 {
+
+    using System;
 
     public class HostModel
     {
@@ -16,11 +13,6 @@ namespace LazyWelfare.AndroidMobile.Models
         public string Address { get; set; }
 
     }
-
-   
-
-   
-
 
 
 }

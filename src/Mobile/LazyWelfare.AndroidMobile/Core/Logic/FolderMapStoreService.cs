@@ -101,20 +101,20 @@
 
         bool RestoreMap(FolderMapModel item)
         {
-            var src = $"{ActiveContext.Activity.FilesDir}\\{item.InnerFolder}";
+            var src = $"{ActiveContext.User.Root}/{item.InnerFolder}";
             if (Directory.Exists(src) == false) return ActiveContext.Try.Show(false, $"{item.Name} 还原文件夹不存在");
             var dest = item.MapFolder;
             MoveDir(src, dest);
-            return true;
+            return ActiveContext.Try.Show(true, $"{item.Name} 还原完成"); ;
         }
 
         bool MoveMap(FolderMapModel item)
         {
             var src = item.MapFolder;
             if (Directory.Exists(src) == false) return ActiveContext.Try.Show(false, $"{item.Name} 源文件夹不存在");
-            var dest = $"{ActiveContext.Activity.FilesDir}\\{item.InnerFolder}";
+            var dest = $"{ActiveContext.User.Root}/{item.InnerFolder}";
             MoveDir(src, dest);
-            return true;
+            return ActiveContext.Try.Show(true, $"{item.Name} 归档完成"); ;
         }
 
         void MoveDir(string srcDir, string destDir)

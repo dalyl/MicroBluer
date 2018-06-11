@@ -43,13 +43,17 @@
 
         public bool Save(UserModel model)
         {
-            var json = JsonConvert.SerializeObject(model).Replace("{","").Replace("}","");
+            var json = JsonConvert.SerializeObject(model).Replace("{", "").Replace("}", "");
             var attrItems = json.Split(',');
             foreach (var attr in attrItems)
             {
-                var parts = attr.Split(',');
-                SetAttr(parts[0],parts[1]);
+                var parts = attr.Split(':');
+                var key = parts[0].Trim('"');
+                var value = parts[1].Trim('"');
+                if (string.IsNullOrEmpty(value)) break;
+                SetAttr(key, value);
             }
+            ActiveContext.ExpireSercvice<UserModel>();
             return true;
         }
 
@@ -59,9 +63,10 @@
             return base.Get(key);
         }
 
-        public  bool SetAttr(string attr,string attrVlaue)
+        public bool SetAttr(string attr,string attrVlaue)
         {
-            var key = CreateKey(attr);
+            
+            var key = CreateKey(attr.Trim('"'));
             return base.Save(key, attrVlaue);
         }
 

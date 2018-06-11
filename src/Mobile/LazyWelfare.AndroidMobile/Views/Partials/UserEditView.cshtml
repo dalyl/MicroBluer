@@ -1,1 +1,53 @@
-﻿
+﻿@model  LazyWelfare.AndroidMobile.Models.UserModel
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> 用户信息
+        </h3>
+    </div>
+    <div class="panel-body">
+        <form class="userModelForm">
+            <div class="form-group">
+                <label class="control-label">姓名</label>
+                <div class="controls">
+                    <input name="Name" type="text" placeholder="姓名" class="form-control" value="@Model.Name" autocomplete="off">
+                    <p class="help-block">姓名</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">签名</label>
+                <div class="controls">
+                    <input name="Signature" type="text" placeholder="签名" class="form-control" value="@Model.Signature" autocomplete="off">
+                    <p class="help-block">个性签名</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">文件箱</label>
+                <div class="controls">
+                    <input name="Folder" type="text" placeholder="签名" class="form-control" value="@Model.Folder" autocomplete="off">
+                    <p class="help-block">归档文件夹</p>
+                </div>
+            </div>
+        </form>
+        <div class="form-group">
+            <!-- Button -->
+            <div class="controls">
+                <button class="btn btn-success userModelSave">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(".userModelSave").click(function () {
+            var model = $(".userModelForm").serialize();
+            var result = false;
+            javascript: result = BuinessScript.SaveUser(model);
+            if (result) {
+                ViewScript.RequestPartial('#MainContent', "Replace", '@UserIndexView.Partial.Host', '@UserIndexView.Partial.Path');
+            }
+        });
+    })
+</script>

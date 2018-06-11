@@ -16,6 +16,20 @@
         {
         }
 
+        #region  --- User ---
+
+        [Export("SaveUser")]
+        [JavascriptInterface]
+        public bool SaveUser(string args)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            var model = Try.Invoke(null, () => DeserializeForm<UserModel>(args));
+            if (model == null) return Try.Show<bool>(false, "参数未正确识别");
+            return Try.Show(() => ActiveContext.UserStore.Save(model), "保存成功", "保存失败");
+        }
+
+        #endregion
+
         #region --- Host ---
 
 
@@ -106,6 +120,7 @@
         [JavascriptInterface]
         public bool PullMapFiles(string args)
         {
+            if(string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
             void job() => ActiveContext.FolderMapStore.PullMapFiles(args);
             var worker = new PartialBackgroudWorkerAsyncTask(ViewActivity as PartialActivity, job);
             worker.Execute();
@@ -116,6 +131,7 @@
         [JavascriptInterface]
         public bool PushMapFiles(string args)
         {
+            if(string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
             if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
             void job() => ActiveContext.FolderMapStore.PushMapFiles(args);
             var worker = new PartialBackgroudWorkerAsyncTask(ViewActivity as PartialActivity, job);
