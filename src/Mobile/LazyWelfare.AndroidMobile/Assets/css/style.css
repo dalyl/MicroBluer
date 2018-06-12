@@ -49,8 +49,6 @@ span.glyphicon {
     font-size: 0;
 }
 
-
-
 .main-item {
     cursor: pointer;
     padding: 5px;
@@ -65,7 +63,8 @@ span.glyphicon {
     cursor: pointer;
     font-size: 14px;
     margin: 0;
-    padding: 10px 25px;
+    text-align:center;
+    padding: 10px 5px;
     border-left: 1px solid #c0c0c0;
     display: inline-block;
 }

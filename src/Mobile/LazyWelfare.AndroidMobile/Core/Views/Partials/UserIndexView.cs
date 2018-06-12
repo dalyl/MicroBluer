@@ -8,10 +8,7 @@
 
         public static AgreementUri Partial = new AgreementUri(nameof(UserIndexView), nameof(PartialHost), typeof(UserIndexView).Name);
 
-        public void PushRequest(PartialActivity context, string args)
-        {
-            context.StackClearPush(Partial.Name, args);
-        }
+        public void PushRequest(PartialActivity context, string args) => context.StackClearPush(Partial.Name, args);
 
         public string GenerateString(string args)
         {

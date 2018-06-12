@@ -151,6 +151,12 @@
             return ActiveContext.HostExpress.InvokeCommand(model, ViewActivity);
         }
 
+        [Export("FileExpleror")]
+        [JavascriptInterface]
+        public void FileExpleror()
+        {
+            ActiveContext.Try.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
+        }
     }
 
 }

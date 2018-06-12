@@ -104,7 +104,8 @@
     <Compile Include="Core\MenuContentAdapter.cs" />
     <Compile Include="Core\MenuContentItem.cs" />
     <Compile Include="Core\Views\PartialBackgroudWorkerAsyncTask.cs" />
-    <Compile Include="Core\Views\Partials\FolderMapDetailView.cs" />
+    <Compile Include="Core\Views\Partials\FolderMapEditView.cs" />
+    <Compile Include="Core\Views\Partials\FolderMapIndexView.cs" />
     <Compile Include="Core\Views\Partials\UserEditView.cs" />
     <Compile Include="Core\Views\Partials\UserIndexView.cs" />
     <Compile Include="Core\WebAgreement\AgreementUri.cs" />
@@ -129,7 +130,7 @@
     <Compile Include="Core\Views\PartialRequestContext.cs" />
     <Compile Include="Core\Views\Partials\FolderMapsView.cs" />
     <Compile Include="Core\Views\Partials\HostIndexView.cs" />
-    <Compile Include="Core\Views\Partials\HostDetailView.cs" />
+    <Compile Include="Core\Views\Partials\HostEditView.cs" />
     <Compile Include="Core\Views\Partials\HostFacultyView.cs" />
     <Compile Include="Core\Views\Partials\HostsView.cs" />
     <Compile Include="Core\Views\PartialActivity.cs" />

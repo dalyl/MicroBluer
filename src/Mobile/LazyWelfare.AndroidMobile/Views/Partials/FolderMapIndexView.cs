@@ -25,6 +25,80 @@ public partial class FolderMapIndexView : FolderMapIndexViewBase
 
 public override void Execute()
 {
+WriteLiteral("\r\n<div");
+
+WriteLiteral(" class=\"line-section\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"list-group\"");
+
+WriteLiteral(">\r\n        <a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" class=\"list-group-item  file-expleror\"");
+
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"glyphicon   glyphicon-inbox  \"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span>\r\n            <span>文档管理</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"line-section\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"list-group\"");
+
+WriteLiteral(">\r\n        <a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" class=\"list-group-item  file-play\"");
+
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"glyphicon   glyphicon-retweet  \"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral(@"></span>
+            <span>资源归档</span>
+        </a>
+    </div>
+</div>
+<script>
+    $(function () {
+
+        $("".file-expleror"").click(function () {
+            javascript: BuinessScript.FileExpleror();
+        });
+
+
+        $("".file-play"").click(function () {
+            ViewScript.RequestPartial('#MainContent', ""Replace"", '");
+
+
+#line 27 "FolderMapIndexView.cshtml"
+                                                             Write(FolderMapsView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 27 "FolderMapIndexView.cshtml"
+                                                                                             Write(FolderMapsView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\');\r\n        });\r\n\r\n    })\r\n</script>");
+
 }
 }
 

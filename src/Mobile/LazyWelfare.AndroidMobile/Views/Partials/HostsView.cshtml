@@ -30,6 +30,11 @@
     </div>
     <script>
     $(function () {
+        $(".command-item").each(function () {
+            var width = $(this).width();
+            var count = $("span", this).length;
+            $("span", this).width((width - count) / count); 
+        });
         $(".command-item").css("display", "none");
         $(".main-item").click(function () {
             var dispaly = $(this).next().css("display");

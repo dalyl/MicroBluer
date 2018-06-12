@@ -150,6 +150,11 @@ WriteLiteral(@"></span>
     </div>
     <script>
     $(function () {
+        $("".command-item"").each(function () {
+            var width = $(this).width();
+            var count = $(""span"", this).length;
+            $(""span"", this).width((width - count) / count); 
+        });
         $("".command-item"").css(""display"", ""none"");
         $("".main-item"").click(function () {
             var dispaly = $(this).next().css(""display"");
@@ -163,7 +168,7 @@ WriteLiteral(@"></span>
             ViewScript.RequestPartial('#MainContent',""Replace"" , '");
 
 
-#line 43 "HostsView.cshtml"
+#line 48 "HostsView.cshtml"
                                                              Write(HostEditView.Partial.Host);
 
 
@@ -172,7 +177,7 @@ WriteLiteral(@"></span>
 WriteLiteral("\', \'");
 
 
-#line 43 "HostsView.cshtml"
+#line 48 "HostsView.cshtml"
                                                                                            Write(HostEditView.Partial.Path);
 
 
@@ -193,7 +198,7 @@ WriteLiteral(@"', """");
                 ViewScript.RequestPartial('#MainContent',""Replace"" , '");
 
 
-#line 55 "HostsView.cshtml"
+#line 60 "HostsView.cshtml"
                                                                  Write(HostIndexView.Partial.Host);
 
 
@@ -202,7 +207,7 @@ WriteLiteral(@"', """");
 WriteLiteral("\', \'");
 
 
-#line 55 "HostsView.cshtml"
+#line 60 "HostsView.cshtml"
                                                                                                 Write(HostIndexView.Partial.Path);
 
 
@@ -219,7 +224,7 @@ WriteLiteral(@"');
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 63 "HostsView.cshtml"
+#line 68 "HostsView.cshtml"
                                                                  Write(HostsView.Partial.Host);
 
 
@@ -228,7 +233,7 @@ WriteLiteral(@"');
 WriteLiteral("\', \'");
 
 
-#line 63 "HostsView.cshtml"
+#line 68 "HostsView.cshtml"
                                                                                             Write(HostsView.Partial.Path);
 
 
@@ -239,7 +244,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 "pt.RequestPartial(\'#MainContent\', \"Replace\",\'");
 
 
-#line 68 "HostsView.cshtml"
+#line 73 "HostsView.cshtml"
                                                             Write(HostEditView.Partial.Host);
 
 
@@ -248,7 +253,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 WriteLiteral("\', \'");
 
 
-#line 68 "HostsView.cshtml"
+#line 73 "HostsView.cshtml"
                                                                                           Write(HostEditView.Partial.Path);
 
 

@@ -11,7 +11,7 @@
     using System.IO;
     using LazyWelfare.AndroidUtils.Views;
 
-    public class SelectorItemAdapter : RecyclerView.Adapter
+    public class SelectorAdapter : RecyclerView.Adapter
     {
 
         private Context Context { get; }
@@ -28,7 +28,7 @@
 
         public event Action<SelectorItem> AfterChanged;
 
-        public SelectorItemAdapter(Context context, SelectorType type, bool isSelectMany, string path) : base()
+        public SelectorAdapter(Context context, SelectorType type, bool isSelectMany, string path) : base()
         {
             this.Context = context;
             SelectorType = type;

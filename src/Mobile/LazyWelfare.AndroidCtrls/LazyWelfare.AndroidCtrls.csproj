@@ -66,8 +66,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\FileExpler\ExplerAdapter.cs" />
+    <Compile Include="Core\FileExpler\ExplerItemCollection.cs" />
+    <Compile Include="Core\FileExpler\FileExpleror.cs" />
+    <Compile Include="Core\FileExpler\FileExplerorActivity.cs" />
+    <Compile Include="Core\FileExpler\ExplerItem.cs" />
     <Compile Include="Core\FileSelect\SelectorItem.cs" />
-    <Compile Include="Core\FileSelect\SelectorItemAdapter.cs" />
+    <Compile Include="Core\FileSelect\SelectorAdapter.cs" />
     <Compile Include="Core\FileSelect\SelectorItemCollection.cs" />
     <Compile Include="Core\FileSelect\SelectorItemType.cs" />
     <Compile Include="Core\FileSelect\SelectorResult.cs" />
@@ -301,9 +306,7 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\FileExpleror\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Scaner_ZxingOverlay.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>

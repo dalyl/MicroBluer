@@ -9,8 +9,8 @@
     using Android.Views;
     using Android.Support.V7.Widget;
     using Android.Widget;
-    using Environment = Android.OS.Environment;
     using LazyWelfare.AndroidUtils.Acp;
+    using Environment = Android.OS.Environment;
     using Permission = Android.Manifest.Permission;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
@@ -24,12 +24,12 @@
         public static event Action OnCancelRequested;
         public static event Action<SelectorResult> OnSelectorCompleted;
 
-        SelectorItemAdapter Adapter { get; set; }
-
         public static void RequestCancel()
         {
             OnCancelRequested?.Invoke();
         }
+
+        SelectorAdapter Adapter { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -85,7 +85,7 @@
         {
             var titleView = FindViewById<TextView>(Resource.Id.FolderSelector_Title);
             var listView = FindViewById<RecyclerView>(Resource.Id.FolderSelector_RecyclerView);
-            Adapter = new SelectorItemAdapter(this, SelectorType,IsSelectMany, Environment.ExternalStorageDirectory.Path);
+            Adapter = new SelectorAdapter(this, SelectorType,IsSelectMany, Environment.ExternalStorageDirectory.Path);
             Adapter.AfterChanged += item => {
                 titleView.Text = item == null ? "未知" : (new DirectoryInfo(item.Parent)).Name;
             };

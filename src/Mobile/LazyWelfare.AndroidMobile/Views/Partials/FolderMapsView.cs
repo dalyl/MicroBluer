@@ -163,6 +163,11 @@ WriteLiteral(@"></span>
     <script>
     $(function () {
         $("".command-item"").css(""display"", ""none"");
+        $("".command-item"").each(function () {
+            var width = $(this).width();
+            var count = $(""span"", this).length;
+            $(""span"", this).width((width - count) / count); 
+        });
         $("".main-item"").click(function () {
             var dispaly = $(this).next().css(""display"");
             $("".command-item"").css(""display"", ""none"");
@@ -175,7 +180,7 @@ WriteLiteral(@"></span>
             ViewScript.RequestPartial('#MainContent',""Replace"" , '");
 
 
-#line 48 "FolderMapsView.cshtml"
+#line 53 "FolderMapsView.cshtml"
                                                              Write(FolderMapEditView.Partial.Host);
 
 
@@ -184,7 +189,7 @@ WriteLiteral(@"></span>
 WriteLiteral("\', \'");
 
 
-#line 48 "FolderMapsView.cshtml"
+#line 53 "FolderMapsView.cshtml"
                                                                                                 Write(FolderMapEditView.Partial.Path);
 
 
@@ -201,7 +206,7 @@ WriteLiteral(@"', """");
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 56 "FolderMapsView.cshtml"
+#line 61 "FolderMapsView.cshtml"
                                                                  Write(FolderMapsView.Partial.Host);
 
 
@@ -210,7 +215,7 @@ WriteLiteral(@"', """");
 WriteLiteral("\', \'");
 
 
-#line 56 "FolderMapsView.cshtml"
+#line 61 "FolderMapsView.cshtml"
                                                                                                  Write(FolderMapsView.Partial.Path);
 
 
@@ -221,7 +226,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 "pt.RequestPartial(\'#MainContent\', \"Replace\",\'");
 
 
-#line 61 "FolderMapsView.cshtml"
+#line 66 "FolderMapsView.cshtml"
                                                             Write(FolderMapEditView.Partial.Host);
 
 
@@ -230,7 +235,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 WriteLiteral("\', \'");
 
 
-#line 61 "FolderMapsView.cshtml"
+#line 66 "FolderMapsView.cshtml"
                                                                                                Write(FolderMapEditView.Partial.Path);
 
 

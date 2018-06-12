@@ -125,7 +125,11 @@ WriteLiteral("\r\n\r\n</ul>\r\n<script>\r\n        $(function () {\r\n          
 #line default
 #line hidden
 WriteLiteral(@"';
-
+            $("".command-item"").each(function () {
+                var width = $(this).width();
+                var count = $(""span"", this).length;
+                $(""span"", this).width((width - count) / count);
+            });
             $("".command-item"").css(""display"", ""none"");
             $("".main-item"").click(function () {
                 $(this).next().fadeToggle();
@@ -143,7 +147,7 @@ WriteLiteral(@"';
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 42 "HostFacultyView.cshtml"
+#line 46 "HostFacultyView.cshtml"
                                                                  Write(HostEditView.Partial.Host);
 
 
@@ -152,7 +156,7 @@ WriteLiteral(@"';
 WriteLiteral("\', \'");
 
 
-#line 42 "HostFacultyView.cshtml"
+#line 46 "HostFacultyView.cshtml"
                                                                                                Write(HostEditView.Partial.Path);
 
 

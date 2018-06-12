@@ -36,6 +36,11 @@
     <script>
     $(function () {
         $(".command-item").css("display", "none");
+        $(".command-item").each(function () {
+            var width = $(this).width();
+            var count = $("span", this).length;
+            $("span", this).width((width - count) / count); 
+        });
         $(".main-item").click(function () {
             var dispaly = $(this).next().css("display");
             $(".command-item").css("display", "none");
