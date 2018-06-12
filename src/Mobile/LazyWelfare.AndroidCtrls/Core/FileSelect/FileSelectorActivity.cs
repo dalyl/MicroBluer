@@ -34,7 +34,7 @@
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.FolderSelector);
+            SetContentView(Resource.Layout.FileSelector);
 
             Acp.getInstance(this).request(new AcpOptions.Builder()
                       .SetPermissions(Permission.WriteExternalStorage, Permission.ReadExternalStorage)

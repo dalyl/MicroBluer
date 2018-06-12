@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
-using Android.Content;
-using Android.Content.PM;
-using Android.Hardware;
-using Android.Hardware.Camera2;
-using Android.OS;
-using Android.Provider;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using LazyWelfare.AndroidMobile.ImageSelect;
-using LazyWelfare.AndroidMobile.ImageSelect.Engine;
-using ZXing;
-using ZXing.Common;
-using ZXing.Mobile;
-using ZXing.QrCode;
-
-namespace LazyWelfare.AndroidMobile
+﻿namespace LazyWelfare.AndroidMobile
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Android.App;
+    using Android.Content;
+    using Android.Content.PM;
+    using Android.Hardware;
+    using Android.Hardware.Camera2;
+    using Android.OS;
+    using Android.Provider;
+    using Android.Views;
+    using Android.Widget;
+    using LazyWelfare.AndroidCtrls.ImageExpleror;
+    using LazyWelfare.AndroidCtrls.ImageExpleror.Engine;
+    using ZXing;
+    using ZXing.Common;
+    using ZXing.Mobile;
+
     using Bitmap= Android.Graphics.Bitmap;
     using BitmapFactory = Android.Graphics.BitmapFactory;
 

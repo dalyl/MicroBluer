@@ -134,10 +134,10 @@
         {
             if (viewType == (int)SelectorItemType.Empty)
             {
-                View empty = LayoutInflater.From(Context).Inflate(Resource.Layout.FolderSelectorEmptyItem, parent, false);
+                View empty = LayoutInflater.From(Context).Inflate(Resource.Layout.FileSelectorEmptyItem, parent, false);
                 return new EmptyItemViewHolder(empty);
             }
-            View view = LayoutInflater.From(Context).Inflate(Resource.Layout.FolderSelectorItem, parent, false);
+            View view = LayoutInflater.From(Context).Inflate(Resource.Layout.FileSelectorItem, parent, false);
             return new ItemViewHolder(view);
         }
      

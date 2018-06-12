@@ -6,7 +6,7 @@
     using Android.Views;
     using Android.Webkit;
     using Android.Widget;
-    using LazyWelfare.AndroidMobile.Loading;
+    using LazyWelfare.AndroidCtrls.LoadingAnimation;
     using LazyWelfare.AndroidMobile.Views;
 
     public abstract class PartialActivity : ActiveActivity

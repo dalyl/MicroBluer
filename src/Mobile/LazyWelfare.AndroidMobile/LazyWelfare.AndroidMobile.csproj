@@ -276,17 +276,17 @@
       <Project>{194258ba-bd69-417b-8773-015471508cb4}</Project>
       <Name>LazyWelfare.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LazyWelfare.AndroidCtrls.ImageExpleror\LazyWelfare.AndroidCtrls.ImageExpleror.csproj">
+      <Project>{042b5e23-3ec9-4c6f-b6a3-bbd23759309d}</Project>
+      <Name>LazyWelfare.AndroidCtrls.ImageExpleror</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LazyWelfare.AndroidCtrls.LoadingAnimation\LazyWelfare.AndroidCtrls.LoadingAnimation.csproj">
+      <Project>{f6ac2d76-5033-44e9-b4fb-a6c34ff72ed0}</Project>
+      <Name>LazyWelfare.AndroidCtrls.LoadingAnimation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LazyWelfare.AndroidCtrls\LazyWelfare.AndroidCtrls.csproj">
       <Project>{979912af-6f8a-4b28-9dd9-5419a0ea506f}</Project>
       <Name>LazyWelfare.AndroidCtrls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LazyWelfare.AndroidMobile.ImageSelect\LazyWelfare.AndroidMobile.ImageSelect.csproj">
-      <Project>{042B5E23-3EC9-4C6F-B6A3-BBD23759309D}</Project>
-      <Name>LazyWelfare.AndroidMobile.ImageSelect</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LazyWelfare.AndroidMobile.Loading\LazyWelfare.AndroidMobile.Loading.csproj">
-      <Project>{f6ac2d76-5033-44e9-b4fb-a6c34ff72ed0}</Project>
-      <Name>LazyWelfare.AndroidMobile.Loading</Name>
     </ProjectReference>
     <ProjectReference Include="..\LazyWelfare.AndroidUtils\LazyWelfare.AndroidUtils.csproj">
       <Project>{6A64624C-9BD2-4AB5-8442-3BDDCA81417E}</Project>
