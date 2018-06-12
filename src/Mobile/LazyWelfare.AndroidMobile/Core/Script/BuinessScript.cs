@@ -1,13 +1,12 @@
 ﻿namespace LazyWelfare.AndroidMobile.Script
 {
-
     using Android.Webkit;
     using Java.Interop;
+    using LazyWelfare.AndroidCtrls;
     using LazyWelfare.AndroidCtrls.FileSelect;
     using LazyWelfare.AndroidMobile.Models;
     using LazyWelfare.AndroidMobile.Views;
     using Newtonsoft.Json;
-    using System;
     using System.Threading.Tasks;
 
     public class BuinessScript: AndroidScript //注意一定要继承java基类  
@@ -37,7 +36,7 @@
         [JavascriptInterface]
         public void ScanHost()
         {
-            var scan = new ScanPlugin(ViewActivity,"添加主机");
+            var scan = new CodeScaner(ViewActivity,"添加主机");
             var invoke = scan.Invoke();
             Task.WaitAll(invoke);
             if (invoke.Result == false)

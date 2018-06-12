@@ -33,7 +33,6 @@ namespace LazyWelfare.AndroidMobile
             if (Enum.TryParse(tag, out scheme) == false) return false;
             switch (scheme)
             {
-                case Agreement.scan: return ThrowHandle<ScanAgreement>(webView, content);
                 case Agreement.hybrid: return ThrowHandle<HybridAgreement>(webView, content);
                 default: return false;
             }

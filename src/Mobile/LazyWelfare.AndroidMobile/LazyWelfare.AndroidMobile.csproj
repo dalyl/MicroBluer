@@ -95,15 +95,6 @@
       <HintPath>..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Tools.AnnotationSupport" />
-    <Reference Include="ZXing.Net.Mobile.Core, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\ZXing.Net.Mobile.2.3.2\lib\MonoAndroid403\ZXing.Net.Mobile.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="zxing.portable, Version=2.3.2.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\ZXing.Net.Mobile.2.3.2\lib\MonoAndroid403\zxing.portable.dll</HintPath>
-    </Reference>
-    <Reference Include="ZXingNetMobile, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\ZXing.Net.Mobile.2.3.2\lib\MonoAndroid403\ZXingNetMobile.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\ActiveContext.cs" />
@@ -147,7 +138,6 @@
     <Compile Include="Core\Script\BuinessScript.cs" />
     <Compile Include="Core\PermissionGrantedClickListener.cs" />
     <Compile Include="Core\ImageTextButton.cs" />
-    <Compile Include="Core\ScanPlugin.cs" />
     <Compile Include="Core\Stroage\SharedStore.cs" />
     <Compile Include="Core\MainActivity.cs" />
     <Compile Include="Core\WebAgreement\Agreement.cs" />
@@ -155,7 +145,6 @@
     <Compile Include="Core\WebAgreement\AgreementRouteClient.cs" />
     <Compile Include="Core\WebAgreement\HybridAgreement.cs" />
     <Compile Include="Core\WebAgreement\IAgreementHandler.cs" />
-    <Compile Include="Core\WebAgreement\ScanAgreement.cs" />
     <Compile Include="Core\Script\AndroidScript.cs" />
     <Compile Include="Core\Logic\HostStoreService.cs" />
     <Compile Include="Core\Models\AppModel.cs" />
@@ -321,23 +310,6 @@
     <AndroidAsset Include="Assets\site.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ZxingOverlay.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\area_above_left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\area_above_right.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\area_below_left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\area_below_right.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\scan_bulb.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
@@ -439,11 +411,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\MenuContent_item.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\App_IncludeTop_SubView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

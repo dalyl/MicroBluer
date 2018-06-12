@@ -1,4 +1,4 @@
-﻿namespace LazyWelfare.AndroidMobile
+﻿namespace LazyWelfare.AndroidCtrls
 {
     using System;
     using System.Collections.Generic;
@@ -18,11 +18,10 @@
     using ZXing;
     using ZXing.Common;
     using ZXing.Mobile;
-
     using Bitmap= Android.Graphics.Bitmap;
     using BitmapFactory = Android.Graphics.BitmapFactory;
 
-    public class ScanPlugin
+    public class CodeScaner
     {
         public string Result { get; private set; } = "未识别";
 
@@ -30,11 +29,11 @@
 
         MobileBarcodeScanner Scanner { get; }
 
-        public ScanPlugin(Activity activity,string title)
+        public CodeScaner(Activity activity,string title)
         {
             Context = activity;
       
-            var zxingOverlay = LayoutInflater.FromContext(Context).Inflate(Resource.Layout.ZxingOverlay, null);
+            var zxingOverlay = LayoutInflater.FromContext(Context).Inflate(Resource.Layout.Scaner_ZxingOverlay, null);
 
             var bulbBtn = zxingOverlay.FindViewById(Resource.Id.scanBulbBtn);
             var albumBtn = zxingOverlay.FindViewById(Resource.Id.scanAlbumBtn);

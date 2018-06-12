@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
     <include
-        layout="@layout/App_IncludeTop_SubView"
+        layout="@layout/Scaner_IncludeTop"
         android:layout_height="?android:attr/actionBarSize"
         android:layout_width="match_parent"
         android:background="@color/transparent"
@@ -51,25 +51,25 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
-                        android:src="@drawable/area_above_left" />
+                        android:src="@drawable/Scaner_area_above_left" />
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
-                        android:src="@drawable/area_above_right" />
+                        android:src="@drawable/Scaner_area_above_right" />
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentLeft="true"
-                        android:src="@drawable/area_below_left" />
+                        android:src="@drawable/Scaner_area_below_left" />
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/area_below_right" />
+                        android:src="@drawable/Scaner_area_below_right" />
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -107,7 +107,7 @@
                         android:layout_gravity="center_horizontal"
                         android:paddingBottom="5dip"
                         android:paddingTop="5dip"
-                        android:src="@drawable/scan_album" />
+                        android:src="@drawable/Scaner_album" />
                     <TextView
                         android:id="@+id/textAlbum"
                         android:layout_width="wrap_content"
@@ -131,7 +131,7 @@
                         android:layout_gravity="center_horizontal"
                         android:paddingBottom="5dip"
                         android:paddingTop="5dip"
-                        android:src="@drawable/scan_bulb" />
+                        android:src="@drawable/Scaner_bulb" />
                     <TextView
                         android:id="@+id/textBulb"
                         android:layout_width="wrap_content"
