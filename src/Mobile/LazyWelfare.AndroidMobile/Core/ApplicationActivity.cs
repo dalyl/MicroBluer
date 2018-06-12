@@ -17,13 +17,13 @@
     using LazyWelfare.AndroidMobile.Models;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
-    public class MainActivity :  PartialActivity
+    public class ApplicationActivity :  PartialActivity
     {
         static PartialRequestStack requestStack { get; set; } = new PartialRequestStack();
 
         public AgreementUri Partial { get; set; } = UserIndexView.Partial;
 
-        public override PartialRequestStack RequestStack { get; } = requestStack;
+        public ApplicationActivity() : base(requestStack) { }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -101,9 +101,9 @@
         public static void UpdateView<T>()
         {
             if (ActiveContext.Activity == null) return;
-            if (ActiveContext.IsMainActivityAlive(nameof(MainActivity)) == false) return;
-            if ((ActiveContext.Activity is MainActivity) == false) return;
-            var The = ActiveContext.Activity as MainActivity;
+            if (ActiveContext.IsMainActivityAlive(nameof(ApplicationActivity)) == false) return;
+            if ((ActiveContext.Activity is ApplicationActivity) == false) return;
+            var The = ActiveContext.Activity as ApplicationActivity;
             if (typeof(T) == typeof(UserModel))
             {
                 The.LoadUser();

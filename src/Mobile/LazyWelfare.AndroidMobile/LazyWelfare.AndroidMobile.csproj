@@ -139,7 +139,7 @@
     <Compile Include="Core\PermissionGrantedClickListener.cs" />
     <Compile Include="Core\ImageTextButton.cs" />
     <Compile Include="Core\Stroage\SharedStore.cs" />
-    <Compile Include="Core\MainActivity.cs" />
+    <Compile Include="Core\ApplicationActivity.cs" />
     <Compile Include="Core\WebAgreement\Agreement.cs" />
     <Compile Include="Core\WebAgreement\AgreementHandler.cs" />
     <Compile Include="Core\WebAgreement\AgreementRouteClient.cs" />

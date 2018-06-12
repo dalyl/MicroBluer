@@ -11,14 +11,14 @@
 
     public abstract class PartialActivity : ActiveActivity
     {
-        public abstract PartialRequestStack RequestStack { get; }
 
         public LoadingDialog WaitingView { get;private set; }
 
         public WebView PartialView { get; set; }
 
-        public PartialActivity()
+        public PartialActivity(PartialRequestStack requestStack)
         {
+            RequestStack = requestStack;
             RequestStack.Clear();
         }
 
@@ -37,6 +37,29 @@
             }
             return false;
         }
+        #region ---   PartialRequestStack   ---
+
+
+        private PartialRequestStack RequestStack { get; }
+
+        public void StackPush(string name,string args)
+        {
+            RequestStack.Push(name, args);
+        }
+
+        public void StackClear()
+        {
+            RequestStack.Clear();
+        }
+
+        public void StackClearPush(string name, string args)
+        {
+            RequestStack.Clear();
+            RequestStack.Push(name, args);
+        }
+
+
+        #endregion
 
         #region --- OnKeyDown ---
 

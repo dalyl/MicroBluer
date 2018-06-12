@@ -16,7 +16,7 @@
 
         public static Activity Activity => Current.activity;
 
-        public static UserModel User => Instantiate(UserStore.Get,after: MainActivity.UpdateView<UserModel>);
+        public static UserModel User => Instantiate(UserStore.Get,after: ApplicationActivity.UpdateView<UserModel>);
 
         public static HostModel Host => Instantiate(()=> string.IsNullOrEmpty(User.Host) ? null : ActiveContext.HostStore.Get(User.Host));
 

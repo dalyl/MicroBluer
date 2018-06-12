@@ -11,8 +11,7 @@
 
         public void PushRequest(PartialActivity context, string args)
         {
-            context.RequestStack.Clear();
-            context.RequestStack.Push(Partial.Name, args);
+            context.StackClearPush(Partial.Name, args);
         }
 
         public string GenerateString(string args)

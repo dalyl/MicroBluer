@@ -9,7 +9,7 @@
 
         public void PushRequest(PartialActivity context, string args)
         {
-            context.RequestStack.Push(Partial.Name, args);
+            context.StackPush(Partial.Name, args);
         }
 
         public string GenerateString(string args)

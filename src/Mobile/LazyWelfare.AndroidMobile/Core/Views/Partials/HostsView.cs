@@ -10,7 +10,7 @@ namespace LazyWelfare.AndroidMobile.Views.Partials
     {
         public static AgreementUri Partial = new AgreementUri(nameof(HostsView), nameof(PartialHost), typeof(HostsView).Name);
 
-        public void PushRequest(PartialActivity context, string args) => context.RequestStack.Push(Partial.Name, args);
+        public void PushRequest(PartialActivity context, string args) => context.StackPush(Partial.Name, args);
     
         public string GenerateString(string args)
         {

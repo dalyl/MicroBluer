@@ -19,7 +19,7 @@ namespace LazyWelfare.AndroidMobile
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            var intent = new Intent(this, typeof(MainActivity));
+            var intent = new Intent(this, typeof(ApplicationActivity));
             StartActivity(intent);
 
             Finish();
