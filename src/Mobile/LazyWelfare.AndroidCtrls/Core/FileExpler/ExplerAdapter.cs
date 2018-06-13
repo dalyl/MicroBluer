@@ -14,23 +14,13 @@
 
         private ExplerItemCollection Items { get; } = new ExplerItemCollection();
 
-        private bool IsEmptyStyle { get; set; } = true;
+        public string CurrentRoot { get; private set; }
 
-        public event Action<ExplerItem> AfterChanged;
+        public event Action AfterItemsChanged;
 
-        public ExplerAdapter(Context context, string path) : base()
+        public ExplerAdapter(Context context) : base()
         {
             this.Context = context;
-            SetData(path);
-        }
-
-        public string CurrentRoot
-        {
-            get
-            {
-                if (Items.Count == 0) return string.Empty;
-                return Items.First().Parent;
-            }
         }
 
         public override int ItemCount => Items.Count;
@@ -39,17 +29,9 @@
         {
             try
             {
-                IsEmptyStyle = true;
+                CurrentRoot = path;
                 Items.Add(path);
-                if (Items.Count == 0)
-                {
-                    Items.Add(new ExplerItem { Parent = path });
-                }
-                else
-                {
-                    IsEmptyStyle = false;
-                }
-                AfterChanged?.Invoke(Items.FirstOrDefault());
+                AfterItemsChanged?.Invoke();
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -71,7 +53,6 @@
             }
         }
 
-
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             if (holder is ItemViewHolder)
@@ -87,8 +68,7 @@
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-           
-            View view = LayoutInflater.From(Context).Inflate(Resource.Layout.FileSelectorItem, parent, false);
+            View view = LayoutInflater.From(Context).Inflate(Resource.Layout.FileExplerorItem, parent, false);
             return new ItemViewHolder(view);
         }
 
@@ -98,12 +78,14 @@
             public ImageView Icon;
             public TextView Path;
             public RelativeLayout Layout;
+            public ImageView Menu;
 
             public ItemViewHolder(View view) : base(view)
             {
-                Icon = view.FindViewById<ImageView>(Resource.Id.FolderSelectorItem_Image);
-                Path = view.FindViewById<TextView>(Resource.Id.FolderSelectorItem_Path);
-                Layout = view.FindViewById<RelativeLayout>(Resource.Id.FolderSelectorItem_Layout);
+                Icon = view.FindViewById<ImageView>(Resource.Id.FileExplerorItem_Icon);
+                Path = view.FindViewById<TextView>(Resource.Id.FileExplerorItem_Path);
+                Layout = view.FindViewById<RelativeLayout>(Resource.Id.FileExplerorItem_Layout);
+                Menu = view.FindViewById<ImageView>(Resource.Id.FileExplerorItem_Menu);
             }
         }
 

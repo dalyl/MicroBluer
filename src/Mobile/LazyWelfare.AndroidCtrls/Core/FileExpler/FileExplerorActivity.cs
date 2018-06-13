@@ -17,6 +17,7 @@
     using Environment = Android.OS.Environment;
     using Android.Support.V7.Widget;
     using System.IO;
+    using LazyWelfare.AndroidUtils.Views;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public  class FileExplerorActivity : FragmentActivity
@@ -24,25 +25,56 @@
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.FileSelector);
+            SetContentView(Resource.Layout.FileExpleror);
 
             Acp.getInstance(this).request(new AcpOptions.Builder()
                       .SetPermissions(Permission.WriteExternalStorage, Permission.ReadExternalStorage)
                       .Build(), new AnonymousAcpListener(ps => Toast.MakeText(this, $"权限拒绝", ToastLength.Short).Show(), InitListView));
+            
+            var backUpBtn = FindViewById(Resource.Id.FileExpleror_BackUp);
+            backUpBtn.SetOnClickListener(new AnonymousOnClickListener(BackUpClick));
 
+            var menuUpBtn = FindViewById(Resource.Id.FileExpleror_Menu);
+            menuUpBtn.SetOnClickListener(new AnonymousOnClickListener(MenuClick));
 
             InitListView();
         }
+       
+        private RecyclerView ListView { get; set; }
+        private RelativeLayout EmptyView { get; set; }
+        private ExplerAdapter Adapter { get; set; }
+        private TextView NodeTree { get; set; }
+
         void InitListView()
-        { 
-            var titleView = FindViewById<TextView>(Resource.Id.FolderSelector_Title);
-            var listView = FindViewById<RecyclerView>(Resource.Id.FolderSelector_RecyclerView);
-            var Adapter = new ExplerAdapter(this, Environment.RootDirectory.Path);
-            Adapter.AfterChanged += item => {
-                titleView.Text = item == null ? "未知" : (new DirectoryInfo(item.Parent)).Name;
-            };
-            listView.SetLayoutManager(new LinearLayoutManager(this));
-            listView.SetAdapter(Adapter);
+        {
+            NodeTree = FindViewById<TextView>(Resource.Id.FileExpleror_NodeTree);
+            ListView = FindViewById<RecyclerView>(Resource.Id.FileExpleror_RecyclerView);
+            EmptyView = FindViewById<RelativeLayout>(Resource.Id.FileExpleror_EmptyContent);
+            Adapter = new ExplerAdapter(this);
+            Adapter.AfterItemsChanged += AdapterChanged;
+            Adapter.SetData(Environment.RootDirectory.Path);
+            ListView.SetLayoutManager(new LinearLayoutManager(this));
+            ListView.SetAdapter(Adapter);
         }
+
+        void BackUpClick(View v)
+        {
+            var current =new DirectoryInfo(Adapter.CurrentRoot) ;
+            if (current.FullName == Environment.RootDirectory.Path) return;
+            Adapter.SetData(current.Parent.FullName);
+        }
+
+        void MenuClick(View v)
+        {
+
+        }
+
+        void AdapterChanged()
+        {
+            EmptyView.Visibility = Adapter.ItemCount == 0 ? ViewStates.Visible : ViewStates.Invisible;
+            ListView.Visibility = Adapter.ItemCount == 0 ? ViewStates.Invisible : ViewStates.Visible;
+            NodeTree.Text = $"目录>{Adapter.CurrentRoot.Replace("/",">")}";
+        }
+
     }
 }

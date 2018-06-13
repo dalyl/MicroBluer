@@ -2,21 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/FolderSelectorItem_Layout"
+    android:id="@+id/FileExplerorItem_Layout"
     android:layout_marginTop="4dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/selector_item_shape">
-<!---->
     <ImageView
-        android:id="@+id/FolderSelectorItem_Image"
+        android:id="@+id/FileExplerorItem_Icon"
         android:layout_width="25dp"
         android:layout_height="35dp"
         android:layout_centerVertical="true"
         android:layout_marginStart="8dp"
         android:src="@drawable/file_none" />
     <TextView
-        android:id="@+id/FolderSelectorItem_Path"
+        android:id="@+id/FileExplerorItem_Path"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -28,14 +27,14 @@
         android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextVTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewiewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView"
         android:duplicateParentState="true"
         android:layout_centerInParent="true" />
-    <CheckBox
-        android:id="@+id/FolderSelectorItem_CheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/FileExplerorItem_Menu"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
         android:layout_gravity="center"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="8dp"
-        android:button="@drawable/selector_bg_check" />
+        android:src="@drawable/expleror_menu_black" />
 <!---->
 </RelativeLayout>

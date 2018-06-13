@@ -33,7 +33,7 @@
 
         public void LoadDirectories(string root, SelectorType type)
         {
-            var dirs = Directory.GetDirectories(root);
+            var dirs = Directory.GetDirectories(root).OrderBy(it => it); 
             foreach (var dir in dirs)
             {
                 var info = new DirectoryInfo(dir);
@@ -54,7 +54,7 @@
         public void LoadFiles(string root, SelectorType type)
         {
             var filter = GetFileFilter(type);
-            var files = string.IsNullOrEmpty(filter) ? Directory.GetFiles(root) : Directory.GetFiles(root, filter);
+            var files = (string.IsNullOrEmpty(filter) ? Directory.GetFiles(root) : Directory.GetFiles(root, filter)).OrderBy(it => it);
             foreach (var file in files)
             {
                 var info = new FileInfo(file);
@@ -86,12 +86,12 @@
             var lower = extension.ToLower();
             switch (lower)
             {
-                case ".jpg": return Resource.Drawable.selector_file_jpg;
-                case ".jpeg": return Resource.Drawable.selector_file_jpg;
-                case ".png": return Resource.Drawable.selector_file_png;
-                case ".gif": return Resource.Drawable.selector_file_gif;
+                case ".jpg": return Resource.Drawable.file_jpg;
+                case ".jpeg": return Resource.Drawable.file_jpg;
+                case ".png": return Resource.Drawable.file_png;
+                case ".gif": return Resource.Drawable.file_gif;
             }
-            return Resource.Drawable.selector_file_none;
+            return Resource.Drawable.file_none;
         }
 
     }
