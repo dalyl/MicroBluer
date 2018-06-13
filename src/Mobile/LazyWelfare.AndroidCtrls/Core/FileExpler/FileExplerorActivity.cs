@@ -37,7 +37,7 @@
         { 
             var titleView = FindViewById<TextView>(Resource.Id.FolderSelector_Title);
             var listView = FindViewById<RecyclerView>(Resource.Id.FolderSelector_RecyclerView);
-            var Adapter = new ExplerAdapter(this, Environment.ExternalStorageDirectory.Path);
+            var Adapter = new ExplerAdapter(this, Environment.RootDirectory.Path);
             Adapter.AfterChanged += item => {
                 titleView.Text = item == null ? "未知" : (new DirectoryInfo(item.Parent)).Name;
             };

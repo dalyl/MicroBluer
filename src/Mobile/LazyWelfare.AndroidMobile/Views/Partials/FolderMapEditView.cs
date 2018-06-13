@@ -62,12 +62,12 @@ WriteLiteral(">\r\n            <input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteLiteral(" name=\"Domain\"");
+WriteLiteral(" name=\"Guid\"");
 
 WriteAttribute ("value", " value=\"", "\""
 
 #line 11 "FolderMapEditView.cshtml"
-               , Tuple.Create<string,object,bool> ("", Model.Guid
+             , Tuple.Create<string,object,bool> ("", Model.Guid
 
 #line default
 #line hidden
