@@ -1,14 +1,7 @@
 ﻿namespace LazyWelfare.AndroidCtrls.FileExpler
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
     using Android.App;
-    using Android.Content;
     using Android.OS;
-    using Android.Runtime;
     using Android.Support.V4.App;
     using Android.Views;
     using Android.Widget;
@@ -16,8 +9,10 @@
     using Permission = Android.Manifest.Permission;
     using Environment = Android.OS.Environment;
     using Android.Support.V7.Widget;
+    using PopupMenu = Android.Support.V7.Widget.PopupMenu;
     using System.IO;
     using LazyWelfare.AndroidUtils.Views;
+    using System;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public  class FileExplerorActivity : FragmentActivity
@@ -39,7 +34,35 @@
 
             InitListView();
         }
-       
+
+        DateTime? lastBackKeyDownTime;//记录上次按下Back的时间
+        public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
+        {
+            if (keyCode == Keycode.Back && e.Action == KeyEventActions.Down)//监听Back键
+            {
+              
+                if (!lastBackKeyDownTime.HasValue||(DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 1)))
+                {
+                    lastBackKeyDownTime = DateTime.Now;
+                    AdapterBackUp();
+                }
+                else
+                {
+                    //防止误操作
+                }
+                return true;
+            }
+            return base.OnKeyDown(keyCode, e);
+        }
+
+        public string Root
+        {
+            get
+            {
+                return Environment.RootDirectory.Path;
+            }
+        }
+
         private RecyclerView ListView { get; set; }
         private RelativeLayout EmptyView { get; set; }
         private ExplerAdapter Adapter { get; set; }
@@ -52,21 +75,33 @@
             EmptyView = FindViewById<RelativeLayout>(Resource.Id.FileExpleror_EmptyContent);
             Adapter = new ExplerAdapter(this);
             Adapter.AfterItemsChanged += AdapterChanged;
-            Adapter.SetData(Environment.RootDirectory.Path);
+            Adapter.SetData(Root);
             ListView.SetLayoutManager(new LinearLayoutManager(this));
             ListView.SetAdapter(Adapter);
         }
 
-        void BackUpClick(View v)
+        void AdapterBackUp()
         {
-            var current =new DirectoryInfo(Adapter.CurrentRoot) ;
-            if (current.FullName == Environment.RootDirectory.Path) return;
+            var current = new DirectoryInfo(Adapter.CurrentRoot);
+            if (current.FullName == Root) {
+                Toast.MakeText(this, "已经是根目录了", ToastLength.Short).Show();
+                return;
+            }
             Adapter.SetData(current.Parent.FullName);
         }
 
+        void BackUpClick(View v) => AdapterBackUp();
+
         void MenuClick(View v)
         {
+            //// this.MenuInflater.Inflate(Resource.Menu.FileExplerorTopMainMenu,);
+            
+            ////创建弹出菜单     参数1(上下文)(要显示的弹出组件,我传了按钮点击事件的V);
+            //var popupMenu = new PopupMenu(this, v);
 
+            ////把定义好的menuXML资源文件填充到popupMenu当中 
+            //popupMenu.MenuInflater.Inflate(Resource.Menu.FileExplerorTopMainMenu, popupMenu.Menu);
+            //popupMenu.Show();
         }
 
         void AdapterChanged()

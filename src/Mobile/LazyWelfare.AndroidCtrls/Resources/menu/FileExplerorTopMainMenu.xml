@@ -1,0 +1,34 @@
+﻿<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" 
+    tools:context="LazyWelfare.AndroidCtrls.FileExpler.FileExplerorActivity" >
+
+  <item
+      android:id="@+id/start"
+      android:orderInCategory="100"
+      android:showAsAction="never"
+      android:title="start"/>
+  <item
+      android:id="@+id/over"
+      android:orderInCategory="200"
+      android:showAsAction="never"
+      android:title="over"/>
+
+  <!-- 子菜单 -->
+  <item
+      android:id="@+id/setting"
+      android:title="setting">
+    <menu>
+      <item
+          android:id="@+id/setting1"
+          android:orderInCategory="300"
+          android:showAsAction="never"
+          android:title="声音設置"/>
+      <item
+          android:id="@+id/setting2"
+          android:orderInCategory="400"
+          android:showAsAction="never"
+          android:title="背景設置"/>
+    </menu>
+  </item>
+
+</menu>

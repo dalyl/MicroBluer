@@ -627,6 +627,7 @@ namespace LazyWelfare.AndroidMobile
 			global::LazyWelfare.AndroidCtrls.Resource.Id.never = global::LazyWelfare.AndroidMobile.Resource.Id.never;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.none = global::LazyWelfare.AndroidMobile.Resource.Id.none;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.normal = global::LazyWelfare.AndroidMobile.Resource.Id.normal;
+			global::LazyWelfare.AndroidCtrls.Resource.Id.over = global::LazyWelfare.AndroidMobile.Resource.Id.over;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.parentPanel = global::LazyWelfare.AndroidMobile.Resource.Id.parentPanel;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.photoCount = global::LazyWelfare.AndroidMobile.Resource.Id.photoCount;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.progress_circular = global::LazyWelfare.AndroidMobile.Resource.Id.progress_circular;
@@ -651,6 +652,9 @@ namespace LazyWelfare.AndroidMobile
 			global::LazyWelfare.AndroidCtrls.Resource.Id.search_voice_btn = global::LazyWelfare.AndroidMobile.Resource.Id.search_voice_btn;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.selectFold = global::LazyWelfare.AndroidMobile.Resource.Id.selectFold;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.select_dialog_listview = global::LazyWelfare.AndroidMobile.Resource.Id.select_dialog_listview;
+			global::LazyWelfare.AndroidCtrls.Resource.Id.setting = global::LazyWelfare.AndroidMobile.Resource.Id.setting;
+			global::LazyWelfare.AndroidCtrls.Resource.Id.setting1 = global::LazyWelfare.AndroidMobile.Resource.Id.setting1;
+			global::LazyWelfare.AndroidCtrls.Resource.Id.setting2 = global::LazyWelfare.AndroidMobile.Resource.Id.setting2;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.shortcut = global::LazyWelfare.AndroidMobile.Resource.Id.shortcut;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.showCustom = global::LazyWelfare.AndroidMobile.Resource.Id.showCustom;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.showHome = global::LazyWelfare.AndroidMobile.Resource.Id.showHome;
@@ -660,6 +664,7 @@ namespace LazyWelfare.AndroidMobile
 			global::LazyWelfare.AndroidCtrls.Resource.Id.src_atop = global::LazyWelfare.AndroidMobile.Resource.Id.src_atop;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.src_in = global::LazyWelfare.AndroidMobile.Resource.Id.src_in;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.src_over = global::LazyWelfare.AndroidMobile.Resource.Id.src_over;
+			global::LazyWelfare.AndroidCtrls.Resource.Id.start = global::LazyWelfare.AndroidMobile.Resource.Id.start;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.status_bar_latest_event_content = global::LazyWelfare.AndroidMobile.Resource.Id.status_bar_latest_event_content;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.submit_area = global::LazyWelfare.AndroidMobile.Resource.Id.submit_area;
 			global::LazyWelfare.AndroidCtrls.Resource.Id.tabMode = global::LazyWelfare.AndroidMobile.Resource.Id.tabMode;
@@ -735,6 +740,7 @@ namespace LazyWelfare.AndroidMobile
 			global::LazyWelfare.AndroidCtrls.Resource.Layout.support_simple_spinner_dropdown_item = global::LazyWelfare.AndroidMobile.Resource.Layout.support_simple_spinner_dropdown_item;
 			global::LazyWelfare.AndroidCtrls.Resource.Layout.zxingscanneractivitylayout = global::LazyWelfare.AndroidMobile.Resource.Layout.zxingscanneractivitylayout;
 			global::LazyWelfare.AndroidCtrls.Resource.Layout.zxingscannerfragmentlayout = global::LazyWelfare.AndroidMobile.Resource.Layout.zxingscannerfragmentlayout;
+			global::LazyWelfare.AndroidCtrls.Resource.Menu.FileExplerorTopMainMenu = global::LazyWelfare.AndroidMobile.Resource.Menu.FileExplerorTopMainMenu;
 			global::LazyWelfare.AndroidCtrls.Resource.String.abc_action_bar_home_description = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_bar_home_description;
 			global::LazyWelfare.AndroidCtrls.Resource.String.abc_action_bar_home_description_format = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_bar_home_description_format;
 			global::LazyWelfare.AndroidCtrls.Resource.String.abc_action_bar_home_subtitle_description_format = global::LazyWelfare.AndroidMobile.Resource.String.abc_action_bar_home_subtitle_description_format;
@@ -6868,6 +6874,9 @@ namespace LazyWelfare.AndroidMobile
 			// aapt resource value: 0x7f06001e
 			public const int normal = 2131099678;
 			
+			// aapt resource value: 0x7f0600d7
+			public const int over = 2131099863;
+			
 			// aapt resource value: 0x7f0600bb
 			public const int p_pic = 2131099835;
 			
@@ -6960,6 +6969,15 @@ namespace LazyWelfare.AndroidMobile
 			
 			// aapt resource value: 0x7f06007c
 			public const int select_dialog_listview = 2131099772;
+			
+			// aapt resource value: 0x7f0600d8
+			public const int setting = 2131099864;
+			
+			// aapt resource value: 0x7f0600d9
+			public const int setting1 = 2131099865;
+			
+			// aapt resource value: 0x7f0600da
+			public const int setting2 = 2131099866;
 			
 			// aapt resource value: 0x7f060067
 			public const int shortcut = 2131099751;
@@ -7386,6 +7404,22 @@ namespace LazyWelfare.AndroidMobile
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0c0000
+			public const int FileExplerorTopMainMenu = 2131492864;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}

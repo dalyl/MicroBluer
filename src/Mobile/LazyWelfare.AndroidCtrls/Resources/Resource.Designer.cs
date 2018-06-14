@@ -1908,6 +1908,9 @@ namespace LazyWelfare.AndroidCtrls
 			// aapt resource value: 0x7f06000b
 			public static int normal = 2131099659;
 			
+			// aapt resource value: 0x7f06008a
+			public static int over = 2131099786;
+			
 			// aapt resource value: 0x7f06002e
 			public static int parentPanel = 2131099694;
 			
@@ -1980,6 +1983,15 @@ namespace LazyWelfare.AndroidCtrls
 			// aapt resource value: 0x7f060050
 			public static int select_dialog_listview = 2131099728;
 			
+			// aapt resource value: 0x7f06008b
+			public static int setting = 2131099787;
+			
+			// aapt resource value: 0x7f06008c
+			public static int setting1 = 2131099788;
+			
+			// aapt resource value: 0x7f06008d
+			public static int setting2 = 2131099789;
+			
 			// aapt resource value: 0x7f06003b
 			public static int shortcut = 2131099707;
 			
@@ -2006,6 +2018,9 @@ namespace LazyWelfare.AndroidCtrls
 			
 			// aapt resource value: 0x7f060019
 			public static int src_over = 2131099673;
+			
+			// aapt resource value: 0x7f060089
+			public static int start = 2131099785;
 			
 			// aapt resource value: 0x7f060075
 			public static int status_bar_latest_event_content = 2131099765;
@@ -2264,6 +2279,22 @@ namespace LazyWelfare.AndroidCtrls
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0c0000
+			public static int FileExplerorTopMainMenu = 2131492864;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}
