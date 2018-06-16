@@ -35,6 +35,6 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/expleror_menu_black" />
+        android:src="@drawable/expleror_more_vert_black" />
 <!---->
 </RelativeLayout>

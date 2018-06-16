@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="Theme.InCallScreen" parent="@android:style/Theme.Holo.NoActionBar">
+    <!--<item name="android:popupMenuStyle">@style/Theme.PopupMenu</item>-->
+    <!--修改PopupMenu的item背景颜色-->
+    <!--这里为何一个使用android:而另一个没有android: 是因为前者只有在android 5.0以后版本中才能被使用，后者是兼容模式任何版本都能使用（推荐使用后者）-->
+    <item name="android:popupMenuStyle">@style/popupMenuProfile</item>
+    <item name="popupMenuStyle">@style/popupMenuProfile</item>
+
+    <!--修改PopupMenu的分界线  注意添加这个会导致menuItem的点击动画发生变化-->
+    <item name="android:dropDownListViewStyle">@style/dropDownStyle</item>
+    <item name="dropDownListViewStyle">@style/dropDownStyle</item>
+
+    <!--修改PopupMenu的字体颜色-->
+    <item name="android:textAppearanceLargePopupMenu">@style/popupTextProfile</item>
+    <item name="textAppearanceLargePopupMenu">@style/popupTextProfile</item>
+
+    <!--此处的值也控制ActionBar背景-->
+    <item name="colorPrimary">#000000</item>
+    <!--此处的值也控制ActionBar上面显示电量、信号那行视图的背景-->
+    <item name="colorPrimaryDark">#000000</item>
+    <item name="colorAccent">#ffffff</item>
+  </style>
+  <style name="popupMenuProfile">
+    <item name="android:popupBackground">#c0c0c0</item>
+  </style>
+  <style name="dropDownStyle" parent="android:style/Widget.Holo.ListView.DropDown">
+    <!--定义这样的style必须定义android:listSelector，否则会使用系统自带的selector那就不知道出什么幺蛾子-->
+    <!--<item name="android:listSelector">@drawable/profile_popupmenu_selector</item>-->
+    <item name="android:listSelector">#00000000</item>
+    <item name="android:divider">#80FFFFFF</item>
+    <item name="android:dividerHeight">0.5dp</item>
+  </style>
+  <style name="popupTextProfile" parent="@style/TextAppearance.Widget.AppCompat.ExpandedMenu.Item">
+    <item name="android:textColor">#ffffff</item>
+  </style>
+  <style name="Theme.PopupMenu" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+    <item name="android:popupBackground">#303030</item>
+  </style>
+</resources>

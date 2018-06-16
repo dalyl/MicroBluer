@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/PopupMenuItem_Layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center">
+    <!-- 左侧图标 -->
+        <ImageView
+            android:id="@+id/PopupMenuItem_Icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:paddingRight="10dp" />
+    <!-- 标题 -->
+        <TextView
+            android:id="@+id/PopupMenuItem_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#818181"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="center" />
+    </LinearLayout>
+<!-- 中横线 -->
+    <View
+        android:id="@+id/PopupMenuItem_Line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee" />
+</LinearLayout>

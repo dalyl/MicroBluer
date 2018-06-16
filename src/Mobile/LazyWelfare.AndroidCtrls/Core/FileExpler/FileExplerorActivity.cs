@@ -2,19 +2,20 @@
 {
     using Android.App;
     using Android.OS;
-    using Android.Support.V4.App;
     using Android.Views;
     using Android.Widget;
-    using LazyWelfare.AndroidUtils.Acp;
     using Permission = Android.Manifest.Permission;
     using Environment = Android.OS.Environment;
+    using Android.Support.V4.App;
     using Android.Support.V7.Widget;
-    using PopupMenu = Android.Support.V7.Widget.PopupMenu;
-    using System.IO;
-    using LazyWelfare.AndroidUtils.Views;
     using System;
+    using System.IO;
+    using System.Collections.Generic;
+    using LazyWelfare.AndroidUtils.Acp;
+    using LazyWelfare.AndroidCtrls.PopMenu;
+    using LazyWelfare.AndroidUtils.Views;
 
-    [Activity(Theme = "@android:style/Theme.NoTitleBar")]
+    [Activity(Theme = "@style/Theme.InCallScreen")]
     public  class FileExplerorActivity : FragmentActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -29,8 +30,12 @@
             var backUpBtn = FindViewById(Resource.Id.FileExpleror_BackUp);
             backUpBtn.SetOnClickListener(new AnonymousOnClickListener(BackUpClick));
 
-            var menuUpBtn = FindViewById(Resource.Id.FileExpleror_Menu);
-            menuUpBtn.SetOnClickListener(new AnonymousOnClickListener(MenuClick));
+            var moreBtn = FindViewById(Resource.Id.FileExpleror_Menu);
+            moreBtn.SetOnClickListener(new AnonymousOnClickListener(MoreClick));
+
+            var closeBtn = FindViewById(Resource.Id.FileExpleror_Close);
+            closeBtn.SetOnClickListener(new AnonymousOnClickListener(CloseClick));
+
 
             InitListView();
         }
@@ -40,11 +45,10 @@
         {
             if (keyCode == Keycode.Back && e.Action == KeyEventActions.Down)//监听Back键
             {
-              
-                if (!lastBackKeyDownTime.HasValue||(DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 1)))
+                if (!lastBackKeyDownTime.HasValue || (DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 1)))
                 {
                     lastBackKeyDownTime = DateTime.Now;
-                    AdapterBackUp();
+                    if (AdapterBackUp() == false) return base.OnKeyDown(keyCode, e);
                 }
                 else
                 {
@@ -59,7 +63,7 @@
         {
             get
             {
-                return Environment.RootDirectory.Path;
+                return "/";
             }
         }
 
@@ -75,41 +79,55 @@
             EmptyView = FindViewById<RelativeLayout>(Resource.Id.FileExpleror_EmptyContent);
             Adapter = new ExplerAdapter(this);
             Adapter.AfterItemsChanged += AdapterChanged;
-            Adapter.SetData(Root);
+            Adapter.SetData(Environment.RootDirectory.Path);
             ListView.SetLayoutManager(new LinearLayoutManager(this));
             ListView.SetAdapter(Adapter);
         }
 
-        void AdapterBackUp()
+        bool AdapterBackUp()
         {
             var current = new DirectoryInfo(Adapter.CurrentRoot);
-            if (current.FullName == Root) {
+            if (current.Parent.FullName == Root) {
                 Toast.MakeText(this, "已经是根目录了", ToastLength.Short).Show();
-                return;
+                return false;
             }
             Adapter.SetData(current.Parent.FullName);
+            return true;
         }
 
-        void BackUpClick(View v) => AdapterBackUp();
+        void BackUpClick(View view) => AdapterBackUp();
 
-        void MenuClick(View v)
+        void CloseClick(View view) => Finish();
+
+        void MoreClick(View view)
         {
-            //// this.MenuInflater.Inflate(Resource.Menu.FileExplerorTopMainMenu,);
-            
-            ////创建弹出菜单     参数1(上下文)(要显示的弹出组件,我传了按钮点击事件的V);
-            //var popupMenu = new PopupMenu(this, v);
-
-            ////把定义好的menuXML资源文件填充到popupMenu当中 
-            //popupMenu.MenuInflater.Inflate(Resource.Menu.FileExplerorTopMainMenu, popupMenu.Menu);
-            //popupMenu.Show();
+            List<PopupMenuItem> menuList = new List<PopupMenuItem> {
+                new PopupMenuItem
+                {
+                    ItemImage = Resource.Drawable.expleror_folder,
+                    ItemText = "System",
+                    Click= () =>  Adapter.SetData(Environment.RootDirectory.Path ),
+                },
+                new PopupMenuItem
+                {
+                    ItemImage = Resource.Drawable.expleror_folder,
+                    ItemText = "存储器",
+                    Click= () =>  Adapter.SetData(Environment.ExternalStorageDirectory.Path),
+                },
+              
+            };
+            var setting = new PopupMenuSetting { };
+            PopMenu.PopupMenu.ShowPopupWindows(this, view, menuList, setting);
         }
 
         void AdapterChanged()
         {
             EmptyView.Visibility = Adapter.ItemCount == 0 ? ViewStates.Visible : ViewStates.Invisible;
             ListView.Visibility = Adapter.ItemCount == 0 ? ViewStates.Invisible : ViewStates.Visible;
-            NodeTree.Text = $"目录>{Adapter.CurrentRoot.Replace("/",">")}";
+            NodeTree.Text = $"目录 {Adapter.CurrentRoot.Replace("/",">")}";
         }
+
+        
 
     }
 }

@@ -87,6 +87,10 @@
     <Compile Include="Core\AreaMap\MapShape.cs" />
     <Compile Include="Core\ImageAction\Renderer\VolumeControllerRenderer.cs" />
     <Compile Include="Core\CodeScan\CodeScaner.cs" />
+    <Compile Include="Core\PopMenu\PopupMenuItem.cs" />
+    <Compile Include="Core\PopMenu\PopupMenuSetting.cs" />
+    <Compile Include="Core\PopMenu\PopupWindowMenuListAdapter.cs" />
+    <Compile Include="Core\PopMenu\PopupMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
   </ItemGroup>
@@ -367,7 +371,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\expleror_menu_black.png">
+    <AndroidResource Include="Resources\drawable-xxhdpi\expleror_more_vert_black.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
   </ItemGroup>
@@ -384,9 +388,33 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\menu\FileExplerorTopMainMenu.xml">
+    <AndroidResource Include="Resources\values\Styles.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\expleror_more_horiz_black.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\expleror_nodetree_border.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\PopupMenuItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\PopupMenuLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-xhdpi\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

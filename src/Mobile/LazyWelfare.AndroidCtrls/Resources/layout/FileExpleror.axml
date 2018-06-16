@@ -33,34 +33,35 @@
                     android:text="返回上级" />
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/FileExpleror_Menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:layout_marginRight="5dp"
                 android:orientation="horizontal">
                 <TextView
+                    android:id="@+id/FileExpleror_Close"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:layout_marginRight="5dp"
                     android:textColor="#458B74"
-                    android:text="菜单" />
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:text="关闭" />
                 <ImageView
+                    android:id="@+id/FileExpleror_Menu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/expleror_menu_black" />
+                    android:layout_marginRight="5dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/expleror_more_horiz_black" />
             </LinearLayout>
         </RelativeLayout>
         <TextView
             android:id="@+id/FileExpleror_NodeTree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F9F9FA"
+            android:background="@drawable/expleror_nodetree_border"
             android:textColor="#458B74"
             android:textSize="9dp"
             android:text="目录&gt;" />
