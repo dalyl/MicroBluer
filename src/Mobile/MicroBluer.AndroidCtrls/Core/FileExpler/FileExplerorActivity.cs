@@ -15,7 +15,7 @@
     using MicroBluer.AndroidCtrls.PopMenu;
     using MicroBluer.AndroidUtils.Views;
 
-    [Activity(Theme = "@style/Theme.InCallScreen")]
+    [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public  class FileExplerorActivity : FragmentActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

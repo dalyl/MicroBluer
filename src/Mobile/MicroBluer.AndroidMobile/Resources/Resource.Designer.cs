@@ -6406,11 +6406,11 @@ namespace MicroBluer.AndroidMobile
 			// aapt resource value: 0x7f060090
 			public const int FolderSelector_Back = 2131099792;
 			
-			// aapt resource value: 0x7f060093
-			public const int FolderSelector_RecyclerView = 2131099795;
-			
 			// aapt resource value: 0x7f060094
-			public const int FolderSelector_Title = 2131099796;
+			public const int FolderSelector_RecyclerView = 2131099796;
+			
+			// aapt resource value: 0x7f060093
+			public const int FolderSelector_Title = 2131099795;
 			
 			// aapt resource value: 0x7f060091
 			public const int FolderSelector_btCancel = 2131099793;

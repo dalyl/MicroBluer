@@ -1710,11 +1710,11 @@ namespace MicroBluer.AndroidCtrls
 			// aapt resource value: 0x7f06005b
 			public static int FolderSelector_Back = 2131099739;
 			
-			// aapt resource value: 0x7f06005e
-			public static int FolderSelector_RecyclerView = 2131099742;
-			
 			// aapt resource value: 0x7f06005f
-			public static int FolderSelector_Title = 2131099743;
+			public static int FolderSelector_RecyclerView = 2131099743;
+			
+			// aapt resource value: 0x7f06005e
+			public static int FolderSelector_Title = 2131099742;
 			
 			// aapt resource value: 0x7f06005c
 			public static int FolderSelector_btCancel = 2131099740;

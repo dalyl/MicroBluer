@@ -28,15 +28,14 @@
 
         public List<string> Selects { get; } = new List<string>();
 
-        public event Action<SelectorItem> AfterChanged;
+        public event Action AfterItemsChanged;
 
-        public SelectorAdapter(Context context, SelectorType type, bool isSelectMany, string path) : base()
+        public SelectorAdapter(Context context, SelectorType type, bool isSelectMany) : base()
         {
             this.Context = context;
             Try = new TryCatch(message=>Toast.MakeText(Context, message.Trim(), ToastLength.Short).Show());
             SelectorType = type;
             IsSelectMany = isSelectMany;
-            SetData(path);
         }
 
         public string CurrentRoot
@@ -85,7 +84,7 @@
                 {
                     IsEmptyStyle = false;
                 }
-                AfterChanged?.Invoke(Items.FirstOrDefault());
+                AfterItemsChanged?.Invoke();
             });
             NotifyDataSetChanged();
         }

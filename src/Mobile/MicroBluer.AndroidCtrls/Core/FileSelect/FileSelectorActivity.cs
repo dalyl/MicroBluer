@@ -50,30 +50,16 @@
             backBtn.Click += (s, e) => AdapterBackUp();
 
             OnCancelRequested += HandleCancelSelect;
-
          
             InitListView();
         }
 
-        //void BackClick()
-        //{
-        //    if (Adapter.ItemCount == 0)
-        //    {
-        //        CancelSelect();
-        //        return;
-        //    }
-        //    if (string.IsNullOrEmpty(Adapter.CurrentRoot)) {
-        //        CancelSelect();
-        //        return;
-        //    }
-        //    var dir = new DirectoryInfo(Adapter.CurrentRoot);
-        //    Adapter.SetData(dir.Parent.FullName);
-        //}
+        public string Root { get; } = Environment.ExternalStorageDirectory.Path;
 
         bool AdapterBackUp()
         {
             var current = new DirectoryInfo(Adapter.CurrentRoot);
-            if (current.Parent.FullName == Environment.RootDirectory.Path)
+            if (current.FullName == Root)
             {
                 Toast.MakeText(this, "已经是根目录了", ToastLength.Short).Show();
                 return false;
@@ -98,12 +84,11 @@
         void InitListView()
         {
             var listView = FindViewById<RecyclerView>(Resource.Id.FolderSelector_RecyclerView);
-            var titleView = FindViewById<TextView>(Resource.Id.FolderSelector_Title);
+           
             RegisterForContextMenu(listView);
-            Adapter = new SelectorAdapter(this, SelectorType,IsSelectMany, Environment.ExternalStorageDirectory.Path);
-            Adapter.AfterChanged += item => {
-                titleView.Text = item == null ? "未知" : (new DirectoryInfo(item.Parent)).Name;
-            };
+            Adapter = new SelectorAdapter(this, SelectorType,IsSelectMany );
+            Adapter.AfterItemsChanged += AdapterChanged;
+            Adapter.SetData(Root);
             listView.SetLayoutManager(new LinearLayoutManager(this));
             listView.SetAdapter(Adapter);
         }
@@ -124,7 +109,7 @@
             switch (keyCode)
             {
                 case Keycode.Back:
-                    CancelSelect();
+                     CancelSelect();
                     break;
                 case Keycode.Focus:
                     return true;
@@ -137,6 +122,13 @@
         {
             Finish();
             FileSelectorActivity.OnCanceled?.Invoke();
+        }
+
+        void AdapterChanged()
+        {
+            var titleView = FindViewById<TextView>(Resource.Id.FolderSelector_Title);
+            var path = Adapter.CurrentRoot.Replace(Root, "存储器");
+            titleView.Text = $"目录> { path.Replace("/", ">")}";
         }
     }
 }
