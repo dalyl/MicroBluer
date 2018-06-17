@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Server\LazyWelfare.ServerWeb\LazyWelfare.ServerWeb.csproj" />
+    <ProjectReference Include="..\..\Server\MicroBluer.ServerWeb\MicroBluer.ServerWeb.csproj" />
   </ItemGroup>
 
 </Project>

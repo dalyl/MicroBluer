@@ -1,5 +1,6 @@
 ﻿using System;
-using LazyWelfare.AndroidMobile;
+using MicroBluer.AndroidMobile;
+using MicroBluer.AndroidUtils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTest

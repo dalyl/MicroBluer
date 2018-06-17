@@ -56,13 +56,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Mobile\LazyWelfare.AndroidMobile\LazyWelfare.AndroidMobile.csproj">
-      <Project>{9554fdfe-b123-4f90-b1c8-af3b6f57c02c}</Project>
-      <Name>LazyWelfare.AndroidMobile</Name>
+    <ProjectReference Include="..\..\Mobile\MicroBluer.AndroidMobile\MicroBluer.AndroidMobile.csproj">
+      <Project>{95f9e535-b8a2-4f74-9de5-fe0042a36ddb}</Project>
+      <Name>MicroBluer.AndroidMobile</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Server\LazyWelfare.ServerHost\LazyWelfare.ServerHost.csproj">
-      <Project>{ade1cd75-c864-493a-a5e4-163eeb7d8cd6}</Project>
-      <Name>LazyWelfare.ServerHost</Name>
+    <ProjectReference Include="..\..\Mobile\MicroBluer.AndroidUtils\MicroBluer.AndroidUtils.csproj">
+      <Project>{3EC1CD04-B7F3-4BDC-8800-7E0BD11C963C}</Project>
+      <Name>MicroBluer.AndroidUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Server\MicroBluer.ServerHost\MicroBluer.ServerHost.csproj">
+      <Project>{b60b34e5-9496-46b1-8183-67d2bd42e305}</Project>
+      <Name>MicroBluer.ServerHost</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

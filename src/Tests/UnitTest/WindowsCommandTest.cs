@@ -1,4 +1,4 @@
-using LazyWelfare.ServerHost.Command;
+using MicroBluer.ServerHost.Command;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTest
