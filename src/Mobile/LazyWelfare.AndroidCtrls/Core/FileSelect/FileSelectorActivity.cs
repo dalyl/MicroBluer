@@ -40,32 +40,46 @@
                       .SetPermissions(Permission.WriteExternalStorage, Permission.ReadExternalStorage)
                       .Build(), new AnonymousAcpListener(ps => Toast.MakeText(this, $"权限拒绝", ToastLength.Short).Show(), InitListView));
 
-            var sureBtn = FindViewById<Button>(Resource.Id.FolderSelector_btChose);
+            var sureBtn = FindViewById<Button>(Resource.Id.FolderSelector_btSure);
             sureBtn.Click += (s, e) => SureSelect();
 
             var cancelBtn = FindViewById<Button>(Resource.Id.FolderSelector_btCancel);
             cancelBtn.Click += (s, e) => CancelSelect();
 
             var backBtn = FindViewById(Resource.Id.FolderSelector_Back);
-            backBtn.Click += (s, e) => BackClick();
+            backBtn.Click += (s, e) => AdapterBackUp();
 
             OnCancelRequested += HandleCancelSelect;
+
+         
             InitListView();
         }
 
-        void BackClick()
+        //void BackClick()
+        //{
+        //    if (Adapter.ItemCount == 0)
+        //    {
+        //        CancelSelect();
+        //        return;
+        //    }
+        //    if (string.IsNullOrEmpty(Adapter.CurrentRoot)) {
+        //        CancelSelect();
+        //        return;
+        //    }
+        //    var dir = new DirectoryInfo(Adapter.CurrentRoot);
+        //    Adapter.SetData(dir.Parent.FullName);
+        //}
+
+        bool AdapterBackUp()
         {
-            if (Adapter.ItemCount == 0)
+            var current = new DirectoryInfo(Adapter.CurrentRoot);
+            if (current.Parent.FullName == Environment.RootDirectory.Path)
             {
-                CancelSelect();
-                return;
+                Toast.MakeText(this, "已经是根目录了", ToastLength.Short).Show();
+                return false;
             }
-            if (string.IsNullOrEmpty(Adapter.CurrentRoot)) {
-                CancelSelect();
-                return;
-            }
-            var dir = new DirectoryInfo(Adapter.CurrentRoot);
-            Adapter.SetData(dir.Parent.FullName);
+            Adapter.SetData(current.Parent.FullName);
+            return true;
         }
 
         void SureSelect()
@@ -83,8 +97,9 @@
 
         void InitListView()
         {
-            var titleView = FindViewById<TextView>(Resource.Id.FolderSelector_Title);
             var listView = FindViewById<RecyclerView>(Resource.Id.FolderSelector_RecyclerView);
+            var titleView = FindViewById<TextView>(Resource.Id.FolderSelector_Title);
+            RegisterForContextMenu(listView);
             Adapter = new SelectorAdapter(this, SelectorType,IsSelectMany, Environment.ExternalStorageDirectory.Path);
             Adapter.AfterChanged += item => {
                 titleView.Text = item == null ? "未知" : (new DirectoryInfo(item.Parent)).Name;

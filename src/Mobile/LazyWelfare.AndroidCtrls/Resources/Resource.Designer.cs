@@ -1665,6 +1665,12 @@ namespace LazyWelfare.AndroidCtrls
 			// aapt resource value: 0x7f06005a
 			public static int FileExplerorItem_Menu = 2131099738;
 			
+			// aapt resource value: 0x7f06008f
+			public static int FileExplerorItem_Menu_Copy = 2131099791;
+			
+			// aapt resource value: 0x7f060090
+			public static int FileExplerorItem_Menu_Rename = 2131099792;
+			
 			// aapt resource value: 0x7f060059
 			public static int FileExplerorItem_Path = 2131099737;
 			
@@ -1714,7 +1720,7 @@ namespace LazyWelfare.AndroidCtrls
 			public static int FolderSelector_btCancel = 2131099740;
 			
 			// aapt resource value: 0x7f06005d
-			public static int FolderSelector_btChose = 2131099741;
+			public static int FolderSelector_btSure = 2131099741;
 			
 			// aapt resource value: 0x7f060082
 			public static int PopupMenuItem_Icon = 2131099778;
@@ -2294,6 +2300,22 @@ namespace LazyWelfare.AndroidCtrls
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0c0000
+			public static int FileExplerorItem_Menu = 2131492864;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}

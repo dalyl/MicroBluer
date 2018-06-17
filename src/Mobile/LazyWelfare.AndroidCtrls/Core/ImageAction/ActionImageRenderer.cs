@@ -88,7 +88,7 @@
                         int x = int.Parse(field.GetValue(obj).ToString());
                         statusBarHeight= Context.Resources.GetDimensionPixelSize(x);
                     }
-                    catch (Exception ex)
+                    catch 
                     {
                         statusBarHeight = 75;
                     }

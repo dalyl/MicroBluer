@@ -7,14 +7,15 @@
     using Android.Support.V7.Widget;
     using Android.Views;
     using Android.Widget;
-    using Object = Java.Lang.Object;
-    using System.IO;
     using LazyWelfare.AndroidUtils.Views;
+    using LazyWelfare.AndroidUtils;
 
     public class SelectorAdapter : RecyclerView.Adapter
     {
 
         private Context Context { get; }
+
+        private TryCatch Try { get; }
 
         private SelectorItemCollection Items { get; } = new SelectorItemCollection();
 
@@ -31,6 +32,7 @@
         public SelectorAdapter(Context context, SelectorType type, bool isSelectMany, string path) : base()
         {
             this.Context = context;
+            Try = new TryCatch(message=>Toast.MakeText(Context, message.Trim(), ToastLength.Short).Show());
             SelectorType = type;
             IsSelectMany = isSelectMany;
             SetData(path);
@@ -70,25 +72,20 @@
 
         public void SetData(string path)
         {
-            try
-            {
+            Try.Invoke(()=> {
                 IsEmptyStyle = true;
                 this.Selects.Clear();
                 Items.Add(path, SelectorType);
                 if (Items.Count == 0)
                 {
-                    Items.Add(new SelectorItem { Parent= path });
+                    Items.Add(new SelectorItem { Parent = path });
                 }
-                else {
+                else
+                {
                     IsEmptyStyle = false;
                 }
                 AfterChanged?.Invoke(Items.FirstOrDefault());
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                Toast.MakeText(Context, "路径无权访问", ToastLength.Short).Show();
-                return;
-            }
+            });
             NotifyDataSetChanged();
         }
 

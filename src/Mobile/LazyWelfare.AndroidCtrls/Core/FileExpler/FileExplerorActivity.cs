@@ -36,8 +36,19 @@
             var closeBtn = FindViewById(Resource.Id.FileExpleror_Close);
             closeBtn.SetOnClickListener(new AnonymousOnClickListener(CloseClick));
 
-
             InitListView();
+        }
+
+        public override void OnCreateContextMenu(IContextMenu menu, View v, IContextMenuContextMenuInfo menuInfo)
+        {
+            base.OnCreateContextMenu(menu, v, menuInfo);
+            MenuInflater.Inflate(Resource.Menu.FileExplerorItem_Menu, menu);
+        }
+
+        public override bool OnContextItemSelected(IMenuItem item)
+        {
+            Adapter.SwitchContextMenu(item);
+            return base.OnContextItemSelected(item);
         }
 
         DateTime? lastBackKeyDownTime;//记录上次按下Back的时间
@@ -50,23 +61,12 @@
                     lastBackKeyDownTime = DateTime.Now;
                     if (AdapterBackUp() == false) return base.OnKeyDown(keyCode, e);
                 }
-                else
-                {
-                    //防止误操作
-                }
                 return true;
             }
             return base.OnKeyDown(keyCode, e);
         }
 
-        public string Root
-        {
-            get
-            {
-                return "/";
-            }
-        }
-
+        public string Root { get; } = "/";
         private RecyclerView ListView { get; set; }
         private RelativeLayout EmptyView { get; set; }
         private ExplerAdapter Adapter { get; set; }
@@ -74,9 +74,10 @@
 
         void InitListView()
         {
-            NodeTree = FindViewById<TextView>(Resource.Id.FileExpleror_NodeTree);
             ListView = FindViewById<RecyclerView>(Resource.Id.FileExpleror_RecyclerView);
+            NodeTree = FindViewById<TextView>(Resource.Id.FileExpleror_NodeTree);
             EmptyView = FindViewById<RelativeLayout>(Resource.Id.FileExpleror_EmptyContent);
+            RegisterForContextMenu(ListView);
             Adapter = new ExplerAdapter(this);
             Adapter.AfterItemsChanged += AdapterChanged;
             Adapter.SetData(Environment.RootDirectory.Path);
@@ -114,7 +115,6 @@
                     ItemText = "存储器",
                     Click= () =>  Adapter.SetData(Environment.ExternalStorageDirectory.Path),
                 },
-              
             };
             var setting = new PopupMenuSetting { };
             PopMenu.PopupMenu.ShowPopupWindows(this, view, menuList, setting);

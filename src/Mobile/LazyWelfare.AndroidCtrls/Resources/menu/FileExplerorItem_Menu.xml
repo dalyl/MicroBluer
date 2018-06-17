@@ -1,0 +1,15 @@
+﻿<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+    >
+
+  <item
+      android:id="@+id/FileExplerorItem_Menu_Copy"
+      android:orderInCategory="100"
+      android:title="复制路径"/>
+
+  <item
+      android:id="@+id/FileExplerorItem_Menu_Rename"
+      android:orderInCategory="100"
+      android:title="重命名"/>
+
+</menu>

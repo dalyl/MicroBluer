@@ -1,12 +1,11 @@
-﻿using Android.Media;
-using Android.Text;
-using Java.IO;
-using Java.Lang;
-using Java.Text;
-using Java.Util;
-
-namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
+﻿namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
 {
+    using Android.Media;
+    using Android.Text;
+    using Java.Lang;
+    using Java.Text;
+    using Java.Util;
+
     public class ExifInterfaceCompat
     {
         public static string TAG = nameof(ExifInterfaceCompat);
@@ -15,7 +14,7 @@ namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
         {
         }
 
-        public static ExifInterface newInstance(string filename)
+        public static ExifInterface NewInstance(string filename)
         {
             if (filename == null)
             {
@@ -27,15 +26,15 @@ namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
             }
         }
 
-        public static Date getExifDateTime(string filepath)
+        public static Date GetExifDateTime(string filepath)
         {
             ExifInterface exif;
 
             try
             {
-                exif = newInstance(filepath);
+                exif = NewInstance(filepath);
             }
-            catch (IOException var5)
+            catch //(IOException var5)
             {
                 return null;
             }
@@ -49,20 +48,22 @@ namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
             {
                 try
                 {
-                    var e = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
-                    e.TimeZone = TimeZone.GetTimeZone("UTC");
+                    var e = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss")
+                    {
+                        TimeZone = TimeZone.GetTimeZone("UTC")
+                    };
                     return e.Parse(date);
                 }
-                catch (ParseException var4)
+                catch// (ParseException var4)
                 {
                     return null;
                 }
             }
         }
 
-        public static long getExifDateTimeInMillis(string filepath)
+        public static long GetExifDateTimeInMillis(string filepath)
         {
-            Date datetime = getExifDateTime(filepath);
+            Date datetime = GetExifDateTime(filepath);
             return datetime == null ? -1L : datetime.Time;
         }
 
@@ -72,9 +73,9 @@ namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
 
             try
             {
-                exif = newInstance(filepath);
+                exif = NewInstance(filepath);
             }
-            catch (IOException var3)
+            catch //(IOException var3)
             {
                 return -1;
             }

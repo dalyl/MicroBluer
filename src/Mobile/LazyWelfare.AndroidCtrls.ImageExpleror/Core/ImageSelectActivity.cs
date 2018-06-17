@@ -26,7 +26,6 @@
 
         public static string STATE_CAPTURE_PHOTO_URI = BundleUtils.BuildKey<ImageSelectActivity>("STATE_CAPTURE_PHOTO_URI");
 
-        private RelativeLayout rlTop;
         private TextView mFoldName;
         private View mListViewGroup;
         private ListView mListView;

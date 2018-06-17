@@ -25,35 +25,32 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:textColor="#458B74"
-                android:text="返回" />
+                android:text="返回上级" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="5dp"
             android:orientation="horizontal">
-            <Button
+            <TextView
                 android:id="@+id/FolderSelector_btCancel"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginRight="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:background="@drawable/selector_bg_button"
-                android:text="@string/filechoose_cancel"
-                android:textColor="#458B74" />
-            <Button
-                android:id="@+id/FolderSelector_btChose"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:textColor="#458B74"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:text="关闭" />
+            <TextView
+                android:id="@+id/FolderSelector_btSure"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginRight="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:background="@drawable/selector_bg_button"
-                android:text="@string/filechoose_sure"
-                android:textColor="#458B74" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:textColor="#458B74"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:text="确定" />
         </LinearLayout>
     </RelativeLayout>
     <RelativeLayout

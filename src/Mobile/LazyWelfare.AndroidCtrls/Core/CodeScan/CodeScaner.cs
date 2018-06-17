@@ -6,8 +6,6 @@
     using System.Threading.Tasks;
     using Android.App;
     using Android.Content;
-    using Android.Content.PM;
-    using Android.Hardware;
     using Android.Hardware.Camera2;
     using Android.OS;
     using Android.Provider;
@@ -173,49 +171,6 @@
             catch
             {
                 throw (new Exception("未发现照明灯"));
-            }
-        }
-
-        Camera m_Camera { get; set; } = null;
-        private void lightSwitchM()
-        {
-            if (m_Camera != null)
-            {
-                // 关闭手电筒
-                m_Camera.StopPreview();
-                m_Camera.Release();
-                m_Camera = null;
-            }
-            else
-            {
-                // 打开手电筒
-                var pm = Context.PackageManager;
-                var features = pm.GetSystemAvailableFeatures();
-                foreach (var f in features)
-                {
-                    if (PackageManager.FeatureCameraFlash.Equals(f.Name))
-                    {
-                        // 判断设备是否支持闪光灯
-                        if (null == m_Camera)
-                        {
-                            m_Camera = Camera.Open();
-                        }
-                        var parameters = m_Camera.GetParameters();
-                        parameters.FlashMode = Camera.Parameters.FlashModeTorch;
-                        m_Camera.SetParameters(parameters);
-                        m_Camera.StartPreview();
-                    }
-                }
-            }
-        }
-
-        void Dispose()
-        {
-            if (m_Camera != null)
-            {
-                m_Camera.StopPreview();
-                m_Camera.Release();
-                m_Camera = null;
             }
         }
 

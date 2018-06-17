@@ -5,10 +5,11 @@
     using System.Collections.Generic;
     using Android.App;
     using Android.Widget;
+    using Android.Content;
     using LazyWelfare.AndroidMobile.AgreementServices;
     using LazyWelfare.AndroidMobile.Logic;
     using LazyWelfare.AndroidMobile.Models;
-    using Android.Content;
+    using LazyWelfare.AndroidUtils;
 
     public class ActiveContext
     {

@@ -2,7 +2,7 @@
 <resources>
   <color name="transparent">#00000000</color>
   <color name="MenuMainPanel_ToolBar_Background">#b71c1c</color>
-  <color name="MenuMainPanel_Background">#C4C4C4</color>
+  <color name="MenuMainPanel_Background">#ffffff</color>
   <color name="gray_9999">#999999</color>
   <color name="gray_f2f2">#CCCCCC</color>
   <color name="Indigo_colorPrimaryDark">#303f9f</color>

@@ -312,19 +312,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\FileExpleror.axml">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Scaner_ZxingOverlay.axml">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Scaner_IncludeTop.axml">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -377,7 +374,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\FileExplerorItem.axml">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -415,6 +411,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-xhdpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\FileExplerorItem_Menu.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

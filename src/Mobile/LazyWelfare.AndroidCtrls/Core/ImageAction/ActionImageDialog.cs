@@ -55,12 +55,12 @@
         /// <summary>
         /// Window.Width
         /// </summary>
-        public int Width { get; set; } = ViewGroup.LayoutParams.FillParent;
+        public int Width { get; set; } = ViewGroup.LayoutParams.MatchParent;
 
         /// <summary>
         /// Window.Height
         /// </summary>
-        public int Height { get; set; } = ViewGroup.LayoutParams.FillParent;
+        public int Height { get; set; } = ViewGroup.LayoutParams.MatchParent;
 
         /// <summary>
         /// 是否可以取消

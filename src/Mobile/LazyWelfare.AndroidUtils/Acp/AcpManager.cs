@@ -6,7 +6,6 @@
     using AlertDialog = Android.App.AlertDialog;
 	using ActivityNotFoundException = Android.Content.ActivityNotFoundException;
 	using Context = Android.Content.Context;
-	using DialogInterface = Android.Content.DialogInterface;
 	using Intent = Android.Content.Intent;
 	using PackageInfo = Android.Content.PM.PackageInfo;
 	using PackageManager = Android.Content.PM.PackageManager;
@@ -17,6 +16,7 @@
     using Android.Content.PM;
     using Android.App;
     using Android.Content;
+    using Android.OS;
 
 
     /// <summary>
@@ -89,8 +89,8 @@
 			lock (this)
 			{
 				mDeniedPermissions.Clear();
-				if (Build.VERSION.SdkInt < Build.VERSION_CODES.M)
-				{
+				if (Build.VERSION.SdkInt < BuildVersionCodes.M)
+                {
 					if (mCallback != null)
 					{
 						mCallback.OnGranted();

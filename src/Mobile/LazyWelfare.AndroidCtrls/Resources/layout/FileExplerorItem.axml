@@ -24,7 +24,7 @@
         android:inputType="textMultiLine"
         android:ellipsize="start"
         android:maxLines="2"
-        android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextVTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewiewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView"
+        android:text=""
         android:duplicateParentState="true"
         android:layout_centerInParent="true" />
     <ImageView

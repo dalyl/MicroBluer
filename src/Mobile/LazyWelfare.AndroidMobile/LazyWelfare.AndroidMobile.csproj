@@ -121,9 +121,7 @@
     <Compile Include="Core\Models\UserModel.cs" />
     <Compile Include="Core\RoundMenuView.cs" />
     <Compile Include="Core\Script\PartialScript.cs" />
-    <Compile Include="Core\TryCatch.cs" />
     <Compile Include="Core\ActiveActivity.cs" />
-    <Compile Include="Core\TryCatchException.cs" />
     <Compile Include="Core\ServiceAgreement\VolumeService.cs" />
     <Compile Include="Core\Views\IPartialView.cs" />
     <Compile Include="Core\Views\PartialLoadForm.cs" />

@@ -14,10 +14,9 @@
         }
 
         private static readonly Bitmap.Config BITMAP_CONFIG = Bitmap.Config.Argb8888;
-        private static int COLORDRAWABLE_DIMENSION = 2;
-        private static int DEFAULT_BORDER_WIDTH = 0;
-        private static int DEFAULT_BORDER_COLOR = Color.Black;
-        private static int DEFAULT_CIRCLE_BACKGROUND_COLOR = Color.Transparent;
+        private static readonly int COLORDRAWABLE_DIMENSION = 2;
+      //  private static int DEFAULT_BORDER_COLOR = Color.Black;
+        private static readonly int DEFAULT_CIRCLE_BACKGROUND_COLOR = Color.Transparent;
 
         static Bitmap GetBitmapFromDrawable(Drawable drawable)
         {

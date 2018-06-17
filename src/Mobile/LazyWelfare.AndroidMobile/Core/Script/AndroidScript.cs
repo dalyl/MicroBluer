@@ -1,16 +1,12 @@
-﻿using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
-using Android.Webkit;
-using Android.Widget;
-using Java.Interop;
-using LazyWelfare.AndroidMobile.Logic;
-using Newtonsoft.Json;
-
-namespace LazyWelfare.AndroidMobile.Script
+﻿namespace LazyWelfare.AndroidMobile.Script
 {
-  
+    using System.Net;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Java.Interop;
+    using Android.Webkit;
+    using Android.Widget;
+    using LazyWelfare.AndroidUtils;
 
     public class AndroidScript : Java.Lang.Object//注意一定要继承java基类  
     {
@@ -59,8 +55,6 @@ namespace LazyWelfare.AndroidMobile.Script
         {
             WebBrower.EvaluateJavascript(script, null);
         }
-
-      
 
     }
 

@@ -203,7 +203,7 @@ namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
                 this.UpdateLatestPhotos();
             }
             long fileSize = file.Length();
-            long taken = ExifInterfaceCompat.getExifDateTimeInMillis(file.AbsolutePath);
+            long taken = ExifInterfaceCompat.GetExifDateTimeInMillis(file.AbsolutePath);
             int maxPoint = 0;
             MediaStoreCompat.PhotoContent maxItem = null;
 
@@ -245,7 +245,7 @@ namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
                 e.Put("mime_type", "image/jpeg");
                 e.Put("description", "mixi Photo");
                 e.Put("orientation", ExifInterfaceCompat.GetExifOrientation(file.AbsolutePath));
-                long date = ExifInterfaceCompat.getExifDateTimeInMillis(file.AbsolutePath);
+                long date = ExifInterfaceCompat.GetExifDateTimeInMillis(file.AbsolutePath);
                 if (date != -1L)
                 {
                     e.Put("datetaken", date);
@@ -262,7 +262,7 @@ namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
                 this.GenerateThumbnails(ContentUris.ParseId(imageUri));
                 return imageUri;
             }
-            catch (Exception e)
+            catch 
             {
                 return null;
             }
@@ -307,7 +307,7 @@ namespace LazyWelfare.AndroidCtrls.ImageExpleror.Utils
             {
                 Thumbnails.GetThumbnail(this.mContext.ContentResolver, imageId, Android.Provider.ThumbnailKind.MiniKind, (Options)null);
             }
-            catch (System.NullReferenceException e)
+            catch// (System.NullReferenceException e)
             {
                 //Console.WriteLine(e.ToString());
                 //Console.Write(e.StackTrace);
