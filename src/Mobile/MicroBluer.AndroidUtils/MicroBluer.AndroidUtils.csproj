@@ -67,6 +67,7 @@
     <Compile Include="Parcel\Parcelable.cs" />
     <Compile Include="Parcel\ParcelableCreator.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="TaskResult.cs" />
     <Compile Include="TryCatch.cs" />
     <Compile Include="TryCatchException.cs" />
     <Compile Include="Views\AnimationListener.cs" />

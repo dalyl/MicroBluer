@@ -151,7 +151,6 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\SplashScreenActivity.cs" />
-    <Compile Include="Core\TaskResult.cs" />
     <Compile Include="Core\Template.cs" />
     <Compile Include="Views\Partials\FolderMapEditView.cs">
       <AutoGen>True</AutoGen>

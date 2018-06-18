@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-namespace MicroBluer.AndroidMobile
+﻿namespace MicroBluer.AndroidUtils
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// 操作返回结果对象
     /// </summary>
@@ -84,12 +76,12 @@ namespace MicroBluer.AndroidMobile
         /// <summary>
         /// 操作执行状态结果
         /// </summary>
-        public bool Succeeded { get;  set; }
+        public bool Succeeded { get; set; }
 
         /// <summary>
         /// 操作执行错误记录
         /// </summary>
-        public List<string> Errors { get;  set; }
+        public List<string> Errors { get; set; }
 
         #endregion
 
@@ -291,7 +283,7 @@ namespace MicroBluer.AndroidMobile
         /// <summary>
         /// 数据结果
         /// </summary>
-        public T Content { get;  set; }
+        public T Content { get; set; }
 
         #endregion
 
@@ -411,5 +403,4 @@ namespace MicroBluer.AndroidMobile
         #endregion
 
     }
-
 }
