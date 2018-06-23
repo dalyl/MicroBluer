@@ -1662,9 +1662,6 @@ namespace MicroBluer.AndroidCtrls
 			// aapt resource value: 0x7f060057
 			public static int FileExplerorItem_Layout = 2131099735;
 			
-			// aapt resource value: 0x7f06005a
-			public static int FileExplerorItem_Menu = 2131099738;
-			
 			// aapt resource value: 0x7f06008f
 			public static int FileExplerorItem_Menu_Copy = 2131099791;
 			
@@ -1673,6 +1670,9 @@ namespace MicroBluer.AndroidCtrls
 			
 			// aapt resource value: 0x7f060059
 			public static int FileExplerorItem_Path = 2131099737;
+			
+			// aapt resource value: 0x7f06005a
+			public static int FileExplerorItem_Size = 2131099738;
 			
 			// aapt resource value: 0x7f060051
 			public static int FileExpleror_BackUp = 2131099729;

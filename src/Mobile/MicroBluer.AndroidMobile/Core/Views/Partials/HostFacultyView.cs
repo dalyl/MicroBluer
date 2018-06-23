@@ -3,6 +3,7 @@
     using System;
     using MicroBluer.AndroidMobile.Models;
     using MicroBluer.AndroidMobile.WebAgreement;
+    using MicroBluer.AndroidUtils;
 
     public partial class HostFacultyView : IPartialView<HostModel>
     {
@@ -15,7 +16,7 @@
         public string GenerateString(string args)
         {
             this.Model = string.IsNullOrEmpty(args) ? new HostModel { Domain = Guid.NewGuid() } : ActiveContext.HostStore.Get(args);
-            if (Model == null) return ActiveContext.Try.Show(string.Empty, "获取服务主机信息失败");
+            if (Model == null) return TryCatch.Current.Show(string.Empty, "获取服务主机信息失败");
             var content = GenerateString();
             var append = ActiveContext.HostExpress.GetPageContent("command-panel");
             return content.Replace(Placeholder_Append, append);

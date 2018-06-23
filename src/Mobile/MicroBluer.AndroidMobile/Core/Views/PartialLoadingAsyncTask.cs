@@ -1,6 +1,7 @@
 ﻿namespace MicroBluer.AndroidMobile.Views
 {
     using Android.Webkit;
+    using MicroBluer.AndroidUtils;
     using System;
 
     public class PartialLoadingAsyncTask : PartialBackgroudWorkerAsyncTask
@@ -27,7 +28,7 @@
             switch (_context.Host)
             {
                 case nameof(PartialHost):
-                    _content = ActiveContext.Try.Invoke(string.Empty, () => PartialHost.Dispatch(_activity as PartialActivity, _context.Url, _context.Args));
+                    _content = TryCatch.Current.Invoke(string.Empty, () => PartialHost.Dispatch(_activity as PartialActivity, _context.Url, _context.Args));
                     break;
             }
         }

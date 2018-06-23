@@ -2,6 +2,7 @@
 {
     using System;
     using Android.OS;
+    using MicroBluer.AndroidUtils;
 
     public class PartialBackgroudWorkerAsyncTask : AsyncTask
     {
@@ -27,7 +28,7 @@
 
         protected override Java.Lang.Object DoInBackground(params Java.Lang.Object[] @params)
         {
-            ActiveContext.Try.Invoke(_invoke);
+            TryCatch.Current.Invoke(_invoke);
             return true;
         }
 

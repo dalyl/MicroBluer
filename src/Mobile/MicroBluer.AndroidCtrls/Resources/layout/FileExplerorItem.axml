@@ -24,17 +24,17 @@
         android:inputType="textMultiLine"
         android:ellipsize="start"
         android:maxLines="2"
-        android:text=""
+        android:text="文件名称"
         android:duplicateParentState="true"
         android:layout_centerInParent="true" />
-    <ImageView
-        android:id="@+id/FileExplerorItem_Menu"
-        android:layout_width="25dp"
-        android:layout_height="35dp"
+    <TextView
+        android:id="@+id/FileExplerorItem_Size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/expleror_more_vert_black" />
+        android:text="1000M" />
 <!---->
 </RelativeLayout>

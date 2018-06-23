@@ -15,7 +15,7 @@
 
         protected WebView WebBrower { get; }
 
-        protected TryCatch Try => ActiveContext.Try;
+        protected TryCatch Try => TryCatch.Current;
 
         public AndroidScript(ActiveActivity activity, WebView brower)
         {

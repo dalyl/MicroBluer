@@ -10,12 +10,11 @@
     using MicroBluer.AndroidUtils.Views;
     using MicroBluer.AndroidUtils;
     using Resource = MicroBluer.AndroidCtrls.Resource;
+    using MicroBluer.AndroidUtils.IO;
 
     public class ExplerAdapter : RecyclerView.Adapter
     {
         private Context Context { get; }
-
-        private TryCatch Try { get;  }
 
         private ExplerItemCollection Items { get; } = new ExplerItemCollection();
 
@@ -28,7 +27,6 @@
         public ExplerAdapter(Context context) : base()
         {
             this.Context = context;
-            Try = new TryCatch(message=>Toast.MakeText(Context, message.Trim(), ToastLength.Short).Show());
         }
 
         public override int ItemCount => Items.Count;
@@ -72,12 +70,12 @@
             var last = item.FullName.LastIndexOf(item.Name);
             var path = item.FullName.Substring(0, last);
             var newPath =$"{path}{text}";
-            Try.Invoke(() => File.Move(item.FullName, newPath));
+            TryCatch.Current.Invoke(() => File.Move(item.FullName, newPath));
         }
 
         public void SetData(string path)
         {
-            Try.Invoke(() => {
+            TryCatch.Current.Invoke(() => {
                 CurrentRoot = path;
                 Items.Add(path);
                 AfterItemsChanged?.Invoke();
@@ -93,13 +91,8 @@
             }
             else
             {
-                Try.Show($"{item.Name}不是文件夹");
+                TryCatch.Current.Show($"{item.Name}不是文件夹");
             }
-        }
-
-        public void MoreClick(ExplerItem item)
-        {
-            Try.Show($"{item.Name}不是文件夹.More");
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -123,14 +116,14 @@
             public ImageView Icon;
             public TextView Path;
             public RelativeLayout Layout;
-            public ImageView Menu;
+            public TextView Size;
 
             public ItemViewHolder(View view) : base(view)
             {
                 Icon = view.FindViewById<ImageView>(Resource.Id.FileExplerorItem_Icon);
                 Path = view.FindViewById<TextView>(Resource.Id.FileExplerorItem_Path);
                 Layout = view.FindViewById<RelativeLayout>(Resource.Id.FileExplerorItem_Layout);
-                Menu = view.FindViewById<ImageView>(Resource.Id.FileExplerorItem_Menu);
+                Size = view.FindViewById<TextView>(Resource.Id.FileExplerorItem_Size);
             }
 
             public void BindData(ExplerAdapter adapter,int position, ExplerItem item)
@@ -138,8 +131,8 @@
                 Path.Text = item.Name;
                 Layout.SetOnClickListener(new AnonymousOnClickListener(v => adapter.ItemClick(item)));
                 Path.SetOnClickListener(new AnonymousOnClickListener(v => adapter.ItemClick(item)));
-                Menu.SetOnClickListener(new AnonymousOnClickListener(v => adapter.MoreClick(item)));
                 Icon.SetImageResource(item.Icon);
+                Size.Text = item.Size.FormetFileSize();
                 Layout.SetOnLongClickListener(new AnonymousLongClickListener(v=> {
                     adapter.SelectedPosition = position;
                     return false;

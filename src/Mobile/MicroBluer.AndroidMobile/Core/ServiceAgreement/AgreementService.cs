@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MicroBluer.AndroidUtils;
 using MicroBluer.Interface;
 
 namespace MicroBluer.AndroidMobile.AgreementServices
@@ -27,7 +28,7 @@ namespace MicroBluer.AndroidMobile.AgreementServices
 
         public bool Execute(string name, Context context)
         {
-            if (Contains(name) == false) return ActiveContext.Try.Throw<bool>($"{name} 服务未不属于协议服务或未被正确注册");
+            if (Contains(name) == false) return TryCatch.Current.Throw<bool>($"{name} 服务未不属于协议服务或未被正确注册");
             var fetchService = Servces[name];
             var service = fetchService(context);
             service.Execute();

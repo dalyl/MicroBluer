@@ -33,9 +33,9 @@
         decimal GetValue()
         {
             var data = ActiveContext.HostExpress.GetCommandResult(GetCommand);
-            if (string.IsNullOrEmpty(data)) return ActiveContext.Try.Throw<decimal>("服务接口数据为空");
+            if (string.IsNullOrEmpty(data)) return TryCatch.Current.Throw<decimal>("服务接口数据为空");
             var result = JsonConvert.DeserializeObject<TaskResult<decimal>>(data);
-            if(result==null) return ActiveContext.Try.Throw<decimal>("服务接口数据格式转换异常");
+            if(result==null) return TryCatch.Current.Throw<decimal>("服务接口数据格式转换异常");
             return Convert.ToDecimal(result.Content);
         }
 
@@ -48,7 +48,7 @@
 
         public bool Execute()
         {
-            if (View == null) return ActiveContext.Try.Throw<bool>("控件视图没有正确实例化");
+            if (View == null) return TryCatch.Current.Throw<bool>("控件视图没有正确实例化");
             View.Show();
             return true;
         }

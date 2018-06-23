@@ -16,8 +16,6 @@
 
         private Context Context { get; }
 
-        private TryCatch Try { get; }
-
         private SelectorItemCollection Items { get; } = new SelectorItemCollection();
 
         private bool IsEmptyStyle { get;  set; } = true;
@@ -33,7 +31,6 @@
         public SelectorAdapter(Context context, SelectorType type, bool isSelectMany) : base()
         {
             this.Context = context;
-            Try = new TryCatch(message=>Toast.MakeText(Context, message.Trim(), ToastLength.Short).Show());
             SelectorType = type;
             IsSelectMany = isSelectMany;
         }
@@ -72,7 +69,7 @@
 
         public void SetData(string path)
         {
-            Try.Invoke(()=> {
+            TryCatch.Current.Invoke(()=> {
                 IsEmptyStyle = true;
                 this.Selects.Clear();
                 Items.Add(path, SelectorType);

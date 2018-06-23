@@ -11,9 +11,13 @@
     using MicroBluer.AndroidMobile.Models;
     using MicroBluer.AndroidUtils;
 
-    public class ActiveContext
+    public sealed class ActiveContext
     {
-        static ActiveContext Current {  get; set; }
+        static ActiveContext() {
+            TryCatch.InitCurrent(ShowMessage);
+        }
+
+        static ActiveContext Current {  get;  set; }
 
         public static Activity Activity => Current.activity;
 
@@ -30,8 +34,6 @@
         public static AgreementService Agreement => Instantiate<AgreementService>();
 
         internal static HostExpressService HostExpress => Instantiate(() => new HostExpressService(Host));
-
-        public static TryCatch Try { get; } = new TryCatch(ShowMessage);
 
         public static void RegisterContext(ActiveContext context)
         {
@@ -63,7 +65,7 @@
         static T Instantiate<T>(Func<T> fetchInstance, string name = "", Action after = null) where T : class
         {
             var key = string.IsNullOrEmpty(name) ? typeof(T).Name : name;
-            if (fetchInstance == null) Try.Throw<T>($"{ key } 实例化方法未提供");
+            if (fetchInstance == null) TryCatch.Current.Throw<T>($"{ key } 实例化方法未提供");
             if (Current.ServiceInstances.Keys.Contains(key))
             {
                 var instance = Current.ServiceInstances[key] as T;
@@ -97,8 +99,6 @@
             var key = string.IsNullOrEmpty(name) ? typeof(T).Name : name;
             if (ServiceInstances.Keys.Contains(key)) ServiceInstances.Remove(key);
         }
-
-
 
         public static bool IsMainActivityAlive(string activityName)
         {

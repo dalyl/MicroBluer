@@ -6,6 +6,7 @@
     using MicroBluer.AndroidCtrls.FileSelect;
     using MicroBluer.AndroidMobile.Models;
     using MicroBluer.AndroidMobile.Views;
+    using MicroBluer.AndroidUtils;
     using Newtonsoft.Json;
     using System.Threading.Tasks;
 
@@ -155,7 +156,7 @@
         [JavascriptInterface]
         public void FileExpleror()
         {
-            ActiveContext.Try.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
+            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
         }
     }
 

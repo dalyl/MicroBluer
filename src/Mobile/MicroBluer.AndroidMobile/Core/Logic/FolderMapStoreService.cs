@@ -5,6 +5,7 @@
     using System.IO;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
+    using MicroBluer.AndroidUtils;
 
     public class FolderMapStoreService : StoreService<FolderMapModel>
     {
@@ -85,7 +86,7 @@
             }
             else {
                 var model = Get(args);
-                if (model == null) return ActiveContext.Try.Show(false,"参数无效");
+                if (model == null) return TryCatch.Current.Show(false,"参数无效");
                 MoveMap(model);
             }
             return true;
@@ -94,7 +95,7 @@
         public bool PushMapFiles(string args)
         {
             var model = Get(args);
-            if (model == null) return ActiveContext.Try.Show(false, "参数无效");
+            if (model == null) return TryCatch.Current.Show(false, "参数无效");
             RestoreMap(model);
             return true;
         }
@@ -102,19 +103,19 @@
         bool RestoreMap(FolderMapModel item)
         {
             var src = $"{ActiveContext.User.Root}/{item.InnerFolder}";
-            if (Directory.Exists(src) == false) return ActiveContext.Try.Show(false, $"{item.Name} 还原文件夹不存在");
+            if (Directory.Exists(src) == false) return TryCatch.Current.Show(false, $"{item.Name} 还原文件夹不存在");
             var dest = item.MapFolder;
             MoveDir(src, dest);
-            return ActiveContext.Try.Show(true, $"{item.Name} 还原完成"); ;
+            return TryCatch.Current.Show(true, $"{item.Name} 还原完成"); ;
         }
 
         bool MoveMap(FolderMapModel item)
         {
             var src = item.MapFolder;
-            if (Directory.Exists(src) == false) return ActiveContext.Try.Show(false, $"{item.Name} 源文件夹不存在");
+            if (Directory.Exists(src) == false) return TryCatch.Current.Show(false, $"{item.Name} 源文件夹不存在");
             var dest = $"{ActiveContext.User.Root}/{item.InnerFolder}";
             MoveDir(src, dest);
-            return ActiveContext.Try.Show(true, $"{item.Name} 归档完成"); ;
+            return TryCatch.Current.Show(true, $"{item.Name} 归档完成"); ;
         }
 
         void MoveDir(string srcDir, string destDir)

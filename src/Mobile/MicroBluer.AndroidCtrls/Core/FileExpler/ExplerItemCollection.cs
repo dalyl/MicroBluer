@@ -1,7 +1,8 @@
 ﻿namespace MicroBluer.AndroidCtrls.FileExpler
 {
+    using Java.IO;
+    using MicroBluer.AndroidUtils.IO;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
 
     public class ExplerItemCollection : List<ExplerItem>
@@ -10,52 +11,36 @@
 
         public ExplerItemCollection(string root)
         {
-            LoadDirectories(root);
-            LoadFiles(root);
+            Add(root);
         }
 
         public void Add(string root)
         {
             this.Clear();
-            LoadDirectories(root);
-            LoadFiles(root);
-        }
-
-        public void LoadDirectories(string root)
-        {
-            var dirs = Directory.GetDirectories(root).OrderBy(it => it);
-            foreach (var dir in dirs)
+            var rootFile = new File(root);
+            var items = rootFile.ListFiles();
+            if (items == null) return;
+            foreach (var it in items)
             {
-                var info = new DirectoryInfo(dir);
                 var item = new ExplerItem
                 {
-                    FullName = dir,
-                    Name = info.Name,
-                    Parent = info.Parent.FullName,
-                    IsDirectory = true,
-                    Icon = Resource.Drawable.expleror_folder,
+                    FullName = it.Path,
+                    Name = it.Name,
+                    Parent = it.Parent,
+                    IsDirectory = it.IsDirectory,
+                    Size = it.GetFileSize(),
+                    Icon = GetFileIcon(it),
                 };
                 this.Add(item);
             }
         }
+      
 
-        public void LoadFiles(string root)
+        public int GetFileIcon(File file)
         {
-            var files = Directory.GetFiles(root).OrderBy(it => it);
-            foreach (var file in files)
-            {
-                var info = new FileInfo(file);
-                var item = new ExplerItem
-                {
-                    FullName = file,
-                    Name = info.Name,
-                    Extension = info.Extension,
-                    Parent = info.Directory.FullName,
-                    IsDirectory = false,
-                    Icon = GetFileIcon(info.Extension)
-                };
-                this.Add(item);
-            }
+            if (file.IsDirectory) return Resource.Drawable.expleror_folder;
+            var extension = file.GetExtension();
+            return GetFileIcon(extension);
         }
 
         public int GetFileIcon(string extension)

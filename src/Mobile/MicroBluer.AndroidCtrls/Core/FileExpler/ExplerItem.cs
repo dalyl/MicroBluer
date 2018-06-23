@@ -14,6 +14,8 @@
 
         public int Icon { get; set; }
 
+        public long Size { get; set; }
+
         public bool IsDirectory { get; set; } = false;
     }
 }

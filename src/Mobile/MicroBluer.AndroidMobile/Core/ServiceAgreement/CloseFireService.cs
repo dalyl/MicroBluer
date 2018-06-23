@@ -5,6 +5,7 @@ namespace MicroBluer.AndroidMobile.AgreementServices
     using System;
     using Android.App;
     using Android.Content;
+    using MicroBluer.AndroidUtils;
 
     public class CloseFireService: IAgreementService
     {
@@ -24,7 +25,7 @@ namespace MicroBluer.AndroidMobile.AgreementServices
 
         public bool Execute()
         {
-            if (View == null) return ActiveContext.Try.Throw<bool>("控件视图没有正确实例化");
+            if (View == null) return TryCatch.Current.Throw<bool>("控件视图没有正确实例化");
             View.Show();
             return true;
         }

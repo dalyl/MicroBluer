@@ -1,21 +1,22 @@
 ﻿namespace MicroBluer.AndroidUtils
 {
     using System;
-
+   
     public class TryCatch 
     {
+
+        public static readonly TryCatch Current = new TryCatch();
+
+        public static void InitCurrent(Action<string> showMessage = null)
+        {
+            Current.ShowMessage = showMessage;
+        }
+
+        public TryCatch(Action<string> showMessage = null) { ShowMessage = showMessage; }
+
         Action<string> ShowMessage { get; set; }
-
-        public TryCatch(Action<string> showMessage = null)
-        {
-            ShowMessage = showMessage;
        
-        }
-
-        public void Show(string message)
-        {
-            ShowMessage?.Invoke(message);
-        }
+        public void Show(string message) => ShowMessage?.Invoke(message);
 
         public void Throw(string message)
         {
@@ -40,16 +41,16 @@
 
         public T Show<T>(T defaultResult, string message)
         {
-            ShowMessage?.Invoke(message);
+            Show(message);
             return defaultResult;
         }
 
         public bool Show(bool defaultResult, string message, string failMessage)
         {
             if (defaultResult)
-                ShowMessage?.Invoke(message);
+                Show(message);
             else
-                ShowMessage?.Invoke(failMessage);
+                Show(failMessage);
             return defaultResult;
         }
 
@@ -57,9 +58,9 @@
         {
             var defaultResult = Invoke(false, invoke);
             if (defaultResult)
-                ShowMessage?.Invoke(message);
+                Show(message);
             else
-                ShowMessage?.Invoke(failMessage);
+                Show(failMessage);
             return defaultResult;
         }
 
