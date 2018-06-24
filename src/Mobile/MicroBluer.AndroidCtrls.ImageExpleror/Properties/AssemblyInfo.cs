@@ -6,11 +6,11 @@ using Android.App;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LazyWelfare.AndroidCtrls.ImageSelect")]
+[assembly: AssemblyTitle("MicroBluer.AndroidCtrls.ImageSelect")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LazyWelfare.AndroidCtrls.ImageSelect")]
+[assembly: AssemblyProduct("MicroBluer.AndroidCtrls.ImageSelect")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

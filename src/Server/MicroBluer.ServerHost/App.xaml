@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/LazyWelfare.ServerHost;component/Resources/Styles/TitleTextBoxStyles.xaml"/>
+                <ResourceDictionary Source="/MicroBluer.ServerHost;component/Resources/Styles/TitleTextBoxStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
