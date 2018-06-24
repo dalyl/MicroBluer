@@ -7,7 +7,9 @@
     using MicroBluer.AndroidMobile.Models;
     using MicroBluer.AndroidMobile.Views;
     using MicroBluer.AndroidUtils;
+    using MicroBluer.AndroidUtils.IO;
     using Newtonsoft.Json;
+    using System.IO;
     using System.Threading.Tasks;
 
     public class BuinessScript: AndroidScript //注意一定要继承java基类  
@@ -139,6 +141,23 @@
             return true;
         }
 
+
+        #endregion
+
+        #region --- HostsFile ---
+
+        [Export("SaveHostsFile")]
+        [JavascriptInterface]
+        public bool SaveHostsFile(string args)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            var path = @"/system/etc/hosts";
+            var apkRoot = "chmod 777 " + path;
+            var IsRoot= SystemManager.RootCommand(apkRoot);
+            if(IsRoot==false) return Try.Show<bool>(false, "尚未获得 root 权限不能操作hosts 文件");
+            TryCatch.Current.Invoke(()=>File.WriteAllText(path, args));
+            return true;
+        }
 
         #endregion
 

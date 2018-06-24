@@ -65,6 +65,7 @@
     <Compile Include="Extension\WeakReferenceExtension.cs" />
     <Compile Include="Graphics\Anonymous.cs" />
     <Compile Include="IO\GetFileSizeUtil.cs" />
+    <Compile Include="IO\SystemManager.cs" />
     <Compile Include="Parcel\Parcelable.cs" />
     <Compile Include="Parcel\ParcelableCreator.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

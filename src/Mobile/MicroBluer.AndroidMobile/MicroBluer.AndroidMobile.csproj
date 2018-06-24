@@ -99,11 +99,13 @@
   <ItemGroup>
     <Compile Include="Core\ActiveContext.cs" />
     <Compile Include="Core\Application.cs" />
-    <Compile Include="Core\Logic\FileOperationAsyncTask.cs" />
+    <Compile Include="Core\Logic\HostsFileEditService.cs" />
     <Compile Include="Core\Logic\StoreService.cs" />
     <Compile Include="Core\MenuContentAdapter.cs" />
     <Compile Include="Core\MenuContentItem.cs" />
     <Compile Include="Core\Views\PartialBackgroudWorkerAsyncTask.cs" />
+    <Compile Include="Core\Views\Partials\FileHostsExplerorView.cs" />
+    <Compile Include="Core\Views\Partials\FileHostsIndexView.cs" />
     <Compile Include="Core\Views\Partials\FolderMapEditView.cs" />
     <Compile Include="Core\Views\Partials\FolderMapIndexView.cs" />
     <Compile Include="Core\Views\Partials\UserEditView.cs" />
@@ -152,6 +154,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\SplashScreenActivity.cs" />
     <Compile Include="Core\Template.cs" />
+    <Compile Include="Views\Partials\FileHostsExplerorView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileHostsExplerorView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Partials\FileHostsIndexView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileHostsIndexView.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Partials\FolderMapEditView.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,6 +227,10 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
+    <None Include="Views\Partials\FileHostsExplerorView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>FileHostsExplerorView.cs</LastGenOutput>
+    </None>
     <None Include="Views\Partials\FolderMapEditView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>FolderMapEditView.cs</LastGenOutput>
@@ -458,6 +474,17 @@
       <Project>{3ec1cd04-b7f3-4bdc-8800-7e0bd11c963c}</Project>
       <Name>MicroBluer.AndroidUtils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Partials\FileHostsIndexView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>FileHostsIndexView.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\base_edit_black.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

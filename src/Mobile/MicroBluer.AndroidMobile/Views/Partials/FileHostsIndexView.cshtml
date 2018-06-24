@@ -1,0 +1,26 @@
+﻿
+<div class="line-section">
+    <div class="list-group">
+        <a href="javascript:void(0);" class="list-group-item hosts-expleror">
+            <span class="glyphicon   glyphicon-th-list  " aria-hidden="true"></span>
+            <span>文件浏览</span>
+        </a>
+    </div>
+</div>
+
+<div class="line-section" id="servicehost">
+
+</div>
+
+
+
+<script>
+    $(function () {
+        $(".hosts-expleror").click(function () {
+            ViewScript.RequestPartial('#MainContent', "Replace", '@FileHostsExplerorView.Partial.Host', '@FileHostsExplerorView.Partial.Path');
+        });
+        
+    })
+</script>
+
+

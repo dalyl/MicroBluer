@@ -43,6 +43,7 @@
             {
                 ClipboardManager manager = (ClipboardManager)Context.GetSystemService(Context.ClipboardService);
                 manager.Text = selected.FullName;
+                TryCatch.Current.Show($"{selected.Name}的路径已复制到剪切板");
                 return;
             }
 
