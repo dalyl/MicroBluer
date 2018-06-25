@@ -20,12 +20,13 @@
         public static long GetFileSize(this File f)
         {
             long size = 0;
-            return TryCatch.Current.Invoke(size, () =>
+            TryCatch.Current.Invoke(() =>
             {
-                if (f == null) return size;
-                if (f.IsDirectory) f.GetFilesSize();
-                return f.Length();
+                if (f == null) return;
+                if (f.IsDirectory) size = f.GetFilesSize();
+                else size = f.Length();
             });
+            return size;
         }
 
         /// <summary>

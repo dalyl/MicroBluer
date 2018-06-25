@@ -22,24 +22,31 @@
             if (items == null) return;
             foreach (var it in items)
             {
+                var extension = GetExtension(it);
                 var item = new ExplerItem
                 {
                     FullName = it.Path,
                     Name = it.Name,
                     Parent = it.Parent,
                     IsDirectory = it.IsDirectory,
+                    Extension = extension,
                     Size = it.GetFileSize(),
                     Icon = GetFileIcon(it),
                 };
                 this.Add(item);
             }
         }
-      
+
+        public string GetExtension(File file)
+        {
+            if (file.IsDirectory) return string.Empty;
+            return file.GetExtension().ToLower();
+        }
 
         public int GetFileIcon(File file)
         {
-            if (file.IsDirectory) return Resource.Drawable.expleror_folder;
-            var extension = file.GetExtension();
+            var extension = GetExtension(file);
+            if (string.IsNullOrEmpty(extension)) return Resource.Drawable.expleror_folder;
             return GetFileIcon(extension);
         }
 

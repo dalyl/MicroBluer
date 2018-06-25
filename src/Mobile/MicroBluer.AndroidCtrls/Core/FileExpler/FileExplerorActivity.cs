@@ -14,6 +14,9 @@
     using MicroBluer.AndroidUtils.Acp;
     using MicroBluer.AndroidCtrls.PopMenu;
     using MicroBluer.AndroidUtils.Views;
+    using MicroBluer.AndroidUtils;
+    using Resource = MicroBluer.AndroidCtrls.Resource;
+    using Android.Content;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public  class FileExplerorActivity : FragmentActivity
@@ -42,12 +45,12 @@
         public override void OnCreateContextMenu(IContextMenu menu, View v, IContextMenuContextMenuInfo menuInfo)
         {
             base.OnCreateContextMenu(menu, v, menuInfo);
-            MenuInflater.Inflate(Resource.Menu.FileExplerorItem_Menu, menu);
+            CreateItemContextMenu(menu, v, menuInfo);
         }
 
         public override bool OnContextItemSelected(IMenuItem item)
         {
-            Adapter.SwitchContextMenu(item);
+            SwitchItemContextMenu(item);
             return base.OnContextItemSelected(item);
         }
 
@@ -59,18 +62,20 @@
                 if (!lastBackKeyDownTime.HasValue || (DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 1)))
                 {
                     lastBackKeyDownTime = DateTime.Now;
-                    if (AdapterBackUp() == false) return base.OnKeyDown(keyCode, e);
+                    if (BackUp() == false) return base.OnKeyDown(keyCode, e);
                 }
                 return true;
             }
             return base.OnKeyDown(keyCode, e);
         }
 
-        public string Root { get; } = "/";
         private RecyclerView ListView { get; set; }
         private RelativeLayout EmptyView { get; set; }
-        private ExplerAdapter Adapter { get; set; }
         private TextView NodeTree { get; set; }
+
+        protected virtual string Root { get; } = "/";
+        protected ExplerAdapter Adapter { get; private set; }
+
 
         void InitListView()
         {
@@ -80,12 +85,13 @@
             RegisterForContextMenu(ListView);
             Adapter = new ExplerAdapter(this);
             Adapter.AfterItemsChanged += AdapterChanged;
+            Adapter.ItemClick += ItemClick;
             Adapter.SetData(Environment.RootDirectory.Path);
             ListView.SetLayoutManager(new LinearLayoutManager(this));
             ListView.SetAdapter(Adapter);
         }
 
-        bool AdapterBackUp()
+        bool BackUp()
         {
             var current = new DirectoryInfo(Adapter.CurrentRoot);
             if (current.Parent.FullName == Root) {
@@ -96,11 +102,11 @@
             return true;
         }
 
-        void BackUpClick(View view) => AdapterBackUp();
+        void BackUpClick(View view) => BackUp();
 
         void CloseClick(View view) => Finish();
 
-        void MoreClick(View view)
+        protected virtual void MoreClick(View view)
         {
             List<PopupMenuItem> menuList = new List<PopupMenuItem> {
                 new PopupMenuItem
@@ -120,14 +126,86 @@
             PopMenu.PopupMenu.ShowPopupWindows(this, view, menuList, setting);
         }
 
-        void AdapterChanged()
+
+        #region ---  Adapter Event  ---
+
+        protected virtual void ItemClick(ExplerItem item)
+        {
+            if (item.IsDirectory)
+            {
+                Adapter.SetData(item.FullName);
+            }
+            else
+            {
+                TryCatch.Current.Show($"{item.Name}不是文件夹");
+            }
+        }
+
+        protected virtual void AdapterChanged()
         {
             EmptyView.Visibility = Adapter.ItemCount == 0 ? ViewStates.Visible : ViewStates.Invisible;
             ListView.Visibility = Adapter.ItemCount == 0 ? ViewStates.Invisible : ViewStates.Visible;
             NodeTree.Text = $"目录 {Adapter.CurrentRoot.Replace("/",">")}";
         }
 
-        
+        #endregion
 
+        #region ---  ItemContextMenu  ---
+
+        public virtual void CreateItemContextMenu(IContextMenu menu, View v, IContextMenuContextMenuInfo menuInfo)
+        {
+            MenuInflater.Inflate(Resource.Menu.FileExplerorItem_Menu, menu);
+        }
+
+
+        public virtual void SwitchItemContextMenu(IMenuItem item)
+        {
+            var position = Adapter.SelectedPosition;
+            var Items = Adapter.Items;
+
+            if (position == -1) return;
+            if (Items.Count < position) return;
+
+            var selected = Items[position];
+            if (selected == null) return;
+
+            Adapter.SelectedPosition = -1;
+
+            if (item.ItemId == Resource.Id.FileExplerorItem_Menu_Copy)
+            {
+                ClipboardManager manager = (ClipboardManager)GetSystemService(ClipboardService);
+                manager.Text = selected.FullName;
+                TryCatch.Current.Show($"{selected.Name}的路径已复制到剪切板");
+                return;
+            }
+
+            if (item.ItemId == Resource.Id.FileExplerorItem_Menu_Rename)
+            {
+                var edit = new EditText(this)
+                {
+                    Text = selected.Name
+                };
+                var editDialog = new AlertDialog.Builder(this);
+                editDialog.SetTitle($"{selected.Name}重命名");
+                editDialog.SetIcon(selected.Icon);
+                //设置dialog布局
+                editDialog.SetView(edit);
+                //设置按钮
+                editDialog.SetPositiveButton("确定", (sender, args) => RenameClick(selected, edit.Text));
+                editDialog.Create().Show();
+                return;
+            }
+
+        }
+
+        void RenameClick(ExplerItem item, string text)
+        {
+            var last = item.FullName.LastIndexOf(item.Name);
+            var path = item.FullName.Substring(0, last);
+            var newPath = $"{path}{text}";
+            TryCatch.Current.Invoke(() => File.Move(item.FullName, newPath));
+        }
+
+        #endregion
     }
 }
