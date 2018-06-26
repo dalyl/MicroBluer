@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.2")]
 public partial class FolderMapIndexView : FolderMapIndexViewBase
 {
 
@@ -45,7 +45,8 @@ WriteLiteral(" class=\"glyphicon   glyphicon-inbox  \"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n            <span>文档管理</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n<div");
+WriteLiteral("></span>\r\n            <span>文档管理</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n" +
+"\r\n<div");
 
 WriteLiteral(" class=\"line-section\"");
 
@@ -82,7 +83,7 @@ WriteLiteral(@"></span>
             ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 27 "FolderMapIndexView.cshtml"
+#line 31 "FolderMapIndexView.cshtml"
                                                              Write(FolderMapsView.Partial.Host);
 
 
@@ -91,7 +92,7 @@ WriteLiteral(@"></span>
 WriteLiteral("\', \'");
 
 
-#line 27 "FolderMapIndexView.cshtml"
+#line 31 "FolderMapIndexView.cshtml"
                                                                                              Write(FolderMapsView.Partial.Path);
 
 

@@ -1,5 +1,6 @@
 ﻿namespace MicroBluer.AndroidUtils.IO
 {
+    using System.Linq;
     using Java.IO;
     using Java.Text;
 
@@ -11,28 +12,29 @@
             if (f.IsFile == false) return string.Empty;
             var length = f.Name.Length;
             var index = f.Name.LastIndexOf(".");
-            return index > 0?f.Name.Substring(index, length - index):string.Empty;
+            return index > 0?f.Name.Substring(index, length - index).ToLower():string.Empty;
         }
 
         /// <summary>
-        ///* 获取文件大小 ** 
+        ///  获取文件大小 
         /// </summary>
-        public static long GetFileSize(this File f)
+        public static long GetFileSize(this File f,params string[] extensions)
         {
             long size = 0;
             TryCatch.Current.Invoke(() =>
             {
                 if (f == null) return;
-                if (f.IsDirectory) size = f.GetFilesSize();
+                if (f.IsDirectory) size = f.GetFilesSize(extensions);
                 else size = f.Length();
             });
             return size;
         }
+     
 
         /// <summary>
         ///* 获取文件夹大小 ** 
         /// </summary>
-        static long GetFilesSize(this File f)
+        static long GetFilesSize(this File f, params string[] extensions)
         {
             long size = 0;
             if (f == null) return size;
@@ -45,10 +47,12 @@
                 {
                     if (item.IsDirectory)
                     {
-                        size = size + GetFilesSize(item);
+                        size = size + GetFilesSize(item, extensions);
                     }
                     else
                     {
+                        var ext = GetExtension(item);
+                        if (extensions != null && extensions.Contains(ext) == false) return;
                         size = size + item.Length();
                     }
                 });

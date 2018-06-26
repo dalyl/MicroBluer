@@ -21,10 +21,15 @@
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public  class FileExplerorActivity : FragmentActivity
     {
+
+        public static Action<FileExplerorActivity> OnCreateStart;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.FileExpleror);
+
+            OnCreateStart?.Invoke(this);
 
             Acp.getInstance(this).request(new AcpOptions.Builder()
                       .SetPermissions(Permission.WriteExternalStorage, Permission.ReadExternalStorage)
@@ -70,12 +75,16 @@
         }
 
         private RecyclerView ListView { get; set; }
+
         private RelativeLayout EmptyView { get; set; }
+
         private TextView NodeTree { get; set; }
 
-        protected virtual string Root { get; } = "/";
+        internal List<string> Roots { get; set; } = new List<string> { Environment.RootDirectory.Path, Environment.ExternalStorageDirectory.Path };
+
         protected ExplerAdapter Adapter { get; private set; }
 
+        internal string[] Extensions { get; set; } = null;
 
         void InitListView()
         {
@@ -84,20 +93,29 @@
             EmptyView = FindViewById<RelativeLayout>(Resource.Id.FileExpleror_EmptyContent);
             RegisterForContextMenu(ListView);
             Adapter = new ExplerAdapter(this);
+            Adapter.Extensions = Extensions;
             Adapter.AfterItemsChanged += AdapterChanged;
             Adapter.ItemClick += ItemClick;
-            Adapter.SetData(Environment.RootDirectory.Path);
+            Adapter.SetData(Roots);
             ListView.SetLayoutManager(new LinearLayoutManager(this));
             ListView.SetAdapter(Adapter);
         }
 
         bool BackUp()
         {
-            var current = new DirectoryInfo(Adapter.CurrentRoot);
-            if (current.Parent.FullName == Root) {
+
+            if (string.IsNullOrEmpty(Adapter.CurrentRoot))
+            {
                 Toast.MakeText(this, "已经是根目录了", ToastLength.Short).Show();
                 return false;
             }
+
+            var current = new DirectoryInfo(Adapter.CurrentRoot);
+            if (Roots.Contains(current.FullName)) {
+                Adapter.SetData(Roots);
+                return true;
+            }
+
             Adapter.SetData(current.Parent.FullName);
             return true;
         }
@@ -156,7 +174,6 @@
         {
             MenuInflater.Inflate(Resource.Menu.FileExplerorItem_Menu, menu);
         }
-
 
         public virtual void SwitchItemContextMenu(IMenuItem item)
         {

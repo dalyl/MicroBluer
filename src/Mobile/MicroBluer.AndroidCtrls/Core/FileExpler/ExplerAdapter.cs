@@ -14,12 +14,13 @@
     using Android.Graphics;
     using Android.Media;
     using Android.Provider;
+    using System.Collections.Generic;
 
     public class ExplerAdapter : RecyclerView.Adapter
     {
         private Context Context { get; }
 
-        public ExplerItemCollection Items { get; } = new ExplerItemCollection();
+        public ExplerItemCollection Items { get; private set; } = new ExplerItemCollection();
 
         public string CurrentRoot { get; private set; }
 
@@ -29,6 +30,12 @@
 
         public int SelectedPosition { get; set; } = -1;
 
+        public string[] Extensions {
+            set {
+                Items = new ExplerItemCollection(value);
+            }
+        }
+
         public ExplerAdapter(Context context) : base()
         {
             this.Context = context;
@@ -36,10 +43,20 @@
 
         public override int ItemCount => Items.Count;
 
+        public void SetData(List<string> paths)
+        {
+            CurrentRoot = string.Empty;
+            TryCatch.Current.Invoke(() => {
+                Items.Add(paths);
+                AfterItemsChanged?.Invoke();
+            });
+            NotifyDataSetChanged();
+        }
+
         public void SetData(string path)
         {
+            CurrentRoot = path;
             TryCatch.Current.Invoke(() => {
-                CurrentRoot = path;
                 Items.Add(path);
                 AfterItemsChanged?.Invoke();
             });
@@ -77,7 +94,7 @@
                 Size = view.FindViewById<TextView>(Resource.Id.FileExplerorItem_Size);
             }
 
-            public void BindData(ExplerAdapter adapter,int position, ExplerItem item)
+            public void BindData(ExplerAdapter adapter, int position, ExplerItem item)
             {
                 Path.Text = item.Name;
                 Layout.SetOnClickListener(new AnonymousOnClickListener(v => adapter.ItemClick(item)));
@@ -85,8 +102,11 @@
 
                 if (item.IsPicture)
                 {
-                    var thumbnail = GetImageThumbnail(item.FullName, Icon.Width, Icon.Height);
-                    Icon.SetImageBitmap(thumbnail);
+                    var thumbnail = TryCatch.Current.Invoke(null, () => GetImageThumbnail(item.FullName, Icon.Width, Icon.Height));
+                    if (thumbnail == null)
+                        Icon.SetImageResource(item.Icon);
+                    else
+                        Icon.SetImageBitmap(thumbnail);
                 }
                 else
                 {
@@ -94,12 +114,12 @@
                 }
 
                 Size.Text = item.Size.FormetFileSize();
-                Layout.SetOnLongClickListener(new AnonymousLongClickListener(v=> {
+                Layout.SetOnLongClickListener(new AnonymousLongClickListener(v =>
+                {
                     adapter.SelectedPosition = position;
                     return false;
                 }));
             }
-
         }
 
         /**

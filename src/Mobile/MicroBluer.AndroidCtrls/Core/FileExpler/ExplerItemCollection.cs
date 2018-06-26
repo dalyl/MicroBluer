@@ -7,11 +7,35 @@
 
     public class ExplerItemCollection : List<ExplerItem>
     {
-        public ExplerItemCollection() { }
+        string[] Extensions { get; set; } = null;
 
-        public ExplerItemCollection(string root)
+        public ExplerItemCollection(string[] extensions=null)
         {
-            Add(root);
+            Extensions = extensions;
+        }
+
+        public void Add(List<string> roots)
+        {
+            this.Clear();
+            if (roots == null) return;
+            foreach (var path in roots)
+            {
+                var it = new File(path);
+                var extension = GetExtension(it);
+                if (it.IsFile && Extensions != null && Extensions.Contains(extension) == false) continue;
+                var item = new ExplerItem
+                {
+                    FullName = it.Path,
+                    Name = it.Name,
+                    Parent = it.Parent,
+                    IsDirectory = it.IsDirectory,
+                    Extension = extension,
+                    Size = it.GetFileSize(Extensions),
+                    Icon = GetFileIcon(it),
+                };
+                if (Extensions != null && item.Size==0) continue;
+                this.Add(item);
+            }
         }
 
         public void Add(string root)
@@ -23,6 +47,7 @@
             foreach (var it in items)
             {
                 var extension = GetExtension(it);
+                if (it.IsFile && Extensions != null && Extensions.Contains(extension) == false) continue;
                 var item = new ExplerItem
                 {
                     FullName = it.Path,
@@ -30,9 +55,10 @@
                     Parent = it.Parent,
                     IsDirectory = it.IsDirectory,
                     Extension = extension,
-                    Size = it.GetFileSize(),
+                    Size = it.GetFileSize(Extensions),
                     Icon = GetFileIcon(it),
                 };
+                if (Extensions != null && item.Size==0) continue;
                 this.Add(item);
             }
         }
@@ -40,7 +66,7 @@
         public string GetExtension(File file)
         {
             if (file.IsDirectory) return string.Empty;
-            return file.GetExtension().ToLower();
+            return file.GetExtension();
         }
 
         public int GetFileIcon(File file)
