@@ -67,18 +67,18 @@
         });
 
         $(".command-play").click(function () {
-            javascript: BuinessScript.PullMapFiles("")
+            javascript: BuinessScript.CollectMapFiles("")
         });
 
 
         $(".command-item-play").click(function () {
             var guid = $(this).parent().data("guid");
-            javascript: BuinessScript.PullMapFiles(guid)
+            javascript: BuinessScript.CollectMapFiles(guid)
         });
 
         $(".command-item-restore").click(function () {
             var guid = $(this).parent().data("guid");
-            javascript: BuinessScript.PushMapFiles(guid)
+            javascript: BuinessScript.RevertMapFiles(guid)
         });
 
     })

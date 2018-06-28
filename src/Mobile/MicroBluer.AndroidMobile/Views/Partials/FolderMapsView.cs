@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.1")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.2")]
 public partial class FolderMapsView : FolderMapsViewBase
 {
 
@@ -245,18 +245,18 @@ WriteLiteral(@"', guid);
         });
 
         $("".command-play"").click(function () {
-            javascript: BuinessScript.PullMapFiles("""")
+            javascript: BuinessScript.CollectMapFiles("""")
         });
 
 
         $("".command-item-play"").click(function () {
             var guid = $(this).parent().data(""guid"");
-            javascript: BuinessScript.PullMapFiles(guid)
+            javascript: BuinessScript.CollectMapFiles(guid)
         });
 
         $("".command-item-restore"").click(function () {
             var guid = $(this).parent().data(""guid"");
-            javascript: BuinessScript.PushMapFiles(guid)
+            javascript: BuinessScript.RevertMapFiles(guid)
         });
 
     })

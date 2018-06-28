@@ -77,7 +77,7 @@
             return base.Delete(key);
         }
 
-        public bool PullMapFiles(string args)
+        public bool CollectMapFiles(string args)
         {
             if (string.IsNullOrEmpty(args))
             {
@@ -92,7 +92,7 @@
             return true;
         }
 
-        public bool PushMapFiles(string args)
+        public bool RevertMapFiles(string args)
         {
             var model = Get(args);
             if (model == null) return TryCatch.Current.Show(false, "参数无效");

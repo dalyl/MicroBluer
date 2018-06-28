@@ -9,6 +9,7 @@
     using MicroBluer.AndroidUtils;
     using MicroBluer.AndroidUtils.IO;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System.IO;
     using System.Threading.Tasks;
 
@@ -118,24 +119,24 @@
             return fetchResult.Result;
         }
 
-        [Export("PullMapFiles")]
+        [Export("CollectMapFiles")]
         [JavascriptInterface]
-        public bool PullMapFiles(string args)
+        public bool CollectMapFiles(string args)
         {
             if(string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
-            void job() => ActiveContext.FolderMapStore.PullMapFiles(args);
+            void job() => ActiveContext.FolderMapStore.CollectMapFiles(args);
             var worker = new PartialBackgroudWorkerAsyncTask(ViewActivity as PartialActivity, job);
             worker.Execute();
             return true;
         }
 
-        [Export("PushMapFiles")]
+        [Export("RevertMapFiles")]
         [JavascriptInterface]
-        public bool PushMapFiles(string args)
+        public bool RevertMapFiles(string args)
         {
             if(string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
             if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
-            void job() => ActiveContext.FolderMapStore.PushMapFiles(args);
+            void job() => ActiveContext.FolderMapStore.RevertMapFiles(args);
             var worker = new PartialBackgroudWorkerAsyncTask(ViewActivity as PartialActivity, job);
             worker.Execute();
             return true;
@@ -173,10 +174,22 @@
 
         [Export("FileExpleror")]
         [JavascriptInterface]
-        public void FileExpleror()
+        public bool FileExpleror()
         {
             TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
+            return true;
+        }
+
+
+        [Export("FilePrivateExpleror")]
+        [JavascriptInterface]
+        public bool FilePrivateExpleror()
+        {
+            if(string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
+            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity,new List<string> { ActiveContext.User.Root }));
+            return true;
         }
     }
+
 
 }

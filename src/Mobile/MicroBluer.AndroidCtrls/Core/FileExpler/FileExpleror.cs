@@ -11,7 +11,7 @@ namespace MicroBluer.AndroidCtrls.FileExpler
         public static void OpenDialog(Context context, string[] extensions = null)
         {
             FileExplerorActivity.OnCreateStart = the => {
-                the.Extensions = new string[] { ".jpg"};
+                the.Extensions = extensions;
             };
             var selectorIntent = new Intent(context, typeof(FileExplerorActivity));
             context.StartActivity(selectorIntent);

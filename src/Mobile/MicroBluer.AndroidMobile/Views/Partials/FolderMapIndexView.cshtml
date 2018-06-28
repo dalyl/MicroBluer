@@ -3,19 +3,27 @@
     <div class="list-group">
         <a href="javascript:void(0);" class="list-group-item  file-expleror">
             <span class="glyphicon   glyphicon-inbox  " aria-hidden="true"></span>
-            <span>文档管理</span>
+            <span>文档浏览</span>
         </a>
     </div>
 </div>
 
 
+<div class="line-section">
+    <div class="list-group">
+        <a href="javascript:void(0);" class="list-group-item  file-private-expleror">
+            <span class="glyphicon   glyphicon-retweet  " aria-hidden="true"></span>
+            <span>归档浏览</span>
+        </a>
+    </div>
+</div>
 
 
 <div class="line-section">
     <div class="list-group">
         <a href="javascript:void(0);" class="list-group-item  file-play">
             <span class="glyphicon   glyphicon-retweet  " aria-hidden="true"></span>
-            <span>资源归档</span>
+            <span>映射归档</span>
         </a>
     </div>
 </div>
@@ -24,6 +32,10 @@
 
         $(".file-expleror").click(function () {
             javascript: BuinessScript.FileExpleror();
+        });
+
+        $(".file-private-expleror").click(function () {
+            javascript: BuinessScript.FilePrivateExpleror();
         });
 
 

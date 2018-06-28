@@ -4,6 +4,7 @@
     using System.Text.RegularExpressions;
     using MicroBluer.AndroidMobile.Models;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
 
     public class UserStoreService : StoreService<string>
     {
@@ -43,18 +44,31 @@
 
         public bool Save(UserModel model)
         {
-            var json = JsonConvert.SerializeObject(model).Replace("{", "").Replace("}", "");
-            var attrItems = json.Split(',');
-            foreach (var attr in attrItems)
+            JObject item = JObject.FromObject(model);
+            var attrs = item.Properties();
+            foreach (var attr in attrs)
             {
-                var parts = attr.Split(':');
-                var key = parts[0].Trim('"');
-                var value = parts[1].Trim('"');
-                if (string.IsNullOrEmpty(value)) break;
-                SetAttr(key, value);
+                if (attr.Value == null) continue;
+                var value = attr.Value.ToString();
+                if (string.IsNullOrEmpty(value)) continue;
+                SetAttr(attr.Name, value);
             }
             ActiveContext.ExpireSercvice<UserModel>();
             return true;
+
+
+            // var json = JsonConvert.SerializeObject(model).Replace("{", "").Replace("}", "");
+            //var attrItems = json.Split(',');
+            //foreach (var attr in attrItems)
+            //{
+            //    var parts = attr.Split(':');
+            //    var key = parts[0].Trim('"');
+            //    var value = parts[1].Trim('"');
+            //    if (string.IsNullOrEmpty(value)|| value=="null") continue;
+            //    SetAttr(key, value);
+            //}
+            //ActiveContext.ExpireSercvice<UserModel>();
+            //return true;
         }
 
         public string GetAttr(string attr)

@@ -45,8 +45,29 @@ WriteLiteral(" class=\"glyphicon   glyphicon-inbox  \"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n            <span>文档管理</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n" +
-"\r\n<div");
+WriteLiteral("></span>\r\n            <span>文档浏览</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n\r\n<d" +
+"iv");
+
+WriteLiteral(" class=\"line-section\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"list-group\"");
+
+WriteLiteral(">\r\n        <a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" class=\"list-group-item  file-private-expleror\"");
+
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"glyphicon   glyphicon-retweet  \"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span>\r\n            <span>归档浏览</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n\r\n<d" +
+"iv");
 
 WriteLiteral(" class=\"line-section\"");
 
@@ -67,7 +88,7 @@ WriteLiteral(" class=\"glyphicon   glyphicon-retweet  \"");
 WriteLiteral(" aria-hidden=\"true\"");
 
 WriteLiteral(@"></span>
-            <span>资源归档</span>
+            <span>映射归档</span>
         </a>
     </div>
 </div>
@@ -78,12 +99,16 @@ WriteLiteral(@"></span>
             javascript: BuinessScript.FileExpleror();
         });
 
+        $("".file-private-expleror"").click(function () {
+            javascript: BuinessScript.FilePrivateExpleror();
+        });
+
 
         $("".file-play"").click(function () {
             ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 31 "FolderMapIndexView.cshtml"
+#line 43 "FolderMapIndexView.cshtml"
                                                              Write(FolderMapsView.Partial.Host);
 
 
@@ -92,7 +117,7 @@ WriteLiteral(@"></span>
 WriteLiteral("\', \'");
 
 
-#line 31 "FolderMapIndexView.cshtml"
+#line 43 "FolderMapIndexView.cshtml"
                                                                                              Write(FolderMapsView.Partial.Path);
 
 
