@@ -1,9 +1,11 @@
 ﻿namespace MicroBluer.AndroidCtrls.FileExpler
 {
     using Java.IO;
+    using MicroBluer.AndroidUtils;
     using MicroBluer.AndroidUtils.IO;
     using System.Collections.Generic;
     using System.Linq;
+    using Resource = MicroBluer.AndroidCtrls.Resource;
 
     public class ExplerItemCollection : List<ExplerItem>
     {
@@ -21,6 +23,11 @@
             foreach (var path in roots)
             {
                 var it = new File(path);
+                if (it.Exists() == false)
+                {
+                    TryCatch.Current.Show($"'{path}':不存在的路径");
+                    continue;
+                }
                 var extension = GetExtension(it);
                 if (it.IsFile && Extensions != null && Extensions.Contains(extension) == false) continue;
                 var item = new ExplerItem
@@ -33,7 +40,7 @@
                     Size = it.GetFileSize(Extensions),
                     Icon = GetFileIcon(it),
                 };
-                if (Extensions != null && item.Size==0) continue;
+                if (Extensions != null && item.Size == 0) continue;
                 this.Add(item);
             }
         }

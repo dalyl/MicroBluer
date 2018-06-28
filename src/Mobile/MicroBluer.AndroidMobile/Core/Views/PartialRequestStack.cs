@@ -1,22 +1,12 @@
 ﻿namespace MicroBluer.AndroidMobile
 {
+    using MicroBluer.AndroidMobile.WebAgreement;
     using System.Collections.Generic;
 
     public class PartialRequestStack
     {
-        public class ActionValue
-        {
-            public ActionValue() { }
-            public ActionValue(string view,string args)
-            {
-                Partial = view;
-                Args = args;
-            }
-            public string Partial { get; set; }
-            public string Args { get; set; }
-        }
 
-        Stack<ActionValue> RequestStacks { get; set; } = new Stack<ActionValue>();
+        Stack<AgreementUri> RequestStacks { get; set; } = new Stack<AgreementUri>();
 
         public bool IsEmpty
         {
@@ -31,15 +21,18 @@
             RequestStacks.Clear();
         }
 
-        public void Push(string partial, string args)
+        public void Push(AgreementUri uri, string args)
         {
-            var value = new ActionValue(partial, args);
-            RequestStacks.Push(value);
+            RequestStacks.Push(new AgreementUri (uri, args));
+        }
+        public void Push(AgreementUri uri)
+        {
+            RequestStacks.Push(uri);
         }
 
-        public ActionValue Fetch()
+        public AgreementUri Fetch()
         {
-            if (IsEmpty) return null;
+            if (IsEmpty) return AgreementUri.Empty;
             RequestStacks.Pop();
             return RequestStacks.Pop();
         }

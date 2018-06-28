@@ -7,7 +7,7 @@
     {
         public static AgreementUri Partial = new AgreementUri(nameof(FileHostsExplerorView), nameof(PartialHost), typeof(FileHostsExplerorView).Name);
 
-        public void PushRequest(PartialActivity context, string args) => context.StackPush(Partial.Name, args);
+        public void PushRequest(PartialActivity context, string args) => context.StackPush(Partial, args);
 
         public string GenerateString(string args)
         {

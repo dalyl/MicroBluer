@@ -16,7 +16,7 @@
     using MicroBluer.AndroidMobile.Models;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
-    public class ApplicationActivity :  PartialActivity
+    public class ApplicationActivity : PartialActivity
     {
         static PartialRequestStack requestStack { get; set; } = new PartialRequestStack();
 
@@ -30,7 +30,6 @@
             var view = InitComponents();
 
             SetContentView(view);
-            SetTitle(ActiveContext.User.Name);
             LoadUser();
             LoadMenu();
             LoadWebview();
@@ -81,11 +80,14 @@
             PartialView.AddJavascriptInterface(new PartialScript(this, PartialView), "PartialScript");
             PartialView.AddJavascriptInterface(new BuinessScript(this, PartialView), "BuinessScript");
             PartialView.SetWebViewClient(new AgreementRouteClient($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{Partial.Host}','{Partial.Path}',null);"));
+            SetTitle("首页");
+
 
             var intColor = Resource.Color.MenuMainPanel_Background;
             var color = GetColor(intColor);
-            var setting = new Template.Setting {
-                Background= string.Format("#%06X", 0xFFFFFF & color),
+            var setting = new Template.Setting
+            {
+                Background = string.Format("#%06X", 0xFFFFFF & color),
             };
 
             PartialView.LoadDataWithBaseURL("file:///android_asset/", Template.Layout(setting), "text/html", "UTF-8", null);
@@ -137,24 +139,25 @@
             var listView = MenuLayout.FindViewById<ListView>(Resource.Id.MenuLeft_ListView);
             var data = new MenuContentItem[]
             {
-                new MenuContentItem(Resource.Drawable.base_home_black, "首页", 1,()=>OpenWebview(UserIndexView.Partial)),
-                new MenuContentItem(Resource.Drawable.base_folder_black, "文档管理", 2,()=>OpenWebview(FolderMapIndexView.Partial)),
-                new MenuContentItem(Resource.Drawable.base_cloud_black, "主机服务", 3,()=>OpenWebview(HostIndexView.Partial)),
-                new MenuContentItem(Resource.Drawable.base_edit_black, "Hosts 编辑", 4,()=>OpenWebview(FileHostsIndexView.Partial)),
-                new MenuContentItem(Resource.Drawable.base_qrcode_black, "扫一扫", 4),
-                new MenuContentItem(Resource.Drawable.base_cast_connected_black, "联机服务", 5),
+                new MenuContentItem(Resource.Drawable.base_home_black, "首页", 1,()=>MenuClick("首页",UserIndexView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_folder_black, "文档管理", 2,()=>MenuClick("文档管理",FolderMapIndexView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_cloud_black, "主机服务", 3,()=>MenuClick("主机服务",HostIndexView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_edit_black, "Hosts 编辑", 4,()=>MenuClick("Hosts 编辑",FileHostsIndexView.Partial)),
+                new MenuContentItem(Resource.Drawable.base_qrcode_black, "扫一扫", 5),
+                new MenuContentItem(Resource.Drawable.base_cast_connected_black, "联机服务", 6),
             };
             var adapter = new MenuContentAdapter(this, data);
             listView.Adapter = adapter;
             listView.OnItemClickListener = new ItemClickListener((adpter, view, position) => data[position].Click());
             //去除行与行之间的黑线：  
-            listView.Divider=(null);
+            listView.Divider = (null);
         }
 
-        void OpenWebview(AgreementUri uri)
+        void MenuClick(string title, AgreementUri uri)
         {
             MenuLayout.CloseDrawers();
-            PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{uri.Host}','{uri.Path}',null);", null);
+            SetTitle(title);
+            OpenWebview(uri);
         }
 
     }

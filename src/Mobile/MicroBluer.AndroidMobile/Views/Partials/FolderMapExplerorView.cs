@@ -18,13 +18,13 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.2")]
-public partial class FolderMapsView : FolderMapsViewBase
+public partial class FolderMapExplerorView : FolderMapExplerorViewBase
 {
 
 #line hidden
 
-#line 1 "FolderMapsView.cshtml"
-public List<MicroBluer.AndroidMobile.Models.FolderMapModel> Model { get; set; }
+#line 1 "FolderMapExplerorView.cshtml"
+public List<string> Model { get; set; }
 
 #line default
 #line hidden
@@ -43,13 +43,13 @@ WriteLiteral(" class=\"list-group\"");
 WriteLiteral(">\r\n");
 
 
-#line 4 "FolderMapsView.cshtml"
+#line 5 "FolderMapExplerorView.cshtml"
             
 
 #line default
 #line hidden
 
-#line 4 "FolderMapsView.cshtml"
+#line 5 "FolderMapExplerorView.cshtml"
              foreach (var one in Model)
             {
 
@@ -62,15 +62,15 @@ WriteLiteral(" class=\"list-group-item main-item\"");
 
 WriteLiteral(">\r\n                    <span");
 
-WriteLiteral(" class=\"glyphicon glyphicon-link\"");
+WriteLiteral(" class=\"glyphicon glyphicon-folder-open\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
 WriteLiteral("></span>\r\n                    <span>");
 
 
-#line 8 "FolderMapsView.cshtml"
-                     Write(one.Name);
+#line 9 "FolderMapExplerorView.cshtml"
+                     Write(one);
 
 
 #line default
@@ -84,8 +84,8 @@ WriteLiteral(" class=\"list-group-item command-item \"");
 WriteLiteral(" data-guid=\"");
 
 
-#line 10 "FolderMapsView.cshtml"
-                                                                Write(one.Guid);
+#line 11 "FolderMapExplerorView.cshtml"
+                                                                Write(one);
 
 
 #line default
@@ -94,211 +94,37 @@ WriteLiteral("\"");
 
 WriteLiteral(">\r\n                    <span");
 
-WriteLiteral(" class=\"command-item-delete red\"");
+WriteLiteral(" class=\"command-item-expleror orangered \"");
 
-WriteLiteral(">删除</span>\r\n                    <span");
+WriteLiteral(">浏览</span>\r\n                    <span");
 
-WriteLiteral(" class=\"command-item-play orangered\"");
+WriteLiteral(" class=\"command-item-create  black\"");
 
-WriteLiteral(">执行</span>\r\n                    <span");
-
-WriteLiteral(" class=\"command-item-restore black\"");
-
-WriteLiteral(">还原</span>\r\n                    <span");
-
-WriteLiteral(" class=\"command-item-eidt blue\"");
-
-WriteLiteral(">编辑</span>\r\n                </li>\r\n");
+WriteLiteral(">创建映射</span>\r\n                </li>\r\n");
 
 
-#line 16 "FolderMapsView.cshtml"
+#line 15 "FolderMapExplerorView.cshtml"
             }
 
 
 #line default
 #line hidden
-WriteLiteral("        </ul>\r\n    </div>\r\n\r\n    <div");
-
-WriteLiteral(" class=\"line-section\"");
-
-WriteLiteral(">\r\n        <ul");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n            <li");
-
-WriteLiteral(" class=\"list-group-item command-play\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"glyphicon glyphicon-play\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span>\r\n                <span>开始归档</span>\r\n            </li>\r\n\r\n            <li" +
-"");
-
-WriteLiteral(" class=\"list-group-item command-scan-image\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"glyphicon   glyphicon-camera  \"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span>\r\n                <span>图片归档</span>\r\n            </li>\r\n\r\n            <li" +
-"");
-
-WriteLiteral(" class=\"list-group-item command-scan-video\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"glyphicon   glyphicon-film  \"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span>\r\n                <span>视频归档</span>\r\n            </li>\r\n\r\n            <li" +
-"");
-
-WriteLiteral(" class=\"list-group-item command-scan-music\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"glyphicon   glyphicon-music  \"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span>\r\n                <span>音乐归档</span>\r\n            </li>\r\n            <li");
-
-WriteLiteral(" class=\"list-group-item command-item-add\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"glyphicon glyphicon-plus\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral(@"></span>
-                <span>手动添加</span>
-            </li>
-        </ul>
+WriteLiteral(@"        </ul>
     </div>
+
     <script>
     $(function () {
-        $("".command-item"").css(""display"", ""none"");
-        $("".command-item"").each(function () {
-            var width = $(this).width();
-            var count = $(""span"", this).length;
-            $(""span"", this).width((width - count) / count);
-        });
-        $("".main-item"").click(function () {
-            var dispaly = $(this).next().css(""display"");
-            $("".command-item"").css(""display"", ""none"");
-            if (dispaly == ""none"") {
-                $(this).next().fadeIn();
-            }
+
+        $("".command-item-expleror"").click(function () {
+            //var guid = $(this).parent().data(""guid"");
+            //javascript: BuinessScript.CollectMapFiles(guid)
         });
 
-        $("".command-item-add"").click(function () {
-            ViewScript.RequestPartial('#MainContent',""Replace"" , '");
-
-
-#line 64 "FolderMapsView.cshtml"
-                                                             Write(FolderMapEditView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 64 "FolderMapsView.cshtml"
-                                                                                                Write(FolderMapEditView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral(@"', """");
+        $("".command-item-create"").click(function () {
         });
-
-        $("".command-item-delete"").click(function () {
-            var guid = $(this).parent().data(""guid"");
-            var result = false;
-            javascript: result = BuinessScript.DeleteFolderMap(guid);
-            if (result) {
-                ViewScript.RequestPartial('#MainContent', ""Replace"", '");
-
-
-#line 72 "FolderMapsView.cshtml"
-                                                                 Write(FolderMapsView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 72 "FolderMapsView.cshtml"
-                                                                                                 Write(FolderMapsView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-eidt\").click(function (" +
-") {\r\n            var guid = $(this).parent().data(\"guid\");\r\n            ViewScri" +
-"pt.RequestPartial(\'#MainContent\', \"Replace\",\'");
-
-
-#line 77 "FolderMapsView.cshtml"
-                                                            Write(FolderMapEditView.Partial.Host);
-
-
-#line default
-#line hidden
-WriteLiteral("\', \'");
-
-
-#line 77 "FolderMapsView.cshtml"
-                                                                                               Write(FolderMapEditView.Partial.Path);
-
-
-#line default
-#line hidden
-WriteLiteral(@"', guid);
-        });
-
-        $("".command-play"").click(function () {
-            javascript: BuinessScript.CollectMapFiles("""")
-        });
-
-        $("".command-scan-image"").click(function () {
-            javascript: BuinessScript.ScanFileMaps(""image"")
-        });
-       
-        $("".command-scan-video"").click(function () {
-            javascript: BuinessScript.ScanFileMaps(""video"")
-        });
-
-        $("".command-scan-music"").click(function () {
-            javascript: BuinessScript.ScanFileMaps(""music"")
-        });
-
-        $("".command-item-play"").click(function () {
-            var guid = $(this).parent().data(""guid"");
-            javascript: BuinessScript.CollectMapFiles(guid)
-        });
-
-        $("".command-item-restore"").click(function () {
-            var guid = $(this).parent().data(""guid"");
-            javascript: BuinessScript.RevertMapFiles(guid)
-        });
-
-
-
 
     })
     </script>
-
 ");
 
 }
@@ -307,7 +133,7 @@ WriteLiteral(@"', guid);
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class FolderMapsViewBase
+public abstract class FolderMapExplerorViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

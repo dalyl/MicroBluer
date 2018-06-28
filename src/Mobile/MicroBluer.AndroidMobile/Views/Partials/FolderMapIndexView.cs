@@ -41,12 +41,12 @@ WriteLiteral(" class=\"list-group-item  file-expleror\"");
 
 WriteLiteral(">\r\n            <span");
 
-WriteLiteral(" class=\"glyphicon   glyphicon-inbox  \"");
+WriteLiteral(" class=\"glyphicon   glyphicon-search  \"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n            <span>文档浏览</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n\r\n<d" +
-"iv");
+WriteLiteral("></span>\r\n            <span>文档浏览</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n<div" +
+"");
 
 WriteLiteral(" class=\"line-section\"");
 
@@ -62,12 +62,12 @@ WriteLiteral(" class=\"list-group-item  file-private-expleror\"");
 
 WriteLiteral(">\r\n            <span");
 
-WriteLiteral(" class=\"glyphicon   glyphicon-retweet  \"");
+WriteLiteral(" class=\"glyphicon   glyphicon-search  \"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n            <span>归档浏览</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n\r\n<d" +
-"iv");
+WriteLiteral("></span>\r\n            <span>归档浏览</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n<div" +
+"");
 
 WriteLiteral(" class=\"line-section\"");
 
@@ -102,13 +102,13 @@ WriteLiteral(@"></span>
         $("".file-private-expleror"").click(function () {
             javascript: BuinessScript.FilePrivateExpleror();
         });
-
+     
 
         $("".file-play"").click(function () {
             ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 43 "FolderMapIndexView.cshtml"
+#line 41 "FolderMapIndexView.cshtml"
                                                              Write(FolderMapsView.Partial.Host);
 
 
@@ -117,7 +117,7 @@ WriteLiteral(@"></span>
 WriteLiteral("\', \'");
 
 
-#line 43 "FolderMapIndexView.cshtml"
+#line 41 "FolderMapIndexView.cshtml"
                                                                                              Write(FolderMapsView.Partial.Path);
 
 

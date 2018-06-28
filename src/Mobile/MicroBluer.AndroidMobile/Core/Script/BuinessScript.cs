@@ -1,5 +1,10 @@
 ﻿namespace MicroBluer.AndroidMobile.Script
 {
+    using System;
+    using System.IO;
+    using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using Newtonsoft.Json;
     using Android.Webkit;
     using Java.Interop;
     using MicroBluer.AndroidCtrls;
@@ -8,10 +13,8 @@
     using MicroBluer.AndroidMobile.Views;
     using MicroBluer.AndroidUtils;
     using MicroBluer.AndroidUtils.IO;
-    using Newtonsoft.Json;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Threading.Tasks;
+    using MicroBluer.AndroidMobile.WebAgreement;
+    using MicroBluer.AndroidMobile.Views.Partials;
 
     public class BuinessScript: AndroidScript //注意一定要继承java基类  
     {
@@ -92,6 +95,23 @@
 
         #region --- FolderMap   ---
 
+        [Export("FileExpleror")]
+        [JavascriptInterface]
+        public bool FileExpleror()
+        {
+            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
+            return true;
+        }
+
+        [Export("FilePrivateExpleror")]
+        [JavascriptInterface]
+        public bool FilePrivateExpleror()
+        {
+            if (string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
+            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity, new List<string> { ActiveContext.User.Root }));
+            return true;
+        }
+
         [Export("SaveFolderMap")]
         [JavascriptInterface]
         public bool SaveFolderMap(string args)
@@ -142,6 +162,27 @@
             return true;
         }
 
+        [Export("ScanFileMaps")]
+        [JavascriptInterface]
+        public bool ScanFileMaps(string args)
+        {
+            if (string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            List<string> dirs =null;
+            void job() => dirs = ActiveContext.FolderMapStore.ScanFileMaps(args);
+            bool after()
+            {
+                if(dirs==null) return Try.Show<bool>(false, "扫描返回值异常");
+                var view = ViewActivity as PartialActivity;
+                var json = JsonConvert.SerializeObject(dirs);
+                view.OpenWebview(FolderMapExplerorView.Partial, json);
+                return true;
+            }
+            var worker = new PartialBackgroudWorkerAsyncTask(ViewActivity as PartialActivity, job, null, () => after());
+            worker.Execute();
+            return true;
+        }
+
 
         #endregion
 
@@ -171,24 +212,7 @@
             if (model == null) return Try.Show<bool>(false, "参数未正确识别");
             return ActiveContext.HostExpress.InvokeCommand(model, ViewActivity);
         }
-
-        [Export("FileExpleror")]
-        [JavascriptInterface]
-        public bool FileExpleror()
-        {
-            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
-            return true;
-        }
-
-
-        [Export("FilePrivateExpleror")]
-        [JavascriptInterface]
-        public bool FilePrivateExpleror()
-        {
-            if(string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
-            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity,new List<string> { ActiveContext.User.Root }));
-            return true;
-        }
+      
     }
 
 

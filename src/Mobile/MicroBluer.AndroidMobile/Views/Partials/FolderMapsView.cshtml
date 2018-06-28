@@ -3,33 +3,44 @@
         <ul class="list-group">
             @foreach (var one in Model)
             {
-            <li class="list-group-item main-item">
-                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-                <span>@one.Name</span>
-            </li>
-            <li class="list-group-item command-item " data-guid="@one.Guid">
-                <span class="command-item-delete red">删除</span>
-                <span class="command-item-play orangered">执行</span>
-                <span class="command-item-restore black">还原</span>
-                <span class="command-item-eidt blue">编辑</span>
-            </li>
+                <li class="list-group-item main-item">
+                    <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                    <span>@one.Name</span>
+                </li>
+                <li class="list-group-item command-item " data-guid="@one.Guid">
+                    <span class="command-item-delete red">删除</span>
+                    <span class="command-item-play orangered">执行</span>
+                    <span class="command-item-restore black">还原</span>
+                    <span class="command-item-eidt blue">编辑</span>
+                </li>
             }
         </ul>
     </div>
 
     <div class="line-section">
         <ul class="list-group">
-            <li class="list-group-item command-explor">
-                <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
-                <span>查看归档</span>
-            </li>
             <li class="list-group-item command-play">
                 <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                 <span>开始归档</span>
             </li>
+
+            <li class="list-group-item command-scan-image">
+                <span class="glyphicon   glyphicon-camera  " aria-hidden="true"></span>
+                <span>图片归档</span>
+            </li>
+
+            <li class="list-group-item command-scan-video">
+                <span class="glyphicon   glyphicon-film  " aria-hidden="true"></span>
+                <span>视频归档</span>
+            </li>
+
+            <li class="list-group-item command-scan-music">
+                <span class="glyphicon   glyphicon-music  " aria-hidden="true"></span>
+                <span>音乐归档</span>
+            </li>
             <li class="list-group-item command-item-add">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                <span>添加</span>
+                <span>手动添加</span>
             </li>
         </ul>
     </div>
@@ -39,7 +50,7 @@
         $(".command-item").each(function () {
             var width = $(this).width();
             var count = $("span", this).length;
-            $("span", this).width((width - count) / count); 
+            $("span", this).width((width - count) / count);
         });
         $(".main-item").click(function () {
             var dispaly = $(this).next().css("display");
@@ -52,7 +63,7 @@
         $(".command-item-add").click(function () {
             ViewScript.RequestPartial('#MainContent',"Replace" , '@FolderMapEditView.Partial.Host', '@FolderMapEditView.Partial.Path', "");
         });
-     
+
         $(".command-item-delete").click(function () {
             var guid = $(this).parent().data("guid");
             var result = false;
@@ -70,6 +81,17 @@
             javascript: BuinessScript.CollectMapFiles("")
         });
 
+        $(".command-scan-image").click(function () {
+            javascript: BuinessScript.ScanFileMaps("image")
+        });
+       
+        $(".command-scan-video").click(function () {
+            javascript: BuinessScript.ScanFileMaps("video")
+        });
+
+        $(".command-scan-music").click(function () {
+            javascript: BuinessScript.ScanFileMaps("music")
+        });
 
         $(".command-item-play").click(function () {
             var guid = $(this).parent().data("guid");
@@ -80,6 +102,9 @@
             var guid = $(this).parent().data("guid");
             javascript: BuinessScript.RevertMapFiles(guid)
         });
+
+
+
 
     })
     </script>

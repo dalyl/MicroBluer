@@ -7,7 +7,7 @@
     {
         public static AgreementUri Partial = new AgreementUri(nameof(HostEditView), nameof(PartialHost), typeof(HostEditView).Name);
 
-        public void PushRequest(PartialActivity context, string args) => context.StackPush(Partial.Name, args);
+        public void PushRequest(PartialActivity context, string args) => context.StackPush(Partial, args);
 
         public string GenerateString(string args)
         {

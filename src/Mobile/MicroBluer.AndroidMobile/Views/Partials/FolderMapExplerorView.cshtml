@@ -1,0 +1,31 @@
+﻿@model List<string>
+
+    <div class="line-section">
+        <ul class="list-group">
+            @foreach (var one in Model)
+            {
+                <li class="list-group-item main-item">
+                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                    <span>@one</span>
+                </li>
+                <li class="list-group-item command-item " data-guid="@one">
+                    <span class="command-item-expleror orangered ">浏览</span>
+                    <span class="command-item-create  black">创建映射</span>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <script>
+    $(function () {
+
+        $(".command-item-expleror").click(function () {
+            //var guid = $(this).parent().data("guid");
+            //javascript: BuinessScript.CollectMapFiles(guid)
+        });
+
+        $(".command-item-create").click(function () {
+        });
+
+    })
+    </script>

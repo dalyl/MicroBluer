@@ -1,5 +1,6 @@
 ﻿namespace MicroBluer.AndroidUtils.IO
 {
+    using System.Collections.Generic;
     using System.Linq;
     using Java.IO;
     using Java.Text;
@@ -7,6 +8,52 @@
     public static class FileExtension
     {
 
+        /// <summary>
+        /// 获取包含指定后缀文件的文件夹路径
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetPaths(string path, params string[] extensions)
+        {
+            File root = new File(path);
+            if (root.IsDirectory == false) return new List<string>();
+            return GetPaths(root, extensions);
+        }
+
+        /// <summary>
+        /// 获取包含指定后缀文件的文件夹路径
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetPaths(File root, params string[] extensions)
+        {
+            List<string> result = new List<string>();
+            if (root.IsDirectory == false) return result;
+            File[] contents = root.ListFiles();
+            if (contents == null) return result;
+
+            ///文件夹含有 指定后缀文件返回其本身
+            var exist = contents.Where(s => s.IsFile).Select(s => extensions.Contains(GetExtension(s))).FirstOrDefault(s => s == true);
+            if (exist)
+            {
+                result.Add(root.Path);
+                return result;
+            }
+
+            ///否则，扫描其子文件
+            var dirs = contents.Where(s => s.IsDirectory);
+            foreach (var dir in dirs)
+            {
+                var subs = GetPaths(dir, extensions);
+                result.AddRange(subs);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 获取文件后缀
+        /// </summary>
+        /// <param name="f"></param>
+        /// <returns></returns>
         public static string GetExtension(this File f)
         {
             if (f.IsFile == false) return string.Empty;

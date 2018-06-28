@@ -8,6 +8,7 @@
     using Android.Widget;
     using MicroBluer.AndroidCtrls.LoadingAnimation;
     using MicroBluer.AndroidMobile.Views;
+    using MicroBluer.AndroidMobile.WebAgreement;
 
     public abstract class PartialActivity : ActiveActivity
     {
@@ -30,21 +31,31 @@
         public bool TryBack()
         {
             var value = RequestStack.Fetch();
-            if (value != null)
+            if (value != AgreementUri.Empty)
             {
-                PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{ nameof(Views.PartialHost) }','{ value.Partial.ToString() }','{value.Args}');", null);
-                return true;
+                return OpenWebview(value);
             }
             return false;
         }
-        #region ---   PartialRequestStack   ---
 
+        public bool OpenWebview(AgreementUri uri, string args)
+        {
+            return OpenWebview(string.IsNullOrEmpty(args) ? uri : new AgreementUri(uri, args));
+        }
+
+        public bool OpenWebview(AgreementUri uri)
+        {
+            PartialView.EvaluateJavascript($"ViewScript.RequestPartial('#MainContent','{PartialLoadForm.Replace}' ,'{uri.Host}','{uri.Path}',{(string.IsNullOrEmpty(uri.Args) ? "null": $"'{uri.Args}'")});", null);
+            return true;
+        }
+
+        #region ---   PartialRequestStack   ---
 
         private PartialRequestStack RequestStack { get; }
 
-        public void StackPush(string name,string args)
+        public void StackPush(AgreementUri uri, string args = "")
         {
-            RequestStack.Push(name, args);
+            RequestStack.Push(string.IsNullOrEmpty(args) ? uri : new AgreementUri(uri, args));
         }
 
         public void StackClear()
@@ -52,10 +63,10 @@
             RequestStack.Clear();
         }
 
-        public void StackClearPush(string name, string args)
+        public void StackClearPush(AgreementUri uri, string args = "")
         {
             RequestStack.Clear();
-            RequestStack.Push(name, args);
+            RequestStack.Push(string.IsNullOrEmpty(args) ? uri : new AgreementUri(uri, args));
         }
 
 
