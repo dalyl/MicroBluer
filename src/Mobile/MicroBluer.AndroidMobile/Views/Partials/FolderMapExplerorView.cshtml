@@ -1,15 +1,19 @@
-﻿@model List<string>
+﻿@{
+    var kind = Model.kind;
+    var dirs = Model.dirs;
+ }
 
     <div class="line-section">
         <ul class="list-group">
-            @foreach (var one in Model)
+            @foreach (var one in dirs)
             {
                 <li class="list-group-item main-item">
                     <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                     <span>@one</span>
                 </li>
-                <li class="list-group-item command-item " data-guid="@one">
+                <li class="list-group-item command-item " data-dir="@one">
                     <span class="command-item-expleror orangered ">浏览</span>
+                    <span class="command-item-exclude red ">设置排除</span>
                     <span class="command-item-create  black">创建映射</span>
                 </li>
             }
@@ -17,15 +21,22 @@
     </div>
 
     <script>
-    $(function () {
+        $(function () {
 
-        $(".command-item-expleror").click(function () {
-            //var guid = $(this).parent().data("guid");
-            //javascript: BuinessScript.CollectMapFiles(guid)
-        });
+            $(".command-item-expleror").click(function () {
+                var dir = $(this).parent().data("dir");
+                javascript: BuinessScript.FileExpleror(dir);
+            });
 
-        $(".command-item-create").click(function () {
-        });
+            $(".command-item-exclude").click(function () {
+                var dir = $(this).parent().data("dir");
+                javascript: BuinessScript.CreateExcludeFolder(dir,@kind)
+            });
 
-    })
+            $(".command-item-create").click(function () {
+                var dir = $(this).parent().data("dir");
+                javascript: BuinessScript.CreateFolderMap(dir)
+            });
+
+        })
     </script>

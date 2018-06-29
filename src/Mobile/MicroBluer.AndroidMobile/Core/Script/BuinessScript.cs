@@ -1,7 +1,6 @@
 ﻿namespace MicroBluer.AndroidMobile.Script
 {
     using System;
-    using System.IO;
     using System.Threading.Tasks;
     using System.Collections.Generic;
     using Newtonsoft.Json;
@@ -97,9 +96,12 @@
 
         [Export("FileExpleror")]
         [JavascriptInterface]
-        public bool FileExpleror()
+        public bool FileExpleror(string args)
         {
-            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
+            if (string.IsNullOrEmpty(args))
+                TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
+            else 
+                TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity, new List<string> { args }));
             return true;
         }
 
@@ -121,6 +123,38 @@
             if (model == null) return Try.Show<bool>(false, "参数未正确识别");
             return Try.Show(() => ActiveContext.FolderMapStore.Save(model), "保存成功", "保存失败");
         }
+
+        [Export("CreateExcludeFolder")]
+        [JavascriptInterface]
+        public bool CreateExcludeFolder(string args, FolderKind kind)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            var dir = new Java.IO.File(args);
+            if (dir.Exists() == false) return Try.Show<bool>(false, $"{args}:路径不存在");
+            if (dir.IsDirectory == false) return Try.Show<bool>(false, $"{args}:路径不是文件夹");
+            if (kind == FolderKind.None) return TryCatch.Current.Show(false, $"{kind} 未定义的文件夹分类");
+            ActiveContext.FolderExcludeStore.Add(args, kind);
+            return true;
+        }
+
+        [Export("CreateFolderMap")]
+        [JavascriptInterface]
+        public bool CreateFolderMap(string args)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            var dir = new Java.IO.File(args);
+            if (dir.Exists() == false) return Try.Show<bool>(false, $"{args}:路径不存在");
+            if (dir.IsDirectory == false) return Try.Show<bool>(false, $"{args}:路径不是文件夹");
+            var model = new FolderMapModel
+            {
+                Guid = Guid.NewGuid(),
+                Name = dir.Name,
+                InnerFolder = dir.Name,
+                MapFolder = dir.Path,
+            };
+            return Try.Show(() => ActiveContext.FolderMapStore.Save(model), "保存成功", "保存失败");
+        }
+
 
         [Export("DeleteFolderMap")]
         [JavascriptInterface]
@@ -161,6 +195,7 @@
             worker.Execute();
             return true;
         }
+       
 
         [Export("ScanFileMaps")]
         [JavascriptInterface]
@@ -168,13 +203,20 @@
         {
             if (string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
             if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            var kind = FolderKindExtension.TryParse(args);
+            if(kind== FolderKind.None) return TryCatch.Current.Show(false, $"{args} 未定义的文件夹分类");
             List<string> dirs =null;
-            void job() => dirs = ActiveContext.FolderMapStore.ScanFileMaps(args);
+            void job(){
+                var exts = FolderKindExtension.GetExtensions(args);
+                if(exts.Length==0)
+                dirs= FileExtension.GetPaths(Android.OS.Environment.ExternalStorageDirectory.Path, exts);
+            };
             bool after()
             {
                 if(dirs==null) return Try.Show<bool>(false, "扫描返回值异常");
                 var view = ViewActivity as PartialActivity;
-                var json = JsonConvert.SerializeObject(dirs);
+                (FolderKind kind, List<string> dirs) model = (kind, dirs);
+                var json = JsonConvert.SerializeObject(model);
                 view.OpenWebview(FolderMapExplerorView.Partial, json);
                 return true;
             }
@@ -197,7 +239,7 @@
             var apkRoot = "chmod 777 " + path;
             var IsRoot= SystemManager.RootCommand(apkRoot);
             if(IsRoot==false) return Try.Show<bool>(false, "尚未获得 root 权限不能操作hosts 文件");
-            TryCatch.Current.Invoke(()=>File.WriteAllText(path, args));
+            TryCatch.Current.Invoke(()=> System.IO.File.WriteAllText(path, args));
             return true;
         }
 

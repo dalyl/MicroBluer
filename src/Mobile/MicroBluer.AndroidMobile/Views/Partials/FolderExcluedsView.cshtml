@@ -1,0 +1,26 @@
+﻿<div class="line-section">
+    <ul class="list-group">
+        @foreach (var one in Model)
+        {
+            <li class="list-group-item main-item">
+                <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                <span>@one.Path</span>
+            </li>
+            <li class="list-group-item command-item " data-guid="@one.Guid" data-dir="@one.Path">
+                <span class="command-item-expleror orangered ">浏览</span>
+            </li>
+        }
+    </ul>
+</div>
+
+
+<script>
+        $(function () {
+
+            $(".command-item-expleror").click(function () {
+                var dir = $(this).parent().data("dir");
+                javascript: BuinessScript.FileExpleror(dir);
+            });
+
+        })
+</script>

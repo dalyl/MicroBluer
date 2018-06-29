@@ -272,15 +272,15 @@ WriteLiteral(@"', guid);
         });
 
         $("".command-scan-image"").click(function () {
-            javascript: BuinessScript.ScanFileMaps(""image"")
+            javascript: BuinessScript.ScanFileMaps(""Image"")
         });
-       
+
         $("".command-scan-video"").click(function () {
-            javascript: BuinessScript.ScanFileMaps(""video"")
+            javascript: BuinessScript.ScanFileMaps(""Video"")
         });
 
         $("".command-scan-music"").click(function () {
-            javascript: BuinessScript.ScanFileMaps(""music"")
+            javascript: BuinessScript.ScanFileMaps(""Music"")
         });
 
         $("".command-item-play"").click(function () {

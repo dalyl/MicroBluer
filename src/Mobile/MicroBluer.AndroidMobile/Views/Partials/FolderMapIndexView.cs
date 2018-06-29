@@ -87,28 +87,49 @@ WriteLiteral(" class=\"glyphicon   glyphicon-retweet  \"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
+WriteLiteral("></span>\r\n            <span>映射归档</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n\r\n<d" +
+"iv");
+
+WriteLiteral(" class=\"line-section\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"list-group\"");
+
+WriteLiteral(">\r\n        <a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" class=\"list-group-item  file-exclued-expleror\"");
+
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"glyphicon   glyphicon-trash \"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
 WriteLiteral(@"></span>
-            <span>映射归档</span>
+            <span>映射排除</span>
         </a>
     </div>
 </div>
+
 <script>
     $(function () {
 
         $("".file-expleror"").click(function () {
-            javascript: BuinessScript.FileExpleror();
+            javascript: BuinessScript.FileExpleror(null);
         });
 
         $("".file-private-expleror"").click(function () {
             javascript: BuinessScript.FilePrivateExpleror();
         });
-     
 
         $("".file-play"").click(function () {
             ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 41 "FolderMapIndexView.cshtml"
+#line 51 "FolderMapIndexView.cshtml"
                                                              Write(FolderMapsView.Partial.Host);
 
 
@@ -117,8 +138,27 @@ WriteLiteral(@"></span>
 WriteLiteral("\', \'");
 
 
-#line 41 "FolderMapIndexView.cshtml"
+#line 51 "FolderMapIndexView.cshtml"
                                                                                              Write(FolderMapsView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\');\r\n        });\r\n        \r\n        $(\".file-exclued-expleror\").click(function ()" +
+" {\r\n            ViewScript.RequestPartial(\'#MainContent\', \"Replace\", \'");
+
+
+#line 55 "FolderMapIndexView.cshtml"
+                                                             Write(FolderExcluedsView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 55 "FolderMapIndexView.cshtml"
+                                                                                                 Write(FolderExcluedsView.Partial.Path);
 
 
 #line default

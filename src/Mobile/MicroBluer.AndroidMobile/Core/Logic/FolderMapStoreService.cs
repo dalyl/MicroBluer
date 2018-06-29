@@ -93,20 +93,6 @@
             return true;
         }
 
-        static readonly Dictionary<string, string[]> ExtensionDictionary = new Dictionary<string, string[]> {
-                 { "image",new string[] { ".png", ".jpg", ".jpeg", ".gif", ".bmp" } },
-                 { "video",new string[] { ".mp3", ".wma", ".wav", ".amr", ".m4a", ".m4r", ".ape", ".flac" } },
-                 { "music",new string[] {  ".mp4",".rm",".rmvb",".mpeg1", ".mpeg2", ".mpeg3", ".mpeg4", ".3gp", ".flv" } },
-            };
-
-        public List<string> ScanFileMaps(string tpye)
-        {
-            var dirs = new List<string>();
-            if (ExtensionDictionary.ContainsKey(tpye) == false) TryCatch.Current.Throw("参数无效");
-            var exts = ExtensionDictionary[tpye];
-            return FileExtension.GetPaths(Android.OS.Environment.ExternalStorageDirectory.Path, exts);
-        }
-
         public bool RevertMapFiles(string args)
         {
             var model = Get(args);

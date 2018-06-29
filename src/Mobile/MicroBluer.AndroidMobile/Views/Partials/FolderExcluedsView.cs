@@ -18,107 +18,102 @@ using System.Text;
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "4.10.10.2")]
-public partial class FolderMapExplerorView : FolderMapExplerorViewBase
+public partial class FolderExcluedsView : FolderExcluedsViewBase
 {
 
 #line hidden
 
 public override void Execute()
 {
-
-#line 1 "FolderMapExplerorView.cshtml"
-  
-    var kind = Model.kind;
-    var dirs = Model.dirs;
- 
-
-#line default
-#line hidden
-WriteLiteral("\r\n\r\n    <div");
+WriteLiteral("<div");
 
 WriteLiteral(" class=\"line-section\"");
 
-WriteLiteral(">\r\n        <ul");
+WriteLiteral(">\r\n    <ul");
 
 WriteLiteral(" class=\"list-group\"");
 
 WriteLiteral(">\r\n");
 
 
-#line 8 "FolderMapExplerorView.cshtml"
-            
+#line 3 "FolderExcluedsView.cshtml"
+        
 
 #line default
 #line hidden
 
-#line 8 "FolderMapExplerorView.cshtml"
-             foreach (var one in dirs)
-            {
+#line 3 "FolderExcluedsView.cshtml"
+         foreach (var one in Model)
+        {
 
 
 #line default
 #line hidden
-WriteLiteral("                <li");
+WriteLiteral("            <li");
 
 WriteLiteral(" class=\"list-group-item main-item\"");
 
-WriteLiteral(">\r\n                    <span");
+WriteLiteral(">\r\n                <span");
 
 WriteLiteral(" class=\"glyphicon glyphicon-folder-open\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n                    <span>");
+WriteLiteral("></span>\r\n                <span>");
 
 
-#line 12 "FolderMapExplerorView.cshtml"
-                     Write(one);
+#line 7 "FolderExcluedsView.cshtml"
+                 Write(one.Path);
 
 
 #line default
 #line hidden
-WriteLiteral("</span>\r\n                </li>\r\n");
+WriteLiteral("</span>\r\n            </li>\r\n");
 
-WriteLiteral("                <li");
+WriteLiteral("            <li");
 
 WriteLiteral(" class=\"list-group-item command-item \"");
 
-WriteLiteral(" data-dir=\"");
+WriteLiteral(" data-guid=\"");
 
 
-#line 14 "FolderMapExplerorView.cshtml"
-                                                               Write(one);
+#line 9 "FolderExcluedsView.cshtml"
+                                                            Write(one.Guid);
 
 
 #line default
 #line hidden
 WriteLiteral("\"");
 
-WriteLiteral(">\r\n                    <span");
-
-WriteLiteral(" class=\"command-item-expleror orangered \"");
-
-WriteLiteral(">浏览</span>\r\n                    <span");
-
-WriteLiteral(" class=\"command-item-exclude red \"");
-
-WriteLiteral(">设置排除</span>\r\n                    <span");
-
-WriteLiteral(" class=\"command-item-create  black\"");
-
-WriteLiteral(">创建映射</span>\r\n                </li>\r\n");
+WriteLiteral(" data-dir=\"");
 
 
-#line 19 "FolderMapExplerorView.cshtml"
-            }
+#line 9 "FolderExcluedsView.cshtml"
+                                                                                 Write(one.Path);
 
 
 #line default
 #line hidden
-WriteLiteral(@"        </ul>
-    </div>
+WriteLiteral("\"");
 
-    <script>
+WriteLiteral(">\r\n                <span");
+
+WriteLiteral(" class=\"command-item-expleror orangered \"");
+
+WriteLiteral(">浏览</span>\r\n            </li>\r\n");
+
+
+#line 12 "FolderExcluedsView.cshtml"
+        }
+
+
+#line default
+#line hidden
+WriteLiteral(@"    </ul>
+</div>
+
+
+<script>
         $(function () {
 
             $("".command-item-expleror"").click(function () {
@@ -126,21 +121,8 @@ WriteLiteral(@"        </ul>
                 javascript: BuinessScript.FileExpleror(dir);
             });
 
-            $("".command-item-exclude"").click(function () {
-                var dir = $(this).parent().data(""dir"");
-                javascript: BuinessScript.CreateExcludeFolder(dir,");
-
-
-#line 33 "FolderMapExplerorView.cshtml"
-                                                             Write(kind);
-
-
-#line default
-#line hidden
-WriteLiteral(")\r\n            });\r\n\r\n            $(\".command-item-create\").click(function () {\r\n" +
-"                var dir = $(this).parent().data(\"dir\");\r\n                javascr" +
-"ipt: BuinessScript.CreateFolderMap(dir)\r\n            });\r\n\r\n        })\r\n    </sc" +
-"ript>\r\n");
+        })
+</script>");
 
 }
 }
@@ -148,7 +130,7 @@ WriteLiteral(")\r\n            });\r\n\r\n            $(\".command-item-create\"
 // NOTE: this is the default generated helper class. You may choose to extract it to a separate file 
 // in order to customize it or share it between multiple templates, and specify the template's base 
 // class via the @inherits directive.
-public abstract class FolderMapExplerorViewBase
+public abstract class FolderExcluedsViewBase
 {
 
 		// This field is OPTIONAL, but used by the default implementation of Generate, Write, WriteAttribute and WriteLiteral

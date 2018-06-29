@@ -99,13 +99,17 @@
   <ItemGroup>
     <Compile Include="Core\ActiveContext.cs" />
     <Compile Include="Core\Application.cs" />
+    <Compile Include="Core\Logic\FolderExcludeStoreService.cs" />
     <Compile Include="Core\Logic\HostsFileEditService.cs" />
     <Compile Include="Core\Logic\StoreService.cs" />
     <Compile Include="Core\MenuContentAdapter.cs" />
     <Compile Include="Core\MenuContentItem.cs" />
+    <Compile Include="Core\Models\FolderExcludeModel.cs" />
+    <Compile Include="Core\Models\FolderKind.cs" />
     <Compile Include="Core\Views\PartialBackgroudWorkerAsyncTask.cs" />
     <Compile Include="Core\Views\Partials\FileHostsExplerorView.cs" />
     <Compile Include="Core\Views\Partials\FileHostsIndexView.cs" />
+    <Compile Include="Core\Views\Partials\FolderExcluedsView.cs" />
     <Compile Include="Core\Views\Partials\FolderMapEditView.cs" />
     <Compile Include="Core\Views\Partials\FolderMapExplerorView.cs" />
     <Compile Include="Core\Views\Partials\FolderMapIndexView.cs" />
@@ -164,6 +168,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FileHostsIndexView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Partials\FolderExcluedsView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FolderExcluedsView.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Partials\FolderMapEditView.cs">
       <AutoGen>True</AutoGen>
@@ -236,6 +245,10 @@
     <None Include="Views\Partials\FileHostsExplerorView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>FileHostsExplerorView.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Partials\FolderExcluedsView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>FolderExcluedsView.cs</LastGenOutput>
     </None>
     <None Include="Views\Partials\FolderMapEditView.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>

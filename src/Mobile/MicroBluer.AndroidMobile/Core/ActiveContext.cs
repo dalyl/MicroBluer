@@ -31,6 +31,8 @@
 
         public static FolderMapStoreService FolderMapStore => Instantiate<FolderMapStoreService>();
 
+        public static FolderExcludeStoreService FolderExcludeStore => Instantiate<FolderExcludeStoreService>();
+
         public static AgreementService Agreement => Instantiate<AgreementService>();
 
         internal static HostExpressService HostExpress => Instantiate(() => new HostExpressService(Host));
