@@ -94,26 +94,6 @@
 
         #region --- FolderMap   ---
 
-        [Export("FileExpleror")]
-        [JavascriptInterface]
-        public bool FileExpleror(string args)
-        {
-            if (string.IsNullOrEmpty(args))
-                TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
-            else 
-                TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity, new List<string> { args }));
-            return true;
-        }
-
-        [Export("FilePrivateExpleror")]
-        [JavascriptInterface]
-        public bool FilePrivateExpleror()
-        {
-            if (string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
-            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity, new List<string> { ActiveContext.User.Root }));
-            return true;
-        }
-
         [Export("SaveFolderMap")]
         [JavascriptInterface]
         public bool SaveFolderMap(string args)
@@ -124,19 +104,6 @@
             return Try.Show(() => ActiveContext.FolderMapStore.Save(model), "保存成功", "保存失败");
         }
 
-        [Export("CreateExcludeFolder")]
-        [JavascriptInterface]
-        public bool CreateExcludeFolder(string args, FolderKind kind)
-        {
-            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
-            var dir = new Java.IO.File(args);
-            if (dir.Exists() == false) return Try.Show<bool>(false, $"{args}:路径不存在");
-            if (dir.IsDirectory == false) return Try.Show<bool>(false, $"{args}:路径不是文件夹");
-            if (kind == FolderKind.None) return TryCatch.Current.Show(false, $"{kind} 未定义的文件夹分类");
-            ActiveContext.FolderExcludeStore.Add(args, kind);
-            return true;
-        }
-
         [Export("CreateFolderMap")]
         [JavascriptInterface]
         public bool CreateFolderMap(string args)
@@ -145,16 +112,8 @@
             var dir = new Java.IO.File(args);
             if (dir.Exists() == false) return Try.Show<bool>(false, $"{args}:路径不存在");
             if (dir.IsDirectory == false) return Try.Show<bool>(false, $"{args}:路径不是文件夹");
-            var model = new FolderMapModel
-            {
-                Guid = Guid.NewGuid(),
-                Name = dir.Name,
-                InnerFolder = dir.Name,
-                MapFolder = dir.Path,
-            };
-            return Try.Show(() => ActiveContext.FolderMapStore.Save(model), "保存成功", "保存失败");
+            return Try.Show(() => ActiveContext.FolderMapStore.Add(dir.Name, dir.Path, dir.Name), "保存成功", "保存失败");
         }
-
 
         [Export("DeleteFolderMap")]
         [JavascriptInterface]
@@ -208,7 +167,7 @@
             List<string> dirs =null;
             void job(){
                 var exts = FolderKindExtension.GetExtensions(args);
-                if(exts.Length==0)
+                if (exts.Length == 0) return;
                 dirs= FileExtension.GetPaths(Android.OS.Environment.ExternalStorageDirectory.Path, exts);
             };
             bool after()
@@ -228,6 +187,32 @@
 
         #endregion
 
+        #region --- FolderExclude  ---
+
+        [Export("CreateExcludeFolder")]
+        [JavascriptInterface]
+        public bool CreateExcludeFolder(string args, string type)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            var dir = new Java.IO.File(args);
+            if (dir.Exists() == false) return Try.Show<bool>(false, $"{args}:路径不存在");
+            if (dir.IsDirectory == false) return Try.Show<bool>(false, $"{args}:路径不是文件夹");
+            var kind = FolderKindExtension.TryParse(type);
+            if (kind == FolderKind.None) return false;
+            return Try.Show(ActiveContext.FolderExcludeStore.Add(args, kind),"排除成功","排除失败");
+        }
+
+        [Export("DeleteExcludeFolder")]
+        [JavascriptInterface]
+        public bool DeleteExcludeFolder(string args)
+        {
+            if (string.IsNullOrEmpty(args)) return Try.Show<bool>(false, "参数未正确提供");
+            return Try.Show(() => ActiveContext.FolderExcludeStore.Delete(args), "成功删除", "删除失败");
+        }
+
+        #endregion
+
+
         #region --- HostsFile ---
 
         [Export("SaveHostsFile")]
@@ -244,6 +229,29 @@
         }
 
         #endregion
+
+
+        [Export("FileExpleror")]
+        [JavascriptInterface]
+        public bool FileExpleror(string args)
+        {
+            if (string.IsNullOrEmpty(args))
+                TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity));
+            else
+                TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity, new List<string> { args }));
+            return true;
+        }
+
+        [Export("FilePrivateExpleror")]
+        [JavascriptInterface]
+        public bool FilePrivateExpleror()
+        {
+            if (string.IsNullOrEmpty(ActiveContext.User.Folder)) return Try.Show<bool>(false, "用户文件箱尚未设置");
+            TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity, new List<string> { ActiveContext.User.Root }));
+            return true;
+        }
+
+
 
         [Export("CommandSumbit")]
         [JavascriptInterface]

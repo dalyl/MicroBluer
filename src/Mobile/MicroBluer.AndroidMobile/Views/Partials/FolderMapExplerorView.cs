@@ -128,19 +128,19 @@ WriteLiteral(@"        </ul>
 
             $("".command-item-exclude"").click(function () {
                 var dir = $(this).parent().data(""dir"");
-                javascript: BuinessScript.CreateExcludeFolder(dir,");
+                javascript: BuinessScript.CreateExcludeFolder(dir,'");
 
 
 #line 33 "FolderMapExplerorView.cshtml"
-                                                             Write(kind);
+                                                               Write(kind.ToString());
 
 
 #line default
 #line hidden
-WriteLiteral(")\r\n            });\r\n\r\n            $(\".command-item-create\").click(function () {\r\n" +
-"                var dir = $(this).parent().data(\"dir\");\r\n                javascr" +
-"ipt: BuinessScript.CreateFolderMap(dir)\r\n            });\r\n\r\n        })\r\n    </sc" +
-"ript>\r\n");
+WriteLiteral("\')\r\n            });\r\n\r\n            $(\".command-item-create\").click(function () {\r" +
+"\n                var dir = $(this).parent().data(\"dir\");\r\n                javasc" +
+"ript: BuinessScript.CreateFolderMap(dir)\r\n            });\r\n\r\n        })\r\n    </s" +
+"cript>\r\n");
 
 }
 }

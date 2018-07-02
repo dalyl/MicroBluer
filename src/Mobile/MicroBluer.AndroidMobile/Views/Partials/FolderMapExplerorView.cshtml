@@ -30,7 +30,7 @@
 
             $(".command-item-exclude").click(function () {
                 var dir = $(this).parent().data("dir");
-                javascript: BuinessScript.CreateExcludeFolder(dir,@kind)
+                javascript: BuinessScript.CreateExcludeFolder(dir,'@(kind.ToString())')
             });
 
             $(".command-item-create").click(function () {

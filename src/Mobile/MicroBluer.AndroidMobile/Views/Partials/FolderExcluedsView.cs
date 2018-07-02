@@ -100,10 +100,14 @@ WriteLiteral(">\r\n                <span");
 
 WriteLiteral(" class=\"command-item-expleror orangered \"");
 
-WriteLiteral(">浏览</span>\r\n            </li>\r\n");
+WriteLiteral(">浏览</span>\r\n                <span");
+
+WriteLiteral(" class=\"command-item-delete red\"");
+
+WriteLiteral(">删除</span>\r\n            </li>\r\n");
 
 
-#line 12 "FolderExcluedsView.cshtml"
+#line 13 "FolderExcluedsView.cshtml"
         }
 
 
@@ -121,8 +125,30 @@ WriteLiteral(@"    </ul>
                 javascript: BuinessScript.FileExpleror(dir);
             });
 
-        })
-</script>");
+            $("".command-item-delete"").click(function () {
+                var guid = $(this).parent().data(""guid"");
+                var result = false;
+                javascript: result = BuinessScript.DeleteExcludeFolder(guid);
+                if (result) {
+                    ViewScript.RequestPartial('#MainContent', ""Replace"", '");
+
+
+#line 31 "FolderExcluedsView.cshtml"
+                                                                     Write(FolderExcluedsView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 31 "FolderExcluedsView.cshtml"
+                                                                                                         Write(FolderExcluedsView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\');\r\n                 }\r\n            });\r\n        })\r\n</script>");
 
 }
 }

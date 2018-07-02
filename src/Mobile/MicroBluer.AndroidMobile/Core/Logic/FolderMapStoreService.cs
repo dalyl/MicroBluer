@@ -52,7 +52,7 @@
             return base.Get(key);
         }
 
-        public void Add(string name, string map, string inner)
+        public bool Add(string name, string map, string inner)
         {
             var id = Guid.NewGuid();
             var model = new FolderMapModel
@@ -62,8 +62,9 @@
                 MapFolder = map,
                 InnerFolder = inner,
             };
-            var key = $"{id}";
+            var key = CreateKey(model.Guid);
             base.Save(key, model);
+            return true;
         }
 
         public bool Save(FolderMapModel model)

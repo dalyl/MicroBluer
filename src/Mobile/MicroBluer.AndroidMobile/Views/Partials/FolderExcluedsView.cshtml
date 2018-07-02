@@ -8,6 +8,7 @@
             </li>
             <li class="list-group-item command-item " data-guid="@one.Guid" data-dir="@one.Path">
                 <span class="command-item-expleror orangered ">浏览</span>
+                <span class="command-item-delete red">删除</span>
             </li>
         }
     </ul>
@@ -22,5 +23,13 @@
                 javascript: BuinessScript.FileExpleror(dir);
             });
 
+            $(".command-item-delete").click(function () {
+                var guid = $(this).parent().data("guid");
+                var result = false;
+                javascript: result = BuinessScript.DeleteExcludeFolder(guid);
+                if (result) {
+                    ViewScript.RequestPartial('#MainContent', "Replace", '@FolderExcluedsView.Partial.Host', '@FolderExcluedsView.Partial.Path');
+                 }
+            });
         })
 </script>

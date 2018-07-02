@@ -15,6 +15,7 @@
 
         public string GenerateString(string args)
         {
+            this.Model = ActiveContext.FolderExcludeStore.GetList();
             return GenerateString();
         }
     }

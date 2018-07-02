@@ -57,7 +57,7 @@
                 Name= addr,
                 Address = addr,
             };
-            var key = $"{model.Domain}";
+            var key = CreateKey(model.Domain);
             base.Save(key,model);
         }
 

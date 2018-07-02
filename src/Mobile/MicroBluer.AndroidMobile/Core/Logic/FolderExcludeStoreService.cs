@@ -48,7 +48,7 @@
             return base.Get(key);
         }
 
-        public void Add(string path, FolderKind kind)
+        public bool Add(string path, FolderKind kind)
         {
             var id = Guid.NewGuid();
             var model = new FolderExcludeModel
@@ -57,8 +57,9 @@
                 Path = path,
                 Type = kind,
             };
-            var key = $"{id}";
+            var key = CreateKey(model.Guid);
             base.Save(key, model);
+            return true;
         }
 
         public bool Save(FolderExcludeModel model)
