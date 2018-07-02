@@ -23,10 +23,18 @@
 
         public void Push(AgreementUri uri, string args)
         {
-            RequestStacks.Push(new AgreementUri (uri, args));
+            Push(new AgreementUri (uri, args));
         }
+
         public void Push(AgreementUri uri)
         {
+            if (RequestStacks.Count > 0) {
+                var last = RequestStacks.Pop();
+                if (last.Host != uri.Host || last.Path != uri.Path)
+                {
+                    RequestStacks.Push(last);
+                }
+            }
             RequestStacks.Push(uri);
         }
 

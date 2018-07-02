@@ -128,19 +128,55 @@ WriteLiteral(@"        </ul>
 
             $("".command-item-exclude"").click(function () {
                 var dir = $(this).parent().data(""dir"");
-                javascript: BuinessScript.CreateExcludeFolder(dir,'");
+                //javascript:BuinessScript.CreateExcludeFolder(dir, '");
 
 
 #line 33 "FolderMapExplerorView.cshtml"
-                                                               Write(kind.ToString());
+                                                                 Write(kind.ToString());
 
 
 #line default
 #line hidden
-WriteLiteral("\')\r\n            });\r\n\r\n            $(\".command-item-create\").click(function () {\r" +
-"\n                var dir = $(this).parent().data(\"dir\");\r\n                javasc" +
-"ript: BuinessScript.CreateFolderMap(dir)\r\n            });\r\n\r\n        })\r\n    </s" +
-"cript>\r\n");
+WriteLiteral("\')\r\n                var result = false;\r\n                javascript: result = Bui" +
+"nessScript.CreateExcludeFolder(dir, \'");
+
+
+#line 35 "FolderMapExplerorView.cshtml"
+                                                                         Write(kind.ToString());
+
+
+#line default
+#line hidden
+WriteLiteral("\');\r\n                if (result) {\r\n                    ViewScript.RequestPartial" +
+"(\'#MainContent\', \"Replace\", \'");
+
+
+#line 37 "FolderMapExplerorView.cshtml"
+                                                                     Write(FolderMapExplerorView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 37 "FolderMapExplerorView.cshtml"
+                                                                                                            Write(FolderMapExplerorView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral(@"');
+                }
+            });
+            $("".command-item-create"").click(function () {
+                var dir = $(this).parent().data(""dir"");
+                javascript: BuinessScript.CreateFolderMap(dir)
+            });
+
+        })
+    </script>
+");
 
 }
 }

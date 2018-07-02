@@ -8,22 +8,39 @@
     public static class FileExtension
     {
 
-        /// <summary>
-        /// 获取包含指定后缀文件的文件夹路径
-        /// </summary>
-        /// <returns></returns>
-        public static List<string> GetPaths(string path, params string[] extensions)
+        public static List<string> GetDirectories(string path, params string[] extensions)
         {
+            List<string> result = new List<string>();
             File root = new File(path);
             if (root.IsDirectory == false) return new List<string>();
-            return GetPaths(root, extensions);
+            var contents = root.ListFiles();
+
+            var dirs= contents.Where(s => s.IsDirectory);
+            foreach (var dir in dirs)
+            {
+                var subs = GetDirectoriesWithSelf(dir, extensions);
+                result.AddRange(subs);
+            }
+
+            return result;
         }
 
         /// <summary>
         /// 获取包含指定后缀文件的文件夹路径
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetPaths(File root, params string[] extensions)
+        public static List<string> GetDirectoriesWithSelf(string path, params string[] extensions)
+        {
+            File root = new File(path);
+            if (root.IsDirectory == false) return new List<string>();
+            return GetDirectoriesWithSelf(root, extensions);
+        }
+
+        /// <summary>
+        /// 获取包含指定后缀文件的文件夹路径
+        /// </summary>
+        /// <returns></returns>
+        static List<string> GetDirectoriesWithSelf(File root, params string[] extensions)
         {
             List<string> result = new List<string>();
             if (root.IsDirectory == false) return result;
@@ -42,7 +59,7 @@
             var dirs = contents.Where(s => s.IsDirectory);
             foreach (var dir in dirs)
             {
-                var subs = GetPaths(dir, extensions);
+                var subs = GetDirectoriesWithSelf(dir, extensions);
                 result.AddRange(subs);
             }
 

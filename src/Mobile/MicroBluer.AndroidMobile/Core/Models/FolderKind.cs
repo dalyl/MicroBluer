@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MicroBluer.AndroidUtils;
+ 
 
 namespace MicroBluer.AndroidMobile.Models
 {
@@ -49,5 +50,8 @@ namespace MicroBluer.AndroidMobile.Models
             if (ExtensionDictionary.ContainsKey(kind) == false) return TryCatch.Current.Show(new string[0], $"{kind} 文件夹分类未指定后缀集");
             return ExtensionDictionary[kind];
         }
+
+
+        
     }
 }

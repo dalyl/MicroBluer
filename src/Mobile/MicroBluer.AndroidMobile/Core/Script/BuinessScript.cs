@@ -8,11 +8,10 @@
     using Java.Interop;
     using MicroBluer.AndroidCtrls;
     using MicroBluer.AndroidCtrls.FileSelect;
-    using MicroBluer.AndroidMobile.Models;
-    using MicroBluer.AndroidMobile.Views;
     using MicroBluer.AndroidUtils;
     using MicroBluer.AndroidUtils.IO;
-    using MicroBluer.AndroidMobile.WebAgreement;
+    using MicroBluer.AndroidMobile.Models;
+    using MicroBluer.AndroidMobile.Views;
     using MicroBluer.AndroidMobile.Views.Partials;
 
     public class BuinessScript: AndroidScript //注意一定要继承java基类  
@@ -154,7 +153,6 @@
             worker.Execute();
             return true;
         }
-       
 
         [Export("ScanFileMaps")]
         [JavascriptInterface]
@@ -168,7 +166,7 @@
             void job(){
                 var exts = FolderKindExtension.GetExtensions(args);
                 if (exts.Length == 0) return;
-                dirs= FileExtension.GetPaths(Android.OS.Environment.ExternalStorageDirectory.Path, exts);
+                dirs= ActiveContext.FolderMapStore.ScanPath(Android.OS.Environment.ExternalStorageDirectory.Path, exts);
             };
             bool after()
             {
@@ -183,7 +181,6 @@
             worker.Execute();
             return true;
         }
-
 
         #endregion
 
@@ -212,7 +209,6 @@
 
         #endregion
 
-
         #region --- HostsFile ---
 
         [Export("SaveHostsFile")]
@@ -229,7 +225,6 @@
         }
 
         #endregion
-
 
         [Export("FileExpleror")]
         [JavascriptInterface]
@@ -250,8 +245,6 @@
             TryCatch.Current.Invoke(() => AndroidCtrls.FileExpler.FileExpleror.OpenDialog(ViewActivity, new List<string> { ActiveContext.User.Root }));
             return true;
         }
-
-
 
         [Export("CommandSumbit")]
         [JavascriptInterface]

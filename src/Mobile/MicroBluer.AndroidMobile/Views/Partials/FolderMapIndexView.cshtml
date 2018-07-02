@@ -27,14 +27,6 @@
 </div>
 
 
-<div class="line-section">
-    <div class="list-group">
-        <a href="javascript:void(0);" class="list-group-item  file-exclued-expleror">
-            <span class="glyphicon   glyphicon-trash " aria-hidden="true"></span>
-            <span>映射排除</span>
-        </a>
-    </div>
-</div>
 
 <script>
     $(function () {
@@ -51,9 +43,7 @@
             ViewScript.RequestPartial('#MainContent', "Replace", '@FolderMapsView.Partial.Host', '@FolderMapsView.Partial.Path');
         });
         
-        $(".file-exclued-expleror").click(function () {
-            ViewScript.RequestPartial('#MainContent', "Replace", '@FolderExcluedsView.Partial.Host', '@FolderExcluedsView.Partial.Path');
-        });
+     
 
     })
 </script>

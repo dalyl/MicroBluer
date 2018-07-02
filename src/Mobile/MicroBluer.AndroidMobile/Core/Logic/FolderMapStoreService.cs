@@ -1,12 +1,13 @@
 ﻿namespace MicroBluer.AndroidMobile.Logic
 {
     using MicroBluer.AndroidMobile.Models;
+    using System;
+    using System.Linq;
     using System.IO;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using MicroBluer.AndroidUtils;
     using MicroBluer.AndroidUtils.IO;
-    using System;
 
     public class FolderMapStoreService : StoreService<FolderMapModel>
     {
@@ -109,6 +110,33 @@
             var dest = item.MapFolder;
             MoveDir(src, dest);
             return TryCatch.Current.Show(true, $"{item.Name} 还原完成"); ;
+        }
+
+        public List<string> ScanPath(string root, string[] exts)
+        {
+            var exculdes = ActiveContext.FolderExcludeStore.GetList().Select(s => s.Path);
+            var maps = GetList().Select(s => s.MapFolder);
+            return ScanPath(root, exts, maps, exculdes);
+        }
+
+        List<string> ScanPath(string root, string[] exts,IEnumerable<string> maps, IEnumerable<string> exculdes)
+        {
+            var dirs = FileExtension.GetDirectories(root, exts);
+            var dirsInMaps = dirs.Where(s => maps.Contains(s)).ToArray();
+            foreach (var dir in dirsInMaps)
+            {
+                dirs.Remove(dir);
+            }
+
+            var dirsInExculdes = dirs.Where(s => exculdes.Contains(s)).ToArray();
+            foreach (var dir in dirsInExculdes)
+            {
+                dirs.Remove(dir);
+                var subs = ScanPath(dir, exts, maps, exculdes);
+                dirs.AddRange(subs);
+            }
+
+            return dirs;
         }
 
         bool MoveMap(FolderMapModel item)

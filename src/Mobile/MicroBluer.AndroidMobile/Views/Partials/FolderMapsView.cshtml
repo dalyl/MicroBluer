@@ -18,11 +18,20 @@
     </div>
 
     <div class="line-section">
+        <div class="list-group">
+            <a href="javascript:void(0);" class="list-group-item  file-exclued-expleror">
+                <span class="glyphicon   glyphicon-trash " aria-hidden="true"></span>
+                <span>映射排除</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="line-section">
         <ul class="list-group">
-            <li class="list-group-item command-play">
+            @*<li class="list-group-item command-play">
                 <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                 <span>开始归档</span>
-            </li>
+            </li>*@
 
             <li class="list-group-item command-scan-image">
                 <span class="glyphicon   glyphicon-camera  " aria-hidden="true"></span>
@@ -38,12 +47,14 @@
                 <span class="glyphicon   glyphicon-music  " aria-hidden="true"></span>
                 <span>音乐归档</span>
             </li>
+
             <li class="list-group-item command-item-add">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 <span>手动添加</span>
             </li>
         </ul>
     </div>
+
     <script>
     $(function () {
         $(".command-item").css("display", "none");
@@ -58,6 +69,10 @@
             if (dispaly == "none") {
                 $(this).next().fadeIn();
             }
+        });
+
+        $(".file-exclued-expleror").click(function () {
+            ViewScript.RequestPartial('#MainContent', "Replace", '@FolderExcluedsView.Partial.Host', '@FolderExcluedsView.Partial.Path');
         });
 
         $(".command-item-add").click(function () {
@@ -102,9 +117,6 @@
             var guid = $(this).parent().data("guid");
             javascript: BuinessScript.RevertMapFiles(guid)
         });
-
-
-
 
     })
     </script>

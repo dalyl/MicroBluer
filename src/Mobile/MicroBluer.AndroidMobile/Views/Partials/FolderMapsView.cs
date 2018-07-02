@@ -121,22 +121,34 @@ WriteLiteral("        </ul>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"line-section\"");
 
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"list-group\"");
+
+WriteLiteral(">\r\n            <a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" class=\"list-group-item  file-exclued-expleror\"");
+
+WriteLiteral(">\r\n                <span");
+
+WriteLiteral(" class=\"glyphicon   glyphicon-trash \"");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral("></span>\r\n                <span>映射排除</span>\r\n            </a>\r\n        </div>\r\n  " +
+"  </div>\r\n\r\n    <div");
+
+WriteLiteral(" class=\"line-section\"");
+
 WriteLiteral(">\r\n        <ul");
 
 WriteLiteral(" class=\"list-group\"");
 
-WriteLiteral(">\r\n            <li");
+WriteLiteral(">\r\n            ");
 
-WriteLiteral(" class=\"list-group-item command-play\"");
-
-WriteLiteral(">\r\n                <span");
-
-WriteLiteral(" class=\"glyphicon glyphicon-play\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></span>\r\n                <span>开始归档</span>\r\n            </li>\r\n\r\n            <li" +
-"");
+WriteLiteral("\r\n\r\n            <li");
 
 WriteLiteral(" class=\"list-group-item command-scan-image\"");
 
@@ -168,7 +180,8 @@ WriteLiteral(" class=\"glyphicon   glyphicon-music  \"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral("></span>\r\n                <span>音乐归档</span>\r\n            </li>\r\n            <li");
+WriteLiteral("></span>\r\n                <span>音乐归档</span>\r\n            </li>\r\n\r\n            <li" +
+"");
 
 WriteLiteral(" class=\"list-group-item command-item-add\"");
 
@@ -183,6 +196,7 @@ WriteLiteral(@"></span>
             </li>
         </ul>
     </div>
+
     <script>
     $(function () {
         $("".command-item"").css(""display"", ""none"");
@@ -199,11 +213,30 @@ WriteLiteral(@"></span>
             }
         });
 
-        $("".command-item-add"").click(function () {
-            ViewScript.RequestPartial('#MainContent',""Replace"" , '");
+        $("".file-exclued-expleror"").click(function () {
+            ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 64 "FolderMapsView.cshtml"
+#line 75 "FolderMapsView.cshtml"
+                                                             Write(FolderExcluedsView.Partial.Host);
+
+
+#line default
+#line hidden
+WriteLiteral("\', \'");
+
+
+#line 75 "FolderMapsView.cshtml"
+                                                                                                 Write(FolderExcluedsView.Partial.Path);
+
+
+#line default
+#line hidden
+WriteLiteral("\');\r\n        });\r\n\r\n        $(\".command-item-add\").click(function () {\r\n         " +
+"   ViewScript.RequestPartial(\'#MainContent\',\"Replace\" , \'");
+
+
+#line 79 "FolderMapsView.cshtml"
                                                              Write(FolderMapEditView.Partial.Host);
 
 
@@ -212,7 +245,7 @@ WriteLiteral(@"></span>
 WriteLiteral("\', \'");
 
 
-#line 64 "FolderMapsView.cshtml"
+#line 79 "FolderMapsView.cshtml"
                                                                                                 Write(FolderMapEditView.Partial.Path);
 
 
@@ -229,7 +262,7 @@ WriteLiteral(@"', """");
                 ViewScript.RequestPartial('#MainContent', ""Replace"", '");
 
 
-#line 72 "FolderMapsView.cshtml"
+#line 87 "FolderMapsView.cshtml"
                                                                  Write(FolderMapsView.Partial.Host);
 
 
@@ -238,7 +271,7 @@ WriteLiteral(@"', """");
 WriteLiteral("\', \'");
 
 
-#line 72 "FolderMapsView.cshtml"
+#line 87 "FolderMapsView.cshtml"
                                                                                                  Write(FolderMapsView.Partial.Path);
 
 
@@ -249,7 +282,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 "pt.RequestPartial(\'#MainContent\', \"Replace\",\'");
 
 
-#line 77 "FolderMapsView.cshtml"
+#line 92 "FolderMapsView.cshtml"
                                                             Write(FolderMapEditView.Partial.Host);
 
 
@@ -258,7 +291,7 @@ WriteLiteral("\');\r\n            }\r\n        });\r\n        $(\".command-item-
 WriteLiteral("\', \'");
 
 
-#line 77 "FolderMapsView.cshtml"
+#line 92 "FolderMapsView.cshtml"
                                                                                                Write(FolderMapEditView.Partial.Path);
 
 
@@ -292,9 +325,6 @@ WriteLiteral(@"', guid);
             var guid = $(this).parent().data(""guid"");
             javascript: BuinessScript.RevertMapFiles(guid)
         });
-
-
-
 
     })
     </script>

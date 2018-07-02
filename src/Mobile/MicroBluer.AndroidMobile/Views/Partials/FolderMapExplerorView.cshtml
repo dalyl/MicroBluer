@@ -30,9 +30,13 @@
 
             $(".command-item-exclude").click(function () {
                 var dir = $(this).parent().data("dir");
-                javascript: BuinessScript.CreateExcludeFolder(dir,'@(kind.ToString())')
+                //javascript:BuinessScript.CreateExcludeFolder(dir, '@(kind.ToString())')
+                var result = false;
+                javascript: result = BuinessScript.CreateExcludeFolder(dir, '@(kind.ToString())');
+                if (result) {
+                    ViewScript.RequestPartial('#MainContent', "Replace", '@FolderMapExplerorView.Partial.Host', '@FolderMapExplerorView.Partial.Path');
+                }
             });
-
             $(".command-item-create").click(function () {
                 var dir = $(this).parent().data("dir");
                 javascript: BuinessScript.CreateFolderMap(dir)
