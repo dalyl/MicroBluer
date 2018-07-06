@@ -65,17 +65,8 @@ namespace MicroBluer.AndroidCtrls.ImageExpleror
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050002
-			public static int colorAccent = 2131034114;
-			
 			// aapt resource value: 0x7f050000
-			public static int colorPrimary = 2131034112;
-			
-			// aapt resource value: 0x7f050001
-			public static int colorPrimaryDark = 2131034113;
-			
-			// aapt resource value: 0x7f050003
-			public static int top_bg = 2131034115;
+			public static int top_bg = 2131034112;
 			
 			static Color()
 			{

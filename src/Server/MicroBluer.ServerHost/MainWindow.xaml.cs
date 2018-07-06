@@ -53,13 +53,19 @@ namespace MicroBluer.ServerHost
         /// </summary>
         private void NotificationAreaIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (this.WindowState == WindowState.Minimized)
+            if (this.WindowState == WindowState.Minimized|| this.WindowState == WindowState.Normal)
             {
-                WindowState = WindowState.Normal;
+                WindowState = WindowState.Maximized;
             }
             this.Show();
             this.Activate();
         }
+
+        private void MenuItemSwitchClick(object sender, EventArgs e)
+        {
+
+        }
+
 
         /// <summary>
         /// 关于

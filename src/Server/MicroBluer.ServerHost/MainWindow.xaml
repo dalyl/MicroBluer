@@ -8,10 +8,34 @@
         xmlns:page="clr-namespace:MicroBluer.ServerHost.Pages"
         xmlns:form="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="650"  Height="650" Width="800"    ResizeMode="NoResize"  Closing="Window_Closing">
-    <Grid>
-        
-    <TabControl x:Name="tabControl"  DockPanel.Dock="Top" Margin="5" VerticalAlignment="Top" TabStripPlacement="Left">
+        Title="MainWindow" MinHeight="650"  Height="650" Width="900"    ResizeMode="NoResize"  Closing="Window_Closing">
+        <DockPanel  >
+
+        <Menu Height="23" DockPanel.Dock="Top"    >
+            <MenuItem Header="查看"  Click="MenuItemSwitchClick" >
+                <MenuItem Header="运行状态"   />
+                <MenuItem Header="管理设备" />
+                <MenuItem Header="删除设备" />
+                <MenuItem Header="设备监控" />
+            </MenuItem>
+            <MenuItem Header="设置"  />
+            <MenuItem Header="浏览" >
+                <MenuItem Header="CCTV-5"  />
+                <MenuItem Header="CCTV-13"  />
+                <MenuItem Header="优酷" />
+                <MenuItem Header="乐视" />
+            </MenuItem>
+            <MenuItem Header="帮助" />
+            <MenuItem Header="关于" />
+        </Menu>
+            
+        <StatusBar Height="23" Name="statusBar" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" />
+
+        <Border Name="CtrlsContainer"  DockPanel.Dock="Top">
+            
+        </Border>
+            
+        <!--<TabControl x:Name="tabControl"   Margin="5" TabStripPlacement="Left" DockPanel.Dock="Top">
         <TabItem Header="运行" Width="100" Height="50" FontSize="25" >
              <ScrollViewer VerticalScrollBarVisibility="Auto" >
                 <page:StatePage  MinHeight="550" Width="660" />
@@ -22,7 +46,12 @@
                 <page:SettingPage MinHeight="550"  Width="660"  />
             </ScrollViewer>
         </TabItem>
-    </TabControl>
+            <TabItem Header="浏览" Width="100" Height="50"  FontSize="25" VerticalAlignment="Bottom">
+                <ScrollViewer VerticalScrollBarVisibility="Auto"  Height="Auto">
+                    <page:WebPage MinHeight="550"  Width="660"  />
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>-->
 
         <ctrl:NotificationAreaIcon Text="小蓝人" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
             <!--<local:NotificationAreaIcon.MenuItems>
@@ -37,6 +66,6 @@
             </ctrl:NotificationAreaIcon.MenuStripItems>
 
         </ctrl:NotificationAreaIcon>
-        
-    </Grid>
+        </DockPanel>
+
 </Window>
