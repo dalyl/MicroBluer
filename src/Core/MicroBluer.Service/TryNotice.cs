@@ -1,23 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MicroBluer.ServerCore
+﻿namespace MicroBluer.Common
 {
-    public class TryCatch : ITryCatch
+    using System;
+
+
+    public class TryNotice 
     {
-        protected Action<string> ShowMessage { get; set; }
 
-        public TryCatch(Action<string> showMessage = null)
+        public static readonly TryNotice Current = new TryNotice();
+
+        public static void InitCurrent(Action<string> showMessage = null)
         {
-            ShowMessage = showMessage;
+            Current.Setting.ShowMessage = showMessage;
         }
 
-        public void Show(string message)
+        public static void InitCurrent(TryNoticeSetting setting)
         {
-            ShowMessage?.Invoke(message);
+            Current.Setting.Reset(setting);
         }
+
+        public TryNotice(Action<string> showMessage = null) {
+            Setting = new TryNoticeSetting
+            {
+                ShowMessage = showMessage
+            };
+        }
+
+        public TryNotice(TryNoticeSetting setting) { Setting = setting ?? new TryNoticeSetting(); }
+
+        public TryNoticeSetting Setting { get; }
+
+
+        public void Show(string message) => Setting.Show(string.Empty, message);
 
         public void Throw(string message)
         {
@@ -42,16 +55,16 @@ namespace MicroBluer.ServerCore
 
         public T Show<T>(T defaultResult, string message)
         {
-            ShowMessage?.Invoke(message);
+            Show(message);
             return defaultResult;
         }
 
         public bool Show(bool defaultResult, string message, string failMessage)
         {
             if (defaultResult)
-                ShowMessage?.Invoke(message);
+                Show(message);
             else
-                ShowMessage?.Invoke(failMessage);
+                Show(failMessage);
             return defaultResult;
         }
 
@@ -59,9 +72,9 @@ namespace MicroBluer.ServerCore
         {
             var defaultResult = Invoke(false, invoke);
             if (defaultResult)
-                ShowMessage?.Invoke(message);
+                Show(message);
             else
-                ShowMessage?.Invoke(failMessage);
+                Show(failMessage);
             return defaultResult;
         }
 

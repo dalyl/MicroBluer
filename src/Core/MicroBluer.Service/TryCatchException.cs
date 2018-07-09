@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MicroBluer.ServerCore
+﻿namespace MicroBluer.Common
 {
+    using System;
     public class TryCatchException : ApplicationException
     {
         private string error;

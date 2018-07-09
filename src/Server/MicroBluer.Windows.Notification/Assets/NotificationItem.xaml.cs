@@ -13,21 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MicroBluer.ServerHost.Pages
+namespace MicroBluer.Windows.Notification.Assets
 {
     /// <summary>
-    /// WebPage.xaml 的交互逻辑
+    /// Interaction logic for NotificationItem.xaml
     /// </summary>
-    public partial class WebPage : UserControl
+    public partial class NotificationItem : UserControl
     {
-        public WebPage()
+        public NotificationItem()
         {
             InitializeComponent();
         }
 
-        public void OpenUrl(string url)
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            this.chromeBrowser.Address = url;
+            Window parentWindow = Window.GetWindow(this);
+            this.Visibility = Visibility.Hidden;
+            parentWindow.Close();
         }
     }
 }

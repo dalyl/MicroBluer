@@ -33,11 +33,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroBluer.AndroidUtils", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroBluer.ServerCore", "src\Server\MicroBluer.ServerCore\MicroBluer.ServerCore.csproj", "{22CA5871-53D0-43CB-ABEE-17320428CB67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroBluer.ServerHost", "src\Server\MicroBluer.ServerHost\MicroBluer.ServerHost.csproj", "{B60B34E5-9496-46B1-8183-67D2BD42E305}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroBluer.Windows.ServerHost", "src\Server\MicroBluer.ServerHost\MicroBluer.Windows.ServerHost.csproj", "{B60B34E5-9496-46B1-8183-67D2BD42E305}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroBluer.ServerWeb", "src\Server\MicroBluer.ServerWeb\MicroBluer.ServerWeb.csproj", "{432B1714-FA0A-4D00-9F10-89CED798621D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroBluer.TimeTask", "src\Server\MicroBluer.TimeTask\MicroBluer.TimeTask.csproj", "{BDF67C6F-79EE-4114-8A83-28A0F1DCF4D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroBluer.Windows.Notification", "src\Server\MicroBluer.Windows.Notification\MicroBluer.Windows.Notification.csproj", "{050F9007-D811-4EED-817E-7BB7F6285F2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -155,6 +157,14 @@ Global
 		{BDF67C6F-79EE-4114-8A83-28A0F1DCF4D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BDF67C6F-79EE-4114-8A83-28A0F1DCF4D9}.Release|x64.ActiveCfg = Release|x64
 		{BDF67C6F-79EE-4114-8A83-28A0F1DCF4D9}.Release|x64.Build.0 = Release|x64
+		{050F9007-D811-4EED-817E-7BB7F6285F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{050F9007-D811-4EED-817E-7BB7F6285F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050F9007-D811-4EED-817E-7BB7F6285F2F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{050F9007-D811-4EED-817E-7BB7F6285F2F}.Debug|x64.Build.0 = Debug|Any CPU
+		{050F9007-D811-4EED-817E-7BB7F6285F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{050F9007-D811-4EED-817E-7BB7F6285F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{050F9007-D811-4EED-817E-7BB7F6285F2F}.Release|x64.ActiveCfg = Release|Any CPU
+		{050F9007-D811-4EED-817E-7BB7F6285F2F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -177,6 +187,7 @@ Global
 		{B60B34E5-9496-46B1-8183-67D2BD42E305} = {47C29C30-D80E-445E-B15C-D913DC673F86}
 		{432B1714-FA0A-4D00-9F10-89CED798621D} = {47C29C30-D80E-445E-B15C-D913DC673F86}
 		{BDF67C6F-79EE-4114-8A83-28A0F1DCF4D9} = {47C29C30-D80E-445E-B15C-D913DC673F86}
+		{050F9007-D811-4EED-817E-7BB7F6285F2F} = {47C29C30-D80E-445E-B15C-D913DC673F86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BAB00A0-1B85-476C-951E-30CB476CE191}

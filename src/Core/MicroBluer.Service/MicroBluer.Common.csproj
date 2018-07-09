@@ -7,8 +7,8 @@
     <ProjectGuid>{440FBA9E-7E4F-46F6-A851-6226CC53562B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LazyWelfare.Common</RootNamespace>
-    <AssemblyName>LazyWelfare.Common</AssemblyName>
+    <RootNamespace>MicroBluer.Common</RootNamespace>
+    <AssemblyName>MicroBluer.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -63,9 +63,13 @@
   <ItemGroup>
     <Compile Include="BootStartup.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="JsonExtensions.cs" />
     <Compile Include="Service\FreePort.cs" />
     <Compile Include="Service\LanService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TryNotice.cs" />
+    <Compile Include="TryCatchException.cs" />
+    <Compile Include="TryNoticeSetting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

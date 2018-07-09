@@ -8,6 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <cefSharp:ChromiumWebBrowser Name="mychrome" Grid.Row="0" Address="https://www.baidu.com"/>
+        <cefSharp:ChromiumWebBrowser Name="chromeBrowser" Grid.Row="0" Address="https://www.baidu.com"/>
     </Grid>
 </UserControl>

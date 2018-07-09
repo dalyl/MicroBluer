@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MicroBluer.Common
 {
-    public static class Extensions
+    public static partial class Extensions
     {
 
         /// <summary>

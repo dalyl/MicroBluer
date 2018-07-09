@@ -3,69 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MicroBluer.ServerHost"
         xmlns:ctrl="clr-namespace:MicroBluer.ServerHost.Ctrls"
-        xmlns:page="clr-namespace:MicroBluer.ServerHost.Pages"
         xmlns:form="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-        mc:Ignorable="d"
-        Title="MainWindow" MinHeight="650"  Height="650" Width="900"    ResizeMode="NoResize"  Closing="Window_Closing">
-        <DockPanel  >
+        mc:Ignorable="d"  Title="MainWindow"   ResizeMode="NoResize"  Closing="Window_Closing">
+    <Grid>
 
-        <Menu Height="23" DockPanel.Dock="Top"    >
-            <MenuItem Header="查看"  Click="MenuItemSwitchClick" >
-                <MenuItem Header="运行状态"   />
-                <MenuItem Header="管理设备" />
-                <MenuItem Header="删除设备" />
-                <MenuItem Header="设备监控" />
-            </MenuItem>
-            <MenuItem Header="设置"  />
-            <MenuItem Header="浏览" >
-                <MenuItem Header="CCTV-5"  />
-                <MenuItem Header="CCTV-13"  />
-                <MenuItem Header="优酷" />
-                <MenuItem Header="乐视" />
-            </MenuItem>
-            <MenuItem Header="帮助" />
-            <MenuItem Header="关于" />
-        </Menu>
-            
-        <StatusBar Height="23" Name="statusBar" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="23"></RowDefinition>
+        </Grid.RowDefinitions>
 
-        <Border Name="CtrlsContainer"  DockPanel.Dock="Top">
-            
+        <Menu  Grid.Row="0"  Name="TopMenu" Height="23"   >      </Menu>
+        <StatusBar Height="23" Name="statusBar" Grid.Row="2" VerticalAlignment="Bottom" />
+
+        <Border Name="CtrlsContainer"  Grid.Row="1"  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}">
         </Border>
-            
-        <!--<TabControl x:Name="tabControl"   Margin="5" TabStripPlacement="Left" DockPanel.Dock="Top">
-        <TabItem Header="运行" Width="100" Height="50" FontSize="25" >
-             <ScrollViewer VerticalScrollBarVisibility="Auto" >
-                <page:StatePage  MinHeight="550" Width="660" />
-             </ScrollViewer>
-        </TabItem>
-        <TabItem Header="设置" Width="100" Height="50"  FontSize="25" VerticalAlignment="Bottom">
-            <ScrollViewer VerticalScrollBarVisibility="Auto"  Height="Auto">
-                <page:SettingPage MinHeight="550"  Width="660"  />
-            </ScrollViewer>
-        </TabItem>
-            <TabItem Header="浏览" Width="100" Height="50"  FontSize="25" VerticalAlignment="Bottom">
-                <ScrollViewer VerticalScrollBarVisibility="Auto"  Height="Auto">
-                    <page:WebPage MinHeight="550"  Width="660"  />
-                </ScrollViewer>
-            </TabItem>
-        </TabControl>-->
 
-        <ctrl:NotificationAreaIcon Text="小蓝人" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
-            <!--<local:NotificationAreaIcon.MenuItems>
-                <form:MenuItem Text="我在线上" Click="MenuItem_OnlineClick" />
-                <form:MenuItem Text="我在线上" Click="MenuItem_OnlineClick" />
-            </local:NotificationAreaIcon.MenuItems>-->
 
-            <ctrl:NotificationAreaIcon.MenuStripItems>
-                <form:ToolStripMenuItem  Text="关于" Click="MenuItem_AboutUsClick" />
-                <form:ToolStripSeparator ></form:ToolStripSeparator>
-                <form:ToolStripMenuItem  Text="退出" Click="MenuItem_ExitClick" />
-            </ctrl:NotificationAreaIcon.MenuStripItems>
+            <ctrl:NotificationAreaIcon Text="小蓝人" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
 
-        </ctrl:NotificationAreaIcon>
-        </DockPanel>
+                <ctrl:NotificationAreaIcon.MenuStripItems>
+                    <form:ToolStripMenuItem  Text="关于" Click="MenuItem_AboutUsClick" />
+                    <form:ToolStripSeparator ></form:ToolStripSeparator>
+                    <form:ToolStripMenuItem  Text="退出" Click="MenuItem_ExitClick" />
+                </ctrl:NotificationAreaIcon.MenuStripItems>
+
+            </ctrl:NotificationAreaIcon>
+    </Grid>
 
 </Window>

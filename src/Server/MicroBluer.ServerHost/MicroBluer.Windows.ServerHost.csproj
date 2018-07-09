@@ -237,6 +237,10 @@
       <Project>{22ca5871-53d0-43cb-abee-17320428cb67}</Project>
       <Name>MicroBluer.ServerCore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MicroBluer.Windows.Notification\MicroBluer.Windows.Notification.csproj">
+      <Project>{050f9007-d811-4eed-817e-7bb7f6285f2f}</Project>
+      <Name>MicroBluer.Windows.Notification</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
