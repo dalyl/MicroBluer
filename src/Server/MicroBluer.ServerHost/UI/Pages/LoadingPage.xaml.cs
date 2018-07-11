@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace MicroBluer.ServerHost.Pages
+namespace MicroBluer.ServerHost.UI.Pages
 {
     /// <summary>
     /// LoadingPage.xaml 的交互逻辑

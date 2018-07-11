@@ -18,7 +18,7 @@
 
         public Action<string> ShowSuccessMessage { private get; set; }
 
-        public Action<string,string> ShowInfo { private get; set; }
+        public Action<string, string> ShowInfo { private get; set; }
 
         public Action<string> ShowMessage { private get; set; }
 
@@ -31,12 +31,13 @@
             {
                 ShowMessage(ex.Message);
             }
-            else {
+            else
+            {
                 ExceptionHandler(ex);
             }
         }
 
-        public void Show(string tip,string title, string message)
+        public void Show(string tip, string title, string message)
         {
 
         }
@@ -51,8 +52,8 @@
             {
                 ShowInfo(title, message);
             }
-        }        }
+
+        }
 
     }
-
 }

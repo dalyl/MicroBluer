@@ -13,9 +13,8 @@ namespace MicroBluer.ServerHost.Core
     {
         private static readonly ILog logger = LogManager.GetLogger<LogTryCatch>();
 
-        public LogTryCatch()
+        public LogTryCatch():base(msg => logger.Info(msg))
         {
-            ShowMessage = msg => logger.Info(msg);
         }
     }
 }

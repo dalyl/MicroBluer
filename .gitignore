@@ -22,6 +22,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+ServerPulish/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

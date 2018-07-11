@@ -129,14 +129,15 @@
     <Compile Include="Command\AppVolume.cs" />
     <Compile Include="Command\WindowsVolume.cs" />
     <Compile Include="Core\LogTryCatch.cs" />
-    <Compile Include="Ctrls\BitmapRenderer.cs" />
-    <Compile Include="Ctrls\ImageCreate.cs" />
-    <Compile Include="Ctrls\NotificationAreaIcon.cs" />
-    <Compile Include="Pages\LoadingPage.xaml.cs">
+    <Compile Include="UI\Ctrls\BitmapRenderer.cs" />
+    <Compile Include="UI\Ctrls\ImageCreate.cs" />
+    <Compile Include="UI\Ctrls\NotificationAreaIcon.cs" />
+    <Compile Include="UI\PageBase.cs" />
+    <Compile Include="UI\Pages\LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\ServerEnvironment.cs" />
-    <Compile Include="Pages\WebPage.xaml.cs">
+    <Compile Include="UI\Pages\WebPage.xaml.cs">
       <DependentUpon>WebPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\ServiceProcess.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Service\ServiceStruct.cs" />
     <Compile Include="Service\SettingCache.cs" />
     <Compile Include="Core\WindowsCommandDistributor.cs" />
+    <Compile Include="UI\TopMenus.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -152,25 +154,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Ctrls\PlaceholderTextBox.cs" />
-    <Compile Include="Ctrls\TitleTextBox.cs" />
+    <Compile Include="UI\Ctrls\PlaceholderTextBox.cs" />
+    <Compile Include="UI\Ctrls\TitleTextBox.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\LoadingPage.xaml">
+    <Page Include="UI\Pages\LoadingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SettingPage.xaml">
+    <Page Include="UI\Pages\SettingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\StatePage.xaml">
+    <Page Include="UI\Pages\StatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WebPage.xaml">
+    <Page Include="UI\Pages\WebPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,10 +182,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\SettingPage.xaml.cs">
+    <Compile Include="UI\Pages\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\StatePage.xaml.cs">
+    <Compile Include="UI\Pages\StatePage.xaml.cs">
       <DependentUpon>StatePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">

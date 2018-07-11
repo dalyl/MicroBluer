@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ctrl="clr-namespace:MicroBluer.ServerHost.Ctrls"
+        xmlns:ctrl="clr-namespace:MicroBluer.ServerHost.UI.Ctrls"
         xmlns:form="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:page="clr-namespace:MicroBluer.ServerHost.UI.Pages"
         mc:Ignorable="d"  Title="MainWindow"   ResizeMode="NoResize"  Closing="Window_Closing">
     <Grid>
 
@@ -14,14 +15,15 @@
             <RowDefinition Height="23"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Menu  Grid.Row="0"  Name="TopMenu" Height="23"   >      </Menu>
+        <Menu  Grid.Row="0"  Name="topMenu" Height="23"   >      </Menu>
         <StatusBar Height="23" Name="statusBar" Grid.Row="2" VerticalAlignment="Bottom" />
-
+        
+        <page:LoadingPage x:Name="loading"   Grid.Row="1"  Visibility="Hidden" />
         <Border Name="CtrlsContainer"  Grid.Row="1"  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}">
         </Border>
 
 
-            <ctrl:NotificationAreaIcon Text="小蓝人" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
+        <ctrl:NotificationAreaIcon Text="小蓝人" MouseDoubleClick="NotificationAreaIcon_MouseDoubleClick"  >
 
                 <ctrl:NotificationAreaIcon.MenuStripItems>
                     <form:ToolStripMenuItem  Text="关于" Click="MenuItem_AboutUsClick" />

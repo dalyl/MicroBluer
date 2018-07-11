@@ -10,7 +10,7 @@ using System.Windows.Threading;
 using Drawing = System.Drawing;
 using Forms = System.Windows.Forms;
 
-namespace MicroBluer.ServerHost.Ctrls
+namespace MicroBluer.ServerHost.UI.Ctrls
 {
     /// <summary>
     /// Represents a thin wrapper for <see cref="Forms.NotifyIcon"/>

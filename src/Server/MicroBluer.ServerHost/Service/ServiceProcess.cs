@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Drawing;
-using MicroBluer.ServerHost.Ctrls;
+using MicroBluer.ServerHost.UI.Ctrls;
 
 namespace MicroBluer.ServerHost.Service
 {

@@ -6,7 +6,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace MicroBluer.ServerHost.Ctrls
+namespace MicroBluer.ServerHost.UI.Ctrls
 {
 
     public class ImageCreate

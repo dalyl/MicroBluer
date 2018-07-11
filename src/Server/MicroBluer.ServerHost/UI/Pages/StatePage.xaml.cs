@@ -1,4 +1,5 @@
 ﻿using Common.Logging;
+using MicroBluer.Common;
 using MicroBluer.ServerHost.Service;
 using System;
 using System.Collections.Generic;
@@ -15,19 +16,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MicroBluer.ServerHost.Pages
+namespace MicroBluer.ServerHost.UI.Pages
 {
     /// <summary>
     /// StatePage.xaml 的交互逻辑
     /// </summary>
-    public partial class StatePage : UserControl
+    public partial class StatePage :  PageBase
     {
         private static readonly ILog logger = LogManager.GetLogger<StatePage>();
-
-
-        public StatePage()
+     
+        public StatePage(Decorator owner)
         {
             InitializeComponent();
+            Owner = owner;
+        }
+
+        public void Open()
+        {
+            base.
+            Owner.Child = this;
             Refresh();
         }
 
@@ -45,10 +52,10 @@ namespace MicroBluer.ServerHost.Pages
 
         private void Button_ServicePreview_Click(object sender, RoutedEventArgs e)
         {
-            ServiceProcess.Instance.OpenBrower();
+            TryNotice.Current.Invoke(ServiceProcess.Instance.State,()=> ServiceProcess.Instance.OpenBrower());
         }
 
-        void Refresh()
+        public void Refresh()
         {
             Dispatcher.BeginInvoke(new Action(delegate
             {

@@ -1,12 +1,13 @@
-﻿<UserControl x:Class="MicroBluer.ServerHost.Pages.StatePage"
+﻿<ui:PageBase
+             x:Class="MicroBluer.ServerHost.UI.Pages.StatePage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ctrl="clr-namespace:MicroBluer.ServerHost.Ctrls"
-             xmlns:page="clr-namespace:MicroBluer.ServerHost.Pages"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="600">
+             xmlns:ui="clr-namespace:MicroBluer.ServerHost.UI"
+             xmlns:ctrl="clr-namespace:MicroBluer.ServerHost.UI.Ctrls"
+             xmlns:page="clr-namespace:MicroBluer.ServerHost.UI.Pages"
+             mc:Ignorable="d"   d:DesignHeight="450" d:DesignWidth="600">
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
@@ -51,4 +52,4 @@
 
     </Grid>
 
-</UserControl>
+</ui:PageBase>

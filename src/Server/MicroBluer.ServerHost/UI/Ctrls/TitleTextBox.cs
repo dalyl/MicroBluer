@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MicroBluer.ServerHost.Ctrls
+namespace MicroBluer.ServerHost.UI.Ctrls
 {
 
     [TemplatePart(Name = TitleTextBlockKey, Type = typeof(TextBlock))]

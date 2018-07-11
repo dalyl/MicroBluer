@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MicroBluer.ServerHost.Pages
+namespace MicroBluer.ServerHost.UI.Pages
 {
     /// <summary>
     /// SettingPage.xaml 的交互逻辑

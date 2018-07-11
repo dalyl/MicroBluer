@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MicroBluer.ServerHost.Resources.Styles"
-                    xmlns:uc="clr-namespace:MicroBluer.ServerHost.Ctrls">
+                    xmlns:uc="clr-namespace:MicroBluer.ServerHost.UI.Ctrls">
     <Style TargetType="{x:Type uc:TitleTextBox}">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="FontSize" Value="12"/>

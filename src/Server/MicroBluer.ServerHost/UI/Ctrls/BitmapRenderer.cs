@@ -6,7 +6,7 @@ using ZXing.OneD;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace MicroBluer.ServerHost.Ctrls
+namespace MicroBluer.ServerHost.UI.Ctrls
 {
     /// <summary>
     /// Renders a <see cref="BitMatrix" /> to a <see cref="Bitmap" /> image

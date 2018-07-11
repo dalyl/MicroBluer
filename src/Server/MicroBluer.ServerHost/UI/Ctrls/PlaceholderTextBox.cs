@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace MicroBluer.ServerHost.Ctrls
+namespace MicroBluer.ServerHost.UI.Ctrls
 {
     /// <summary>
     /// 带点位符的文本输入控件

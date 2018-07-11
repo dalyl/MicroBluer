@@ -19,7 +19,7 @@ namespace MicroBluer.ServerHost
 
         public readonly static ServerEnvironment Instance = new ServerEnvironment();
 
-        public string Path { get; private set; } = @"E:\Project\Github\MicroBluer\src\Server\MicroBluer.ServerHost\bin\Release\webroot\";
+        public string Path { get; private set; } = @"E:\Project\Github\MicroBluer\src\Server\ServerPulish\";
 
         public string WebName { get; private set; } = "MicroBluer.ServerWeb";
 
