@@ -20,10 +20,10 @@
         void InitData()
         {
             AddShowItem();
-            AddItem("设置", new Route { Page = Page.Setting }, (route) => Container.ExplerorRoute(route));
+            AddItem("设置", new PageRoute { Page = Page.Setting }, (route) => Container.ExplerorRoute(route));
             AddWebItem();
-            AddItem("帮助", new Route { Page = Page.Help }, (route) => Container.ExplerorRoute(route));
-            AddItem("关于", new Route { Page = Page.About, Context = "blue.netter.site" }, (route) => Container.WebPage.Open(route));
+            AddItem("帮助", new PageRoute { Page = Page.Help }, (route) => Container.ExplerorRoute(route));
+            AddItem("关于", new PageRoute { Page = Page.About, Context = "blue.netter.site" }, (route) => Container.WebPage.Open(route));
         }
 
         #region  --- 查看 ---
@@ -32,8 +32,8 @@
         void AddShowItem()
         {
             var item = AddItem("查看", string.Empty, (route) => Container.ExplerorRoute(route));
-            AddSubItem(item.Items, "服务状态", new Route { Page = Page.State });
-            AddSubItem(item.Items, "服务浏览", new Route { Page = Page.Service }, (route) => Container.ExplerorService(route));
+            AddSubItem(item.Items, "服务状态", new PageRoute { Page = Page.State });
+            AddSubItem(item.Items, "服务浏览", new PageRoute { Page = Page.Service }, (route) => Container.ExplerorService(route));
 
         }
 
@@ -45,36 +45,36 @@
         void AddWebItem()
         {
             var item = AddItem("浏览", string.Empty, (route) => Container.WebPage.Open(route));
-            AddSubItem(item.Items, "北大慕课", new Route { Page = Page.Web, Context = "www.icourse163.org" });
-            AddSubItem(item.Items, "清华慕课", new Route { Page = Page.Web, Context = "www.xuetangx.com" });
-            AddSubItem(item.Items, "CCTV-5", new Route { Page = Page.Web, Context = "www.cctv.com" });
-            AddSubItem(item.Items, "CCTV-13", new Route { Page = Page.Web, Context = "www.cctv.com" });
-            AddSubItem(item.Items, "优酷", new Route { Page = Page.Web, Context = "www.youku.com" });
-            AddSubItem(item.Items, "乐视", new Route { Page = Page.Web, Context = "www.le.com" });
+            AddSubItem(item.Items, "北大慕课", new PageRoute { Page = Page.Web, Context = "www.icourse163.org" });
+            AddSubItem(item.Items, "清华慕课", new PageRoute { Page = Page.Web, Context = "www.xuetangx.com" });
+            AddSubItem(item.Items, "CCTV-5", new PageRoute { Page = Page.Web, Context = "www.cctv.com" });
+            AddSubItem(item.Items, "CCTV-13", new PageRoute { Page = Page.Web, Context = "www.cctv.com" });
+            AddSubItem(item.Items, "优酷", new PageRoute { Page = Page.Web, Context = "www.youku.com" });
+            AddSubItem(item.Items, "乐视", new PageRoute { Page = Page.Web, Context = "www.le.com" });
         }
 
 
         #endregion
 
 
-        private void AddSubItem(ItemCollection Items, string Name, Route route, Action<Route> RouteInvoke = null)
+        private void AddSubItem(ItemCollection Items, string Name, PageRoute route, Action<PageRoute> RouteInvoke = null)
         {
             AddSubItem(Items, Name, route.ToJson(), RouteInvoke);
         }
 
-        private void AddSubItem(ItemCollection Items, string Name, string Parameter, Action<Route> RouteInvoke = null)
+        private void AddSubItem(ItemCollection Items, string Name, string Parameter, Action<PageRoute> RouteInvoke = null)
         {
             var item = new MenuItem { Header = Name, CommandParameter = Parameter };
             if (RouteInvoke != null) item.Click += (s, e) => MenuItemSwitchClick(s, e, RouteInvoke);
             Items.Add(item);
         }
 
-        private MenuItem AddItem(string Name, Route route = null, Action<Route> RouteInvoke = null)
+        private MenuItem AddItem(string Name, PageRoute route = null, Action<PageRoute> RouteInvoke = null)
         {
             return AddItem(Name, route == null ? "" : route.ToJson(), RouteInvoke);
         }
 
-        private MenuItem AddItem(string Name, string Parameter, Action<Route> RouteInvoke)
+        private MenuItem AddItem(string Name, string Parameter, Action<PageRoute> RouteInvoke)
         {
             var item = new MenuItem { Header = Name, CommandParameter = Parameter };
             item.Click += (s, e) => MenuItemSwitchClick(s, e, RouteInvoke);
@@ -82,7 +82,7 @@
             return item;
         }
 
-        private void MenuItemSwitchClick(object sender, EventArgs e, Action<Route> RouteInvoke)
+        private void MenuItemSwitchClick(object sender, EventArgs e, Action<PageRoute> RouteInvoke)
         {
             var r = e as RoutedEventArgs;
             if (r == null) return;
@@ -90,29 +90,9 @@
             if (menu == null) return;
             var param = menu.CommandParameter;
             if (param == null) return;
-            var route = param.FromJson<Route>();
+            var route = param.FromJson<PageRoute>();
             RouteInvoke?.Invoke(route);
         }
-
-        public class Route
-        {
-            public Page Page { get; set; }
-
-            public object Context { get; set; }
-        }
-
-        public enum Page
-        {
-            None,
-            State,
-            Service,
-            Setting,
-            Web,
-            Help,
-            About,
-        }
-
-
 
     }
 }

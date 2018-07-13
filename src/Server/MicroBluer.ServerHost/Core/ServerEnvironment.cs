@@ -30,7 +30,8 @@ namespace MicroBluer.ServerHost
         public int Port { get;  set; } = 6001;
 
         public string WebAddress {
-            get {
+            get
+            {
                 return $"http://{IP}:{Port}";
             }
         }

@@ -22,13 +22,12 @@ namespace MicroBluer.ServerHost.UI.Pages
     public partial class WebPage :  PageBase
     {
 
-        public WebPage(Decorator owner) 
+        public WebPage() 
         {
             InitializeComponent();
-            Owner = owner;
         }
 
-        public bool Open(TopMenus.Route route)
+        public bool Open(TopMenus.PageRoute route)
         {
             if (route.Context == null) return TryNotice.Current.Show(false, $"{nameof(route.Context)}参数配置异常");
             Open(route.Context.ToString());

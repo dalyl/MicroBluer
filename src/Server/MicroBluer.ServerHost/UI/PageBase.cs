@@ -9,11 +9,10 @@
 
     public abstract class PageBase: UserControl
     {
-        public Decorator Owner { get; protected set; }
+        public PageContainer Owner => PageContainer.GetContainer();
 
-        public PageBase()
-        {
+        public abstract void Refresh();
 
-        }
+
     }
 }

@@ -1,23 +1,12 @@
 ﻿using Common.Logging;
-using MicroBluer.Common;
-using MicroBluer.ServerHost.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 namespace MicroBluer.ServerHost.UI.Pages
 {
+    using TryNotice= MicroBluer.Common.TryNotice;
+    using MicroBluer.ServerHost.Service;
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+
     /// <summary>
     /// StatePage.xaml 的交互逻辑
     /// </summary>
@@ -25,10 +14,9 @@ namespace MicroBluer.ServerHost.UI.Pages
     {
         private static readonly ILog logger = LogManager.GetLogger<StatePage>();
      
-        public StatePage(Decorator owner)
+        public StatePage()
         {
             InitializeComponent();
-            Owner = owner;
         }
 
         public void Open()
@@ -55,7 +43,7 @@ namespace MicroBluer.ServerHost.UI.Pages
             TryNotice.Current.Invoke(ServiceProcess.Instance.State,()=> ServiceProcess.Instance.OpenBrower());
         }
 
-        public void Refresh()
+        public override void Refresh()
         {
             Dispatcher.BeginInvoke(new Action(delegate
             {

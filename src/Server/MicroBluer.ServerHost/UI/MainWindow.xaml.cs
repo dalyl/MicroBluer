@@ -1,12 +1,9 @@
-﻿namespace MicroBluer.ServerHost
+﻿namespace MicroBluer.ServerHost.UI
 {
     using MicroBluer.ServerHost.Service;
-    using MicroBluer.ServerHost.UI;
     using MicroBluer.ServerHost.UI.Pages;
     using System;
-    using System.Collections.Generic;
     using System.Windows;
-    using System.Windows.Controls;
     using System.Windows.Input;
 
     /// <summary>
@@ -14,25 +11,15 @@
     /// </summary>
     public partial class MainWindow : Window
     {
-        public LoadingPage loadingPage = new LoadingPage();
-
-        public StatePage StatePage { get; }
-
-        public SettingPage setPage = new SettingPage();
-
-        public WebPage WebPage { get; }
 
         public MainWindow()
         {
             // 启动后不现实任务栏图标！
             this.ShowInTaskbar = false;
             InitializeComponent();
-
             this.Title = "小蓝人服务";
-
-            WebPage = new WebPage(this.CtrlsContainer);
-            StatePage = new StatePage(this.CtrlsContainer);
-            StatePage.Open();
+            PageContainer.Init(this.CtrlsContainer);
+            PageContainer.Open(Page.State);
 
             this.topMenu.ItemsSource = new TopMenus(this);
         }
@@ -83,35 +70,12 @@
         /// </summary>
         private void MenuItem_ExitClick(object sender, EventArgs e)
         {
-            Application.Current.Shutdown();
+            ServiceProcess.Instance.Stop(Application.Current.Shutdown);
         }
 
         #endregion
 
-        public bool ExplerorRoute(TopMenus.Route route)
-        {
-            switch (route.Page)
-            {
-                case TopMenus.Page.State: StatePage.Open(); return true;
-                case TopMenus.Page.Setting: this.CtrlsContainer.Child = setPage; return true;
-
-                default: return false;
-            }
-        }
-
-        public bool ExplerorService(TopMenus.Route route)
-        {
-            if (ServiceProcess.Instance.State)
-            {
-                WebPage.OpenUrl(ServerEnvironment.Instance.WebAddress);
-                return true;
-            }
-            else
-            {
-                this.CtrlsContainer.Child = StatePage;
-                return false;
-            }
-        }
+ 
 
       
     }

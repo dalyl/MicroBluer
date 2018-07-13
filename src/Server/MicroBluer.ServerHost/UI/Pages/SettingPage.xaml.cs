@@ -18,7 +18,7 @@ namespace MicroBluer.ServerHost.UI.Pages
     /// <summary>
     /// SettingPage.xaml 的交互逻辑
     /// </summary>
-    public partial class SettingPage : UserControl
+    public partial class SettingPage : PageBase
     {
         public SettingPage()
         {
