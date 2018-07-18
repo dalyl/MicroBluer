@@ -14,8 +14,9 @@
     using Android.Views;
     using MicroBluer.AndroidUtils.Views;
     using MicroBluer.AndroidMobile.Models;
+    using Android.Content.PM;
 
-    [Activity(Theme = "@android:style/Theme.NoTitleBar")]
+    [Activity(Theme = "@android:style/Theme.NoTitleBar", ScreenOrientation = ScreenOrientation.Portrait)]
     public class ApplicationActivity : PartialActivity
     {
         static PartialRequestStack requestStack { get; set; } = new PartialRequestStack();

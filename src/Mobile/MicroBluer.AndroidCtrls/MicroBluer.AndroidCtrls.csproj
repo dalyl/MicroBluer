@@ -107,6 +107,9 @@
     <Compile Include="Core\AreaMap\MapShape.cs" />
     <Compile Include="Core\ImageAction\Renderer\VolumeControllerRenderer.cs" />
     <Compile Include="Core\CodeScan\CodeScaner.cs" />
+    <Compile Include="Core\Keyboard\NumberKeyboardView.cs" />
+    <Compile Include="Core\Keyboard\SwitchKeyboardListener.cs" />
+    <Compile Include="Core\Keyboard\TestActivity.cs" />
     <Compile Include="Core\PopMenu\PopupMenuItem.cs" />
     <Compile Include="Core\PopMenu\PopupMenuSetting.cs" />
     <Compile Include="Core\PopMenu\PopupWindowMenuListAdapter.cs" />
@@ -436,6 +439,31 @@
       <Project>{3ec1cd04-b7f3-4bdc-8800-7e0bd11c963c}</Project>
       <Name>MicroBluer.AndroidUtils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\Keyboard_munber.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Sym_keyboard_delete.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Sym_keyboard_feedback_return.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\KeyboardTest.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\Sym_keyboard_slide_in_bottom.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

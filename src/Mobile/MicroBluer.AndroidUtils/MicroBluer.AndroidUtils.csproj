@@ -84,6 +84,7 @@
     <Compile Include="Extension\ParcelExtension.cs" />
     <Compile Include="Extension\WeakReferenceExtension.cs" />
     <Compile Include="Graphics\Anonymous.cs" />
+    <Compile Include="InputMethodServices\KeyboardInputListener.cs" />
     <Compile Include="IO\GetFileSizeUtil.cs" />
     <Compile Include="IO\SystemManager.cs" />
     <Compile Include="Parcel\Parcelable.cs" />

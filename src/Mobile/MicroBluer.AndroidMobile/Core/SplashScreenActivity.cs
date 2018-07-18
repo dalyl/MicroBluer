@@ -20,7 +20,7 @@ namespace MicroBluer.AndroidMobile
         {
             base.OnCreate(bundle);
 
-            var intent = new Intent(this, typeof(ApplicationActivity));
+            var intent = new Intent(this, typeof(AndroidCtrls.Core.Keyboard.TestActivity));
             StartActivity(intent);
 
             Finish();
