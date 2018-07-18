@@ -29,29 +29,32 @@ namespace MicroBluer.ServerHost.UI.Pages
         private void Button_ServiceStart_Click(object sender, RoutedEventArgs e)
         {
             loading.Visibility = Visibility.Visible;
-            ServiceProcess.Instance.Start(Refresh);
+            ServiceProcess.Instance.Start(() => Dispatcher.BeginInvoke(new Action(delegate
+            {
+                Refresh();
+            })));
         }
 
         private void Button_ServiceStop_Click(object sender, RoutedEventArgs e)
         {
             loading.Visibility = Visibility.Visible;
-            ServiceProcess.Instance.Stop(Refresh);
+            ServiceProcess.Instance.Stop(() => Dispatcher.BeginInvoke(new Action(delegate
+            {
+                Refresh();
+            })));
         }
 
         private void Button_ServicePreview_Click(object sender, RoutedEventArgs e)
         {
-            TryNotice.Current.Invoke(ServiceProcess.Instance.State,()=> ServiceProcess.Instance.OpenBrower());
+            TryNotice.Current.Invoke(ServiceProcess.Instance.State,"服务未启动或异常",()=> PageContainer.Open(ServerEnvironment.Instance.WebAddress));
         }
 
         public override void Refresh()
         {
-            Dispatcher.BeginInvoke(new Action(delegate
-            {
-                QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
-                ServiceAddress.Text = ServerEnvironment.Instance.WebAddress;
-                ServiceState.Text = ServiceProcess.Instance.State ? "正运行" : "已停止";
-                loading.Visibility = Visibility.Hidden;
-            }));
+            QrCode.Source = ServiceProcess.Instance.CreateImageSource(250, 250);
+            ServiceAddress.Text = ServerEnvironment.Instance.WebAddress;
+            ServiceState.Text = ServiceProcess.Instance.State ? "正运行" : "已停止";
+            loading.Visibility = Visibility.Hidden;
         }
 
     }

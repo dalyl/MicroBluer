@@ -7,7 +7,7 @@
         xmlns:form="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:ui="clr-namespace:MicroBluer.ServerHost.UI"
         xmlns:page="clr-namespace:MicroBluer.ServerHost.UI.Pages"
-        mc:Ignorable="d"  Title="MainWindow"   ResizeMode="NoResize"  Closing="Window_Closing">
+        mc:Ignorable="d"  Title="MainWindow"  Closing="Window_Closing">
     <Grid>
 
         <Grid.RowDefinitions>

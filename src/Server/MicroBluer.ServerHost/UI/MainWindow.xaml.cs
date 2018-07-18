@@ -49,9 +49,9 @@
         /// </summary>
         private void NotificationAreaIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (this.WindowState == WindowState.Minimized || this.WindowState == WindowState.Normal)
+            if (this.WindowState == WindowState.Minimized)
             {
-                WindowState = WindowState.Maximized;
+                WindowState = WindowState.Normal;
             }
             this.Show();
             this.Activate();

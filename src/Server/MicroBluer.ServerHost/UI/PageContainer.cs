@@ -42,21 +42,24 @@
             {
                 case Page.State: Open<StatePage>(); return true;
                 case Page.Setting: Open<SettingPage>(); return true;
-                default: return TryNotice.Current.Show(false, $"{page} 无法打开");
+                default: return false;
             }
-        }
+        } 
 
         public static bool Open(PageRoute route)
         {
             var isOpen = Open(route.Page, route.Context);
             if (isOpen) return true;
-            if(route.Context==null) return false;
+            if(route.Context==null) return TryNotice.Current.Show(false, $"{ route.Page } 无法打开"); 
             if (route.Context is string) return Open(route.Context.ToString());
+            return TryNotice.Current.Show(false, $"{ route.Page } 无法打开");
         }
 
         public static bool Open(string url)
         {
-
+            var bower= Container.Resolve<WebPage>();
+            bower.Open(url);
+            return true;
         }
 
     }

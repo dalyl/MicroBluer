@@ -11,7 +11,7 @@
     {
         public PageContainer Owner => PageContainer.GetContainer();
 
-        public abstract void Refresh();
+        public virtual void Refresh() { }
 
 
     }

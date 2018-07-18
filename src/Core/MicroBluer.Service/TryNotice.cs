@@ -37,7 +37,7 @@
             throw (new TryCatchException(message));
         }
 
-        public virtual void Invoke(bool state, Action invoke, string message = "")
+        public virtual void Invoke(bool state, string message, Action invoke)
         {
             if (state == false) {
                 if (string.IsNullOrEmpty(message) == false)  Show(message);

@@ -117,10 +117,5 @@ namespace MicroBluer.ServerHost.Service
 
         #endregion
 
-        public void OpenBrower()
-        {
-            System.Diagnostics.Process.Start(ServerEnvironment.Instance.WebAddress);
-        }
-
     }
 }

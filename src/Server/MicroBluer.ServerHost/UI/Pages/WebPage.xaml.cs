@@ -27,7 +27,7 @@ namespace MicroBluer.ServerHost.UI.Pages
             InitializeComponent();
         }
 
-        public bool Open(TopMenus.PageRoute route)
+        public bool Open(PageRoute route)
         {
             if (route.Context == null) return TryNotice.Current.Show(false, $"{nameof(route.Context)}参数配置异常");
             Open(route.Context.ToString());
