@@ -81,6 +81,7 @@
     <Compile Include="Common\ImageUtils.cs" />
     <Compile Include="Database\ContentObserver.cs" />
     <Compile Include="Extension\CollectionExtension.cs" />
+    <Compile Include="Extension\Extensions.cs" />
     <Compile Include="Extension\ParcelExtension.cs" />
     <Compile Include="Extension\WeakReferenceExtension.cs" />
     <Compile Include="Graphics\Anonymous.cs" />

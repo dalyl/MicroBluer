@@ -28,11 +28,17 @@
 
         public event Action<ExplerItem> ItemClick;
 
+        public FileSizeAsyncTaskCollection SizeWorkers { get; set; } = new FileSizeAsyncTaskCollection();
+
         public int SelectedPosition { get; set; } = -1;
 
         public string[] Extensions {
             set {
                 Items = new ExplerItemCollection(value);
+            }
+            get {
+                if (Items == null) return new string[0];
+                return Items.Extensions;
             }
         }
 
@@ -45,21 +51,25 @@
 
         public void SetData(List<string> paths)
         {
+            SizeWorkers.Clear();
             CurrentRoot = string.Empty;
             TryCatch.Current.Invoke(() => {
                 Items.Add(paths);
                 AfterItemsChanged?.Invoke();
             });
+            SizeWorkers.Add(this, Items);
             NotifyDataSetChanged();
         }
 
         public void SetData(string path)
         {
+            SizeWorkers.Clear();
             CurrentRoot = path;
             TryCatch.Current.Invoke(() => {
                 Items.Add(path);
                 AfterItemsChanged?.Invoke();
             });
+            SizeWorkers.Add(this, Items);
             NotifyDataSetChanged();
         }
 

@@ -144,7 +144,6 @@
             PopMenu.PopupMenu.ShowPopupWindows(this, view, menuList, setting);
         }
 
-
         #region ---  Adapter Event  ---
 
         protected virtual void ItemClick(ExplerItem item)

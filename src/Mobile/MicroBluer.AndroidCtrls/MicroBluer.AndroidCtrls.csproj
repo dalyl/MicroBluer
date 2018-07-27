@@ -91,6 +91,7 @@
     <Compile Include="Core\FileExpler\FileExpleror.cs" />
     <Compile Include="Core\FileExpler\FileExplerorActivity.cs" />
     <Compile Include="Core\FileExpler\ExplerItem.cs" />
+    <Compile Include="Core\FileExpler\FileSizeAsyncTask.cs" />
     <Compile Include="Core\FileSelect\SelectorItem.cs" />
     <Compile Include="Core\FileSelect\SelectorAdapter.cs" />
     <Compile Include="Core\FileSelect\SelectorItemCollection.cs" />

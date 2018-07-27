@@ -9,7 +9,7 @@
 
     public class ExplerItemCollection : List<ExplerItem>
     {
-        string[] Extensions { get; set; } = null;
+        public string[] Extensions { get; set; } = null;
 
         public ExplerItemCollection(string[] extensions=null)
         {
@@ -37,7 +37,8 @@
                     Parent = it.Parent,
                     IsDirectory = it.IsDirectory,
                     Extension = extension,
-                    Size = it.GetFileSize(Extensions),
+                    Size = 0,
+                   // Size = it.GetFileSize(Extensions),
                     Icon = GetFileIcon(it),
                 };
                 if (Extensions != null && item.Size == 0) continue;
@@ -62,7 +63,8 @@
                     Parent = it.Parent,
                     IsDirectory = it.IsDirectory,
                     Extension = extension,
-                    Size = it.GetFileSize(Extensions),
+                    Size = 0,
+                   // Size = it.GetFileSize(Extensions),
                     Icon = GetFileIcon(it),
                 };
                 if (Extensions != null && item.Size==0) continue;
