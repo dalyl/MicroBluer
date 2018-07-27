@@ -2298,25 +2298,28 @@ namespace MicroBluer.AndroidCtrls
 			public static int Scaner_IncludeTop = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public static int Scaner_ZxingOverlay = 2130903088;
+			public static int Scaner_Result = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public static int select_dialog_item_material = 2130903089;
+			public static int Scaner_ZxingOverlay = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public static int select_dialog_multichoice_material = 2130903090;
+			public static int select_dialog_item_material = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public static int select_dialog_singlechoice_material = 2130903091;
+			public static int select_dialog_multichoice_material = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public static int support_simple_spinner_dropdown_item = 2130903092;
+			public static int select_dialog_singlechoice_material = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public static int zxingscanneractivitylayout = 2130903093;
+			public static int support_simple_spinner_dropdown_item = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public static int zxingscannerfragmentlayout = 2130903094;
+			public static int zxingscanneractivitylayout = 2130903094;
+			
+			// aapt resource value: 0x7f030037
+			public static int zxingscannerfragmentlayout = 2130903095;
 			
 			static Layout()
 			{

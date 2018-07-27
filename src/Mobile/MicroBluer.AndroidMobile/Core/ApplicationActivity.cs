@@ -15,6 +15,8 @@
     using MicroBluer.AndroidUtils.Views;
     using MicroBluer.AndroidMobile.Models;
     using Android.Content.PM;
+    using Android.Content;
+    using MicroBluer.AndroidCtrls.CodeScan;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar", ScreenOrientation = ScreenOrientation.Portrait)]
     public class ApplicationActivity : PartialActivity
@@ -144,7 +146,7 @@
                 new MenuContentItem(Resource.Drawable.base_folder_black, "文档管理", 2,()=>MenuClick("文档管理",FolderMapIndexView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_cloud_black, "主机服务", 3,()=>MenuClick("主机服务",HostIndexView.Partial)),
                 new MenuContentItem(Resource.Drawable.base_edit_black, "Hosts 编辑", 4,()=>MenuClick("Hosts 编辑",FileHostsIndexView.Partial)),
-                new MenuContentItem(Resource.Drawable.base_qrcode_black, "扫一扫", 5),
+                new MenuContentItem(Resource.Drawable.base_qrcode_black, "扫一扫", 5, ScanClick),
                 new MenuContentItem(Resource.Drawable.base_cast_connected_black, "联机服务", 6),
             };
             var adapter = new MenuContentAdapter(this, data);
@@ -152,6 +154,12 @@
             listView.OnItemClickListener = new ItemClickListener((adpter, view, position) => data[position].Click());
             //去除行与行之间的黑线：  
             listView.Divider = (null);
+        }
+
+        void ScanClick()
+        {
+            var intent = new Intent(this, typeof(ScanerActivity));
+            StartActivity(intent);
         }
 
         void MenuClick(string title, AgreementUri uri)

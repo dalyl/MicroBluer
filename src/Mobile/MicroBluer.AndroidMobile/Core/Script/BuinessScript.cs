@@ -6,13 +6,13 @@
     using Newtonsoft.Json;
     using Android.Webkit;
     using Java.Interop;
-    using MicroBluer.AndroidCtrls;
     using MicroBluer.AndroidCtrls.FileSelect;
     using MicroBluer.AndroidUtils;
     using MicroBluer.AndroidUtils.IO;
     using MicroBluer.AndroidMobile.Models;
     using MicroBluer.AndroidMobile.Views;
     using MicroBluer.AndroidMobile.Views.Partials;
+    using MicroBluer.AndroidCtrls.CodeScan;
 
     public class BuinessScript: AndroidScript //注意一定要继承java基类  
     {
@@ -42,24 +42,14 @@
         public void ScanHost()
         {
             var scan = new CodeScaner(ViewActivity,"添加主机");
-            var invoke = scan.Invoke();
-            Task.WaitAll(invoke);
-            if (invoke.Result == false)
-            {
-                ShowToast("已取消");
-            }
-            if (string.IsNullOrEmpty(scan.Result))
-            {
-                ShowToast("未识别");
-            }
-            else
-            {
-                var model= ActiveContext.HostExpress.GetServiceDefine(scan.Result);
-                if (model != null) {
-
+            var invoke = scan.Invoke((result)=> {
+                var model = ActiveContext.HostExpress.GetServiceDefine(result);
+                if (model != null)
+                {
                     ActiveContext.HostStore.Save(model);
                 }
-            }
+            });
+            Task.WaitAll(invoke);
         }
 
         [Export("SaveHost")]

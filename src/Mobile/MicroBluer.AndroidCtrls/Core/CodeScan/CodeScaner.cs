@@ -1,4 +1,4 @@
-﻿namespace MicroBluer.AndroidCtrls
+﻿namespace MicroBluer.AndroidCtrls.CodeScan
 {
     using System;
     using System.Collections.Generic;
@@ -18,6 +18,7 @@
     using ZXing.Mobile;
     using Bitmap= Android.Graphics.Bitmap;
     using BitmapFactory = Android.Graphics.BitmapFactory;
+    using Resource = MicroBluer.AndroidCtrls.Resource;
 
     public class CodeScaner
     {
@@ -58,7 +59,7 @@
             ShowScan = async (opts) => await Scanner.Scan(opts);
         }
 
-        public async Task<bool> Invoke()
+        public async Task<bool> Invoke(Action<string> after=null)
         {
             try
             {
@@ -74,13 +75,36 @@
                     CharacterSet = ""
                 };
                 var result = await ShowScan(opts);
-                return ScanResultHandle(result);
+                return After(ScanResultHandle(result), after);
             }
             catch (Exception ex)
             {
                 Result = ex.Message;
                 return false;
             }
+        }
+
+        bool After(bool handler, Action<string> after)
+        {
+
+            if (handler == false)
+            {
+                ShowToast("已取消");
+            }
+            if (string.IsNullOrEmpty(Result))
+            {
+                ShowToast("未识别");
+            }
+            else
+            {
+                after?.Invoke(Result);
+            }
+            return handler;
+        }
+
+        void ShowToast(string Message)
+        {
+            Toast.MakeText(Context, Message.Trim(), ToastLength.Short).Show();
         }
 
         Func<MobileBarcodeScanningOptions, Task<ZXing.Result>> ShowScan { get; set; }
@@ -206,12 +230,12 @@
 
         Bitmap CreateBitmap(string path)
         {
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            //options.InJustDecodeBounds = true; // 先获取原大小
-
-            //return BitmapFactory.DecodeFile(path, options);
-
-            options.InJustDecodeBounds = false; // 获取新的大小
+            BitmapFactory.Options options = new BitmapFactory.Options
+            {
+                //options.InJustDecodeBounds = true; // 先获取原大小
+                //return BitmapFactory.DecodeFile(path, options);
+                InJustDecodeBounds = false // 获取新的大小
+            };
             int sampleSize = (int)(options.OutHeight / (float)200);
             if (sampleSize <= 0)
                 sampleSize = 1;
