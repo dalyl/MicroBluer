@@ -21,6 +21,13 @@ namespace MicroBluer.AndroidCtrls.CodeScan
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Scaner_Result);
 
+            var bulbBtn = this.FindViewById(Resource.Id.btn_path_motion);
+
+            bulbBtn.Click += Scan_Click;
+        }
+
+        public void Scan_Click(object sender, EventArgs e)
+        {
             var scan = new CodeScaner(this, "扫一扫");
             var invoke = scan.Invoke();
             Task.WaitAll(invoke);

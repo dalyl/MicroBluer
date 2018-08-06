@@ -593,6 +593,7 @@ namespace MicroBluer.AndroidMobile
 			global::MicroBluer.AndroidCtrls.Resource.Id.always = global::MicroBluer.AndroidMobile.Resource.Id.always;
 			global::MicroBluer.AndroidCtrls.Resource.Id.beginning = global::MicroBluer.AndroidMobile.Resource.Id.beginning;
 			global::MicroBluer.AndroidCtrls.Resource.Id.btn_back = global::MicroBluer.AndroidMobile.Resource.Id.btn_back;
+			global::MicroBluer.AndroidCtrls.Resource.Id.btn_path_motion = global::MicroBluer.AndroidMobile.Resource.Id.btn_path_motion;
 			global::MicroBluer.AndroidCtrls.Resource.Id.buttonPanel = global::MicroBluer.AndroidMobile.Resource.Id.buttonPanel;
 			global::MicroBluer.AndroidCtrls.Resource.Id.cancel_action = global::MicroBluer.AndroidMobile.Resource.Id.cancel_action;
 			global::MicroBluer.AndroidCtrls.Resource.Id.check = global::MicroBluer.AndroidMobile.Resource.Id.check;
@@ -6377,11 +6378,11 @@ namespace MicroBluer.AndroidMobile
 			// aapt resource value: 0x7f07008c
 			public const int FileExplerorItem_Layout = 2131165324;
 			
-			// aapt resource value: 0x7f0700e1
-			public const int FileExplerorItem_Menu_Copy = 2131165409;
-			
 			// aapt resource value: 0x7f0700e2
-			public const int FileExplerorItem_Menu_Rename = 2131165410;
+			public const int FileExplerorItem_Menu_Copy = 2131165410;
+			
+			// aapt resource value: 0x7f0700e3
+			public const int FileExplerorItem_Menu_Rename = 2131165411;
 			
 			// aapt resource value: 0x7f07008e
 			public const int FileExplerorItem_Path = 2131165326;
@@ -6575,6 +6576,9 @@ namespace MicroBluer.AndroidMobile
 			// aapt resource value: 0x7f0700a0
 			public const int btn_back = 2131165344;
 			
+			// aapt resource value: 0x7f0700da
+			public const int btn_path_motion = 2131165402;
+			
 			// aapt resource value: 0x7f070058
 			public const int buttonPanel = 2131165272;
 			
@@ -6614,8 +6618,8 @@ namespace MicroBluer.AndroidMobile
 			// aapt resource value: 0x7f0700ac
 			public const int container = 2131165356;
 			
-			// aapt resource value: 0x7f0700e0
-			public const int contentFrame = 2131165408;
+			// aapt resource value: 0x7f0700e1
+			public const int contentFrame = 2131165409;
 			
 			// aapt resource value: 0x7f07005e
 			public const int contentPanel = 2131165278;
@@ -6722,11 +6726,11 @@ namespace MicroBluer.AndroidMobile
 			// aapt resource value: 0x7f070053
 			public const int image = 2131165267;
 			
-			// aapt resource value: 0x7f0700db
-			public const int imageAlbum = 2131165403;
+			// aapt resource value: 0x7f0700dc
+			public const int imageAlbum = 2131165404;
 			
-			// aapt resource value: 0x7f0700de
-			public const int imageBulb = 2131165406;
+			// aapt resource value: 0x7f0700df
+			public const int imageBulb = 2131165407;
 			
 			// aapt resource value: 0x7f07009b
 			public const int imageCtrl = 2131165339;
@@ -6842,11 +6846,11 @@ namespace MicroBluer.AndroidMobile
 			// aapt resource value: 0x7f0700a5
 			public const int rl = 2131165349;
 			
-			// aapt resource value: 0x7f0700da
-			public const int scanAlbumBtn = 2131165402;
+			// aapt resource value: 0x7f0700db
+			public const int scanAlbumBtn = 2131165403;
 			
-			// aapt resource value: 0x7f0700dd
-			public const int scanBulbBtn = 2131165405;
+			// aapt resource value: 0x7f0700de
+			public const int scanBulbBtn = 2131165406;
 			
 			// aapt resource value: 0x7f070029
 			public const int screen = 2131165225;
@@ -6962,11 +6966,11 @@ namespace MicroBluer.AndroidMobile
 			// aapt resource value: 0x7f0700ca
 			public const int text2 = 2131165386;
 			
-			// aapt resource value: 0x7f0700dc
-			public const int textAlbum = 2131165404;
+			// aapt resource value: 0x7f0700dd
+			public const int textAlbum = 2131165405;
 			
-			// aapt resource value: 0x7f0700df
-			public const int textBulb = 2131165407;
+			// aapt resource value: 0x7f0700e0
+			public const int textBulb = 2131165408;
 			
 			// aapt resource value: 0x7f070061
 			public const int textSpacerNoButtons = 2131165281;

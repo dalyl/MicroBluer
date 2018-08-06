@@ -2,4 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/Scaner_IncludeTop"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="@color/transparent"
+        android:id="@+id/top_layout" />
+    <Button
+        android:id="@+id/btn_path_motion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Path Motion" />
+</LinearLayout>

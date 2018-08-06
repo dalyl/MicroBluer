@@ -158,8 +158,18 @@
 
         void ScanClick()
         {
-            var intent = new Intent(this, typeof(ScanerActivity));
-            StartActivity(intent);
+            //var intent = new Intent(this, typeof(ScanerActivity));
+            //StartActivity(intent);
+
+            var scan = new CodeScaner(this, "添加主机");
+            var invoke = scan.Invoke((result) => {
+                var model = ActiveContext.HostExpress.GetServiceDefine(result);
+                if (model != null)
+                {
+                    ActiveContext.HostStore.Save(model);
+                }
+            });
+            Task.WaitAll(invoke);
         }
 
         void MenuClick(string title, AgreementUri uri)

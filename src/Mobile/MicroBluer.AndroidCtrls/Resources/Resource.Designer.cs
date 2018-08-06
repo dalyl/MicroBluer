@@ -1671,11 +1671,11 @@ namespace MicroBluer.AndroidCtrls
 			// aapt resource value: 0x7f070057
 			public static int FileExplerorItem_Layout = 2131165271;
 			
-			// aapt resource value: 0x7f070093
-			public static int FileExplerorItem_Menu_Copy = 2131165331;
-			
 			// aapt resource value: 0x7f070094
-			public static int FileExplerorItem_Menu_Rename = 2131165332;
+			public static int FileExplerorItem_Menu_Copy = 2131165332;
+			
+			// aapt resource value: 0x7f070095
+			public static int FileExplerorItem_Menu_Rename = 2131165333;
 			
 			// aapt resource value: 0x7f070059
 			public static int FileExplerorItem_Path = 2131165273;
@@ -1806,6 +1806,9 @@ namespace MicroBluer.AndroidCtrls
 			// aapt resource value: 0x7f07006b
 			public static int btn_back = 2131165291;
 			
+			// aapt resource value: 0x7f07008c
+			public static int btn_path_motion = 2131165324;
+			
 			// aapt resource value: 0x7f07002c
 			public static int buttonPanel = 2131165228;
 			
@@ -1830,8 +1833,8 @@ namespace MicroBluer.AndroidCtrls
 			// aapt resource value: 0x7f070075
 			public static int container = 2131165301;
 			
-			// aapt resource value: 0x7f070092
-			public static int contentFrame = 2131165330;
+			// aapt resource value: 0x7f070093
+			public static int contentFrame = 2131165331;
 			
 			// aapt resource value: 0x7f070032
 			public static int contentPanel = 2131165234;
@@ -1896,11 +1899,11 @@ namespace MicroBluer.AndroidCtrls
 			// aapt resource value: 0x7f070027
 			public static int image = 2131165223;
 			
-			// aapt resource value: 0x7f07008d
-			public static int imageAlbum = 2131165325;
+			// aapt resource value: 0x7f07008e
+			public static int imageAlbum = 2131165326;
 			
-			// aapt resource value: 0x7f070090
-			public static int imageBulb = 2131165328;
+			// aapt resource value: 0x7f070091
+			public static int imageBulb = 2131165329;
 			
 			// aapt resource value: 0x7f070066
 			public static int imageCtrl = 2131165286;
@@ -1974,11 +1977,11 @@ namespace MicroBluer.AndroidCtrls
 			// aapt resource value: 0x7f070070
 			public static int rl = 2131165296;
 			
-			// aapt resource value: 0x7f07008c
-			public static int scanAlbumBtn = 2131165324;
+			// aapt resource value: 0x7f07008d
+			public static int scanAlbumBtn = 2131165325;
 			
-			// aapt resource value: 0x7f07008f
-			public static int scanBulbBtn = 2131165327;
+			// aapt resource value: 0x7f070090
+			public static int scanBulbBtn = 2131165328;
 			
 			// aapt resource value: 0x7f070016
 			public static int screen = 2131165206;
@@ -2073,11 +2076,11 @@ namespace MicroBluer.AndroidCtrls
 			// aapt resource value: 0x7f070080
 			public static int text2 = 2131165312;
 			
-			// aapt resource value: 0x7f07008e
-			public static int textAlbum = 2131165326;
+			// aapt resource value: 0x7f07008f
+			public static int textAlbum = 2131165327;
 			
-			// aapt resource value: 0x7f070091
-			public static int textBulb = 2131165329;
+			// aapt resource value: 0x7f070092
+			public static int textBulb = 2131165330;
 			
 			// aapt resource value: 0x7f070035
 			public static int textSpacerNoButtons = 2131165237;

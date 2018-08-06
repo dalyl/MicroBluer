@@ -64,8 +64,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SpeechTest.cs" />
     <Compile Include="TryCatchTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WindowsCommandTest.cs" />
