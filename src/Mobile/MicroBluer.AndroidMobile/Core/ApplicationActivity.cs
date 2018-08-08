@@ -4,19 +4,20 @@
     using MicroBluer.AndroidMobile.Views.Partials;
     using MicroBluer.AndroidMobile.Script;
     using MicroBluer.AndroidMobile.WebAgreement;
-    using System;
+    using MicroBluer.AndroidMobile.Models;
+    using MicroBluer.AndroidCtrls.CodeScan;
+    using MicroBluer.AndroidUtils.Views;
     using Android.App;
     using Android.OS;
+    using Android.Views;
     using Android.Webkit;
     using Android.Widget;
     using Android.Support.V4.Widget;
-    using View = Android.Views.View;
-    using Android.Views;
-    using MicroBluer.AndroidUtils.Views;
-    using MicroBluer.AndroidMobile.Models;
-    using Android.Content.PM;
     using Android.Content;
-    using MicroBluer.AndroidCtrls.CodeScan;
+    using Android.Content.PM;
+    using View = Android.Views.View;
+    using System;
+    using System.Threading.Tasks;
 
     [Activity(Theme = "@android:style/Theme.NoTitleBar", ScreenOrientation = ScreenOrientation.Portrait)]
     public class ApplicationActivity : PartialActivity

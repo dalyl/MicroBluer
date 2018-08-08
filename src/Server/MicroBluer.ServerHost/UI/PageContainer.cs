@@ -16,8 +16,9 @@
             builder.RegisterInstance<WebPage>(new WebPage());
             builder.RegisterInstance<StatePage>(new StatePage());
             builder.RegisterInstance<SettingPage>(new SettingPage());
+            builder.RegisterInstance<SpeechPage>(new SpeechPage());
             builder.RegisterInstance<LoadingPage>(new LoadingPage());
-            
+
             Container = builder.Build();
         }
 
@@ -42,6 +43,7 @@
             {
                 case Page.State: Open<StatePage>(); return true;
                 case Page.Setting: Open<SettingPage>(); return true;
+                case Page.Speech: Open<SpeechPage>(); return true;
                 default: return false;
             }
         } 

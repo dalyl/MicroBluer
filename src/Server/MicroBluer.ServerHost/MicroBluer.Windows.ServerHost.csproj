@@ -20,6 +20,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -32,7 +33,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -104,6 +104,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -135,6 +136,9 @@
     <Compile Include="UI\Ctrls\BitmapRenderer.cs" />
     <Compile Include="UI\Ctrls\ImageCreate.cs" />
     <Compile Include="UI\Ctrls\NotificationAreaIcon.cs" />
+    <Compile Include="UI\Ctrls\TitleCombobox.cs" />
+    <Compile Include="UI\Ctrls\TitleRichTextBox.cs" />
+    <Compile Include="UI\Ctrls\TitleSlider.cs" />
     <Compile Include="UI\Page.cs" />
     <Compile Include="UI\PageBase.cs" />
     <Compile Include="UI\PageContainer.cs" />
@@ -143,6 +147,9 @@
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\ServerEnvironment.cs" />
+    <Compile Include="UI\Pages\SpeechPage.xaml.cs">
+      <DependentUpon>SpeechPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Pages\WebPage.xaml.cs">
       <DependentUpon>WebPage.xaml</DependentUpon>
     </Compile>
@@ -152,6 +159,17 @@
     <Compile Include="Service\SettingCache.cs" />
     <Compile Include="Core\WindowsCommandDistributor.cs" />
     <Compile Include="UI\TopMenus.cs" />
+    <Page Include="Resources\Styles\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\TitleComboboxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\TitleSliderStyles.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
     <Page Include="UI\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -171,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Pages\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Pages\SpeechPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

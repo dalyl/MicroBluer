@@ -22,6 +22,7 @@
             AddShowItem();
             AddItem("设置", new PageRoute { Page = Page.Setting });
             AddWebItem();
+            AddItem("语音服务", new PageRoute { Page = Page.Speech });
             AddItem("帮助", new PageRoute { Page = Page.Help });
             AddItem("关于", new PageRoute { Page = Page.About, Context = "blue.netter.site" });
         }

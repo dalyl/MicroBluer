@@ -31,4 +31,18 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+
+    <Style x:Key="{x:Type RichTextBox}"
+     BasedOn="{StaticResource {x:Type TextBox}}"
+     TargetType="{x:Type RichTextBox}">
+        <Style.Resources>
+            <Style x:Key="{x:Type FlowDocument}"
+         TargetType="{x:Type FlowDocument}">
+                <Setter Property="OverridesDefaultStyle"
+          Value="true"/>
+            </Style>
+        </Style.Resources>
+    </Style>
 </ResourceDictionary>

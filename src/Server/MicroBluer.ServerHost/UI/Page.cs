@@ -13,6 +13,7 @@ namespace MicroBluer.ServerHost.UI
         Service,
         Setting,
         Web,
+        Speech,
         Help,
         About,
     }
