@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicroBluer.ServerHost.Features;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Speech.Synthesis;
@@ -21,26 +22,28 @@ namespace MicroBluer.ServerHost.UI.Pages
     /// </summary>
     public partial class SpeechPage : PageBase
     {
-        public SpeechSynthesizer Synth { get; } = new SpeechSynthesizer();
         public SpeechPage()
         {
             InitializeComponent();
+            VolumeRangSeleclor.Minimum = 0;
+            VolumeRangSeleclor.Maximum = 100;
+            VolumeRangSeleclor.Value = 50;
+
+            RateRangSeleclor.Minimum = -10;
+            RateRangSeleclor.Maximum = 10;
+            RateRangSeleclor.Value = 0;
+
             LoadAnnouncerData();
         }
 
         public void LoadAnnouncerData()
         {
             List<string> voicer = new List<string>();
+            var Synth  = new SpeechSynthesizer();
             foreach (InstalledVoice iv in Synth.GetInstalledVoices())
             {
                 voicer.Add(iv.VoiceInfo.Name);
             }
-
-            //选择不同的发音
-            //synth.SelectVoice("Microsoft Anna");//美式发音，但只能读英文
-            //synth.SelectVoice("Microsoft Lili");//能读中英文
-            //语音识别
-            //SpeechRecognitionEngine sre = new SpeechRecognitionEngine();
 
             AnnouncerSelector.ItemsSource = voicer;
         }
@@ -58,41 +61,30 @@ namespace MicroBluer.ServerHost.UI.Pages
             }
         }
 
-       
+
         private void Button_Read_Click(object sender, RoutedEventArgs e)
         {
             if (Checked == false) return;
+            var voicer = AnnouncerSelector.SelectedValue.ToString();
             var content = InputContent.Text;
-            Synth.Speak(content);
+            var volume = VolumeRangSeleclor.Value;
+            var rate = RateRangSeleclor.Value;
+            VoiceReader.Speak(VoiceReader.Reader.Microsoft, voicer, content, volume, rate);
         }
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
             if (Checked == false) return;
-            var content = InputContent.Text;
-
-            Synth.Volume = VolumeRangSeleclor.TabIndex;
-            Synth.Rate = RateRangSeleclor.TabIndex;
-
-            Synth.SetOutputToWaveFile("D:\\Record.wav");
-            Synth.Speak(content);
-            Synth.SetOutputToDefaultAudioDevice();
-            MessageBox.Show("保存录音文件成功，保存路径：D:\\Record.wav！");
-            Synth.Dispose();
+            var voicer = AnnouncerSelector.SelectedValue.ToString();
+            var content = InputContent.Text.Trim();
+            var volume = VolumeRangSeleclor.TabIndex;
+            var rate = RateRangSeleclor.TabIndex;
+            var title = (content.Length > 100 ? content.Substring(0, 100) : content).Replace(" ", string.Empty).Replace("\r", string.Empty).Replace("\n", string.Empty);
+            var path = $"{AppDomain.CurrentDomain.BaseDirectory}\\Record\\{title}.wav";
+            VoiceReader.Generated(VoiceReader.Reader.Microsoft, voicer, content, path, volume, rate);
+            MessageBox.Show($"保存录音文件成功，保存路径：{path}！");
         }
 
-        private void AnnouncerSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            try
-            {
-                object obj = (object)e.AddedItems;
-                string str = Convert.ToString(((System.Data.DataRowView)(((object[])(obj))[0])).Row.ItemArray[1]);
-                Synth.SelectVoice(str);
-            }
-            catch (Exception ex)
-            {
-                
-            }
-        }
+       
     }
 }

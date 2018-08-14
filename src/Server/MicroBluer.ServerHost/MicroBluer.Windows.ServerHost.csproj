@@ -133,6 +133,7 @@
     <Compile Include="Command\AppVolume.cs" />
     <Compile Include="Command\WindowsVolume.cs" />
     <Compile Include="Core\LogTryCatch.cs" />
+    <Compile Include="Features\IVoiceReader.cs" />
     <Compile Include="UI\Ctrls\BitmapRenderer.cs" />
     <Compile Include="UI\Ctrls\ImageCreate.cs" />
     <Compile Include="UI\Ctrls\NotificationAreaIcon.cs" />
